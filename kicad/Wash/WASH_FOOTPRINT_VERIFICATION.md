@@ -102,7 +102,7 @@ of the land-pattern errors. Confirmed on two parts so far:
 These are **schematic/netlist errors**, not land-pattern errors: the wrong pin→net
 associations originate in the symbols that drive the netlist. **Fixing only the PCB
 footprints would fight the schematic on the next sync and re-create the exact
-sch↔pcb divergence documented for Emma/Zoë.** The rebuild must therefore be
+sch↔pcb divergence documented for Emma/TACCO.** The rebuild must therefore be
 **schematic-first** (author correct symbols/pinouts → correct footprints follow →
 re-sync PCB), or explicitly accept a PCB-first patch with the schematic to catch up.
 

@@ -4,7 +4,7 @@
 gen_jayne_som_pcm071.py -- CLEAN-ROOM KiCad symbol for the PHYTEC phyCORE-AM62x
 CONNECTORIZED module (PCM-071), authored from the PHYTEC hardware manual.
 =============================================================================
-Jayne uses the CONNECTORIZED variant (user decision 2026-07-12): PCM-071, 32x43 mm,
+Observer uses the CONNECTORIZED variant (user decision 2026-07-12): PCM-071, 32x43 mm,
 240-pin via 2x Samtec BTH-060-01-L-D-A-K-TR board-to-board connectors (0.5 mm,
 2x60), 5 mm stacking height. This SUPERSEDES the earlier direct-solder DSC work
 (Jayne_SoM.kicad_sym 270-pin / jayne_som_pinmap.csv) which was the wrong variant.
@@ -35,7 +35,7 @@ CSVIN = SYMDIR / "phyCORE_AM62x_PCM071_pinmap.csv"
 OUT = SYMDIR / "Jayne_SoM_PCM071.kicad_sym"
 SYMNAME = "Jayne_SoM_PCM071"
 # 2x Samtec BTH-060 board-to-board; footprint authored separately from Samtec dims.
-FOOTPRINT = "Jayne:phyCORE-AM62x_PCM071_2xBTH-060"
+FOOTPRINT = "Observer:phyCORE-AM62x_PCM071_2xBTH-060"
 BANKS = ["A", "B", "C", "D"]
 
 

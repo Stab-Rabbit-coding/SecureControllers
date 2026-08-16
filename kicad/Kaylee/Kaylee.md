@@ -1,6 +1,6 @@
-# Kaylee — Power Distribution Board Rev R
+# FlightEngineer — Power Distribution Board Rev R
 
-*Named after Kaylee Frye, ship's mechanic, Firefly-class vessel Serenity.*
+*Named after FlightEngineer Frye, ship's mechanic, Firefly-class vessel Serenity.*
 
 **Author:** Steve Griffing, PE(CSE), CISSP-ISSEP, CPP
 **License:** CC BY 4.0 — creativecommons.org/licenses/by/4.0
@@ -12,7 +12,7 @@
 
 ## Purpose
 
-Kaylee replaces the generic off-the-shelf dual-BEC PDB-BEC module with a custom
+FlightEngineer replaces the generic off-the-shelf dual-BEC PDB-BEC module with a custom
 four-layer PCB sized for the Serenity UAV power architecture. It provides:
 
 - Coordinated multi-level fusing (main bus + per-ESC branch fuses)
@@ -90,7 +90,7 @@ requirements.
 | J_6V | Molex Nano-Fit 4-pin (pitch 2.50 mm) | 6 V / 5 A | Servo bus (tilt servos + nozzle servos) |
 | J_SHLD_5V | PGND via-pad 1.2 mm hole (adjacent to J_5V) | 5 V avionics cable shield drain → PGND plane |
 | J_SHLD_6V | PGND via-pad 1.2 mm hole (adjacent to J_6V) | 6 V servo cable shield drain → PGND plane |
-| **J_JAYNE** (planned, not yet in KiCad) | Molex Nano-Fit 4-pin (matches J_5V) | 5 V / 6 A (RAIL-2, own BEC) | **Jayne/payload** (nose + cargo), ≈ 2.4 A typ / ~4.2 A peak; cross-tied to the avionics rail for mutual backup — see `docs/POWER_DISTRIBUTION.md §11.1` |
+| **J_JAYNE** (planned, not yet in KiCad) | Molex Nano-Fit 4-pin (matches J_5V) | 5 V / 6 A (RAIL-2, own BEC) | **Observer/payload** (nose + cargo), ≈ 2.4 A typ / ~4.2 A peak; cross-tied to the avionics rail for mutual backup — see `docs/POWER_DISTRIBUTION.md §11.1` |
 
 > **Planned second 5 V rail — cross-tied, mutually fault-tolerant (not yet in KiCad):** add a
 > **third identical TPS54620 BEC channel** (`U_BEC_5V_3` + `L_5V3` + `R_FB3` + `C_BEC3_IN/OUT` +
@@ -102,13 +102,13 @@ requirements.
 > part chain → **interchangeable**; no new part numbers. **Set-point rises 5.3 V → 5.4 V** so a
 > backed-up rail (two Schottky drops) stays > the 4.75 V PB2-I minimum. Full topology, drop
 > budget, and fault-mode table: `docs/POWER_DISTRIBUTION.md §11.1`. Number this alongside the
-> Rev S1 servo-rail change when Kaylee is next revised. (A fully-symmetric 2+2 four-channel
+> Rev S1 servo-rail change when FlightEngineer is next revised. (A fully-symmetric 2+2 four-channel
 > option is noted in §11.1 if RAIL-2 later needs its own internal redundancy.)
 
 ### Monitoring / Comms
 
 All monitoring cables use shielded twisted-pair construction (see Harness Specification).
-The cable shield terminates at the adjacent PGND drain pad at the Kaylee end; at the
+The cable shield terminates at the adjacent PGND drain pad at the FlightEngineer end; at the
 Wash end the drain wire connects to the cape chassis GND point.
 
 | Reference | Part | Function |
@@ -132,7 +132,7 @@ J_BATT(+) ── (EMC cable gland) ── CM1 ── CM2 ── F1 (150 A MAXI f
 J_BATT(−) ── (EMC cable gland) ── CM1 ── CM2 ──────────────────────────── PGND rail
 
   CM1, CM2: Würth 7440640500 (10 A, 2 × 100 µH) in series — two-stage CM attenuation
-  for 500 W/m² (434 V/m) susceptibility environment (see §Kaylee Shielded Enclosure).
+  for 500 W/m² (434 V/m) susceptibility environment (see §FlightEngineer Shielded Enclosure).
 
 VBAT rail:
   │
@@ -256,13 +256,13 @@ BQ76930:
 ## ESC Control and Telemetry Signal Routing
 
 Each nacelle contains two EDFs in tandem.  Power for both EDFs in a nacelle comes from
-the Kaylee, but the ESC control (DSHOT600) and telemetry (BDSHOT) signal paths are routed
+the FlightEngineer, but the ESC control (DSHOT600) and telemetry (BDSHOT) signal paths are routed
 to **separate** FC nodes.  A single FC node failure therefore cannot silence both EDFs in
 any nacelle — thrust and directional control are degraded but not lost.
 
 ### FC Assignment Table
 
-| EDF position | ESC ref | Kaylee power conn | Controlling FC node | Wash bay | Signal pin |
+| EDF position | ESC ref | FlightEngineer power conn | Controlling FC node | Wash bay | Signal pin |
 |---|---|---|---|---|---|
 | Port Fwd (EDF0) | ESC1 | J_ESC1 | FC3 (Node 3) | River's room (Bay D) | UART2-TX (DSHOT600) |
 | Port Aft (EDF1) | ESC2 | J_ESC2 | FC4 (Node 4) | Simon's medbay (Bay E) | UART2-TX (DSHOT600) |
@@ -280,7 +280,7 @@ No single FC node failure eliminates both EDFs in any nacelle.
 
 ### Signal Cable Independence
 
-DSHOT600 / BDSHOT signal cables are routed completely independently of the Kaylee power
+DSHOT600 / BDSHOT signal cables are routed completely independently of the FlightEngineer power
 cables.  Each ESC signal connector (JST-SH 3-pin: DSHOT+, GND, TELEM) connects directly
 to the controlling FC node's Wash via a dedicated shielded twisted-pair cable that
 passes through a separate cable gland from the corresponding power cable.  This separation
@@ -294,7 +294,7 @@ prevents conducted EMI on the high-current power cable from corrupting the DSHOT
 
 | Was | Notes |
 |-----|-------|
-| PDB-BEC (generic dual-BEC PDB from AliExpress) | Replaced by Kaylee |
+| PDB-BEC (generic dual-BEC PDB from AliExpress) | Replaced by FlightEngineer |
 
 ### Added to BOM
 
@@ -348,7 +348,7 @@ prevents conducted EMI on the high-current power cable from corrupting the DSHOT
 | D_I2C | NXP PRTR5V0U2X (dual TVS, SOT-363, 5 V clamp, ×1) | I2C line RF transient protection at enclosure wall (SCL + SDA) | 568-PRTR5V0U2XQLT-ND |
 | R_CHGND | 0 Ω / 0402 resistor (socketed 0402 position) | Chassis–PGND single-point bond; populated with 0 Ω at assembly; configurable | — |
 | J_CHASSIS | M3 × 8 mm brass PCB standoff (×4) + M3 locknut (×4) | PCB chassis ground to enclosure bond; also serves as board-mounting standoffs | McMaster-Carr 94459A120 |
-| ENC-BODY | 1.5 mm 6061-T6 aluminum enclosure, 115 × 95 × 55 mm, custom or Hammond 1590SFLBK equivalent | Kaylee shielded enclosure body | Custom fab or Hammond 1590SFLBK |
+| ENC-BODY | 1.5 mm 6061-T6 aluminum enclosure, 115 × 95 × 55 mm, custom or Hammond 1590SFLBK equivalent | FlightEngineer shielded enclosure body | Custom fab or Hammond 1590SFLBK |
 | ENC-GASKET | Parker Chomerics CHO-SEAL 1217, silver-aluminum elastomer strip, 6 mm × 1.5 mm, ~450 mm total | Lid seam EMI gasket; ≤ 0.1 mΩ seam impedance; ≥ 60 dB SE contribution | Chomerics CHO-SEAL-1217 |
 | GLAND-M16 | Pflitsch 750M16 EMC cable gland, M16 thread, 9–13 mm cable OD (×1) | J_BATT main bus cable entry with 360° shield bond | Pflitsch 750M16 |
 | GLAND-M12 | Pflitsch 750M12 EMC cable gland, M12 thread, 6–10 mm cable OD (×6) | J_ESC1–4 + J_5V + J_6V cable entries with 360° shield bond | Pflitsch 750M12 |
@@ -367,7 +367,7 @@ prevents conducted EMI on the high-current power cable from corrupting the DSHOT
 | U_IS4 | ESC4 output | SCL | GND | 0x43 | 60 A |
 | U_IS_MAIN | Main bus | GND | VCC | 0x44 | 75 A |
 
-The Kaylee I2C bus (J_I2C) connects to Wash in Shepherd's room (Bay A, FC1) on J_EXT_I2C.
+The FlightEngineer I2C bus (J_I2C) connects to Wash in Shepherd's room (Bay A, FC1) on J_EXT_I2C.
 These addresses reside on a separate physical I2C bus segment from the Wash
 internal INA226 (0x40 on the Cape's own I2C-0 bus). No address conflict.
 
@@ -433,7 +433,7 @@ and recomputes OV_TRIP and UV_TRIP using the actual trimmed calibration values.
 | Rail | Consumers | Max output current |
 |------|-----------|-------------------|
 | VBAT main bus | 4× ESC outputs | Up to 4 × 40 A = 160 A burst |
-| 5 V avionics (dual BEC) | 8× PocketBeagle 2 + 4× Wash + 4× Zoë + accessories | 10 A cont. (dual SMPS) |
+| 5 V avionics (dual BEC) | 8× PocketBeagle 2 + 4× Wash + 4× TACCO + accessories | 10 A cont. (dual SMPS) |
 | 6 V servo | 2× DS3218MG tilt + 3× SG90 (nozzle/cargo) | 5 A cont. |
 | BQ76930 self | Internal LDO from REGSRC | < 100 µA quiescent |
 
@@ -450,12 +450,12 @@ Total VBAT draw (avionics + servos at peak, from VBAT side):
 The Serenity UAV design environment is 500 W/m² (equivalent E-field:
 E = √(P × Z₀) = √(500 × 377) **≈ 434 V/m**) [REF-NIST-002 §6.2.5]. This exceeds all
 standard MIL-STD-461G limits and represents operation near commercial broadcast or
-cellular antenna structures. All Kaylee EMC design decisions are referenced
+cellular antenna structures. All FlightEngineer EMC design decisions are referenced
 to this threat level.
 
 | Standard / Threat | Level | Test | Mitigation |
 |---|---|---|---|
-| **500 W/m² (434 V/m) radiated susceptibility** | **Design requirement** | CW field immersion, 30 MHz – 6 GHz | Kaylee shielded aluminum enclosure (SE ≥ 60 dB); two-stage CM1+CM2; Y-caps C_Y1/C_Y2; I2C TVS D_I2C; 360° EMC cable glands |
+| **500 W/m² (434 V/m) radiated susceptibility** | **Design requirement** | CW field immersion, 30 MHz – 6 GHz | FlightEngineer shielded aluminum enclosure (SE ≥ 60 dB); two-stage CM1+CM2; Y-caps C_Y1/C_Y2; I2C TVS D_I2C; 360° EMC cable glands |
 | MIL-STD-461G RS103 [REF-MIL-002] | 200 V/m (200 MHz – 1 GHz) | Radiated susceptibility | Enclosure SE ≥ 60 dB covers RS103 by margin |
 | MIL-STD-461G CS114 [REF-MIL-002] | Curve 05 (bulk cable injection) | Conducted susceptibility | Two-stage CM filter (CM1+CM2 in series = > 80 dB at 10 MHz); Y-caps to chassis |
 | MIL-STD-461G CS101 [REF-MIL-002] | 50 V, 30 Hz – 150 kHz | Power bus susceptibility | 2× 220 µF + 10 µF C_DM1 bulk; BEC regulation |
@@ -469,9 +469,9 @@ pending airframe integration.
 
 ---
 
-## Kaylee Shielded Enclosure
+## FlightEngineer Shielded Enclosure
 
-To survive 500 W/m² (434 V/m) immersion, the Kaylee PCB is housed in a
+To survive 500 W/m² (434 V/m) immersion, the FlightEngineer PCB is housed in a
 dedicated shielded aluminum enclosure that provides ≥ 60 dB shielding
 effectiveness (SE) from 1 MHz to 6 GHz. This reduces the external 434 V/m
 field to < 0.4 V/m at the PCB surface — below the susceptibility threshold
@@ -532,7 +532,7 @@ Default assembly: R_CHGND = 0 Ω (direct chassis bond, single point).
 
 ## Harness Specification
 
-All cables leaving the Kaylee must comply with the construction rules below.  The
+All cables leaving the FlightEngineer must comply with the construction rules below.  The
 500 W/m² EMI design environment mandates shielded twisted-pair construction with
 continuous braid coverage and snap-on ferrite treatment at both cable ends.  All
 wire insulation must be silicone-rated (200 °C continuous) for propulsion cables
@@ -555,9 +555,9 @@ and PVC/PTFE acceptable for signal cables.
 |---|---|
 | Conductor gauge | 16 AWG silicone (2 conductors per polarity, paralleled for 10 A total) |
 | Construction | Twisted pair (+/−), 85 % coverage spiral braid shield |
-| Shield termination | Drain wire to J_SHLD_5V PGND via-pad at Kaylee end; chassis GND lug at avionics bay entry point |
+| Shield termination | Drain wire to J_SHLD_5V PGND via-pad at FlightEngineer end; chassis GND lug at avionics bay entry point |
 | Snap-on ferrites | Würth 7427122 at both cable ends |
-| Connector (cable side) | Molex Nano-Fit 4-pin cable-side plug (mates with J_5V on Kaylee) |
+| Connector (cable side) | Molex Nano-Fit 4-pin cable-side plug (mates with J_5V on FlightEngineer) |
 
 ### 6 V Servo Bus Cable (J_6V)
 
@@ -565,9 +565,9 @@ and PVC/PTFE acceptable for signal cables.
 |---|---|
 | Conductor gauge | 18 AWG silicone |
 | Construction | Twisted pair (+/−), 85 % coverage spiral braid shield |
-| Shield termination | Drain wire to J_SHLD_6V PGND via-pad at Kaylee end; chassis GND lug at servo harness entry |
+| Shield termination | Drain wire to J_SHLD_6V PGND via-pad at FlightEngineer end; chassis GND lug at servo harness entry |
 | Snap-on ferrites | Würth 7427122 at both cable ends |
-| Connector (cable side) | Molex Nano-Fit 4-pin cable-side plug (mates with J_6V on Kaylee) |
+| Connector (cable side) | Molex Nano-Fit 4-pin cable-side plug (mates with J_6V on FlightEngineer) |
 
 ### I2C and Signal Cables (J_I2C, J_ALERT, J_NTC)
 
@@ -575,15 +575,15 @@ and PVC/PTFE acceptable for signal cables.
 |---|---|
 | Conductor gauge | 28 AWG stranded silver-plated copper (2 twisted pairs for J_I2C: SCL/SDA + GND/5 V; single pair for J_ALERT, J_NTC) |
 | Construction | Individually shielded twisted pairs (Belden 9501 or equivalent); overall foil + braid shield |
-| Shield termination | Drain wire to J_SHLD_I2C / J_SHLD_ALERT / J_SHLD_NTC PGND via-pad at Kaylee end; chassis GND at cape end; shield grounded at Kaylee end only (single-end grounding prevents ground loop at 400 kHz) |
+| Shield termination | Drain wire to J_SHLD_I2C / J_SHLD_ALERT / J_SHLD_NTC PGND via-pad at FlightEngineer end; chassis GND at cape end; shield grounded at FlightEngineer end only (single-end grounding prevents ground loop at 400 kHz) |
 | Snap-on ferrites | Würth 7427120 (7 mm ID, 80 Ω @ 25 MHz): one at each cable end |
 | Cable length | J_I2C: ≤ 150 mm (I2C bus capacitance budget ≤ 400 pF total at 400 kHz); J_ALERT / J_NTC: ≤ 300 mm |
 | Connector (cable side) | JST GHR-04V-S (4-pin, mates with J_I2C); JST GHR-02V-S (2-pin, mates with J_ALERT / J_NTC) |
 
-### ESC Signal Cables (ESC1–4 DSHOT/BDSHOT, not on Kaylee)
+### ESC Signal Cables (ESC1–4 DSHOT/BDSHOT, not on FlightEngineer)
 
 ESC signal cables route directly between each ESC and its controlling FC node and do
-not connect to the Kaylee.  They are documented here for completeness.
+not connect to the FlightEngineer.  They are documented here for completeness.
 
 | Parameter | Specification |
 |---|---|
@@ -630,7 +630,7 @@ not connect to the Kaylee.  They are documented here for completeness.
 
 ## Phase 11 ESC5 Population
 
-When Phase 11 is ready, populate the following DNP components on the Kaylee:
+When Phase 11 is ready, populate the following DNP components on the FlightEngineer:
 
 1. J_ESC5 (XT60PW-F PCB-mount female)
 2. F_ESC5 (100 A MIDI blade fuse, Littelfuse 0299100.ZXNV, MIDI holder)

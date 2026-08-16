@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gen_jayne_ic_symbols.py -- CLEAN-ROOM KiCad symbols for Jayne carrier ICs, authored
+gen_jayne_ic_symbols.py -- CLEAN-ROOM KiCad symbols for Observer carrier ICs, authored
 from the manufacturers' PRIMARY datasheets (not SnapEDA renderings).
 =============================================================================
 Pin tables below are transcribed from the authoritative vendor datasheets held
@@ -37,7 +37,7 @@ SYMDIR = HERE.parent.parent / "symbols"
 ISOW1044 = {
     "name": "Jayne_ISOW1044BDFMR",
     "value": "ISOW1044BDFMR",
-    "footprint": "Jayne:ISOW1044_DFM20_TBD",  # DFM-20: author from TI SLLSFF7A pkg
+    "footprint": "Observer:ISOW1044_DFM20_TBD",  # DFM-20: author from TI SLLSFF7A pkg
     # drawing -- isolation-critical (5kV clearance), do NOT substitute a generic land
     "desc": "TI ISOW1044BDFMR 5kVrms isolated CAN-FD + iso DC/DC, 20-pin DFM "
     "(clean-room from TI SLLSFF7A Table 7-1)",

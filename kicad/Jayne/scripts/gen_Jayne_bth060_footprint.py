@@ -22,7 +22,7 @@ symbol associates 1:1.  ROW<->COLUMN assignment (A=right-outer, B=right-inner,
 C=left-inner, D=left-outer) and pin-1 end are a best reading of the manual's Fig 6 --
 PRE-FAB GATE: verify against the Samtec product print + PHYTEC Fig 6 before routing.
 
-Output: Jayne.pretty/phyCORE-AM62x_PCM071_2xBTH-060.kicad_mod
+Output: Observer.pretty/phyCORE-AM62x_PCM071_2xBTH-060.kicad_mod
 
 Author : Steve Griffing, PE(CSE), CISSP-ISSEP, CPP  (Griffing Technology LLC)
 AI-assist: Claude Opus 4.8 (Anthropic) -- footprint authoring, 2026-07-12.
@@ -32,7 +32,7 @@ License: CC BY 4.0
 import uuid
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "Jayne.pretty" / "phyCORE-AM62x_PCM071_2xBTH-060.kicad_mod"
+OUT = Path(__file__).resolve().parent.parent / "Observer.pretty" / "phyCORE-AM62x_PCM071_2xBTH-060.kicad_mod"
 
 PITCH = 0.5
 PADW = 0.305          # along the row (Y)

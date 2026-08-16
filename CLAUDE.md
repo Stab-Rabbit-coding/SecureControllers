@@ -10,7 +10,7 @@ This folder contains all electronics design and implementation: KiCad schematics
 
 **Platform:** Four pairs of **PocketBeagle2 Industrial SBCs** (8 nodes total, Rev S placement,
 established at Rev R1):
-- All 8 nodes carry **Wash** (Flight Control and Sensor Cape) and **Zoë** (Communications, Logging, and Payload Cape)
+- All 8 nodes carry **Wash** (Flight Control and Sensor Cape) and **TACCO** (Communications, Logging, and Payload Cape)
 - All 8 nodes carry **TPM** (Trusted Platform Module) for cryptographic operations
 
 **Emma Transceiver Cape** (49 MHz Part 15 §15.235, as-built; LoRa 915 MHz + P1/P2 rails are
@@ -18,17 +18,17 @@ IN PROGRESS, PCB-ahead-of-schematic — see "Cape Naming and Revision History" b
 full, verified real status):
 - Installed in **River's Room** (Bay C, starboard cargo) and **Simon's Medbay** (Bay D, middle section) only
 
-**Power Distribution — Kaylee (PDB):**
+**Power Distribution — FlightEngineer (PDB):**
 - Central location: inner neck of middle section, minimizes power run lengths to all four nacelles, all four avionics stacks, and the battery
 - Interfaces with all four flight-control nodes for EDF and servo control
 
 ### Node Workload Balancing and PACE Failover
 
-All Wash capes are identical and all Zoë capes are identical, but each stack has **primary and alternative tasking** with PACE prioritization (Primary, Alternative, Contingency, Emergency):
+All Wash capes are identical and all TACCO capes are identical, but each stack has **primary and alternative tasking** with PACE prioritization (Primary, Alternative, Contingency, Emergency):
 
 #### Shepherd's Room (Bay A) — Forward Avionics
 **Primary tasking:** watchdog, fault detection, failover, authentication  
-**Stack:** Wash + Zoë  
+**Stack:** Wash + TACCO  
 **Comms:** SiK primary / Wi-Fi secondary  
 **PACE assignments:**
 - Watchdog: **P**rimary
@@ -38,8 +38,8 @@ All Wash capes are identical and all Zoë capes are identical, but each stack ha
 
 #### Inara's Shuttle (Bay B) — Port Avionics
 **Primary tasking:** camera, external sensors, high-bandwidth ground communications  
-**Stack:** Wash + Zoë  
-**Comms:** Wi-Fi primary / LoRa secondary (Zoë still carries a real LoRa radio today; moving it
+**Stack:** Wash + TACCO  
+**Comms:** Wi-Fi primary / LoRa secondary (TACCO still carries a real LoRa radio today; moving it
 to Emma boards on River/Simon is IN PROGRESS, PCB-ahead-of-schematic — see "Cape Naming and
 Revision History" below)  
 **PACE assignments:**
@@ -50,8 +50,8 @@ Revision History" below)
 
 #### River's Room (Bay C) — Starboard Avionics
 **Primary tasking:** forward EDF control, nacelle tilt command/sync, resilient comms  
-**Stack:** Wash + Zoë + **Emma** (49 MHz primary today; LoRa secondary via Emma is IN
-PROGRESS, PCB-ahead-of-schematic — Zoë still carries the live LoRa radio too until this is
+**Stack:** Wash + TACCO + **Emma** (49 MHz primary today; LoRa secondary via Emma is IN
+PROGRESS, PCB-ahead-of-schematic — TACCO still carries the live LoRa radio too until this is
 reconciled, see "Cape Naming and Revision History" below)  
 **Comms:** 49 MHz (Part 15 §15.235) primary / LoRa 915 MHz secondary  
 **PACE assignments:**
@@ -62,8 +62,8 @@ reconciled, see "Cape Naming and Revision History" below)
 
 #### Simon's Medbay (Bay D) — Aft Avionics
 **Primary tasking:** aft EDF control, alternate watchdog, cargo/payload oversight  
-**Stack:** Wash + Zoë + **Emma** (49 MHz primary today; LoRa secondary via Emma is IN
-PROGRESS, PCB-ahead-of-schematic — Zoë still carries the live LoRa radio too until this is
+**Stack:** Wash + TACCO + **Emma** (49 MHz primary today; LoRa secondary via Emma is IN
+PROGRESS, PCB-ahead-of-schematic — TACCO still carries the live LoRa radio too until this is
 reconciled, see "Cape Naming and Revision History" below)  
 **Comms:** 49 MHz (Part 15 §15.235) primary / SiK secondary  
 **PACE assignments:**
@@ -106,7 +106,7 @@ Provides flight control input, sensor fusion, and motor speed control via PID:
 Rev R, carried forward unchanged)  
 **Status:** Archived: Cape-A-1
 
-### Zoë — Communications, Logging, and Payload Cape
+### TACCO — Communications, Logging, and Payload Cape
 
 Provides external communications, onboard logging, and payload interface:
 - All four external radio transceivers (Wi-Fi, Zigbee, SiK/MAVLink, protocol stack software)
@@ -114,24 +114,24 @@ Provides external communications, onboard logging, and payload interface:
 - Payload I/O interfaces
 
 **Current revision / real status (verified 2026-07-04, not assumed from prior doc text):**
-Cape-B-2 (Rev S; `Zoë.md` "Revision: R" — same partial-migration state as Emma, see that
+Cape-B-2 (Rev S; `TACCO.md` "Revision: R" — same partial-migration state as Emma, see that
 section):
 
-- `Zoë.kicad_sch` still has a real `RFM95W` (LoRa) symbol — LoRa has NOT been removed from
+- `TACCO.kicad_sch` still has a real `RFM95W` (LoRa) symbol — LoRa has NOT been removed from
   the schematic. Still has `Conn_JST_GH_06P`/`04P`/`03P` symbols too.
 - **Updated finding 2026-07-04 (verified against the files, deeper than prior text):**
-  `Zoë.kicad_pcb` is actually already at the intended end-state — **LoRa (RFM95W) is REMOVED
+  `TACCO.kicad_pcb` is actually already at the intended end-state — **LoRa (RFM95W) is REMOVED
   from the PCB** and the `2x18_P1/P2_Socket` + `PB2-P1/P2-TOP` passthrough rails are placed.
   The **schematic lags the PCB** here (opposite of the earlier assumption). Worse, schematic
   and PCB use **different reference-designator conventions for the same parts** (`CMC_CAN`
   vs `CMC-CAN`, `X2Y_RS485` vs `X2Y-RS485`, `WINCH-DRV` vs `WINCH DRV`, `RS485` vs `RS-485`,
-  `WIFI-BT` vs `WIFI & BT`, …) — only ~10 of ~50 refs match exactly. `Zoë.kicad_sch` also
+  `WIFI-BT` vs `WIFI & BT`, …) — only ~10 of ~50 refs match exactly. `TACCO.kicad_sch` also
   still carries the **LoRa block** (`LORA`/RFM95W, `FL_LORA`, `D_ANT_LORA`, `J_SMA_LORA`,
   `BPF_915`×2), the now-obsolete **`J_XCVR`** Emma-cable connector (should disappear for the
   same reason Emma's J1 did), and an **SBUS block** the PCB lacks.
-- **Load-blocking bug FIXED 2026-07-04:** `Zoë.kicad_sch` would not open in `kicad-cli` 9.0.2
+- **Load-blocking bug FIXED 2026-07-04:** `TACCO.kicad_sch` would not open in `kicad-cli` 9.0.2
   at all — three `(comment …)` blocks were at the schematic top level (only valid inside
-  `title_block`); converted to a `(text …)` annotation. Zoë now loads and ERC runs.
+  `title_block`); converted to a `(text …)` annotation. TACCO now loads and ERC runs.
 - **Net effect:** "remove LoRa" is DONE on the PCB, PENDING on the schematic; "add P1+P2
   rails" is DONE on the PCB, PENDING on the schematic. The remaining schematic-side
   reconciliation needs a **user-confirmed sch↔pcb reference-designator remap** before edits
@@ -185,18 +185,18 @@ started":
 **Installed in:** River's Room (Bay C) and Simon's Medbay (Bay D) only  
 **Status:** Archived: XCVR-49MHZ-1, Cape-A-1, Cape-B-1
 
-### Jayne — Cargo-Handling System and Nose/Cargo-Bay Vision, ToF & Laser Board
+### Observer — Cargo-Handling System and Nose/Cargo-Bay Vision, ToF & Laser Board
 
-**Jayne now names one integrated subsystem, not two separate identities.** It covers both
+**Observer now names one integrated subsystem, not two separate identities.** It covers both
 the mechanical cargo-handling hardware (winch, latch, cargo bay door — "I was aiming for
 his head") and the vision/ToF/laser sensing board formerly documented under the working
 name "Vera." The board gives the mechanical cargo system its eyes: it watches and measures
 what the winch and latch are handling. Historical references to "Vera" in commit history,
 older revisions of this document, and file headers refer to this same board and should be
-read as "Jayne."
+read as "Observer."
 
-**The Jayne board is a standalone, compact PCB — not a PocketBeagle 2 Industrial cape.**
-Unlike Wash/Zoë/Emma, it does not use the P1+P2 header stack and does not mount onto a PB2-I
+**The Observer board is a standalone, compact PCB — not a PocketBeagle 2 Industrial cape.**
+Unlike Wash/TACCO/Emma, it does not use the P1+P2 header stack and does not mount onto a PB2-I
 node. It is its own independent board with its own power input (5V VCC, GND, PGND) and its
 own processors (AM62A vision SoC + MSPM0G3507 MCU), connecting to the rest of the airframe
 only through the shielded JST-GH Ethernet ring and CAN-FD trunk connectors, as a peer
@@ -221,14 +221,14 @@ real, currently-produced silicon vendors, not a fictional single-chip "port":
   Recommended for New Designs) — excluded from this design for that reason.
 - Chosen over a SigmaStar/OpenIPC path specifically for toolchain uniformity with the
   PocketBeagle 2 Industrial's TI Sitara AM6254 SoC (shared cross-compiler, kernel driver
-  patterns, and debug tooling across Wash/Zoë and the Jayne board).
+  patterns, and debug tooling across Wash/TACCO and the Observer board).
 
 **Control half:**
 
 - **TI MSPM0G3507** MCU — native hardware MCAN (CAN-FD) peripheral; shares TI toolchain
-  with the vision half and with the AM6254 real-time domain on Wash/Zoë.
+  with the vision half and with the AM6254 real-time domain on Wash/TACCO.
 - **Infineon OPTIGA SLB9670** SPI TPM 2.0 — same part already standardized fleet-wide on all
-  8 Wash/Zoë nodes (REFERENCES.md §3.3/§4.2); Jayne reuses it rather than introducing a new TPM
+  8 Wash/TACCO nodes (REFERENCES.md §3.3/§4.2); Observer reuses it rather than introducing a new TPM
   part number.
 - **Microchip KSZ9477** Ethernet switch — the only part in this family confirmed (via AN3474)
   to hardware-offload HSR/PRP ring redundancy per IEC 62439-3; LAN9355/KSZ9563 do **not**
@@ -236,17 +236,17 @@ real, currently-produced silicon vendors, not a fictional single-chip "port":
 - **TI ISOW1044BDFMR** galvanically isolated CAN-FD transceiver (**20-pin DFM package** —
   verified against TI datasheet SLLSFF7A Fig 7-1 / §8.4 "DFM/20 PINS"; earlier docs wrongly
   said "SOIC-16W", a fleet-wide footprint error flagged in TODO.md, 5 kV reinforced
-  insulation) — matches the Wash/Zoë Rev R EMI-hardening standard (TODO.md §1.2a); an earlier
+  insulation) — matches the Wash/TACCO Rev R EMI-hardening standard (TODO.md §1.2a); an earlier
   pass of this board used the non-isolated TCAN1042HG-Q1, corrected 2026-07-03.
 - Shielded JST-GH connectors for the Ethernet ring (in/out, 5-pin: GND + TX±/RX±) and the
   CAN-FD trunk (4-pin), per the project's field-connector convention; metal shroud tied to
   PGND (chassis), never to the digital signal GND.
 
-**EMI hardening (added 2026-07-03, matches Wash/Zoë Rev R baseline exactly):** each Ethernet
+**EMI hardening (added 2026-07-03, matches Wash/TACCO Rev R baseline exactly):** each Ethernet
 port carries Wurth 749010012A magnetics + 2× Bourns SRF2012-100Y CMC + 2× Nexperia
 PRTR5V0U2X TVS before the ring connector; the CAN-FD bus carries the same CMC + TVS pairing
 after U4. All parts/pinouts reused verbatim from this project's own verified
-`gen_cape_a2.py`/`gen_cape_a2_pcb.py` — not fabricated. See `Jayne.md` "EMI Hardening Status".
+`gen_cape_a2.py`/`gen_cape_a2_pcb.py` — not fabricated. See `Observer.md` "EMI Hardening Status".
 
 **ToF sensor:** Benewake TFmini-S (REF-SENSOR-002), unchanged from the existing bow sensor
 pod design — read by the MSPM0G3507 over UART, republished signed over both the Ethernet
@@ -263,12 +263,12 @@ optical power / IEC 60825-1 class:
   dot. Same collimated green source both places.
 - **Both sites — Class 2** (≤1 mW green). The nose is **not** inherently Class 3B: 3B was the
   worst-case corner (a power-diluted *spread* crosshair judged by a *naked eye* in *full sun*
-  = ~82 mW). Jayne's actual requirement is *camera* visibility, detected by Jayne's own strobed
+  = ~82 mW). Observer's actual requirement is *camera* visibility, detected by Observer's own strobed
   camera + frame-difference, so a **thin-line green crosshair needs only ~0.2–0.8 mW → Class 2**
   (see `docs/JAYNE_LASER_ANALYSIS.md`). Cargo is likewise Class 2. **Class 2 at both sites
   eliminates the Class 3B key-interlock and mechanical shutter** — `LASER_KEY_IN`/`LASER_IND`
   become optional defense-in-depth. Keep the ≤1 mW cap **hardware-enforced**. 3B only returns
-  if a *human at the 50 ft target* must see the pattern in full sun — not Jayne's use case.
+  if a *human at the 50 ft target* must see the pattern in full sun — not Observer's use case.
 - **Pattern is a thin-line CROSSHAIR (not a bare dot) — it is a projected metrology reference.**
   A PB2-I computes a detected object's **size and relative orientation** from ToF range + the
   crosshair's known projected angle + trigonometry (size = (obj_px/cross_px)·2R·tan(θ/2); tilt
@@ -282,17 +282,17 @@ placed, double-sided, corners rounded, 1.0 × 2.75 in (25.4 × 69.85 mm); traces
 routed — NOT fabrication-ready. See TODO.md §1.2c (hardware) and §4.6 (firmware) for the
 WBS breakdown.
 
-### Kaylee — Power Distribution Board (PDB)
+### FlightEngineer — Power Distribution Board (PDB)
 
 Central power management and distribution:
 - Battery management system
-- 6V servo rail: TPS54540DDAR regulator (planned removal in Kaylee Rev A1; tilt servos to run on 5V rail)
+- 6V servo rail: TPS54540DDAR regulator (planned removal in FlightEngineer Rev A1; tilt servos to run on 5V rail)
 - 5V main avionics rail
 - EDF power distribution and PID control lines to all flight-control nodes
 
-**Current revision:** Kaylee (pre-A1)  
+**Current revision:** FlightEngineer (pre-A1)  
 **Planned (not yet in KiCad):** Rev A1 (remove 6V servo BEC; tilt servos to run on 5V rail with ~21 kg·cm capacity vs ~16 kg·cm tilt load requirement)  
-**Location:** Inner neck of middle section (Kaylee's room), adjacent to Simon's Medbay
+**Location:** Inner neck of middle section (FlightEngineer's room), adjacent to Simon's Medbay
 
 ## PCB Design Standards
 

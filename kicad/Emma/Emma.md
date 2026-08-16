@@ -37,7 +37,7 @@ constraints from XCVR-49MHZ-1 apply unchanged.
 
 ### 1. J1 host interface — EMI filter and protection
 
-The 6-pin 2.54 mm pitch header J1 that connects to Zoë's RCRS-49 port is the
+The 6-pin 2.54 mm pitch header J1 that connects to TACCO's RCRS-49 port is the
 primary EMI ingress path. Any high-frequency conducted noise arriving on the UART and
 PTT lines from the CAPE-B harness routes directly to the Si5351A logic interface
 and MCP4921 SPI port. Emma adds a three-tier protection network:
@@ -446,7 +446,7 @@ from the actual board the way a hand-maintained BOM can.
 | CAPE-B IF | JST-GH-6P (custom) | JST_GH_6P | Host UART/PTT/RSSI/+3V3 interface |
 | PB2-P1, PB2-P2 | PB2I 2×18 sockets | 2x18 socket | Rev R1 PocketBeagle2 header rails |
 | **Ethernet (Rev R1 addition — see TODO.md §1.2b)** | | | |
-| ETH-PHY | ADIN1300BCPZ | QFN-48, B.Cu | Second Ethernet PHY, gives Emma (and the Zoë stack it plugs into) a 2nd port matching Wash's 2-PHY config; also lets Emma run Ethernet standalone outside Serenity |
+| ETH-PHY | ADIN1300BCPZ | QFN-48, B.Cu | Second Ethernet PHY, gives Emma (and the TACCO stack it plugs into) a 2nd port matching Wash's 2-PHY config; also lets Emma run Ethernet standalone outside Serenity |
 | T-ETH | Würth 749010012A | ETH_XFMR_8P, B.Cu | RMII-side isolation transformer; secondary (`*_ETH2`/`GND2_ETH`/`VCC2_ETH`) is a galvanically isolated domain — **must not be bridged to the main GND/+5V planes** |
 | J-ETH | JST-GH-4P (custom) | JST_GH_4P | Isolated-side Ethernet line connector |
 | **LoRa (Rev R1 addition — see TODO.md §1.2b, REF-RFMOD-001)** | | | |
@@ -540,13 +540,13 @@ The JST-GH SM06B-GHS-TB-1MP connector symbol for J1 now includes a SHIELD pin
 - **Cable type:** Belden 9533 6-conductor overall foil + braid shielded (or equivalent
   multi-conductor shielded, ≥ 28 AWG per conductor, overall shield coverage ≥ 85 %).
 - **Drain wire:** 28 AWG stranded, terminate to the J1 PGND mounting-tab pad.  Bond the
-  other end to Zoë's corresponding J_XCVR PGND pad.
+  other end to TACCO's corresponding J_XCVR PGND pad.
 - **Ferrite clamp:** Würth 74271222 snap-on ferrite (or Laird 28B0562-100) ≤ 25 mm from
-  the connector body at BOTH the Emma end and the Zoë end.
+  the connector body at BOTH the Emma end and the TACCO end.
 - **Maximum cable length:** 150 mm (limited by signal integrity at 1200-baud AFSK and
   UART signal rise time ≤ 10 ns at 3.3 V LVCMOS).
 
-### Wiring to Host (Zoë J_XCVR)
+### Wiring to Host (TACCO J_XCVR)
 
 The J1-to-J_XCVR harness is the primary EMI ingress path.  In addition to the
 cable shield, the following on-board measures are active (see §1):
@@ -574,8 +574,8 @@ cable shield, the following on-board measures are active (see §1):
 
 - `XCVR-49MHZ-1.kicad_sch` — original (Phase 1 stub) schematic
 - `XCVR-49MHZ-1.md` — original Phase 1 design notes and committed BOM
-- `Zoë.kicad_sch` — host board with J1 counter-connector
-- `Zoë.md` — Zoë design notes
+- `TACCO.kicad_sch` — host board with J1 counter-connector
+- `TACCO.md` — TACCO design notes
 
 ---
 

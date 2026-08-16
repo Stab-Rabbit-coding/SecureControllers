@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""gen_wash_sch.py — Author a readable, datasheet-accurate Wash schematic.
+"""gen_wash_sch.py — Author a readable, datasheet-accurate Pilot schematic.
 
-Schematic-first rebuild of the Wash (CAPE-A-2) flight-control cape.  Each IC is
+Schematic-first rebuild of the Pilot (CAPE-A-2) flight-control cape.  Each IC is
 emitted as a rectangular symbol with its FULL datasheet pinout (pin number +
 function name), and every functional pin is wired to a global net label so the
 design reads cleanly and `kicad-cli sch erc` stays quiet on off-sheet nets.
@@ -356,7 +356,7 @@ def emit_instance(ic, X, Y, left, right, half_w, half_h, sheet_uuid):
     for pn, *_ in left + right:
         out.append(f'    (pin "{esc(pn)}" (uuid "{uid()}"))')
     out.append(
-        f'    (instances (project "Wash" (path "/{sheet_uuid}" '
+        f'    (instances (project "Pilot" (path "/{sheet_uuid}" '
         f'(reference "{esc(ref)}") (unit 1))))'
     )
     out.append("  )")

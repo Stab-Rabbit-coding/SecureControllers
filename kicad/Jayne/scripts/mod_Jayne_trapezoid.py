@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-mod_jayne_trapezoid.py -- redraw Jayne.kicad_pcb Edge.Cuts as the nose-carrier
+mod_jayne_trapezoid.py -- redraw Observer.kicad_pcb Edge.Cuts as the nose-carrier
 trapezoid derived in docs/JAYNE_NOSE_TRAPEZOID.md (Rev B).
 =============================================================================
 Board frame: +X fore->aft, +Y starboard->port.  The forward/sensor (narrow) end is
@@ -27,7 +27,7 @@ from pathlib import Path
 
 import pcbnew
 
-BOARD = Path(__file__).resolve().parent.parent / "kicads" / "Jayne.kicad_pcb"
+BOARD = Path(__file__).resolve().parent.parent / "kicads" / "Observer.kicad_pcb"
 
 NARROW_X = 69.85   # forward/sensor edge (high X)
 WIDE_X = 0.0       # aft edge (low X)

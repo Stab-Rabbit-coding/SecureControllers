@@ -1,7 +1,7 @@
 (kicad_sch (version 20240101) (generator eeschema)
   (paper "A1")
   (title_block
-    (title "Kaylee — EMI-Hardened Power Distribution Board") (date "2026-06-10") (rev "A") (company "Griffing Technology LLC")
+    (title "FlightEngineer — EMI-Hardened Power Distribution Board") (date "2026-06-10") (rev "A") (company "Griffing Technology LLC")
     (comment 1 "Serenity UAV Power Distribution Board — 90x65mm 4-layer FR4-TG170")
     (comment 2 "Copyright 2026 Steve Griffing PE(CSE) CISSP-ISSEP CPP | Griffing Technology LLC")
     (comment 3 "License: CC BY 4.0  |  creativecommons.org/licenses/by/4.0")

@@ -1,16 +1,16 @@
-# Zoë — EMI-Hardened Communications, Logging & Payload Cape
+# TACCO — EMI-Hardened Communications, Logging & Payload Cape
 
-**Callsign:** Zoë
+**Callsign:** TACCO
 **Author:** Steve Griffing, PE(CSE), CISSP-ISSEP, CPP
 **License:** CC BY 4.0 — creativecommons.org/licenses/by/4.0
-**Revision:** R (Rev R baseline — Zoë naming finalised from CAPE-B-2; EMI-hardened variant of CAPE-B-1 Rev M, Ethernet PHY restored)
+**Revision:** R (Rev R baseline — TACCO naming finalised from CAPE-B-2; EMI-hardened variant of CAPE-B-1 Rev M, Ethernet PHY restored)
 **Date:** 2026-06-07
 **Status:** Schematic complete — PCB layout pending. **Rev S1 reconciliation IN PROGRESS
 (2026-07-04):** the PCB is already at the intended end-state (LoRa removed, P1/P2 +TOP
 passthrough rails placed) but the **schematic lags** — it still carries the LoRa block, the
-now-obsolete `J_XCVR` Emma-cable connector, and an SBUS block, and uses a **different
+now-obsolete `J_XCVR` COMMO-cable connector, and an SBUS block, and uses a **different
 reference-designator convention** from the PCB (only ~10 of ~50 refs match). A load-blocking
-stray-`(comment)` bug in `Zoë.kicad_sch` was fixed 2026-07-04 (it now opens in kicad-cli).
+stray-`(comment)` bug in `TACCO.kicad_sch` was fixed 2026-07-04 (it now opens in kicad-cli).
 The remaining schematic reconciliation needs a **user-confirmed sch↔pcb reference-designator
 remap** before edits — see TODO.md §1.2b and `avionics/CLAUDE.md`.
 
@@ -18,11 +18,11 @@ remap** before edits — see TODO.md §1.2b and `avionics/CLAUDE.md`.
 
 ## Purpose
 
-Zoë is the electromagnetic-environment-hardened variant of CAPE-B-1
-(Rev M), designed for the same harsh nacelle and fuselage EM environment as Wash.
+TACCO is the electromagnetic-environment-hardened variant of CAPE-B-1
+(Rev M), designed for the same harsh nacelle and fuselage EM environment as Pilot.
 The communications payload of this cape (SiK 915 MHz, LoRa 915 MHz, WiFi 2.4/5 GHz,
 49 MHz Part 15 §15.235) is inherently more susceptible to radiated interference than the purely
-digital Wash, so hardening concentrates on conducted immunity for the wired
+digital Pilot, so hardening concentrates on conducted immunity for the wired
 buses and supply rails, and on keeping the RF subsystem's susceptibility low through
 better supply filtering and digital-interface isolation from the RF groundplane.
 
@@ -32,7 +32,7 @@ better supply filtering and digital-interface isolation from the RF groundplane.
 
 ### 1. Ethernet PHY removal (space recovery)
 
-Identical rationale to Wash: both DP83825I PHYs, their magnetics, and the two
+Identical rationale to Pilot: both DP83825I PHYs, their magnetics, and the two
 ETH-P/ETH-N JST-GH connectors are removed. The 22 P2 expansion-header pins formerly
 allocated to RMII0/1, MDC, MDIO, and PHY control signals become no-connect.
 
@@ -41,14 +41,14 @@ without any overall board size increase from the CAPE-B-1 55 × 35 mm footprint.
 
 ### 2. CAN FD transceiver: ATA6561 → ISOW1044BDFMR
 
-Identical substitution to Wash. See Wash.md §2 for full rationale.
+Identical substitution to Pilot. See Pilot.md §2 for full rationale.
 The isolated transceiver (ISOW1044BDFMR, SOIC-16, DigiKey 296-ISOW1044BDFMRCT-ND)
 provides 5 kV reinforced isolation, ±42 V bus fault tolerance, and an integrated DC/DC
 converter that generates the isolated bus-side supply from the 3.3 V logic rail.
 
 ### 3. RS-485 transceiver: MAX3485E → ADM2795EBRWZ
 
-Identical substitution to Wash. See Wash.md §3. Half-duplex direction-control
+Identical substitution to Pilot. See Pilot.md §3. Half-duplex direction-control
 via RS485_DE (tied to both DE and RE_N) is preserved.
 
 ### 4. Common-mode chokes on CAN and RS-485 bus lines
@@ -116,7 +116,7 @@ WiFi TX switching noise from coupling into the digital SPI and UART lines:
 
 ### 9. RCRS-49 sub-module header (J1) EMI filter
 
-The J1 6-pin JST-GH header connecting to the Emma sub-module has the following
+The J1 6-pin JST-GH header connecting to the COMMO sub-module has the following
 protection:
 
 - TVS-RCRS (PRTR5V0U2X): protects UART_RCRS_TX, UART_RCRS_RX, and PTT_N lines
@@ -132,13 +132,13 @@ protection:
 
 ### 10. Power entry filter
 
-Identical to Wash: π-filter (C11 = 47 µF, FB1 = Würth 742792512, C12 = 10 µF +
-100 nF) on the +5V supply at J-PWR. See Wash.md §6.
+Identical to Pilot: π-filter (C11 = 47 µF, FB1 = Würth 742792512, C12 = 10 µF +
+100 nF) on the +5V supply at J-PWR. See Pilot.md §6.
 
 ### 11. Chassis ground (PGND) implementation
 
-Same single-point chassis ground topology as Wash. PGND additional connections
-specific to Zoë:
+Same single-point chassis ground topology as Pilot. PGND additional connections
+specific to TACCO:
 
 - SMA connector shields for all antenna ports (SMA-915-SIK, SMA-915-LORA, SMA-WIFI,
 
@@ -150,36 +150,36 @@ specific to Zoë:
 
 ### 12. RF supply decoupling (upgraded from CAPE-B-1)
 
-CAPE-B-1 had 100 µF + 100 nF per radio VCC (U16 ferrite + bulk cap array). Zoë
+CAPE-B-1 had 100 µF + 100 nF per radio VCC (U16 ferrite + bulk cap array). TACCO
 upgrades to:
 
 | Radio | Input supply filter | VCC bypass |
 | --- | --- | --- |
 | SiK RFD900x | 10 µH inductance + 47 µF (before module VCC) | 100 nF + 10 nF at module pin |
 | RFM95W | 100 Ω ferrite + 10 µF + 100 nF | 100 nF + 10 nF at module pin |
-| WL1837MOD | TPS63031 output + 1 µH + 47 µF (Zoë added) | 10 µF + 100 nF at module pin |
-| RCRS-49 J1 | 10 µF + 100 nF at J1 pin | (on Emma board) |
+| WL1837MOD | TPS63031 output + 1 µH + 47 µF (TACCO added) | 10 µF + 100 nF at module pin |
+| RCRS-49 J1 | 10 µF + 100 nF at J1 pin | (on COMMO board) |
 
 ---
 
 ## PCB Layout Constraints (additions to CAPE-B-1 rules)
 
-The Wash layout constraints apply equally here, including the ≥ 8 mm creepage / ≥ 1.5 mm
+The Pilot layout constraints apply equally here, including the ≥ 8 mm creepage / ≥ 1.5 mm
 clearance requirement between GND1 and GND2 copper pours on the ISOW1044BDFMR and
-ADM2795EBRWZ [REF-IEC-001 §5.5.2] [REF-VDE-001 Cl.4.3] — see Wash.md "Isolation creepage."
+ADM2795EBRWZ [REF-IEC-001 §5.5.2] [REF-VDE-001 Cl.4.3] — see Pilot.md "Isolation creepage."
 
-> **Verification status (2026-06-22, `kicad-cli pcb drc` against `Zoë.kicad_pcb`,
-> KiCad 9.0.2): NOT MET — BLOCKS PCB fab.** Same finding as Wash, with different
+> **Verification status (2026-06-22, `kicad-cli pcb drc` against `TACCO.kicad_pcb`,
+> KiCad 9.0.2): NOT MET — BLOCKS PCB fab.** Same finding as Pilot, with different
 > numbers: after excluding same-package pin-to-pin spacing, DRC found **9 genuine
 > cross-domain clearance violations** between the `TMESH_P`/`TMESH_N` tamper-detect
 > mesh (and, in one case, a primary-side Ethernet PHY ground pad) and the isolated
 > `GND2_CAN`/`GND2_RS485` domains, with actual measured spacing as low as **0.0 mm**
 > (direct contact) — short of the 0.5 mm `ISOLATION` netclass DRC minimum and the
-> ≥ 8 mm physical creepage target. Tracked in `TODO.md` §1.2a alongside Wash's
+> ≥ 8 mm physical creepage target. Tracked in `TODO.md` §1.2a alongside Pilot's
 > equivalent finding. Not fixed here — referred to the user per `CLAUDE.md`'s
 > manual-footprint-placement policy.
 
-Additional Zoë specifics:
+Additional TACCO specifics:
 
 - **RF groundplane moat:** The RFD900x and RFM95W occupy the same RF section as in
 
@@ -199,7 +199,7 @@ Additional Zoë specifics:
 
 - **RCRS-49 header J1:** Place within 5 mm of the board edge so the cable run to the
 
-  Emma module is minimised. Apply a PGND guard pour around J1.
+  COMMO module is minimised. Apply a PGND guard pour around J1.
 
 ---
 
@@ -345,7 +345,7 @@ headroom absorbed by the new isolated transceivers (~80 mA combined increase).
 
 ## EMC Compliance Targets
 
-Same as Wash: IEC 61000-4-2 Level 4 [REF-IEC-003], IEC 61000-4-4 Level 4 [REF-IEC-004],
+Same as Pilot: IEC 61000-4-2 Level 4 [REF-IEC-003], IEC 61000-4-4 Level 4 [REF-IEC-004],
 IEC 61000-4-5 Level 3 [REF-IEC-005], MIL-STD-461G RE102 Limit C, RS103 200 V/m [REF-MIL-002].
 
 Additional RF susceptibility note: the RFD900x and RFM95W modules have their own
@@ -368,7 +368,7 @@ All field connectors are shielded JST-GH (or SMA/U.FL for RF). SHIELD pins conne
 | J_485 | SM03B-GHS-TB-1MP | 1=RS485_B_P, 2=RS485_B_N, 3=GND, MP=PGND | RS-485 |
 | J_1553 | SM04B-GHS-TB-1MP | 1=BUS_1553_B_P, 2=BUS_1553_B_N, 3=GND, 4=PGND, MP=PGND | MIL-STD-1553B |
 | J_ETH_B | SM06B-GHS-TB-1MP | 1=GND, 2=ETHB_TX+, 3=ETHB_TX-, 4=ETHB_RX+, 5=ETHB_RX-, 6=GND, MP=PGND | Ethernet PHY |
-| J_XCVR | SM06B-GHS-TB-1MP | 1=GND, 2=+5V, 3=UART_RCRS_TX, 4=XCVR_RX_RAW, 5=XCVR_PTT_N, 6=+3V3, MP=PGND | Emma header |
+| J_XCVR | SM06B-GHS-TB-1MP | 1=GND, 2=+5V, 3=UART_RCRS_TX, 4=XCVR_RX_RAW, 5=XCVR_PTT_N, 6=+3V3, MP=PGND | COMMO header |
 | J_FAN | SM03B-GHS-TB-1MP | 1=GND, 2=+5V, 3=FAN_PWM_B, MP=PGND | Bay ventilation fan |
 | J_SD | MicroSD (Molex 503182-1852) | SDIO: CLK/CMD/D0-D3/CD/WP | Logging microSD |
 | J_SMA_LORA | SMA (50 Ω) | RF center conductor = LORA_ANT; shell = PGND | LoRa 915 MHz antenna |
@@ -376,9 +376,9 @@ All field connectors are shielded JST-GH (or SMA/U.FL for RF). SHIELD pins conne
 | J_SIK_ANT | Hirose U.FL | RF center = SIK_ANT; shell = PGND | SiK 915 MHz module pigtail |
 | J_SMA_SIK | SMA (50 Ω) | RF center via FL_SIK; shell = PGND | SiK 915 MHz antenna output |
 
-Note: Zoë uses `_B_` net name suffixes on CAN, RS-485, and 1553 bus signals
+Note: TACCO uses `_B_` net name suffixes on CAN, RS-485, and 1553 bus signals
 (CAN_B_H/CAN_B_L, RS485_B_P/RS485_B_N, BUS_1553_B_P/BUS_1553_B_N) to distinguish
-them from Wash's `_A_` nets, allowing both boards to coexist on a shared
+them from Pilot's `_A_` nets, allowing both boards to coexist on a shared
 schematic bus ring without net name conflicts.
 
 ---
@@ -387,7 +387,7 @@ schematic bus ring without net name conflicts.
 
 - `CAPE-B-1.kicad_sch` — standard (non-EMI-hardened) variant, Rev M baseline
 - `XCVR-49MHZ-2.kicad_sch` — EMI-hardened 49 MHz transceiver
-- `Wash.md` — EMI-hardened flight control cape
+- `Pilot.md` — EMI-hardened flight control cape
 - `AVIONICS_PB2_REDESIGN.md` — system architecture
 
 ---

@@ -334,7 +334,7 @@ routed through the π-filter (FB1/C11/C12) before distribution to the cape rail.
 - `CAPE-A-1.kicad_sch` — standard (non-EMI-hardened) variant, Rev M baseline
 - `AVIONICS_PB2_REDESIGN.md` — system architecture and power budgets
 - `Emma.md` — EMI-hardened 49 MHz transceiver, XCVR-49MHZ-2 (companion board)
-- `Zoë.md` — EMI-hardened comms/logging cape (companion board)
+- `TACCO.md` — EMI-hardened comms/logging cape (companion board)
 - `Wash.kicad_sch` — schematic for this board (canonical filename: Wash.kicad_sch)
 
 ---

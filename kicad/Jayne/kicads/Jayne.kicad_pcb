@@ -8,7 +8,7 @@
 	)
 	(paper "A3")
 	(title_block
-		(title "Jayne — Nose/Cargo-Bay Vision, ToF & Laser Board (Jayne cargo-handling system)")
+		(title "Observer — Nose/Cargo-Bay Vision, ToF & Laser Board (Observer cargo-handling system)")
 		(date "2026-07-03")
 		(rev "-")
 		(comment 1 "Serenity UAV — STANDALONE board, NOT a PocketBeagle 2 Industrial cape")
@@ -173,7 +173,7 @@
 	(net 90 "U_REG_1V2_SW")
 	(net 91 "U_REG_3V3_FB")
 	(net 92 "U_REG_3V3_SW")
-	(footprint "Jayne:TQFP-128-1EP_KSZ9477_14x14mm_P0.4mm_EP10x10"
+	(footprint "Observer:TQFP-128-1EP_KSZ9477_14x14mm_P0.4mm_EP10x10"
 		(layer "F.Cu")
 		(uuid "053bfbfe-15fb-44ac-9b72-5e7a04f8e98b")
 		(at 192.5 140.5)
@@ -2646,7 +2646,7 @@
 			)
 		)
 	)
-	(footprint "Jayne:DS_Camera_9P"
+	(footprint "Observer:DS_Camera_9P"
 		(layer "F.Cu")
 		(uuid "25f13b19-c0eb-4c97-bcc9-b85bdcc75011")
 		(at 230 148.5)
@@ -11034,7 +11034,7 @@
 			)
 		)
 	)
-	(footprint "Jayne:DS_Laser_2P"
+	(footprint "Observer:DS_Laser_2P"
 		(layer "F.Cu")
 		(uuid "b61cf431-10d0-4224-9d3b-592ace06e9bd")
 		(at 233.5 153)
@@ -11657,7 +11657,7 @@
 			)
 		)
 	)
-	(footprint "Jayne:DS_ToF_4P"
+	(footprint "Observer:DS_ToF_4P"
 		(layer "F.Cu")
 		(uuid "c86319e0-b9e2-40c3-80c2-edbaa859949a")
 		(at 224.5 162)
@@ -15491,7 +15491,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Jayne:Wurth_749010012A_10-100BASE-TX"
+	(footprint "Observer:Wurth_749010012A_10-100BASE-TX"
 		(layer "B.Cu")
 		(uuid "c71c1626-ecde-4f6d-85da-4970627d4e81")
 		(at 229 146.5 180)
@@ -15636,7 +15636,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Jayne:phyCORE-AM62x_PCM071_2xBTH-060"
+	(footprint "Observer:phyCORE-AM62x_PCM071_2xBTH-060"
 		(layer "B.Cu")
 		(uuid "e60f6127-17d0-4805-bbc2-f0245f8379bb")
 		(at 200 151 90)
@@ -17510,7 +17510,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Jayne:Wurth_749010012A_10-100BASE-TX"
+	(footprint "Observer:Wurth_749010012A_10-100BASE-TX"
 		(layer "B.Cu")
 		(uuid "e646b3fe-c871-43e0-9920-0d85f66de1e2")
 		(at 229 156.27)
@@ -17759,7 +17759,7 @@
 		(layer "Edge.Cuts")
 		(uuid "e32c0991-b2f0-4b5e-8805-f3e4e0a0151d")
 	)
-	(gr_text "Jayne Rev - (design exploration)"
+	(gr_text "Observer Rev - (design exploration)"
 		(at 22.5 39.5 -0)
 		(layer "B.Fab")
 		(uuid "7e5aec00-0000-0000-0000-000000000009")

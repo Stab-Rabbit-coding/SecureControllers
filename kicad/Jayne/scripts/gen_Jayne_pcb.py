@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""gen_jayne_pcb.py — Generate Jayne.kicad_pcb (component placement + net-correct footprints).
+"""gen_jayne_pcb.py — Generate Observer.kicad_pcb (component placement + net-correct footprints).
 
-Jayne is a STANDALONE board (not a PocketBeagle 2 Industrial cape). Double-sided, 4-layer
-FR4, rounded corners (3mm radius, matching Wash/Kaylee convention).
+Observer is a STANDALONE board (not a PocketBeagle 2 Industrial cape). Double-sided, 4-layer
+FR4, rounded corners (3mm radius, matching Wash/FlightEngineer convention).
 
 EMI HARDENING (added 2026-07-03, matching Wash/Zoe Rev R baseline — see TODO.md §1.2c and
-Jayne.md "EMI Hardening Status"): both Ethernet ports now carry the full magnetics +
+Observer.md "EMI Hardening Status"): both Ethernet ports now carry the full magnetics +
 common-mode-choke + TVS chain (Wurth 749010012A transformer, 2x Bourns SRF2012-100Y
 common-mode chokes, 2x Nexperia PRTR5V0U2X TVS per port), and the CAN-FD transceiver is the
 galvanically-isolated TI ISOW1044BDFMR (replacing the earlier non-isolated TCAN1042HG-Q1)
@@ -34,7 +34,7 @@ IMPORTANT — footprint honesty policy for this file:
     per-component to roughly match real proportions (see comp_2row_placeholder docstring) —
     it is still not a real ball-out/lead-frame, just less absurdly oversized.
 
-    NOTE: as of 2026-07-07 the hand-edited KiCad output in `avionics/kicad/Jayne.kicad_pcb`
+    NOTE: as of 2026-07-07 the hand-edited KiCad output in `avionics/kicad/Observer.kicad_pcb`
     was further compacted to the current 1.0 × 2.75 in (25.4 × 69.85 mm) baseline in the GUI.
     This script still generates the 78×80 mm pre-compaction layout. Do not re-run it unless you intend to
     overwrite the manual compaction, or update the generator to match the new baseline.
@@ -62,7 +62,7 @@ def _uid() -> str:
 
 
 # ---------------------------------------------------------------------------
-# Net registry — must match the nets present in Jayne.kicad_sch's netlist export
+# Net registry — must match the nets present in Observer.kicad_sch's netlist export
 # ---------------------------------------------------------------------------
 _NET_NAMES = [
     "",
@@ -582,7 +582,7 @@ def comp_2row_placeholder(
 
 
 def rounded_board_outline(w, h, radius=3.0):
-    """4 straight Edge.Cuts segments + 4 corner arcs, matching Wash/Kaylee's
+    """4 straight Edge.Cuts segments + 4 corner arcs, matching Wash/FlightEngineer's
     real rounded-corner board outline convention."""
     r = radius
     k = r * (1 - math.sqrt(2) / 2)  # 45-degree arc midpoint offset
@@ -881,12 +881,12 @@ def gen_pcb() -> str:
         "\t)",
         '\t(paper "A3")',
         "\t(title_block",
-        '\t\t(title "Jayne — Nose/Cargo-Bay Vision, ToF & Laser Board")',
+        '\t\t(title "Observer — Nose/Cargo-Bay Vision, ToF & Laser Board")',
         '\t\t(date "2026-07-03")',
         '\t\t(rev "-")',
         '\t\t(comment 1 "Serenity UAV — STANDALONE board, NOT a PocketBeagle 2 Industrial cape")',
         '\t\t(comment 2 "CC BY 4.0 creativecommons.org/licenses/by/4.0")',
-        '\t\t(comment 3 "78×80 mm pre-compaction layout, 4-layer FR4, DOUBLE-SIDED, EMI-hardened — actual hand-compacted board is 1.0 × 2.75 in (25.4 × 69.85 mm) in avionics/kicad/Jayne.kicad_pcb")',
+        '\t\t(comment 3 "78×80 mm pre-compaction layout, 4-layer FR4, DOUBLE-SIDED, EMI-hardened — actual hand-compacted board is 1.0 × 2.75 in (25.4 × 69.85 mm) in avionics/kicad/Observer.kicad_pcb")',
         '\t\t(comment 4 "U1/U2/U3/U5/U_PMIC use PLACEHOLDER footprints — not real packages, see docstring")',
         "\t)",
     ]
@@ -923,7 +923,7 @@ def gen_pcb() -> str:
 
     lines += rounded_board_outline(W, H, radius=3.0)
     lines += [
-        f'\t(gr_text "Jayne Rev - (design exploration)" (at {W/2:.2f} {H + 3.0:.2f} 0) (layer "F.Fab")',
+        f'\t(gr_text "Observer Rev - (design exploration)" (at {W/2:.2f} {H + 3.0:.2f} 0) (layer "F.Fab")',
         f"\t\t(effects (font (size 1.5 1.5) (thickness 0.15)))",
         f'\t\t(uuid "{_uid()}"))',
         f'\t(gr_text "Griffing Technology LLC | CC BY 4.0" (at {W/2:.2f} {H + 5.5:.2f} 0) (layer "F.Fab")',
@@ -953,7 +953,7 @@ def gen_pcb() -> str:
         AM62A_L,
         AM62A_R,
         AM62A_SIZE,
-        "Jayne:BGA484_18x18mm_PLACEHOLDER",
+        "Observer:BGA484_18x18mm_PLACEHOLDER",
         AM62A_NETMAP,
         pitch=1.27,
     )
@@ -983,7 +983,7 @@ def gen_pcb() -> str:
         PMIC_L,
         PMIC_R,
         PMIC_SIZE,
-        "Jayne:PMIC_TPS65219_PLACEHOLDER_VQFN32",
+        "Observer:PMIC_TPS65219_PLACEHOLDER_VQFN32",
         PMIC_NETMAP,
         side="B",
         pitch=1.0,
@@ -997,7 +997,7 @@ def gen_pcb() -> str:
         TPM_L,
         TPM_R,
         TPM_SIZE,
-        "Jayne:TPM_SLB9670_PLACEHOLDER_VQFN32",
+        "Observer:TPM_SLB9670_PLACEHOLDER_VQFN32",
         TPM_NETMAP,
         side="B",
         pitch=1.0,
@@ -1011,7 +1011,7 @@ def gen_pcb() -> str:
         MSPM0_L,
         MSPM0_R,
         MSPM0_SIZE,
-        "Jayne:MSPM0G3507_PLACEHOLDER_VSSOP28",
+        "Observer:MSPM0G3507_PLACEHOLDER_VSSOP28",
         MSPM0_NETMAP,
         side="B",
         pitch=0.65,
@@ -1029,7 +1029,7 @@ def gen_pcb() -> str:
         KSZ_L,
         KSZ_R,
         KSZ_SIZE,
-        "Jayne:QFN128_KSZ9477_PLACEHOLDER_14x14mm",
+        "Observer:QFN128_KSZ9477_PLACEHOLDER_14x14mm",
         KSZ_NETMAP,
         side="B",
         pitch=0.9,
@@ -1219,7 +1219,7 @@ def gen_pcb() -> str:
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
     content = gen_pcb()
-    path = here.parent / "kicads" / "Jayne.kicad_pcb"
+    path = here.parent / "kicads" / "Observer.kicad_pcb"
     path.write_text(content, encoding="utf-8")
     print(f"  Written: {path}  ({len(content):,} bytes)")
     print("Done.")

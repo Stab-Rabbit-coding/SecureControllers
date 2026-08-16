@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-gen_kaylee.py — Kaylee Power Distribution Board KiCad file generator
+gen_kaylee.py — FlightEngineer Power Distribution Board KiCad file generator
 
 Outputs to avionics/kicad/:
-    Kaylee.kicad_pro  (project + net classes)
-    Kaylee.kicad_sch  (schematic, A1, v20240101)
-    Kaylee.kicad_pcb  (90x65 mm 4-layer PCB outline + stackup)
+    FlightEngineer.kicad_pro  (project + net classes)
+    FlightEngineer.kicad_sch  (schematic, A1, v20240101)
+    FlightEngineer.kicad_pcb  (90x65 mm 4-layer PCB outline + stackup)
 
-Reference: avionics/kicad/Kaylee.md  Rev R  2026-06-11
+Reference: avionics/kicad/FlightEngineer.md  Rev R  2026-06-11
 Author: Steve Griffing PE(CSE) CISSP-ISSEP CPP  |  CC BY 4.0
 Usage:  python3 gen_kaylee.py   (run from any dir)
 """
@@ -24,7 +24,7 @@ _cnt = [0]
 
 
 def _uid(tag: str) -> str:
-    return str(uuid.uuid5(_NS, f"Kaylee:{tag}"))
+    return str(uuid.uuid5(_NS, f"FlightEngineer:{tag}"))
 
 
 def _seq() -> str:
@@ -187,7 +187,7 @@ def gen_pro() -> str:
         "cvpcb": {"equivalence_files": []},
         "erc": {"erc_exclusions": [], "meta": {"version": 0}, "pin_map": [], "rule_severities": []},
         "libraries": {"pinned_footprint_libs": [], "pinned_symbol_libs": []},
-        "meta": {"filename": "Kaylee.kicad_pro", "version": 3},
+        "meta": {"filename": "FlightEngineer.kicad_pro", "version": 3},
         "net_settings": {
             "classes": [
                 {
@@ -1380,7 +1380,7 @@ def gen_sch() -> str:
     sch = ['(kicad_sch (version 20240101) (generator eeschema)',
            '  (paper "A1")',
            '  (title_block',
-           '    (title "Kaylee — EMI-Hardened Power Distribution Board")'
+           '    (title "FlightEngineer — EMI-Hardened Power Distribution Board")'
            ' (date "2026-06-10") (rev "A") (company "Griffing Technology LLC")',
            '    (comment 1 "Serenity UAV Power Distribution Board — 90x65mm 4-layer FR4-TG170")',
            '    (comment 2 "Copyright 2026 Steve Griffing PE(CSE) CISSP-ISSEP CPP |'
@@ -1424,7 +1424,7 @@ def gen_pcb() -> str:
         '\t)',
         '\t(paper "A4")',
         '\t(title_block',
-        '\t\t(title "Kaylee")',
+        '\t\t(title "FlightEngineer")',
         '\t\t(date "2026-06-10")',
         '\t\t(rev "A")',
         '\t\t(comment 1 "Serenity-Class Tiltrotor UAV — Power Distribution Board")',
@@ -1460,7 +1460,7 @@ def gen_pcb() -> str:
         f'\t\t(stroke (width 0.05) (type default)) (layer "Edge.Cuts")',
         f'\t\t(uuid "{_next_uid()}"))',
         # Fab-layer board reference text
-        f'\t(gr_text "Kaylee Rev R" (at {W/2:.2f} {H + 2.5:.2f} 0) (layer "F.Fab")',
+        f'\t(gr_text "FlightEngineer Rev R" (at {W/2:.2f} {H + 2.5:.2f} 0) (layer "F.Fab")',
         f'\t\t(effects (font (size 1.5 1.5) (thickness 0.15)))',
         f'\t\t(uuid "{_next_uid()}"))',
         f'\t(gr_text "Griffing Technology LLC | CC BY 4.0" (at {W/2:.2f} {H + 5.0:.2f} 0)'
@@ -1502,9 +1502,9 @@ def gen_pcb() -> str:
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
     out = {
-        "Kaylee.kicad_pro": gen_pro(),
-        "Kaylee.kicad_sch": gen_sch(),
-        "Kaylee.kicad_pcb": gen_pcb(),
+        "FlightEngineer.kicad_pro": gen_pro(),
+        "FlightEngineer.kicad_sch": gen_sch(),
+        "FlightEngineer.kicad_pcb": gen_pcb(),
     }
     for fname, content in out.items():
         path = here / fname

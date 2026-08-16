@@ -25,8 +25,8 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 | Master § | Branch | Open | First flight |
 |----------|--------|-----:|:------------:|
 | §1.2a | 1.2a — PCB Design: Wash, Zoe, Emma (EMI-hardened) | 37 | &#9733; |
-| §1.2b | 1.2b — PCB Redesigns: Emma / Zoe / Kaylee Rev S1 | 26 | &#9733; |
-| §1.2c | 1.2c — PCB Design: Jayne (Jayne vision/ToF/laser subsystem) | 22 | — |
+| §1.2b | 1.2b — PCB Redesigns: Emma / Zoe / FlightEngineer Rev S1 | 26 | &#9733; |
+| §1.2c | 1.2c — PCB Design: Observer (Observer vision/ToF/laser subsystem) | 22 | — |
 | §1.4 | 1.4 — EMI Hardening Beyond the PCBs (500 W/m^2) | 43 | &#9733; |
 | §0.6 | 0.6 — IEC 62368-1 PCB Layout Isolation Verification | 0 | &#9733; |
 | §1.3 | 1.3 — PCB Design: XCVR-49MHZ-1 (SUPERSEDED) | 0 | — |
@@ -35,7 +35,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 | §4.2 | 4.2 — FC Node (Wash) Firmware | 38 | &#9733; |
 | §4.3 | 4.3 — CN Node (Zoe) Firmware | 36 | &#9733; |
 | §4.4 | 4.4 — Both Nodes (shared firmware) | 22 | &#9733; |
-| §4.6 | 4.6 — Jayne Node Firmware (Jayne vision subsystem) | 15 | — |
+| §4.6 | 4.6 — Observer Node Firmware (Observer vision subsystem) | 15 | — |
 | §1.8 | 1.8 — Names | 0 | — |
 | §1.9 | 1.9 — Avionics Workload Balancing | 0 | — |
 | | **Total open (this subsystem)** | **239** | |
@@ -43,21 +43,21 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 ---
 
 
-## Cross-cutting system: Jayne (cargo handling)
+## Cross-cutting system: Observer (cargo handling)
 
-> **Jayne is a ship-level integrating system, not a single WBS branch.** It comprises the cargo-bay doors, the N20 winch / Dyneema hoist, the auto-latch, the gondola, **and the Jayne vision/ToF/laser PCB as its sensing subsystem**. Its work is distributed across subsystem WBS files:
+> **Observer is a ship-level integrating system, not a single WBS branch.** It comprises the cargo-bay doors, the N20 winch / Dyneema hoist, the auto-latch, the gondola, **and the Observer vision/ToF/laser PCB as its sensing subsystem**. Its work is distributed across subsystem WBS files:
 >
-> | Jayne subsystem | Where tracked |
+> | Observer subsystem | Where tracked |
 > |---|---|
 > | Doors, winch, latch, gondola — geometry/STLs | [airframe/TODO.md](../airframe/TODO.md) §1.1 |
 > | Cargo procurement (BOM) | master [`TODO.md` §2.6](../TODO.md) |
-> | **Jayne** vision/ToF/laser board | [avionics/TODO.md](../avionics/TODO.md) §1.2c |
-> | **Jayne** node firmware | [avionics/TODO.md](../avionics/TODO.md) §4.6 |
+> | **Observer** vision/ToF/laser board | [avionics/TODO.md](../avionics/TODO.md) §1.2c |
+> | **Observer** node firmware | [avionics/TODO.md](../avionics/TODO.md) §4.6 |
 > | Payload/winch control firmware (Simon = payload-primary) | [avionics/TODO.md](../avionics/TODO.md) §4.2 / §4.3 |
 > | Physical assembly & install | [graphical-build-guide/TODO.md](../graphical-build-guide/TODO.md) Phase 7 |
 > | Range-extender battery in the cargo bay (deferred) | [deferred/TODO.md](../deferred/TODO.md) Phase 12 |
 >
-> **Note for this file:** §1.2c (Jayne board) and §4.6 (Jayne firmware) below are the sensing subsystem of Jayne; Kaylee's dedicated Jayne 5 V rail lives in §1.2b. The mechanical cargo hardware they serve is in [airframe/TODO.md](../airframe/TODO.md) and Phase 7.
+> **Note for this file:** §1.2c (Observer board) and §4.6 (Observer firmware) below are the sensing subsystem of Observer; FlightEngineer's dedicated Observer 5 V rail lives in §1.2b. The mechanical cargo hardware they serve is in [airframe/TODO.md](../airframe/TODO.md) and Phase 7.
 
 
 ## §1.2a — PCB Design: Wash, Zoe, Emma (EMI-hardened) &#9733;
@@ -77,16 +77,16 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 - [ ] **Redesign the tamper mesh as a per-domain anti-tamper mesh (all 4 capes).**
     The current `TMESH_P`/`TMESH_N` cross-hatch grid on F.Cu/B.Cu shorts across SMD
     pads and across the isolated `GND2_*` domains (≈335 of Wash's 465 DRC errors;
-    similar on Zoë). Rework as one monitored mesh net per isolation region
+    similar on TACCO). Rework as one monitored mesh net per isolation region
     (secure/`GND` + per-`GND2_CAN`/`GND2_ETH`/`GND2_RS485` field side), keeping the
     0.5 mm `ISOLATION` creepage moat clear between domains. **BLOCKS DRC-clean.**
     Quantified against the IEC 62368-1 reinforced-insulation requirement in §0.6
     (2026-06-22): 13 genuine cross-domain `TMESH`-vs-`GND2_*` violations on Wash
-    (min 0.125 mm), 9 on Zoë (min 0.0 mm/direct contact) — both far short of the
+    (min 0.125 mm), 9 on TACCO (min 0.0 mm/direct contact) — both far short of the
     0.5 mm netclass minimum and the ≥ 8 mm physical creepage target in `Wash.md`.
-- [ ] **Carry the tamper signal over the link for the TPM-less boards.** Kaylee
-    and Emma have no local TPM: route Kaylee's mesh signal to Wash and
-    Emma's to Zoë over the inter-board link.
+- [ ] **Carry the tamper signal over the link for the TPM-less boards.** FlightEngineer
+    and Emma have no local TPM: route FlightEngineer's mesh signal to Wash and
+    Emma's to TACCO over the inter-board link.
 - [ ] **Route the rearranged capes.** The manual component reseat left ~60 signal
     nets per cape unrouted (7 power/ground nets are planes). Headless freerouting
     was **not** usable (see toolchain findings in `avionics/kicad/README.md`):
@@ -95,8 +95,8 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     KiCad GUI**; route the impedance-controlled Ethernet pairs interactively
     (length-matched, 100 Ω ±10% MDI). **BLOCKS gerbers / fab.**
 - [ ] **Clear residual DRC after mesh + routing** (counts measured 2026-06-12,
-    error+warning): Wash 465 / 121 unconnected, Zoë 554 / 146, Emma 421 /
-    160, Kaylee 221 / 181. Remaining types after the mesh fix are mostly
+    error+warning): Wash 465 / 121 unconnected, TACCO 554 / 146, Emma 421 /
+    160, FlightEngineer 221 / 181. Remaining types after the mesh fix are mostly
     silk-over-copper, text-height, courtyard-overlap, and lib-footprint mismatch.
 - [ ] **Wash footprint-vs-datasheet verification — DONE 2026-07-13 (Claude Opus 4.8);
     7 footprints are NOT manufacturable, must be rebuilt before fab.** Full report:
@@ -142,7 +142,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     Verification proved the schematic (`Wash.kicad_sch`) and PCB are *different designs*
     (schematic = DP83825I + HX1188NL + TPS62933; PCB = ADIN1300 + 749010012A + ISO6442),
     and that net→pin maps are wrong on multiple parts (TPM signals on NC/VDD/GND pins;
-    ISO6442 channels shorted). Fixing the PCB alone would re-create the Emma/Zoë sch↔pcb
+    ISO6442 channels shorted). Fixing the PCB alone would re-create the Emma/TACCO sch↔pcb
     divergence, so the rebuild is **schematic-first** (user choice). **Ethernet PHY =
     ADIN1300** (the EMI-hardening rework moved to ADI's industrial PHY; it's on the PCB and
     is the datasheet on hand) — `Wash.md`/schematic DP83825I baseline is superseded.
@@ -181,13 +181,13 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 - [ ] **Generate Wash gerbers** — `CAPE-A-2.kicad_pcb` complete; run DRC to zero errors in
     KiCad; export to `avionics/kicad/gerbers/CAPE-A-2/`; re-export drill files.
     - **BLOCKS Wash fab order**
-- [ ] **Generate Zoë gerbers** — `CAPE-B-2.kicad_pcb` complete; same DRC + export procedure;
+- [ ] **Generate TACCO gerbers** — `CAPE-B-2.kicad_pcb` complete; same DRC + export procedure;
     export to `avionics/kicad/gerbers/CAPE-B-2/`.
-    - **BLOCKS Zoë fab order**
-- [ ] **Zigbee RF chain was never actually added to Zoë — PCB scope gap (flagged 2026-06-22,
+    - **BLOCKS TACCO fab order**
+- [ ] **Zigbee RF chain was never actually added to TACCO — PCB scope gap (flagged 2026-06-22,
     cross-ref §1.4.2).** The "remove Wi-Fi, sik, and loRa antennas" item above (2026-06-05)
     names Zigbee as a target XCVR circuit, but only LoRa/SiK/Wi-Fi filter chains were built;
-    `Zoë.kicad_sch` has no CC2652R7 (or equivalent Zigbee SoC), no Zigbee antenna filter, and
+    `TACCO.kicad_sch` has no CC2652R7 (or equivalent Zigbee SoC), no Zigbee antenna filter, and
     no SMA/diplexer pad. `CLAUDE.md` lists Zigbee 2.4 GHz as one of the 4 required external
     C2 links — this is a real hardware gap, not yet scheduled to a revision. **Antenna
     strategy already decided (§1.4.2, 2026-06-22):** restrict WL1837MOD Wi-Fi to 5 GHz only
@@ -218,8 +218,8 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] **River's Room cage** (Cape-A-2 + Cape-B-2 + Emma stack) — add Emma board clearance and
         LoRa/49 MHz feedthrough ports to the FAR-FT-PANEL design.
     - [ ] **Simon's Medbay cage** (Cape-A-2 + Cape-B-2 + Emma stack) — same scope as River's Room.
-    - [ ] **Kaylee (PDB) enclosure** — verify whether the PDB needs a full Faraday cage or only a
-        bond strap to the keel ground plane (no TPM/RF on Kaylee; see §1.2 "Carry the tamper
+    - [ ] **FlightEngineer (PDB) enclosure** — verify whether the PDB needs a full Faraday cage or only a
+        bond strap to the keel ground plane (no TPM/RF on FlightEngineer; see §1.2 "Carry the tamper
         signal over the link for the TPM-less boards").
     - [ ] Bond each cage to the airframe ground reference via FAR-BOND-STRAP with no second
         return path (avoid ground loops per §1.4.1 prose constraint).
@@ -237,18 +237,18 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Ethernet (CPSW3G ring) — shielded Cat5e/Cat6, 100 Ω ±10% MDI pairs matching the
         impedance-controlled PCB traces already specified at §1.2.
     - [ ] Servo/PWM and ESC telemetry leads — twisted pair, routed ≥5 mm from RF/antenna runs.
-    - [ ] Power harness (14 AWG nacelle feeds, battery-to-Kaylee) — twisted where co-routed with
+    - [ ] Power harness (14 AWG nacelle feeds, battery-to-FlightEngineer) — twisted where co-routed with
         signal wiring; ferrite bead at each digital/RF section boundary crossing.
 
 
-## §1.2b — PCB Redesigns: Emma / Zoe / Kaylee Rev S1 &#9733;
+## §1.2b — PCB Redesigns: Emma / Zoe / FlightEngineer Rev S1 &#9733;
 
 *Master:* [`TODO.md` §1.2b](../TODO.md) — 26 open, 18 done at snapshot.
 
 - [ ] **Emma Rev S1 — add LoRa, replace JST with P1+P2 socket rails**
     - Add RFM95W 915 MHz LoRa module (SPI interface to PB2-I via P1 header pins).
     - Replace JST GH 6P connector with 2× 20-pin 2.54 mm socket rails (P1 + P2),
-        matching Zoë passthrough rail pinout so Emma stacks cleanly on top.
+        matching TACCO passthrough rail pinout so Emma stacks cleanly on top.
     - Update SRF2012-100Y CMC + TVS guard to cover LoRa SPI and antenna lines.
     - Update silk/fab layer: "Emma Rev S1 — 49 MHz AX.25 + LoRa 915 MHz".
     - Fitted in: River's Room, Simon's Medbay only (2 boards total).
@@ -269,7 +269,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
             GPIO only when Emma is detected; otherwise it keeps its `SERVO*`/payload
             function). Emma has no on-board MCU, so the host must key the T/R switch; the
             fixed PB2 pinout has no spare GPIO, hence the repurpose. **Firmware/pinmux
-            sign-off still required**, and note **Simon is payload-primary** (drives Jayne
+            sign-off still required**, and note **Simon is payload-primary** (drives Observer
             cargo/WINCH/LOAD_CELL) so his payload pads contend — River (flight-primary) has
             slack. Provisional pad: PB2-P2 pin 1 (`SERVO7` ball).
         - **RSSI → 1-bit `RSSI_DCD`.** Analog `RSSI_ANA` cannot ride the rail (AM62x GPADC
@@ -291,7 +291,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
             (a pull-up on `RSSI_DCD` is needed if open-drain).
         - [ ] **PTT_N / RSSI_DCD presence-gated pinmux — firmware sign-off owed.** PB2-P2
             pin 1 (SERVO7 ball) / pin 2 (SERVO6 ball) are repurposed only when an Emma
-            cape-ID is detected (DT overlay). **Simon is payload-primary (Jayne/WINCH/
+            cape-ID is detected (DT overlay). **Simon is payload-primary (Observer/WINCH/
             LOAD_CELL) → his payload pads contend;** River (flight-primary) has slack. The
             AM6254 GPADC has no analog rail pin, which is why RSSI is an on-board comparator
             DCD bit, not analog telemetry.
@@ -323,7 +323,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
             reasoning, lower risk than the Ethernet pairs but not yet attempted.
         - [ ] **`GND2_ETH`/`VCC2_ETH` deferred — confirmed isolated domain (2026-06-20).**
             Per user: ETH-PHY/T-ETH/PB2-P1/P2 were intentionally added to Emma so it can provide
-            a second Ethernet port for the Zoë stack (matching Wash's 2-PHY config) and so Emma
+            a second Ethernet port for the TACCO stack (matching Wash's 2-PHY config) and so Emma
             can connect to Ethernet standalone, outside Serenity. `GND2_ETH` is the isolated
             secondary side of the T-ETH transformer — must NOT be bridged to the main GND plane
             (would defeat the isolation). Needs a small isolated copper island/plane, not via-
@@ -337,7 +337,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Gerbers exported — **not done this session; board has 94 unconnected items and
         174 silk warnings, not yet production-ready. Do not export gerbers for fabrication
         until routing and silk cleanup are complete — see items above.**
-- [ ] **Zoë (Cape-B-2) Rev S1 — remove LoRa, add P1+P2 passthrough rails**
+- [ ] **TACCO (Cape-B-2) Rev S1 — remove LoRa, add P1+P2 passthrough rails**
     - [ ] **Full sch↔pcb reference-designator remap — REFERRED TO USER (flight-hardware
         risk).** Reconciling to true parity means confirming which schematic symbol maps to
         which PCB footprint across the naming mismatch; guessing that automatically could
@@ -345,7 +345,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
         (ideally interactively in KiCad, or with a user-confirmed name-map table), then:
         remove the LoRa block + `J_XCVR` from the schematic to match the PCB, add the P1/P2
         passthrough (TOP) sockets to the schematic, and re-run ERC. Emma's reconciliation
-        (above) is the template; Zoë differs only in that its schematic was hand-authored and
+        (above) is the template; TACCO differs only in that its schematic was hand-authored and
         its refs don't already match the PCB the way Emma's did.
     - [ ] EMI spacing verified
     - [ ] Nets and vias fixed
@@ -357,12 +357,12 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - Add 2× 20-pin 2.54 mm pass-through socket rails on upper face (upper sockets
         match Emma P1+P2 pinout; lower pins pass through to Cape-A-2 / PB2-I stack).
     - Carry all PB2 P1+P2 signals from lower pins to upper sockets; add 0 Ω options
-        on signals consumed by Zoë (Wi-Fi, SiK, I²C, UART) so they are both used and
+        on signals consumed by TACCO (Wi-Fi, SiK, I²C, UART) so they are both used and
         passed through.
-    - Update silk/fab: "Cape-B-2 Rev S1 — Zoë CN cape"; note Emma header on upper face.
+    - Update silk/fab: "Cape-B-2 Rev S1 — TACCO CN cape"; note Emma header on upper face.
     - Run DRC → zero errors; generate gerbers to `avionics/kicad/gerbers/CAPE-B-2-S1/`.
-    - **BLOCKS Zoë + Emma fabrication order.**
-- [ ] **Kaylee Rev S1 — remove 6 V BEC, add 5 V servo output**
+    - **BLOCKS TACCO + Emma fabrication order.**
+- [ ] **FlightEngineer Rev S1 — remove 6 V BEC, add 5 V servo output**
     - Remove TPS54540 6 V/5 A BEC circuit (IC, inductor, output caps, feedback divider,
         Molex Nano-Fit 6 V output connector).
     - Add third TPS54620 5 V/3 A instance for dedicated servo rail (shares 5 V feedback
@@ -370,12 +370,12 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
         connector labelled SERVO-5V).
     - Verify 5 V servo current budget: 2× DS3218MG = 2× 500 mA stall = 1.0 A peak;
         3 A rated output provides 3× headroom — adequate.
-    - Update silk/fab: "Kaylee Rev S1"; update schematic title block.
-    - Run DRC → zero errors; generate gerbers to `avionics/kicad/gerbers/Kaylee-S1/`.
-    - **BLOCKS Kaylee fabrication order.**
+    - Update silk/fab: "FlightEngineer Rev S1"; update schematic title block.
+    - Run DRC → zero errors; generate gerbers to `avionics/kicad/gerbers/FlightEngineer-S1/`.
+    - **BLOCKS FlightEngineer fabrication order.**
 
 
-## §1.2c — PCB Design: Jayne (Jayne vision/ToF/laser subsystem)
+## §1.2c — PCB Design: Observer (Observer vision/ToF/laser subsystem)
 
 *Master:* [`TODO.md` §1.2c](../TODO.md) — 22 open, 13 done at snapshot.
 
@@ -386,16 +386,16 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     SoC decision before proceeding with layout. **Still open — the placeholder footprint in
     `gen_vera_pcb.py` does not commit to a real ball-out, so this decision is not yet blocking,
     but must be resolved before the real BGA footprint is authored.
-- [x] Shape the Jayne PCB to fit in the nose directly behind the faceplate, allowing PCB mounting of laser, camera, and TOF, with EMI hardening.  PCB oriented horizontal with sensors on forward end and network connections on aft end.
+- [x] Shape the Observer PCB to fit in the nose directly behind the faceplate, allowing PCB mounting of laser, camera, and TOF, with EMI hardening.  PCB oriented horizontal with sensors on forward end and network connections on aft end.
 - [x] **Source and cite a real Class 3B nose crosshair laser module** — **SUPERSEDED by the
     Class 2 laser unification (§1.2c.4 below, 2026-07-06; `docs/JAYNE_LASER_ANALYSIS.md` Rev A2).**
-    The nose is **not** Class 3B: a thin-line green crosshair detected by Jayne's own strobed
+    The nose is **not** Class 3B: a thin-line green crosshair detected by Observer's own strobed
     camera + frame-difference needs only ~0.2–0.8 mW → **Class 2**. No separate Class 3B nose
     module exists to source — both sites share ONE 520 nm green Class 2 source (per-location
     terminal optic + hardware current limit). The surviving "**do not source** until a real
     IEC 60825-1 datasheet is in REFERENCES.md (REF-IEC-002 pending)" action is the Class 2 item
     in §1.2c.4, not a Class 3B part. Closed in master [`TODO.md`](../TODO.md).
-- [ ] Generate production-ready Gerber files to `avionics/kicad/Jayne/gerbers/` — **blocked on
+- [ ] Generate production-ready Gerber files to `avionics/kicad/Observer/gerbers/` — **blocked on
     trace routing, real footprints, and silk/DRC cleanup; not meaningful to export gerbers for
     a board that is still using placeholder footprints or is partially routed.**
     - [x] Replace placeholder U1/U2/U3/U5/U_PMIC footprints with real datasheet-approved
@@ -403,9 +403,9 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Complete full copper routing for all signal nets and power domains.
     - [ ] Resolve any `silk_over_copper`, `silk_overlap`, or `silk_edge_clearance` warnings.
     - [ ] Run KiCad DRC to zero errors after routing and footprint updates.
-    - [ ] Export Gerber and drill files to `avionics/kicad/Jayne/gerbers/` using KiCad or the
+    - [ ] Export Gerber and drill files to `avionics/kicad/Observer/gerbers/` using KiCad or the
         repository's Gerber workflow once the board is fully routed and verified.
-    - [x] Confirm the compact 1.0 × 2.75 in (25.4 × 69.85 mm) `Jayne.kicad_pcb` baseline is intentional and, if so,
+    - [x] Confirm the compact 1.0 × 2.75 in (25.4 × 69.85 mm) `Observer.kicad_pcb` baseline is intentional and, if so,
         back-port the updated board outline/placement into `gen_vera_pcb.py`; otherwise treat
         the script output as a pre-compaction template only.
     - [ ] Render + mesh-verify `head_shell24.scad` (blocked this session; re-attempt).
@@ -424,7 +424,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     mislabeled "Class 3B" here) — do not reuse these bore numbers without re-measuring against
     the new module's actual datasheet/mechanical drawing.
     - [ ] Render + mesh-verify `cargo_sect_shell24.scad` (blocked this session; re-attempt).
-    - [ ] Must also clear the cargo bay door mechanism and Jayne (cargo handling) hardware
+    - [ ] Must also clear the cargo bay door mechanism and Observer (cargo handling) hardware
         — not checked this session.
     - [ ] `cargo_sect_shell24.scad` is a secondary reference — these bosses (and the fixed
         GPS/FPV/River-bay cuts) are NOT in the fabrication-ready mesh until
@@ -437,21 +437,21 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     `airframe/CLAUDE.md` after adding.
 - [ ] **Local sensor harness (both sites):** J_CAM1/J_CAM2 (MIPI CSI-2, flex/FPC preferred),
     J_TOF (dedicated UART1, twisted pair/ribbon), J_LASER (Q1 gate drive + laser V+, twisted
-    pair) — all short point-to-point runs (<75mm) since Jayne co-locates with the sensor
-    cluster at both sites, unlike the pre-Jayne plan of running TFmini-S's UART to Shepherd's
+    pair) — all short point-to-point runs (<75mm) since Observer co-locates with the sensor
+    cluster at both sites, unlike the pre-Observer plan of running TFmini-S's UART to Shepherd's
     Room.
 - [ ] **External ring harness — nose:** route J_PWR/J_ETH_IN/J_ETH_OUT/J_CANFD aft through the
     open head/cargo mating face to **Shepherd's Room** (nearest bay, PACE-primary Watchdog).
     Open: confirm which existing Ethernet-ring segment Shepherd's stack currently closes, so
-    Jayne's ring-insertion point and new cable lengths can be fixed.
+    Observer's ring-insertion point and new cable lengths can be fixed.
 - [ ] **External ring harness — cargo:** route J_PWR/J_ETH_IN/J_ETH_OUT/J_CANFD through the
     cargo section's open mating faces to the nearest bay. Open: decide **River's Room** vs.
     **Simon's Medbay** as the shorter/more appropriate ring-insertion point (both carry Emma
     boards per the Node Variant Placement table, root `CLAUDE.md`).
-- [ ] **Kaylee second 5 V rail — cross-tied, mutually fault-tolerant (PLAN, `docs/POWER_
+- [ ] **FlightEngineer second 5 V rail — cross-tied, mutually fault-tolerant (PLAN, `docs/POWER_
     DISTRIBUTION.md §11.1`).** Add a **third identical TPS54620 BEC channel** (`U_BEC_5V_3` +
     `L_5V3` + `R_FB3` + `C_BEC3_IN/OUT` + `FB_5V3` + `D_OR3` — copy of `U_BEC_5V_1`) feeding
-    **RAIL-2 (5V_JAYNE) → `J_JAYNE`** (both Jayne boards, ≈ 2.4 A typ / ~4.2 A peak). Existing
+    **RAIL-2 (5V_JAYNE) → `J_JAYNE`** (both Observer boards, ≈ 2.4 A typ / ~4.2 A peak). Existing
     dual-BEC pair = **RAIL-1 (5V_AVIONICS) → `J_5V`**. **Diode-OR cross-tie** the two rails
     (`D_X1`/`D_X2` = 2× MBRD1045CT, same part) via cross-tie fuse `F_X`, plus per-rail fuses
     `F_5V`/`F_VERA`, so each rail is fault-tolerant of the other (regulator-failure backup +
@@ -461,13 +461,13 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     by the existing pair; SW node in a GND-pour keepout). Number alongside the Rev S1 servo-rail
     change. **Not yet in KiCad.** (Symmetric 2+2 four-channel option in §11.1 if RAIL-2 later
     needs its own internal redundancy.)
-- [ ] **Jayne 5 V harness:** 18 AWG shielded TP per drop (Kaylee → nose bow pod, Kaylee → cargo
-    nadir mount); 3 A resettable polyfuse per drop; route with each Jayne's Ethernet-ring/CAN
+- [ ] **Observer 5 V harness:** 18 AWG shielded TP per drop (FlightEngineer → nose bow pod, FlightEngineer → cargo
+    nadir mount); 3 A resettable polyfuse per drop; route with each Observer's Ethernet-ring/CAN
     harness. Confirm final run lengths once ring-insertion bays are fixed (§1.2c.3).
 - [ ] **Laser — unify to a single 520 nm green source, Class 2 both sites** (retires the
     separate 650 nm red cargo module AND the Rev-A nose Class 3B module). Per-location terminal
     optic sets spread; per-location HARDWARE current limit sets power. **The nose is Class 2
-    (≤ 1 mW), NOT Class 3B** — a concentrated ~12 mm dot detected by Jayne's camera (strobe +
+    (≤ 1 mW), NOT Class 3B** — a concentrated ~12 mm dot detected by Observer's camera (strobe +
     frame-difference) needs only ~0.45 mW (`docs/JAYNE_LASER_ANALYSIS.md` Rev A1). This drops the
     Class 3B key-interlock and mechanical shutter entirely.
 - [ ] **Both Class 2 caps must be hardware-enforced** (fixed current limit), not firmware-only.
@@ -479,7 +479,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     visibility requirement is later added (would push the nose back toward 3R/3B).
 - [ ] **Do not source** the green diode or either terminal optic until a real datasheet with a
     verified mW rating + IEC 60825-1 class is added to REFERENCES.md (extends the REF-IEC-002
-    pending item; the Jayne-laser row in "Open Standards Verification Items").
+    pending item; the Observer-laser row in "Open Standards Verification Items").
 
 
 ## §1.4 — EMI Hardening Beyond the PCBs (500 W/m^2) &#9733;
@@ -495,7 +495,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Mount FAR-FAN-40 + FAR-EMI-VENT-40 on the low-pressure side of the enclosure;
         verify intake/exhaust path does not create a direct RF leakage slot.
     - [ ] Bond enclosure to chassis ground via FAR-BOND-STRAP (single point, no loop).
-- [ ] **PB2-I + Zoë Enclosure** (all 4 bays — Cape-B-2, plus Emma in River's Room /
+- [ ] **PB2-I + TACCO Enclosure** (all 4 bays — Cape-B-2, plus Emma in River's Room /
     Simon's Medbay only):
     - [ ] Confirm internal clearance for PB2-Industrial + Cape-B-2 (+ Emma where fitted)
         stack height against the FAR-CAGE-AV placeholder envelope.
@@ -506,7 +506,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
         pair for Emma; Shepherd's Room / Inara's Shuttle variant omits these.
     - [ ] Mount FAR-FAN-40 + FAR-EMI-VENT-40; bond via FAR-BOND-STRAP.
     - [ ] **Zigbee 2.4 GHz antenna mount — BLOCKED, hardware gap confirmed; antenna
-        strategy decided 2026-06-22 (with user).** Zoë (Cape-B-2) Rev S has no Zigbee
+        strategy decided 2026-06-22 (with user).** TACCO (Cape-B-2) Rev S has no Zigbee
         transceiver, antenna filter chain, or SMA pad (the CC2652R7 Zigbee radio exists
         only in the archived COMMS-HAT-1 design, not in the current Rev S Cape-B-2
         schematic) — **no antenna can be mounted for hardware that does not exist on
@@ -563,7 +563,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     partially netted on Wash (§1.2).
 - [ ] **Ethernet** — specify CPSW3G ring topology (node-to-node order), cable category, and
     connector pinout; cross-reference the 100 Ω ±10% MDI impedance-controlled traces already
-    specified on Wash/Zoë (§1.2) and the RSTP ring management firmware task (§4.3).
+    specified on Wash/TACCO (§1.2) and the RSTP ring management firmware task (§4.3).
 - [ ] **UART** — specify wiring for GPS (u-blox M10Q NMEA/UBX, §4.2), SBUS-equivalent
     (§1.2 "Add SBUS/UART DIP switch to Wash"), and any inter-cape UART links.
 - [ ] **I2C** — specify wiring for IMU/barometer (ICM-42688-P, BMP388/390 — note these are
@@ -575,9 +575,9 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 - [ ] **PWM** — specify wiring for nacelle tilt servo control (EHRPWM/PRU, §4.2 "Nacelle tilt
     servo PWM generation") and the SERVO-PWM 1×8 connector pinout already defined on Wash
     (§1.2).
-- [ ] **Add Kaylee/battery boss pattern to `middle_canonical_shell24.scad`.**
+- [ ] **Add FlightEngineer/battery boss pattern to `middle_canonical_shell24.scad`.**
     Boss posts: 4× M3 at (±55 mm X) × (±25 mm Z) from X=−190 mm keel centre for battery tray.
-    Kaylee PDB: 4× M3 boss posts at X≈−205 mm, Z=CZ±25 mm. Both on keel interior face (+Y rail).
+    FlightEngineer PDB: 4× M3 boss posts at X≈−205 mm, Z=CZ±25 mm. Both on keel interior face (+Y rail).
     Verify boss positions clear keel CF flat bar (6×3 mm) and ring frame station notches in slicer.
 - [ ] **Add ventral battery-swap hatch cut to `middle_canonical_shell24.scad`.**
     120×60 mm belly cut centred at X=−190 mm; 2 mm shoulder lip; same pattern as avionics panels.
@@ -587,7 +587,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     two captive Velcro strap slots; XT90 connector exit cutout on AFT face.
     **Add to Phase 0 print schedule.**
 - [ ] **Create `kaylee_pdb_tray.scad`.**
-    CF-PETG mounting tray for Kaylee PDB (80×60 mm footprint); M3 boss attachment;
+    CF-PETG mounting tray for FlightEngineer PDB (80×60 mm footprint); M3 boss attachment;
     XT90 input pigtail route-through; 4× XT30 output ports facing AFT (toward ESC conduits).
     **Add to Phase 0 print schedule.**
     - [ ] **DRC accepted violations (document only — not fixable without PCB re-architecture):**
@@ -598,7 +598,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
         - [ ] 33 silk_over_copper / 26 silk_overlap / 2 silk_edge_clearance: cosmetic; board is fab-ready
         - [ ] 8 lib_footprint_issues: inline footprints; not KiCad library-linked; expected
         - [ ] 181 unconnected_items: traces not yet routed (power planes on In1/In2.Cu are correct)
-    - [ ] **Kaylee PCB — remaining layout tasks (BLOCKS fabrication):**
+    - [ ] **FlightEngineer PCB — remaining layout tasks (BLOCKS fabrication):**
         - [ ] Manually place in KiCad: CM_ESC1–4 (INA226 shunt caps), C_DEC1–4 (ESC decoupling), Section F
                     (BQ76930, J_BAL, R_BAL1–6, C_CAP, J_NTC, C_NTC) — area x=62–88, y=50–65 recommended
         - [ ] Manually place: J_SHLD_5V, J_SHLD_6V, J_SHLD_I2C, J_SHLD_ALERT chassis shield lugs
@@ -606,7 +606,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
         - [ ] Add BQ76930 thermal pad (TSSOP-30 PowerPAD) to footprint — currently missing from gen_kaylee_pcb.py
         - [ ] Verify XT30 connectors (J_ESC1–4) courtyard clears board edge on left side
         - [ ] Verify size and weight: PCB target ≤ 90×65 mm, ≤ 0.110 lbm (≤ 50 g)
-- [ ] **Update REVN_BUILD_GUIDE_24IN.md Phase 1** to include Kaylee + battery tray installation
+- [ ] **Update REVN_BUILD_GUIDE_24IN.md Phase 1** to include FlightEngineer + battery tray installation
     in the pre-foam-pour checklist. Battery tray and hatch must be installed and hatch zone
     masked before the foam pour step.
 
@@ -697,7 +697,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Bench test against 1553-XFM transformer coupling hardware (§1.2).
 - [ ] **RS-485 inter-board messaging** — structured message format (header/payload/CRC); inter-node command and status relay.
     - [ ] Define structured frame format (header/payload/CRC) shared across all 8 nodes.
-    - [ ] Driver for the RS485_A/B footprint pinout already fixed on Wash/Zoë (§1.2).
+    - [ ] Driver for the RS485_A/B footprint pinout already fixed on Wash/TACCO (§1.2).
     - [ ] Bench test: CRC-reject malformed frame, command/status round-trip between two nodes.
 - [ ] **Ethernet RSTP ring management** — CPSW3G bridge configuration; RSTP fast-failover (<1s) verification; ring segment health monitoring.
     - [ ] CPSW3G bridge configuration for the 8-node ring topology (§1.4.3).
@@ -753,7 +753,7 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     - [ ] Bench test: inject unsigned/forged frame on the bus, verify it is discarded and logged.
 
 
-## §4.6 — Jayne Node Firmware (Jayne vision subsystem)
+## §4.6 — Observer Node Firmware (Observer vision subsystem)
 
 *Master:* [`TODO.md` §4.6](../TODO.md) — 15 open, 0 done at snapshot.
 
@@ -788,15 +788,15 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
     boresighted TFmini-S range R (`docs/JAYNE_LASER_ANALYSIS.md §4.4`). Publish size/orientation
     with the signed telemetry below.
 - [ ] **SPI driver to Infineon SLB9670 TPM** — reuse the existing TPM driver approach already
-    used fleet-wide on Wash/Zoë nodes rather than writing a new one from scratch.
+    used fleet-wide on Wash/TACCO nodes rather than writing a new one from scratch.
 - [ ] **Signed telemetry:** TPM-signed HMAC or ECDSA signature on all ToF/laser-state packets
     published over CAN-FD and Ethernet, per Zero Trust policy [REF-NIST-001 §2.1].
-- [ ] **Bench test:** verify Jayne node publishes signed ToF range + laser-state + video stream
+- [ ] **Bench test:** verify Observer node publishes signed ToF range + laser-state + video stream
     to at least one PocketBeagle 2 node over both CAN-FD and Ethernet independently.
-- [ ] **Ring failure test:** break the Ethernet ring at a point other than Jayne; verify KSZ9477
+- [ ] **Ring failure test:** break the Ethernet ring at a point other than Observer; verify KSZ9477
     HSR/PRP failover completes with no observable video interruption.
 - [ ] **Laser safety interlock test (nose only):** verify laser GPIO drops low within the
-    heartbeat-loss window when Ethernet ring and CAN-FD are both disconnected from Jayne.
+    heartbeat-loss window when Ethernet ring and CAN-FD are both disconnected from Observer.
 
 
 ## §1.8 — Names

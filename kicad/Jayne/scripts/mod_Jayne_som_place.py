@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 mod_jayne_som_place.py -- place the phyCORE-AM62x PCM-071 SoM (placement footprint)
-on Jayne.kicad_pcb for the initial two-sided fit against the nose trapezoid.
+on Observer.kicad_pcb for the initial two-sided fit against the nose trapezoid.
 =============================================================================
-Adds U_SOM (Jayne:phyCORE-AM62x_PCM071_placement, 32x43mm) at the AFT/WIDE end of
+Adds U_SOM (Observer:phyCORE-AM62x_PCM071_placement, 32x43mm) at the AFT/WIDE end of
 the trapezoid, rotated 90 deg so the module's 43 mm length runs along the board
 fore-aft (X) axis and its 32 mm width along port-starboard (Y).  Verified fit: at
 the SoM forward edge (board X~45.5) the trapezoid is ~36.8 mm wide vs the 32 mm the
@@ -26,8 +26,8 @@ from pathlib import Path
 import pcbnew
 
 HERE = Path(__file__).resolve().parent
-BOARD = HERE / "Jayne.kicad_pcb"
-PRETTY = str(HERE.parent / "Jayne.pretty")
+BOARD = HERE / "Observer.kicad_pcb"
+PRETTY = str(HERE.parent / "Observer.pretty")
 POS = (24.0, 12.7)   # aft/wide end, board centreline
 ROT = 90
 

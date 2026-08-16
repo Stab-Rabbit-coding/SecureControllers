@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gen_Jayne_carrier_sch.py -- author Jayne.kicad_sch in the SoM end-state.
+gen_Jayne_carrier_sch.py -- author Observer.kicad_sch in the SoM end-state.
 =============================================================================
 Supersedes the placeholder vision/control sections of gen_Jayne.py (which used
 "2-row placeholder" generic-IC symbols for U1 AM62A7 / U_PMIC / U2 / U3 / U4 /
@@ -60,8 +60,8 @@ KICADS = HERE.parent / "kicads"
 SYMDIR = HERE.parent.parent / "symbols"   # avionics/kicad/symbols
 
 REAL_SYMS = {
-    "SOM": ("Jayne_SoM_PCM071", "Jayne:phyCORE-AM62x_PCM071_2xBTH-060"),
-    "KSZ": ("Jayne_KSZ9477", "Jayne:TQFP-128-1EP_KSZ9477_14x14mm_P0.4mm_EP10x10"),
+    "SOM": ("Jayne_SoM_PCM071", "Observer:phyCORE-AM62x_PCM071_2xBTH-060"),
+    "KSZ": ("Jayne_KSZ9477", "Observer:TQFP-128-1EP_KSZ9477_14x14mm_P0.4mm_EP10x10"),
     "MSP": ("Jayne_MSPM0G3507_RGZ",
             "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm"),
     "ISO": ("Jayne_ISOW1044BDFMR", "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"),
@@ -857,7 +857,7 @@ def gen_sch():
     dsx, dsy = 320, 445
     parts.append(gj.sym_inst("SolderLand_09P", "J_CAM_DS",
                              "Direct-solder camera land (nose; DNP if J_CAM* used)",
-                             dsx, dsy, footprint="Jayne:DS_Camera_9P"))
+                             dsx, dsy, footprint="Observer:DS_Camera_9P"))
     for i, net in enumerate(["CSI_CLK_P", "CSI_CLK_N", "CSI_D0_P", "CSI_D0_N",
                              "CAM_SDA", "CAM_SCL", "CAM_RESET_N", "+3V3", "GND"]):
         parts.append(gj.glabel_conn(net, dsx, dsy, 9, i))
@@ -871,7 +871,7 @@ def gen_sch():
     tdx, tdy = 285, 480
     parts.append(gj.sym_inst("SolderLand_04P", "J_TOF_DS",
                              "Direct-solder ToF land (nose; DNP if J_TOF used)",
-                             tdx, tdy, footprint="Jayne:DS_ToF_4P"))
+                             tdx, tdy, footprint="Observer:DS_ToF_4P"))
     for i, net in enumerate(["+5V", "GND", "UART_TOF_TX", "UART_TOF_RX"]):
         parts.append(gj.glabel_conn(net, tdx, tdy, 4, i))
     # Laser driver Q1 + R1 + R2 + JST + DS land
@@ -893,7 +893,7 @@ def gen_sch():
     ldx, ldy = 410, 480
     parts.append(gj.sym_inst("SolderLand_02P", "J_LASER_DS",
                              "Direct-solder laser land (nose; DNP if J_LASER used)",
-                             ldx, ldy, footprint="Jayne:DS_Laser_2P"))
+                             ldx, ldy, footprint="Observer:DS_Laser_2P"))
     parts.append(gj.glabel_conn("+5V", ldx, ldy, 2, 0))
     parts.append(gj.glabel_conn("LASER_CATHODE", ldx, ldy, 2, 1))
 
@@ -902,7 +902,7 @@ def gen_sch():
         "(kicad_sch (version 20240101) (generator eeschema)",
         '  (paper "A1")',
         "  (title_block",
-        '    (title "Jayne — Nose/Cargo-Bay Vision, ToF & Laser Board (SoM end-state)")'
+        '    (title "Observer — Nose/Cargo-Bay Vision, ToF & Laser Board (SoM end-state)")'
         ' (date "2026-07-13") (rev "S1") (company "Griffing Technology LLC")',
         '    (comment 1 "Serenity UAV — STANDALONE board, NOT a PocketBeagle 2 Industrial cape")',
         '    (comment 2 "Copyright 2026 Steve Griffing PE(CSE) CISSP-ISSEP CPP | Griffing Technology LLC")',
@@ -923,7 +923,7 @@ def footprint_for(ref):
     if ref in ("CMC5",) or ref.endswith(("_CMC1", "_CMC2")):
         return "Inductor_SMD:L_CommonModeChoke_Coilcraft_0805USB"
     if ref in ("T1", "T2"):
-        return "Jayne:Wurth_749010012A_10-100BASE-TX"
+        return "Observer:Wurth_749010012A_10-100BASE-TX"
     if ref in ("D5",) or ref.endswith(("_D1", "_D2")):
         return "Package_TO_SOT_SMD:SOT-363_SC-70-6"
     if ref in ("U_REG_3V3", "U_REG_1V2"):
@@ -945,11 +945,11 @@ def footprint_for(ref):
     if ref == "J_LASER":
         return "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
     if ref == "J_CAM_DS":
-        return "Jayne:DS_Camera_9P"
+        return "Observer:DS_Camera_9P"
     if ref == "J_TOF_DS":
-        return "Jayne:DS_ToF_4P"
+        return "Observer:DS_ToF_4P"
     if ref == "J_LASER_DS":
-        return "Jayne:DS_Laser_2P"
+        return "Observer:DS_Laser_2P"
     if ref in ("R1", "R2") or ref.startswith("R_") or ref == "J_CHASSIS_R":
         return R
     if ref.startswith("C_") or ref.endswith(("_CI", "_CO", "_CV")):
@@ -975,7 +975,7 @@ def fill_footprints(content):
 
 
 if __name__ == "__main__":
-    out = KICADS / "Jayne.kicad_sch"
+    out = KICADS / "Observer.kicad_sch"
     content = fill_footprints(gen_sch())
     out.write_text(content, encoding="utf-8")
     print(f"  Written: {out}  ({len(content):,} bytes)")

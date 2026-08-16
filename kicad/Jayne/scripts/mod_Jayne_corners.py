@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-mod_jayne_corners.py -- Jayne nose PCB: fillet the trapezoid corners with arcs
+mod_jayne_corners.py -- Observer nose PCB: fillet the trapezoid corners with arcs
 CONCENTRIC to corner M2.5 mounting holes, and add port/starboard keep-out strips
 for the nose install rails.
 =============================================================================
@@ -15,7 +15,7 @@ engage slots on the interior of the nose during installation.
 - Port (C1-C2) and starboard (C3-C0) slanted edges each get a 1.5875 mm keep-out
   rule area (no footprints / no copper pour) + an F.SilkS boundary line.
 
-Modifies Jayne.kicad_pcb in place (GUI-owned board).  Trapezoid corners are the
+Modifies Observer.kicad_pcb in place (GUI-owned board).  Trapezoid corners are the
 Rev C outline (docs/JAYNE_NOSE_TRAPEZOID.md).  Board loads; invalid_outline = 0.
 
 Author : Steve Griffing, PE(CSE), CISSP-ISSEP, CPP  (Griffing Technology LLC)
@@ -29,7 +29,7 @@ from pathlib import Path
 
 import pcbnew
 
-BOARD = Path(__file__).resolve().parent.parent / "kicads" / "Jayne.kicad_pcb"
+BOARD = Path(__file__).resolve().parent.parent / "kicads" / "Observer.kicad_pcb"
 CORNERS = [(69.85, 0.0), (69.85, 25.4), (0.0, 41.7), (0.0, -16.3)]
 R = 3.0
 STRIP = 1.5875  # 1/16 in

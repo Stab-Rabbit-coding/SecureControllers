@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-gen_jayne.py — Jayne (nose/cargo-bay Vision, ToF & Laser board) KiCad generator
+gen_jayne.py — Observer (nose/cargo-bay Vision, ToF & Laser board) KiCad generator
 
 Outputs to avionics/kicad/:
-    Jayne.kicad_pro  (project + net classes)
-    Jayne.kicad_sch  (schematic, A2, v20240101)
+    Observer.kicad_pro  (project + net classes)
+    Observer.kicad_sch  (schematic, A2, v20240101)
 
-Jayne is a STANDALONE board, not a PocketBeagle 2 Industrial cape — it does not use the
+Observer is a STANDALONE board, not a PocketBeagle 2 Industrial cape — it does not use the
 P1+P2 header stack. It connects to the rest of the airframe only via shielded JST-GH
 connectors (Ethernet ring in/out, CAN-FD trunk) and has its own 5V power input.
 
-Reference: avionics/CLAUDE.md "Jayne" section; REFERENCES.md Part XII
+Reference: avionics/CLAUDE.md "Observer" section; REFERENCES.md Part XII
 (REF-SENSOR-002 .. REF-SENSOR-006).
 
 IMPORTANT — verification status (do not treat as fab-ready without addressing these):
@@ -51,7 +51,7 @@ def _next_uid() -> str:
 
 
 # ---------------------------------------------------------------------------
-# kicad_pro  (adapted from gen_kaylee.py gen_pro(); Jayne-specific net classes)
+# kicad_pro  (adapted from gen_kaylee.py gen_pro(); Observer-specific net classes)
 # ---------------------------------------------------------------------------
 def gen_pro() -> str:
     import json
@@ -216,7 +216,7 @@ def gen_pro() -> str:
             "rule_severities": [],
         },
         "libraries": {"pinned_footprint_libs": [], "pinned_symbol_libs": []},
-        "meta": {"filename": "Jayne.kicad_pro", "version": 3},
+        "meta": {"filename": "Observer.kicad_pro", "version": 3},
         "net_settings": {
             "classes": [
                 {
@@ -421,7 +421,7 @@ def lib_symbol_nmos(name):
 
 def lib_symbol_srf2012():
     """SRF2012-100Y — 100uH common-mode choke, 2-winding, 4-terminal.
-    Reused verbatim (pin layout) from this project's own verified Wash/Zoë
+    Reused verbatim (pin layout) from this project's own verified Wash/TACCO
     generator (gen_cape_a2.py lib_sym_srf2012) — real, already-working part."""
     return (
         """  (symbol "SRF2012-100Y" (in_bom yes) (on_board yes)
@@ -454,7 +454,7 @@ def lib_symbol_srf2012():
 
 def lib_symbol_prtr5v0u2x():
     """PRTR5V0U2X — dual TVS/ESD array, SOT-363. Reused verbatim (pin layout)
-    from this project's own verified Wash/Zoë generator (gen_cape_a2.py
+    from this project's own verified Wash/TACCO generator (gen_cape_a2.py
     lib_sym_prtr5v0u2x). One instance protects one differential pair
     (A1/A2 = the two lines, K = common cathode to ground)."""
     return (
@@ -836,11 +836,11 @@ PMIC_R = [
 
 # --- EMI-hardening chain parts — reusing this project's OWN already-verified
 # symbols/footprints from gen_cape_a2.py (Wash) rather than re-deriving new
-# ones, so Jayne's hardening matches the project's real, working Rev R baseline
+# ones, so Observer's hardening matches the project's real, working Rev R baseline
 # (not the fabricated HX1188NL/generic-TVS claims from the original AI brainstorm).
 
 # TI ISOW1044BDFMR — isolated CAN-FD transceiver, SOIC-16W, replaces the
-# non-isolated TCAN1042HG-Q1 to match Wash/Zoë's CAN-FD isolation standard.
+# non-isolated TCAN1042HG-Q1 to match Wash/TACCO's CAN-FD isolation standard.
 ISOW_SIZE = (3.75, 5.15)  # SOIC-16W_7.5x10.3mm — real, from Wash's own footprint
 ISOW_L = [
     ("GND1", "1", "power_in"),
@@ -857,7 +857,7 @@ ISOW_R = [
 ]
 
 # Wurth 749010012A — 10/100BASE-TX SMD transformer w/ integrated CMC, real
-# 8-pin part already used on Wash/Zoë (TODO.md's "HX1188NL" reference for this
+# 8-pin part already used on Wash/TACCO (TODO.md's "HX1188NL" reference for this
 # role was stale/incorrect — the actual working generator uses this part).
 XFMR_SIZE = (5.5, 4.0)  # estimated typical low-profile 10/100 SMD transformer body
 XFMR_L = [
@@ -920,7 +920,7 @@ def gen_sch() -> str:
         lib_symbol_conn_np("SolderLand_02P", 2),
         lib_symbol_generic_ic(
             "TI_AM62A7",
-            "Jayne:BGA484_23x23mm_P1mm_PLACEHOLDER",
+            "Observer:BGA484_23x23mm_P1mm_PLACEHOLDER",
             "https://www.ti.com/lit/ds/symlink/am62a7.pdf",
             left=AM62A_L,
             right=AM62A_R,
@@ -936,7 +936,7 @@ def gen_sch() -> str:
         ),
         lib_symbol_generic_ic(
             "MICROCHIP_KSZ9477",
-            "Jayne:QFN128_PLACEHOLDER_16x16mm_P0.4mm",
+            "Observer:QFN128_PLACEHOLDER_16x16mm_P0.4mm",
             "https://www.microchip.com/en-us/product/ksz9477",
             left=KSZ_L,
             right=KSZ_R,
@@ -976,7 +976,7 @@ def gen_sch() -> str:
         ),
         lib_symbol_generic_ic(
             "INFINEON_SLB9670",
-            "Jayne:TPM_SLB9670_PLACEHOLDER",
+            "Observer:TPM_SLB9670_PLACEHOLDER",
             "https://www.infineon.com/dgdl/Infineon-SLB9670-DataSheet.pdf",
             left=TPM_L,
             right=TPM_R,
@@ -984,7 +984,7 @@ def gen_sch() -> str:
         ),
         lib_symbol_generic_ic(
             "TI_TPS65219",
-            "Jayne:PMIC_TPS65219_PLACEHOLDER_WQFN32",
+            "Observer:PMIC_TPS65219_PLACEHOLDER_WQFN32",
             "https://www.ti.com/lit/ds/symlink/tps65219.pdf",
             left=PMIC_L,
             right=PMIC_R,
@@ -1198,9 +1198,9 @@ def gen_sch() -> str:
     parts.append(
         text_note(
             "Camera sensor module is a separate board mounted at the bow/cargo aperture, not on\n"
-            "Jayne itself. Only 1 of 4 real MIPI CSI-2 data lanes shown for schematic clarity —\n"
+            "Observer itself. Only 1 of 4 real MIPI CSI-2 data lanes shown for schematic clarity —\n"
             "see gen_jayne.py docstring. SD_CARD_NC left unconnected — placeholder pin, no\n"
-            "physical microSD on Jayne (logging lives on Wash/Zoe per CLAUDE.md).",
+            "physical microSD on Observer (logging lives on Wash/Zoe per CLAUDE.md).",
             cx - 7,
             cy + 30,
             0.9,
@@ -1219,7 +1219,7 @@ def gen_sch() -> str:
             "Direct-solder camera land (nose; DNP if J_CAM* populated)",
             dsx,
             dsy,
-            footprint="Jayne:DS_Camera_9P",
+            footprint="Observer:DS_Camera_9P",
         )
     )
     for i, net in enumerate(
@@ -1397,7 +1397,7 @@ def gen_sch() -> str:
     parts.append(pwr_sym("GND", cx - 40 + 3.81, cy + 25, rot=180))
 
     # =====================================================================
-    # EMI hardening — Ethernet ports (matches Wash/Zoë Rev R baseline):
+    # EMI hardening — Ethernet ports (matches Wash/TACCO Rev R baseline):
     # KSZ9477 port -> Wurth 749010012A magnetics -> SRF2012-100Y CMC (x2,
     # one per differential pair) -> PRTR5V0U2X TVS (x2, shunt) -> connector.
     # =====================================================================
@@ -1741,7 +1741,7 @@ def gen_sch() -> str:
             "Direct-solder ToF land (nose; DNP if J_TOF populated)",
             tdx,
             tdy,
-            footprint="Jayne:DS_ToF_4P",
+            footprint="Observer:DS_ToF_4P",
         )
     )
     for i, net in enumerate(["+5V", "GND", "UART_TOF_TX", "UART_TOF_RX"]):
@@ -1792,7 +1792,7 @@ def gen_sch() -> str:
             "Direct-solder laser land (nose; DNP if J_LASER populated)",
             ldx,
             ldy,
-            footprint="Jayne:DS_Laser_2P",
+            footprint="Observer:DS_Laser_2P",
         )
     )
     parts.append(glabel_conn("+5V", ldx, ldy, 2, 0))
@@ -1816,7 +1816,7 @@ def gen_sch() -> str:
 
     parts.append(
         text_note(
-            'LOCATION-SPECIFIC POPULATION — see avionics/CLAUDE.md "Jayne" and REF-IEC-002:\n'
+            'LOCATION-SPECIFIC POPULATION — see avionics/CLAUDE.md "Observer" and REF-IEC-002:\n'
             '  Cargo bay (3"x3" @ 5ft): populate with existing 5mW 650nm Class 3R module\n'
             "    (reuses driver above as-is; GPIO-default-off pull-down is sufficient).\n"
             '  Nose (2"x2" @ 50ft): Class 3B 520nm module (part TBD, TODO.md §1.2c) requires\n'
@@ -1837,7 +1837,7 @@ def gen_sch() -> str:
         "(kicad_sch (version 20240101) (generator eeschema)",
         '  (paper "A2")',
         "  (title_block",
-        '    (title "Jayne — Nose/Cargo-Bay Vision, ToF & Laser Board")'
+        '    (title "Observer — Nose/Cargo-Bay Vision, ToF & Laser Board")'
         ' (date "2026-07-03") (rev "-") (company "Griffing Technology LLC")',
         '    (comment 1 "Serenity UAV — STANDALONE board, NOT a PocketBeagle 2 Industrial cape")',
         '    (comment 2 "Copyright 2026 Steve Griffing PE(CSE) CISSP-ISSEP CPP |'
@@ -1858,8 +1858,8 @@ def gen_sch() -> str:
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
     out = {
-        "Jayne.kicad_pro": gen_pro(),
-        "Jayne.kicad_sch": gen_sch(),
+        "Observer.kicad_pro": gen_pro(),
+        "Observer.kicad_sch": gen_sch(),
     }
     for fname, content in out.items():
         path = here.parent / "kicads" / fname

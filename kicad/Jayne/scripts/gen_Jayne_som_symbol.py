@@ -6,9 +6,9 @@ phyCORE-AM62A SoM from the factual pad<->signal map only.
 =============================================================================
 Why clean-room: SnapEDA's rendering of this part (symbols/PHYCORE-AM62AX-DSC.*)
 carries restrictive usage terms and is gitignored -- it must NOT be committed or
-embedded in Jayne.kicad_sch.  The pad<->signal PINOUT, however, is PHYTEC-published
+embedded in Observer.kicad_sch.  The pad<->signal PINOUT, however, is PHYTEC-published
 fact (facts are not copyrightable).  This script reads only the factual CSV
-(avionics/kicad/Jayne/Jayne_som_pinmap.csv) and emits an ORIGINAL symbol with our own
+(avionics/kicad/Observer/Jayne_som_pinmap.csv) and emits an ORIGINAL symbol with our own
 functional-bank arrangement -- no SnapEDA geometry, grouping, or coordinates.
 
 Output: avionics/kicad/symbols/Jayne_SoM.kicad_sym  (CC BY 4.0, committable).
@@ -30,7 +30,7 @@ CSV = HERE.parent / "Jayne_som_pinmap.csv"
 OUT = HERE.parent.parent / "symbols" / "Jayne_SoM.kicad_sym"
 
 SYMNAME = "Jayne_SoM_phyCORE_AM62A"
-FOOTPRINT = "Jayne:phyCORE-AM62A-DSC-270"  # clean-room footprint authored separately
+FOOTPRINT = "Observer:phyCORE-AM62A-DSC-270"  # clean-room footprint authored separately
 
 # --- our OWN functional banks (deliberately NOT SnapEDA's unit layout) --------
 # Map each CSV functional_group into one of our banks; the ordering and grouping

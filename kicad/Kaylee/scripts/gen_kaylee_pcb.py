@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""gen_kaylee_pcb.py — Generate complete Kaylee.kicad_pcb with all component placements.
+"""gen_kaylee_pcb.py — Generate complete FlightEngineer.kicad_pcb with all component placements.
 
-Kaylee is the EMI-hardened [REF-NIST-002 §6.2.5] Power Distribution Board for the Serenity UAV.
+FlightEngineer is the EMI-hardened [REF-NIST-002 §6.2.5] Power Distribution Board for the Serenity UAV.
 90 × 65 mm, 4-layer FR4-TG170, 4 oz Cu on F.Cu/In2.Cu, 1 oz on In1.Cu/B.Cu.
 
-Schematic sections (from gen_kaylee.py / Kaylee.kicad_sch):
+Schematic sections (from gen_kaylee.py / FlightEngineer.kicad_sch):
     A — Battery input: J_BATT, CM1, CM2, F1, C1/C2, C_DM1, C3, D1, C_Y1/Y2
     B — Battery disconnect FET + main current shunt: Q_BATT_DSG, R_DSG_G,
         R_CHGND, J_CHASSIS, RS_MAIN, U_IS_MAIN
@@ -35,7 +35,7 @@ Usage:
     python3 gen_kaylee_pcb.py
 
 Output:
-    avionics/kicad/Kaylee.kicad_pcb
+    avionics/kicad/FlightEngineer.kicad_pcb
 
 Author:  Steve Griffing, PE(CSE), CISSP-ISSEP, CPP
          Griffing Technology LLC
@@ -64,14 +64,14 @@ import os
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# UUID management — all Kaylee PCB UUIDs use prefix "b0d5ea00-0000-0000-0000-"
+# UUID management — all FlightEngineer PCB UUIDs use prefix "b0d5ea00-0000-0000-0000-"
 # ---------------------------------------------------------------------------
 _UID_PREFIX = "b0d5ea00-0000-0000-0000-"
 _uid_seq = itertools.count(1)
 
 
 def _uid() -> str:
-    """Return next sequential UUID with Kaylee PCB prefix."""
+    """Return next sequential UUID with FlightEngineer PCB prefix."""
     return f"{_UID_PREFIX}{next(_uid_seq):012d}"
 
 
@@ -866,7 +866,7 @@ def comp_wurth_cmc(
         Wurth Elektronik 7440640500 datasheet, Fig. 4 land pattern, 2023.
         Pitch 5.08 mm (0.2 in) per IPC-2221B through-hole land pattern.
     """
-    lines = _fp_tht("Kaylee:CMC_WE-SL5_7440640500", ref, "WE-SL5_7440640500", x, y)
+    lines = _fp_tht("FlightEngineer:CMC_WE-SL5_7440640500", ref, "WE-SL5_7440640500", x, y)
     lines += _crtyd(-5.54, -5.54, 5.54, 5.54)
     # Fab-layer body circle (11.3 mm dia, centred at origin)
     lines += _silk_circle(0.0, 0.0, 5.65)
@@ -894,7 +894,7 @@ def comp_maxi_fuse(
     Reference:
         Littelfuse 0154.007.DR PCB-mount MAXI holder datasheet, 2022.
     """
-    lines = _fp_tht("Kaylee:FuseHolder_MAXI_PCB", ref, "FuseHolder_MAXI_150A", x, y)
+    lines = _fp_tht("FlightEngineer:FuseHolder_MAXI_PCB", ref, "FuseHolder_MAXI_150A", x, y)
     lines += _crtyd(-2.2, -7.5, 12.1, 7.5)
     lines += _fab_rect(-1.5, -7.0, 11.4, 7.0)
     lines.append(_pad_tht("1", 0.0, 0.0, 3.0, 3.0, 1.8, p1_net, "roundrect"))
@@ -952,7 +952,7 @@ def comp_kelvin_shunt(
     Reference:
         Bourns CSS2H-2512K datasheet, Figure 9 PCB land pattern, 2021.
     """
-    lines = _fp("Kaylee:R_Shunt_CSS2H_2512K", ref, "1mOhm_Kelvin_2512", x, y)
+    lines = _fp("FlightEngineer:R_Shunt_CSS2H_2512K", ref, "1mOhm_Kelvin_2512", x, y)
     lines += _crtyd(-4.28, -2.50, 4.28, 2.50)
     lines += _fab_rect(-3.175, -1.60, 3.175, 1.60)
     # Pad centres chosen so current-pad-edge to sense-pad-edge gap = 0.50 mm,
@@ -1008,7 +1008,7 @@ def _zone(
 
 
 def gen_pcb() -> str:
-    """Generate the complete Kaylee.kicad_pcb content."""
+    """Generate the complete FlightEngineer.kicad_pcb content."""
     W, H = 90.0, 65.0
     MH_M = 4.0
 
@@ -1026,7 +1026,7 @@ def gen_pcb() -> str:
         "\t)",
         '\t(paper "A4")',
         "\t(title_block",
-        '\t\t(title "Kaylee")',
+        '\t\t(title "FlightEngineer")',
         '\t\t(date "2026-06-10")',
         '\t\t(rev "A")',
         '\t\t(comment 1 "Serenity-Class Tiltrotor UAV — Power Distribution Board")',
@@ -1078,7 +1078,7 @@ def gen_pcb() -> str:
         f'\t\t(stroke (width 0.05) (type default)) (layer "Edge.Cuts")',
         f'\t\t(uuid "{_uid()}"))',
         # Board ID text on F.Fab
-        f'\t(gr_text "Kaylee Rev R" (at {W/2:.2f} {H + 3.0:.2f} 0) (layer "F.Fab")',
+        f'\t(gr_text "FlightEngineer Rev R" (at {W/2:.2f} {H + 3.0:.2f} 0) (layer "F.Fab")',
         f"\t\t(effects (font (size 1.5 1.5) (thickness 0.15)))",
         f'\t\t(uuid "{_uid()}"))',
         f'\t(gr_text "Griffing Technology LLC | CC BY 4.0"'
@@ -1688,7 +1688,7 @@ def gen_pcb() -> str:
 
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
-    out_path = here / "Kaylee.kicad_pcb"
+    out_path = here / "FlightEngineer.kicad_pcb"
     content = gen_pcb()
     out_path.write_text(content, encoding="utf-8")
     byte_count = len(content.encode("utf-8"))

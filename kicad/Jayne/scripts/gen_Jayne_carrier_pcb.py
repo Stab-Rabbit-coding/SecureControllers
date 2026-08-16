@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gen_Jayne_carrier_pcb.py -- rebuild Jayne.kicad_pcb in the SoM end-state.
+gen_Jayne_carrier_pcb.py -- rebuild Observer.kicad_pcb in the SoM end-state.
 =============================================================================
 Drives the PCB from the schematic netlist (exported by kicad-cli from
-Jayne.kicad_sch, authored by gen_Jayne_carrier_sch.py).  Removes the old
+Observer.kicad_sch, authored by gen_Jayne_carrier_sch.py).  Removes the old
 placeholder-footprint components and instantiates the REAL footprints for every
 schematic component, assigns each pad's net from the netlist, and lays the parts
 out inside the existing nose-carrier trapezoid outline (SoM on the back copper,
@@ -16,7 +16,7 @@ placement).  The board outline, the four M2.5 corner mounting holes, the netclas
 definitions, and the design rules are preserved from the loaded board.
 
 Exposed-pad handling: U2 (KSZ) EP is pad 129 = GND in the clean-room symbol and
-in the Jayne TQFP-128-1EP footprint; U3 (MSPM0) EP is pad 49 = VSS; U5 (TPM) EP
+in the Observer TQFP-128-1EP footprint; U3 (MSPM0) EP is pad 49 = VSS; U5 (TPM) EP
 is footprint pad 33 with no symbol pin, so it is forced to GND here (SLB9670
 thermal pad = GND).  Any footprint pad not named in the netlist and belonging to
 one of these EP/thermal-via groups is tied to GND.
@@ -34,9 +34,9 @@ from pathlib import Path
 import pcbnew
 
 HERE = Path(__file__).resolve().parent
-BOARD = HERE.parent / "kicads" / "Jayne.kicad_pcb"
-NET = HERE.parent / "kicads" / "Jayne.net"
-PRETTY = str(HERE.parent / "Jayne.pretty")
+BOARD = HERE.parent / "kicads" / "Observer.kicad_pcb"
+NET = HERE.parent / "kicads" / "Observer.net"
+PRETTY = str(HERE.parent / "Observer.pretty")
 SYS_FP = "/usr/share/kicad/footprints"
 
 FROMMM = pcbnew.FromMM
@@ -238,8 +238,8 @@ def main():
         if fpobj is None:
             print(f"  ERROR: could not load {lib}:{fpname} for {ref}")
             continue
-        # library nickname = basename of the .pretty dir (or "Jayne" for PRETTY)
-        nick = "Jayne" if lib == PRETTY else Path(lib).name[:-len(".pretty")]
+        # library nickname = basename of the .pretty dir (or "Observer" for PRETTY)
+        nick = "Observer" if lib == PRETTY else Path(lib).name[:-len(".pretty")]
         fpid_map[ref] = f"{nick}:{fpname}"
         plan.append((ref, fpobj, layer, x, y, rot, fpname))
 

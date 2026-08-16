@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 mod_jayne_ds_pcb.py -- add the direct-solder sensor lands (camera/ToF/laser) to the
-existing Jayne.kicad_pcb via the pcbnew API (the board is hand-maintained in the GUI,
+existing Observer.kicad_pcb via the pcbnew API (the board is hand-maintained in the GUI,
 so it must be MODIFIED in place, never regenerated from gen_jayne_pcb.py).
 =============================================================================
 Adds J_CAM_DS (DS_Camera_9P), J_TOF_DS (DS_ToF_4P), J_LASER_DS (DS_Laser_2P) from
-the Jayne.pretty library, assigning each pad the SAME net as its JST counterpart so
+the Observer.pretty library, assigning each pad the SAME net as its JST counterpart so
 the lands are true populate-one-or-the-other alternates (no net change).
 
 Board frame (user-confirmed 2026-07-12): +X fore->aft, +Y starboard->port,
@@ -29,10 +29,10 @@ from pathlib import Path
 import pcbnew
 
 HERE = Path(__file__).resolve().parent
-BOARD = HERE / "Jayne.kicad_pcb"
-PRETTY = str(HERE.parent / "Jayne.pretty")
+BOARD = HERE / "Observer.kicad_pcb"
+PRETTY = str(HERE.parent / "Observer.pretty")
 
-# Jayne board frame (user, 2026-07-12): +X fore->aft, +Y starboard->port,
+# Observer board frame (user, 2026-07-12): +X fore->aft, +Y starboard->port,
 # +Z ventral->dorsal.  Sensors FORWARD, network AFT.  The three nose apertures
 # differ in the PORT-STARBOARD (Y) axis: camera=PORT (high Y), ToF=STARBOARD
 # (low Y), laser=centreline (mid Y); Y spacing is aperture-derived

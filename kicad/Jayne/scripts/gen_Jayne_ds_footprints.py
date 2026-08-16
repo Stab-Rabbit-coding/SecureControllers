@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gen_jayne_ds_footprints.py -- CLEAN-ROOM direct-solder land footprints for Jayne's
+gen_jayne_ds_footprints.py -- CLEAN-ROOM direct-solder land footprints for Observer's
 nose sensor interface (camera / ToF / laser), as an alternative to the JST
 connectors for the cargo install.
 =============================================================================
 Design intent (docs/JAYNE_MANUFACTURING_READINESS.md Section 4): for each of the
 three nose apertures (camera / ToF / laser, per bow_sensor_pod.scad CAM_POS /
-TOF_POS / laser centreline), Jayne carries BOTH a JST connector AND a co-located
+TOF_POS / laser centreline), Observer carries BOTH a JST connector AND a co-located
 direct-solder land on the SAME nets.  Populate exactly one per build:
   * Cargo install -> populate the JST connector (cabled), DNP the land.
   * Nose install  -> populate the direct-solder land (module leads/flex solder
@@ -22,7 +22,7 @@ mod_jayne_ds_pcb.py):
   DS_ToF_4P    : 1 +5V 2 GND 3 UART_TOF_TX 4 UART_TOF_RX
   DS_Laser_2P  : 1 +5V 2 LASER_CATHODE
 
-Output: Jayne.pretty/DS_Camera_9P.kicad_mod, DS_ToF_4P.kicad_mod, DS_Laser_2P.kicad_mod
+Output: Observer.pretty/DS_Camera_9P.kicad_mod, DS_ToF_4P.kicad_mod, DS_Laser_2P.kicad_mod
 
 Author : Steve Griffing, PE(CSE), CISSP-ISSEP, CPP  (Griffing Technology LLC)
 AI-assist: Claude Opus 4.8 (Anthropic) -- footprint authoring, 2026-07-12.
@@ -33,7 +33,7 @@ import uuid
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-PRETTY = HERE.parent / "Jayne.pretty"
+PRETTY = HERE.parent / "Observer.pretty"
 
 PITCH = 1.0
 PAD_W = 0.7

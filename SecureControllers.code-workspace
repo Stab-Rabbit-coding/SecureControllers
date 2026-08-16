@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../pcbs"
+		},
+		{
+			"path": "../LibreServo_v4"
+		},
+		{
+			"path": "../Open-Secure-ESC"
+		},
+		{
+			"path": "../open-servo-core-secure"
+		}
+	],
+	"settings": {}
+}

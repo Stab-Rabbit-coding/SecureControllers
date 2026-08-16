@@ -1,4 +1,4 @@
-# Jayne ↔ phyCORE-AM62A SoM — Pad-Level Net Map
+# Observer ↔ phyCORE-AM62A SoM — Pad-Level Net Map
 
 **Author:** Steve Griffing, PE(CSE), CISSP-ISSEP, CPP
 **AI-assist:** Claude Opus 4.8 (Anthropic) — net map from the verified symbol, 2026-07-11
@@ -8,11 +8,11 @@
 Companion to `symbols/PHYCORE-AM62AX-DSC.kicad_sym` (SnapMagic/SnapEDA export of the PHYTEC
 phyCORE-AM62Ax-DSC, 270-pad 0.8 mm direct-solder module; symbol loads in kicad-cli 9.0.2,
 footprint has exactly 270 pads 1–270). **Every SoM pad number below was read directly from that
-symbol file — none fabricated.** This is the wiring the Jayne carrier schematic implements when
+symbol file — none fabricated.** This is the wiring the Observer carrier schematic implements when
 U1 (the raw TI AM62A7 placeholder) and U_PMIC (TPS65219) are replaced by the SoM (see
 `docs/JAYNE_MANUFACTURING_READINESS.md` Rev C §3B and `gen_jayne.py`).
 
-Net names match the existing Jayne net vocabulary in `gen_jayne.py` so the carrier side
+Net names match the existing Observer net vocabulary in `gen_jayne.py` so the carrier side
 (KSZ9477, SLB9670, MSPM0G3507, ISOW1044, connectors) connects by label without change.
 
 ## Migration delta (schematic-first)
@@ -24,7 +24,7 @@ Net names match the existing Jayne net vocabulary in `gen_jayne.py` so the carri
 
 ## Power
 
-| SoM pad(s) | SoM pin | Jayne net | Note |
+| SoM pad(s) | SoM pin | Observer net | Note |
 | --- | --- | --- | --- |
 | 25, 26 | VIN | +5V | Main module input. **VERIFY VIN range in PHYTEC HW manual** before final. |
 | 24 | VBAT | +3V3 (or RTC backup) | RTC/backup domain — **verify** intended source. |
@@ -34,7 +34,7 @@ Net names match the existing Jayne net vocabulary in `gen_jayne.py` so the carri
 
 ## Camera — MIPI CSI-2 (to J_CAM1 / direct-solder land, §4)
 
-| SoM pad | SoM pin | Jayne net | Note |
+| SoM pad | SoM pin | Observer net | Note |
 | --- | --- | --- | --- |
 | 81 | X_CSI0_RXCLKP | CSI_CLK_P | |
 | 82 | X_CSI0_RXCLKN | CSI_CLK_N | |
@@ -49,7 +49,7 @@ CAM_RESET_N / CAM_PWDN ride WKUP GPIO — **assign a specific WKUP GPIO pad from
 
 ## Ethernet ring — RGMII2 + MDIO to KSZ9477 (U2)
 
-| SoM pad | SoM pin | Jayne net |
+| SoM pad | SoM pin | Observer net |
 | --- | --- | --- |
 | 57, 58, 59, 60 | X_CPSW_RGMII2_TD0..3 | RGMII1_TXD0 (+TXD1..3 for full) |
 | 56 | X_CPSW_RGMII2_TXC | RGMII1_TXC |
@@ -66,7 +66,7 @@ is ever wanted instead of / in addition to the KSZ9477 ring.)*
 
 ## TPM — SPI0 to SLB9670 (U5)
 
-| SoM pad | SoM pin | Jayne net |
+| SoM pad | SoM pin | Observer net |
 | --- | --- | --- |
 | 133 | X_SPI0_CLK | TPM_SPI_SCK |
 | 134 | X_SPI0_D0 | TPM_SPI_MOSI |
@@ -77,7 +77,7 @@ TPM_RESET_N / TPM_PIRQ ride GPIO — **assign specific GPIO pads from the HW man
 
 ## MCU link — UART0 to MSPM0G3507 (U3)
 
-| SoM pad | SoM pin | Jayne net | Note |
+| SoM pad | SoM pin | Observer net | Note |
 | --- | --- | --- | --- |
 | 141 | X_UART0_TXD | UART_M2A path → MSPM0 RX | cross TX→RX |
 | 140 | X_UART0_RXD | UART_A2M path ← MSPM0 TX | cross TX→RX |
@@ -88,7 +88,7 @@ CAN / redundancy).
 
 ## Reset
 
-| SoM pad | SoM pin | Jayne net | Note |
+| SoM pad | SoM pin | Observer net | Note |
 | --- | --- | --- | --- |
 | 183 | X_NRESET_IN | SOC_PORZ (reset in) | drive/pull per HW manual |
 | 187 | X_PORZ_OUT | (reset status) | optional status |

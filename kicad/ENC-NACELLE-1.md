@@ -209,7 +209,7 @@ strength from external RF sources.
 - `Wash.kicad_sch` — host flight control cape; provides J_ENC connector
 - `Wash.md` — §13 documents the encoder interface, pull-ups, and GPIO assignment
 - `XCVR-49MHZ-2.md` — companion 49 MHz transceiver board
-- `Zoë.md` — companion comms/logging cape
+- `TACCO.md` — companion comms/logging cape
 
 ---
 
