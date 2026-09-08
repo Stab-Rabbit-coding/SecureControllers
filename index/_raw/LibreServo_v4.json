@@ -1,0 +1,411 @@
+[
+  {
+    "asset_type": "shape",
+    "ext": ".stl",
+    "mtime": 1785759077,
+    "rel_path": "3D/LS_body.stl",
+    "repo": "LibreServo_v4",
+    "sha256": "2f26cbb3cac702840c9e2d2386b63ca8f1f002c64a125334ce36cca8ee791abf",
+    "size_bytes": 189084
+  },
+  {
+    "asset_type": "shape",
+    "ext": ".stl",
+    "mtime": 1785759077,
+    "rel_path": "3D/LS_shaft_a.stl",
+    "repo": "LibreServo_v4",
+    "sha256": "bcece5fe42df7b0405ee49831b36da3d70d098c7d56dcc23b9119da837785425",
+    "size_bytes": 81684
+  },
+  {
+    "asset_type": "shape",
+    "ext": ".stl",
+    "mtime": 1785759077,
+    "rel_path": "3D/LS_shaft_b.stl",
+    "repo": "LibreServo_v4",
+    "sha256": "a959fbe8cf64e71310c4e45ce37ba1422f45fcbacf100f86633dcb0f94bdf8f3",
+    "size_bytes": 49484
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1785759077,
+    "rel_path": "PCB/datasheets/ADM2582E-ADM2587E.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "77a52a9e60364895ff2ba65ce80891811108bfcda5799797f1a3ec517bd64a42",
+    "size_bytes": 1322966
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1785759077,
+    "rel_path": "PCB/datasheets/ADM3055E-ADM3057E.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "becb97e50977fc17c605b7661eb2f2ee34dd65d0d33e45a185c3d36f1e48852d",
+    "size_bytes": 709774
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1787516367,
+    "rel_path": "PCB/datasheets/Infineon_I2C_Protocol_v2.03.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "04288206e14412cd6dc6bbbdbc45fc469a28a1cc260b2e42e022d8f33397774d",
+    "size_bytes": 1287505
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1787516367,
+    "rel_path": "PCB/datasheets/OPTIGA_Trust_M_ConfigGuide_v2.2.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "256c19d4b5d27d8e09a3de7f23af323ad81c3bb4a771c1d6d5de969dafbe6c9b",
+    "size_bytes": 96654
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1787516367,
+    "rel_path": "PCB/datasheets/OPTIGA_Trust_M_Keys_And_Certificates_v3.10.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "56450be9af673be59f12a29bc112c4ccd5cbc0882a6d8ae68d232c3859707a60",
+    "size_bytes": 502135
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1787516367,
+    "rel_path": "PCB/datasheets/OPTIGA_Trust_M_Solution_Reference_Manual_v3.70.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "41315a418c287f9cfff54b51a3538eec8026de2a601d83a6196b69aeee9adc4d",
+    "size_bytes": 4222596
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785759078,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/S32K-RM.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "a5887dd7cce88c8d965524bf951760e02e13cd19153d0e598fb56c8474e25e77",
+    "size_bytes": 15353911
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785759078,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/S32K1xx.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "abc7b1a0e5ba9a6761bc261c5ba17ce80bb608bf2372debfedd8c73c02245cc0",
+    "size_bytes": 1843583
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785890819,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/infineon-optiga-trust-m-datasheet-en.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "f9495234e67a7626dc64e1c19fbc9d1b72681f66ad6d9d17bec4b43c16c242b2",
+    "size_bytes": 689653
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785780637,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/mspm0g3518-q1.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "c21050084a64ec21e5ae8024589b79b0027ca3b481e6812c599ecda32bf157fc",
+    "size_bytes": 6765046
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764577,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaae29a.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "4d245650f63ef3f4f509f87f6230b1a1e89bff92e30d79fea362eabf2c33cbb0",
+    "size_bytes": 2115589
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764577,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaae76e.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "e452409468ff3b64803e0dfe516db078a02f7cbdc22b6ca4dd78cf9cf23d6c44",
+    "size_bytes": 1720418
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764578,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaaet8a.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "05d7e7fc44b3f587aa71a267168ace898afa7d079debab09eea8bf0a271cefd3",
+    "size_bytes": 1296966
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764578,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slau846e.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "9458427fdfc1dbb89bdc5e5e77a55c0ee6a3d270356228f443d0df8f65f45acf",
+    "size_bytes": 24342099
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764578,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaz742g.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "cd063930022e9be9080a75fe27b2e14388696705d65f119d8d78fc61121ff248",
+    "size_bytes": 553100
+  },
+  {
+    "asset_type": "kicad_symbol",
+    "ext": ".kicad_sym",
+    "mtime": 1787508947,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0-eagle-import.kicad_sym",
+    "repo": "LibreServo_v4",
+    "sha256": "959d81503a5f4497ced1e4bc7b084ef296b0e8d8312f78fa16d2241b5df20fc5",
+    "size_bytes": 645037
+  },
+  {
+    "asset_type": "kicad_symbol",
+    "ext": ".kicad_sym",
+    "mtime": 1787508947,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.kicad_sym",
+    "repo": "LibreServo_v4",
+    "sha256": "80d60cb1c9539a95366bb1980b18b9af3281e71b93f1c7c64d80b3a2a8cb5256",
+    "size_bytes": 8145
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/0402.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "c1a9a12dc73190a7a92aa81d0287660762e31ce16a8166a34dec99c278840355",
+    "size_bytes": 2269
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/0402_MIN.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "bc2d3399a5f22e1d8854fb59388e00b1769491acd3352a31915f81b4a8de158a",
+    "size_bytes": 2279
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/0603.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "10267328b24a2860fa24d2595b766e65808aa30843170d181252f1ec87866bde",
+    "size_bytes": 2258
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/1206.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "6d69a06ab81dd56698c616e8ae079e35e560adfca0d6e8bae12a017858682968",
+    "size_bytes": 2251
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/ACS711-QFN.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "dbdd48055a9c63c2c4afec978d5b2175e4f0474a06ce4aec856ceaf66fac6c6c",
+    "size_bytes": 4587
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/DFN5X6.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "abc87da22925bdc484020d2ae8e8532b9b9188340ee6378a25c8d06ef5935d86",
+    "size_bytes": 3063
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/E2,5-6_MIN.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "7751800d46f1caba78e08cf6f1e8bb91e04b0c29a236d21e5433f2d1cbef129e",
+    "size_bytes": 3834
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/FFC-5-0.5.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "f32bc327bec4bcf7a2c74cc61f51ecad5fac23f5fdce9ab617171599bd12a61a",
+    "size_bytes": 3360
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/HEADER_4_1.27_0.3.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "f2a66395dfab6d042f446ef82cdbad2f1bed0a827f939fbfba1f4424f7a81be6",
+    "size_bytes": 2002
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "duplicate_hash_match": true,
+    "ext": ".kicad_mod",
+    "mtime": 1787508947,
+    "possible_duplicate": true,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/Infineon_PG-USON-10-2-4_3x3mm_P0.5mm_EP1.7x2.5mm.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "4c11952bb9204c6dbd03c5743a0908a08f3a3e14aeea80fcc9802b59f9969dfc",
+    "size_bytes": 3807
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/JST_PH-4_HOLE_B.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "2f874bb74cca17ea39580602036bdd942c80df75ed4438e889cf673e3235f3ad",
+    "size_bytes": 3028
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/MLP8.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "878f6cf055cb3f03a2bccb805d553337a954b73175876334a443c604c17fc0bf",
+    "size_bytes": 3248
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/MPM36XX.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "f05af5a59f4361ecfad6eeeeecb3bcc68ac9a40d1b617dbcc7df45b1d91999cc",
+    "size_bytes": 8546
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/MSOP-8.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "391a3e6665ef1fafe5aa9be503ea064ced56605a70c0db7fdf0d0d090a141b16",
+    "size_bytes": 3338
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/OSC-2X1.6.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "a575145fb66f4daafcf24fbbb900f6cd5dab4697701439ae9de006b96699df9f",
+    "size_bytes": 2103
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/PLCC-4_2.2X2.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "15cf2ee4e2fec375f347b9d5d0b93f90ceb0e1bcd6cdacc3b8bfe242dc88decc",
+    "size_bytes": 2105
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/POTEN_SERVO.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "da83f7a3632676732acc56e7c326d0987304bf3d4e04d184f60780321f08fe1c",
+    "size_bytes": 1562
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/QFN24.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "1a62e196ab7fcb41dbcb30a1b858a7db17818eee28ccb3c32eb50b636bfd89a9",
+    "size_bytes": 6974
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/QFN32.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "1a68c2f078b1cee76eeb8a804eb49b17bc569fb72e8b46e15982474a8843f0ef",
+    "size_bytes": 18094
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/SERVO_SLOT.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "561d16115a47b02bae276e65b96a3529c8d36728eff8ca82611374dd73e06ee6",
+    "size_bytes": 4306
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/SOT23.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "231b833994eb183ae67329f5c009a5690df701bb281edce3b554a2cc97db2bf9",
+    "size_bytes": 2495
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1785781577,
+    "rel_path": "PCB/kicad/LibreServo-v4.0.0.pretty/SOT25.kicad_mod",
+    "repo": "LibreServo_v4",
+    "sha256": "060c214762370beb147f30386cc1168ab94df4202275f5f4c12ce0ec5dc2656f",
+    "size_bytes": 5072
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1787508947,
+    "rel_path": "PCB/kicad/tools/swap_slb9672_for_optiga.py",
+    "repo": "LibreServo_v4",
+    "sha256": "c5bcb559cc0b7fe6b4113772898ff30893358750ebbd6196bffeffa4572b2f2f",
+    "size_bytes": 11802
+  }
+]
