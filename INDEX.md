@@ -20,15 +20,15 @@ Read **one** manifest file below for your asset type — never grep the PDFs,
 `.kicad_sym`/`.kicad_mod` files, or shape files themselves, and never load
 more than one manifest for a single lookup.
 
-| Looking for... | Read this file | Key field to match on |
-|---|---|---|
-| A datasheet by part number | `index/datasheets.json` | `mpn_guess` (Tier B-confirmed once `verified: true`) |
-| A KiCad symbol | `index/kicad-symbols.json` | `symbol_or_footprint_name` |
-| A KiCad footprint | `index/kicad-footprints.json` | `symbol_or_footprint_name` |
-| A mechanical shape (STEP/WRL/STL) | `index/shapes.json` | `basename` |
-| A shared script/tool | `index/scripts.json` | `path` |
-| A skill/knowledge resource | `index/knowledge.json` | `path`, `description` |
-| Whether a repo has assets yet | `index/placeholders.json` | `repo` |
+| Looking for...                    | Read this file                | Key field to match on                                |
+| --------------------------------- | ----------------------------- | ---------------------------------------------------- |
+| A datasheet by part number        | `index/datasheets.json`       | `mpn_guess` (Tier B-confirmed once `verified: true`) |
+| A KiCad symbol                    | `index/kicad-symbols.json`    | `symbol_or_footprint_name`                           |
+| A KiCad footprint                 | `index/kicad-footprints.json` | `symbol_or_footprint_name`                           |
+| A mechanical shape (STEP/WRL/STL) | `index/shapes.json`           | `basename`                                           |
+| A shared script/tool              | `index/scripts.json`          | `path`                                               |
+| A skill/knowledge resource        | `index/knowledge.json`        | `path`, `description`                                |
+| Whether a repo has assets yet     | `index/placeholders.json`     | `repo`                                               |
 
 There is currently no single-file "everything from repo X" lookup — that
 would require reading each type manifest and filtering by `repo`. See the
@@ -44,14 +44,19 @@ runs) for which copy is authoritative.
 
 ## Current scope (as of the last scan)
 
-| Repo | Datasheets | KiCad symbols | KiCad footprints | Shapes | Scripts |
-|---|---:|---:|---:|---:|---:|
-| Serenity-UAV | 50 | 9 | 17 | 367 | 44 |
-| SecureControllers | 38 | 8 | 15 | 37 | 2 |
-| Open-Secure-ESC | 58 | 20 | 9 | 1 | 64 |
-| open-servo-core-secure | 11 | 1 | 40 | 37 | 2 |
-| LibreServo_v4 | 15 | 2 | 22 | 3 | 1 |
-| Tactical-WX-RX | 3 | 0 | 0 | 0 | 0 |
+| Repo                   | Datasheets | KiCad symbols | KiCad footprints | Shapes | Scripts |
+| ---------------------- | ---------: | ------------: | ---------------: | -----: | ------: |
+| Serenity-UAV           |         50 |             9 |               17 |    367 |      43 |
+| SecureControllers      |         38 |             8 |               15 |     37 |       2 |
+| Open-Secure-ESC        |         58 |            20 |                9 |      1 |       0 |
+| open-servo-core-secure |         11 |             1 |               40 |     37 |       0 |
+| LibreServo_v4          |         15 |             2 |               22 |      3 |       0 |
+| Tactical-WX-RX         |          3 |             0 |                0 |      0 |       0 |
+
+"Scripts" counts only top-level `tools/` directories (per the provisional
+classification rule below) — nested per-board generator/fixup scripts (e.g.
+`Open-Secure-ESC`'s many `kicad/<board>/tools/*.py` one-offs) are
+intentionally excluded, not missed.
 
 `engineering-pe-skills` is indexed separately as a **knowledge asset** (4
 skill entries in `index/knowledge.json`) — it has no MPN/hash-drift concerns
@@ -61,11 +66,11 @@ in the hardware sense, but is still a citable reusable resource.
 Bento-boat, TidySweep, obd2-recorder, dasGoat-USV. Consult this index when
 starting hardware work in any of them.
 
-**Confirmed cross-repo duplication:** 87 of 175 cataloged datasheets
-(`possible_duplicate: true` in `index/datasheets.json`) already have a
-same-named copy in another repo — this is exactly the drift risk this index
-exists to catch. 4 renamed-but-content-identical duplicates were also found
-(`renamed_duplicate: true`).
+**Confirmed cross-repo duplication:** 87 of 175 cataloged datasheets and 74 of
+445 shape entries (`possible_duplicate: true` in `index/datasheets.json` /
+`index/shapes.json`) already have a same-named copy in another repo — this is
+exactly the drift risk this index exists to catch. 4 renamed-but-content-
+identical datasheet duplicates were also found (`renamed_duplicate: true`).
 
 ## Verification tiers (Phase 2 / U4, not yet run)
 
@@ -83,7 +88,7 @@ provisional "scripts live under `tools/`" classification rule used by
 
 ## Regenerating the index
 
-```
+```bash
 /usr/bin/python3 tools/inventory_scan.py    # rescan all repos -> index/_raw/*.json
 /usr/bin/python3 tools/build_manifests.py   # rebuild index/*.json from the raw scan
 ```

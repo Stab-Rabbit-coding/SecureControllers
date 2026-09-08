@@ -1460,7 +1460,7 @@
   {
     "asset_type": "shape",
     "ext": ".stl",
-    "mtime": 1788723041,
+    "mtime": 1788885986,
     "rel_path": "airframe/stls/nacelles/nacelle_port_revs.stl",
     "repo": "Serenity-UAV",
     "sha256": "d554330beaf7abc96b9a71338ec59c143138875a6d74b30e083f4fe9fd97bc0c",
@@ -1478,7 +1478,7 @@
   {
     "asset_type": "shape",
     "ext": ".stl",
-    "mtime": 1788723041,
+    "mtime": 1788885986,
     "rel_path": "airframe/stls/nacelles/nacelle_stbd_revs.stl",
     "repo": "Serenity-UAV",
     "sha256": "14e15a70c89aea5f4d515110a4b1334a67001a203a5f4b9e26c38139e2ee9460",
@@ -3477,17 +3477,6 @@
     "repo": "Serenity-UAV",
     "sha256": "99fda67814afbd9b9632e0ddd610b78335365b94a70233bd31166e094795dce5",
     "size_bytes": 517430
-  },
-  {
-    "asset_type": "script",
-    "duplicate_hash_match": false,
-    "ext": ".py",
-    "mtime": 1784494721,
-    "possible_duplicate": true,
-    "rel_path": "avionics/firmware/fc/tools/governor_cal.py",
-    "repo": "Serenity-UAV",
-    "sha256": "b81ea8f5b54ee0c8abfeb013d3cc60a814fffc6a48e0ee3a5bd5465347949a55",
-    "size_bytes": 41376
   },
   {
     "asset_type": "kicad_footprint",

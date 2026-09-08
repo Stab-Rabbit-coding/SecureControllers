@@ -90,11 +90,14 @@ def sha256_of(path: Path) -> str:
     return h.hexdigest()
 
 
-def classify_ext(path: Path) -> str | None:
-    suffix = path.suffix.lower()
+def classify_ext(rel_path: Path) -> str | None:
+    suffix = rel_path.suffix.lower()
     if suffix in EXT_TYPE_MAP:
         return EXT_TYPE_MAP[suffix]
-    if suffix == ".py" and "tools" in path.parts:
+    # Only a *top-level* tools/ directory counts as reusable-script scope;
+    # nested per-board tools/ dirs (e.g. kicad/<board>/tools/) hold one-off
+    # generator/fixup scripts, not shared tools.
+    if suffix == ".py" and len(rel_path.parts) >= 2 and rel_path.parts[0] == "tools":
         return "script"
     return None
 
@@ -118,7 +121,7 @@ def scan_repo(repo_name: str, is_knowledge: bool = False) -> list[dict]:
             continue
         if is_ignored(rel, patterns):
             continue
-        asset_type = classify_ext(path)
+        asset_type = classify_ext(rel)
         if asset_type is None:
             continue
         records.append(
@@ -181,11 +184,10 @@ def scan_knowledge_repo(repo_name: str, repo_root: Path) -> list[dict]:
 def write_placeholders() -> None:
     entries = []
     for repo_name in PLACEHOLDER_REPOS:
-        repo_root = WORKSPACE_ROOT / repo_name
         entries.append(
             {
                 "repo": repo_name,
-                "path": str(repo_root),
+                "path": f"../{repo_name}",
                 "note": (
                     "No hardware assets cataloged yet. When this repo starts hardware "
                     "work, add its assets to index/_raw/ via inventory_scan.py and to "

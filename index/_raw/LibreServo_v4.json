@@ -398,14 +398,5 @@
     "repo": "LibreServo_v4",
     "sha256": "060c214762370beb147f30386cc1168ab94df4202275f5f4c12ce0ec5dc2656f",
     "size_bytes": 5072
-  },
-  {
-    "asset_type": "script",
-    "ext": ".py",
-    "mtime": 1787508947,
-    "rel_path": "PCB/kicad/tools/swap_slb9672_for_optiga.py",
-    "repo": "LibreServo_v4",
-    "sha256": "c5bcb559cc0b7fe6b4113772898ff30893358750ebbd6196bffeffa4572b2f2f",
-    "size_bytes": 11802
   }
 ]

@@ -121,14 +121,40 @@ def build_shapes(records: list[dict]) -> list[dict]:
             "size_bytes": rec.get("size_bytes"),
         }
 
-    out = []
     for group in by_key.values():
         exts = set(group["files"].keys())
-        group["pair_incomplete"] = not ({"step", "wrl"} <= exts) and bool(
-            exts & {"step", "wrl"}
-        )
-        out.append(group)
-    return out
+        # .step and .stp are both STEP-format CAD exports; either satisfies
+        # the "has a STEP file" half of a complete STEP+WRL pair.
+        has_step = bool(exts & {"step", "stp"})
+        has_wrl = "wrl" in exts
+        group["pair_incomplete"] = (has_step or has_wrl) and not (has_step and has_wrl)
+
+    # Cross-repo duplicate detection at the shape-group level: two groups
+    # (in different repos) that share the same basename AND every file's
+    # content hash are the same physical shape, copied across repos.
+    by_basename: dict[str, list[dict]] = {}
+    for group in by_key.values():
+        by_basename.setdefault(group["basename"], []).append(group)
+
+    def content_signature(group: dict) -> frozenset:
+        return frozenset((ext, f["sha256"]) for ext, f in group["files"].items())
+
+    for groups in by_basename.values():
+        repos = {g["repo"] for g in groups}
+        if len(repos) <= 1:
+            continue
+        for g in groups:
+            g["possible_duplicate"] = True
+        signatures = {content_signature(g) for g in groups}
+        if len(signatures) == 1:
+            for g in groups:
+                g["duplicate_hash_match"] = True
+
+    for group in by_key.values():
+        group.setdefault("possible_duplicate", False)
+        group.setdefault("duplicate_hash_match", False)
+
+    return list(by_key.values())
 
 
 def build_scripts(records: list[dict]) -> list[dict]:

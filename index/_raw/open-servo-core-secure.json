@@ -1257,23 +1257,5 @@
     "repo": "open-servo-core-secure",
     "sha256": "84720ca07990e35fd61f8a80cfc58d93d2c173a103d49953cc432bff27445951",
     "size_bytes": 64153
-  },
-  {
-    "asset_type": "script",
-    "ext": ".py",
-    "mtime": 1788188607,
-    "rel_path": "hardware/tools/check_hole_to_edge.py",
-    "repo": "open-servo-core-secure",
-    "sha256": "6babf324abce6efb7e1ed49ffab41a2fb3f577ddb552bca1e9125605dc3b885c",
-    "size_bytes": 10217
-  },
-  {
-    "asset_type": "script",
-    "ext": ".py",
-    "mtime": 1788090763,
-    "rel_path": "hardware/tools/prune_routing_conflicts.py",
-    "repo": "open-servo-core-secure",
-    "sha256": "3fa80fd8d997bb39901aa10d26b8696c9f38f68e6b58708d39e22c3815ec13a5",
-    "size_bytes": 3993
   }
 ]
