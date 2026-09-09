@@ -1,0 +1,29 @@
+[
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1756411141,
+    "rel_path": "HF Distress and USCG Contact Frequencies _ Navigation Center.pdf",
+    "repo": "Tactical-WX-RX",
+    "sha256": "26230962b2cc31fb6eb6fde5651ec7bc10866c37628a5166f22131ffdc474cb4",
+    "size_bytes": 61621
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1756406358,
+    "rel_path": "soms-brochure.pdf",
+    "repo": "Tactical-WX-RX",
+    "sha256": "73344def2f4a328849e9010f4762624c590d00087c200a74e21c51dce6682c3f",
+    "size_bytes": 6714002
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1756411106,
+    "rel_path": "stryker_ham-radio-emergency-frequency-list.pdf",
+    "repo": "Tactical-WX-RX",
+    "sha256": "bbbe76032f086ed7f0164259a00f61094bd9e785d2668e683ebfc6dbbb212929",
+    "size_bytes": 53918
+  }
+]
