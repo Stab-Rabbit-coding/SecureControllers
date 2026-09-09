@@ -4308,6 +4308,15 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1788886522,
+    "rel_path": "tools/nacelle_housing_profile.py",
+    "repo": "Serenity-UAV",
+    "sha256": "752c0524f6aba84f151f3442f2e489ca6946d85cca703a32fa563130ebd719e1",
+    "size_bytes": 21875
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1788870196,
     "rel_path": "tools/nacelle_mass_cg.py",
     "repo": "Serenity-UAV",
@@ -4322,6 +4331,15 @@
     "repo": "Serenity-UAV",
     "sha256": "ad1878d6b41b09772d848fecf74a6f79dfef5f2fd96f2907342a046de4268507",
     "size_bytes": 18021
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1788959306,
+    "rel_path": "tools/nozzle_linkage_check.py",
+    "repo": "Serenity-UAV",
+    "sha256": "61972e5cc814784bbfcecaff04d2f217f7a43cf005d0b37e93dfe0704a303e24",
+    "size_bytes": 25129
   },
   {
     "asset_type": "script",

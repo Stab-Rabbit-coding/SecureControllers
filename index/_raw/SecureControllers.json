@@ -1432,10 +1432,10 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1788885934,
+    "mtime": 1788959088,
     "rel_path": "tools/inventory_scan.py",
     "repo": "SecureControllers",
-    "sha256": "760633e09f4baa5d279bc3c0e2a7a652649e5a22cdad21fc4e96d4b66f0eb202",
-    "size_bytes": 8919
+    "sha256": "af92975e8b9bac78d1477ab41b6cf7d8fa3936b442533f07c061550b2c49b695",
+    "size_bytes": 8916
   }
 ]

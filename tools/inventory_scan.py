@@ -52,6 +52,7 @@ def has_skip_part(parts: tuple[str, ...]) -> bool:
     """Skip hidden directories (.git, .worktrees, .venv, etc.) and known noise dirs."""
     return any(part.startswith(".") or part in ALWAYS_SKIP_DIRS for part in parts)
 
+
 OUTPUT_ROOT = WORKSPACE_ROOT / "SecureControllers" / "index"
 
 
@@ -219,7 +220,7 @@ def detect_duplicates(all_records: list[dict]) -> None:
                 r["possible_duplicate"] = True
                 r["duplicate_hash_match"] = len({g["sha256"] for g in group}) == 1
 
-    for sha, group in by_hash.items():
+    for group in by_hash.values():
         repos_in_group = {r["repo"] for r in group}
         basenames_in_group = {Path(r["rel_path"]).name for r in group}
         if len(repos_in_group) > 1 and len(basenames_in_group) > 1:

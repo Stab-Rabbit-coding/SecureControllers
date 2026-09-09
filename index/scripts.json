@@ -18,8 +18,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "SecureControllers",
-    "sha256": "760633e09f4baa5d279bc3c0e2a7a652649e5a22cdad21fc4e96d4b66f0eb202",
-    "size_bytes": 8919,
+    "sha256": "af92975e8b9bac78d1477ab41b6cf7d8fa3936b442533f07c061550b2c49b695",
+    "size_bytes": 8916,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -302,6 +302,18 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": false,
+    "path": "tools/nacelle_housing_profile.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "752c0524f6aba84f151f3442f2e489ca6946d85cca703a32fa563130ebd719e1",
+    "size_bytes": 21875,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
     "path": "tools/nacelle_mass_cg.py",
     "possible_duplicate": false,
     "renamed_duplicate": false,
@@ -320,6 +332,18 @@
     "repo": "Serenity-UAV",
     "sha256": "ad1878d6b41b09772d848fecf74a6f79dfef5f2fd96f2907342a046de4268507",
     "size_bytes": 18021,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "path": "tools/nozzle_linkage_check.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "61972e5cc814784bbfcecaff04d2f217f7a43cf005d0b37e93dfe0704a303e24",
+    "size_bytes": 25129,
     "verification_tier": "unverified",
     "verified": false
   },
