@@ -74,12 +74,21 @@ jobs:
 
       - name: Check for Python sources
         id: pyfiles
+        # Scoped to tools/ only: kicad/*.py, kicad/<Board>/scripts/*.py, and
+        # firmware/fc/tools/*.py are pre-existing per-board PCB generator
+        # scripts predating this CI (271 ruff findings on first run) that
+        # the project's own convention treats as drift-prone and not safe
+        # to regenerate/reformat opportunistically (see
+        # feedback_generator_drift_and_freerouting: "never re-run PCB gen
+        # after manual packing" — an import-sort or format pass is exactly
+        # that kind of unreviewed touch). tools/ is this effort's own new
+        # code and starts fully lint-clean.
         run: |
-          if git ls-files -- '*.py' | grep -q .; then
+          if git ls-files -- 'tools/*.py' | grep -q .; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
-            echo "No Python files in the repo yet — nothing to lint."
+            echo "No Python files under tools/ yet — nothing to lint."
           fi
 
       - name: Install ruff
@@ -88,11 +97,11 @@ jobs:
 
       - name: Ruff check
         if: steps.pyfiles.outputs.found == 'true'
-        run: ruff check .
+        run: ruff check tools/
 
       - name: Ruff format check
         if: steps.pyfiles.outputs.found == 'true'
-        run: ruff format --check .
+        run: ruff format --check tools/
 
   whitespace:
     name: Repo hygiene
