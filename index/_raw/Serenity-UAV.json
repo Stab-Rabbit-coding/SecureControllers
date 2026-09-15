@@ -3443,13 +3443,14 @@
     "mtime": 1787494678,
     "possible_duplicate": true,
     "rel_path": "avionics/datasheets/slaaet8a.pdf",
+    "renamed_duplicate": true,
     "repo": "Serenity-UAV",
     "sha256": "05d7e7fc44b3f587aa71a267168ace898afa7d079debab09eea8bf0a271cefd3",
     "size_bytes": 1296966
   },
   {
     "asset_type": "datasheet",
-    "duplicate_hash_match": true,
+    "duplicate_hash_match": false,
     "ext": ".pdf",
     "mtime": 1787494678,
     "possible_duplicate": true,
@@ -4173,6 +4174,15 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1789476611,
+    "rel_path": "tools/gen_todo_from_wbs.py",
+    "repo": "Serenity-UAV",
+    "sha256": "fd952ee87c17ebc9b48d1068b403453a45f25dd810035b1a30337ade22f828e9",
+    "size_bytes": 12263
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1785111802,
     "rel_path": "tools/import-specctra-ses.py",
     "repo": "Serenity-UAV",
@@ -4308,11 +4318,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1788886522,
+    "mtime": 1788959599,
     "rel_path": "tools/nacelle_housing_profile.py",
     "repo": "Serenity-UAV",
-    "sha256": "752c0524f6aba84f151f3442f2e489ca6946d85cca703a32fa563130ebd719e1",
-    "size_bytes": 21875
+    "sha256": "e142e2fcfd765683cfcb98a0452c1e5d60a41d744304e4e4699bf1ba69d4287a",
+    "size_bytes": 21943
   },
   {
     "asset_type": "script",
@@ -4335,11 +4345,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1788959306,
+    "mtime": 1788975676,
     "rel_path": "tools/nozzle_linkage_check.py",
     "repo": "Serenity-UAV",
-    "sha256": "61972e5cc814784bbfcecaff04d2f217f7a43cf005d0b37e93dfe0704a303e24",
-    "size_bytes": 25129
+    "sha256": "9d54e7d1c5a06ba2206ca0e8be407145fcaa8a3db925e0d8e99d009fcb6ed3dd",
+    "size_bytes": 45474
   },
   {
     "asset_type": "script",

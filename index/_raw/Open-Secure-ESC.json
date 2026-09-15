@@ -398,8 +398,10 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": false,
     "ext": ".pdf",
     "mtime": 1785773568,
+    "possible_duplicate": true,
     "rel_path": "docs/datasheets/mspm0g3518.pdf",
     "repo": "Open-Secure-ESC",
     "sha256": "7aea5760a85f52fb6b04b9946e7d078e77b472c8aa6bd40e5e30bc1dec4653af",
@@ -438,8 +440,10 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
     "ext": ".pdf",
     "mtime": 1785780844,
+    "possible_duplicate": true,
     "rel_path": "docs/datasheets/slaaed1g.pdf",
     "repo": "Open-Secure-ESC",
     "sha256": "c29f162f9ca20d0f030d53abfde9656e8bb5ae2948f84a5aada4f621beef21b4",
@@ -452,13 +456,14 @@
     "mtime": 1785760044,
     "possible_duplicate": true,
     "rel_path": "docs/datasheets/slaaet8a.pdf",
+    "renamed_duplicate": true,
     "repo": "Open-Secure-ESC",
     "sha256": "05d7e7fc44b3f587aa71a267168ace898afa7d079debab09eea8bf0a271cefd3",
     "size_bytes": 1296966
   },
   {
     "asset_type": "datasheet",
-    "duplicate_hash_match": true,
+    "duplicate_hash_match": false,
     "ext": ".pdf",
     "mtime": 1785759755,
     "possible_duplicate": true,

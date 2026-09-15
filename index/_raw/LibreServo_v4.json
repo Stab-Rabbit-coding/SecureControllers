@@ -28,6 +28,17 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/ACS711-Datasheet.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "be02d41a71b47dc3af0c0a097c21b2b320a26a45fb882a1e6c319669a9dc2c36",
+    "size_bytes": 1257307
+  },
+  {
+    "asset_type": "datasheet",
     "ext": ".pdf",
     "mtime": 1785759077,
     "rel_path": "PCB/datasheets/ADM2582E-ADM2587E.pdf",
@@ -54,6 +65,17 @@
     "repo": "LibreServo_v4",
     "sha256": "04288206e14412cd6dc6bbbdbc45fc469a28a1cc260b2e42e022d8f33397774d",
     "size_bytes": 1287505
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/MPM3610GQV-Z.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "1676f947053cccfef03eec8bf7b0a5e20e428993bcf83c5951438e29af05a374",
+    "size_bytes": 880036
   },
   {
     "asset_type": "datasheet",
@@ -108,6 +130,17 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/WSD3069DN56.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "3006ac918a736c24514a1c66a993b6c0d8b8fd69e332f24c8f581c38b0034e3a",
+    "size_bytes": 925201
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1785890819,
     "possible_duplicate": true,
     "rel_path": "PCB/datasheets/infineon-optiga-trust-m-datasheet-en.pdf",
@@ -128,6 +161,28 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": false,
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/mspm0g3518.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "a6ce501f275f0727b1ef32d33d5f9d6d09cb47c93aa898fd60241370d5cbe996",
+    "size_bytes": 7642159
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/pub-005892_ds_aeat-8800-q24_2017-05-17.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "774bc086523f7bebad618db7c0c6fc9fd29fa1a1e670165d7208cab8c7762a4e",
+    "size_bytes": 1600728
+  },
+  {
+    "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
     "mtime": 1785764577,
@@ -136,6 +191,17 @@
     "repo": "LibreServo_v4",
     "sha256": "4d245650f63ef3f4f509f87f6230b1a1e89bff92e30d79fea362eabf2c33cbb0",
     "size_bytes": 2115589
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaae29b.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "c242be5a46b9825f9fdcff462ac93a26ff3eac19d0a4b1e0adcce42ea71e9c82",
+    "size_bytes": 2125045
   },
   {
     "asset_type": "datasheet",
@@ -152,9 +218,19 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
-    "mtime": 1785764578,
+    "mtime": 1789057672,
     "possible_duplicate": true,
-    "rel_path": "PCB/datasheets/slaaet8a.pdf",
+    "rel_path": "PCB/datasheets/slaaed1g.pdf",
+    "repo": "LibreServo_v4",
+    "sha256": "c29f162f9ca20d0f030d53abfde9656e8bb5ae2948f84a5aada4f621beef21b4",
+    "size_bytes": 12404318
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "rel_path": "PCB/datasheets/slaaet8a copy.pdf",
+    "renamed_duplicate": true,
     "repo": "LibreServo_v4",
     "sha256": "05d7e7fc44b3f587aa71a267168ace898afa7d079debab09eea8bf0a271cefd3",
     "size_bytes": 1296966
@@ -162,6 +238,28 @@
   {
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1785764578,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaaet8a.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "05d7e7fc44b3f587aa71a267168ace898afa7d079debab09eea8bf0a271cefd3",
+    "size_bytes": 1296966
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "rel_path": "PCB/datasheets/slau846e copy.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "905e0133d6abd9e741009033bc3f04b8a02c509f767bfad55e775c51e34a30a9",
+    "size_bytes": 24624635
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": false,
     "ext": ".pdf",
     "mtime": 1785764578,
     "possible_duplicate": true,
@@ -180,6 +278,28 @@
     "repo": "LibreServo_v4",
     "sha256": "cd063930022e9be9080a75fe27b2e14388696705d65f119d8d78fc61121ff248",
     "size_bytes": 553100
+  },
+  {
+    "asset_type": "datasheet",
+    "ext": ".pdf",
+    "mtime": 1789057672,
+    "rel_path": "PCB/datasheets/slaz758e copy.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "210fb34269f930193342ab25d8eb91b65c0cf7d8d0d3f3dc00c203467ae8fe04",
+    "size_bytes": 538304
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1789057395,
+    "possible_duplicate": true,
+    "rel_path": "PCB/datasheets/slaz758e.pdf",
+    "renamed_duplicate": true,
+    "repo": "LibreServo_v4",
+    "sha256": "210fb34269f930193342ab25d8eb91b65c0cf7d8d0d3f3dc00c203467ae8fe04",
+    "size_bytes": 538304
   },
   {
     "asset_type": "kicad_symbol",

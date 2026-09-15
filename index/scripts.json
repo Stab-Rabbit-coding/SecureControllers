@@ -14,6 +14,18 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": false,
+    "path": "tools/build_skills_index.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "6ed34cb1fcbb51beed2762bc62590abfbafd22de71a372d6a2ca46e8ab771a65",
+    "size_bytes": 6522,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
     "path": "tools/inventory_scan.py",
     "possible_duplicate": false,
     "renamed_duplicate": false,
@@ -116,6 +128,18 @@
     "repo": "Serenity-UAV",
     "sha256": "62267ab5ee71301b6b458229f224dd35b17d9aec149eed87154594bd4ed0ec0c",
     "size_bytes": 7479,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "path": "tools/gen_todo_from_wbs.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "fd952ee87c17ebc9b48d1068b403453a45f25dd810035b1a30337ade22f828e9",
+    "size_bytes": 12263,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -306,8 +330,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "752c0524f6aba84f151f3442f2e489ca6946d85cca703a32fa563130ebd719e1",
-    "size_bytes": 21875,
+    "sha256": "e142e2fcfd765683cfcb98a0452c1e5d60a41d744304e4e4699bf1ba69d4287a",
+    "size_bytes": 21943,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -342,8 +366,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "61972e5cc814784bbfcecaff04d2f217f7a43cf005d0b37e93dfe0704a303e24",
-    "size_bytes": 25129,
+    "sha256": "9d54e7d1c5a06ba2206ca0e8be407145fcaa8a3db925e0d8e99d009fcb6ed3dd",
+    "size_bytes": 45474,
     "verification_tier": "unverified",
     "verified": false
   },
