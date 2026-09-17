@@ -1,0 +1,156 @@
+name: Security
+
+# Mirrors the security.yml pattern already used in the sibling repos that
+# consume this library (Open-Secure-ESC) so SecureControllers is not the
+# weakest link for any repo that pulls hardware assets from it.
+
+on:
+  push:
+    branches: [initial, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secret-scan:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install gitleaks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          release=$(curl -fsSL -H "Authorization: Bearer ${GH_TOKEN}" \
+            https://api.github.com/repos/gitleaks/gitleaks/releases/latest)
+          version=$(printf '%s' "$release" | grep -m1 '"tag_name"' | cut -d '"' -f4)
+          ver_num="${version#v}"
+          curl -fsSL -o gitleaks.tar.gz \
+            "https://github.com/gitleaks/gitleaks/releases/download/${version}/gitleaks_${ver_num}_linux_x64.tar.gz"
+          tar -xzf gitleaks.tar.gz gitleaks
+          sudo install -m 0755 gitleaks /usr/local/bin/gitleaks
+          gitleaks version
+
+      - name: Run gitleaks
+        run: gitleaks detect --source . --redact --no-banner -v
+
+  python-security:
+    name: Python security (bandit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Check for Python sources
+        id: pyfiles
+        run: |
+          if git ls-files -- '*.py' | grep -q .; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No Python files in the repo yet — nothing to scan."
+          fi
+
+      - name: Install bandit
+        if: steps.pyfiles.outputs.found == 'true'
+        run: pip install bandit
+
+      - name: Run bandit
+        if: steps.pyfiles.outputs.found == 'true'
+        run: bandit -r . -ll --exclude ./.git,./index
+
+  c-security:
+    name: C/C++ security (cppcheck)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for C/C++ sources
+        id: cfiles
+        run: |
+          if git ls-files -- '*.c' '*.h' '*.cpp' '*.hpp' | grep -q .; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No C/C++ files in the repo yet — nothing to scan."
+          fi
+
+      - name: Install cppcheck
+        if: steps.cfiles.outputs.found == 'true'
+        run: sudo apt-get update && sudo apt-get install -y cppcheck
+
+      - name: Run cppcheck (security-relevant checks)
+        if: steps.cfiles.outputs.found == 'true'
+        run: |
+          cppcheck --error-exitcode=1 --enable=warning,portability \
+            --inline-suppr --suppress=missingIncludeSystem \
+            firmware/
+
+  filesystem-scan:
+    name: Vulnerability scan (trivy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install trivy
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh \
+            | sh -s -- -b /usr/local/bin
+
+      - name: Run trivy filesystem scan
+        run: |
+          trivy fs \
+            --scanners vuln,misconfig \
+            --severity HIGH,CRITICAL \
+            --exit-code 1 \
+            --ignore-unfixed \
+            .
+
+  devskim:
+    name: DevSkim (multi-language)
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run DevSkim scanner
+        uses: microsoft/DevSkim-Action@v1
+        with:
+          # Generated index/manifest JSON under index/ catalogs filenames and
+          # paths from across the workspace by design (that is the whole
+          # point of the resource library) — it is not source to scan.
+          ignore-globs: "**/.git/**,**/index/_raw/**,**/index/*.json"
+
+      - name: Upload DevSkim scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: devskim-results.sarif
+
+  dependency-review:
+    name: Dependency review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      # Requires Settings > Security > Dependency graph to be enabled for
+      # this repository; continue-on-error keeps that an opt-in rather than
+      # a hard CI prerequisite.
+      - uses: actions/dependency-review-action@v4
+        continue-on-error: true

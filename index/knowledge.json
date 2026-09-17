@@ -1,0 +1,30 @@
+[
+  {
+    "description": "name: aeronautical-engineering",
+    "file_count": 5,
+    "path": "skills/aeronautical-engineering",
+    "repo": "engineering-pe-skills",
+    "sha256": "4fcde8c1ae4c0c0f25539264b05c6ce6df66e2ce5837a605a9a79207428bbd8b"
+  },
+  {
+    "description": "name: control-systems-engineering",
+    "file_count": 4,
+    "path": "skills/control-systems-engineering",
+    "repo": "engineering-pe-skills",
+    "sha256": "11ca1e5f3930f99c0cd2b92536f41678fa95d2b473ab41ae52117dbeeea42f14"
+  },
+  {
+    "description": "name: mechanical-engineering",
+    "file_count": 4,
+    "path": "skills/mechanical-engineering",
+    "repo": "engineering-pe-skills",
+    "sha256": "0222286195878ae72679841c27651a629fc8a4d6de396f3ff0845c73f0e626e3"
+  },
+  {
+    "description": "name: statics-and-dynamics",
+    "file_count": 4,
+    "path": "skills/statics-and-dynamics",
+    "repo": "engineering-pe-skills",
+    "sha256": "1a0a2f41547b56dc12a25fa69c6e66434013d4559c00c9823380727b566d2e2e"
+  }
+]

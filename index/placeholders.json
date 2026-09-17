@@ -1,0 +1,22 @@
+[
+  {
+    "note": "No hardware assets cataloged yet. When this repo starts hardware work, add its assets to index/_raw/ via inventory_scan.py and to the type manifests in SecureControllers/index/.",
+    "path": "../Bento-boat",
+    "repo": "Bento-boat"
+  },
+  {
+    "note": "No hardware assets cataloged yet. When this repo starts hardware work, add its assets to index/_raw/ via inventory_scan.py and to the type manifests in SecureControllers/index/.",
+    "path": "../TidySweep",
+    "repo": "TidySweep"
+  },
+  {
+    "note": "No hardware assets cataloged yet. When this repo starts hardware work, add its assets to index/_raw/ via inventory_scan.py and to the type manifests in SecureControllers/index/.",
+    "path": "../obd2-recorder",
+    "repo": "obd2-recorder"
+  },
+  {
+    "note": "No hardware assets cataloged yet. When this repo starts hardware work, add its assets to index/_raw/ via inventory_scan.py and to the type manifests in SecureControllers/index/.",
+    "path": "../dasGoat-USV",
+    "repo": "dasGoat-USV"
+  }
+]

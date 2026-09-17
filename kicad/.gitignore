@@ -1,0 +1,11 @@
+# KiCad runtime / generated files — do not commit
+fp-info-cache
+report.txt
+*.lck
+~*.kicad_*
+*-backups/
+
+# migration backups (originals recoverable from git history)
+*.premod-bak
+*.stub-bak
+*.preroute-bak
