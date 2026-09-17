@@ -837,7 +837,7 @@
     "description": "Comprehensive PCB design for embedded / IoT / mixed-signal projects. Use this skill whenever the user mentions PCB design, schematic capture, board layout, component selection, \u7acb\u521b EDA, LCEDA, KiCad, EasyEDA, Altium, Gerber files, DFM, signal integrity, power design, RF, high-speed digital, thermal management, EMC, compliance, manufacturing, or wants to design, review, or manufacture a circuit board.",
     "path": ".claude/skills/pcb-designer",
     "category": "PCB / KiCad / Electronics",
-    "file_count": 51
+    "file_count": 23
   },
   {
     "dir": "pcb-engineer",
