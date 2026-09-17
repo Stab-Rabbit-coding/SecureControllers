@@ -16,7 +16,7 @@ import os
 import re
 import sys
 import tempfile
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 from typing import Optional
 
 from reportlab.graphics.shapes import (

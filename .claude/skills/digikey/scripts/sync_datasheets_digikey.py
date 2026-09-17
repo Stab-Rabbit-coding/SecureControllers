@@ -43,6 +43,19 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from fetch_datasheet_digikey import download_pdf, normalize_url, try_alternative_sources, verify_datasheet
 
+
+def _safe_urlopen(request, **kwargs):
+    """Open a urllib Request/URL only if its scheme is http or https.
+
+    Mitigates B310 (arbitrary scheme, e.g. file://, in urlopen) per bandit's
+    own recommended fix: validate the scheme before calling urlopen.
+    """
+    url = request.full_url if isinstance(request, urllib.request.Request) else request
+    scheme = urllib.parse.urlparse(url).scheme
+    if scheme not in ("http", "https"):
+        raise ValueError(f"Refusing to open URL with disallowed scheme {scheme!r}: {url}")
+    return urllib.request.urlopen(request, **kwargs)  # nosec B310 - scheme validated above
+
 # ---------------------------------------------------------------------------
 # MPN filtering — distinguish real manufacturer part numbers from generic values
 # ---------------------------------------------------------------------------
@@ -106,7 +119,7 @@ def get_oauth_token() -> tuple[str, str] | None:
             data=token_data,
             headers={"Content-Type": "application/x-www-form-urlencoded"},
         )
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with _safe_urlopen(req, timeout=15) as resp:
             token_resp = json.loads(resp.read())
         token = token_resp.get("access_token", "")
         if not token:
@@ -131,7 +144,7 @@ def search_digikey_with_token(mpn: str, token: str, client_id: str) -> dict | No
                 "Authorization": f"Bearer {token}",
             },
         )
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with _safe_urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read())
     except urllib.error.HTTPError as e:
         if e.code == 429:

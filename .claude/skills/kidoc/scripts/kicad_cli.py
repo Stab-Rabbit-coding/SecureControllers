@@ -15,6 +15,7 @@ import os
 import platform
 import shutil
 import subprocess
+import tempfile
 
 
 def find_kicad_cli() -> str | None:
@@ -234,7 +235,7 @@ def _resolve_output_path(cli_cmd: str, output_path: str) -> tuple[str, str | Non
     The caller should copy from safe_path to original_path after export.
     Otherwise returns (output_path, None).
     """
-    if is_flatpak(cli_cmd) and output_path.startswith('/tmp'):
+    if is_flatpak(cli_cmd) and output_path.startswith(tempfile.gettempdir()):
         safe_dir = _safe_temp_dir()
         basename = os.path.basename(output_path)
         safe_path = os.path.join(safe_dir, basename)
@@ -244,7 +245,7 @@ def _resolve_output_path(cli_cmd: str, output_path: str) -> tuple[str, str | Non
 
 def _resolve_output_dir(cli_cmd: str, output_dir: str) -> tuple[str, str | None]:
     """Like _resolve_output_path but for directory outputs."""
-    if is_flatpak(cli_cmd) and output_dir.startswith('/tmp'):
+    if is_flatpak(cli_cmd) and output_dir.startswith(tempfile.gettempdir()):
         safe_dir = os.path.join(_safe_temp_dir(), os.path.basename(output_dir)
                                 or 'kicad_export')
         os.makedirs(safe_dir, exist_ok=True)

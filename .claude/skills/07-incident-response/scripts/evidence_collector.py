@@ -112,8 +112,11 @@ class EvidenceCollector:
         fs = {}
 
         if self.is_linux:
-            # Files modified in the last 7 days in common attack paths
-            for path in ["/tmp", "/var/tmp", "/dev/shm", "/root", "/home"]:
+            # Files modified in the last 7 days in common attack paths. These are
+            # well-known forensic scan targets being read, not a temp file this
+            # script creates, so tempfile.gettempdir() would be the wrong fix here
+            # (it would miss /var/tmp, /dev/shm, /root, /home entirely).
+            for path in ["/tmp", "/var/tmp", "/dev/shm", "/root", "/home"]:  # nosec B108
                 if os.path.exists(path):
                     result = run_cmd(["find", path, "-mtime", "-7", "-type", "f", "-ls"])
                     fs[f"recent_files_{path.strip('/').replace('/', '_')}"] = result

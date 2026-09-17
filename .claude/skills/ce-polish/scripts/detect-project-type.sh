@@ -120,10 +120,10 @@ esac
 # Exclusion list: directories that ship framework configs as fixtures or build
 # output, not as real project roots.
 
-EXCLUDE_DIRS="node_modules .git vendor dist build coverage .next .nuxt .svelte-kit .turbo tmp fixtures"
-EXCLUDE_ARGS=""
-for d in $EXCLUDE_DIRS; do
-  EXCLUDE_ARGS="$EXCLUDE_ARGS -path './$d' -prune -o -path '*/$d' -prune -o"
+EXCLUDE_DIRS=(node_modules .git vendor dist build coverage .next .nuxt .svelte-kit .turbo tmp fixtures)
+EXCLUDE_ARGS=()
+for d in "${EXCLUDE_DIRS[@]}"; do
+  EXCLUDE_ARGS+=(-path "./$d" -prune -o -path "*/$d" -prune -o)
 done
 
 # Signature file patterns to look for
@@ -136,18 +136,17 @@ SIGNATURE_PATTERNS=(
   "svelte.config.js" "svelte.config.mjs" "svelte.config.ts"
 )
 
-# Build the find -name arguments
-NAME_ARGS=""
+# Build the find -name arguments as a real argv array (no eval / string
+# reassembly needed — this also avoids any shell re-parsing of quoted paths).
+NAME_ARGS=()
 for i in "${!SIGNATURE_PATTERNS[@]}"; do
   if [ "$i" -gt 0 ]; then
-    NAME_ARGS="$NAME_ARGS -o"
+    NAME_ARGS+=(-o)
   fi
-  NAME_ARGS="$NAME_ARGS -name '${SIGNATURE_PATTERNS[$i]}'"
+  NAME_ARGS+=(-name "${SIGNATURE_PATTERNS[$i]}")
 done
 
-# Run find. Use eval because the dynamically built arguments contain quoted
-# strings that must be expanded by the shell.
-FOUND_FILES=$(eval "find . -maxdepth 4 $EXCLUDE_ARGS \\( $NAME_ARGS \\) -print" 2>/dev/null | sort)
+FOUND_FILES=$(find . -maxdepth 4 "${EXCLUDE_ARGS[@]}" \( "${NAME_ARGS[@]}" \) -print 2>/dev/null | sort)
 
 # Also check for Rails signature (bin/dev + Gemfile in the same subdir)
 RAILS_HITS=""
@@ -159,7 +158,7 @@ while IFS= read -r gemfile; do
     RAILS_HITS="$RAILS_HITS
 $gdir"
   fi
-done < <(eval "find . -maxdepth 4 $EXCLUDE_ARGS -name 'Gemfile' -print" 2>/dev/null)
+done < <(find . -maxdepth 4 "${EXCLUDE_ARGS[@]}" -name 'Gemfile' -print 2>/dev/null)
 
 # Parse found files into (type, relative-dir) pairs. Use a newline-delimited
 # string instead of an associative array so the script works on macOS's default

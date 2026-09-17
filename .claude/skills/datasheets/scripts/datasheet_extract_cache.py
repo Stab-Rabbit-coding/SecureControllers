@@ -151,7 +151,7 @@ def _sanitize_mpn(mpn):
     """
     import hashlib
     clean = re.sub(r'[^A-Za-z0-9_]', '_', mpn.strip())
-    h = hashlib.md5(mpn.strip().encode()).hexdigest()[:6]
+    h = hashlib.md5(mpn.strip().encode(), usedforsecurity=False).hexdigest()[:6]
     return f"{clean}_{h}"
 
 

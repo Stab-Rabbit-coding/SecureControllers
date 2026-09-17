@@ -14,11 +14,24 @@ table.
 import json
 import os
 import re
+import tempfile
 import time
 import urllib.request
 import urllib.error
 import urllib.parse
 
+
+def _safe_urlopen(request, **kwargs):
+    """Open a urllib Request/URL only if its scheme is http or https.
+
+    Mitigates B310 (arbitrary scheme, e.g. file://, in urlopen) per bandit's
+    own recommended fix: validate the scheme before calling urlopen.
+    """
+    url = request.full_url if isinstance(request, urllib.request.Request) else request
+    scheme = urllib.parse.urlparse(url).scheme
+    if scheme not in ("http", "https"):
+        raise ValueError(f"Refusing to open URL with disallowed scheme {scheme!r}: {url}")
+    return urllib.request.urlopen(request, **kwargs)  # nosec B310 - scheme validated above
 
 # ---------------------------------------------------------------------------
 # Parametric field mapping — each distributor uses different names
@@ -197,7 +210,7 @@ def fetch_specs_lcsc(mpn):
     try:
         url = f"https://jlcsearch.tscircuit.com/api/search?q={urllib.parse.quote(mpn)}&limit=5&full=true"
         req = urllib.request.Request(url, headers={"User-Agent": "kicad-happy-spice/1.0"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
 
         for comp in data.get("components", []):
@@ -246,7 +259,7 @@ def _get_digikey_token():
         return None
 
     # Check token cache
-    cache_path = "/tmp/digikey_token_cache.json"
+    cache_path = os.path.join(tempfile.gettempdir(), "digikey_token_cache.json")
     try:
         with open(cache_path) as f:
             cache = json.load(f)
@@ -266,7 +279,7 @@ def _get_digikey_token():
             data=data,
             headers={"Content-Type": "application/x-www-form-urlencoded"},
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             token_data = json.loads(resp.read())
 
         access_token = token_data["access_token"]
@@ -304,7 +317,7 @@ def fetch_specs_digikey(mpn):
                 "Content-Type": "application/json",
             },
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
 
         for product in data.get("Products", []):
@@ -358,7 +371,7 @@ def fetch_specs_element14(mpn):
         })
         url = f"https://api.element14.com/catalog/products?{params}"
         req = urllib.request.Request(url, headers={"Accept": "application/json"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
 
         products = data.get("manufacturerPartNumberSearchReturn", {}).get("products", [])
@@ -404,7 +417,7 @@ def fetch_specs_mouser(mpn):
             url, data=body,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
 
         for part in data.get("SearchResults", {}).get("Parts", []):

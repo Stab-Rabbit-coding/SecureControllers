@@ -15,7 +15,7 @@ from __future__ import annotations
 import math
 import os
 import re
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 from typing import Optional
 
 from PIL import Image, ImageDraw, ImageFont

@@ -149,7 +149,7 @@ if IS_WINDOWS:
     _WIN_ROOT_BASE = os.environ.get("LOCALAPPDATA") or tempfile.gettempdir()
     DEFAULT_ROOT = os.path.join(_WIN_ROOT_BASE, "compound-engineering-jobs")
 elif _EFFECTIVE_UID is not None:
-    DEFAULT_ROOT = os.path.join("/tmp", f"compound-engineering-{_EFFECTIVE_UID}")
+    DEFAULT_ROOT = os.path.join(tempfile.gettempdir(), f"compound-engineering-{_EFFECTIVE_UID}")
 else:
     DEFAULT_ROOT = None
 O_NOFOLLOW = getattr(os, "O_NOFOLLOW", 0)

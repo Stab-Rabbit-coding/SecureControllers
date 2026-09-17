@@ -15,6 +15,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -39,7 +40,7 @@ except ImportError:
             return Path(override_dir)
         if project_dir:
             return Path(project_dir) / "datasheets" / "extracted"
-        return Path("/tmp/kicad-happy/datasheets/extracted")
+        return Path(tempfile.gettempdir()) / "kicad-happy" / "datasheets" / "extracted"
 
     def get_cached_extraction(extract_dir, mpn):
         return None

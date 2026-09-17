@@ -37,6 +37,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+def _safe_urlopen(request, **kwargs):
+    """Open a urllib Request/URL only if its scheme is http or https.
+
+    Mitigates B310 (arbitrary scheme, e.g. file://, in urlopen) per bandit's
+    own recommended fix: validate the scheme before calling urlopen.
+    """
+    url = request.full_url if isinstance(request, urllib.request.Request) else request
+    scheme = urllib.parse.urlparse(url).scheme
+    if scheme not in ("http", "https"):
+        raise ValueError(f"Refusing to open URL with disallowed scheme {scheme!r}: {url}")
+    return urllib.request.urlopen(request, **kwargs)  # nosec B310 - scheme validated above
+
 # ---------------------------------------------------------------------------
 # Temperature presets
 # ---------------------------------------------------------------------------
@@ -181,7 +193,7 @@ def _get_digikey_token() -> tuple[str, str] | None:
             data=data,
             headers={"Content-Type": "application/x-www-form-urlencoded"},
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             token_data = json.loads(resp.read())
         token = token_data["access_token"]
         with open(cache_path, "w") as f:
@@ -209,7 +221,7 @@ def query_lifecycle_digikey(mpn: str) -> dict | None:
                 "Content-Type": "application/json",
             },
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except (urllib.error.URLError, OSError, json.JSONDecodeError):
         return None
@@ -264,7 +276,7 @@ def query_lifecycle_mouser(mpn: str) -> dict | None:
         }).encode()
         url = f"https://api.mouser.com/api/v1/search/partnumber?apiKey={api_key}"
         req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except (urllib.error.URLError, OSError, json.JSONDecodeError):
         return None
@@ -300,7 +312,7 @@ def query_lifecycle_lcsc(mpn: str) -> dict | None:
     try:
         url = f"https://jlcsearch.tscircuit.com/api/search?q={urllib.parse.quote(mpn)}&limit=3&full=true"
         req = urllib.request.Request(url, headers={"User-Agent": "kicad-happy-lifecycle/1.0"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except (urllib.error.URLError, OSError, json.JSONDecodeError):
         return None
@@ -351,7 +363,7 @@ def query_lifecycle_element14(mpn: str) -> dict | None:
         })
         url = f"https://api.element14.com/catalog/products?{params}"
         req = urllib.request.Request(url, headers={"Accept": "application/json"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with _safe_urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except (urllib.error.URLError, OSError, json.JSONDecodeError):
         return None
@@ -522,7 +534,7 @@ def find_alternatives(mpn: str,
                 url = f"https://api.mouser.com/api/v1/search/partnumber?apiKey={api_key}"
                 req = urllib.request.Request(url, data=body,
                                             headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=10) as resp:
+                with _safe_urlopen(req, timeout=10) as resp:
                     data = json.loads(resp.read())
                 for part in data.get("SearchResults", {}).get("Parts", []):
                     repl = part.get("SuggestedReplacement")
@@ -557,7 +569,7 @@ def find_alternatives(mpn: str,
                             "Content-Type": "application/json",
                         },
                     )
-                    with urllib.request.urlopen(req, timeout=10) as resp:
+                    with _safe_urlopen(req, timeout=10) as resp:
                         data = json.loads(resp.read())
                     for product in data.get("Products", []):
                         prod_mpn = product.get("ManufacturerProductNumber", "")
@@ -587,7 +599,7 @@ def find_alternatives(mpn: str,
                 time.sleep(delay)
                 url = f"https://jlcsearch.tscircuit.com/api/search?q={urllib.parse.quote(base_mpn)}&limit=5&full=true"
                 req = urllib.request.Request(url, headers={"User-Agent": "kicad-happy-lifecycle/1.0"})
-                with urllib.request.urlopen(req, timeout=10) as resp:
+                with _safe_urlopen(req, timeout=10) as resp:
                     data = json.loads(resp.read())
                 for comp in data.get("components", []):
                     extra = comp.get("extra", {})

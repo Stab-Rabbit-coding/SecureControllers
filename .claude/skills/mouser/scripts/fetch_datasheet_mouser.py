@@ -44,6 +44,19 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+
+def _safe_urlopen(request, **kwargs):
+    """Open a urllib Request/URL only if its scheme is http or https.
+
+    Mitigates B310 (arbitrary scheme, e.g. file://, in urlopen) per bandit's
+    own recommended fix: validate the scheme before calling urlopen.
+    """
+    url = request.full_url if isinstance(request, urllib.request.Request) else request
+    scheme = urllib.parse.urlparse(url).scheme
+    if scheme not in ("http", "https"):
+        raise ValueError(f"Refusing to open URL with disallowed scheme {scheme!r}: {url}")
+    return urllib.request.urlopen(request, **kwargs)  # nosec B310 - scheme validated above
+
 _USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 
 # Try to import optional dependencies; graceful fallback if not installed
@@ -90,7 +103,7 @@ def search_mouser(mpn: str, api_key: str) -> dict | None:
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        with _safe_urlopen(req, timeout=20) as resp:
             data = json.loads(resp.read())
     except Exception as e:
         print(f"[Mouser] Search failed: {e}", file=sys.stderr)
@@ -166,7 +179,7 @@ def _download_requests(url: str, output_path: str) -> bool:
 def _download_urllib(url: str, output_path: str) -> bool:
     """Download using Python urllib (fallback, HTTP/1.1 only)."""
     req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
-    with urllib.request.urlopen(req, timeout=20) as resp:
+    with _safe_urlopen(req, timeout=20) as resp:
         with open(output_path, "wb") as f:
             shutil.copyfileobj(resp, f)
     return os.path.exists(output_path) and os.path.getsize(output_path) > 0
@@ -281,7 +294,7 @@ def scrape_product_page(product_url: str) -> str:
     if not html:
         try:
             req = urllib.request.Request(product_url, headers=headers)
-            with urllib.request.urlopen(req, timeout=20) as resp:
+            with _safe_urlopen(req, timeout=20) as resp:
                 html = resp.read().decode("utf-8", errors="ignore")
         except Exception:
             pass

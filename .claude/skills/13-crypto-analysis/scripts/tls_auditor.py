@@ -208,9 +208,14 @@ class TLSAuditor:
         headers_result = {}
         try:
             import http.client
+            # Intentionally unverified: this is a TLS *auditor* — it must be able
+            # to connect to and inspect hosts with self-signed, expired, or
+            # otherwise untrusted certificates (exactly the misconfigurations it
+            # is meant to detect and report on), not just hosts that already pass
+            # standard certificate validation.
             conn = http.client.HTTPSConnection(
                 self.host, self.port, timeout=self.timeout,
-                context=ssl._create_unverified_context()
+                context=ssl._create_unverified_context()  # nosec B323
             )
             conn.request("HEAD", "/")
             response = conn.getresponse()

@@ -81,8 +81,11 @@ class LinuxHardeningChecker:
                 break
         self.findings.append({"id": "FS-001", "severity": "MEDIUM", "title": f"SUID binaries count: {suid_count}",
                              "status": "PASS" if suid_count < 30 else "WARN"})
-        world_writable = os.path.exists("/tmp") and os.stat("/tmp").st_mode & 0o0002
-        self.findings.append({"id": "FS-002", "severity": "LOW", "title": "/tmp world-writable check",
+        # Checking the system's actual /tmp mount permissions is the point of this
+        # hardening audit, not a temp file this script creates — tempfile.gettempdir()
+        # would defeat the check by potentially resolving elsewhere (e.g. $TMPDIR).
+        world_writable = os.path.exists("/tmp") and os.stat("/tmp").st_mode & 0o0002  # nosec B108
+        self.findings.append({"id": "FS-002", "severity": "LOW", "title": "System temp dir world-writable check",
                              "status": "INFO" if world_writable else "PASS"})
 
     def check_services(self) -> None:
