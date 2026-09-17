@@ -1,0 +1,1026 @@
+[
+  {
+    "dir": "01-recon-osint",
+    "name": "Reconnaissance & OSINT Automation",
+    "description": "Passive and active reconnaissance, subdomain enumeration, DNS analysis, technology fingerprinting, and OSINT data correlation for authorized security assessments",
+    "path": ".claude/skills/01-recon-osint",
+    "category": "Security & SOC Operations",
+    "file_count": 6
+  },
+  {
+    "dir": "02-vulnerability-scanner",
+    "name": "Vulnerability Scanning & Assessment",
+    "description": "Dependency auditing, CVE detection, configuration security review, CVSS scoring, and prioritized vulnerability reporting",
+    "path": ".claude/skills/02-vulnerability-scanner",
+    "category": "Security & SOC Operations",
+    "file_count": 5
+  },
+  {
+    "dir": "03-exploit-development",
+    "name": "Exploit Development & Payload Engineering",
+    "description": "Proof-of-concept development, payload crafting, shellcode analysis, and exploitation technique research for authorized security testing",
+    "path": ".claude/skills/03-exploit-development",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "04-reverse-engineering",
+    "name": "Reverse Engineering & Binary Analysis",
+    "description": "Binary analysis, assembly interpretation, disassembly, decompilation, firmware RE, and protocol reverse engineering",
+    "path": ".claude/skills/04-reverse-engineering",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "05-malware-analysis",
+    "name": "Malware Analysis & Sandboxing",
+    "description": "Static and dynamic malware analysis, YARA rule generation, sandbox configuration, behavioral profiling, and malware family classification",
+    "path": ".claude/skills/05-malware-analysis",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "06-threat-hunting",
+    "name": "Threat Hunting & IOC Analysis",
+    "description": "IOC extraction, threat intelligence correlation, MITRE ATT&CK mapping, hunt hypothesis generation, and detection rule creation",
+    "path": ".claude/skills/06-threat-hunting",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "07-incident-response",
+    "name": "Incident Response & Digital Forensics",
+    "description": "IR playbook execution, evidence collection, forensic timeline analysis, memory forensics, and post-incident reporting following NIST SP 800-61 and SANS PICERL methodology",
+    "path": ".claude/skills/07-incident-response",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "08-network-security",
+    "name": "Network Security & Traffic Analysis",
+    "description": "Network traffic analysis, PCAP parsing, IDS/IPS rule creation, firewall configuration auditing, and network anomaly detection",
+    "path": ".claude/skills/08-network-security",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "09-web-security",
+    "name": "Web Application Security Testing",
+    "description": "OWASP Top 10 testing, injection vulnerability detection, API security assessment, authentication testing, and web vulnerability reporting for authorized assessments",
+    "path": ".claude/skills/09-web-security",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "10-cloud-security",
+    "name": "Cloud Security & Container Hardening",
+    "description": "AWS/Azure/GCP security auditing, container and Kubernetes hardening, Infrastructure as Code scanning, and cloud compliance assessment",
+    "path": ".claude/skills/10-cloud-security",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "11-csoc-automation",
+    "name": "CSOC Operations & Playbook Automation",
+    "description": "SOC alert triage, incident playbook automation, escalation workflows, shift reporting, and SOC KPI tracking",
+    "path": ".claude/skills/11-csoc-automation",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "12-log-analysis",
+    "name": "Log Analysis & SIEM Integration",
+    "description": "Security log parsing, anomaly detection, SIEM query building, Sigma rule creation, and correlation rule development across Splunk, Elastic, QRadar, and Microsoft Sentinel",
+    "path": ".claude/skills/12-log-analysis",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "13-crypto-analysis",
+    "name": "Cryptographic Analysis & Assessment",
+    "description": "SSL/TLS auditing, cipher suite analysis, hash algorithm identification, encryption implementation review, and cryptographic weakness detection in code",
+    "path": ".claude/skills/13-crypto-analysis",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "14-red-team-ops",
+    "name": "Red Team Operations & Engagement Planning",
+    "description": "Authorized red team engagement planning, C2 architecture design, attack methodology, lateral movement strategy, OPSEC, and professional reporting",
+    "path": ".claude/skills/14-red-team-ops",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "15-blue-team-defense",
+    "name": "Blue Team Defense & Hardening",
+    "description": "System hardening, detection engineering, security baseline monitoring, patch management, defense-in-depth architecture, and security posture improvement",
+    "path": ".claude/skills/15-blue-team-defense",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "16-ai-llm-security",
+    "name": "AI & LLM Security",
+    "description": "LLM and AI application security testing \u2014 prompt injection, jailbreak resistance, OWASP LLM Top 10 (2025), RAG and agent/tool-use security, model supply chain, and AI red teaming for authorized assessments",
+    "path": ".claude/skills/16-ai-llm-security",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "17-mobile-security",
+    "name": "Mobile Application Security",
+    "description": "Android and iOS application security testing \u2014 static and dynamic analysis, APK/IPA inspection, OWASP MASVS/MASTG verification, secure-storage and transport review, and mobile malware triage for authorized assessments",
+    "path": ".claude/skills/17-mobile-security",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "18-ot-ics-security",
+    "name": "OT / ICS / SCADA Security",
+    "description": "Operational Technology and industrial control system security \u2014 Purdue model segmentation, industrial protocol analysis (Modbus, DNP3, S7, EtherNet/IP), PLC/HMI exposure, IEC 62443 alignment, and MITRE ATT&CK for ICS, for authorized and safety-conscious assessments",
+    "path": ".claude/skills/18-ot-ics-security",
+    "category": "Security & SOC Operations",
+    "file_count": 3
+  },
+  {
+    "dir": "19-grc-compliance",
+    "name": "GRC & Compliance",
+    "description": "Governance, risk, and compliance \u2014 risk assessment and scoring, control mapping across NIST CSF 2.0 / ISO 27001:2022 / SOC 2 / CIS Controls v8, gap analysis, audit evidence preparation, and security policy generation",
+    "path": ".claude/skills/19-grc-compliance",
+    "category": "Security & SOC Operations",
+    "file_count": 4
+  },
+  {
+    "dir": "3d-print-design",
+    "name": "3d-print-design",
+    "description": "Design 3D-printable parts, enclosures, and mechanical components. Full workflow: requirements, CAD (FreeCAD/OpenSCAD), DFM, manufacturing export. FDM, resin, SLS, metal. Educational by default.",
+    "path": ".claude/skills/3d-print-design",
+    "category": "3D / Mechanical Design",
+    "file_count": 9
+  },
+  {
+    "dir": "aeronautical-engineering",
+    "name": "aeronautical-engineering",
+    "description": "Aeronautical and aerospace engineering analysis with authoritative citations \u2014 airfoil and wing aerodynamics, lift/drag/moment build-up, propeller and EDF thrust, weight and balance, CG and static margin, V-n envelopes, and airframe load factors. Use when sizing a wing, computing lift or drag, analysing an airfoil or aerofoil section, checking CG or static margin, building a V-n diagram, sizing a propeller or ducted fan, doing a weight-and-balance or mass-properties roll-up, or evaluating a UAS or light aircraft airframe against FAA Part 23/107, NASA, or ASTM F38 standards.",
+    "path": ".claude/skills/aeronautical-engineering",
+    "category": "Engineering (PE-aligned)",
+    "file_count": 5
+  },
+  {
+    "dir": "api-and-interface-design",
+    "name": "api-and-interface-design",
+    "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+    "path": ".claude/skills/api-and-interface-design",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "autoroute",
+    "name": "autoroute",
+    "description": "Auto-route a KiCad PCB using FreeRouting \u2014 connects all ratsnest traces automatically, then reports track count, via count, and any remaining unrouted connections. Backs up the original PCB before modifying it. Use whenever the user says \"auto-route\", \"route the board\", \"route the PCB\", \"connect the traces\", \"finish routing\", or wants to route all connections on a KiCad .kicad_pcb file.",
+    "path": ".claude/skills/autoroute",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "bom",
+    "name": "bom",
+    "description": "BOM (Bill of Materials) management for electronics projects \u2014 the primary orchestrator skill that coordinates DigiKey, Mouser, LCSC, element14, JLCPCB, PCBWay, and KiCad skills into a unified workflow. Create, update, and maintain BOMs with part numbers, costs, quantities stored as KiCad symbol properties. ALWAYS trigger this skill for any task involving component sourcing, pricing, ordering, distributor searches, BOM export, or fabrication preparation \u2014 even if the user names a specific distributor or fab house (e.g. \"search DigiKey for...\", \"generate JLCPCB BOM\", \"order from Mouser\"). This skill decides which distributor/fab skills to invoke and in what order. Also trigger on phrases like \"what parts do I need\", \"order components\", \"how much will this cost\", \"export for JLCPCB\", \"find parts for this board\", \"cost estimate\", \"compare pricing\", or \"check stock\".",
+    "path": ".claude/skills/bom",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 8
+  },
+  {
+    "dir": "browser-testing-with-devtools",
+    "name": "browser-testing-with-devtools",
+    "description": "Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured.",
+    "path": ".claude/skills/browser-testing-with-devtools",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "ce-babysit-pr",
+    "name": "ce-babysit-pr",
+    "description": "Babysits or watches an open GitHub PR until merge-ready, continuously reacting to review comments, CI failures, and routine base movement throughout the PR's life. Use when asked to 'babysit the PR', 'watch the PR', monitor, or keep an eye on a PR over time \u2014 not a one-shot request to resolve review comments or debug one CI failure (those are separate skills). GitHub only, including GitHub Enterprise.",
+    "path": ".claude/skills/ce-babysit-pr",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 4
+  },
+  {
+    "dir": "ce-brainstorm",
+    "name": "ce-brainstorm",
+    "description": "Explore vague or ambitious ideas into a right-sized requirements-only unified plan. Use when the user wants to brainstorm, think through scope, decide what to build, or needs collaborative product framing before planning. Also use when the user must scope work in territory they say they do not know (\"I know nothing about X but need to...\") or asks for a blindspot pass \u2014 mapping the decision surface before questions begin. Not for executing already-specified work \u2014 direct implementation, debugging, or code review where no product scope is left to decide. Not for a decisive verdict on whether to adopt or switch to a specific external technology, library, or platform \u2014 brainstorming scopes what to build, not whether to commit to an outside option.",
+    "path": ".claude/skills/ce-brainstorm",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 19
+  },
+  {
+    "dir": "ce-code-review",
+    "name": "ce-code-review",
+    "description": "Structured code review for bugs, regressions, tests, and standards. Use before PRs or when asked for review; report-only by default, with explicit local apply available for user-directed fix workflows.",
+    "path": ".claude/skills/ce-code-review",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 34
+  },
+  {
+    "dir": "ce-commit",
+    "name": "ce-commit",
+    "description": "Create a git commit with a clear, value-communicating message. Use when the user asks to commit/save staged or unstaged changes with a repo-appropriate message.",
+    "path": ".claude/skills/ce-commit",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 1
+  },
+  {
+    "dir": "ce-commit-push-pr",
+    "name": "ce-commit-push-pr",
+    "description": "Commit, push, and open a PR. Use when asked to ship/open a PR, or for PR-description-only flows like writing, rewriting, or describing a PR body.",
+    "path": ".claude/skills/ce-commit-push-pr",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 4
+  },
+  {
+    "dir": "ce-compound",
+    "name": "ce-compound",
+    "description": "Document a recently solved problem as a durable repo learning, or capture project vocabulary in CONCEPTS.md. Use when capturing a learning after work.",
+    "path": ".claude/skills/ce-compound",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 20
+  },
+  {
+    "dir": "ce-compound-refresh",
+    "name": "ce-compound-refresh",
+    "description": "Refresh the repo's captured learnings against the current codebase. Use when auditing stale, overlapping, superseded, or drifted learnings; avoid general refactor, debugging, or code review unless the learnings store is explicit.",
+    "path": ".claude/skills/ce-compound-refresh",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 9
+  },
+  {
+    "dir": "ce-debug",
+    "name": "ce-debug",
+    "description": "Diagnosis loop for bugs and failing behavior. Use for errors, stack traces, regressions, failed tests, issue-tracker bugs, stuck investigations after failed fixes, or asks to debug/fix a bug.",
+    "path": ".claude/skills/ce-debug",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 6
+  },
+  {
+    "dir": "ce-doc-review",
+    "name": "ce-doc-review",
+    "description": "Review requirements, plans, or specs with role-specific lenses. Use when the user wants to improve an existing planning document.",
+    "path": ".claude/skills/ce-doc-review",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 22
+  },
+  {
+    "dir": "ce-dogfood",
+    "name": "ce-dogfood",
+    "description": "Hands-off, diff-scoped browser QA of the active branch: maps user flows, drives a real browser, autonomously fixes small breakages with regression tests and commits, judges experience against product personas, and writes a durable dogfood report. Manual invocation only.",
+    "path": ".claude/skills/ce-dogfood",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 3
+  },
+  {
+    "dir": "ce-explain",
+    "name": "ce-explain",
+    "description": "Create a durable, visual teaching artifact \u2014 plus an optional check-in (predict-then-reveal for diffs, corrected exercises) that makes it stick \u2014 for something worth learning: a concept, a diff, an idea, or a window of your own recent work. Use when the user wants to be taught, wants a deep explainer, wants to understand a substantial change, or wants a work recap built for retention. Not for ordinary Q&A, brief 'why?' follow-ups, operational diagnosis, status updates, or a concise trade-off answer that belongs inline in chat. For learning, not repo docs or verdicts.",
+    "path": ".claude/skills/ce-explain",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 8
+  },
+  {
+    "dir": "ce-handoff",
+    "name": "ce-handoff",
+    "description": "Create a session handoff for another agent, or resume, find, and read any user-selected continuity source. Use when work or conversation must continue without access to the current session history.",
+    "path": ".claude/skills/ce-handoff",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 1
+  },
+  {
+    "dir": "ce-ideate",
+    "name": "ce-ideate",
+    "description": "Generate and evaluate grounded ideas. Use when the user asks for ideas, improvements, surprising options, or AI-generated directions before choosing one to develop; use ce-brainstorm to refine the user's own idea.",
+    "path": ".claude/skills/ce-ideate",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 13
+  },
+  {
+    "dir": "ce-optimize",
+    "name": "ce-optimize",
+    "description": "Run metric-driven optimization loops. Use when improving measurable outcomes such as search relevance, clustering quality, build performance, prompt quality, or scored behavior through experiments.",
+    "path": ".claude/skills/ce-optimize",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 14
+  },
+  {
+    "dir": "ce-plan",
+    "name": "ce-plan",
+    "description": "Create structured plans for multi-step work, including software and non-software tasks. Use when asked to plan, break down implementation, plan from requirements, or deepen an existing plan; prefer ce-brainstorm for exploratory framing.",
+    "path": ".claude/skills/ce-plan",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 30
+  },
+  {
+    "dir": "ce-polish",
+    "name": "ce-polish",
+    "description": "Start the dev server, inspect the feature in browser, and iterate on polish.",
+    "path": ".claude/skills/ce-polish",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 16
+  },
+  {
+    "dir": "ce-pov",
+    "name": "ce-pov",
+    "description": "Give a decisive, project-grounded point of view in the subject's own shape: a graded verdict on an external-adoption question, a holistic take on a document, or a position on a user-supplied approach set. Use for a solo POV, a mid-session second opinion, a named-peer cross-check, any request to consult other models or reconcile their opinions, an `oracle` panel, or a correction-cost-gated proactive cross-check offer. Not for findings review (use ce-doc-review), neutral explainers, or generating options (use ce-ideate or ce-brainstorm).",
+    "path": ".claude/skills/ce-pov",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 15
+  },
+  {
+    "dir": "ce-product-pulse",
+    "name": "ce-product-pulse",
+    "description": "Generate time-windowed product pulse reports from configured signals.",
+    "path": ".claude/skills/ce-product-pulse",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 3
+  },
+  {
+    "dir": "ce-promote",
+    "name": "ce-promote",
+    "description": "Draft launch or promotion copy for a shipped feature.",
+    "path": ".claude/skills/ce-promote",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 2
+  },
+  {
+    "dir": "ce-proof",
+    "name": "ce-proof",
+    "description": "Publish, read, comment on, or edit markdown in Proof. Use for Proof links, sharing specs/plans/drafts, or publish handoffs from planning workflows; avoid proofread, math, evidence, or proof-of-concept meanings.",
+    "path": ".claude/skills/ce-proof",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 1
+  },
+  {
+    "dir": "ce-resolve-pr-feedback",
+    "name": "ce-resolve-pr-feedback",
+    "description": "Resolve PR review feedback. Use when addressing review comments, resolving review threads, or fixing code-review feedback.",
+    "path": ".claude/skills/ce-resolve-pr-feedback",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 9
+  },
+  {
+    "dir": "ce-retune",
+    "name": "ce-retune",
+    "description": "Retune a skill corpus for a new model, measurement-first: mine the run archive for a baseline, establish a noise floor, audit the corpus adversarially, then cut in measured passes until a pre-registered bar clears. Requires a benchmark harness that can A/B two builds of the corpus; refuses without one.",
+    "path": ".claude/skills/ce-retune",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 8
+  },
+  {
+    "dir": "ce-riffrec-feedback-analysis",
+    "name": "ce-riffrec-feedback-analysis",
+    "description": "Analyze Riffrec feedback captures from bundles or standalone recordings. Always load for `riffrec-*.zip`, `session.json` + `events.json` + `recording.webm` + `voice.webm` bundles, `.mp4`/`.mov`/`.webm` videos, `.m4a`/`.mp3`/`.wav` audio, or capture/share requests.",
+    "path": ".claude/skills/ce-riffrec-feedback-analysis",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 6
+  },
+  {
+    "dir": "ce-setup",
+    "name": "ce-setup",
+    "description": "Check Compound Engineering health and repo-local config.",
+    "path": ".claude/skills/ce-setup",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 3
+  },
+  {
+    "dir": "ce-simplify-code",
+    "name": "ce-simplify-code",
+    "description": "Simplify settled, recently changed code for clarity, reuse, quality, and efficiency while preserving behavior. Use after implementation and before review; use ce-debug for bugs.",
+    "path": ".claude/skills/ce-simplify-code",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 5
+  },
+  {
+    "dir": "ce-strategy",
+    "name": "ce-strategy",
+    "description": "Create or update STRATEGY.md. Use when starting a product, changing direction or roadmap, or when ce-ideate, ce-brainstorm, or ce-plan need upstream product grounding.",
+    "path": ".claude/skills/ce-strategy",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 3
+  },
+  {
+    "dir": "ce-sweep",
+    "name": "ce-sweep",
+    "description": "Sweep configured feedback sources (Slack, GitHub Issues; email experimental) for new items: acknowledge at source, analyze recordings, verify fixes merged to main, and emit an `lfg`-ready plan. First run sets up sources; supports mode:non-interactive for scheduled runs.",
+    "path": ".claude/skills/ce-sweep",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 13
+  },
+  {
+    "dir": "ce-test-browser",
+    "name": "ce-test-browser",
+    "description": "Run browser tests for pages affected by the current branch or PR.",
+    "path": ".claude/skills/ce-test-browser",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 3
+  },
+  {
+    "dir": "ce-test-xcode",
+    "name": "ce-test-xcode",
+    "description": "Build and test iOS apps on simulator with XcodeBuildMCP.",
+    "path": ".claude/skills/ce-test-xcode",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 1
+  },
+  {
+    "dir": "ce-work",
+    "name": "ce-work",
+    "description": "Execute a plan or concrete work prompt end-to-end. Use when implementing from a plan document, a spec path, or a clear build request; use ce-debug for open-ended bugs. Standalone use owns the shipping tail; outer orchestrators pass `mode:return-to-caller [implementation_engine:<compact-json>] [implementation_run:<safe-id>] <plan path>` for implementation, recovery, and local verification only.",
+    "path": ".claude/skills/ce-work",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 22
+  },
+  {
+    "dir": "ce-worktree",
+    "name": "ce-worktree",
+    "description": "Set up isolated git worktrees \u2014 create a new branch for fresh work, or attach a worktree to an existing branch/PR/commit to work on it in isolation. Use when starting isolated work or isolating an existing ref; detects existing isolation first.",
+    "path": ".claude/skills/ce-worktree",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 1
+  },
+  {
+    "dir": "cis-controls",
+    "name": "cis-controls",
+    "description": "Expert CIS Controls v8 (CIS Top 18) advisor \u2014 implementation group scoping (IG1/IG2/IG3), control gap assessments, safeguard-level guidance, asset inventory, software inventory, data protection, secure configuration, account management, access control, continuous vulnerability management, audit log management, email and web browser protections, malware defenses, network infrastructure management, network monitoring and defense, application software security, incident response, penetration testing, and CIS Controls mapping to NIST CSF, ISO 27001, SOC 2, and CMMC. Use for any question about CIS Controls, CIS Benchmarks, Implementation Groups, or prioritized cyber hygiene for any organization size.",
+    "path": ".claude/skills/cis-controls",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "claude-security",
+    "name": "claude-security",
+    "description": "The Claude Security menu \u2014 pick a job: scan the codebase (the whole repository or a scoped part of it), scan changes (this branch's or a pull request's diff, or one commit), or suggest patches (findings turned into targeted patch files, each verified by a panel of agents, that you apply when you choose).",
+    "path": ".claude/skills/claude-security",
+    "category": "Meta / Tooling",
+    "file_count": 7
+  },
+  {
+    "dir": "code-quality",
+    "name": "code-quality",
+    "description": "Write production-grade code: secure, efficient, maintainable. Applies to all languages. Includes code review mode producing a downloadable findings file. Consult for any code beyond one-liners.",
+    "path": ".claude/skills/code-quality",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "context-engineering",
+    "name": "context-engineering",
+    "description": "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
+    "path": ".claude/skills/context-engineering",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "control-systems-engineering",
+    "name": "control-systems-engineering",
+    "description": "Control systems engineering aligned to the NCEES PE Control Systems exam \u2014 PID tuning, loop dynamics, transfer functions, stability and frequency response, process instrumentation and P&IDs, final control elements, safety instrumented systems and SIL, and industrial control security. Use when tuning or diagnosing a control loop, building a transfer function or block diagram, checking stability or phase and gain margin, sizing a control valve or selecting a sensor, reading or drafting a P&ID, doing a SIL or LOPA assessment, or designing a feedback controller for a physical plant.",
+    "path": ".claude/skills/control-systems-engineering",
+    "category": "Engineering (PE-aligned)",
+    "file_count": 4
+  },
+  {
+    "dir": "copywriting",
+    "name": "copywriting",
+    "description": "Multi-domain writing: journalism, technical writing, narrative non-fiction, conversion copywriting. AI-trope blacklist with a verification gate. Applies craft from Ogilvy, Schwartz, Sugarman, Hopkins, Halbert, Wiebe, plus AP, Poynter, and NPR editorial standards. Review mode with before/after rewrites.",
+    "path": ".claude/skills/copywriting",
+    "category": "Misc",
+    "file_count": 1
+  },
+  {
+    "dir": "cosmos-compose",
+    "name": "cosmos-compose",
+    "description": "Generate cosmos-compose.json files and administer Cosmos Cloud. Covers services, volumes, routes, reverse proxy, OpenID/SSO, Constellation VPN, docker-compose conversion, and container hardening.",
+    "path": ".claude/skills/cosmos-compose",
+    "category": "Project & Workflow Governance",
+    "file_count": 3
+  },
+  {
+    "dir": "create",
+    "name": "create",
+    "description": "Generate KiCad 10 schematics and PCB layouts from natural language prompts. Writes production-ready .kicad_sch and .kicad_pcb files directly to disk. Uses an agentic search loop to verify every component against the installed KiCad symbol libraries before placing it \u2014 no unknown '?' symbols ever. Supports full circuits: MCUs, power supplies, connectors, passives, ICs. Use whenever the user says \"create a schematic\", \"design a circuit\", \"generate a PCB\", \"make a KiCad file\", \"design a board\", \"draw a schematic\", or describes a circuit they want built. Also for \"Arduino shield\", \"ESP32 board\", \"motor driver\", \"power supply\", \"sensor breakout\", \"LED driver\", or any request to produce a new KiCad design from scratch.",
+    "path": ".claude/skills/create",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "datasheets",
+    "name": "datasheets",
+    "description": "Extract structured specifications from electronic component datasheet PDFs \u2014 pinouts, electrical characteristics, peripherals, topology, and features. Cache extractions per project for consumption by schematic and PCB analyzers. Primary consumer infrastructure for `kicad`, `emc`, `spice`, and `thermal` analyzers. Use this skill whenever the user asks to extract, verify, or read specs from a component datasheet; when analyzers need verified IC knowledge (EN pin thresholds, PG presence, USB peripheral speed); or when a review mentions datasheet coverage, extraction quality, or per-MPN specifications. Also triggers on \"extract this datasheet\", \"what are the specs for MPN X\", \"verify datasheet extraction\", or \"check pin functions for part Y\".",
+    "path": ".claude/skills/datasheets",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 10
+  },
+  {
+    "dir": "debugging-and-error-recovery",
+    "name": "debugging-and-error-recovery",
+    "description": "Guides systematic root-cause debugging. Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need a systematic approach to finding and fixing the root cause rather than guessing.",
+    "path": ".claude/skills/debugging-and-error-recovery",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "deprecation-and-migration",
+    "name": "deprecation-and-migration",
+    "description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset existing code.",
+    "path": ".claude/skills/deprecation-and-migration",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "digikey",
+    "name": "digikey",
+    "description": "Search DigiKey for electronic components and download datasheets \u2014 primary source for prototype orders and the preferred API method for fetching datasheets. Find parts by keyword or MPN, check pricing/stock, download datasheets via API, analyze specifications. Sync and maintain a local datasheets directory \u2014 extract components from schematics, download missing datasheets, keep them up to date. Also supports batch MPN-list seeding (`--mpn-list`) for bulk workflows without a KiCad project. Use when the user asks about electronic components, part specs, datasheets, pricing, stock, footprints, or needs to download a datasheet \u2014 even without mentioning \"DigiKey\". Also for \"sync datasheets\", \"download datasheets for my board/project\", or mentions a datasheets directory. DigiKey is the default distributor for prototyping. For BOM workflows, see the bom skill.",
+    "path": ".claude/skills/digikey",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "disposition-ledger",
+    "name": "disposition-ledger",
+    "description": "Use when review findings from plan-auditor, code-auditor, pr-reviewer, /code-review, or any audit agent need tracking to a resolution before work is called done - especially when blockers or major findings risk evaporating into conversation without an explicit accept, reject, or defer decision.",
+    "path": ".claude/skills/disposition-ledger",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "documentation-and-adrs",
+    "name": "documentation-and-adrs",
+    "description": "Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+    "path": ".claude/skills/documentation-and-adrs",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "doubt-driven-development",
+    "name": "doubt-driven-development",
+    "description": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later.",
+    "path": ".claude/skills/doubt-driven-development",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "ear",
+    "name": "ear",
+    "description": "Export Administration Regulations (EAR, 15 CFR Parts 730-774) compliance advisor \u2014 ECCN classification across all 10 CCL categories and 5 product groups (A-E), EAR99 determination, jurisdiction analysis (EAR vs ITAR order of review), license requirement analysis via Country Chart, all license exceptions (LVS, GBS, CIV, TMP, RPL, GOV, TSU, ENC, TSR, APP, BAG, AVS, ACE), end-user/end-use controls (Entity List, Denied Persons List, Unverified List, MEU List), deemed export rules, Foreign Direct Product Rule (FDPR), de minimis thresholds, 10 General Prohibitions, SNAP-R license applications, voluntary self-disclosure, civil/criminal penalties, Export Compliance Program (ECP) design, and EAR vs ITAR jurisdiction determination. Use for any dual-use export control, CCL classification, or BIS compliance question.",
+    "path": ".claude/skills/ear",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "element14",
+    "name": "element14",
+    "description": "Search Newark, Farnell, and element14 for electronic components \u2014 find parts by MPN or distributor part number, check pricing/stock, download datasheets, analyze specifications. One unified API covers all three storefronts (Newark for US, Farnell for UK/EU, element14 for APAC). Free API key, simple query-parameter auth, no OAuth. Datasheets download directly from farnell.com CDN with no bot protection. Sync and maintain a local datasheets directory for a KiCad project, or use batch MPN-list seeding (`--mpn-list`) for bulk workflows without a project. Use this skill when the user mentions Newark, Farnell, element14, needs parts from a non-US distributor, wants to compare pricing across regions, or needs datasheets from a source that doesn't require complex API auth. For package cross-reference tables and BOM workflow, see the `bom` skill.",
+    "path": ".claude/skills/element14",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "emc",
+    "name": "emc",
+    "description": "EMC pre-compliance risk analysis for KiCad PCB designs \u2014 18 check categories, 44 rule IDs covering ground planes, decoupling, I/O filtering, switching harmonics, clock routing, differential pair skew, board edge radiation, PDN impedance, return paths, crosstalk, ESD protection, shielding, and magnetic leakage from switching inductors. Produces severity-ranked risk report with pre-compliance test plan. Supports FCC Part 15, CISPR 32, CISPR 25 (automotive), MIL-STD-461G. SPICE-enhanced when available. Use when the user asks about EMC, EMI, radiated/conducted emissions, FCC compliance, CE marking, CISPR, ground plane issues, decoupling strategy, clock routing EMC, switching noise, differential pair skew, or whether their board will pass EMC testing. Also for \"will this pass FCC?\", \"check my EMC\", \"is my ground plane okay?\", \"check my decoupling\", or \"generate an EMC test plan\".",
+    "path": ".claude/skills/emc",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 8
+  },
+  {
+    "dir": "fedramp",
+    "name": "fedramp",
+    "description": "Expert guidance for FedRAMP certification and compliance under CR26 (FedRAMP Consolidated Rules for 2026). Use this skill whenever a user asks about FedRAMP authorization, ATO (Authority to Operate), cloud security for federal government, NIST SP 800-53 controls, CSP compliance, or any of the core FedRAMP document types: SSP, SAP, SAR, POA&M, CIS/CRM workbooks. Also trigger for questions about FedRAMP Certification Classes (A, B, C, D \u2014 new baseline labels: A = pilot/transitional, B = LI-SaaS/Low, C = Moderate, D = High, per NTC-0004), FedRAMP 20x (now the primary authorization pathway), OSCAL mandate (September 2026), 3PAO assessments, continuous monitoring (ConMon), gap assessments, system boundary definition, or architecture reviews for federal cloud. FedRAMP Ready retires July 28, 2026. When in doubt, use this skill \u2014 it covers the full FedRAMP lifecycle from readiness through continuous monitoring.",
+    "path": ".claude/skills/fedramp",
+    "category": "GRC & Compliance",
+    "file_count": 7
+  },
+  {
+    "dir": "find-skills",
+    "name": "find-skills",
+    "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+    "path": ".claude/skills/find-skills",
+    "category": "Meta / Tooling",
+    "file_count": 1
+  },
+  {
+    "dir": "flaky-tests",
+    "name": "flaky-tests",
+    "description": "Diagnoses flaky and intermittently-failing tests. Use when a test passes and fails without a code change, when the reflex fix is \"widen the timeout\", or before claiming a flake is resolved. Covers timeouts that budget the wrong thing, skip()-on-timeout, process-global mock pollution, live-service leakage, and assertions that can't distinguish two bugs.",
+    "path": ".claude/skills/flaky-tests",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "fleet-audit-loop",
+    "name": "fleet-audit-loop",
+    "description": "Use when auditing a set of agent or skill definitions and one sweep is not enough - each round points a different auditor at a different dimension instead of re-running the same sweep until findings taper. Invoke for \"audit these agents\", \"audit my skills\", \"multi-round audit of the fleet\", or when a previous audit's falling finding count is being read as the artefact being clean.",
+    "path": ".claude/skills/fleet-audit-loop",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "fleet-qa-loop",
+    "name": "fleet-qa-loop",
+    "description": "Use to QA a target until clean - runs mechanical linters (auto-fix) first, then loops the qa/audit subagent fleet, fixing findings until lint is clean, tests are green, and every agent returns PASS. Generalised to any language/target. Invoke when the user asks for a \"qa pass\", \"lint and clean up\", \"fleet qa loop\", or \"loop til clean\" on code.",
+    "path": ".claude/skills/fleet-qa-loop",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "frontend-design",
+    "name": "frontend-design",
+    "description": "Design and build production-grade web UIs. WCAG 2.2 AA, Nielsen's heuristics, AI trope blacklist. Covers layout, typography, colour, animation, forms, responsive design. Review mode with downloadable findings file.",
+    "path": ".claude/skills/frontend-design",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "gdpr-compliance",
+    "name": "gdpr-compliance",
+    "description": "Expert GDPR compliance assistant covering all four core workflows: (1) auditing code and systems for GDPR violations, (2) drafting GDPR-compliant documents such as privacy policies, Data Processing Agreements (DPAs), and consent notices, (3) answering GDPR compliance questions with authoritative article citations, and (4) reviewing data flows and PII handling practices. Use this skill whenever the user mentions GDPR, data protection, privacy compliance, lawful basis, data subject rights, DPA, privacy notices, consent management, data breaches, DPIAs, controller/ processor relationships, cross-border data transfers, or any EU/UK data privacy topic. Also trigger for questions like \"is this GDPR compliant?\", \"how do I handle personal data?\", \"what does a privacy policy need?\", or any request involving PII, personal data, or data retention in a regulatory context.",
+    "path": ".claude/skills/gdpr-compliance",
+    "category": "GRC & Compliance",
+    "file_count": 5
+  },
+  {
+    "dir": "git-workflow-and-versioning",
+    "name": "git-workflow-and-versioning",
+    "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.",
+    "path": ".claude/skills/git-workflow-and-versioning",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "github-actions",
+    "name": "github-actions",
+    "description": "Create, debug, and review GitHub Actions workflows. Covers reusable workflows, composite actions, custom JS/Docker actions, matrix builds, OIDC deploys, self-hosted runners. Security-first with SHA pinning and artifact attestations.",
+    "path": ".claude/skills/github-actions",
+    "category": "Project & Workflow Governance",
+    "file_count": 2
+  },
+  {
+    "dir": "idea-refine",
+    "name": "idea-refine",
+    "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one. Triggers on \"ideate\", \"refine this idea\", or \"stress-test my plan\".",
+    "path": ".claude/skills/idea-refine",
+    "category": "Project & Workflow Governance",
+    "file_count": 5
+  },
+  {
+    "dir": "incremental-implementation",
+    "name": "incremental-implementation",
+    "description": "Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when you're about to write a large amount of code at once, or when a task feels too big to land in one step.",
+    "path": ".claude/skills/incremental-implementation",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "iso27001",
+    "name": "iso27001",
+    "description": "Expert ISO 27001 compliance assistant for security and compliance teams. Use this skill whenever a user asks about ISO 27001 or ISO/IEC 27001, including any of the following: gap analysis, auditing, compliance assessments, control checklists, policy writing, document generation, Statement of Applicability (SoA), risk assessment, risk registers, risk treatment plans, Annex A controls, ISMS implementation, clause requirements, certification readiness, transitioning from 2013 to 2022, control implementation guidance, incident response policies, access control policies, supplier security, or any information security management system (ISMS) topic. Trigger even if the user doesn't say \"skill\" \u2014 any ISO 27001 or ISMS question should use this skill.",
+    "path": ".claude/skills/iso27001",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "iso27701",
+    "name": "iso27701",
+    "description": "Expert ISO 27701 Privacy Information Management System (PIMS) compliance advisor. Use this skill whenever a user asks about ISO/IEC 27701:2025, ISO/IEC 27701:2019, privacy information management, PIMS certification, PII controller or processor obligations, privacy risk assessment, Statement of Applicability for privacy, privacy by design, data subject rights, DPIA, records of processing activities, transitioning from ISO 27701:2019, GDPR alignment with ISO 27701, or any privacy management system topic. Also trigger for questions about Annex A.1 (controller controls), A.2 (processor controls), A.3 (shared security controls), or implementing a standalone PIMS without ISO 27001. When in doubt, use this skill \u2014 it covers the full ISO 27701 lifecycle from gap assessment through certification.",
+    "path": ".claude/skills/iso27701",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "iso42001",
+    "name": "iso42001",
+    "description": "Expert ISO 42001 AI Management System (AIMS) compliance advisor. Use this skill whenever a user asks about ISO/IEC 42001:2023, AI governance, AI management systems, AI risk assessment, AI system impact assessment, Annex A controls for AI, Statement of Applicability for AI systems, AI policy, responsible AI, AI lifecycle management, AI incident management, AI transparency, AI bias, AI certification readiness, or any topic related to implementing or auditing an AI Management System. Also trigger for questions like \"how do I become ISO 42001 certified?\", \"what controls does ISO 42001 require?\", \"how do I assess AI risk under 42001?\", \"what is an AIMS?\", or any request involving organisational governance of AI systems, responsible AI frameworks, or AI regulatory compliance aligned to an ISO standard.",
+    "path": ".claude/skills/iso42001",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "itar",
+    "name": "itar",
+    "description": "Expert ITAR compliance advisor for US defense contractors, exporters, and manufacturers. Use this skill for any question about 22 CFR Parts 120-130, the United States Munitions List (USML), DDTC registration, export license applications (DSP-5/73/94), Technical Assistance Agreements (TAA), Manufacturing License Agreements (MLA), brokering regulations (Part 129), deemed export rules for foreign nationals, technology control plans, voluntary disclosures, violation mitigation, jurisdiction determination (ITAR vs EAR), or US Munitions List category scoping. Trigger even if the user doesn't say \"skill\" \u2014 any ITAR or US defense export control question should use this skill.",
+    "path": ".claude/skills/itar",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "jlcpcb",
+    "name": "jlcpcb",
+    "description": "JLCPCB PCB fabrication and assembly \u2014 BOM/CPL generation, basic vs extended parts, assembly constraints, design rules, ordering workflow. Use with KiCad for JLCPCB manufacturing. Use this skill when the user mentions JLCPCB, wants to order PCBs or assembled boards, needs prototype bare PCBs and stencils, wants to know JLCPCB design rules and capabilities, or is asking about PCB manufacturing costs or turnaround times. For gerber/CPL export, stencil ordering, and BOM management, see the `bom` skill.",
+    "path": ".claude/skills/jlcpcb",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 1
+  },
+  {
+    "dir": "kicad",
+    "name": "kicad",
+    "description": "Analyze KiCad projects and PDF schematics: schematics, PCB layouts, Gerbers, footprints, symbols, netlists, and design rules. Reviews designs for bugs, traces nets, cross-references schematic to PCB, extracts BOM data, checks DRC/ERC, DFM, power trees, and regulator circuits. Every finding carries a confidence label and evidence source with trust_summary rollup. Analyzes PDF schematics from dev boards, reference designs, eval kits, and datasheets. Supports KiCad 5\u201310. Use whenever the user mentions .kicad_sch, .kicad_pcb, .kicad_pro, PCB design review, schematic analysis, PDF schematics, reference designs, Gerber files, DRC/ERC, netlist issues, BOM extraction, signal tracing, power budget, DFM, or wants to understand, debug, compare, or review any hardware design. Also for \"check my board\", \"review before fab\", \"what's wrong with my schematic\", \"is this ready to order\", \"check my power supply\", \"verify this circuit\", or any electronics/PCB design question.",
+    "path": ".claude/skills/kicad",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 50
+  },
+  {
+    "dir": "kidoc",
+    "name": "kidoc",
+    "description": "Generate professional engineering documentation from KiCad projects \u2014 Hardware Design Descriptions (HDD), CE Technical Files, Interface Control Documents (ICD), Design Review Packages, and Manufacturing Transfer Packages. Auto-runs schematic, PCB, EMC, and thermal analyses; renders schematic and PCB SVGs with subsystem cropping, focus dimming, net highlighting, and pin-net annotation; generates power tree, bus topology, and architecture block diagrams. Produces styled PDF with cover pages, TOC, and vector SVG embedding. Markdown source of truth \u2014 human-editable, version-controllable. Use for \"generate documentation\", \"create report\", \"HDD\", \"CE technical file\", \"design review package\", \"ICD\", \"render schematic\", \"render layout\", \"generate block diagram\", \"manufacturing package\", \"generate PDF\", or \"custom report\".",
+    "path": ".claude/skills/kidoc",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 71
+  },
+  {
+    "dir": "lcsc",
+    "name": "lcsc",
+    "description": "Search LCSC Electronics for electronic components \u2014 find parts by LCSC number (Cxxxxx) or MPN, check stock/pricing, download datasheets, analyze specifications. Sister company to JLCPCB, same parts library. Sync and maintain a local datasheets directory for a KiCad project, or use batch MPN-list seeding (`--mpn-list`) for bulk workflows without a project. No API key needed \u2014 uses the free jlcsearch community API. Use this skill when the user mentions LCSC, JLCPCB parts library, JLCPCB assembly parts, production sourcing, Cxxxxx part numbers, needs to find LCSC equivalents for parts, is preparing a BOM for JLCPCB assembly, or wants to download datasheets and LCSC is available. For package cross-reference tables and BOM workflow, see the `bom` skill.",
+    "path": ".claude/skills/lcsc",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "lfg",
+    "name": "lfg",
+    "description": "Run the full autonomous shipping pipeline end-to-end, hands-off with no check-ins: plan, implement, review and fix, commit, push a branch, open a PR, and watch CI to green. Use only when the user explicitly asks to build or ship something autonomously all the way to an open PR, or invokes lfg directly \u2014 it pushes and opens a PR without stopping. Not for in-the-loop work where the user reviews each step: use ce-plan to plan, ce-work to implement a plan, ce-debug to fix a bug, or ce-commit-push-pr to commit and open a PR for existing changes.",
+    "path": ".claude/skills/lfg",
+    "category": "Compound Engineering (ce-*)",
+    "file_count": 4
+  },
+  {
+    "dir": "mechanical-engineering",
+    "name": "mechanical-engineering",
+    "description": "Mechanical engineering design and analysis aligned to the NCEES PE Mechanical exam \u2014 machine design, stress and fatigue, shafts, bearings, gears, fasteners and bolted joints, springs, thermodynamic cycles, heat transfer, fluid systems and pumps, and HVAC. Use when sizing a shaft or bearing, checking a bolted joint or weld, computing stress concentration or fatigue life, selecting a gear or belt drive, sizing a pump or duct, analysing a thermodynamic cycle or heat exchanger, doing a thermal or pressure-vessel check, or applying ASME codes.",
+    "path": ".claude/skills/mechanical-engineering",
+    "category": "Engineering (PE-aligned)",
+    "file_count": 4
+  },
+  {
+    "dir": "model-bakeoff",
+    "name": "model-bakeoff",
+    "description": "Use when choosing between models or prompts by measuring them against ground truth - benchmarking extraction, classification or OCR candidates, comparing an incumbent against alternatives, or when a model evaluation has produced numbers you are about to act on.",
+    "path": ".claude/skills/model-bakeoff",
+    "category": "Meta / Tooling",
+    "file_count": 1
+  },
+  {
+    "dir": "mouser",
+    "name": "mouser",
+    "description": "Search Mouser Electronics for electronic components \u2014 secondary source for prototype orders. Find parts, check pricing/stock, download datasheets, analyze specifications. Use with KiCad for BOM creation and part selection. Also supports batch MPN-list seeding (`--mpn-list`) for bulk datasheet workflows without a KiCad project. Use this skill when the user specifically mentions Mouser, when DigiKey is out of stock or has worse pricing, when comparing prices across distributors, or when searching for parts that DigiKey doesn't carry. For package cross-reference tables and BOM workflow, see the `bom` skill.",
+    "path": ".claude/skills/mouser",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 3
+  },
+  {
+    "dir": "negative-controls",
+    "name": "negative-controls",
+    "description": "Checks that a control can actually fail before you trust it passing. Use when writing or reviewing a test, lint rule, CI gate, feature flag, ignore rule, or runbook check, or when a QA pass, audit, or review comes back clean. Covers the check that greps for a string that never appears, the gate that never closes, the assertion too weak to tell two bugs apart, the fixture neutered before the code sees it, and the documented control with no implementation.",
+    "path": ".claude/skills/negative-controls",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "nist-800-53",
+    "name": "nist-800-53",
+    "description": "NIST SP 800-53 Rev 5 compliance advisor \u2014 all 20 control families (AC, AT, AU, CA, CM, CP, IA, IR, MA, MP, PE, PL, PM, PS, PT, RA, SA, SC, SI, SR), Low/Moderate/High baseline selection, FIPS 199/200 system categorization, control tailoring and overlays, privacy controls (PT family), supply chain risk management (SR family), assessment procedures (SP 800-53A), OSCAL, RMF integration (SP 800-37), and mapping to FedRAMP, FISMA, CMMC 2.0, and ISO 27001. Use for any federal system security controls, FISMA compliance, RMF step guidance, control narrative writing, or baseline tailoring question.",
+    "path": ".claude/skills/nist-800-53",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "nist-ai-rmf",
+    "name": "nist-ai-rmf",
+    "description": "Expert NIST AI Risk Management Framework (AI RMF 1.0) advisor covering all four functions: GOVERN, MAP, MEASURE, MANAGE. Use this skill whenever a user asks about NIST AI RMF, AI risk management, AI trustworthiness, GOVERN function, MAP function, MEASURE function, MANAGE function, AI RMF Playbook, AI risk profiles, responsible AI, AI bias management, AI transparency, AI explainability, AI reliability, AI safety, NIST AI 100-1, AI risk assessment, AI incident response, or alignment to EU AI Act, ISO 42001, or NIST CSF via AI RMF. Trigger even if the user doesn't say \"skill\" \u2014 any NIST AI RMF or AI governance risk question should use this skill.",
+    "path": ".claude/skills/nist-ai-rmf",
+    "category": "GRC & Compliance",
+    "file_count": 3
+  },
+  {
+    "dir": "nist-csf",
+    "name": "nist-csf",
+    "description": "Expert NIST Cybersecurity Framework (CSF) advisor covering CSF 2.0 and CSF 1.1. Use this skill whenever a user asks about NIST CSF, cybersecurity risk management, the six CSF functions (Govern, Identify, Protect, Detect, Respond, Recover), CSF profiles, implementation tiers, gap assessments, organizational profiles, community profiles, CSF core subcategories, informative references, or mapping to other frameworks (NIST SP 800-53, ISO 27001, CIS Controls, COBIT). Also trigger for questions like \"how do I implement NIST CSF?\", \"what does CSF 2.0 change?\", \"help me build a CSF profile\", \"how do I assess my cybersecurity posture?\", or any request involving organizational cybersecurity risk strategy or framework alignment.",
+    "path": ".claude/skills/nist-csf",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "observability-and-instrumentation",
+    "name": "observability-and-instrumentation",
+    "description": "Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need evidence it works. Use when production issues are reported but you can't tell what happened from the available data.",
+    "path": ".claude/skills/observability-and-instrumentation",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "openfoam-cfd",
+    "name": "openfoam-cfd",
+    "description": "Set up turbulent flow simulations in OpenFOAM with automated case generation",
+    "path": ".claude/skills/openfoam-cfd",
+    "category": "3D / Mechanical Design",
+    "file_count": 32
+  },
+  {
+    "dir": "openscad",
+    "name": "openscad",
+    "description": "Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.",
+    "path": ".claude/skills/openscad",
+    "category": "3D / Mechanical Design",
+    "file_count": 10
+  },
+  {
+    "dir": "pcb-designer",
+    "name": "pcb-designer",
+    "description": "Comprehensive PCB design for embedded / IoT / mixed-signal projects. Use this skill whenever the user mentions PCB design, schematic capture, board layout, component selection, \u7acb\u521b EDA, LCEDA, KiCad, EasyEDA, Altium, Gerber files, DFM, signal integrity, power design, RF, high-speed digital, thermal management, EMC, compliance, manufacturing, or wants to design, review, or manufacture a circuit board.",
+    "path": ".claude/skills/pcb-designer",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 51
+  },
+  {
+    "dir": "pcb-engineer",
+    "name": "pcb-engineer",
+    "description": "Senior EE and PCB designer: requirements through manufacturing. Schematic design, component selection with alternatives, BOM generation, PCB layout, EMC guidance, Gerber export. KiCad 9+ native. Educational by default.",
+    "path": ".claude/skills/pcb-engineer",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 8
+  },
+  {
+    "dir": "pcbway",
+    "name": "pcbway",
+    "description": "PCBWay PCB fabrication and assembly \u2014 turnkey/consigned assembly, design rules, ordering workflow. Alternative to JLCPCB for manufacturing. Use with KiCad. Use this skill when the user mentions PCBWay, needs turnkey assembly (PCBWay sources parts by MPN), has parts not available on LCSC, needs assembled boards with non-LCSC components, wants to compare PCBWay vs JLCPCB, or needs assembly with parts sourced globally rather than from LCSC only. For gerber/CPL export, stencil ordering, and BOM management, see the `bom` skill.",
+    "path": ".claude/skills/pcbway",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 1
+  },
+  {
+    "dir": "performance-optimization",
+    "name": "performance-optimization",
+    "description": "Optimizes application performance. Use when performance requirements exist, when you suspect performance regressions, or when Core Web Vitals or load times need improvement. Use when profiling reveals bottlenecks that need fixing.",
+    "path": ".claude/skills/performance-optimization",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "planning-and-task-breakdown",
+    "name": "planning-and-task-breakdown",
+    "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.",
+    "path": ".claude/skills/planning-and-task-breakdown",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "project-overseer",
+    "name": "project-overseer",
+    "description": "Full-cycle project management across a whole repository: capture requirements, decompose into a Work Breakdown Structure, estimate effort and feasibility, execute task-by-task with file-based context isolation, propagate cross-task impacts, and render a progress dashboard. Adapts to the repo it finds itself in \u2014 drives an existing AGENTS.md + WBS.md/TODO.md governance federation when one is present, otherwise creates its own plan files. Use this skill whenever the user wants to plan, scope, break down, track, or run a multi-task project; says 'project overseer', 'overseer', 'plan this project', 'break this into tasks', 'build a WBS', 'what's left to do', 'show project status', 'add a requirement', or 'archive this project'; or is juggling enough interdependent work that a single conversation is losing track of it. Also use it when a requirement changes mid-project and you need to know which finished work has to be reopened.",
+    "path": ".claude/skills/project-overseer",
+    "category": "Project & Workflow Governance",
+    "file_count": 32
+  },
+  {
+    "dir": "readme-conventions",
+    "name": "readme-conventions",
+    "description": "Use when writing or rewriting a README, or when a release adds capabilities the README does not yet describe. Covers the section order, benefit-before-mechanism rule, disclosure blocks, badge honesty, and screenshot policy for this operator's repos.",
+    "path": ".claude/skills/readme-conventions",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "remember",
+    "name": "remember",
+    "description": "Save session state for clean continuation next session.",
+    "path": ".claude/skills/remember",
+    "category": "Meta / Tooling",
+    "file_count": 1
+  },
+  {
+    "dir": "research",
+    "name": "research",
+    "description": "Use before dispatching any research subagent or doing external lookups directly. The house layer over generic deep research: source order, the control-slug and content-grep verification steps, house sources, briefing rules for fan-out, and the model-cost policy that stops mechanical research running on an oversized model.",
+    "path": ".claude/skills/research",
+    "category": "Misc",
+    "file_count": 1
+  },
+  {
+    "dir": "secure-controller-assurance",
+    "name": "secure-controller-assurance",
+    "description": "Verify that controller hardware \u2014 servos, ESCs, flight/motion controllers, sensor nodes, Raspberry Pi HATs, and BeagleBone capes \u2014 has zero trust, IoT, industrial control, vehicle, and safety security baked in. Applies NIST IR 8259r1, IR 8425, SP 800-213/213A, SP 800-207 (zero trust), SP 800-82r3 (OT), and ISA/IEC 62443 across all design phases. Use when ideating a new controller, defining requirements, reviewing a schematic or firmware for security, closing gaps before fabrication, or producing an assurance case. Covers air, ground, marine, fixed-industrial, and SBC-carrier platforms. Trigger on \"is this board secure\", \"security requirements for this controller\", \"zero trust for my ESC\", \"62443 for this design\", \"secure boot\", \"debug port\", \"threat model this board\", \"IoT baseline\", \"assurance case\", \"HAT security\", \"cape security\".",
+    "path": ".claude/skills/secure-controller-assurance",
+    "category": "GRC & Compliance",
+    "file_count": 13
+  },
+  {
+    "dir": "security-and-hardening",
+    "name": "security-and-hardening",
+    "description": "Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services.",
+    "path": ".claude/skills/security-and-hardening",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "shipping-and-launch",
+    "name": "shipping-and-launch",
+    "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.",
+    "path": ".claude/skills/shipping-and-launch",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "skill-creator",
+    "name": "skill-creator",
+    "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+    "path": ".claude/skills/skill-creator",
+    "category": "Meta / Tooling",
+    "file_count": 18
+  },
+  {
+    "dir": "songwriting",
+    "name": "songwriting",
+    "description": "Use when writing, structuring, or polishing a song or its lyrics, including turning a rough idea or lyric sheet into a sectioned song with production direction for a text-to-music generator; especially for the operator's own tracks.",
+    "path": ".claude/skills/songwriting",
+    "category": "Misc",
+    "file_count": 4
+  },
+  {
+    "dir": "source-driven-development",
+    "name": "source-driven-development",
+    "description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters.",
+    "path": ".claude/skills/source-driven-development",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "spec-driven-development",
+    "name": "spec-driven-development",
+    "description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear or ambiguous.",
+    "path": ".claude/skills/spec-driven-development",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "spice",
+    "name": "spice",
+    "description": "Run automatic SPICE simulations on subcircuits detected from KiCad schematic analysis \u2014 validates filter frequencies, divider ratios, opamp gains, LC resonance, and crystal load capacitance. Supports ngspice, LTspice, and Xyce (auto-detected). Generates testbenches, runs batch mode, produces structured pass/warn/fail report. Use when the user asks to simulate, verify, or validate any analog subcircuit \u2014 RC filters, LC filters, voltage dividers, opamp circuits, crystal oscillators. Also for \"simulate my circuit\", \"run spice\", \"verify with simulation\", \"check my filter cutoff\", \"does this divider give the right voltage\", \"what's the bandwidth of this opamp stage\". Consider suggesting simulation during design reviews when the schematic analyzer reports simulatable subcircuits and a SPICE simulator is available.",
+    "path": ".claude/skills/spice",
+    "category": "PCB / KiCad / Electronics",
+    "file_count": 13
+  },
+  {
+    "dir": "statics-and-dynamics",
+    "name": "statics-and-dynamics",
+    "description": "Statics and rigid-body dynamics at FE level \u2014 free-body diagrams, equilibrium, trusses and frames, centroids and moments of inertia, friction, kinematics, Newton-Euler and work-energy methods, impulse-momentum, and vibration. Use when resolving forces or reactions, drawing a free-body diagram, analysing a truss or beam support, finding a centroid or second moment of area, checking a friction or tipping condition, computing acceleration of a linkage or mechanism, sizing for an inertial load, or working any equilibrium or rigid-body motion problem.",
+    "path": ".claude/skills/statics-and-dynamics",
+    "category": "Engineering (PE-aligned)",
+    "file_count": 4
+  },
+  {
+    "dir": "svg-illustrator",
+    "name": "svg-illustrator",
+    "description": "Hand-author stylised SVG illustrations - covers, figures, icons, diagrams - that read clearly at a glance and survive print-PDF rendering (WeasyPrint). Silhouette library (trees, ridges, water, skylines), atmospheric perspective, composition rules, engine support matrix, a11y and sanitisation baseline.",
+    "path": ".claude/skills/svg-illustrator",
+    "category": "Misc",
+    "file_count": 1
+  },
+  {
+    "dir": "test-driven-development",
+    "name": "test-driven-development",
+    "description": "Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, once a root cause is known, or when you're about to modify existing functionality.",
+    "path": ".claude/skills/test-driven-development",
+    "category": "Code Quality & Dev Practice",
+    "file_count": 1
+  },
+  {
+    "dir": "tsa-compliance",
+    "name": "tsa-compliance",
+    "description": "Expert TSA cybersecurity compliance advisor for critical infrastructure owners and operators. Use this skill whenever a user asks about TSA Security Directives for pipelines, freight railroads, passenger rail, public transit, or bus operators; the TSA Cyber Risk Management Program (CRMP); Cybersecurity Implementation Plan (CIP); Cybersecurity Operational Implementation Plan (COIP); Cybersecurity Assessment Plan (CAP); incident reporting to CISA; designation of a Cybersecurity Coordinator; Critical Cyber Systems (CCS); OT/IT network segmentation; the TSA November 2024 NPRM; or any directive in the SD Pipeline-2021 series, SD 1580-21-01 (freight rail), or SD 1582-21-01 (public transit/passenger rail). Also trigger for questions like \"are we covered by TSA directives?\", \"what does the TSA require for pipeline cybersecurity?\", \"how do I build a CIP?\", \"what must I report to CISA?\", or any request involving transportation critical infrastructure cybersecurity compliance.",
+    "path": ".claude/skills/tsa-compliance",
+    "category": "GRC & Compliance",
+    "file_count": 4
+  },
+  {
+    "dir": "upstream-prs-to-hermes-agent",
+    "name": "upstream-prs-to-hermes-agent",
+    "description": "Sends a change from a fork up to NousResearch/hermes-agent, or reviews a branch before it goes. Use when preparing an upstream PR, writing its body, or checking a fix is still needed upstream at all. Covers their CONTRIBUTING rules (and the one that is wrong), the contributor-check gate, the non-hermetic test suite, and why the human opens the PR.",
+    "path": ".claude/skills/upstream-prs-to-hermes-agent",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "wbs-generator",
+    "name": "wbs-generator",
+    "description": "Generate and validate Work Breakdown Structures with automated decomposition",
+    "path": ".claude/skills/wbs-generator",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  },
+  {
+    "dir": "wiki-first",
+    "name": "wiki-first",
+    "description": "Use before any web search - query the local wiki corpus first for a verified, cited answer or an explicit refusal, then ingest what the web teaches so the next agent inherits it",
+    "path": ".claude/skills/wiki-first",
+    "category": "Project & Workflow Governance",
+    "file_count": 1
+  }
+]

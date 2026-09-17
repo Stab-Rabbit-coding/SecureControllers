@@ -9,6 +9,14 @@ a recorded SHA-256 hash. Consuming repos keep their own local copies; this
 index is how you check whether yours matches the canonical one, and where to
 find a verified asset before adding a new copy.
 
+This repo also carries a full local library of **agent skills** (128, under
+`.claude/skills/`) usable by any Claude Code session — local or cloud/web —
+running against this repo or branch. That library has its own token-optimized
+index: [`.claude/skills/INDEX.md`](.claude/skills/INDEX.md). Same lookup
+pattern as this file, different asset type — use that one for "which skill do
+I invoke for this task," use this one for "which datasheet/symbol/footprint/
+shape/script already exists."
+
 Full plan and rationale:
 [`docs/plans/2026-09-08-001-feat-workspace-resource-library-plan.md`](docs/plans/2026-09-08-001-feat-workspace-resource-library-plan.md).
 GitHub issue tracking all four phases:
@@ -20,15 +28,16 @@ Read **one** manifest file below for your asset type — never grep the PDFs,
 `.kicad_sym`/`.kicad_mod` files, or shape files themselves, and never load
 more than one manifest for a single lookup.
 
-| Looking for...                    | Read this file                | Key field to match on                                |
-| --------------------------------- | ----------------------------- | ---------------------------------------------------- |
-| A datasheet by part number        | `index/datasheets.json`       | `mpn_guess` (Tier B-confirmed once `verified: true`) |
-| A KiCad symbol                    | `index/kicad-symbols.json`    | `symbol_or_footprint_name`                           |
-| A KiCad footprint                 | `index/kicad-footprints.json` | `symbol_or_footprint_name`                           |
-| A mechanical shape (STEP/WRL/STL) | `index/shapes.json`           | `basename`                                           |
-| A shared script/tool              | `index/scripts.json`          | `path`                                               |
-| A skill/knowledge resource        | `index/knowledge.json`        | `path`, `description`                                |
-| Whether a repo has assets yet     | `index/placeholders.json`     | `repo`                                               |
+| Looking for... | Read this file | Key field to match on |
+| --- | --- | --- |
+| A datasheet by part number | `index/datasheets.json` | `mpn_guess` (Tier B-confirmed once `verified: true`) |
+| A KiCad symbol | `index/kicad-symbols.json` | `symbol_or_footprint_name` |
+| A KiCad footprint | `index/kicad-footprints.json` | `symbol_or_footprint_name` |
+| A mechanical shape (STEP/WRL/STL) | `index/shapes.json` | `basename` |
+| A shared script/tool | `index/scripts.json` | `path` |
+| A workspace-wide knowledge resource (e.g. `engineering-pe-skills`) | `index/knowledge.json` | `path`, `description` |
+| An agent skill available in *this* repo | `.claude/skills/INDEX.md` (or `index/skills.json`) | skill directory name, `description` |
+| Whether a repo has assets yet | `index/placeholders.json` | `repo` |
 
 There is currently no single-file "everything from repo X" lookup — that
 would require reading each type manifest and filtering by `repo`. See the
@@ -46,11 +55,11 @@ runs) for which copy is authoritative.
 
 | Repo                   | Datasheets | KiCad symbols | KiCad footprints | Shapes | Scripts |
 | ---------------------- | ---------: | ------------: | ---------------: | -----: | ------: |
-| Serenity-UAV           |         50 |             9 |               17 |    367 |      43 |
-| SecureControllers      |         38 |             8 |               15 |     37 |       2 |
+| Serenity-UAV           |         50 |             9 |               17 |    367 |      46 |
+| SecureControllers      |         48 |             8 |               15 |     37 |       3 |
 | Open-Secure-ESC        |         58 |            20 |                9 |      1 |       0 |
 | open-servo-core-secure |         11 |             1 |               40 |     37 |       0 |
-| LibreServo_v4          |         15 |             2 |               22 |      3 |       0 |
+| LibreServo_v4          |         26 |             2 |               22 |      3 |       0 |
 | Tactical-WX-RX         |          3 |             0 |                0 |      0 |       0 |
 
 "Scripts" counts only top-level `tools/` directories (per the provisional
