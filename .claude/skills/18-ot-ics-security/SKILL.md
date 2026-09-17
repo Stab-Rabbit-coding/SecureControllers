@@ -54,7 +54,7 @@ pip install requests pyyaml
 When asked to review OT architecture, map assets to Purdue levels and assess the boundaries:
 
 | Level | Zone | Assets | Key control |
-|-------|------|--------|-------------|
+| ------- | ------ | -------- | ------------- |
 | 4–5 | Enterprise / IT | ERP, business network, internet | Should never directly reach L0–L2 |
 | 3.5 | **IDMZ** | Jump hosts, patch/AV relays, historian replica | Brokered, inspected IT↔OT traffic only |
 | 3 | Operations | SCADA servers, historians, engineering WS | Hardened, monitored |
@@ -148,7 +148,7 @@ python scripts/ics_protocol_analyzer.py --dorks --vendor siemens --output dorks.
 ## Skill Integration
 
 | Next Step | Condition | Target Skill |
-|-----------|-----------|--------------|
+| ----------- | ----------- | -------------- |
 | Deep PCAP / IDS rules | Network capture available | → Skill 08 |
 | Firmware / device RE | PLC/RTU firmware obtained | → Skill 04 |
 | OT incident handling | Active incident | → Skill 07 |

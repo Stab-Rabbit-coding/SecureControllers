@@ -21,7 +21,7 @@ Material selection, slicer settings, and post-processing guidance.
 
 ### Decision tree
 
-```
+```text
 Is the part structural or cosmetic?
 ├─ Cosmetic/prototype → PLA (cheapest, easiest, looks great)
 └─ Structural/functional
@@ -45,7 +45,7 @@ Is the part structural or cosmetic?
 ### Quick recommendation
 
 | Use case | Material | Why |
-|---|---|---|
+| --- | --- | --- |
 | First prototype | PLA | Cheap, easy, fast |
 | Functional prototype | PETG | Tough, temperature-resistant enough for most indoor uses |
 | Outdoor enclosure | ASA | UV-stable, weather-resistant |
@@ -58,7 +58,7 @@ Is the part structural or cosmetic?
 ## Material Properties Table
 
 | Property | PLA | PETG | ABS | ASA | Nylon (PA12) | TPU (95A) |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | Tensile strength (MPa) | 50-60 | 45-55 | 35-45 | 40-50 | 40-55 | 30-40 |
 | Elongation at break | 3-6% | 15-25% | 10-20% | 10-20% | 30-100% | 300-500% |
 | Impact resistance | Low | High | Medium | Medium | Very high | Very high |
@@ -91,7 +91,7 @@ The strongest common FDM filament. Extremely tough, high heat resistance,
 optically transparent in natural form. Very difficult to print.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Tensile strength | 55-75 MPa |
 | Elongation at break | 80-120% |
 | Heat deflection | 130-140°C |
@@ -112,7 +112,7 @@ A copolyester related to PETG but with improved toughness, clarity, and heat
 resistance. Easier to print than PC, tougher than PETG.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Tensile strength | 45-55 MPa |
 | Elongation at break | 100-200% |
 | Heat deflection | 70-80°C |
@@ -131,7 +131,7 @@ flame-retardant (UL94 V-0), very high heat resistance. Expensive filament,
 requires a capable printer with high-temperature hotend and heated chamber.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Tensile strength | 85-100 MPa |
 | Heat deflection | 200-215°C |
 | Nozzle temp | 350-390°C |
@@ -150,7 +150,7 @@ strength-to-weight ratio. Biocompatible (medical implants). Extremely
 expensive ($300-800/kg) and requires specialised high-temperature printers.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Tensile strength | 90-120 MPa |
 | Heat deflection | 250-300°C |
 | Nozzle temp | 370-430°C |
@@ -171,7 +171,7 @@ hides layer lines. Requires hardened steel nozzle (carbon fibre is abrasive
 and will destroy brass nozzles in hours).
 
 | Composite | Stiffness gain | Strength gain | Print difficulty |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CF-PLA | High stiffness, reduced impact | Marginal | Easy (same as PLA + hardened nozzle) |
 | CF-PETG | High stiffness, good toughness | Moderate | Easy-medium |
 | CF-Nylon (CF-PA) | Very high stiffness, excellent fatigue | Significant | Hard (hygroscopic, needs enclosure + dry box) |
@@ -191,7 +191,7 @@ than CF but less brittle, lower cost, and does not affect electrical
 properties (glass is non-conductive; carbon fibre is conductive).
 
 | Property | GF-Nylon | GF-PETG |
-|---|---|---|
+| --- | --- | --- |
 | Stiffness | High | Medium-high |
 | Impact resistance | Better than CF-Nylon | Better than CF-PETG |
 | Abrasion on nozzle | Yes (hardened nozzle required) | Yes |
@@ -207,7 +207,7 @@ support material for PLA in dual-extrusion setups, or as a primary material
 that can be vapour-smoothed in IPA for a glossy, layer-line-free surface.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Nozzle temp | 195-215°C |
 | Bed temp | 50-60°C |
 | Print difficulty | Easy |
@@ -222,7 +222,7 @@ feel heavy and metallic. Can be polished to a genuine metal appearance.
 Purely aesthetic; not structural metal.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Nozzle temp | 195-220°C (PLA base) |
 | Print difficulty | Easy-medium |
 | Special notes | Heavy, abrasive (hardened nozzle recommended at 0.5mm+), fragile |
@@ -237,7 +237,7 @@ grain-like texture from layer lines. Varying nozzle temperature changes the
 "burn" colour, allowing wood-tone gradients.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Nozzle temp | 185-220°C (higher = darker tone) |
 | Print difficulty | Easy |
 | Special notes | Strings easily, needs retraction tuning. Use ≥0.5mm nozzle to prevent clogging. |
@@ -252,7 +252,7 @@ for ABS (dissolves in D-limonene). Can be used as a primary material for
 lightweight, low-cost parts.
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Nozzle temp | 220-240°C |
 | Bed temp | 90-110°C |
 | Dissolves in | D-limonene (citrus-based solvent) |
@@ -261,7 +261,7 @@ lightweight, low-cost parts.
 
 ### PLA
 
-```
+```text
 Nozzle temperature:     200-210°C (start at 205)
 Bed temperature:        55-60°C
 Print speed:            50-80 mm/s (60 is a safe default)
@@ -273,7 +273,7 @@ First layer speed:      20-25 mm/s
 
 ### PETG
 
-```
+```text
 Nozzle temperature:     230-240°C (start at 235)
 Bed temperature:        75-80°C
 Print speed:            40-60 mm/s (PETG is less forgiving of speed than PLA)
@@ -290,7 +290,7 @@ Notes:                  PETG strings more than PLA. Increasing travel speed
 
 ### ABS / ASA
 
-```
+```text
 Nozzle temperature:     235-250°C (ABS) / 240-255°C (ASA)
 Bed temperature:        100-110°C
 Print speed:            40-60 mm/s
@@ -306,7 +306,7 @@ Notes:                  ABS releases fumes — print in a ventilated area or
 
 ### TPU (flexible)
 
-```
+```text
 Nozzle temperature:     220-235°C
 Bed temperature:        50-60°C (or no heat for some formulations)
 Print speed:            20-30 mm/s (slow is critical for flexible filament)
@@ -322,7 +322,7 @@ Notes:                  Print slowly. If using a Bowden setup, ensure the
 ## Layer Height Selection
 
 | Layer height | Quality | Speed | Use for |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0.08-0.12mm | Very high detail | Very slow | Display models, fine text, miniatures |
 | 0.16-0.20mm | Good quality | Moderate | Default for functional parts, enclosures |
 | 0.24-0.28mm | Visible layers | Fast | Prototypes, internal parts, jigs |
@@ -352,7 +352,7 @@ See `fdm-design-rules.md` § Infill and Strength for the full guide. Quick
 summary:
 
 | Part type | Infill % | Perimeters | Pattern |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Visual prototype | 10-15% | 2-3 | Lightning or gyroid |
 | Enclosure (general) | 20-25% | 3-4 | Gyroid |
 | Structural bracket | 30-50% | 4-5 | Gyroid or cubic |
@@ -366,7 +366,7 @@ The first layer is the foundation. A bad first layer means a failed print.
 ### Bed adhesion methods
 
 | Method | When to use | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Clean bed (no adhesive) | PLA on textured PEI | Usually sufficient |
 | Glue stick | PETG on smooth PEI | Prevents PETG from bonding too well |
 | Hairspray | ABS, ASA | Provides grip on glass beds |
@@ -378,7 +378,7 @@ The first layer is the foundation. A bad first layer means a failed print.
 
 ### First layer settings
 
-```
+```text
 First layer height:  0.20-0.25mm (thicker than other layers for squish)
 First layer speed:   15-25 mm/s (slow for reliable adhesion)
 First layer width:   120-150% of normal (wider for more contact area)
@@ -400,7 +400,7 @@ When supports are unavoidable, these settings help:
 ### Support parameters
 
 | Parameter | Value | Why |
-|---|---|---|
+| --- | --- | --- |
 | Support type | Tree (preferred) or normal | Tree supports use less material and are easier to remove |
 | Support angle threshold | 50-55° | Below this angle, supports are generated |
 | Support Z distance | 0.2mm (1 layer height) | Gap between support top and part. Larger = easier removal, rougher surface |
@@ -428,7 +428,7 @@ with perfect surface finish and no manual support removal.
 ### Sanding
 
 | Grit | Purpose |
-|---|---|
+| --- | --- |
 | 80-120 | Remove heavy support marks, reshape |
 | 180-220 | General smoothing, layer line reduction |
 | 320-400 | Fine finish before painting |
@@ -479,7 +479,7 @@ For printed threads that are too tight:
 ### Common print failures and fixes
 
 | Problem | Likely cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Part detaches from bed mid-print | Poor adhesion, warping | Clean bed, lower first layer speed, add brim, increase bed temp |
 | Stringing (thin threads between parts) | Retraction too low, temp too high | Increase retraction, lower temp by 5°C, enable wipe/coasting |
 | Layer separation / delamination | Temp too low, fan too high, draft | Increase temp, reduce fan, check for enclosure drafts |
@@ -509,7 +509,7 @@ expansion" setting — set to -0.1mm to make holes slightly larger.
 Rough guidelines for estimating print time:
 
 | Factor | Impact on time |
-|---|---|
+| --- | --- |
 | Layer height halved | ~2× longer |
 | Infill doubled | ~10-20% longer |
 | Speed halved | ~1.5-1.8× longer (not 2× due to acceleration limits) |
@@ -523,7 +523,7 @@ estimate, not mental math, for any print over 1 hour.
 ### Slicer recommendations
 
 | Slicer | Platform | Cost | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PrusaSlicer | All | Free | Excellent, open-source, good defaults |
 | OrcaSlicer | All | Free | Fork of PrusaSlicer with extra features, very active development |
 | Bambu Studio | All | Free | For Bambu printers, fork of PrusaSlicer |

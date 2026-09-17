@@ -1,4 +1,6 @@
-### Stage 5: Merge findings
+# Finish Review
+
+## Stage 5: Merge findings
 
 Convert multiple reviewer compact JSON returns into one deduplicated, confidence-gated finding set. Use `scripts/findings-mechanics.py` from this skill's directory for schema/value validation, exact-fingerprint deduplication, conservative route merging, quote/confidence gates, deterministic sorting, and stable numbering. These are mechanics, not model judgment.
 
@@ -42,7 +44,7 @@ Then apply only the judgment the helper cannot own:
    - **Ordering:** order groups by the highest-severity finding they contain, then by lowest stable `#`. A finding appears in at most one group; leave genuinely unrelated findings ungrouped.
 3. **Collect coverage and advisory assets.** Keep helper drop/suppression counts, union residual risks and testing gaps, and preserve any selected learnings, agent-native, and deployment-verification outputs. Schema drift from `data-migration` is already in the merged finding set.
 
-### Stage 5b: Validation pass (optional quality gate)
+## Stage 5b: Validation pass (optional quality gate)
 
 Independent verification remains required for findings that lack cross-model corroboration. Do not spend another model call re-verifying evidence already established independently across serving families.
 
@@ -52,7 +54,7 @@ Independent verification remains required for findings that lack cross-model cor
 4. Run the validator batch foreground with background execution off. A foreground Agent call is the wait. Never use shell no-ops (`echo waiting`, `noop`, `yield turn`, `end turn`, `true`, or sleeps), scheduled wakeups, status/list calls, or narrated "still waiting" turns.
 5. A valid `validated:false` drops that finding and records the reason. On malformed output or validator infrastructure failure, drop affected P2/P3 findings; keep affected P0/P1 as validation-degraded. Prune triage groups after drops and record the batch, per-finding verdicts, failures, and degraded blockers in Coverage.
 
-### Stage 5c: Act on findings (explicit local apply only)
+## Stage 5c: Act on findings (explicit local apply only)
 
 **Skip unless local apply was explicitly authorized.** A bare `ce-code-review` invocation is report-only and does not apply findings. Authorization exists only when `apply:local` was passed or the invoking user prompt explicitly asked this review to apply/fix its findings. Do not infer authority from `autofix_class`, a clean tree, an actionable finding, or the fact that another workflow may apply later. `mode:agent` does not apply fixes and conflicts with `apply:local`; the pipeline caller owns any later mutation.
 
@@ -89,7 +91,7 @@ If this self-review changes files, rerun the affected tests or lint for those fo
 
 **Re-partition triage groups after apply.** Triage groups describe the *remaining* work. After Stage 5c, prune applied findings out of `triage_groups` before Stage 6 rendering — a group must never tell the user to handle a finding that was already applied. When an applied fix resolved part of a theme, note that in the group's context line instead of keeping the applied `#` in the group. Re-apply the Stage 5 step 6 grouping rule (drop sub-two-finding groups under `grouping:auto`).
 
-### Stage 6: Synthesize and present
+## Stage 6: Synthesize and present
 
 Assemble the final report. **Default:** human-readable markdown. **`mode:agent`:** skip markdown and emit JSON (see ### JSON output format) — the structured fields are how a downstream agent consumes the review. Put `---` before the verdict in markdown mode.
 
@@ -124,7 +126,7 @@ Write human-readable findings in an ASD-STE100 Simplified Technical English (STE
    Omit this section entirely when no plan was found — do not mention the absence of a plan.
 5. **Actionable Findings.** Include when the actionable queue is non-empty — findings the caller should address (`gated_auto` / `manual` with `downstream-resolver`), plus anything Stage 5c chose not to apply. When local apply ran, findings already applied appear in the Applied section, not here.
 6. **Pre-existing.** Separate section, does not count toward verdict.
-7. **Learnings & Past Solutions.** Surface `learnings-researcher` local-prompt results: if past solutions are relevant, flag them as "Known Pattern" with links to <root>/solutions/ files.
+7. **Learnings & Past Solutions.** Surface `learnings-researcher` local-prompt results: if past solutions are relevant, flag them as "Known Pattern" with links to `<root>`/solutions/ files.
 8. **Agent-Native Gaps.** Surface `agent-native-reviewer` local-prompt results. Omit section if no gaps found.
 9. **Deployment Notes.** If the `deployment-verification-agent` local prompt ran, surface the key Go/No-Go items: blocking pre-deploy checks, the most important verification queries, rollback caveats, and monitoring focus areas. Keep the checklist actionable rather than dropping it into Coverage. Schema drift appears in the findings tables as `data-migration` P1 rows — do not add a separate Schema Drift section.
 10. **Coverage.** Applied count (when Stage 5c ran), suppressed count by anchor (e.g., "N findings suppressed at anchor 50, M at anchor 25"), mode-aware demotion count, validator drop count and reasons (when Stage 5b ran), any P0/P1 with degraded validation (kept on validator infrastructure failure), residual risks, testing gaps, failed/timed-out reviewers, and inferred-intent uncertainty when applicable. When the Stage 3c lite roster ran, state it and the reduced reviewer set (so the narrower coverage is visible). When Stage 5b skipped validators for quote-anchored cross-model-corroborated findings, state how many and name that evidence basis; also state the one-batch result for every remaining selected finding. When the Stage 5 step 3 quote-the-line gate demoted any 75/100 finding for missing `first_evidence`, record that count. When no plan was discovered in Stage 2b (or discovery was ambiguous and skipped), note that settlement suppression was not evaluated. When the plan was `plan_source: inferred` and Stage 5 step 2 fired, note that settlement suppression was honored weakly (advisory-grade), with the settlement-conflict demotion count. **Removable surface (only when deletion-oriented maintainability findings exist):** one line giving the approximate net lines/files those findings would remove if applied (e.g., "Removable surface: ~120 lines / 2 files across findings #4, #7"). This is a dead-weight signal, **not** a reduction target — never lower the bar for a finding or invent deletions to grow the number, and omit the line entirely when no finding proposes a deletion.
@@ -136,7 +138,7 @@ Do not include time estimates.
 
 After the final artifact write returns, emit the final response immediately. The artifact write is the last tool call; never use `true`, `echo`, a placeholder transition, or any other tool call to create another turn before the final response.
 
-### JSON output format (`mode:agent` only)
+## JSON output format (`mode:agent` only)
 
 Emit **one raw JSON object** as the primary response — a single bare JSON value, **no markdown code fence**. A leading ```` ```json ```` fence makes the response start with backticks and breaks naive `JSON.parse` consumers, so never wrap it. Also write `review.json` under the resolved `<run-dir>` with the same payload.
 

@@ -20,7 +20,7 @@ description: >-
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Schematic analysis — extracts MPNs for datasheet sync |
 | `bom` | BOM management — orchestrates sourcing across distributors |
 | `spice` | Uses DigiKey parametric data for behavioral SPICE models |
@@ -77,7 +77,7 @@ The response returns an `access_token` valid for **10 minutes**. Cache the token
 
 Every API call needs:
 
-```
+```text
 X-DIGIKEY-Client-Id: ${DIGIKEY_CLIENT_ID}
 Authorization: Bearer <access_token>
 ```
@@ -90,7 +90,7 @@ Optional locale headers:
 
 ### KeywordSearch — Find Parts
 
-```
+```text
 POST /products/v4/search/keyword
 ```
 
@@ -172,7 +172,7 @@ Response — key fields in each `Products[]` item:
 
 ### ProductDetails — Full Details for One Part
 
-```
+```text
 GET /products/v4/search/{productNumber}/productdetails
 ```
 
@@ -187,7 +187,7 @@ Returns the full `Product` object with all parameters, pricing (including MyPric
 ### Other Useful Endpoints
 
 | Endpoint | Method | Description |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | `/products/v4/search/{pn}/productdetails` | GET | Full product info for one part |
 | `/products/v4/search/productpricing/{pn}` | GET | Pricing with MyPricing for a part |
 | `/products/v4/search/{pn}/media` | GET | All media (images, datasheets) for a part |
@@ -213,7 +213,7 @@ All errors return `DKProblemDetails`:
 
 If API credentials are not available or authentication fails, search DigiKey by fetching product pages directly:
 
-```
+```text
 https://www.digikey.com/en/products/result?keywords=<url-encoded-query>
 ```
 
@@ -326,7 +326,7 @@ The script:
 Tested against 240 components across 8 open-source KiCad projects (96% download success rate, 94% without Playwright):
 
 | Manufacturer | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TI | Works | URL normalization strips JS redirect wrapper |
 | ADI / Analog | Works | `requests` handles HTTP/2 transparently |
 | STMicro | Works | Requires User-Agent header |

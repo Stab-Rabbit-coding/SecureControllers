@@ -26,7 +26,7 @@ that establish a clear, documented legal basis and that processing is transparen
 to relevant parties.
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.1.2.2 | Identify and Document Purpose | Document the specific purposes for which PII is collected; purpose must be stated before collection begins | Vague or catch-all purpose statements; purposes undocumented in RoPA |
 | A.1.2.3 | Identify Lawful Basis | Identify and document the lawful basis for each processing activity (consent, contract, legal obligation, vital interests, public task, legitimate interests) | No per-activity lawful basis mapping; LIA not completed for legitimate interest claims |
 | A.1.2.4 | Determine Consent | Where consent is the lawful basis, define when and how consent will be obtained; ensure it meets the required standard (freely given, specific, informed, unambiguous) | Pre-ticked boxes; bundled consent; no record of when consent was obtained |
@@ -44,7 +44,7 @@ to relevant parties.
 provided with sufficient information about how their PII is processed.
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.1.3.2 | Obligations to PII Principals | Establish and document the organization's obligations to PII principals and the mechanisms by which those obligations are met | No documented obligations register; rights not mapped to processes |
 | A.1.3.3 | Information for PII Principals | Determine what information must be provided to PII principals before or at the point of collection | Privacy notice does not cover all required information elements |
 | A.1.3.4 | Providing Information | Provide the required information to PII principals in a clear, accessible, and timely manner (typically via privacy notice) | Privacy notice not easy to find; information presented in complex legal language |
@@ -65,7 +65,7 @@ systems and processes, ensuring PII is collected and processed only to the exten
 necessary.
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.1.4.2 | Limit Collection | Collect only the PII that is necessary for the stated purpose (data minimisation) | Collecting more fields than required "just in case"; no data minimisation review in product design |
 | A.1.4.3 | Limit Processing | Process PII only for the stated purpose; prevent secondary use without additional legal basis | Processing PII for analytics or profiling beyond original purpose |
 | A.1.4.4 | Accuracy and Quality | Implement controls to maintain accuracy of PII; provide mechanisms for correction | No data quality validation; no user self-service correction mechanism |
@@ -85,7 +85,7 @@ organizations comply with applicable law, and that all transfers and disclosures
 are documented.
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.1.5.2 | Basis for PII Transfer | Identify and document the legal basis for each transfer of PII to a third country or international organization (adequacy decision, SCCs, BCRs, derogations) | Transfers to third countries without documented legal basis; SCCs not signed |
 | A.1.5.3 | Countries for PII Transfer | Document the countries or international organizations to which PII is transferred | No transfer mapping; transfers via cloud providers not documented |
 | A.1.5.4 | Records of PII Transfer | Maintain records of all PII transfers to third parties | Transfer log not maintained; no visibility into all third-party transfers |
@@ -103,7 +103,7 @@ plus all A.3 controls (47 total).
 ### A.2.2 — Conditions for Collection and Processing (6 controls)
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.2.2.2 | Customer Agreement | Process PII only in accordance with documented instructions from the PII controller; ensure a written DPA is in place | Processing PII outside contract scope; no DPA in place for all controllers |
 | A.2.2.3 | Organisation's Purposes | Do not process PII for the processor's own purposes; processing is limited to what is specified by the controller | Using controller PII for own analytics, product training, or marketing |
 | A.2.2.4 | Marketing and Advertising | Do not use PII processed on behalf of a controller for marketing or advertising without explicit authorization | Using customer data for cross-marketing between controller clients |
@@ -116,7 +116,7 @@ plus all A.3 controls (47 total).
 ### A.2.3 — Obligations to PII Principals (1 control)
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.2.3.2 | Obligations to PII Principals | Where the processor interacts with PII principals, fulfil the obligations defined by the controller; redirect inquiries to the controller where appropriate | Processor staff unaware of how to handle DSR inquiries received directly |
 
 ---
@@ -124,7 +124,7 @@ plus all A.3 controls (47 total).
 ### A.2.4 — Privacy by Design and by Default (3 controls)
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.2.4.2 | Temporary Files | Ensure temporary files created during processing on behalf of a controller are managed and deleted per agreed schedules | Temporary processing files retained beyond task completion |
 | A.2.4.3 | Return, Transfer or Disposal of PII | Upon termination of the processing agreement, return all PII to the controller or securely dispose of it as instructed | No offboarding procedure; PII retained after contract end |
 | A.2.4.4 | PII Transmission Controls | Apply controls to protect PII in transit during processing operations | PII transmitted without encryption between processor subsystems |
@@ -134,7 +134,7 @@ plus all A.3 controls (47 total).
 ### A.2.5 — PII Sharing, Transfer and Disclosure (8 controls)
 
 | Control ID | Control Name | Description | Common Gaps |
-|-----------|--------------|-------------|-------------|
+| --- | --- | --- | --- |
 | A.2.5.2 | Basis for PII Transfer | Identify and document the legal basis for any transfer of PII to a third country or international organization | Sub-processor transfers not mapped to legal transfer mechanism |
 | A.2.5.3 | Countries for PII Transfer | Document the countries or international organizations to which PII is transferred during processing | Data residency commitments made but not enforced; sub-processor locations undocumented |
 | A.2.5.4 | Records of PII Disclosures | Maintain records of all disclosures of PII to third parties | Disclosure log not maintained at processor level |
@@ -153,7 +153,7 @@ security controls selected from the ISO 27001/27002:2022 framework, adapted to
 support privacy protection.
 
 | Control ID | Control Name | Privacy Relevance |
-|-----------|--------------|------------------|
+| --- | --- | --- |
 | A.3.3 | Information Security Policies | Policies must explicitly address privacy and PII protection |
 | A.3.4 | Security Roles | Define privacy-relevant security roles; ensure DPO / privacy officer interactions |
 | A.3.5 | Classification of Information | PII must be classified appropriately to drive correct handling controls |
@@ -189,7 +189,7 @@ support privacy protection.
 ## Control Counts Summary
 
 | Table | Role | Controls | Combined with A.3 |
-|-------|------|----------|-------------------|
+| --- | --- | --- | --- |
 | A.1 | PII Controller only | 31 | 31 + 29 = **60** |
 | A.2 | PII Processor only | 18 | 18 + 29 = **47** |
 | A.1 + A.2 | Both controller and processor | 49 | 49 + 29 = **78** |

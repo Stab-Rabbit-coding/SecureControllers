@@ -50,7 +50,7 @@ top:0,0,0,0,0,0,0"
 
 echo "$ANGLES" | while IFS=: read -r angle camera; do
     output="$OUTPUT_DIR/${BASENAME}_${angle}.png"
-    
+
     echo "  Rendering $angle view..."
     $OPENSCAD \
         --camera="$camera" \

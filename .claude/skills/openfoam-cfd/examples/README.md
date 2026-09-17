@@ -4,7 +4,7 @@ This directory contains complete, working OpenFOAM case examples and utility scr
 
 ## Directory Structure
 
-```
+```text
 examples/
 ├── pipe-flow/              # Turbulent pipe flow case (simpleFoam)
 ├── pump-impeller/          # Rotating impeller case (pimpleFoam)

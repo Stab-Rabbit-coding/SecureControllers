@@ -57,7 +57,7 @@ Claude performs these extraction steps:
 1. **Parse all text** for indicators using pattern matching:
 
 | IOC Type | Pattern Examples |
-|----------|----------------|
+| ---------- | ---------------- |
 | IPv4 | `192.0.2.1`, defanged: `192[.]0[.]2[.]1` |
 | IPv6 | `2001:db8::1` |
 | Domain | `evil.example.com`, `evil[.]example[.]com` |
@@ -124,7 +124,7 @@ python scripts/mitre_mapper.py --technique T1059.001 --detection-query splunk
 **ATT&CK Tactics Reference:**
 
 | Tactic | ID | Description |
-|--------|----|-------------|
+| -------- | ---- | ------------- |
 | Reconnaissance | TA0043 | Pre-attack information gathering |
 | Resource Development | TA0042 | Establishing attack resources |
 | Initial Access | TA0001 | Entry into target environment |
@@ -374,7 +374,7 @@ python scripts/mitre_mapper.py --actor "APT29" --output apt29_layer.json
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | IOCs from malware samples | ← Skill 05 (Malware Analysis) |
 | IOCs from IR engagement | ← Skill 07 (Incident Response) |
 | Feed hunting queries to SIEM | → Skill 12 (Log Analysis) |

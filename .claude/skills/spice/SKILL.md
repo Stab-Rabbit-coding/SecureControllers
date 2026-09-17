@@ -23,7 +23,7 @@ This skill inverts the typical simulation workflow: instead of requiring users t
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Schematic/PCB analysis — produces the analyzer JSON this skill consumes |
 | `digikey` | Parametric specs for behavioral models, datasheet downloads |
 | `mouser` | Parametric specs (secondary source), datasheet downloads |
@@ -125,7 +125,7 @@ Read the JSON report and incorporate findings into the design review. See the "I
 The script selects subcircuits from the analyzer's `findings[]` array (grouped by detector type). Not every detection is simulatable — the script skips configurations that can't produce meaningful results (comparators, open-loop opamps, active oscillators).
 
 | Detector | Analysis | What's Measured | Model Fidelity | Trustworthiness |
-|----------|----------|-----------------|----------------|-----------------|
+| ---------- | ---------- | ----------------- | ---------------- | ----------------- |
 | `rc_filters` | AC sweep | -3dB frequency, phase at fc | Exact (ideal passives) | High — mathematically exact |
 | `lc_filters` | AC sweep | Resonant frequency, Q factor, bandwidth | Near-exact (ideal L/C + ESR) | High — small Q error from ESR |
 | `voltage_dividers` | DC operating point | Output voltage, error % | Exact (ideal passives) | High — unloaded |
@@ -182,7 +182,7 @@ The script selects subcircuits from the analyzer's `findings[]` array (grouped b
 **Status values and what they mean:**
 
 | Status | Meaning | Action |
-|--------|---------|--------|
+| -------- | --------- | -------- |
 | **pass** | Simulation confirms the analyzer's detection within tolerance | Report as confirmed. No action needed. |
 | **warn** | Simulation shows something worth noting — small deviation, model limitation, or edge case | Report with context. Often the "warn" reflects a real but minor issue (e.g., slight gain error from ideal opamp model). |
 | **fail** | Simulation contradicts the analyzer — wrong frequency, large gain error, unexpected behavior | Investigate. Could be a real design issue, a topology misdetection by the analyzer, or a testbench generation bug. Check the `.cir` file and log. |
@@ -224,7 +224,7 @@ Crystal simulations validate load capacitor selection — they check that the ef
 Check the `note` field first. Common causes:
 
 | Note | Cause | Fix |
-|------|-------|-----|
+| ------ | ------- | ----- |
 | "could not measure -3dB frequency" | AC sweep range doesn't include the -3dB point | Check if the filter fc is very low (<0.1 Hz) or very high (>100 MHz) |
 | "AC measurement failed" | Testbench topology error — the circuit doesn't converge | Check `.cir` file for floating nodes or missing connections |
 | "Testbench generation failed: KeyError" | Analyzer detection is missing expected fields | Check analyzer JSON — the detection may be incomplete |
@@ -238,7 +238,7 @@ When incorporating simulation results into a design review report, follow this p
 
 ### For passing simulations (confidence builders)
 
-```
+```text
 ### RC Filter R5/C3 (fc=15.9kHz lowpass) -- Confirmed
 Simulated fc=15.9kHz, <0.3% from calculated. Phase=-45 deg at fc as expected.
 ```
@@ -247,7 +247,7 @@ Keep passing results brief — they confirm what the analyzer already reported. 
 
 ### For warnings (context required)
 
-```
+```text
 ### Opamp U4A (inverting gain=-10)
 Simulated gain=20.0dB at 1kHz, matching expected -10x. Bandwidth 98.8kHz
 (ideal model). Note: LM358 GBW is ~1MHz, so actual bandwidth would be
@@ -256,7 +256,7 @@ Simulated gain=20.0dB at 1kHz, matching expected -10x. Bandwidth 98.8kHz
 
 ### For failures (investigation needed)
 
-```
+```text
 ### RC Filter R12/C8 -- MISMATCH
 Simulated fc=3.2kHz vs expected 15.9kHz (80% deviation). This likely indicates
 the analyzer misidentified the filter topology — R12 may be serving a different
@@ -266,14 +266,14 @@ around R12/C8 in the schematic.
 
 ### For skips (note the gap)
 
-```
+```text
 ### Crystal Y1 (32.768kHz) -- Not simulated
 Active oscillator module — no external load caps to validate.
 ```
 
 ### Summary line for the simulation section
 
-```
+```text
 ## Simulation Verification (4 pass, 1 warn, 0 fail, 1 skip)
 Verified 5 subcircuits in 0.03s. All passive circuits confirmed.
 One opamp result requires interpretation (see U4A above).
@@ -290,7 +290,7 @@ For detailed information about the behavioral models used, their accuracy envelo
 ## Script Reference
 
 | Script | Purpose |
-|--------|---------|
+| -------- | --------- |
 | `scripts/simulate_subcircuits.py` | Main orchestrator — CLI entry point, reads JSON, generates testbenches, runs simulator, produces report |
 | `scripts/spice_templates.py` | Testbench generators per detector type — one function per detector name |
 | `scripts/spice_models.py` | Behavioral model definitions (ideal opamp, generic semiconductors), net sanitization, engineering notation formatting |

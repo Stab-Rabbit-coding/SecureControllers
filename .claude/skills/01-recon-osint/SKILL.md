@@ -81,7 +81,7 @@ pip install requests dnspython python-whois beautifulsoup4 shodan
 
 **Output format for subdomain findings:**
 
-```
+```text
 Target: example.com
 Discovery Method: CT Logs + DNS Brute-Force
 Discovered: 47 subdomains
@@ -165,7 +165,7 @@ nmap -sV -sC -p- -T4 -oA full_scan 203.0.113.10
 
 **Technology stack report format:**
 
-```
+```text
 URL: https://example.com
 
 WEB SERVER:    nginx/1.18.0 (Ubuntu)
@@ -265,7 +265,7 @@ python scripts/tech_fingerprint.py --urls urls.txt --output tech_report.json
 ## Skill Integration
 
 | Next Step | Condition | Target Skill |
-|-----------|-----------|--------------|
+| ----------- | ----------- | -------------- |
 | Vulnerability assessment | Live services discovered | → Skill 02 |
 | Web application testing | Web apps found | → Skill 09 |
 | Cloud asset auditing | Cloud-hosted assets found | → Skill 10 |

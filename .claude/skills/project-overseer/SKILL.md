@@ -261,7 +261,7 @@ All commands are English. Plain synonyms work — match on intent, not exact str
 | File not found | Report the exact path; list what exists in the project |
 | State file missing | Rebuild the task list from the plan file, show it, ask before writing |
 | State file corrupt | Show the parse error and the raw content; ask for recovery instruction |
-| Phase skipped | "Currently in phase X — <step> has to happen first" |
+| Phase skipped | "Currently in phase X — `<step>` has to happen first" |
 | Task not in the WBS | Name the task and list the valid ones |
 | Starting work before approval | Refuse; the WBS is not approved yet |
 | Changing a requirement without assessment | Run the assessment first, present it, then ask |

@@ -49,7 +49,7 @@ Also clarify the organization's role: **PII Controller**, **PII Processor**, or
 Match your output to the task type:
 
 | Task | Output Format |
-|------|--------------|
+| --- | --- |
 | Gap analysis | Table: Control ID \| Control Name \| Status \| Evidence Needed \| Gap Notes |
 | Policy generation | Full structured policy document |
 | Control guidance | Structured guidance: Purpose → What to Do → Evidence → Audit Tips |
@@ -81,7 +81,7 @@ straightforward. Integration with ISO 27001 is still fully supported and encoura
 - **A.3**: Shared information security controls — 29 controls
 - **Annex B**: Implementation guidance (new in 2025)
 
-**Transition deadline for 2019 certified organizations: October 2028**
+#### Transition deadline for 2019 certified organizations: October 2028
 
 ### ISO 27701:2019 — Extension Edition (Legacy)
 
@@ -98,7 +98,7 @@ For detailed transition guidance, read `references/transition-guide.md`.
 All mandatory PIMS requirements live in Clauses 4–10. No clause may be excluded:
 
 | Clause | Title | Key PIMS Deliverables |
-|--------|-------|----------------------|
+| --- | --- | --- |
 | 4 | Context of the Organization | PIMS Scope document, PII data inventory, interested parties register (focus: PII principals, regulators, customers) |
 | 5 | Leadership | Privacy Policy (signed by top management), privacy roles and responsibilities, DPO appointment where required |
 | 6 | Planning | Privacy risk assessment process, privacy risk treatment plan, Statement of Applicability (SoA), privacy objectives |
@@ -157,7 +157,7 @@ When generating policies or documents:
 **Core PIMS documents and their primary mappings:**
 
 | Document | Clause | Annex A (2025) |
-|----------|--------|----------------|
+| --- | --- | --- |
 | Privacy Policy | 5.2 | A.1.2.2 / A.2.2.2 |
 | PIMS Scope | 4.3 | — |
 | Privacy Risk Assessment | 6.1 | — |
@@ -192,7 +192,7 @@ Consult `references/annex-a-controls.md` for full control listings with descript
 terminology — these are the exact phrases auditors and clients will look for:**
 
 | Obligation | ISO 27701 Term | Primary Control |
-|-----------|---------------|-----------------|
+| --- | --- | --- |
 | Acting on controller instructions | "processing under controller authority" | A.2.2.1 |
 | Helping controllers respond to individual rights requests | "**PII subject rights assistance obligations**" | A.2.3.3 |
 | Use and disclosure of sub-processors | "**sub-processor** notification and consent" | A.2.2.6 |
@@ -229,7 +229,7 @@ high risk to individuals, especially when:
 **SoA columns for ISO 27701:2025:**
 
 | Control ID | Control Name | Applicable? | If Not: Justification | Implementation Status | Evidence Reference |
-|-----------|--------------|-------------|----------------------|----------------------|-------------------|
+| --- | --- | --- | --- | --- | --- |
 
 **Role-based SoA scope:**
 
@@ -245,7 +245,7 @@ Implemented | Partially Implemented | Planned | Not Applicable
 ## ISO 27701:2019 → 2025 Key Differences
 
 | Topic | 2019 Edition | 2025 Edition |
-|-------|-------------|-------------|
+| --- | --- | --- |
 | Standard type | Extension of ISO 27001 | **Standalone standard** |
 | ISO 27001 prerequisite | Required | Optional (integration supported) |
 | HLS clauses | Derived from ISO 27001 | Own full Clauses 4–10 |
@@ -325,7 +325,7 @@ ISO 27701:2025 includes an updated GDPR correspondence annex and aligns with maj
 global privacy regulations. For detailed mappings, read `references/regulatory-mapping.md`.
 
 | Regulation | Alignment Summary |
-|-----------|-------------------|
+| --- | --- |
 | GDPR (EU) | Direct alignment — updated correspondence annex; SoA serves as compliance evidence (not a safe harbor — see above) |
 | UK GDPR | Same as EU GDPR; UK ICO recognizes ISO 27701 as meaningful evidence |
 | CCPA/CPRA (California) | Covers data rights, processing records, vendor obligations |

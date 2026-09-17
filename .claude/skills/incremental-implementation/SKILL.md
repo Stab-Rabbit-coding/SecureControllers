@@ -20,7 +20,7 @@ Build in thin vertical slices — implement one piece, test it, verify it, then 
 
 ## The Increment Cycle
 
-```
+```text
 ┌──────────────────────────────────────┐
 │                                      │
 │   Implement ──→ Test ──→ Verify ──┐  │
@@ -47,7 +47,7 @@ For each slice:
 
 Build one complete path through the stack:
 
-```
+```text
 Slice 1: Create a task (DB + API + basic UI)
     → Tests pass, user can create a task via the UI
 
@@ -67,7 +67,7 @@ Each slice delivers working end-to-end functionality.
 
 When backend and frontend need to develop in parallel:
 
-```
+```text
 Slice 0: Define the API contract (types, interfaces, OpenAPI spec)
 Slice 1a: Implement backend against the contract + API tests
 Slice 1b: Implement frontend against mock data matching the contract
@@ -78,7 +78,7 @@ Slice 2: Integrate and test end-to-end
 
 Tackle the riskiest or most uncertain piece first:
 
-```
+```text
 Slice 1: Prove the WebSocket connection works (highest risk)
 Slice 2: Build real-time task updates on the proven connection
 Slice 3: Add offline support and reconnection
@@ -99,7 +99,7 @@ After writing code, review it against these checks:
 - Would a staff engineer look at this and say "why didn't you just..."?
 - Am I building for hypothetical future requirements, or the current task?
 
-```
+```text
 SIMPLICITY CHECK:
 ✗ Generic EventBus with middleware pipeline for one notification
 ✓ Simple function call
@@ -127,7 +127,7 @@ Do NOT:
 
 If you notice something worth improving outside your task scope, note it — don't fix it:
 
-```
+```text
 NOTICED BUT NOT TOUCHING:
 - src/utils/format.ts has an unused import (unrelated to this task)
 - The auth middleware could use better error messages (separate task)
@@ -186,7 +186,7 @@ Each increment should be independently revertable:
 
 When directing an agent to implement incrementally:
 
-```
+```text
 "Let's implement Task 3 from the plan.
 
 Start with just the database schema change and the API endpoint.
@@ -215,7 +215,7 @@ After each increment, verify:
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'll test it all at the end" | Bugs compound. A bug in Slice 1 makes Slices 2-5 wrong. Test each slice. |
 | "It's faster to do it all at once" | It *feels* faster until something breaks and you can't find which of 500 changed lines caused it. |
 | "These changes are too small to commit separately" | Small commits are free. Large commits hide bugs and make rollbacks painful. |

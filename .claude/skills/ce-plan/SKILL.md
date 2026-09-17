@@ -634,19 +634,19 @@ Use one planning philosophy across all depths. Change the amount of detail, not 
 
 #### 4.1 Plan Depth Guidance
 
-**Lightweight**
+##### Lightweight
 
 - Keep the plan compact
 - Usually 2-4 implementation units
 - Omit optional sections that add little value
 
-**Standard**
+##### Standard
 
 - Use the full core template, omitting optional sections (including High-Level Technical Design) that add no value for this particular work
 - Usually 3-6 implementation units
 - Include risks, deferred questions, and system-wide impact when relevant
 
-**Deep**
+##### Deep
 
 - Use the full core template plus optional analysis sections where warranted
 - Usually 4-8 implementation units

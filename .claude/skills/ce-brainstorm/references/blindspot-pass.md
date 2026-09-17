@@ -25,7 +25,7 @@ Never silently switch into teaching. The offer is a blocking question (Interacti
 
 Use this wording, substituting the territory:
 
-> Part of this sits in territory you've flagged as unfamiliar (<territory>). I can map the decision surface first — the decisions you'll face there, the realistic options for each, and what I'd default to — so you're choosing rather than guessing. Or we keep going with questions and I fill gaps with defaults recorded as assumptions. Which do you prefer?
+> Part of this sits in territory you've flagged as unfamiliar (`<territory>`). I can map the decision surface first — the decisions you'll face there, the realistic options for each, and what I'd default to — so you're choosing rather than guessing. Or we keep going with questions and I fill gaps with defaults recorded as assumptions. Which do you prefer?
 
 Two options: **Map the territory first** / **Proceed with questions** (defaults become assumptions).
 

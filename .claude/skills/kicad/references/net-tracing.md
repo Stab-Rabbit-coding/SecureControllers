@@ -6,7 +6,7 @@ KiCad schematics don't store explicit netlists — connectivity is implicit via 
 
 **This is the single most common source of errors when tracing nets programmatically.** KiCad symbol library coordinates use math convention (Y-up), but schematic placement coordinates use screen convention (Y-down). You MUST subtract pin Y from symbol Y:
 
-```
+```text
 absolute = (symbol_X + pin_X, symbol_Y - pin_Y)
 ```
 
@@ -16,7 +16,7 @@ absolute = (symbol_X + pin_X, symbol_Y - pin_Y)
 
 Each symbol has pins defined with relative offsets in the `lib_symbols` section:
 
-```
+```text
 (symbol "BSS84_1_1"
   (pin input line (at -5.08 0 0) ... (number "1"))      ; Gate
   (pin passive line (at 2.54 5.08 270) ... (number "3")) ; Drain
@@ -66,7 +66,7 @@ Search for `(wire (pts (xy X1 Y1) (xy X2 Y2)))` where one endpoint matches the p
 
 **KiCad 9 wire format note:** The `(wire` keyword, `(pts` keyword, and coordinate data may be on separate lines:
 
-```
+```text
 (wire
     (pts
         (xy 41.91 77.47) (xy 60.96 77.47)
@@ -87,7 +87,7 @@ Look for:
 
 **Global label parsing note (KiCad 9):** The `(at ...)` is NOT on the line immediately after `(global_label "...")`. There is a `(shape ...)` line in between:
 
-```
+```text
 (global_label "EN_5V"
     (shape input)
     (at 43.18 128.27 180)

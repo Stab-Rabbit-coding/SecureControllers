@@ -29,7 +29,7 @@ Keep defenders on a capable model tier. A defender that cannot read a test suite
 Per finding:
 
 | Field | Shape |
-|---|---|
+| --- | --- |
 | `id` | stable, `<unit>-<nnn>`; defenses and later passes reference findings by id |
 | `target` | `path/to/file.md:line` or a line range |
 | `class` | exactly one value from the closed enum below |
@@ -49,7 +49,7 @@ Per unit, in addition to the findings:
 Ordered by expected behavior change per finding, not by word count. The last entry yields the most words and the least behavior.
 
 | Class | Diagnostic question |
-|---|---|
+| --- | --- |
 | `phantom-handoff` | Does the party this sentence hands off to — a reviewer, a caller, a next agent, a consumer of the artifact — exist in this run? |
 | `step-machinery` | Would a different order, or skipping the ceremony, produce a different artifact? |
 | `capability-restatement` | Would the model do this if the line were deleted? |
@@ -75,7 +75,7 @@ Exactly three, one per finding:
 A defender returns one row per finding, in these fields, and nothing else:
 
 | Field | Shape |
-|---|---|
+| --- | --- |
 | `id` | the proposer's finding id, unchanged; a ruling that cannot be joined back is discarded |
 | `ruling` | `cut` / `reduce` / `keep` |
 | `sources_searched` | which of the three, named; plus the query used, so an empty search is visible |

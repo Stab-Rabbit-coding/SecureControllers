@@ -75,7 +75,7 @@ SP 800-53B (October 2020) is the companion publication that separates the contro
 ## Control Baselines by Family — Quick Reference
 
 | Family | L Controls | M Controls | H Controls |
-|--------|-----------|-----------|-----------|
+| -------- | ----------- | ----------- | ----------- |
 | AC | 8 | 18 | 20 |
 | AT | 4 | 5 | 6 |
 | AU | 10 | 14 | 15 |
@@ -108,7 +108,7 @@ Tailoring produces a system-specific set of controls from the starting baseline.
 **Common controls** (also called "inherited controls") are implemented at the organization or facility level and inherited by multiple systems:
 
 | Example | Control | Implemented By |
-|---------|---------|---------------|
+| --------- | --------- | --------------- |
 | Enterprise firewall | SC-7 | Network Operations |
 | Badge access system | PE-3 | Facilities |
 | Enterprise AV solution | SI-3 | IT Security |
@@ -128,7 +128,7 @@ Document in SSP Section: Common Control Inheritance table.
 Remove controls that are not applicable based on:
 
 | Scoping Consideration | Example |
-|----------------------|---------|
+| ---------------------- | --------- |
 | Technology not present | MA-4 (remote maintenance) if system has no remote maintenance capability |
 | Physical location | PE-3 not applicable for cloud-hosted system (inherited from CSP) |
 | Mission/operational need | AC-18 (wireless) not applicable for air-gapped system |
@@ -143,7 +143,7 @@ Every control with brackets `[Assignment: ...]` requires an ODV. Failure to fill
 **High-priority ODVs to define:**
 
 | Control | Parameter | Federal Guidance | Example Value |
-|---------|-----------|-----------------|---------------|
+| --------- | ----------- | ----------------- | --------------- |
 | AC-2(3) | Inactivity period before disable | OMB M-22-09: 90 days | 90 days |
 | AC-7 | Max login attempts before lockout | NIST guidance: 3–5 | 3 attempts |
 | AC-11 | Session inactivity before lock | OMB M-22-09: 15 minutes | 15 minutes |
@@ -239,7 +239,7 @@ Reference: **NIST SP 800-82 Rev 3** — Guide to OT Security.
 The **Privacy Act of 1974 (5 U.S.C. § 552a)** applies to federal agencies' systems of records (SOR). SP 800-53 PT controls implement Privacy Act requirements:
 
 | PT Control | Privacy Act Requirement |
-|-----------|------------------------|
+| ----------- | ------------------------ |
 | PT-5 | Privacy Act notice at collection |
 | PT-6 | System of Records Notice (SORN) published in Federal Register |
 | PT-8 | Computer matching agreements |

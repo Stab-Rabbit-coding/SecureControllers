@@ -3,7 +3,7 @@
 This directory contains the core analysis scripts, shared utilities, the S-expression parser, and the rich-finding/trust-summary infrastructure. Each analyzer outputs a structured JSON envelope for the AI agent to consume during design reviews.
 
 | Script | Input | Size | Purpose |
-|--------|-------|------|---------|
+| -------- | ------- | ------ | --------- |
 | `analyze_schematic.py` | `.kicad_sch` / `.sch` | ~9,300 LOC | Component extraction, net building, subcircuit detection, signal/power/BOM/DFM analysis, audit detectors |
 | `analyze_pcb.py` | `.kicad_pcb` | ~6,600 LOC | Footprint inventory, routing, signal integrity, power, thermal, placement, manufacturing, DFM, union-find connectivity graph, assembly/DFM checks |
 | `analyze_gerbers.py` | Gerber dir (`.gbr`/`.drl`) | ~1,400 LOC | Layer completeness, drill holes, apertures, coordinate alignment, X2 attributes |
@@ -40,7 +40,7 @@ Parses KiCad's Lisp-like S-expression format into nested Python lists. Used by b
 ### API
 
 | Function | Purpose |
-|----------|---------|
+| ---------- | --------- |
 | `parse_file(path)` | Parse a `.kicad_sch` or `.kicad_pcb` file → nested lists |
 | `find_all(node, keyword)` | Find direct children starting with keyword |
 | `find_first(node, keyword)` | Find first direct child starting with keyword |
@@ -62,7 +62,7 @@ Parses `.kicad_pcb` files (KiCad 5 `module` and KiCad 6+ `footprint` formats).
 
 ### Pipeline
 
-```
+```text
 .kicad_pcb file
     |
     v
@@ -130,9 +130,9 @@ python3 analyze_pcb.py board.kicad_pcb --proximity        # Add crosstalk proxim
 
 Parses a directory of Gerber RS-274X files and Excellon drill files. Does NOT render the gerbers — it extracts metadata, counts, and performs sanity checks.
 
-### Pipeline
+### Pipeline (analyze_gerbers.py)
 
-```
+```text
 gerber directory
     |
     v
@@ -169,7 +169,7 @@ Compares bounding box extents across copper and edge layers. Only checks F.Cu, B
 - PTH vs NPTH is determined from filename (`-PTH.drl` vs `-NPTH.drl`)
 - Individual hole coordinates are parsed for coordinate range but not included in output (too verbose)
 
-### Usage
+### Usage (analyze_gerbers.py)
 
 ```bash
 python3 analyze_gerbers.py ./gerbers/                    # JSON to stdout
@@ -183,9 +183,9 @@ python3 analyze_gerbers.py ./gerbers/ --compact          # Minified JSON
 
 The largest and most complex script. The rest of this document focuses on its architecture and pitfalls.
 
-### Pipeline
+### Pipeline (analyze_schematic.py)
 
-```
+```text
 .kicad_sch file(s)
     |
     v
@@ -258,7 +258,7 @@ Not supported (binary and XML formats). Returns 0 components gracefully.
 
 **KiCad storage format**: Each symbol in a sub-sheet has:
 
-```
+```text
 (instances
   (project "project_name"
     (path "/root_uuid/sheet_instance_uuid"
@@ -309,7 +309,7 @@ Nets are assigned names with this priority:
 `parse_value()` converts component value strings to floats:
 
 | Input | Output | Notes |
-|-------|--------|-------|
+| ------- | -------- | ------- |
 | `"4.7k"` | 4700.0 | SI prefix |
 | `"4K7"` | 4700.0 | Embedded multiplier |
 | `"0R1"` | 0.1 | R as decimal point |

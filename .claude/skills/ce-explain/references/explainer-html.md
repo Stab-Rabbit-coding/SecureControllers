@@ -15,7 +15,7 @@ How an explainer renders as HTML. Load at compose time (Phase 4), not earlier. T
 Show, then tell — every explainer leads with something to look at, chosen by what the material actually is. One visual per load-bearing concept; never decoration.
 
 | Material | Show |
-|----------|------|
+| ---------- | ------ |
 | Architecture, relationships, boundaries | Inline SVG diagram (boxes and labeled arrows; halo/contrast so labels stay legible) |
 | Code behavior, a diff's mechanics | Annotated snippet: the real lines, with margin notes explaining the *why* per hunk |
 | A process, lifecycle, or state change | Numbered flow or state strip |

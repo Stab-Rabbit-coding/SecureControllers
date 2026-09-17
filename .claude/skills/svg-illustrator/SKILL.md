@@ -72,7 +72,7 @@ renders as a black rectangle in the print pipeline.
 ## Path data shorthand
 
 | Command | Does | When to use |
-|---|---|---|
+| --- | --- | --- |
 | `M x y` / `m dx dy` | Move to | Start a subpath |
 | `L x y` / `l dx dy` | Line to | Straight segment |
 | `H x` / `h dx` | Horizontal line | Ridge baseline |
@@ -100,7 +100,7 @@ renders as a black rectangle in the print pipeline.
 ## Composition
 
 | Rule | Shorthand |
-|---|---|
+| --- | --- |
 | Rule of thirds | Horizon on `y = H/3` or `y = 2H/3`, never `y = H/2` |
 | Single focal point | One sun OR moon OR lone tree, never two |
 | Leading lines | Ridge, river, treeline points eye toward focal point |
@@ -568,7 +568,7 @@ small filled triangles at the arrow end.
 ## Render-engine support matrix (WeasyPrint 57-61, verified 2026-04)
 
 | Feature | WeasyPrint | Fallback |
-|---|---|---|
+| --- | --- | --- |
 | `linearGradient`, `radialGradient` | **Yes** | - |
 | `pattern` | Partial (viewBox ignored) | Inline tiled group |
 | `clipPath` (url fragment) | Yes from 53+ | Stable; minor bugs still fixing |
@@ -609,7 +609,7 @@ inkjet threshold ~0.1 pt. Minimum `stroke-width` floor for any
 detail that must survive the press:
 
 | Output | Min stroke-width (on 800-unit viewBox) |
-|---|---|
+| --- | --- |
 | Offset press | 0.4 |
 | Digital / inkjet | 0.2 |
 | Screen only | 0.1 |
@@ -618,7 +618,7 @@ detail that must survive the press:
 e-readers strip inline SVG. Ship a raster fallback:
 
 | Target | SVG support | Fallback |
-|---|---|---|
+| --- | --- | --- |
 | Email (Gmail, Outlook, Apple Mail) | Stripped | PNG at 2x display size, 600 px wide min |
 | Epub3 | Yes | - |
 | Epub2 | No | PNG |
@@ -793,7 +793,7 @@ Report each issue in situation-behaviour-impact format: where it appears, what t
 
 ### Finding format
 
-```
+```text
 ### [SEVERITY] Short title
 **File:** path/to/file.svg, lines X-Y
 **Pattern:** what's there

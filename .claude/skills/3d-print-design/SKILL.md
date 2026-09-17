@@ -137,7 +137,7 @@ Generate CAD: OpenSCAD → `.scad` file directly; FreeCAD → Python script (`.p
 Read these as needed — do not load all upfront.
 
 | File | When to consult |
-|---|---|
+| --- | --- |
 | `references/fdm-design-rules.md` | Any FDM design — wall thickness, overhangs, bridging, tolerances, support avoidance |
 | `references/resin-printing.md` | Any SLA/MSLA/DLP resin design — tolerances, resin types, hollowing, post-processing, safety |
 | `references/advanced-processes.md` | SLS, MJF, metal printing (DMLS/SLM), binder jetting — design rules, tolerances, service bureau selection |

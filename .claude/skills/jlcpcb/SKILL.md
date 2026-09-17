@@ -12,7 +12,7 @@ JLCPCB is a PCB fabrication and assembly service based in Shenzhen, China. It is
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Read/analyze KiCad project files, DFM scoring against JLCPCB capabilities |
 | `bom` | BOM management, gerber/CPL export, stencil ordering |
 | `digikey` | Search DigiKey (prototype sourcing, primary — also preferred for datasheet downloads via API) |
@@ -27,7 +27,7 @@ JLCPCB is a PCB fabrication and assembly service based in Shenzhen, China. It is
 ### Part Categories
 
 | Category | Description | Assembly Fee |
-|----------|-------------|--------------|
+| ---------- | ------------- | -------------- |
 | **Basic** | ~698 common parts (resistors, caps, diodes, etc.) pre-loaded on pick-and-place machines | No extra fee |
 | **Preferred Extended** | Frequently used extended parts | No feeder loading fee (Economic assembly) |
 | **Extended** | 300k+ less common parts loaded on demand | $3 per unique extended part |
@@ -46,7 +46,7 @@ Every assembly component is identified by an **LCSC Part Number** (`Cxxxxx`, e.g
 JLCPCB accepts CSV, XLS, or XLSX BOMs with these columns:
 
 | Column | Required | Description |
-|--------|----------|-------------|
+| -------- | ---------- | ------------- |
 | `Comment` / `Value` | Yes | Component value (e.g., 100nF, 10k) |
 | `Designator` | Yes | Reference designators, comma-separated (e.g., C1,C2,C5) |
 | `Footprint` | Yes | Package/footprint name |
@@ -82,7 +82,7 @@ Available APIs (once approved):
 ### Standard PCB (1-2 layers)
 
 | Parameter | Minimum |
-|-----------|---------|
+| ----------- | --------- |
 | Trace width | 0.127mm (5mil) |
 | Trace spacing | 0.127mm (5mil) |
 | Via diameter | 0.45mm |
@@ -96,7 +96,7 @@ Available APIs (once approved):
 ### Multi-layer (4+ layers)
 
 | Parameter | Minimum |
-|-----------|---------|
+| ----------- | --------- |
 | Trace width | 0.09mm (3.5mil) |
 | Trace spacing | 0.09mm (3.5mil) |
 | Via diameter | 0.25mm |
@@ -112,7 +112,7 @@ If you have a JLCPCB `.kicad_dru` design rules file, import it in KiCad Board Ed
 ### Economic vs Standard Assembly
 
 | Feature | Economic | Standard |
-|---------|----------|----------|
+| --------- | ---------- | ---------- |
 | Sides | Top only | Top + Bottom |
 | Component types | SMD only | SMD + through-hole |
 | Min component size | 0201 | 01005 |
@@ -131,7 +131,7 @@ If you have a JLCPCB `.kicad_dru` design rules file, import it in KiCad Board Ed
 JLCPCB's pick-and-place uses different rotation conventions than KiCad for some footprints. Common offsets:
 
 | Footprint Family | Typical Offset |
-|-----------------|----------------|
+| ----------------- | ---------------- |
 | SOT-23, SOT-23-5, SOT-23-6 | +180° |
 | SOT-223 | +180° |
 | SOIC-8, SOIC-16 | +90° or +270° |

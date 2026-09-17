@@ -49,7 +49,7 @@ For every component, evaluate in this order:
 ### SMD passive packages (resistors, capacitors)
 
 | Package code | Size (mm) | Size (mil) | Good for |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0201 | 0.6×0.3 | 24×12 | Very dense pro boards; impossible to hand-solder |
 | 0402 | 1.0×0.5 | 40×20 | Dense designs; challenging but possible to hand-solder |
 | 0603 | 1.6×0.8 | 63×31 | Good general-purpose; manageable with steady hands |
@@ -64,7 +64,7 @@ service.
 ### IC packages
 
 | Package | Pitch | Pins | Hand-solderable? | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | SOT-23 / SOT-23-5/6 | 0.95mm | 3-6 | Yes | Small transistors, regulators |
 | SOT-223 | 2.3mm | 3+tab | Yes, easy | Regulators with thermal tab |
 | SOIC-8/14/16 | 1.27mm | 8-16 | Yes | Standard logic, op-amps |
@@ -95,7 +95,7 @@ Never operate a component at its absolute maximum rating. Derating provides
 safety margin against temperature variation, ageing, and transient stress.
 
 | Parameter | Derating rule |
-|---|---|
+| --- | --- |
 | Voltage (capacitor) | Rate for ≤50% of rated voltage (ceramics), ≤80% (electrolytics) |
 | Voltage (semiconductor) | Rate for ≤80% of absolute max Vds/Vce/Vr |
 | Current (continuous) | Rate for ≤80% of rated current |
@@ -112,7 +112,7 @@ or use two 10µF caps in parallel.
 ### Resistors
 
 | Application | Tolerance | Type | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Pull-up/pull-down | 5% | Thick film | Value not critical |
 | Voltage divider (non-precision) | 1% | Thick film | Standard for most uses |
 | Feedback divider (regulator) | 1% | Thick film | Affects output voltage accuracy |
@@ -172,7 +172,7 @@ Questions to answer first:
 ### Common MCU families
 
 | Family | Core | Good for | Ecosystem | Beginner-friendly? |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ATmega328P | AVR 8-bit | Simple projects, Arduino | Arduino IDE | Very |
 | RP2040 | Dual Cortex-M0+ | General purpose, USB, PIO | MicroPython, C SDK | Yes |
 | STM32F103 | Cortex-M3 | Moderate complexity | STM32CubeIDE, Arduino | Moderate |
@@ -194,7 +194,7 @@ For wireless: **ESP32-S3** (WiFi+BLE) or **nRF52840** (BLE, ultra-low power).
 
 ### Decision tree
 
-```
+```text
 Start
   │
   ├─ Is (Vin - Vout) > 2V AND Iload > 200mA?
@@ -264,7 +264,7 @@ These manufacturers are well-established, widely stocked, and produce reliable
 components. This is not exhaustive but gives a starting point:
 
 | Category | Recommended manufacturers |
-|---|---|
+| --- | --- |
 | Resistors | Yageo, Samsung, Panasonic, Vishay, KOA |
 | Capacitors (ceramic) | Samsung, Murata, Yageo, TDK, Kemet |
 | Capacitors (electrolytic) | Nichicon, Panasonic, Rubycon, Wurth |

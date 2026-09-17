@@ -74,7 +74,7 @@ Notified bodies, regulatory consultants, compliance team.
 ## Data Requirements
 
 | Source | Required | Provides |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | Schematic analysis | Yes | Product ID, BOM, RF detection, ESD audit |
 | EMC analysis | No | EMC section, risk assessment EMI rows |
 | Thermal analysis | No | Thermal section, risk assessment overheating row |

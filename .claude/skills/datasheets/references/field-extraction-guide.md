@@ -27,7 +27,7 @@ Different manufacturers use different section titles for the same content. Recog
 ### Texas Instruments (TI)
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | §6 "Pin Configuration and Functions" or §7 |
 | Absolute maximum ratings | §7.1 "Absolute Maximum Ratings" |
 | Operating conditions | §7.2 "ESD Ratings" / §7.3 "Recommended Operating Conditions" |
@@ -37,7 +37,7 @@ Different manufacturers use different section titles for the same content. Recog
 ### STMicroelectronics (ST)
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | §4 "Pinouts" or "Pin definition" |
 | Absolute maximum ratings | §5 or §6 "Absolute maximum ratings" |
 | Operating conditions | Embedded in electrical characteristics table |
@@ -47,7 +47,7 @@ Different manufacturers use different section titles for the same content. Recog
 ### NXP / Freescale
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | §7 "Pinning information" |
 | Absolute maximum ratings | §11 "Limiting values" or "Absolute maximum ratings" |
 | Operating conditions | §12 "Recommended operating conditions" or "Characteristics" |
@@ -57,7 +57,7 @@ Different manufacturers use different section titles for the same content. Recog
 ### Microchip / Atmel
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | "Pin Diagrams" + "Pin Description" (separate pages) |
 | Absolute maximum ratings | "Absolute Maximum Ratings*" (with footnote) |
 | Operating conditions | Embedded in DC characteristics tables |
@@ -67,7 +67,7 @@ Different manufacturers use different section titles for the same content. Recog
 ### Espressif
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | Pin description tables in early sections (often §2 or §3) |
 | Absolute maximum ratings | "Absolute Maximum Ratings" — often a brief table |
 | Operating conditions | "Recommended Operating Conditions" |
@@ -79,7 +79,7 @@ Note: Espressif often separates the datasheet (pin specs, electrical) from a har
 ### Analog Devices / Maxim
 
 | Content | Typical Section |
-|---------|----------------|
+| --------- | ---------------- |
 | Pin table | "PIN CONFIGURATION" + "PIN DESCRIPTION" (often on page 2) |
 | Absolute maximum ratings | "ABSOLUTE MAXIMUM RATINGS" (all caps, early in doc) |
 | Operating conditions | Part of main specifications table |
@@ -119,7 +119,7 @@ Copy from the pin name column. When the datasheet shows alternative names (e.g.,
 Map from the datasheet's function column:
 
 | Datasheet language | Schema type |
-|-------------------|-------------|
+| ------------------- | ------------- |
 | VDD, VCC, VIN, VSUPPLY | `power` |
 | GND, AGND, PGND, VSS | `ground` |
 | FB, COMP, VREF, VSET (analog) | `analog` |
@@ -165,7 +165,7 @@ Write in the datasheet's own language when possible. Include values and placemen
 Found in the "Absolute Maximum Ratings" table, usually near the front of the datasheet. Key naming conventions:
 
 | Datasheet label | Suggested key | Unit |
-|----------------|---------------|------|
+| ---------------- | --------------- | ------ |
 | VIN(max), Input Voltage | `vin_max_v` | V |
 | VOUT(max), Output Voltage | `vout_max_v` | V |
 | TJ(max), Junction Temperature | `junction_temp_max_c` | °C |
@@ -205,7 +205,7 @@ Which value to record:
 Key field lookup:
 
 | Field | What to find in the table |
-|-------|--------------------------|
+| ------- | -------------------------- |
 | `vref_v` | Reference voltage or feedback threshold; labeled "VREF", "VFB", "Feedback Voltage" |
 | `switching_frequency_khz` | "Oscillator frequency", "Switching frequency", "fSW" |
 | `quiescent_current_ua` | "IQ", "IDD (quiescent)", "Supply current (no load)" — exclude gate drive and switching losses |

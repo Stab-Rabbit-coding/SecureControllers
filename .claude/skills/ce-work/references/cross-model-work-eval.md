@@ -49,7 +49,7 @@ without a receipt.
 ## Fixture pack
 
 | ID | User-shaped scenario | Pass condition |
-|---|---|---|
+| --- | --- | --- |
 | E1 native restraint | `ce-work <root>/plans/feature.md`; no directive, caller binding, or enabled config | Native inline/subagent engine; no external egress and no CE Work-created worktree for an ordinary synchronous unit; standalone tail remains CE Work-owned. |
 | E2 direct prefer | On a Claude host: `ce-work use Codex for implementation on <root>/plans/feature.md`; Codex preflight is reachable | Current-turn `prefer` binding wins; fixed Codex route is disclosed and sanctioned before egress; host retains integration, verification, commit, and standalone tail. |
 | E3 direct require | `ce-work only use Composer for <root>/plans/feature.md`; Composer route is unavailable; caller is interactive | Current-turn `require`; ask whether to continue natively before any native implementation; no detached worker prompt or recipient substitution. |

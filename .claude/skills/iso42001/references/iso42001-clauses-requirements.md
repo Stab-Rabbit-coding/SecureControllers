@@ -93,7 +93,7 @@ All clauses are mandatory regardless of organisational size, sector, or role (pr
 **Minimum required roles:**
 
 | Role | Responsibilities |
-|------|----------------|
+| ------ | ---------------- |
 | AIMS Owner (top management) | Strategic accountability for AIMS; approves AI policy |
 | AI Risk Owner (per AI system) | Accountable for AI risk assessment and treatment decisions |
 | AI System Owner | Day-to-day management of specific AI system in scope |
@@ -194,7 +194,7 @@ Determine risks and opportunities that could affect AIMS achievement. Plan actio
 **Competence requirements by role:**
 
 | Role | Competence Areas |
-|------|----------------|
+| ------ | ---------------- |
 | AI developers | Responsible AI practices, fairness-aware ML, secure ML development |
 | AI system operators | Understanding AI system limitations, human oversight procedures, incident detection |
 | Compliance/risk staff | AIMS clause requirements, AISIA methodology, AI risk assessment |

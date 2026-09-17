@@ -50,7 +50,7 @@ This skill is designed for the **main-session orchestrator**, where Step 3 (DOUB
 
 Copy this checklist when applying the skill:
 
-```
+```text
 Doubt cycle:
 - [ ] Step 1: CLAIM — wrote the claim + why-it-matters
 - [ ] Step 2: EXTRACT — isolated artifact + contract, stripped reasoning
@@ -63,7 +63,7 @@ Doubt cycle:
 
 Name the decision in two or three lines:
 
-```
+```text
 CLAIM: "The new caching layer is thread-safe under the
         read-heavy workload described in the spec."
 WHY THIS MATTERS: a race here corrupts user data and is
@@ -86,7 +86,7 @@ Strip your reasoning. If you hand over conclusions, you'll get back validation o
 
 The reviewer's prompt **must be adversarial**. Framing decides the answer.
 
-```
+```text
 Adversarial review. Find what is wrong with this artifact.
 Assume the author is overconfident. Look for:
 - Unstated assumptions
@@ -145,7 +145,7 @@ A single-model reviewer shares blind spots with the original author — a colder
 
 **Interactive sessions: always offer. Never silently skip.**
 
-**Step 1: Ask the user**
+##### Step 1: Ask the user
 
 After the single-model review in Step 3 above, but before RECONCILE, pause and ask:
 
@@ -153,7 +153,7 @@ After the single-model review in Step 3 above, but before RECONCILE, pause and a
 
 This question is mandatory in every interactive doubt cycle — even on artifacts that feel low-stakes. The user — not the agent — decides whether the cost is worth it. The agent's job is to surface the choice.
 
-**Step 2: If the user picks a CLI — verify, then invoke**
+##### Step 2: If the user picks a CLI — verify, then invoke
 
 1. Check the tool is in PATH (`which gemini`, `which codex`).
 2. Test it works (`gemini --version` or equivalent) before passing the full prompt — a stale or broken binary may pass `which` but fail on real input.
@@ -180,11 +180,11 @@ gemini --approval-mode plan -p "" < /tmp/doubt-prompt.md
 
 A read-only sandbox is the load-bearing detail: a doubt artifact may itself contain instructions (intentional or accidental prompt injection) that the cross-model CLI would otherwise execute against your workspace.
 
-**Step 3: If the CLI is unavailable or fails**
+##### Step 3: If the CLI is unavailable or fails
 
 Surface the failure explicitly. Offer: run it manually, try a different tool, or skip. Do not silently fall back to single-model — the user should know cross-model didn't happen.
 
-**Step 4: If the user skips**
+##### Step 4: If the user skips
 
 Acknowledge the skip in the output (*"Proceeding with single-model findings only"*) and continue to RECONCILE. Skipping is fine; silent skipping is not.
 
@@ -233,7 +233,7 @@ If 3 cycles is "obviously insufficient" because the artifact is large: the artif
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'm confident, skip the doubt step" | Confidence correlates poorly with correctness on novel problems. Moments of certainty are exactly when blind spots hide. |
 | "Spawning a reviewer is expensive" | Debugging a wrong commit in production is more expensive. The check is bounded; the bug isn't. |
 | "The reviewer will just nitpick" | Only if unscoped. Constrain the prompt to "issues that would make this fail under the contract." |

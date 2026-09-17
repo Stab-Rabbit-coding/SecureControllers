@@ -15,7 +15,7 @@ Find the archive by asking the harness where it writes run output, or by locatin
 `phase_trace`, `process_followed`, and the terminal-phase cross-tab are all functions of one artifact that does not exist yet: a table mapping each phase of the corpus's own workflow to the observable side effect that proves it fired. Derive it before writing the extractor, by reading the corpus's spine — not by inferring phases from the logs, which is circular.
 
 | Phase name, in spine order | Marker in the trace |
-|---|---|
+| --- | --- |
 | `<phase>` | the reference file it must read, the helper it must dispatch, the artifact path it must write, or the sentinel it must emit |
 
 Rules: one marker per phase minimum, each a **tool call or a file that exists**, never a phrase in the assistant's prose. A phase with no observable marker cannot be scored — record it as unobservable rather than assuming it fired, and carry that list forward; it is the same list Phase 2 needs for the probe's unentered phases and Phase 5 needs for the unmeasured paths. Keep the map in the same directory as the extractor: every later re-run and every re-scored table depends on it.
@@ -25,7 +25,7 @@ Rules: one marker per phase minimum, each a **tool call or a file that exists**,
 Write a script, not a per-run read. Reading 458 transcripts by hand is the failure mode this phase is supposed to avoid.
 
 | Field | How to derive it | Why it pays for itself |
-|---|---|---|
+| --- | --- | --- |
 | `run_id`, `model`, `settings` | harness metadata | the stratification keys; without them the whole table is one undifferentiated blob |
 | `session_id`, and the child id on every dispatch | whatever the trace calls the conversation and the spawned agent | the only way to tell a real runtime boundary from a fictional one. `references/halt-taxonomy.md` opens on this comparison; extract it here or that diagnostic has no data |
 | `phase_trace` | ordered list of which corpus phases fired | tells you **where** it stopped, not just that it did. This is the field that localizes the defect |
@@ -48,7 +48,7 @@ Treat those bands as the shape to look for, not as thresholds to import. Find yo
 
 **The two booleans the spine requires, derived independently:**
 
-```
+```text
 task_done       = the run's expected deliverable exists (artifact on disk, commit, PR, file changed)
 process_followed = every required phase appears in phase_trace, in spine order
 ```
@@ -60,7 +60,7 @@ Never let one imply the other, and never let `marker_present` stand in for eithe
 Apply in order. First match wins. `broken` is first so that a harness fault can never be scored as a model failure.
 
 | # | Outcome | Test |
-|---|---|---|
+| --- | --- | --- |
 | 1 | `broken` | empty transcript, error exit, or `output_tokens` implausibly low for the task (set the floor from the smallest run that did real work, then check the excluded set by hand) |
 | 2 | `complete` | `marker_present AND task_done AND process_followed` |
 | 3 | `done-but-thin` | `marker_present AND task_done`, tail phases absent from `phase_trace` |
@@ -75,7 +75,7 @@ Report the `broken` count as its own number every time you report a rate. In the
 
 Match against `final_message`. Starter set, case-insensitive:
 
-```
+```text
 \b(let me know|just let me know)\b
 \b(would you like|shall I|should I)\b.*\?
 \b(ready (to|for)|standing by|awaiting)\b
@@ -93,7 +93,7 @@ These are **evidence that the run stopped, not proof of why.** A match tells you
 Each of these was believed by someone competent before being ruled out. Run the rule-out before reporting the effect.
 
 | Apparent finding | Why it is suspect | Rule it out by |
-|---|---|---|
+| --- | --- | --- |
 | "The harness is timing out" | the cheapest explanation, and it makes the corpus innocent | comparing durations. Timed-out runs are **longer** than successes. In the engagement failures averaged 48 min against 88 for successes — shorter, so the timeout hypothesis died. Failing *early* is a behavior, not a limit |
 | "More helper dispatches cause success" | `helper_dispatches` is a **collider**: it measures how far the run got. A run that stopped in phase 2 cannot dispatch phase 5's helpers | never reading it as a cause. Use it as a position estimate. If you want the causal claim, it needs a build that changes dispatch behavior and a Phase 2 comparison |
 | A clean dose-response across a setting | `broken` runs cluster by cell (one config, one date range, one machine), manufacturing the gradient | re-running the cross-tab with `broken` excluded. If the effect vanishes, it was never there. Also check whether exclusions land evenly across arms |

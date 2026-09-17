@@ -30,7 +30,7 @@ The tell: **you have never seen it fail.**
 Each of these is real, from one repository, found over a single working day, each discovered by accident while doing something else:
 
 | Shape | Instance |
-|---|---|
+| --- | --- |
 | Documented control with no implementation | A rollout flag named in the changelog and the launch checklist, present in no source file. Setting it to `0` or `1` did the same thing: nothing. |
 | Check that greps for a string that never appears | A checklist item grepping the crontab for a systemd unit name. The crontab invokes the binary directly, so the string is never present. Reads zero when configured and zero when not. |
 | Check against the wrong mechanism | `systemctl show -p Environment` for a value loaded via `EnvironmentFile=`, which that flag never displays. Empty either way, even against a correctly configured unit. |

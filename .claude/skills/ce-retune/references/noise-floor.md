@@ -34,7 +34,7 @@ The engagement's first scorer read the field the harness exposes for the source-
 
 The rule that generalizes: **read the durable post-completion field first, fall back to the transient in-flight one.**
 
-```
+```text
 build = run.metadata.<override-field> or run.<live-override-field> or None
 ```
 
@@ -43,7 +43,7 @@ Then gate on it. Assert every row has a non-empty build value before computing a
 Minimum row schema:
 
 | field | why it is here |
-|---|---|
+| --- | --- |
 | `run_id` | join key back to the raw trace |
 | `build` | arm, from the durable field |
 | `commit` | proves the arms were the same source |
@@ -75,7 +75,7 @@ The summarizer must, whenever a result is not significant, print the runs-per-ar
 
 Two-proportion sample size at 80% power, alpha 0.05, two-sided:
 
-```
+```text
 n_per_arm = 7.849 * (p1*(1-p1) + p2*(1-p2)) / (p2 - p1)^2
 ```
 
@@ -88,7 +88,7 @@ Once the baseline rate `p` is independently established — from the A/A plus th
 At `p = 0.58`:
 
 | consecutive clean runs | probability under the null | odds |
-|---|---|---|
+| --- | --- | --- |
 | 3 | 0.195 | 1 in 5 |
 | 5 | 0.066 | 1 in 15 |
 | 8 | 0.0128 | 1 in 78 |

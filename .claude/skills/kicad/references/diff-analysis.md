@@ -39,21 +39,21 @@ The tool operates on pre-analyzed JSON produced by `analyze_schematic.py`, `anal
 
 ## CLI Reference
 
-```
+```text
 python3 diff_analysis.py <base> <head> [options]
 ```
 
 ### Positional Arguments
 
 | Argument | Description |
-|----------|-------------|
+| --- | --- |
 | `base` | Path to base (old) analysis JSON |
 | `head` | Path to head (new) analysis JSON |
 
 ### Options
 
 | Flag | Description |
-|------|-------------|
+| --- | --- |
 | `--output FILE`, `-o FILE` | Write output to file instead of stdout |
 | `--text` | Human-readable text output instead of JSON |
 | `--threshold FLOAT` | Ignore numeric deltas below this percentage (default: `1.0`) |
@@ -61,7 +61,7 @@ python3 diff_analysis.py <base> <head> [options]
 ### Exit Codes
 
 | Code | Meaning |
-|------|---------|
+| --- | --- |
 | 0 | Success |
 | 1 | Invalid input, parse error, type mismatch, or unrecognized analyzer type |
 
@@ -70,7 +70,7 @@ python3 diff_analysis.py <base> <head> [options]
 These flags are not yet implemented but are planned for a future release:
 
 | Flag | Description |
-|------|-------------|
+| --- | --- |
 | `--analysis-dir DIR` | Point to an `analysis/` folder; automatically diff the two most recent runs |
 | `--run RUN_ID` | Specify a particular run ID (timestamp folder) as the base |
 | `--trend N` | Show severity trend across the last N runs in the analysis directory |
@@ -86,7 +86,7 @@ Diff function: `diff_schematic(base, head, threshold)`
 Compared sections:
 
 | Section | Identity Key | Compared Fields | Source Path |
-|---------|-------------|-----------------|-------------|
+| --- | --- | --- | --- |
 | Statistics | n/a (scalar paths) | `total_components`, `total_nets`, `unique_parts`, `total_wires`, `total_no_connects` | `statistics.*` |
 | Components | `reference` | `value`, `footprint`, `mpn` | `components[]` |
 | Signal analysis | Per-type via SIGNAL_REGISTRY | Per-type via SIGNAL_REGISTRY | `findings[]` grouped by detector via `group_findings_legacy()` |
@@ -101,7 +101,7 @@ Signal analysis is reconstructed from `findings[]` via `group_findings_legacy()`
 Diff function: `diff_pcb(base, head, threshold)`
 
 | Section | Identity Key | Compared Fields | Source Path |
-|---------|-------------|-----------------|-------------|
+| --- | --- | --- | --- |
 | Statistics | n/a (scalar paths) | `footprint_count`, `track_segments`, `via_count`, `zone_count`, `net_count`, `copper_layers_used`, `board_width_mm`, `board_height_mm`, `total_track_length_mm` | `statistics.*` |
 | Routing completeness | n/a (scalar) | `routing_complete`, `unrouted_count` | `connectivity.*` |
 | Footprints | `reference` | `value`, `lib_id`, `layer` | `footprints[]` |
@@ -111,7 +111,7 @@ Diff function: `diff_pcb(base, head, threshold)`
 Diff function: `diff_emc(base, head, threshold)`
 
 | Section | Identity Key | Compared Fields | Source Path |
-|---------|-------------|-----------------|-------------|
+| --- | --- | --- | --- |
 | Risk score | n/a (scalar) | `emc_risk_score` | `summary.emc_risk_score` |
 | Severity distribution | n/a (scalar paths) | `critical`, `high`, `medium`, `low`, `info` | `summary.*` |
 | Findings | `rule_id::sorted(nets)::sorted(components)` | `severity` (new/resolved/changed) | `findings[]` |
@@ -124,7 +124,7 @@ Per-net score changes are sorted by absolute delta (largest first).
 Diff function: `diff_spice(base, head, threshold)`
 
 | Section | Identity Key | Compared Fields | Source Path |
-|---------|-------------|-----------------|-------------|
+| --- | --- | --- | --- |
 | Summary counts | n/a (scalar paths) | `pass`, `warn`, `fail`, `skip`, `total` | `summary.*` |
 | Simulation results | `subcircuit_type::sorted(components)` | `status` (transitions annotated) | `simulation_results[]` |
 | Monte Carlo concerns | `subcircuit_type::metric` | new/resolved (set diff) | `monte_carlo_summary.concerns[]` |
@@ -142,7 +142,7 @@ Evaluation order (first match wins):
 ### Breaking
 
 | Analyzer | Condition |
-|----------|-----------|
+| --- | --- |
 | SPICE | Any `status_changes` entry where `base_status == "pass"` and `head_status == "fail"` |
 | EMC | Any new finding with `severity == "CRITICAL"` |
 | Schematic | Any new ERC warning (`erc.new_warnings` non-empty) |
@@ -150,7 +150,7 @@ Evaluation order (first match wins):
 ### Major
 
 | Condition |
-|-----------|
+| --- |
 | `signal_analysis` key present in diff |
 | `components` key present in diff |
 | `findings` key present in diff (EMC) |
@@ -160,7 +160,7 @@ Evaluation order (first match wins):
 ### Minor
 
 | Condition |
-|-----------|
+| --- |
 | Only `statistics` key present in diff |
 
 ### None
@@ -184,7 +184,7 @@ Each detection type maps to `(identity_fields, value_fields)` where both are lis
 **Registered detection types and their identity/value fields:**
 
 | Detection Type | Identity Fields | Value Fields |
-|---------------|-----------------|--------------|
+| --- | --- | --- |
 | `rc_filters` | `resistor.ref`, `capacitor.ref` | `cutoff_hz` |
 | `lc_filters` | `inductor.ref`, `capacitor.ref` | `resonant_hz` |
 | `voltage_dividers` | `r_top.ref`, `r_bottom.ref` | `ratio`, `vout_estimated` |
@@ -258,7 +258,7 @@ Returns `None` if nothing is found (item is excluded from matching).
 `summary.total_changes` = `added + removed + modified`. What counts as added/removed/modified depends on analyzer type:
 
 | Analyzer | Added | Removed | Modified |
-|----------|-------|---------|----------|
+| --- | --- | --- | --- |
 | Schematic | New components + new detections | Removed components + removed detections | Changed components + changed detections |
 | PCB | New footprints | Removed footprints | Changed footprints |
 | EMC | New findings | Resolved findings | Severity-changed findings |
@@ -305,7 +305,7 @@ The `--text` flag renders a summary header followed by per-section detail. Items
 
 Format:
 
-```
+```text
 Design Changes: schematic (major) — 5 changes
   +2 added, -1 removed, ~2 modified
 
@@ -344,7 +344,7 @@ The threshold comparison uses a severity ordering: `none=0`, `minor=1`, `major=2
 Natural-language queries and their corresponding command invocations.
 
 | User Says | Command |
-|-----------|---------|
+| --- | --- |
 | "What changed between these two analyses" | `diff_analysis.py old.json new.json --text` |
 | "Show me changes as JSON" | `diff_analysis.py old.json new.json` |
 | "Ignore small changes" | `diff_analysis.py old.json new.json --threshold 5.0 --text` |

@@ -41,7 +41,7 @@ Based on the task, generate a rubric with two dimensions:
 **Content Rubric** (what the output contains):
 
 | Criterion | 1 (Poor) | 3 (Acceptable) | 5 (Excellent) |
-|-----------|----------|----------------|---------------|
+| ----------- | ---------- | ---------------- | --------------- |
 | Correctness | Major errors | Minor errors | Fully correct |
 | Completeness | Missing key elements | Mostly complete | All elements present |
 | Accuracy | Significant inaccuracies | Minor inaccuracies | Accurate throughout |
@@ -49,7 +49,7 @@ Based on the task, generate a rubric with two dimensions:
 **Structure Rubric** (how the output is organized):
 
 | Criterion | 1 (Poor) | 3 (Acceptable) | 5 (Excellent) |
-|-----------|----------|----------------|---------------|
+| ----------- | ---------- | ---------------- | --------------- |
 | Organization | Disorganized | Reasonably organized | Clear, logical structure |
 | Formatting | Inconsistent/broken | Mostly consistent | Professional, polished |
 | Usability | Difficult to use | Usable with effort | Easy to use |

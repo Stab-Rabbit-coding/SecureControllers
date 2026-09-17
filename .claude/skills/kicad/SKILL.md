@@ -21,7 +21,7 @@ description: >-
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `bom` | BOM extraction, enrichment, ordering, and export workflows |
 | `digikey` | Search DigiKey for parts (prototype sourcing) |
 | `mouser` | Search Mouser for parts (secondary prototype source) |
@@ -118,7 +118,7 @@ python3 <skill-path>/scripts/analyze_gerbers.py --schema
 output by hand:
 
 | What you want | Correct path and field | Common mistake |
-|---------------|-----------------------|----------------|
+| --------------- | ----------------------- | ---------------- |
 | Pins on a net | `nets[<name>].pins[].component / .pin_number / .pin_name / .pin_type` | `ref`, `pin`, `type`, `number` |
 | Unnamed-net pretty display | `nets[<name>].display_name` — when set, a `Ref.PinName` hint for an `__unnamed_N` net whose only named IC pin tells the story (e.g. `__unnamed_36 → U1.VBOOT`). Absent means the analyzer couldn't disambiguate. | Ignoring `display_name` and pasting raw `__unnamed_36` into the report |
 | IC pin map | `ic_pin_analysis[]` is a **list** of IC entries; each has `.reference` and `.pins[]` with `.pin_number / .pin_name / .pin_type / .net / .connected_to[]` | Treating it as `{ref: {...}}` or `pins[].number` |
@@ -227,7 +227,7 @@ Point `--schematic` and `--pcb` at the current run's JSON files and pass
 `--analysis-dir analysis/` so the result lands inside the same run folder
 and the manifest tracks it:
 
-```
+```text
 # Recommended: integrate into the current run
 python3 <skill-path>/scripts/cross_analysis.py \
     --schematic analysis/<run_id>/schematic.json \
@@ -330,7 +330,7 @@ JSON output always includes all findings. `--stage` adds `stages` and `in_active
 Analysis outputs are stored in `analysis/` with timestamped run folders managed by `analysis_cache.py`. The manifest (`analysis/manifest.json`) tracks all runs.
 
 | File Type | Location | Regenerable? | Commit to git? |
-|-----------|----------|-------------|----------------|
+| ----------- | ---------- | ------------- | ---------------- |
 | Analyzer JSON | `analysis/<timestamp>/*.json` | Yes (expensive) | Configured by `track_in_git` in `.kicad-happy.json` (default: no) |
 | Manifest | `analysis/manifest.json` | Yes | Always (tracked by default) |
 | Design review report | User-chosen path | Yes | Optional |
@@ -356,7 +356,7 @@ The `analysis` section in `.kicad-happy.json` controls the shared analysis outpu
 ```
 
 | Field | Default | Description |
-|-------|---------|-------------|
+| ------- | --------- | ------------- |
 | `output_dir` | `"analysis"` | Analysis directory path, relative to project root |
 | `retention` | `5` | Max unpinned runs to keep. `0` = unlimited |
 | `auto_diff` | `true` | Auto-include delta section in design reviews |
@@ -369,7 +369,7 @@ All fields are optional. Missing fields use defaults.
 
 **Schematic analyzer top-level keys:**
 
-```
+```text
 analyzer_type, schema_version, summary, findings, trust_summary,
 file, kicad_version, file_version, title_block, statistics,
 bom, components, nets, subcircuits, ic_pin_analysis, design_analysis,
@@ -390,7 +390,7 @@ Key nested structures:
 
 **PCB analyzer top-level keys:**
 
-```
+```text
 analyzer_type, schema_version, summary, findings, trust_summary,
 file, kicad_version, file_version, statistics, layers, setup,
 nets, net_name_to_id, board_outline, component_groups, footprints,
@@ -408,7 +408,7 @@ Key nested structures:
 
 **Gerber analyzer top-level keys:**
 
-```
+```text
 analyzer_type, schema_version, summary, findings, trust_summary,
 directory, generator, layer_count, statistics, completeness, alignment,
 drill_classification, pad_summary, board_dimensions, gerbers, drills
@@ -562,7 +562,7 @@ python3 <skill-path>/scripts/analyze_thermal.py -s schematic.json -p pcb.json --
 Models each power component (LDO, switching regulator, shunt resistor) as a point heat source. Computes Tj = T_ambient + P_diss × Rθ_JA_effective, where Rθ_JA comes from a package lookup table (SOT-223: 60°C/W, QFN-5x5: 25°C/W, etc.) and is corrected for PCB thermal vias and copper pour. Rules:
 
 | Rule | Condition | Severity |
-|------|-----------|----------|
+| ------ | ----------- | ---------- |
 | TS-001 | Tj exceeds absolute maximum | CRITICAL |
 | TS-002 | Tj within 15°C of absolute maximum | HIGH |
 | TS-003 | Tj > 85°C (may affect nearby passives) | MEDIUM |
@@ -657,7 +657,7 @@ The lifecycle audit produces rich format findings: LC-001 (obsolete/discontinued
 All schematic rule findings appear in `findings[]`. The following rule IDs are produced by the schematic analyzer:
 
 | Rule | Detector | Condition | Severity |
-|------|----------|-----------|----------|
+| ------ | ---------- | ----------- | ---------- |
 | SS-001 | `audit_sourcing_gate` | MPN coverage < 50% | high |
 | SS-002 | `audit_sourcing_gate` | MPN coverage 50–80% | warning |
 | SS-003 | `audit_sourcing_gate` | MPN coverage 80–100% | info |
@@ -675,7 +675,7 @@ SS-001 is a pre-fab blocker — a `high` finding that should be resolved before 
 Detailed methodology and format documentation lives in reference files. Read these as needed — they provide deep-dive content beyond what the scripts output automatically.
 
 | Reference | Lines | When to Read |
-|-----------|-------|-------------|
+| ----------- | ------- | ------------- |
 | `schematic-analysis.md` | 1133 | Deep schematic review: datasheet validation, design patterns, error taxonomy, tolerance stacking, GPIO audit, motor control, battery life, supply chain |
 | `pcb-layout-analysis.md` | 447 | Advanced PCB: impedance calculations, differential pairs, return paths, copper balance, edge clearance, copper-sensitive components (capacitive touch, antennas), custom analysis scripts |
 | `output-schema.md` | 293 | Full analyzer JSON schema with field names, types, and common extraction patterns |
@@ -700,7 +700,7 @@ For script internals, data structures, signal analysis patterns, and batch test 
 ## File Types Quick Reference
 
 | Extension | Format | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `.kicad_pro` | JSON | Project settings, net classes, DRC/ERC severity, BOM fields |
 | `.kicad_sch` | S-expr | Schematic sheet (symbols, wires, labels, hierarchy) |
 | `.kicad_pcb` | S-expr | PCB layout (footprints, tracks, vias, zones, board outline) |

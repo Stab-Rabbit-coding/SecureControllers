@@ -23,7 +23,7 @@ Polish reads `.claude/launch.json` at the repo root to resolve the dev-server st
 ## Fields polish consumes
 
 | Field | Required | Purpose |
-|-------|----------|---------|
+| ------- | ---------- | --------- |
 | `name` | yes (when multiple configurations) | Used to disambiguate when the array has more than one entry. Polish asks the user to pick by `name`. |
 | `runtimeExecutable` | yes | The binary polish spawns (e.g., `bin/dev`, `npm`, `overmind`, `bun`). |
 | `runtimeArgs` | no | Array of arguments passed to `runtimeExecutable`. Default: empty array. |

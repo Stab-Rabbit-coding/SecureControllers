@@ -16,7 +16,7 @@ GDPR articles.
 ### Key GDPR Principles → ISO 27701 Controls
 
 | GDPR Principle (Art. 5) | ISO 27701:2025 Controls |
-|------------------------|------------------------|
+| ------------------------ | ------------------------ |
 | Lawfulness, fairness, transparency | A.1.2.3 (lawful basis), A.1.3.3–A.1.3.4 (transparency) |
 | Purpose limitation | A.1.2.2 (document purpose), A.1.4.3 (limit processing) |
 | Data minimisation | A.1.4.2 (limit collection), A.1.4.5 (PII minimisation) |
@@ -28,7 +28,7 @@ GDPR articles.
 ### GDPR Rights → ISO 27701 Controls
 
 | GDPR Right | Article | ISO 27701:2025 Controls |
-|-----------|---------|------------------------|
+| ----------- | --------- | ------------------------ |
 | Right to be informed | Art. 13–14 | A.1.3.3, A.1.3.4 |
 | Right of access | Art. 15 | A.1.3.9, A.1.3.10 |
 | Right to rectification | Art. 16 | A.1.3.7, A.1.3.8 |
@@ -41,7 +41,7 @@ GDPR articles.
 ### GDPR Controller Obligations → ISO 27701 Controls
 
 | GDPR Obligation | Article | ISO 27701:2025 Controls |
-|----------------|---------|------------------------|
+| ---------------- | --------- | ------------------------ |
 | Lawful basis for processing | Art. 6 | A.1.2.3 |
 | Consent requirements | Art. 7 | A.1.2.4, A.1.2.5 |
 | Special categories of data | Art. 9 | A.1.2.3, A.1.2.6, A.1.4.5 |
@@ -56,7 +56,7 @@ GDPR articles.
 ### GDPR Processor Obligations → ISO 27701 Controls
 
 | GDPR Obligation | Article | ISO 27701:2025 Controls |
-|----------------|---------|------------------------|
+| ---------------- | --------- | ------------------------ |
 | Processing under contract | Art. 28(3) | A.2.2.2 |
 | Processing only on instruction | Art. 28(3)(a) | A.2.2.3, A.2.2.5 |
 | Confidentiality of processing | Art. 28(3)(b) | A.3.18, A.2.2.6 |
@@ -100,7 +100,7 @@ The California Consumer Privacy Act (CCPA) and its amendment (CPRA) share many
 concepts with GDPR but have distinct requirements.
 
 | CCPA/CPRA Right or Obligation | ISO 27701:2025 Controls |
-|------------------------------|------------------------|
+| ------------------------------ | ------------------------ |
 | Right to know (categories and specific pieces) | A.1.3.9, A.1.3.10 |
 | Right to delete | A.1.3.7, A.1.4.6, A.1.4.9 |
 | Right to opt-out of sale/sharing | A.1.3.6, A.1.2.3 |
@@ -129,7 +129,7 @@ concepts with GDPR but have distinct requirements.
 Brazil's LGPD (effective August 2020) closely mirrors GDPR in structure.
 
 | LGPD Obligation | ISO 27701:2025 Controls |
-|----------------|------------------------|
+| ---------------- | ------------------------ |
 | Legal basis (Art. 7, 11) | A.1.2.3 |
 | Consent requirements (Art. 7–9) | A.1.2.4, A.1.2.5 |
 | Transparency / privacy notice (Art. 9, 18) | A.1.3.3, A.1.3.4 |
@@ -150,7 +150,7 @@ Canada's Personal Information Protection and Electronic Documents Act (PIPEDA) i
 structured around 10 Fair Information Principles. ISO 27701:2025 aligns well.
 
 | PIPEDA Principle | ISO 27701:2025 Controls |
-|-----------------|------------------------|
+| ----------------- | ------------------------ |
 | 1. Accountability | Clause 5 (leadership), management review, SoA |
 | 2. Identifying purposes | A.1.2.2, A.1.2.9 |
 | 3. Consent | A.1.2.3, A.1.2.4, A.1.2.5 |
@@ -175,7 +175,7 @@ Both PDPAs are GDPR-influenced and align well with ISO 27701:2025.
 **Singapore PDPA key mappings:**
 
 | Singapore PDPA Obligation | ISO 27701:2025 Controls |
-|--------------------------|------------------------|
+| -------------------------- | ------------------------ |
 | Consent obligation | A.1.2.3, A.1.2.4, A.1.2.5 |
 | Purpose limitation | A.1.2.2, A.1.4.3 |
 | Notification obligation | A.1.3.3, A.1.3.4 |
@@ -208,7 +208,7 @@ requires it. When implementing both:
 **Key integration points:**
 
 | ISO 27701 Requirement | ISO 27001 Evidence That Can Be Referenced |
-|----------------------|------------------------------------------|
+| ---------------------- | ------------------------------------------ |
 | A.3.3 (IS Policies) | IS Policy (ISO 27001 Clause 5.2) |
 | A.3.9 (Access Rights) | Access control policy and records (A.5.15–5.18) |
 | A.3.11–A.3.12 (Incidents) | Incident response policy and records (A.5.24–5.28) |
@@ -221,7 +221,7 @@ requires it. When implementing both:
 ## Framework Comparison Summary
 
 | Framework | Geographic Scope | Legally Binding? | ISO 27701 Alignment |
-|-----------|-----------------|-----------------|---------------------|
+| ----------- | ----------------- | ----------------- | --------------------- |
 | GDPR | EU/EEA | Yes — mandatory law | Excellent (dedicated correspondence annex) |
 | UK GDPR | United Kingdom | Yes — mandatory law | Excellent (same as EU GDPR) |
 | CCPA/CPRA | California, USA | Yes — mandatory law | Good (most rights and obligations covered) |

@@ -6,7 +6,7 @@ For each task in priority order:
 
 When the selected engine is cross-model execution, this loop still owns unit ordering, evidence selection, actual-scope inspection, authoritative verification, and incremental canonical commits, but worker authoring follows the serial external-unit protocol in `references/cross-model-execution.md`. Detached process completion is only authoring evidence; do not mark the task complete until the controller records the host-owned canonical commit. A preserved or restoration-blocked unit stops this loop before fallback, retry, or the next unit.
 
-```
+```text
 while (tasks remain):
   - Mark task as in-progress
   - Read any referenced files from the plan or discovered during Phase 0
@@ -43,7 +43,7 @@ Guardrails for execution evidence:
 **Evidence Strategy** — Test discovery decides where proof belongs:
 
 | Situation | Action |
-|-----------|--------|
+| ----------- | -------- |
 | Existing test already fails for the intended behavior | Use that as the red evidence; do not add a duplicate test |
 | Existing test covers the contract but asserts the old or wrong expectation | Update that test, run it, and verify the expected failure before implementation |
 | Existing test is over-mocked or misses the real chain | Strengthen/refactor it narrowly, then verify it fails for the right reason |
@@ -53,7 +53,7 @@ Guardrails for execution evidence:
 **Test Scenario Completeness** — Before writing tests for a feature-bearing unit, check whether the plan's `Test scenarios` cover all categories that apply to this unit. If a category is missing or scenarios are vague (e.g., "validates correctly" without naming inputs and expected outcomes), supplement from the unit's own context before writing tests:
 
 | Category | When it applies | How to derive if missing |
-|----------|----------------|------------------------|
+| ---------- | ---------------- | ------------------------ |
 | **Happy path** | Always for feature-bearing units | Read the unit's Goal and Approach for core input/output pairs |
 | **Edge cases** | When the unit has meaningful boundaries (inputs, state, concurrency) | Identify boundary values, empty/nil inputs, and concurrent access patterns |
 | **Error/failure paths** | When the unit has failure modes (validation, external calls, permissions) | Enumerate invalid inputs the unit should reject, permission/auth denials it should enforce, and downstream failures it should handle |
@@ -62,7 +62,7 @@ Guardrails for execution evidence:
 **System-Wide Test Check** — Before marking a task done, pause and ask:
 
 | Question | What to do |
-|----------|------------|
+| ---------- | ------------ |
 | **What fires when this runs?** Callbacks, middleware, observers, event handlers — trace two levels out from your change. | Read the actual code (not docs) for callbacks on models you touch, middleware in the request chain, `after_*` hooks. |
 | **Do my tests exercise the real chain?** If every dependency is mocked, the test proves your logic works *in isolation* — it says nothing about the interaction. | Write at least one integration test that uses real objects through the full callback/middleware chain. No mocks for the layers that interact. |
 | **Can failure leave orphaned state?** If your code persists state (DB row, cache, file) before calling an external service, what happens when the service fails? Does retry create duplicates? | Trace the failure path with real objects. If state is created before the risky call, test that failure cleans up or that retry is idempotent. |

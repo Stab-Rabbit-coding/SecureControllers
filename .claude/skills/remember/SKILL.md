@@ -1,8 +1,11 @@
 ---
+
 name: remember
 description: Save session state for clean continuation next session.
 allowed-tools: Read, Write
 ---
+
+# Remember
 
 Write a handoff note so the next session can continue cleanly. Use your knowledge of the current session — you were here. Write in first person ("I").
 
@@ -12,7 +15,7 @@ Write a handoff note so the next session can continue cleanly. Use your knowledg
 
 Format:
 
-```
+```text
 # Handoff
 
 ## State

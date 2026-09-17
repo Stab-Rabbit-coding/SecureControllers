@@ -24,7 +24,7 @@ The analyzer operates on manufactured output files, not source design files. It 
 `analyze_gerbers()` scans the target directory for three file categories:
 
 | Category | Extensions | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Gerber files | `.gbr`, `.g*` (including Protel: `.gtl`, `.gbl`, `.gts`, `.gbs`, `.gto`, `.gbo`, `.gko`, `.gm1`, `.g1`–`.g4`) | Copper, mask, paste, silk, edge layers |
 | Drill files | `.drl` | Excellon hole data (PTH and NPTH) |
 | Job files | `.gbrjob` | KiCad-generated JSON metadata |
@@ -61,7 +61,7 @@ Extracted via regex from the file content:
 **Phase 2** (stateful line-by-line): Tracks aperture state, object attributes, and operations:
 
 | State Machine | Tracked By | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Aperture attributes | `pending_aper_function` | TA.AperFunction preceding AD definition |
 | Current component | `current_component` | TO.C object attribute |
 | Current net | `current_net` | TO.N object attribute |
@@ -109,7 +109,7 @@ Each `%AD...%` definition is parsed for:
 `_parse_aperture_dimension()` extracts the primary dimension (in mm) from standard aperture types:
 
 | Aperture Type | Dimension Extracted |
-|---|---|
+| --- | --- |
 | C (circle) | Diameter |
 | R (rectangle) | Smaller of width/height |
 | O (obround) | Smaller of width/height |
@@ -179,7 +179,7 @@ From `FileFunction` values like `Plated,1,4,PTH`, the layer span is extracted (e
 The `FileFunction` attribute provides authoritative layer identification:
 
 | FileFunction Contains | Mapped Layer |
-|---|---|
+| --- | --- |
 | `copper` + `top` | F.Cu |
 | `copper` + `bot` | B.Cu |
 | `copper,Ln,inr` | In(n-1).Cu (L2→In1, L3→In2, etc.) |
@@ -203,7 +203,7 @@ If no X2 attributes are present, the filename is checked against KiCad-style pat
 Classic Protel/Altium extensions as a final fallback:
 
 | Extension | Layer |
-|---|---|
+| --- | --- |
 | `.gtl` / `.gbl` | F.Cu / B.Cu |
 | `.gts` / `.gbs` | F.Mask / B.Mask |
 | `.gtp` / `.gbp` | F.Paste / B.Paste |
@@ -222,7 +222,7 @@ Files that match none of these patterns get `"unknown"` and are still included i
 ### Extracted Fields
 
 | JSON Path | Output Field | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `Header.GenerationSoftware` | `generator`, `vendor` | CAD tool identification |
 | `Header.CreationDate` | `creation_date` | Timestamp |
 | `GeneralSpecs.Size` | `board_width_mm`, `board_height_mm` | Authoritative board dimensions |
@@ -249,7 +249,7 @@ Files that match none of these patterns get `"unknown"` and are still included i
 3. **Diameter heuristic** (fallback when no X2 data):
 
 | Diameter Range | Classification | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | ≤ 0.45 mm | Via | Standard via drill sizes |
 | 0.45–1.3 mm | Component hole | THT component pin sizes |
 | > 1.3 mm | Mounting hole | Screws, standoffs |
@@ -335,7 +335,7 @@ Output includes:
 `build_pad_summary()` counts pad types by aperture function across copper layers:
 
 | Counter | Source |
-|---|---|
+| --- | --- |
 | SMD apertures | `SMDPad` function on copper layers |
 | Via apertures | `ViaPad` function on copper layers |
 | Heatsink apertures | `HeatsinkPad` function on copper layers |
@@ -380,7 +380,7 @@ This handles cases where inner layer Gerbers might be missing or misidentified �
 ### Top-Level Keys
 
 | Key | Type | Description |
-|---|---|---|
+| --- | --- | --- |
 | `directory` | string | Input directory path |
 | `generator` | string\|null | CAD tool that produced the files |
 | `layer_count` | int | Total copper layers |

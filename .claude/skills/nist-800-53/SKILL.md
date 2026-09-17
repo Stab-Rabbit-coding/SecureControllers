@@ -17,7 +17,7 @@ You are an expert NIST SP 800-53 compliance advisor with comprehensive knowledge
 Match output format to task type:
 
 | Task | Output Format |
-|------|--------------|
+| ------ | -------------- |
 | Control family deep-dive | Family overview → control-by-control with baseline assignment → implementation guidance |
 | Baseline selection | FIPS 199 categorization → Low/Moderate/High baseline → tailoring rationale |
 | Gap assessment | Table: Control ID \| Requirement \| Status \| Finding \| Remediation |
@@ -39,7 +39,7 @@ Always cite controls precisely: Family prefix + control number + enhancement in 
 ### Key Changes in Rev 5 (from Rev 4)
 
 | Change | Impact |
-|--------|--------|
+| -------- | -------- |
 | Outcome-based control statements | Controls describe *what* to achieve, not *how* |
 | Privacy controls integrated | PT family added; privacy merged with security throughout |
 | Supply Chain Risk Management | SR family added (12 controls) |
@@ -56,7 +56,7 @@ Always cite controls precisely: Family prefix + control number + enhancement in 
 Categorize the system by assessing the potential impact of a security breach on three objectives:
 
 | Objective | Low | Moderate | High |
-|-----------|-----|----------|------|
+| ----------- | ----- | ---------- | ------ |
 | **Confidentiality** | Limited adverse effect | Serious adverse effect | Severe or catastrophic effect |
 | **Integrity** | Limited adverse effect | Serious adverse effect | Severe or catastrophic effect |
 | **Availability** | Limited adverse effect | Serious adverse effect | Severe or catastrophic effect |
@@ -80,7 +80,7 @@ Use SP 800-60 Volume II to determine impact levels for specific information type
 The three control baselines are defined in **NIST SP 800-53B** (October 2020):
 
 | Baseline | System Category | Controls (approx.) |
-|----------|-----------------|-------------------|
+| ---------- | ----------------- | ------------------- |
 | **Low** | Low impact (FIPS 199 Low) | ~156 controls/enhancements |
 | **Moderate** | Moderate impact | ~323 controls/enhancements |
 | **High** | High impact | ~422 controls/enhancements |
@@ -97,7 +97,7 @@ The three control baselines are defined in **NIST SP 800-53B** (October 2020):
 > **Reference file:** `references/control-families.md` for complete control-by-control listings with baseline assignments, enhancement details, and implementation guidance for all 20 families.
 
 | Family | ID | Controls | Key Focus |
-|--------|----|----------|-----------|
+| -------- | ---- | ---------- | ----------- |
 | Access Control | AC | AC-1 to AC-25 | Least privilege, account management, remote access |
 | Awareness & Training | AT | AT-1 to AT-6 | Security awareness, role-based training |
 | Audit & Accountability | AU | AU-1 to AU-16 | Log generation, review, retention, protection |
@@ -136,7 +136,7 @@ Tailoring adjusts the selected baseline to match the system's specific operation
 ### Organization-Defined Values (ODVs) — Common Examples
 
 | Control | ODV Parameter | Example Value |
-|---------|--------------|---------------|
+| --------- | -------------- | --------------- |
 | AC-2(3) | Disable inactive accounts after [x] days | 90 days |
 | AU-11 | Retain audit logs for [x] | 3 years |
 | CA-7 | Continuous monitoring frequency | Monthly |
@@ -150,7 +150,7 @@ Tailoring adjusts the selected baseline to match the system's specific operation
 Overlays tailor baselines for specific communities, technologies, or environments:
 
 | Overlay | Use Case |
-|---------|---------|
+| --------- | --------- |
 | **FedRAMP overlay** | Cloud services for federal agencies; adds FedRAMP-specific parameters |
 | **DoD/CNSS** | National security systems (NSS); applies CNSS Instruction 1253 |
 | **Intelligence Community** | IC-specific requirements via ICD 503 |
@@ -166,7 +166,7 @@ Each control requires an **SSP (System Security Plan) narrative** with three com
 
 ### SSP Narrative Structure
 
-```
+```text
 Control: [AC-2] Account Management
 
 Implementation Status: Implemented / Partially Implemented / Planned / Not Applicable
@@ -197,7 +197,7 @@ Evidence/Artifacts:
 **SP 800-53A Rev 5** provides assessment procedures for every control. Three assessment methods:
 
 | Method | Description |
-|--------|-------------|
+| -------- | ------------- |
 | **Examine** | Review documentation, specifications, policies, procedures |
 | **Interview** | Discuss implementation with personnel (ISSO, admins, users) |
 | **Test** | Exercise the control mechanism (scan, penetration test, configuration check) |
@@ -216,7 +216,7 @@ Evidence/Artifacts:
 ### Risk Management Framework (RMF) — SP 800-37 Rev 2 Steps
 
 | Step | Name | Key Output |
-|------|------|-----------|
+| ------ | ------ | ----------- |
 | 1 | **Prepare** | Risk management roles, system categorization, control selection strategy |
 | 2 | **Categorize** | FIPS 199 system categorization (SC document) |
 | 3 | **Select** | Baseline + tailoring = control selection (SSP control list) |
@@ -228,7 +228,7 @@ Evidence/Artifacts:
 ### Cross-Framework Mapping
 
 | Framework | Relationship to SP 800-53 |
-|-----------|--------------------------|
+| ----------- | -------------------------- |
 | **FedRAMP** | Uses SP 800-53 Moderate/High baseline + FedRAMP overlay parameters |
 | **FISMA** | SP 800-53 is the mandatory control catalog for all federal systems |
 | **CMMC 2.0** | Level 2 maps to NIST SP 800-171 (derived from SP 800-53 Moderate) |
@@ -244,7 +244,7 @@ Evidence/Artifacts:
 When deeper detail is needed, read these reference files:
 
 | Reference | Contents |
-|-----------|----------|
+| ----------- | ---------- |
 | `references/control-families.md` | All 20 families with key controls, baseline assignments (L/M/H), enhancement details, implementation tips, and common assessment findings |
 | `references/baselines-tailoring.md` | SP 800-53B baseline tables, tailoring guidance, ODV examples, overlay application, and privacy/supply chain baseline specifics |
 | `references/assessment-rmf.md` | SP 800-53A assessment procedures, RMF step-by-step, continuous monitoring, OSCAL guidance, POA&M management, and cross-framework mapping detail |

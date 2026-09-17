@@ -417,7 +417,7 @@ When both sections are present, they earn separate sections only by holding
 to different purposes:
 
 | Section | Question it answers | Time direction | Length |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `## Summary` | What is this doc proposing? | Forward-looking | 1-3 lines |
 | `## Problem Frame` | Why does this proposal exist? | Backward-looking / situational | Paragraphs |
 

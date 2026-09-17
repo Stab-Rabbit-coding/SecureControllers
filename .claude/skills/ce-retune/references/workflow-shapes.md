@@ -10,7 +10,7 @@ Two primitives are assumed, both platform-neutral:
 ## The shapes
 
 | Phase | Shape | Why | Failure when mismatched |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Archive mining | Serial, local, zero model calls | Classification is a deterministic function of fields present in each log; you will re-run it as the taxonomy changes | Agent-per-log gives a different taxonomy each pass, so the exclusion set cannot be re-derived or audited |
 | A/A and A/B runs | Serial within an arm, interleaved across arms, nothing else running | Contention is a confound; interleaving spreads service drift evenly across arms | Concurrent runs inflate duration and can manufacture a timeout that reads as a halt |
 | Corpus audit | Fan out by unit, pipelined into per-unit adversarial defense | Units are independent and each needs a full directory read; defense for a unit needs only that unit's findings | A barrier between audit and defense costs the slowest unit and buys nothing |
@@ -44,7 +44,7 @@ Budget the defense stage as first-class work, not a review formality. It is the 
 **Verification — fan out by independent check.** The axes are different tools and different judgment, so they parallelize cleanly while splitting by file does not:
 
 | Check | What it can see | What it cannot |
-|---|---|---|
+| --- | --- | --- |
 | Mechanical suite | Pinned strings, schemas, parity between duplicated assets | Whether the surviving prose still makes sense |
 | Packaging and manifest gates | Install-time validity, catalog and inventory drift | Runtime behavior |
 | Residual-pattern sweep | Remaining instances of the class you just removed, including in files no pass owned | Instances phrased differently from the pattern |

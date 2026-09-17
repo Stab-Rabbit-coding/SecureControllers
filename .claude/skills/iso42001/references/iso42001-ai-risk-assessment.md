@@ -17,14 +17,14 @@ Identify, analyse, and evaluate risks associated with AI systems so that appropr
 
 ### Risk Assessment Framework
 
-**Step 1: Identify AI Risks**
+#### Step 1: Identify AI Risks
 
 For each AI system in scope, identify risks across these categories:
 
 #### Model Risks
 
 | Risk | Description | Example |
-|------|-------------|---------|
+| --- | --- | --- |
 | Bias and unfairness | Model produces systematically different outputs for protected groups | Loan approval AI approves at lower rates for certain demographic groups |
 | Hallucination / confabulation | Model generates plausible-sounding but incorrect outputs | LLM generates false legal citations |
 | Model drift | Model performance degrades as real-world data distribution shifts | Fraud detection model misses new fraud patterns 12 months post-deployment |
@@ -35,7 +35,7 @@ For each AI system in scope, identify risks across these categories:
 #### Data Risks
 
 | Risk | Description | Example |
-|------|-------------|---------|
+| --- | --- | --- |
 | Training data quality | Poor quality data leads to poor model performance | Incomplete labels cause systematic errors |
 | Data poisoning | Attacker inserts malicious training data to manipulate model behaviour | Supply chain compromise of training dataset |
 | Privacy in training data | Training data contains PII or sensitive data unlawfully | Medical data used for AI training without lawful basis |
@@ -45,7 +45,7 @@ For each AI system in scope, identify risks across these categories:
 #### Operational Risks
 
 | Risk | Description | Example |
-|------|-------------|---------|
+| --- | --- | --- |
 | Unintended use | AI system used for purposes not covered by AISIA | Internal HR tool used to screen job applicants |
 | System failure | AI system becomes unavailable or produces errors at scale | API outage causes customer-facing decisions to fail |
 | Scope creep | AI system expanded to new use cases without re-assessment | Chatbot expanded to give medical advice without clinical review |
@@ -55,7 +55,7 @@ For each AI system in scope, identify risks across these categories:
 #### Supply Chain Risks
 
 | Risk | Description | Example |
-|------|-------------|---------|
+| --- | --- | --- |
 | Third-party model risk | Pre-trained model from vendor contains bias or backdoor | Open-source LLM used without bias evaluation |
 | API dependency | AI functionality depends on external API with reliability risk | Vendor changes model behaviour mid-contract |
 | Vendor lock-in | Cannot switch AI provider without major operational disruption | All AI inference tied to single cloud provider |
@@ -64,7 +64,7 @@ For each AI system in scope, identify risks across these categories:
 #### Regulatory and Reputational Risks
 
 | Risk | Description | Example |
-|------|-------------|---------|
+| --- | --- | --- |
 | Regulatory non-compliance | AI system violates applicable law | EU AI Act high-risk AI system deployed without conformity assessment |
 | Reputational harm | AI system behaviour causes public trust damage | Discriminatory AI hiring tool exposed in media |
 | Liability | Organisation liable for AI system harm to individuals | AI medical diagnosis system misses condition — clinical liability |
@@ -76,7 +76,7 @@ For each AI system in scope, identify risks across these categories:
 **Likelihood scale:**
 
 | Score | Level | Definition |
-|-------|-------|-----------|
+| --- | --- | --- |
 | 1 | Rare | May occur only in exceptional circumstances (<5% probability in system lifecycle) |
 | 2 | Unlikely | Could occur but not expected (5–25% probability) |
 | 3 | Possible | Might occur at some point (25–50% probability) |
@@ -86,18 +86,18 @@ For each AI system in scope, identify risks across these categories:
 **Severity scale:**
 
 | Score | Level | Definition |
-|-------|-------|-----------|
+| --- | --- | --- |
 | 1 | Negligible | No meaningful harm; easily corrected |
 | 2 | Minor | Limited impact; correctable with minor effort |
 | 3 | Moderate | Significant but recoverable harm; some operational disruption |
 | 4 | Major | Serious harm; difficult to reverse; significant operational or reputational impact |
 | 5 | Critical | Catastrophic harm; irreversible; severe regulatory, legal, financial, or societal impact |
 
-**Risk score = Likelihood × Severity**
+#### Risk score = Likelihood × Severity
 
 **Risk rating matrix:**
 
-```
+```text
 Severity →  1-Neg  2-Minor  3-Mod  4-Major  5-Crit
 Likelihood ↓
 1-Rare       1       2        3       4        5
@@ -108,7 +108,7 @@ Likelihood ↓
 ```
 
 | Score range | Rating | Treatment |
-|------------|--------|-----------|
+| --- | --- | --- |
 | 1–4 | Low | Monitor; accept with documented rationale |
 | 5–9 | Medium | Implement controls; review quarterly |
 | 10–16 | High | Priority treatment required; management sign-off |
@@ -121,7 +121,7 @@ Likelihood ↓
 For each identified risk with rating Medium or above:
 
 | Treatment Option | When to Use | Controls to Apply |
-|----------------|------------|------------------|
+| --- | --- | --- |
 | **Modify the AI system** | Risk is inherent to current design | Retrain with better data, add guardrails, change architecture, implement bias mitigation |
 | **Add operational controls** | Risk can be managed through process | Human review checkpoints, output filtering, monitoring, incident alerting |
 | **Accept with monitoring** | Residual risk is acceptable; monitoring can detect materialisation | Document acceptance decision with senior sign-off; define alert thresholds |
@@ -134,13 +134,13 @@ For each identified risk with rating Medium or above:
 
 **Required fields per risk entry:**
 
-```
+```text
 Risk ID | AI System | Risk Category | Risk Description | Likelihood | Severity | Score | Rating | Treatment | Control(s) Applied | Residual Risk | Owner | Review Date
 ```
 
 **Example entry:**
 
-```
+```text
 R-001 | Loan_Approval_Model_v2 | Model - Bias | Model may produce discriminatory outcomes for applicants by protected characteristic | 3 | 5 | 15 | High | Modify: implement fairness-aware retraining + quarterly demographic disparity monitoring | A.5.4, A.5.5, A.6.2.4, A.6.2.6 | Medium (score 6) after treatment | AI Risk Owner - Credit | Q2 2025
 ```
 
@@ -148,7 +148,7 @@ R-001 | Loan_Approval_Model_v2 | Model - Bias | Model may produce discriminatory
 
 ## Part 2: AI System Impact Assessment (AISIA)
 
-### Purpose
+### Purpose (Part 2: AI System Impact Assessment)
 
 The AISIA takes a **stakeholder and societal lens** — it assesses impacts on individuals, groups, and society from the AI system's outputs and decisions. This is mandatory under Clause 6.1.2 and directly referenced in Annex A.5 (controls A.5.2–A.5.5).
 
@@ -163,10 +163,10 @@ The AISIA takes a **stakeholder and societal lens** — it assesses impacts on i
 
 ### AISIA Step-by-Step Process
 
-**Step 1: Document the AI System**
+#### Step 1: Document the AI System
 
 | Field | Content |
-|-------|---------|
+| --- | --- |
 | AI system name and version | |
 | AI system owner | |
 | Intended purpose | What the system is designed to do |
@@ -175,20 +175,20 @@ The AISIA takes a **stakeholder and societal lens** — it assesses impacts on i
 | Deployment context | Where and how used — internal/customer-facing/regulatory context |
 | Operating conditions | Conditions under which system is expected to perform correctly |
 
-**Step 2: Identify Affected Populations**
+#### Step 2: Identify Affected Populations
 
 | Population | How Affected | Vulnerability |
-|-----------|-------------|--------------|
+| --- | --- | --- |
 | Identify all groups whose rights, opportunities, or wellbeing may be affected by AI outputs | | |
 
 Vulnerability factors: age (children/elderly), disability, socioeconomic status, minority group membership, limited AI literacy, power imbalance (employer/employee; government/citizen).
 
-**Step 3: Assess Impact Dimensions**
+#### Step 3: Assess Impact Dimensions
 
 For each affected population, assess:
 
 | Dimension | Questions to Ask |
-|-----------|----------------|
+| --- | --- |
 | **Nature of impact** | What kind of harm could occur? Financial, physical, psychological, reputational, loss of rights, discrimination? |
 | **Severity** | How serious is the worst-case impact? |
 | **Breadth** | How many individuals could be affected? |
@@ -198,18 +198,18 @@ For each affected population, assess:
 | **Human oversight** | Is there a meaningful human review of AI outputs before they affect individuals? |
 | **Recourse** | Can individuals challenge AI decisions? Is there an appeal process? |
 
-**Step 4: Classify Impact Level**
+#### Step 4: Classify Impact Level
 
 | Level | Criteria | Examples |
-|-------|----------|---------|
+| --- | --- | --- |
 | **Low** | Limited impact; easily reversible; non-vulnerable individuals; AI is advisory only; robust human oversight | Product recommendation engine; internal productivity tool |
 | **Medium** | Moderate impact; partially reversible; some vulnerable individuals may be affected; AI has significant weight in decisions | Customer service routing; content moderation; credit risk scoring with human review |
 | **High** | Significant impact; hard-to-reverse; vulnerable individuals; AI drives decisions with limited human review; affects fundamental rights | Automated hiring decisions; medical diagnosis AI; benefits eligibility AI; criminal risk scoring; biometric identification |
 
-**Step 5: Determine Control Requirements Based on Impact Level**
+#### Step 5: Determine Control Requirements Based on Impact Level
 
 | Control Area | Low Impact | Medium Impact | High Impact |
-|-------------|-----------|--------------|-------------|
+| --- | --- | --- | --- |
 | Transparency (A.8.2, A.8.5) | General notice that AI is used | Inform affected individuals; describe what AI does | Full disclosure; right to explanation; right to human review |
 | Human oversight (A.6.2.6) | Human oversight available on request | Structured human review for edge cases | Mandatory human review of all consequential AI outputs |
 | Verification & bias testing (A.6.2.4, A.7.4) | Basic performance testing | Fairness testing before deployment | Ongoing fairness monitoring with demographic breakdown |
@@ -218,11 +218,11 @@ For each affected population, assess:
 | Recourse mechanism | General complaints process | AI-specific appeal process | Formal right to challenge AI decisions; human decision-maker available |
 | AISIA review cycle (A.5.2) | Every 3 years or at major change | Annually or at significant change | Every 6 months or at any change |
 
-**Step 6: Document AISIA Findings**
+#### Step 6: Document AISIA Findings
 
 **AISIA Record format:**
 
-```
+```text
 AISIA ID: AISIA-[number]
 AI System: [name and version]
 Assessment Date: [date]
@@ -246,7 +246,7 @@ Review Date: [date]
 ## Part 3: Relationship Between AI Risk Assessment and AISIA
 
 | Dimension | AI Risk Assessment | AISIA |
-|-----------|-------------------|-------|
+| --- | --- | --- |
 | **Primary lens** | Organisational risk | Individual and societal impact |
 | **Key question** | What could go wrong for the organisation? | Who could be harmed and how? |
 | **Output** | Risk register; risk treatment plan | Impact classification; control requirements |
@@ -263,7 +263,7 @@ Review Date: [date]
 ISO 42001 AISIA aligns closely with **EU AI Act Fundamental Rights Impact Assessment (FRIA)** requirements for high-risk AI systems. Organisations preparing for EU AI Act compliance can use their 42001 AISIA as a foundation — extending it to cover the specific FRIA requirements for EU high-risk AI system categories:
 
 | EU AI Act Category | ISO 42001 AISIA Overlap |
-|-------------------|------------------------|
+| --- | --- |
 | Biometric identification | High impact → maximum controls → maps directly |
 | Critical infrastructure management | High impact |
 | Education/vocational training | Medium-High impact |

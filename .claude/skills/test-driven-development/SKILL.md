@@ -23,7 +23,7 @@ Write a failing test before writing the code that makes it pass. For bug fixes, 
 
 ## The TDD Cycle
 
-```
+```text
     RED                GREEN              REFACTOR
  Write a test    Write minimal code    Clean up the
  that fails  ──→  to make it pass  ──→  implementation  ──→  (repeat)
@@ -83,7 +83,7 @@ Run tests after every refactor step to confirm nothing broke.
 
 When a bug is reported, **do not start by trying to fix it.** Start by writing a test that reproduces it.
 
-```
+```text
 Bug report arrives
        │
        ▼
@@ -134,7 +134,7 @@ export async function completeTask(id: string): Promise<Task> {
 RED is not a box to tick, it is an **observation**. Run the test against the old code and read the output, because *how* it fails decides whether it pins anything:
 
 | What you see | What it means |
-|---|---|
+| --- | --- |
 | Assertion failure on the buggy behaviour | The test pins the bug. This is RED. |
 | Compile / import / attribute error | The test does not run at all. It pins nothing yet. |
 | Passes | You have not reproduced the bug. Do not proceed to the fix. |
@@ -147,7 +147,7 @@ If your test only reaches the old code path through an API you are adding in the
 
 Invest testing effort according to the pyramid — most tests should be small and fast, with progressively fewer tests at higher levels:
 
-```
+```text
           ╱╲
          ╱  ╲         E2E Tests (~5%)
         ╱    ╲        Full user flows, real browser
@@ -167,7 +167,7 @@ Invest testing effort according to the pyramid — most tests should be small an
 Beyond the pyramid levels, classify tests by what resources they consume:
 
 | Size | Constraints | Speed | Example |
-|------|------------|-------|---------|
+| ------ | ------------ | ------- | --------- |
 | **Small** | Single process, no I/O, no network, no database | Milliseconds | Pure function tests, data transforms |
 | **Medium** | Multi-process OK, localhost only, no external services | Seconds | API tests with test DB, component tests |
 | **Large** | Multi-machine OK, external services allowed | Minutes | E2E tests, performance benchmarks, staging integration |
@@ -176,7 +176,7 @@ Small tests should make up the vast majority of your suite. They're fast, reliab
 
 ### Decision Guide
 
-```
+```text
 Is it pure logic with no side effects?
   → Unit test (small)
 
@@ -237,7 +237,7 @@ Duplication in tests is acceptable when it makes each test independently underst
 
 Use the simplest test double that gets the job done. The more your tests use real code, the more confidence they provide.
 
-```
+```text
 Preference order (most to least preferred):
 1. Real implementation  → Highest confidence, catches real bugs
 2. Fake                 → In-memory version of a dependency (e.g., fake DB)
@@ -303,7 +303,7 @@ describe('TaskService', () => {
 ## Test Anti-Patterns to Avoid
 
 | Anti-Pattern | Problem | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Testing implementation details | Tests break when refactoring even if behavior is unchanged | Test inputs and outputs, not internal structure |
 | Flaky tests (timing, order-dependent) | Erode trust in the test suite | Use deterministic assertions, isolate test state |
 | Testing framework code | Wastes time testing third-party behavior | Only test YOUR code |
@@ -325,7 +325,7 @@ For anything that runs in a browser, unit tests alone aren't enough — you need
 
 ### The DevTools Debugging Workflow
 
-```
+```text
 1. REPRODUCE: Navigate to the page, trigger the bug, screenshot
 2. INSPECT: Console errors? DOM structure? Computed styles? Network responses?
 3. DIAGNOSE: Compare actual vs expected — is it HTML, CSS, JS, or data?
@@ -336,7 +336,7 @@ For anything that runs in a browser, unit tests alone aren't enough — you need
 ### What to Check
 
 | Tool | When | What to Look For |
-|------|------|-----------------|
+| ------ | ------ | ----------------- |
 | **Console** | Always | Zero errors and warnings in production-quality code |
 | **Network** | API issues | Status codes, payload shape, timing, CORS errors |
 | **DOM** | UI bugs | Element structure, attributes, accessibility tree |
@@ -354,7 +354,7 @@ For detailed DevTools setup instructions and workflows, see `browser-testing-wit
 
 For complex bug fixes, spawn a subagent to write the reproduction test:
 
-```
+```text
 Main agent: "Spawn a subagent to write a test that reproduces this bug:
 [bug description]. The test should fail with the current code."
 
@@ -373,7 +373,7 @@ For detailed testing patterns, examples, and anti-patterns across frameworks, se
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'll write tests after the code works" | You won't. And tests written after the fact test implementation, not behavior. |
 | "This is too simple to test" | Simple code gets complicated. The test documents the expected behavior. |
 | "Tests slow me down" | Tests slow you down now. They speed you up every time you change the code later. |

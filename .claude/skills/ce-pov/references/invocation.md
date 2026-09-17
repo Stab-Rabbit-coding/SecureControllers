@@ -14,7 +14,7 @@ The conversation supplies the **question** and the **claims-to-verify** — *not
 So every input is labeled by provenance, and only verified buckets satisfy the gate (see `references/method.md`):
 
 | Bucket | Counts as grounding? |
-|---|---|
+| --- | --- |
 | Observed project facts (from a scout dossier or a host bounded read of the authoritative source) | Yes |
 | Verified external facts (from a scout dossier or a host bounded read of the authoritative source) | Yes |
 | Conversation claims | No — frame and hypotheses until a scout or a bounded inline read of the authoritative source corroborates |

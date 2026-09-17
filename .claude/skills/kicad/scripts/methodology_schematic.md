@@ -15,7 +15,7 @@ This means the analyzer:
 
 ## Architecture Overview
 
-```
+```text
 .kicad_sch file(s)
        |
        v
@@ -37,7 +37,7 @@ kicad_utils.py  kicad_types.py  signal_detectors.py
 ### Module Responsibilities
 
 | Module | Role |
-|--------|------|
+| -------- | ------ |
 | `sexp_parser.py` | Generic S-expression tokenizer and parser. No KiCad-specific knowledge. |
 | `kicad_utils.py` | Component classification, engineering value parsing, power/ground net name detection. Stateless utility functions. |
 | `kicad_types.py` | `AnalysisContext` dataclass — shared state built once and passed to all analysis functions. Holds components, nets, pin-net map, pre-computed lookups. |
@@ -169,7 +169,7 @@ where `EPSILON = 0.01 mm`. The sheet index prevents cross-sheet merges; the roun
 
 A standard union-find (disjoint set) data structure with path compression groups connected points into equivalence classes:
 
-```
+```text
 find(p):  path compression to root
 union(a, b):  merge two sets
 ```
@@ -240,7 +240,7 @@ The classifier applies rules in priority order — first match wins:
 2. **Reference prefix lookup**: The reference designator prefix (letters before digits) is matched against a type map:
 
    | Prefix | Type | Notes |
-   |--------|------|-------|
+   | -------- | ------ | ------- |
    | `R`, `RS` | `resistor` | Standard resistors, shunts |
    | `RN`, `RM`, `RA` | `resistor_network` | Arrays and networks |
    | `C` | `capacitor` | |
@@ -284,7 +284,7 @@ The classifier applies rules in priority order — first match wins:
 
 The full set of possible type values:
 
-```
+```text
 resistor, resistor_network, capacitor, inductor, diode, led, transistor,
 ic, connector, switch, crystal, oscillator, fuse, relay, optocoupler,
 ferrite_bead, test_point, mounting_hole, jumper, net_tie, transformer,
@@ -301,7 +301,7 @@ flag, other
 ### Supported Formats
 
 | Input | Output | Rule |
-|-------|--------|------|
+| ------- | -------- | ------ |
 | `10k` | 10000.0 | SI suffix: k = ×10³ |
 | `4K7` | 4700.0 | Embedded multiplier (K as decimal point): 4.7 × 10³ |
 | `0R1` | 0.1 | R as decimal point: 0.1 Ω |
@@ -324,7 +324,7 @@ Before parsing, the function:
 
 ### SI Prefix Map
 
-```
+```text
 p = 1e-12    n = 1e-9     u/µ = 1e-6    m = 1e-3
 k/K = 1e3    M = 1e6      G = 1e9
 ```
@@ -396,7 +396,7 @@ The `analyze_signal_paths()` function orchestrates 21 detector functions that id
 
 Detectors run in a specific order because some consume results from earlier detectors:
 
-```
+```text
 1. voltage_dividers          ← standalone
 2. rc_filters                ← excludes resistors in voltage dividers
 3. lc_filters                ← standalone
@@ -685,7 +685,7 @@ Beyond signal path detection, the analyzer performs several categories of design
 **Net Classification**: Every net is tagged with a functional class based on its name:
 
 | Class | Keywords/Patterns |
-|-------|-------------------|
+| ------- | ------------------- |
 | `ground` | GND, VSS, AGND, DGND |
 | `power` | VCC, VDD, +3V3, VBUS, etc. |
 | `clock` | SCL, SCK, CLK, MCLK, XTAL, OSC |

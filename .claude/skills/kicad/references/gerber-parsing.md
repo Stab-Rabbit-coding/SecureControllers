@@ -44,7 +44,7 @@ M02*                                ; End of file
 
 ### Format Specification (%FS)
 
-```
+```text
 %FSLAX46Y46*%
 ```
 
@@ -56,7 +56,7 @@ M02*                                ; End of file
 
 ### Units
 
-```
+```text
 %MOMM*%    ; Millimeters (KiCad default)
 %MOIN*%    ; Inches
 ```
@@ -88,7 +88,7 @@ Apertures define the shape of the "pen" used for drawing and flashing. Defined i
 ```
 
 | Code | Shape | Parameters |
-|------|-------|-----------|
+| ------ | ------- | ----------- |
 | `C` | Circle | diameter[X hole_diameter] |
 | `R` | Rectangle | width X height[X hole_diameter] |
 | `O` | Obround (oval) | width X height[X hole_diameter] |
@@ -126,7 +126,7 @@ Aperture macros are complex — for analysis, focus on the overall bounding box 
 ### Operation Codes
 
 | Code | Action | Description |
-|------|--------|-------------|
+| ------ | -------- | ------------- |
 | `D01` | Draw (interpolate) | Draw from current position to new position with current aperture |
 | `D02` | Move | Move to position without drawing (pen up) |
 | `D03` | Flash | Stamp the current aperture shape at the position |
@@ -186,7 +186,7 @@ Region fills (G36/G37) represent filled copper areas — zones, pads with custom
 KiCad uses predictable filename suffixes. The naming changed between KiCad 5 and KiCad 6:
 
 | KiCad 6+ Suffix | KiCad 5 Suffix | KiCad Layer | Description |
-|----------------|----------------|-------------|-------------|
+| ---------------- | ---------------- | ------------- | ------------- |
 | `-F_Cu.gbr` | `-F_Cu.gbr` | F.Cu | Front copper |
 | `-B_Cu.gbr` | `-B_Cu.gbr` | B.Cu | Back copper |
 | `-In1_Cu.gbr` | `-In1_Cu.gbr` | In1.Cu | Inner copper layer 1 |
@@ -206,7 +206,7 @@ KiCad uses predictable filename suffixes. The naming changed between KiCad 5 and
 With Protel extensions enabled:
 
 | Extension | Layer |
-|-----------|-------|
+| ----------- | ------- |
 | `.GTL` | Front copper |
 | `.GBL` | Back copper |
 | `.G2` / `.G3` | Inner layers |
@@ -252,7 +252,7 @@ KiCad 5 embeds X2 attributes as structured comments (`G04 #@!`) rather than nati
 ### FileFunction Values
 
 | FileFunction | Layer |
-|-------------|-------|
+| ------------- | ------- |
 | `Copper,L1,Top` | Front copper |
 | `Copper,L2,Bot` | Back copper (2-layer) |
 | `Copper,L2,Inr` | Inner layer 2 (4+ layer) |
@@ -274,7 +274,7 @@ Gerber X2 attributes provide machine-readable metadata. KiCad writes file-level 
 ### Version Compatibility Matrix
 
 | Attribute Type | KiCad 5 | KiCad 6+ | Format (KiCad 5) | Format (KiCad 6+) |
-|---------------|---------|----------|-------------------|-------------------|
+| --------------- | --------- | ---------- | ------------------- | ------------------- |
 | File attributes (`TF`) | Yes | Yes | `G04 #@! TF.*` | `%TF.*%` |
 | Aperture attributes (`TA`) | No | Yes | — | `%TA.*%` |
 | Object attributes (`TO`) | No | Yes | — | `%TO.*%` |
@@ -326,7 +326,7 @@ These are extremely useful for analysis — they let you map gerber features bac
 
 Drill files define hole positions and sizes. KiCad exports Excellon format.
 
-### Basic Structure
+### Basic Structure (Excellon Drill Format)
 
 ```excellon
 M48                                  ; Header start
@@ -382,7 +382,7 @@ Two distinct formats depending on KiCad version:
 
 ### Tool Definitions
 
-```
+```text
 T1C0.300     ; Tool 1, Circle 0.3mm diameter
 T2C0.800     ; Tool 2, Circle 0.8mm diameter
 ```
@@ -397,7 +397,7 @@ KiCad can export:
 
 Check the `TF.FileFunction` attribute:
 
-```
+```text
 ; #@! TF.FileFunction,Plated,1,2,PTH       ; Plated, from layer 1 to 2 (2-layer board)
 ; #@! TF.FileFunction,Plated,1,4,PTH       ; Plated, from layer 1 to 4 (4-layer board)
 ; #@! TF.FileFunction,NonPlated,1,2,NPTH   ; Non-plated
@@ -408,7 +408,7 @@ The layer span (e.g., `1,4`) indicates the board layer count — `Plated,1,4,PTH
 
 ### Drill Tool Attributes — KiCad 6+ Only
 
-```
+```text
 ; #@! TA.AperFunction,Plated,PTH,ViaDrill         ; Via
 ; #@! TA.AperFunction,Plated,PTH,ComponentDrill    ; Through-hole component
 ; #@! TA.AperFunction,NonPlated,NPTH,BoardEdge     ; Board cutout
@@ -425,14 +425,14 @@ KiCad 5 drill files have no tool attributes. Without them, you cannot distinguis
 
 Oval or non-round holes use routing commands:
 
-```
+```text
 T2C1.000
 G85X120000Y90000X125000Y90000       ; Route (slot) from (120,90) to (125,90)
 ```
 
 Or with M15/M16:
 
-```
+```text
 M15                                  ; Router mode on
 G01X120000Y90000                     ; Start of slot
 X125000Y90000                        ; End of slot
@@ -514,7 +514,7 @@ This produces the same information as the PCB netlist without needing the KiCad 
 **KiCad 6+:** Aperture attributes categorize copper features:
 
 | AperFunction | Description | What to count |
-|-------------|-------------|---------------|
+| ------------- | ------------- | --------------- |
 | `SMDPad,CuDef` | SMD pad copper definition | Pad shape count |
 | `ViaPad` | Via pad | Single aperture, count flashes |
 | `ComponentPad` | Through-hole component pad | Similar to SMDPad |
@@ -537,7 +537,7 @@ Conductor aperture diameters directly give you the trace widths used in the desi
 Count D01 (draw), D02 (move), D03 (flash), G36/G37 (regions) per layer:
 
 | Layer | Flashes (D03) | Interpretation |
-|-------|--------------|----------------|
+| ------- | -------------- | ---------------- |
 | F_Cu | N | Total pad count on front |
 | B_Cu | N | Via pads + any back-side component pads |
 | F_Mask | N | Pad openings in solder mask — should be ≥ F_Cu flashes |
@@ -637,7 +637,7 @@ Pre-submission check before sending to manufacturer:
 Quickly determine the KiCad version from gerber files:
 
 | Indicator | KiCad 5 | KiCad 6+ |
-|-----------|---------|----------|
+| ----------- | --------- | ---------- |
 | X2 attribute format | `G04 #@! TF.*` | `%TF.*%` |
 | Aperture attributes | Absent | `%TA.AperFunction,...*%` |
 | Object attributes | Absent | `%TO.P,...*%`, `%TO.N,...*%`, `%TO.C,...*%` |

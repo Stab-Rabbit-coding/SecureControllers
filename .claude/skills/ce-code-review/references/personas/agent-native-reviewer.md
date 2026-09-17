@@ -23,7 +23,7 @@ Before diving in, answer three questions:
 **Stack-specific search strategies:**
 
 | Stack | UI actions | Agent tools |
-|---|---|---|
+| --- | --- | --- |
 | Vercel AI SDK (Next.js) | `onClick`, `onSubmit`, form actions in React components | `tool()` in route handlers, `tools` param in `streamText`/`generateText` |
 | LangChain / LangGraph | Frontend framework varies | `@tool` decorators, `StructuredTool` subclasses, `tools` arrays |
 | OpenAI Assistants | Frontend framework varies | `tools` array in assistant config, function definitions |
@@ -126,7 +126,7 @@ If an action looks like it belongs on this list but you are not sure, flag it as
 ## Anti-Patterns Reference
 
 | Anti-Pattern | Signal | Fix |
-|---|---|---|
+| --- | --- | --- |
 | **Orphan Feature** | UI action with no agent tool equivalent | Add a corresponding tool and document it in the system prompt |
 | **Context Starvation** | Agent does not know what resources exist or what app-specific terms mean | Inject available resources and domain vocabulary into the system prompt |
 | **Sandbox Isolation** | Agent reads/writes a separate data space from the user | Use shared workspace architecture |

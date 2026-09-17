@@ -14,7 +14,7 @@ How an explainer renders as markdown — the fallback format when intake resolve
 Markdown's visual affordances are narrower than HTML's — compensate, don't skip:
 
 | Material | Show |
-|----------|------|
+| ---------- | ------ |
 | Architecture, relationships, boundaries | Fenced `mermaid` block (`flowchart TB`) |
 | Code behavior, a diff's mechanics | Fenced code block per hunk with a one-line *why* comment above each |
 | A process, lifecycle, or state change | `mermaid` state/sequence diagram or a numbered list |

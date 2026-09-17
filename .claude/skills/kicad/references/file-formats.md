@@ -31,7 +31,7 @@ All modern KiCad files use Lisp-like S-expressions: `(keyword value1 (child_keyw
 
 ### Top-Level Structure
 
-```
+```text
 (kicad_sch
   (version ...) (generator ...) (generator_version ...) (uuid ...) (paper ...)
   (lib_symbols ...)        ; Embedded copies of all library symbols used
@@ -53,7 +53,7 @@ All modern KiCad files use Lisp-like S-expressions: `(keyword value1 (child_keyw
 
 ### Symbol Instance (placed component)
 
-```
+```text
 (symbol
   (lib_id "Library:SymbolName")     ; Library reference
   (at X Y ANGLE)                     ; Position
@@ -102,7 +102,7 @@ For detailed step-by-step net tracing with coordinate math and rotation transfor
 
 ### Hierarchical Sheets
 
-```
+```text
 (sheet (at X Y) (size W H) (uuid "...")
   (property "Sheetname" "PowerSupply" ...)
   (property "Sheetfile" "power_supply.kicad_sch" ...)
@@ -116,9 +116,9 @@ Each sheet has its own `.kicad_sch` file. Pins on the sheet symbol connect to `h
 
 ## PCB Layout (`.kicad_pcb`)
 
-### Top-Level Structure
+### Top-Level Structure (PCB Layout)
 
-```
+```text
 (kicad_pcb
   (version ...) (generator ...) (generator_version ...)
   (general (thickness 1.6) (legacy_teardrops no))
@@ -145,7 +145,7 @@ Each sheet has its own `.kicad_sch` file. Pins on the sheet symbol connect to `h
 
 ### Layer Definitions
 
-```
+```text
 (layers
   (0 "F.Cu" signal)         ; Front copper
   (2 "B.Cu" signal)         ; Back copper (number varies by version)
@@ -163,7 +163,7 @@ Each sheet has its own `.kicad_sch` file. Pins on the sheet symbol connect to `h
 
 ### Footprint on PCB
 
-```
+```text
 (footprint "Package:SOT-563"
   (layer "F.Cu")                    ; Which side of board
   (uuid "...")
@@ -196,7 +196,7 @@ Each sheet has its own `.kicad_sch` file. Pins on the sheet symbol connect to `h
 
 ### Tracks, Vias, and Zones
 
-```
+```text
 ; KiCad ≤9: net referenced by integer ID
 (segment (start X1 Y1) (end X2 Y2) (width 0.2) (layer "F.Cu") (net 7) (uuid "..."))
 (via (at X Y) (size 0.6) (drill 0.3) (layers "F.Cu" "B.Cu") (net 7) (uuid "..."))
@@ -221,7 +221,7 @@ Each sheet has its own `.kicad_sch` file. Pins on the sheet symbol connect to `h
 
 Look for graphical items on `Edge.Cuts` layer:
 
-```
+```text
 (gr_line (start X1 Y1) (end X2 Y2) (layer "Edge.Cuts") ...)
 (gr_arc (start ...) (mid ...) (end ...) (layer "Edge.Cuts") ...)
 ```
@@ -249,7 +249,7 @@ To find everything connected to a net:
 
 ## Symbol Library (`.kicad_sym`)
 
-```
+```text
 (kicad_symbol_lib
   (version ...) (generator ...) (generator_version ...)
   (symbol "SymbolName"
@@ -286,7 +286,7 @@ To find everything connected to a net:
 
 Stored in `.pretty/` directories (one file per footprint).
 
-```
+```text
 (footprint "FootprintName"
   (version ...) (generator ...) (layer "F.Cu")
   (descr "Description text")
@@ -311,7 +311,7 @@ Stored in `.pretty/` directories (one file per footprint).
 
 Text-based constraint rules applied during DRC. Example:
 
-```
+```text
 (version 1)
 (rule "Track width, outer layer"
   (layer outer)
@@ -330,7 +330,7 @@ Useful for enforcing manufacturer capabilities (e.g., JLCPCB, PCBWay).
 
 ## Netlist (`.net`)
 
-```
+```text
 (export (version D)
   (components
     (comp (ref U1)
@@ -356,7 +356,7 @@ The netlist explicitly lists every net and which component pins belong to it.
 
 ## Legacy KiCad 5 Schematic (`.sch`)
 
-```
+```text
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END

@@ -21,7 +21,7 @@ Feed agents the right information at the right time. Context is the single bigge
 
 Structure context from most persistent to most transient:
 
-```
+```text
 ┌─────────────────────────────────────┐
 │  1. Rules Files (CLAUDE.md, etc.)   │ ← Always loaded, project-wide
 ├─────────────────────────────────────┤
@@ -128,7 +128,7 @@ Long conversations accumulate stale context. Manage this:
 
 At session start, provide everything the agent needs in a structured block:
 
-```
+```text
 PROJECT CONTEXT:
 - We're building [X] using [tech stack]
 - The relevant spec section is: [spec excerpt]
@@ -142,7 +142,7 @@ PROJECT CONTEXT:
 
 Only include what's relevant to the current task:
 
-```
+```text
 TASK: Add email validation to the registration endpoint
 
 RELEVANT FILES:
@@ -185,7 +185,7 @@ Load only the relevant section when working on a specific area.
 
 For a subagent touching shared or public state (an open PR's branch, an upstream repo, live CI, a non-hermetic test suite), retype the same guardrails every time rather than trusting memory - a constraint left out of one brief was enough for an agent to trip over it immediately. Copy this block and delete what doesn't apply:
 
-```
+```text
 FROZEN (must not move):
 - <ref>: e.g. the head branch of PR #<n>. Pushing to it rewrites the PR and notifies maintainers.
 
@@ -209,7 +209,7 @@ This generalises the live-system consent boilerplate in the `fleet-qa-loop` skil
 For richer context, use Model Context Protocol servers:
 
 | MCP Server | What It Provides |
-|-----------|-----------------|
+| ----------- | ----------------- |
 | **Context7** | Auto-fetches relevant documentation for libraries |
 | **Chrome DevTools** | Live browser state, DOM, console, network |
 | **PostgreSQL** | Direct database schema and query results |
@@ -222,14 +222,14 @@ Even with good context, you will encounter ambiguity. How you handle it determin
 
 ### When Context Conflicts
 
-```
+```text
 Spec says:         "Use REST for all endpoints"
 Existing code has: GraphQL for the user profile query
 ```
 
 **Do NOT** silently pick one interpretation. Surface it:
 
-```
+```text
 CONFUSION:
 The spec calls for REST endpoints, but the existing codebase uses GraphQL
 for user queries (src/graphql/user.ts).
@@ -250,7 +250,7 @@ If the spec doesn't cover a case you need to implement:
 2. If no precedent exists, **stop and ask**
 3. Don't invent requirements — that's the human's job
 
-```
+```text
 MISSING REQUIREMENT:
 The spec defines task creation but doesn't specify what happens
 when a user creates a task with a duplicate title.
@@ -267,7 +267,7 @@ C) Append a number suffix like "Task (2)" (most user-friendly)
 
 For multi-step tasks, emit a lightweight plan before executing:
 
-```
+```text
 PLAN:
 1. Add Zod schema for task creation — validates title (required) and description (optional)
 2. Wire schema into POST /api/tasks route handler
@@ -280,7 +280,7 @@ This catches wrong directions before you've built on them. It's a 30-second inve
 ## Anti-Patterns
 
 | Anti-Pattern | Problem | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Context starvation | Agent invents APIs, ignores conventions | Load rules file + relevant source files before each task |
 | Context flooding | Agent loses focus when loaded with >5,000 lines of non-task-specific context. More files does not mean better output. | Include only what is relevant to the current task. Aim for <2,000 lines of focused context per task. |
 | Stale context | Agent references outdated patterns or deleted code | Start fresh sessions when context drifts |
@@ -291,7 +291,7 @@ This catches wrong directions before you've built on them. It's a 30-second inve
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "The agent should figure out the conventions" | It can't read your mind. Write a rules file — 10 minutes that saves hours. |
 | "I'll just correct it when it goes wrong" | Prevention is cheaper than correction. Upfront context prevents drift. |
 | "More context is always better" | Research shows performance degrades with too many instructions. Be selective. |

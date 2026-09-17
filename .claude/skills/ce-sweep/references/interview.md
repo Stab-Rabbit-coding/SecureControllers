@@ -186,7 +186,7 @@ Declining a schedule leaves on-demand use fully working.
 
 After the interview completes, merge these flat keys into `<repo-root>/.compound-engineering/config.local.yaml`, preserving any unrelated keys already present.
 
-~~~yaml
+```yaml
 # --- Sweep (ce-sweep) ---
 
 feedback_sources:
@@ -197,7 +197,7 @@ sweep_state_path: <resolved-root>/feedback-sweep/state.yml   # concrete path (<r
 sweep_ack_cap: 25                                 # max acks per source per run before the circuit breaker
 sweep_lease_ttl_minutes: 60                       # single-writer lease staleness threshold; not asked interactively, tunable here
 sweep_shared_branch: false                        # true: push-gated lease for shared-docs-branch topology
-~~~
+```
 
 Notes:
 

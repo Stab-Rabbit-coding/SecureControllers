@@ -24,7 +24,7 @@ Directives are renewed annually and carry the force of law under 49 U.S.C. § 11
 **Current revision**: Pipeline-2021-01G (effective January 2026)
 
 | Revision | Issued | Key Changes |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | Pipeline-2021-01 | May 2021 | Initial directive: incident reporting, coordinator, practices review |
 | Pipeline-2021-01A | July 2021 | Minor clarifications |
 | Pipeline-2021-01B/C | 2022–2023 | Renewed with refinements |
@@ -50,7 +50,7 @@ Directives are renewed annually and carry the force of law under 49 U.S.C. § 11
 **Current revision**: Pipeline-2021-02F (latest)
 
 | Revision | Issued | Key Changes |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | Pipeline-2021-02 | July 2021 | Initial comprehensive CRMP requirements |
 | Pipeline-2021-02A/B | 2022 | Performance-based approach introduced; replaced prescriptive controls |
 | Pipeline-2021-02C/D | 2023 | Further refinements; feedback incorporated from operators |
@@ -79,7 +79,7 @@ Directives are renewed annually and carry the force of law under 49 U.S.C. § 11
 **Current revision**: SD 1580-21-01E (effective January 15, 2026)
 
 | Revision | Issued | Key Changes |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | SD 1580-21-01 | 2021 | Initial rail cybersecurity: incident reporting, coordinator |
 | SD 1580-21-01A/B/C | 2022–2023 | CRMP requirements added; performance-based updates |
 | SD 1580-21-01D | October 2024 | Updated; aligned with pipeline directive structure |
@@ -106,7 +106,7 @@ Directives are renewed annually and carry the force of law under 49 U.S.C. § 11
 **Current revision**: SD 1582-21-01E (effective January 15, 2026)
 
 | Revision | Issued | Key Changes |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | SD 1582-21-01 | 2021 | Initial transit cybersecurity requirements |
 | SD 1582-21-01A/B/C | 2022–2023 | CRMP additions; performance-based approach |
 | SD 1582-21-01D | October 2024 | Updated requirements |
@@ -147,7 +147,7 @@ The NPRM would formalise current Security Directive requirements into permanent 
 **Proposed covered entities**:
 
 | Sector | Coverage |
-|--------|---------|
+| -------- | --------- |
 | Pipelines | Same as current directives; higher-risk designated operators |
 | Freight railroad | Higher-risk Class I and designated Class II/III |
 | Passenger rail/transit | Higher-risk passenger rail and transit agencies |
@@ -172,7 +172,7 @@ The NPRM would formalise current Security Directive requirements into permanent 
 ## Relationship to Other Frameworks
 
 | Framework | Relationship to TSA Directives |
-|-----------|-------------------------------|
+| ----------- | ------------------------------- |
 | **NIST CSF 2.0** | Referenced in 2024 NPRM for annual profile evaluation; GV/ID/PR/DE/RS/RC maps to TSA domains |
 | **CISA CPGs** | Baseline goals for critical infrastructure; TSA directives align with IT and OT CPGs |
 | **NIST SP 800-82** | Guide to ICS/OT security; informative reference for implementing TSA's OT requirements |
@@ -185,7 +185,7 @@ The NPRM would formalise current Security Directive requirements into permanent 
 ## Key Definitions
 
 | Term | Definition |
-|------|-----------|
+| ------ | ----------- |
 | **Critical Cyber System (CCS)** | IT or OT system whose compromise could disrupt operations, safety, or security |
 | **Cybersecurity Coordinator** | 24/7 designated contact person for TSA and CISA |
 | **CIP / COIP** | Cybersecurity Implementation Plan / Cybersecurity Operational Implementation Plan |

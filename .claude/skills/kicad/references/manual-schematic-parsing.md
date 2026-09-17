@@ -33,7 +33,7 @@ Always try the script first — it handles coordinate transforms, multi-unit sym
 
 S-expression format. Key sections in order:
 
-```
+```text
 (kicad_sch (version N) (generator ...) (uuid ...)
   (lib_symbols ...)        ; Library symbol definitions (pin data, shapes)
   (junction ...)           ; Wire junction points
@@ -51,7 +51,7 @@ S-expression format. Key sections in order:
 
 Line-based format. Key block types:
 
-```
+```text
 EESchema Schematic File Version N
 $Comp / $EndComp          ; Component blocks
 Wire Wire Line / x1 y1 x2 y2  ; Wire segments
@@ -101,7 +101,7 @@ The `lib_symbols` section contains sub-symbols named `SymName_U_V` where U = uni
 
 Components are in `$Comp`/`$EndComp` blocks:
 
-```
+```text
 $Comp
 L library:SymbolName Reference
 U unit_number convert_num timestamp
@@ -147,7 +147,7 @@ Nets are named by (priority order):
 4. Hierarchical label name
 5. Unnamed (auto-generated `__unnamed_N`)
 
-### Legacy Format
+### Legacy Format (Net Building)
 
 Wires: `Wire Wire Line` followed by `X1 Y1 X2 Y2` on next line.
 Labels: `Text Label X Y orientation 0 ~ 0 "NetName"` or `Text GLabel ...`.
@@ -168,7 +168,7 @@ When scripts can't detect subcircuits, look for these patterns manually in the c
 **Pin name variants:**
 
 | Function | Pin names |
-|----------|-----------|
+| ---------- | ----------- |
 | Input | VIN, VI, IN, PVIN, AVIN, INPUT |
 | Output | VOUT, VO, OUT, OUTPUT |
 | Feedback | FB, VFB, ADJ, VADJ (may have numeric suffix: FB1, ADJ2) |

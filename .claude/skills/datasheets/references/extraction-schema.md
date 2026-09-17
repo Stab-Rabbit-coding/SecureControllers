@@ -31,7 +31,7 @@ Current `EXTRACTION_VERSION`: **2** (in `datasheet_extract_cache.py`). Bump this
 ### Top-Level Fields
 
 | Field | Type | Nullable | Description | Added in v2 |
-|-------|------|----------|-------------|-------------|
+| --- | --- | --- | --- | --- |
 | `mpn` | string | no | Manufacturer part number, exact including suffix | — |
 | `manufacturer` | string | no | Manufacturer name | — |
 | `category` | string | no | Component category (see category list below) | — |
@@ -55,7 +55,7 @@ Current `EXTRACTION_VERSION`: **2** (in `datasheet_extract_cache.py`). Bump this
 Use these exact strings — they match `_classify_ic_function()` in `analyze_schematic.py`.
 
 | Category | Typical parts |
-|----------|--------------|
+| --- | --- |
 | `microcontroller` | STM32, ESP32, ATmega, RP2040 |
 | `operational_amplifier` | LM358, OPA340, AD8605 |
 | `comparator` | LM393, TLV3501 |
@@ -84,7 +84,7 @@ Array of pin entries. The schematic verifier joins on `pin.number` (string) to t
 ### Pin Entry Fields
 
 | Field | Type | Unit | Nullable | Example | Description | Added in v2 |
-|-------|------|------|----------|---------|-------------|-------------|
+| --- | --- | --- | --- | --- | --- | --- |
 | `number` | string | — | no | `"1"`, `"A3"`, `"EP"` | Pin number as shown on datasheet | — |
 | `name` | string | — | no | `"SW"` | Pin name from datasheet | — |
 | `function` | string | — | yes | `"EN"` | Functional category; see values below | yes |
@@ -107,7 +107,7 @@ Array of pin entries. The schematic verifier joins on `pin.number` (string) to t
 Canonical pin functional categories, used by `get_pin_function()` in `datasheet_features.py`.
 
 | Value | Description |
-|-------|-------------|
+| --- | --- |
 | `'VIN'` | Input power supply pin |
 | `'VOUT'` | Output voltage or regulated output |
 | `'EN'` | Enable control input |
@@ -124,7 +124,7 @@ Canonical pin functional categories, used by `get_pin_function()` in `datasheet_
 ### `type` Values
 
 | Value | Description |
-|-------|-------------|
+| --- | --- |
 | `power` | Supply voltage input or output |
 | `ground` | Ground connection |
 | `analog` | Analog signal (feedback, sense, reference) |
@@ -135,7 +135,7 @@ Canonical pin functional categories, used by `get_pin_function()` in `datasheet_
 ### `direction` Values
 
 | Value | Description |
-|-------|-------------|
+| --- | --- |
 | `input` | Signal flows into the device |
 | `output` | Signal driven by the device |
 | `bidirectional` | Both input and output |
@@ -159,7 +159,7 @@ This field is the primary driver for the missing-external-component check. Use t
 Device-specific feature flags. This object is null if not applicable to the device category.
 
 | Key | Type | Nullable | Description |
-|-----|------|----------|-------------|
+| --- | --- | --- | --- |
 | `has_pg` | bool | yes | Part has a power-good output pin |
 | `has_soft_start` | bool | yes | Device has integrated soft-start circuit |
 | `iss_time_us` | float | yes | Soft-start time constant in microseconds |
@@ -175,7 +175,7 @@ Peripheral specifications for MCUs and similar devices. This object is null if n
 USB interface specifications. Null if device does not have USB.
 
 | Key | Type | Nullable | Description |
-|-----|------|----------|-------------|
+| --- | --- | --- | --- |
 | `speed` | string | yes | USB speed: `'FS'` (full-speed), `'HS'` (high-speed), `'SS'` (super-speed), or `None` |
 | `native_phy` | bool | yes | Device has native USB PHY (vs external PHY required) |
 | `series_r_required` | bool | yes | Series termination resistors required on D+/D- |
@@ -187,7 +187,7 @@ USB interface specifications. Null if device does not have USB.
 Use keys with the suffix `_max_v`, `_max_c`, `_max_ma`, or `_v` as appropriate for the physical quantity. Null means the datasheet did not specify the limit.
 
 | Key | Type | Unit | Example | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `vin_max_v` | float | V | `6.0` | Input voltage absolute maximum |
 | `vout_max_v` | float | V | `6.0` | Output voltage absolute maximum |
 | `io_voltage_max` | float | V | `4.0` | I/O pin voltage maximum (MCUs) |
@@ -204,7 +204,7 @@ Add device-specific keys as needed (e.g., `sw_pin_max_v`, `boot_voltage_max_v`).
 ## `recommended_operating_conditions`
 
 | Key | Type | Unit | Example | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `vin_min_v` | float | V | `0.5` | Minimum input voltage |
 | `vin_max_v` | float | V | `5.5` | Maximum input voltage |
 | `vout_min_v` | float | V | `1.8` | Minimum output voltage |
@@ -223,7 +223,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### Switching regulators
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `vref_v` | float | V | required | Feedback reference voltage |
 | `switching_frequency_khz` | float | kHz | required | Nominal switching frequency |
 | `quiescent_current_ua` | float | µA | optional | Quiescent supply current |
@@ -235,7 +235,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### Linear regulators
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `vref_v` | float | V | required | Reference / output voltage |
 | `quiescent_current_ua` | float | µA | required | Quiescent supply current |
 | `dropout_mv` | float | mV | optional | Dropout voltage at rated current |
@@ -244,7 +244,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### Operational amplifiers
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `gbw_hz` | float | Hz | required | Gain-bandwidth product |
 | `slew_vus` | float | V/µs | required | Slew rate |
 | `vos_mv` | float | mV | optional | Input offset voltage |
@@ -255,7 +255,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### Comparators
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `prop_delay_ns` | float | ns | required | Propagation delay |
 | `vos_mv` | float | mV | optional | Input offset voltage |
 | `aol_db` | float | dB | optional | Open-loop gain |
@@ -263,7 +263,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### Voltage references
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `vref_v` | float | V | required | Reference output voltage |
 | `vref_accuracy_pct` | float | % | required | Initial accuracy |
 | `temp_coefficient_ppmk` | float | ppm/°C | optional | Temperature coefficient |
@@ -271,7 +271,7 @@ Category-dependent. The scorer checks for category-specific required and optiona
 ### ESD protection
 
 | Key | Type | Unit | Scoring | Description |
-|-----|------|------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `clamping_voltage_v` | float | V | required | Clamping voltage at rated surge current |
 | `leakage_current_na` | float | nA | optional | Reverse leakage current |
 | `capacitance_pf` | float | pF | optional | Line capacitance |
@@ -285,7 +285,7 @@ No universally required fields (MCU characteristics vary too widely). Optional f
 ## `application_circuit`
 
 | Key | Type | Nullable | Example | Description |
-|-----|------|----------|---------|-------------|
+| --- | --- | --- | --- | --- |
 | `topology` | string | yes | `"boost"` | Circuit topology |
 | `inductor_recommended` | string | yes | `"1uH, Isat > 3.6A"` | Recommended inductor |
 | `input_cap_recommended` | string | yes | `"10uF ceramic, X5R or X7R"` | Input capacitor recommendation |
@@ -309,7 +309,7 @@ Additional `_recommended`-suffixed keys are also counted. Add device-specific ke
 Uses the same key names as `spice_part_library.py` to allow direct consumption by the SPICE model generator without field mapping.
 
 | Key | Type | Unit | Nullable | Description |
-|-----|------|------|----------|-------------|
+| --- | --- | --- | --- | --- |
 | `gbw_hz` | float | Hz | yes | Gain-bandwidth product (opamps) |
 | `slew_vus` | float | V/µs | yes | Slew rate (opamps) |
 | `vos_mv` | float | mV | yes | Input offset voltage (opamps) |
@@ -334,7 +334,7 @@ Populate only the fields relevant to the component category. Null means the valu
 The extractor populates `source_pdf` and `extracted_from_pages`. The cache manager fills the remaining fields automatically.
 
 | Key | Type | Nullable | Description |
-|-----|------|----------|-------------|
+| --- | --- | --- | --- |
 | `source_pdf` | string | yes | Filename of the source PDF (relative to `datasheets/`) |
 | `source_pdf_hash` | string | yes | `"sha256:<hex>"` — set by cache manager |
 | `extracted_from_pages` | array | yes | Page numbers read during extraction |
@@ -382,6 +382,6 @@ Index keys are MPN strings sanitized by `_sanitize_mpn()`: non-alphanumeric char
 ### Version History
 
 | Version | Date | Changes |
-|---------|------|---------|
+| --- | --- | --- |
 | 2 | 2026-04-15 | Added `topology` (top-level), `features` object (has_pg, has_soft_start, iss_time_us), `peripherals.usb` object (speed, native_phy, series_r_required), `pins[].function` (canonical pin category) |
 | 1 | (original) | Base schema with pins, electrical_characteristics, application_circuit, spice_specs, etc. |

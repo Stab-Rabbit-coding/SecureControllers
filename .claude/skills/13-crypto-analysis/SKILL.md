@@ -77,7 +77,7 @@ python scripts/tls_auditor.py --host mail.example.com --port 993 --grade
 **TLS Version Support Ratings:**
 
 | Protocol | Status | Action |
-|----------|--------|--------|
+| ---------- | -------- | -------- |
 | SSLv2 | Critically broken | Block immediately |
 | SSLv3 | Broken (POODLE) | Block immediately |
 | TLS 1.0 | Deprecated (PCI-DSS violation) | Disable — BEAST, POODLE |
@@ -87,7 +87,7 @@ python scripts/tls_auditor.py --host mail.example.com --port 993 --grade
 
 **TLS Vulnerability Checklist:**
 
-```
+```text
 [ ] Heartbleed (CVE-2014-0160): openssl s_client + heartbleed test
 [ ] POODLE: SSLv3 enabled?
 [ ] BEAST: TLS 1.0 + CBC cipher?
@@ -109,7 +109,7 @@ python scripts/tls_auditor.py --host mail.example.com --port 993 --grade
 **TLS 1.3 Cipher Suites (All Secure — Use These):**
 
 | Cipher Suite | Key Exchange | Auth | Encryption | MAC | Rating |
-|-------------|-------------|------|------------|-----|--------|
+| ------------- | ------------- | ------ | ------------ | ----- | -------- |
 | TLS_AES_256_GCM_SHA384 | ECDHE | RSA/ECDSA | AES-256-GCM | SHA-384 | A+ |
 | TLS_CHACHA20_POLY1305_SHA256 | ECDHE | RSA/ECDSA | ChaCha20 | Poly1305 | A+ |
 | TLS_AES_128_GCM_SHA256 | ECDHE | RSA/ECDSA | AES-128-GCM | SHA-256 | A |
@@ -117,7 +117,7 @@ python scripts/tls_auditor.py --host mail.example.com --port 993 --grade
 **TLS 1.2 Cipher Suite Ratings:**
 
 | Cipher Suite | Rating | Notes |
-|-------------|--------|-------|
+| ------------- | -------- | ------- |
 | ECDHE-ECDSA-AES256-GCM-SHA384 | A+ | Perfect — AEAD, PFS |
 | ECDHE-RSA-AES256-GCM-SHA384 | A+ | Perfect — AEAD, PFS |
 | ECDHE-RSA-AES128-GCM-SHA256 | A | Good — AEAD, PFS |
@@ -169,7 +169,7 @@ openssl dhparam -out /etc/nginx/dhparam.pem 4096
 **Hash Identification by Format:**
 
 | Hash Format / Length | Algorithm | Security Status |
-|----------------------|-----------|----------------|
+| ---------------------- | ----------- | ---------------- |
 | 32 hex chars | MD5 | Broken — collision attacks exist |
 | 40 hex chars | SHA-1 | Deprecated — SHAttered collision |
 | 56 hex chars | SHA-224 | Acceptable (limited use) |
@@ -187,7 +187,7 @@ openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
 **Password Hash Security Assessment:**
 
-```
+```text
 bcrypt:
   $2b$10$... → cost factor 10 → ~100ms/hash → ACCEPTABLE
   $2b$12$... → cost factor 12 → ~400ms/hash → GOOD
@@ -282,7 +282,7 @@ ph.verify(hashed, password)  # Verify with timing-safe comparison
 
 **Code Review Checklist:**
 
-```
+```text
 Encryption:
 [ ] No hardcoded keys (check for key = b"...", SECRET_KEY = "...", etc.)
 [ ] No ECB mode (MODE_ECB, "AES/ECB/PKCS5Padding")
@@ -309,7 +309,7 @@ Randomness:
 **Key Length Recommendations (2025):**
 
 | Algorithm | Minimum | Recommended | Notes |
-|-----------|---------|-------------|-------|
+| ----------- | --------- | ------------- | ------- |
 | RSA | 2048-bit | 3072-bit | NIST recommends 3072+ post-2030 |
 | ECC (ECDSA) | P-256 | P-384 | P-256 OK through 2030 |
 | AES | 128-bit | 256-bit | 128-bit adequate; use 256 for high-value |
@@ -330,7 +330,7 @@ For systems expected to protect data beyond 2030, begin PQC migration planning.
 **Key Rotation Schedule:**
 
 | Key Type | Recommended Rotation |
-|----------|---------------------|
+| ---------- | --------------------- |
 | TLS certificates | Annual (or use 90-day Let's Encrypt) |
 | Signing keys (JWT/API) | 90 days |
 | Encryption keys (data at rest) | Annual |
@@ -354,7 +354,7 @@ python scripts/tls_auditor.py --host mail.example.com --port 993 --grade
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | TLS audit for web application | ← Skill 09 (Web Security) |
 | Cloud service encryption assessment | ← Skill 10 (Cloud Security) |
 | Weak crypto findings → hardening recommendations | → Skill 15 (Blue Team Defense) |

@@ -115,7 +115,7 @@ paraFoam
 
 Every OpenFOAM case follows a standardized directory structure:
 
-```
+```text
 caseDirectory/
 ├── 0/                      # Initial and boundary conditions
 │   ├── U                   # Velocity field
@@ -465,7 +465,7 @@ LES
 
 #### Velocity (U)
 
-**Fixed Value (Inlet)**
+##### Fixed Value (Inlet)
 
 ```cpp
 inlet
@@ -475,7 +475,7 @@ inlet
 }
 ```
 
-**Zero Gradient (Outlet)**
+##### Zero Gradient (Outlet)
 
 ```cpp
 outlet
@@ -484,7 +484,7 @@ outlet
 }
 ```
 
-**No Slip Wall**
+##### No Slip Wall
 
 ```cpp
 wall
@@ -493,7 +493,7 @@ wall
 }
 ```
 
-**Slip Wall**
+##### Slip Wall
 
 ```cpp
 symmetry
@@ -502,7 +502,7 @@ symmetry
 }
 ```
 
-**Inlet with Profile**
+##### Inlet with Profile
 
 ```cpp
 inlet
@@ -529,7 +529,7 @@ inlet
 
 #### Pressure (p)
 
-**Fixed Value (Outlet)**
+##### Fixed Value (Outlet)
 
 ```cpp
 outlet
@@ -539,7 +539,7 @@ outlet
 }
 ```
 
-**Zero Gradient (Inlet)**
+##### Zero Gradient (Inlet)
 
 ```cpp
 inlet
@@ -548,7 +548,7 @@ inlet
 }
 ```
 
-**Wall**
+##### Wall
 
 ```cpp
 wall
@@ -557,7 +557,7 @@ wall
 }
 ```
 
-**Total Pressure (Inlet)**
+##### Total Pressure (Inlet)
 
 ```cpp
 inlet
@@ -575,7 +575,7 @@ inlet
 
 #### Turbulence (k, epsilon, omega)
 
-**Inlet - Fixed Value**
+##### Inlet - Fixed Value
 
 ```cpp
 // Turbulent kinetic energy
@@ -603,7 +603,7 @@ omega_inlet
 }
 ```
 
-**Wall Functions**
+##### Wall Functions
 
 ```cpp
 // k at wall
@@ -635,7 +635,7 @@ nut_wall
 }
 ```
 
-**Outlet**
+##### Outlet
 
 ```cpp
 k_outlet
@@ -658,7 +658,7 @@ omega_outlet
 
 For inlet conditions:
 
-```
+```text
 Turbulent intensity: I = u'/U = 0.16 * Re^(-1/8)
 Turbulent kinetic energy: k = 3/2 * (U * I)²
 Turbulent dissipation: ε = C_μ^(3/4) * k^(3/2) / L
@@ -1137,7 +1137,7 @@ reconstructPar
 
 ### Common Issues
 
-**Mesh Check Fails**
+#### Mesh Check Fails
 
 ```bash
 checkMesh
@@ -1145,20 +1145,20 @@ checkMesh
 # Increase nNonOrthogonalCorrectors in fvSolution
 ```
 
-**Divergence**
+#### Divergence
 
 - Reduce relaxation factors
 - Improve initial conditions
 - Refine mesh
 - Reduce time step (transient)
 
-**Slow Convergence**
+#### Slow Convergence
 
 - Check boundary conditions
 - Adjust solver tolerances
 - Use better preconditioners (GAMG for pressure)
 
-**Parallel Issues**
+#### Parallel Issues
 
 ```bash
 # Check decomposition

@@ -75,7 +75,7 @@ If a finding was reviewed and judged benign, keep it in a "False Positives / Rev
 ## Contents
 
 | Section | Line | Purpose |
-|---------|------|---------|
+| --------- | ------ | --------- |
 | Report Structure | ~18 | Full report template (copy and fill in) |
 | Analyzer Output Field Reference | ~364 | Maps every JSON output field to its report section — use as checklist |
 | Severity Definitions | ~468 | CRITICAL / WARNING / SUGGESTION criteria |
@@ -459,7 +459,7 @@ Quick reference for what each analyzer produces, to ensure no analysis dimension
 ### Schematic Analyzer (`analyze_schematic.py`)
 
 | Output Section | Report Section | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | `statistics` | Component Summary | component_types, power_rails, missing_mpn |
 | `bom` | Component Summary, BOM Optimization | deduplicated parts with quantities |
 | `components` | IC Spot-Check, throughout | full component details with pin_uuids, parsed_value |
@@ -534,7 +534,7 @@ Quick reference for what each analyzer produces, to ensure no analysis dimension
 ### PCB Analyzer (`analyze_pcb.py`)
 
 | Output Section | Report Section | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | `statistics` | Board Overview | copper_layers_used (tracks+vias+zones), layer names, SMD/THT counts |
 | `layers` | Board Overview | full layer stack |
 | `setup` | Board Overview | thickness, mask clearance |
@@ -566,7 +566,7 @@ Quick reference for what each analyzer produces, to ensure no analysis dimension
 ### Gerber Analyzer (`analyze_gerbers.py`)
 
 | Output Section | Report Section | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | `statistics` | Gerber Analysis | file counts, total holes/flashes/draws |
 | `completeness` | Layer Completeness | found/missing layers, source |
 | `alignment` | Alignment Verification | aligned status, layer extents |
@@ -692,7 +692,7 @@ This section bridges the design review into the ordering workflow — the `jlcpc
 Typical report lengths by design complexity:
 
 | Design | Components | Typical Report |
-|--------|-----------|---------------|
+| -------- | ----------- | --------------- |
 | Simple (IoT, single sheet) | 30-100 | 150-250 lines |
 | Medium (motor control, few sheets) | 100-300 | 200-350 lines |
 | Complex (DAQ, RF, many sheets) | 300-700 | 300-450 lines |

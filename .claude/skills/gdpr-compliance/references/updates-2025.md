@@ -224,7 +224,7 @@ After eight years, the Commission withdrew the ePrivacy Regulation proposal. Coo
 ## 7. Major Enforcement Decisions — Key Precedents
 
 | Decision | DPA | Fine | Key Precedent |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | LinkedIn (October 2024) | Irish DPC | €310M | All three lawful bases (consent, contract, LI) simultaneously invalid for advertising and analytics targeting |
 | Uber (August 2024) | Dutch AP | €290M | SCCs required for transfers to non-EEA entities even when the importer is also subject to GDPR via Art. 3(2) |
 | TikTok (May 2025) | Irish DPC | €530M | China data transfers without adequate safeguards; Art. 13 transparency failures; discovered undisclosed China server storage |
@@ -243,7 +243,7 @@ After eight years, the Commission withdrew the ePrivacy Regulation proposal. Coo
 The European Commission's Digital Omnibus (published 19 November 2025) proposes the most significant set of GDPR amendments since the regulation entered into force. Key proposals:
 
 | Proposal | Current GDPR | Proposed |
-|---|---|---|
+| --- | --- | --- |
 | **RoPA threshold** | Organisations < 250 employees exempt | Raised to < 750 employees (with high-risk carve-out) |
 | **AI as legitimate interest** | Not explicitly addressed | Processing for AI development/deployment recognised as legitimate interest, subject to necessity and proportionality |
 | **Relative anonymisation** | Not explicitly addressed | Data may be treated as anonymous from the perspective of a specific controller even if a third party could re-identify |

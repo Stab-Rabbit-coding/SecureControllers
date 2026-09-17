@@ -20,7 +20,7 @@ For analyzing external PDF schematics (manufacturer reference designs, eval boar
 The schematic analyzer supports both formats with pin-level analysis:
 
 | Format | Components | Nets | Pin-to-Net | Signal Analysis | Subcircuits |
-|--------|-----------|------|-----------|----------------|-------------|
+| -------- | ----------- | ------ | ----------- | ---------------- | ------------- |
 | Modern `.kicad_sch` (KiCad 6+) | Full | Full | Full | Full | Full |
 | Legacy `.sch` (KiCad 4/5) | Full | Full | Near-full* | Near-full* | Near-full* |
 
@@ -44,7 +44,7 @@ Look for a `.net` file in the project directory, named after the project (e.g., 
 
 ### Netlist Structure
 
-```
+```text
 (export (version D)
   (components
     (comp (ref U1)
@@ -75,7 +75,7 @@ Look for a `.net` file in the project directory, named after the project (e.g., 
 ### What the Netlist Provides
 
 | Data | How to Extract | Analysis Use |
-|------|---------------|-------------|
+| ------ | --------------- | ------------- |
 | Pin-to-net mapping | `(node (ref U1) (pin 12))` in each `(net ...)` | Which pin of which component connects to which net |
 | Complete net list | All `(net (code N) (name "..."))` entries | Every named and unnamed net in the design |
 | Pin-level connectivity | All `(node ...)` entries per net | Full connectivity graph for subcircuit detection |
@@ -129,7 +129,7 @@ Look for `<project-name>-cache.lib` in the project directory. It's auto-generate
 
 ### Cache Library Structure
 
-```
+```text
 EESchema-LIBRARY Version 2.4
 #
 # STM32F407ZGTx
@@ -151,12 +151,12 @@ ENDDEF
 
 The `X` lines define each pin:
 
-```
+```text
 X <name> <number> <x> <y> <length> <orientation> <sizeN> <sizeP> <unit> <convert> <type>
 ```
 
 | Field | Example | Meaning |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | name | `PA0`, `VDD`, `BOOT0` | Pin function name |
 | number | `34`, `100` | Physical pin number (should match footprint pad) |
 | unit | `1`-`N` | Which unit of a multi-unit symbol |
@@ -165,7 +165,7 @@ X <name> <number> <x> <y> <length> <orientation> <sizeN> <sizeP> <unit> <convert
 **Pin electrical types:**
 
 | Code | Type | Description |
-|------|------|-------------|
+| ------ | ------ | ------------- |
 | `I` | Input | Logic input |
 | `O` | Output | Logic output |
 | `B` | Bidirectional | I/O, GPIO |
@@ -205,7 +205,7 @@ When schematic analysis is incomplete, the PCB file provides an independent sour
 ### What Mismatches Reveal
 
 | PCB Data | Schematic Data | Problem |
-|----------|---------------|---------|
+| ---------- | --------------- | --------- |
 | Pad 3 = `+3V3` | Pin 3 = `GND` | **Library pin mapping error** — symbol pin numbers don't match footprint pads |
 | Pad exists, net assigned | Component missing from schematic | Schematic out of sync with PCB |
 | Component on PCB | Component has `(dnp yes)` in schematic | DNP not cleaned up, or intentional |
@@ -286,7 +286,7 @@ If a PDF export exists, use it to spot-check critical connections and verify you
 ### Data Recovery Matrix
 
 | Supplementary Source | What It Recovers | Priority |
-|---------------------|-----------------|----------|
+| --------------------- | ----------------- | ---------- |
 | Netlist (`.net`) | Pin-to-net mapping for components missing `.lib` data | **Highest** — fills remaining gaps |
 | PCB (`.kicad_pcb`) | Pad-to-net verification, library error detection | Medium — cross-check, not primary source |
 | PDF export | Visual circuit topology verification | Low — supplement, not data source |

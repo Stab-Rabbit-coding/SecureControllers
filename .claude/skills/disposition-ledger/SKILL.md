@@ -37,7 +37,7 @@ Minor/low/nit findings should also get a disposition where practical, but the ga
 Markdown table in a tracked file (e.g. `docs/disposition-ledger.md` or a per-branch `REVIEW.md`), one row per finding:
 
 | ID | Source | Severity | Finding | Disposition | Evidence / Link | Approved by |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | `pr-reviewer-1` | pr-reviewer | Blocker | ... | accepted | commit `a1b2c3d` | - |
 
 Markdown, not JSON: it's greppable and diffable in the same PR the findings concern, needs no parser, and sits next to the plan or branch it tracks - a schema would need tooling this fleet doesn't have for a net loss in reviewability.
@@ -68,13 +68,13 @@ Write the row the moment a finding is dispositioned, not in a batch at the end. 
 
 ## Worked example
 
-```
-| ID              | Source        | Severity | Finding                                  | Disposition | Evidence / Link                                                        | Approved by |
-|-----------------|---------------|----------|-------------------------------------------|--------------|-------------------------------------------------------------------------|-------------|
-| code-auditor-1  | code-auditor  | Critical | Unparameterised query in `order.rs:88`   | accepted     | fixed in commit `9f3ab21`                                                | -           |
-| plan-auditor-2  | plan-auditor  | High     | No rollback point for migration step 3    | rejected     | step 3 is `ALTER TABLE ... ADD COLUMN` with a default; re-running it is idempotent, see `migrations/0042.sql:1-6` - nothing to roll back | -           |
-| pr-reviewer-3   | pr-reviewer   | Blocker  | New `/export` endpoint has no rate limit  | deferred     | endpoint is behind the internal VPN only for this release; reopen when it's exposed externally | J. Alvarez, 2026-07-09 |
-| code-auditor-4  | code-auditor  | Medium   | `unwrap()` on user-supplied path in CLI arg | accepted   | fixed in commit `9f3ab21`                                                | -           |
+```text
+| ID | Source | Severity | Finding | Disposition | Evidence / Link | Approved by |
+| --- | --- | --- | --- | --- | --- | --- |
+| code-auditor-1 | code-auditor | Critical | Unparameterised query in `order.rs:88` | accepted | fixed in commit `9f3ab21` | - |
+| plan-auditor-2 | plan-auditor | High | No rollback point for migration step 3 | rejected | step 3 is `ALTER TABLE ... ADD COLUMN` with a default; re-running it is idempotent, see `migrations/0042.sql:1-6` - nothing to roll back | - |
+| pr-reviewer-3 | pr-reviewer | Blocker | New `/export` endpoint has no rate limit | deferred | endpoint is behind the internal VPN only for this release; reopen when it's exposed externally | J. Alvarez, 2026-07-09 |
+| code-auditor-4 | code-auditor | Medium | `unwrap()` on user-supplied path in CLI arg | accepted | fixed in commit `9f3ab21` | - |
 ```
 
 Contrast row 2 with a bad rejection: "not a real issue, skip it" cites nothing and would not satisfy the gate - it's a bare assertion wearing a disposition's clothes. Row 2's actual entry names the file, the line range, and the specific property (idempotency) that makes the finding false.
@@ -86,7 +86,7 @@ Contrast row 2 with a bad rejection: "not a real issue, skip it" cites nothing a
 ## Red Flags - STOP
 
 | Excuse | Reality |
-|--------|---------|
+| --- | --- |
 | "I'll write the ledger once the whole review is triaged" | Batching write access is why interrupted reviews lose findings. Append per-row. |
 | "It's obviously not a real issue, no need to spell it out" | Obvious-to-you is not evidence on the row. Cite the fact or code that makes it wrong. |
 | "There's middleware that probably covers it" / "the tests are green, so it's handled" | A recollection is not evidence and a passing suite is not proof the specific finding is fixed - the green suite may have no test for it at all. Re-check the exact file/line, or the row stays open. This is the most common way a blocker gets silently marked accepted. |

@@ -52,34 +52,34 @@ listName
 
 ### Data Types
 
-**Scalars**
+#### Scalars
 
 ```cpp
 scalar1     1.5;
 scalar2     1.5e-3;
 ```
 
-**Vectors**
+#### Vectors
 
 ```cpp
 vector1     (1 0 0);
 vector2     (1.5 -2.3 0.0);
 ```
 
-**Tensors**
+#### Tensors
 
 ```cpp
 tensor1     (1 0 0 0 1 0 0 0 1);  // Identity tensor
 ```
 
-**Lists**
+#### Lists
 
 ```cpp
 scalarList  (1.0 2.0 3.0 4.0);
 vectorList  ((1 0 0) (0 1 0) (0 0 1));
 ```
 
-**Dimensioned Types**
+#### Dimensioned Types
 
 ```cpp
 dimensions  [0 1 -1 0 0 0 0];  // Velocity: m/s
@@ -346,7 +346,7 @@ p
 
 #### k-epsilon Models
 
-**Standard k-epsilon**
+##### Standard k-epsilon
 
 ```cpp
 RASModel        kEpsilon;
@@ -357,7 +357,7 @@ RASModel        kEpsilon;
 - **Limitations**: Poor for swirl, separation, adverse pressure gradients
 - **Y+ requirement**: 30-300 (wall functions)
 
-**Realizable k-epsilon**
+##### Realizable k-epsilon
 
 ```cpp
 RASModel        realizableKE;
@@ -367,7 +367,7 @@ RASModel        realizableKE;
 - **Advantages**: More accurate than standard k-ε
 - **Applications**: Complex flows with strong streamline curvature
 
-**RNG k-epsilon**
+##### RNG k-epsilon
 
 ```cpp
 RASModel        RNGkEpsilon;
@@ -379,7 +379,7 @@ RASModel        RNGkEpsilon;
 
 #### k-omega Models
 
-**Standard k-omega**
+##### Standard k-omega
 
 ```cpp
 RASModel        kOmega;
@@ -389,7 +389,7 @@ RASModel        kOmega;
 - **Advantages**: Good near-wall behavior
 - **Limitations**: Sensitive to freestream values
 
-**k-omega SST (Shear Stress Transport)**
+##### k-omega SST (Shear Stress Transport)
 
 ```cpp
 RASModel        kOmegaSST;
@@ -402,7 +402,7 @@ RASModel        kOmegaSST;
 
 #### Reynolds Stress Models
 
-**Launder-Reece-Rodi (LRR)**
+##### Launder-Reece-Rodi (LRR)
 
 ```cpp
 RASModel        LRR;
@@ -415,7 +415,7 @@ RASModel        LRR;
 
 #### Spalart-Allmaras
 
-**Spalart-Allmaras**
+##### Spalart-Allmaras (Spalart-Allmaras)
 
 ```cpp
 RASModel        SpalartAllmaras;
@@ -472,14 +472,14 @@ LESModel        dynamicKEqn;
 
 ### Wall Treatment
 
-**High Reynolds Number (Wall Functions)**
+#### High Reynolds Number (Wall Functions)
 
 - Y+ range: 30-300
 - Models: Standard, non-equilibrium, low-Re corrections
 - Advantages: Coarse mesh near walls, computationally efficient
 - Use with: k-ε, k-ω SST (wall function mode)
 
-**Low Reynolds Number (Resolved)**
+#### Low Reynolds Number (Resolved)
 
 - Y+ range: < 1 (ideally < 0.5)
 - Models: Low-Re k-ε, k-ω SST
@@ -489,7 +489,7 @@ LESModel        dynamicKEqn;
 ### Turbulence Model Selection Guide
 
 | Application | Recommended Model | Alternative |
-|-------------|------------------|-------------|
+| ------------- | ------------------ | ------------- |
 | External aerodynamics | k-ω SST | Spalart-Allmaras |
 | Internal flows | k-ε, k-ω SST | Realizable k-ε |
 | Separation | k-ω SST | RSM |
@@ -505,13 +505,13 @@ LESModel        dynamicKEqn;
 
 ### Time Derivatives (ddtSchemes)
 
-**Steady State**
+#### Steady State
 
 ```cpp
 default         steadyState;
 ```
 
-**First Order Implicit (Euler)**
+#### First Order Implicit (Euler)
 
 ```cpp
 default         Euler;
@@ -521,7 +521,7 @@ default         Euler;
 - Stability: Unconditionally stable
 - Time step: Moderate
 
-**Second Order Implicit (Backward)**
+#### Second Order Implicit (Backward)
 
 ```cpp
 default         backward;
@@ -531,7 +531,7 @@ default         backward;
 - Stability: Stable
 - Time step: Moderate to large
 
-**Crank-Nicolson**
+#### Crank-Nicolson
 
 ```cpp
 default         CrankNicolson 0.5;  // 0.5 = pure CN, 1.0 = pure Euler
@@ -543,7 +543,7 @@ default         CrankNicolson 0.5;  // 0.5 = pure CN, 1.0 = pure Euler
 
 ### Gradient Schemes (gradSchemes)
 
-**Gauss Linear (Second Order)**
+#### Gauss Linear (Second Order)
 
 ```cpp
 default         Gauss linear;
@@ -552,7 +552,7 @@ default         Gauss linear;
 - Accuracy: Second order
 - Best for: General purpose
 
-**Cell Limited Gauss Linear**
+#### Cell Limited Gauss Linear
 
 ```cpp
 grad(U)         cellLimited Gauss linear 1;
@@ -561,7 +561,7 @@ grad(U)         cellLimited Gauss linear 1;
 - Limiting coefficient: 0-2 (1 = moderate limiting)
 - Use for: Velocity gradients, stability
 
-**Least Squares**
+#### Least Squares
 
 ```cpp
 default         leastSquares;
@@ -572,7 +572,7 @@ default         leastSquares;
 
 ### Divergence Schemes (divSchemes)
 
-**Linear Upwind (Second Order)**
+#### Linear Upwind (Second Order)
 
 ```cpp
 div(phi,U)      Gauss linearUpwind grad(U);
@@ -582,7 +582,7 @@ div(phi,U)      Gauss linearUpwind grad(U);
 - Stability: Good
 - Use for: Velocity
 
-**Bounded Linear Upwind**
+#### Bounded Linear Upwind
 
 ```cpp
 div(phi,U)      bounded Gauss linearUpwind grad(U);
@@ -591,7 +591,7 @@ div(phi,U)      bounded Gauss linearUpwind grad(U);
 - Bounded: Yes (prevents overshoots)
 - Use for: All convection terms
 
-**Upwind (First Order)**
+#### Upwind (First Order)
 
 ```cpp
 div(phi,k)      Gauss upwind;
@@ -601,7 +601,7 @@ div(phi,k)      Gauss upwind;
 - Stability: Very stable
 - Use for: Initial convergence, turbulence
 
-**Linear (Central Differencing)**
+#### Linear (Central Differencing)
 
 ```cpp
 div(phi,U)      Gauss linear;
@@ -611,7 +611,7 @@ div(phi,U)      Gauss linear;
 - Stability: Can be unstable
 - Use for: Low Peclet number, LES
 
-**LUST (LES)**
+#### LUST (LES)
 
 ```cpp
 div(phi,U)      Gauss LUST grad(U);
@@ -620,7 +620,7 @@ div(phi,U)      Gauss LUST grad(U);
 - Accuracy: High order
 - Use for: LES, DNS
 
-**Schemes for Turbulence**
+#### Schemes for Turbulence
 
 ```cpp
 div(phi,k)              bounded Gauss upwind;
@@ -630,7 +630,7 @@ div(phi,omega)          bounded Gauss upwind;
 
 ### Laplacian Schemes (laplacianSchemes)
 
-**Linear Corrected (Second Order)**
+#### Linear Corrected (Second Order)
 
 ```cpp
 default         Gauss linear corrected;
@@ -640,7 +640,7 @@ default         Gauss linear corrected;
 - Non-orthogonal correction: Yes
 - Use for: Diffusion terms
 
-**Limited (Bounded)**
+#### Limited (Bounded)
 
 ```cpp
 default         Gauss linear limited 0.5;
@@ -649,7 +649,7 @@ default         Gauss linear limited 0.5;
 - Limiting: 0-1 (0.5 = moderate)
 - Use for: Poor quality meshes
 
-**Uncorrected (First Order)**
+#### Uncorrected (First Order)
 
 ```cpp
 default         Gauss linear uncorrected;
@@ -660,7 +660,7 @@ default         Gauss linear uncorrected;
 
 ### Interpolation Schemes
 
-**Linear (Second Order)**
+#### Linear (Second Order)
 
 ```cpp
 default         linear;
@@ -668,7 +668,7 @@ default         linear;
 
 - Standard choice
 
-**Upwind (First Order)**
+#### Upwind (First Order) (Interpolation Schemes)
 
 ```cpp
 interpolate(U)  upwind phi;
@@ -678,7 +678,7 @@ interpolate(U)  upwind phi;
 
 ### Surface Normal Gradient (snGradSchemes)
 
-**Corrected (Second Order)**
+#### Corrected (Second Order)
 
 ```cpp
 default         corrected;
@@ -686,7 +686,7 @@ default         corrected;
 
 - Non-orthogonal correction: Yes
 
-**Limited**
+#### Limited
 
 ```cpp
 default         limited 0.5;
@@ -700,7 +700,7 @@ default         limited 0.5;
 
 ### Pressure Solvers
 
-**GAMG (Geometric-Algebraic Multi-Grid)**
+#### GAMG (Geometric-Algebraic Multi-Grid)
 
 ```cpp
 p
@@ -722,7 +722,7 @@ p
 - **Performance**: Very fast for large meshes
 - **Scalability**: Excellent parallel scaling
 
-**PCG (Preconditioned Conjugate Gradient)**
+#### PCG (Preconditioned Conjugate Gradient)
 
 ```cpp
 p
@@ -739,7 +739,7 @@ p
 
 ### Velocity and Scalar Solvers
 
-**smoothSolver**
+#### smoothSolver
 
 ```cpp
 U
@@ -755,7 +755,7 @@ U
 - **Best for**: Velocity, turbulence, scalars
 - **Smoothers**: GaussSeidel, symGaussSeidel, DIC, DILU
 
-**PBiCGStab (Preconditioned Bi-Conjugate Gradient Stabilized)**
+#### PBiCGStab (Preconditioned Bi-Conjugate Gradient Stabilized)
 
 ```cpp
 U
@@ -773,7 +773,7 @@ U
 ### Preconditioners
 
 | Preconditioner | Description | Use Case |
-|----------------|-------------|----------|
+| ---------------- | ------------- | ---------- |
 | **DIC** | Diagonal Incomplete Cholesky | Symmetric, pressure |
 | **DILU** | Diagonal Incomplete LU | Asymmetric, velocity |
 | **FDIC** | Faster DIC | Symmetric, faster |
@@ -783,7 +783,7 @@ U
 
 ### Solver Tolerances
 
-**Absolute Tolerance**
+#### Absolute Tolerance
 
 ```cpp
 tolerance       1e-6;
@@ -791,7 +791,7 @@ tolerance       1e-6;
 
 - Residual must drop below this value
 
-**Relative Tolerance**
+#### Relative Tolerance
 
 ```cpp
 relTol          0.01;
@@ -799,7 +799,7 @@ relTol          0.01;
 
 - Residual must drop by this factor (1% = 0.01)
 
-**Typical Values**
+#### Typical Values
 
 - Pressure: tolerance 1e-6, relTol 0.01
 - Velocity: tolerance 1e-7, relTol 0.1
@@ -814,7 +814,7 @@ relTol          0.01;
 Format: `[mass length time temperature quantity current luminosity]`
 
 | Physical Quantity | Dimensions | Example Value |
-|-------------------|------------|---------------|
+| ------------------- | ------------ | --------------- |
 | **Length** | [0 1 0 0 0 0 0] | meter |
 | **Time** | [0 0 1 0 0 0 0] | second |
 | **Mass** | [1 0 0 0 0 0 0] | kilogram |
@@ -839,7 +839,7 @@ Format: `[mass length time temperature quantity current luminosity]`
 
 ### Common Fluid Properties
 
-**Air (20°C, 1 atm)**
+#### Air (20°C, 1 atm)
 
 ```cpp
 nu      [0 2 -1 0 0 0 0] 1.5e-05;    // m²/s
@@ -850,7 +850,7 @@ k       [1 1 -3 -1 0 0 0] 0.0257;    // W/(m·K)
 Pr      [0 0 0 0 0 0 0] 0.7;         // Prandtl number
 ```
 
-**Water (20°C)**
+#### Water (20°C)
 
 ```cpp
 nu      [0 2 -1 0 0 0 0] 1.0e-06;    // m²/s
@@ -869,7 +869,7 @@ Function objects enable in-situ data processing during simulation runtime.
 
 ### Forces and Coefficients
 
-**forces**
+#### forces
 
 ```cpp
 forces
@@ -886,7 +886,7 @@ forces
 }
 ```
 
-**forceCoeffs**
+#### forceCoeffs
 
 ```cpp
 forceCoeffs
@@ -911,7 +911,7 @@ forceCoeffs
 
 ### Sampling
 
-**probes**
+#### probes
 
 ```cpp
 probes
@@ -933,7 +933,7 @@ probes
 
 ### Field Averaging
 
-**fieldAverage**
+#### fieldAverage
 
 ```cpp
 fieldAverage
@@ -962,7 +962,7 @@ fieldAverage
 
 ### Residuals
 
-**residuals**
+#### residuals (Residuals)
 
 ```cpp
 residuals
@@ -982,7 +982,7 @@ residuals
 ### Pre-Processing
 
 | Utility | Description |
-|---------|-------------|
+| --------- | ------------- |
 | **blockMesh** | Generate structured hex meshes |
 | **snappyHexMesh** | Generate unstructured hex-dominant meshes from STL |
 | **extrudeMesh** | Extrude 2D to 3D |
@@ -997,7 +997,7 @@ residuals
 ### Post-Processing
 
 | Utility | Description |
-|---------|-------------|
+| --------- | ------------- |
 | **paraFoam** | Launch ParaView |
 | **foamToVTK** | Convert to VTK format |
 | **sample** | Extract data along lines/planes |
@@ -1010,7 +1010,7 @@ residuals
 ### Manipulation
 
 | Utility | Description |
-|---------|-------------|
+| --------- | ------------- |
 | **mapFields** | Map results between meshes |
 | **moveDynamicMesh** | Move mesh according to dictionary |
 | **renumberMesh** | Optimize mesh numbering |

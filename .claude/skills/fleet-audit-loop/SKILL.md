@@ -99,7 +99,7 @@ not had to be recovered by re-prompting.
 The round counter selects a dimension, not a repetition.
 
 | Round | Dimension | Agent |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Structural conformance to the checklist | `agent-auditor` (agents) / `skill-auditor` (skills) |
 | 2 | Domain coverage gaps | `blind-spot-auditor` |
 | 3 | Context and token waste | `token-usage-auditor` |

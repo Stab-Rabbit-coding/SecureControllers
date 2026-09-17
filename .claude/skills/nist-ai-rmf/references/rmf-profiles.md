@@ -14,7 +14,7 @@ An **AI Risk Profile** is an organization's customization of the AI RMF to refle
 The AI RMF defines two profile types:
 
 | Profile Type | Description | Use |
-|-------------|-------------|-----|
+| ------------- | ------------- | ----- |
 | **Current Profile** | Where the organization is today — which categories are implemented and to what degree | Baseline assessment |
 | **Target Profile** | Where the organization wants to be — desired state for each category | Gap analysis and roadmap |
 
@@ -36,7 +36,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 1. Accuracy and Validity
 
 | Metric | Description |
-|--------|-------------|
+| -------- | ------------- |
 | Precision / Recall / F1 | Classification accuracy metrics |
 | AUC-ROC | Discriminative performance |
 | Mean Absolute Error (MAE) | Regression performance |
@@ -46,7 +46,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 2. Fairness and Bias Management
 
 | Metric | Description |
-|--------|-------------|
+| -------- | ------------- |
 | Demographic Parity | Equal positive prediction rates across groups |
 | Equalized Odds | Equal true positive and false positive rates across groups |
 | Counterfactual Fairness | Would outcome change if sensitive attribute changed? |
@@ -56,7 +56,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 3. Explainability and Interpretability
 
 | Method | Description |
-|--------|-------------|
+| -------- | ------------- |
 | SHAP (SHapley Additive exPlanations) | Global and local feature attribution |
 | LIME (Local Interpretable Model-agnostic Explanations) | Local approximation of complex models |
 | Counterfactual explanations | "What would need to change for a different outcome?" |
@@ -66,7 +66,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 4. Robustness and Reliability
 
 | Metric | Description |
-|--------|-------------|
+| -------- | ------------- |
 | Adversarial accuracy | Performance under evasion attacks (FGSM, PGD) |
 | Poisoning resilience | Resistance to training data manipulation |
 | Input perturbation sensitivity | Performance stability under small input variations |
@@ -76,7 +76,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 5. Privacy
 
 | Approach | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | Differential Privacy (ε) | Mathematical privacy guarantee; lower ε = stronger privacy |
 | k-Anonymity | Minimum group size in training data to prevent re-identification |
 | Federated learning | Training on decentralized data without centralizing raw data |
@@ -85,7 +85,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### 6. Security
 
 | Threat | Description |
-|--------|-------------|
+| -------- | ------------- |
 | Evasion attacks | Adversarial inputs crafted to fool the deployed model |
 | Poisoning attacks | Malicious training data injected to corrupt model behaviour |
 | Model extraction / inversion | Reverse-engineering the model or reconstructing training data from outputs |
@@ -96,7 +96,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ## Sector-Specific AI Risk Considerations
 
 | Sector | Key AI Risk Priorities | Relevant Regulations |
-|--------|----------------------|---------------------|
+| -------- | ---------------------- | --------------------- |
 | **Healthcare** | Safety (diagnosis errors), bias across patient populations, explainability for clinical decisions | HIPAA, FDA AI/ML-based SaMD guidance, EU AI Act (high-risk: medical devices) |
 | **Financial Services** | Credit decision fairness, model explainability (adverse action notices), fraud detection accuracy | ECOA, Fair Housing Act, CFPB guidance, EU AI Act (high-risk: credit scoring) |
 | **HR / Recruitment** | Hiring bias, EEOC disparate impact, explainability of screening decisions | EEOC, NYCA Local Law 144, EU AI Act (high-risk: employment) |
@@ -112,7 +112,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### NIST AI RMF ↔ ISO/IEC 42001:2023
 
 | AI RMF Function/Category | ISO 42001 Equivalent |
-|--------------------------|---------------------|
+| -------------------------- | --------------------- |
 | GOVERN 1 (Policies in place) | Clause 5 (Leadership), Clause 6 (Planning), A.2 (AI policy) |
 | GOVERN 2 (Accountability) | Clause 5.3 (Roles and responsibilities), A.2.3 |
 | GOVERN 3 (Roles) | Clause 5.3, A.2.5 (Responsibilities for AI system impact) |
@@ -133,7 +133,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### NIST AI RMF ↔ EU AI Act (Regulation (EU) 2024/1689)
 
 | AI RMF Function | EU AI Act Requirement |
-|----------------|----------------------|
+| ---------------- | ---------------------- |
 | GOVERN 1 (AI risk policies) | Art. 9 (Risk management system) for high-risk AI |
 | GOVERN 2/3 (Accountability) | Art. 16 (Obligations of high-risk AI providers), Art. 26 (Deployer obligations) |
 | MAP 1 (Intended use) | Art. 9(2) — risk management must cover intended and reasonably foreseeable misuse |
@@ -150,7 +150,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### NIST AI RMF ↔ NIST CSF 2.0
 
 | AI RMF Function | NIST CSF 2.0 Function |
-|----------------|----------------------|
+| ---------------- | ---------------------- |
 | GOVERN | GV (Govern) — directly analogous |
 | MAP | ID (Identify) — risk identification |
 | MEASURE | DE (Detect) + ID (Identify) |
@@ -163,7 +163,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 ### NIST AI RMF ↔ NIST Privacy Framework
 
 | AI RMF Category | Privacy Framework Core |
-|----------------|----------------------|
+| ---------------- | ---------------------- |
 | GV-6 (Regulatory alignment) | GV.PO-P (Privacy policies) |
 | MAP 1 (Context) | CT.DM-P (Data model context) |
 | MAP 3 (Affected individuals) | CT.DP-P (Disassociated processing) |
@@ -177,7 +177,7 @@ The gap between Current and Target Profile drives the risk management roadmap.
 Similar to NIST CSF Implementation Tiers, the AI RMF describes four organizational maturity levels:
 
 | Tier | Name | Description |
-|------|------|-------------|
+| ------ | ------ | ------------- |
 | 1 | **Partial** | Ad hoc AI risk practices; limited awareness; reactive to AI incidents |
 | 2 | **Risk Informed** | Approved AI risk policies exist; practices not fully organization-wide; awareness at management level |
 | 3 | **Repeatable** | AI risk management formally documented, consistently applied, regularly reviewed |
@@ -190,7 +190,7 @@ Most organizations begin at Tier 1–2. Target Tier 3 for regulated contexts; Ti
 ## Common Gap Patterns and Remediation Priorities
 
 | Gap Pattern | Likely Cause | Recommended Action |
-|-------------|-------------|-------------------|
+| ------------- | ------------- | ------------------- |
 | GOVERN complete but MAP/MEASURE weak | Policies written but not operationalized | Run system-level AI risk assessments using MAP for each deployed AI system |
 | MAP done but MEASURE absent | Risk identified but not measured | Instrument deployed models with monitoring; define metrics for each identified risk |
 | MEASURE present but no MANAGE actions | Measurements not connected to treatment | Establish measurement-to-action protocols; assign risk owners to register entries |

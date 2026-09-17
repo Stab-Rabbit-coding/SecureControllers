@@ -23,7 +23,7 @@ will never contain unknown `?` symbols.
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Analyze and review the generated design |
 | `emc` | EMC pre-compliance check after generation |
 | `spice` | Simulate subcircuits in the generated schematic |

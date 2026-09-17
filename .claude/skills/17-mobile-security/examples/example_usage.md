@@ -56,7 +56,7 @@ strings ipa_out/Payload/*.app/<binary> | grep -E "https?://|AKIA|api_key"
 
 ## Conversational Examples (skill activates automatically)
 
-```
+```text
 > Analyze this APK and tell me which components are exported without protection
 > Review the app against OWASP MASVS storage and network requirements
 > How do I bypass certificate pinning on this app for testing?

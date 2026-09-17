@@ -37,7 +37,7 @@ Not for: music-theory questions (use `song-craft-reference.md`) or non-song pros
 ## Quick reference
 
 | Want | Do |
-|---|---|
+| --- | --- |
 | Line feels clunky | Cut syllables; read it aloud; land the key word just before a musical gap |
 | Rhyme too sing-song | Swap perfect end-rhyme for slant, internal, or assonance |
 | Section blurs into the next | Change syllable density or energy; give the bridge one job (turn, reveal, or stakes-raise) |

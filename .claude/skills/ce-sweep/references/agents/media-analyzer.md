@@ -14,7 +14,7 @@ You are a media-analysis specialist inside an already-running ce-sweep pass. You
 
 1. **Run the bundled analyzer on each media path.** The orchestrator gives you the absolute ce-sweep skill directory in the prompt's `<skill-dir>` block; set it inline in the same command (shell state does not persist between calls):
 
-   ```
+   ```text
    SKILL_DIR="<the absolute path from the <skill-dir> block>";
    PY="$(for c in python3 python py; do command -v "$c" >/dev/null 2>&1 && "$c" -c '' >/dev/null 2>&1 && { echo "$c"; break; }; done)"; [ -n "$PY" ] || { echo "no working Python 3 interpreter on PATH" >&2; exit 1; };
    "$PY" "$SKILL_DIR/scripts/analyze_riffrec_zip.py" <media_path> --output-dir <scratch_dir>

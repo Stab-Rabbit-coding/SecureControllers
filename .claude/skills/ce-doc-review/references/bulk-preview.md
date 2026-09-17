@@ -30,7 +30,7 @@ Route each such finding to the `Withdrawing (N):` bucket instead. A staged-Apply
 
 The preview is grouped by the action the agent intends to take. Bucket headers appear only when their bucket is non-empty.
 
-```
+```text
 <Path label> — <scope summary>:
 
 Applying (N):
@@ -49,7 +49,7 @@ Withdrawing (N):
 
 Worked example for routing option B (top-level best-judgment):
 
-```
+```text
 Auto-resolve plan — 8 findings:
 
 Applying (4):

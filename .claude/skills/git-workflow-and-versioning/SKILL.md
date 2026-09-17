@@ -19,7 +19,7 @@ Always. Every code change flows through git.
 
 Keep `main` always deployable. Work in short-lived feature branches that merge back within 1-3 days. Long-lived development branches are hidden costs — they diverge, create merge conflicts, and delay integration. DORA research consistently shows trunk-based development correlates with high-performing engineering teams.
 
-```
+```text
 main ──●──●──●──●──●──●──●──●──●──  (always deployable)
         ╲      ╱  ╲    ╱
          ●──●─╱    ●──╱    ← short-lived feature branches (1-3 days)
@@ -35,7 +35,7 @@ This is the recommended default. Teams using gitflow or long-lived branches can 
 
 Each successful increment gets its own commit. Don't accumulate large uncommitted changes.
 
-```
+```text
 Work pattern:
   Implement slice → Test → Verify → Commit → Next slice
 
@@ -49,7 +49,7 @@ Commits are save points. If the next change breaks something, you can revert to 
 
 Each commit does one logical thing:
 
-```
+```bash
 # Good: Each commit is self-contained
 git log --oneline
 a1b2c3d Add task creation endpoint with validation
@@ -66,7 +66,7 @@ x1y2z3a Add task feature, fix sidebar, update deps, refactor utils
 
 Commit messages explain the *why*, not just the *what*:
 
-```
+```sql
 # Good: Explains intent
 feat: add email validation to registration endpoint
 
@@ -80,7 +80,7 @@ update auth.ts
 
 **Format:**
 
-```
+```text
 <type>: <short description>
 
 <optional body explaining why, not what>
@@ -110,7 +110,7 @@ On a neowall fork the `:536` citation was correct. A review agent "corrected" it
 
 Don't combine formatting changes with behavior changes. Don't combine refactors with features. Each type of change should be a separate commit — and ideally a separate PR:
 
-```
+```bash
 # Good: Separate concerns
 git commit -m "refactor: extract validation logic to shared utility"
 git commit -m "feat: add phone number validation to registration"
@@ -125,7 +125,7 @@ git commit -m "refactor validation and add phone number field"
 
 Target ~100 lines per commit/PR. Changes over ~1000 lines should be split into smaller changes.
 
-```
+```text
 ~100 lines  → Easy to review, easy to revert
 ~300 lines  → Acceptable for a single logical change
 ~1000 lines → Split into smaller changes
@@ -135,7 +135,7 @@ Target ~100 lines per commit/PR. Changes over ~1000 lines should be split into s
 
 ### Feature Branches
 
-```
+```text
 main (always deployable)
   │
   ├── feature/task-creation    ← One feature per branch
@@ -150,7 +150,7 @@ main (always deployable)
 
 ### Branch Naming
 
-```
+```text
 feature/<short-description>   → feature/task-creation
 fix/<short-description>       → fix/duplicate-tasks
 chore/<short-description>     → chore/update-deps
@@ -186,7 +186,7 @@ Benefits:
 
 ## The Save Point Pattern
 
-```
+```text
 Agent starts work
     │
     ├── Makes a change
@@ -206,7 +206,7 @@ This pattern means you never lose more than one increment of work. If an agent g
 
 After any modification, provide a structured summary. This makes review easier, documents scope discipline, and surfaces unintended changes:
 
-```
+```text
 CHANGES MADE:
 - src/routes/tasks.ts: Added validation middleware to POST endpoint
 - src/lib/validation.ts: Added TaskCreateSchema using Zod
@@ -289,7 +289,7 @@ Commits are how *you* track change; a **version** is how your *consumers* track 
 
 For anything with consumers, version `MAJOR.MINOR.PATCH` and let the number carry meaning:
 
-```
+```text
   MAJOR  breaking change — consumers must change their code to upgrade
   MINOR  new functionality, backward-compatible — safe to upgrade
   PATCH  bug fix, backward-compatible — safe to upgrade
@@ -327,7 +327,7 @@ Write the entry in the same change that makes the change, while the impact is fr
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'll commit when the feature is done" | One giant commit is impossible to review, debug, or revert. Commit each slice. |
 | "The message doesn't matter" | Messages are documentation. Future you (and future agents) will need to understand what changed and why. |
 | "I'll squash it all later" | Squashing destroys the development narrative. Prefer clean incremental commits from the start. |

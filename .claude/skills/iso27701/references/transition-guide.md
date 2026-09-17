@@ -20,7 +20,7 @@ organizations that may not need or want a full ISMS.
 ## Structural Comparison
 
 | Element | 2019 Edition | 2025 Edition |
-|---------|-------------|-------------|
+| --------- | ------------- | ------------- |
 | Standard type | Extension of ISO 27001:2013 | Standalone PIMS standard |
 | ISO 27001 prerequisite | Mandatory | Optional |
 | HLS framework | Derived from ISO 27001 | Own Clauses 4–10 |
@@ -65,7 +65,7 @@ without an ISMS foundation.
 ### Controller Controls (Annex A → Table A.1)
 
 | 2019 Reference | 2019 Control Name | 2025 Reference |
-|---------------|-------------------|----------------|
+| --------------- | ------------------- | ---------------- |
 | A.7.2.1 | Identify and document purpose | A.1.2.2 |
 | A.7.2.2 | Identify lawful basis | A.1.2.3 |
 | A.7.2.3 | Determine when and how consent is obtained | A.1.2.4 |
@@ -101,7 +101,7 @@ without an ISMS foundation.
 ### Processor Controls (Annex B → Table A.2)
 
 | 2019 Reference | 2019 Control Name | 2025 Reference |
-|---------------|-------------------|----------------|
+| --------------- | ------------------- | ---------------- |
 | B.8.2.1 | Customer agreement | A.2.2.2 |
 | B.8.2.2 | Organization's purposes | A.2.2.3 |
 | B.8.2.3 | Marketing and advertising use | A.2.2.4 |
@@ -140,7 +140,7 @@ Run this gap analysis to identify what needs to change for the 2025 transition:
 ### Phase 1: Clause Structure Gap (Management System)
 
 | Gap Area | 2019 Issue | 2025 Requirement |
-|----------|-----------|-----------------|
+| ---------- | ----------- | ----------------- |
 | Own Clause 4–10 | Borrowed from ISO 27001 | PIMS must have own documented clause evidence |
 | PIMS Scope (4.3) | May have been part of ISMS scope | Standalone PIMS scope document required |
 | Privacy Policy (5.2) | May have been embedded in IS Policy | Dedicated privacy policy recommended |
@@ -211,7 +211,7 @@ Certification bodies will typically require:
 ## Recommended Transition Timeline (for October 2028 Deadline)
 
 | Phase | Target | Actions |
-|-------|--------|---------|
+| ------- | -------- | --------- |
 | Months 1–3 | Gap analysis complete | Run full 2019→2025 gap assessment; produce gap register |
 | Months 3–6 | Documentation updated | Revise scope, policy, risk assessment, SoA |
 | Months 6–12 | New controls implemented | Address A.1.4.6–A.1.4.10, A.2.5.8–A.2.5.9, A.3 controls |

@@ -39,7 +39,7 @@ module rounded_box(w, d, h, r) {
 module box_body() {
     difference() {
         rounded_box(width, depth, height, corner_radius);
-        
+
         // Hollow inside
         translate([wall_thickness, wall_thickness, wall_thickness])
             rounded_box(
@@ -56,17 +56,17 @@ module lid() {
     inner_w = width - 2*wall_thickness - 2*lid_tolerance;
     inner_d = depth - 2*wall_thickness - 2*lid_tolerance;
     lip_height = lid_height * 0.6;
-    
+
     difference() {
         union() {
             // Top cap
             rounded_box(width, depth, wall_thickness, corner_radius);
-            
+
             // Inner lip
             translate([wall_thickness + lid_tolerance, wall_thickness + lid_tolerance, -lip_height + wall_thickness])
                 rounded_box(inner_w, inner_d, lip_height, max(0, corner_radius - wall_thickness));
         }
-        
+
         // Grip indents
         if (add_grip) {
             for (x = [width * 0.3, width * 0.7]) {

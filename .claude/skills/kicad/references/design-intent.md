@@ -111,7 +111,7 @@ Adjust what you emphasize based on `target_market`:
 Adjust finding severity based on `product_class` and `target_market`:
 
 | Finding | prototype/hobby | production/consumer | production/industrial+ |
-|---------|----------------|--------------------|-----------------------|
+| --------- | ---------------- | -------------------- | ----------------------- |
 | Missing MPN | info | medium | high |
 | No test points | info | medium | high |
 | Missing fab notes | info | medium | high |

@@ -29,7 +29,7 @@ Code you can't observe is code you can't operate. Observability is the ability t
 
 Telemetry without a question is noise. Before adding any instrumentation, write down 2–4 questions an on-call engineer will ask about this feature:
 
-```
+```text
 FEATURE: checkout payment retry
 QUESTIONS ON-CALL WILL ASK:
 1. What fraction of payments succeed on first attempt vs after retry?
@@ -43,7 +43,7 @@ If you can't name the questions, you're not ready to instrument — you'll log e
 ### 2. Pick the right signal for each question
 
 | Signal | Answers | Cost profile | Example |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Structured log** | "What happened in this specific case?" | Per-event; grows with traffic | `payment_failed` with provider error code |
 | **Metric** | "How often / how fast, in aggregate?" | Fixed per series; cheap to query | p99 latency of provider calls |
 | **Trace** | "Where did time go across services?" | Per-request; usually sampled | One slow checkout, broken down by hop |
@@ -71,7 +71,7 @@ logger.warn({
 **Log levels — use them consistently:**
 
 | Level | Meaning | On-call action |
-|---|---|---|
+| --- | --- | --- |
 | `error` | Invariant broken; someone may need to act | Investigate |
 | `warn` | Degraded but handled (retry succeeded, fallback used) | Watch for trends |
 | `info` | Significant business event (order placed, job finished) | None |
@@ -110,7 +110,7 @@ const httpDuration = new Histogram({
 
 **Cardinality is the failure mode.** Every unique label combination is a separate time series. Labels must come from small, fixed sets (route template, status class, provider name). Never use user IDs, raw URLs, error messages, or other unbounded values as labels — that belongs in logs and traces.
 
-```
+```text
 OK as label:    route="/api/tasks/:id"   status_class="5xx"   provider="stripe"
 NEVER a label:  user_id, email, request_id, full URL, error message text
 ```
@@ -139,7 +139,7 @@ Add manual spans only around meaningful internal units of work (e.g., `applyDisc
 
 Alert on **symptoms users feel**, not on causes:
 
-```
+```text
 SYMPTOM (page-worthy):           CAUSE (dashboard, not a page):
 error rate > 1% for 5 min        CPU at 85%
 p99 latency > 2s                 one pod restarted
@@ -167,7 +167,7 @@ Instrumentation is code; it can be wrong. Before calling the work done, trigger 
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'll add logging after it works" | "After" becomes "after the first incident", which is the most expensive moment to discover you're blind. Instrument as you build. |
 | "More logs = more observability" | Unstructured noise makes incidents slower, not faster. Three queryable events beat three hundred prose lines. |
 | "console.log is fine for now" | Unstructured output can't be filtered, correlated, or alerted on. The structured logger costs five extra minutes once. |

@@ -129,7 +129,7 @@ This DPA is governed by the laws of [JURISDICTION].
 ## Schedule A — Authorised Sub-processors
 
 | Sub-processor | Location | Processing Activity |
-|--------------|----------|-------------------|
+| --- | --- | --- |
 | [NAME] | [COUNTRY] | [PURPOSE] |
 
 ## Schedule B — Standard Contractual Clauses

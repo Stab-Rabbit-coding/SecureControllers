@@ -25,7 +25,7 @@ An item is subject to the EAR if it is:
 ### Step 2: Apply the Order of Review (§ 732.3)
 
 | Step | Check | If Yes |
-|------|-------|--------|
+| ------ | ------- | -------- |
 | 1 | Is the item on the USML (22 CFR Part 121)? | → ITAR jurisdiction; stop here |
 | 2 | Is it exclusively controlled by another US agency? | → That agency's regulations |
 | 3 | Is it subject to the EAR per § 734.3? | → Continue to CCL lookup |
@@ -80,7 +80,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 0 — Nuclear Materials, Facilities, and Equipment
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 0A001 | Nuclear reactors and specially designed equipment |
 | 0B001 | Nuclear test/measurement equipment |
 | 0C001 | "Natural uranium," "depleted uranium," special nuclear material |
@@ -90,7 +90,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 1 — Chemicals, Microorganisms, and Toxins
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 1C350 | Chemical weapons precursors (Schedule 2 and 3 chemicals) |
 | 1C351 | Human and zoonotic pathogens (Select Agents) |
 | 1C352 | Animal pathogens not in 1C351 |
@@ -100,7 +100,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 3 — Electronics
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 3A001 | Electronic components (advanced semiconductors, MMICs, SAW devices) |
 | 3A090 | Integrated circuits for advanced computing (high-bandwidth memory) |
 | 3B001 | Equipment for manufacturing electronic components (wafer fab) |
@@ -110,7 +110,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 4 — Computers
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 4A003 | Electronic computers and related equipment (performance thresholds) |
 | 4A090 | Computers/electronic assemblies for advanced computing (AI chips) |
 | 4D001 | Software for high-performance computers |
@@ -119,7 +119,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 5 — Telecommunications and Information Security
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 5A002 | Telecommunications systems (secure comms equipment) |
 | 5B002 | Telecom test equipment |
 | 5D002 | Software for telecommunications/encryption |
@@ -130,7 +130,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 7 — Navigation and Avionics
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 7A001 | Accelerometers with specific performance |
 | 7A004 | Star trackers and attitude control equipment |
 | 7A101 | Gyroscopes and accelerometers for missiles |
@@ -139,7 +139,7 @@ If after searching the CCL you cannot find an ECCN that covers the item:
 ### Category 9 — Aerospace and Propulsion
 
 | ECCN | Description |
-|------|-------------|
+| ------ | ------------- |
 | 9A001 | Aerojet engines and components |
 | 9A004 | Space launch vehicles and spacecraft |
 | 9A515 | Spacecraft and related items (satellites) |
@@ -167,7 +167,7 @@ If your ECCN has multiple RFCs (e.g., NS and AT), check **all applicable columns
 ### Country Chart Column Codes
 
 | Column | Meaning |
-|--------|---------|
+| -------- | --------- |
 | NS Column 1 | National security — sensitive items |
 | NS Column 2 | National security — less sensitive items |
 | MT Column 1 | Missile technology |
@@ -214,7 +214,7 @@ The US government mandates exporters apply this order before determining export 
 ### Common EAR/ITAR Boundary Areas
 
 | Item Type | Likely Jurisdiction |
-|-----------|-------------------|
+| ----------- | ------------------- |
 | Consumer electronics, mass-market software | EAR (usually EAR99 or 5D992) |
 | Dual-use encryption (commercial VPN, SSL) | EAR (5D002 or 5D992 ENC) |
 | Military radios, tactical communications | ITAR (Cat. XI) |
@@ -235,7 +235,7 @@ The US government mandates exporters apply this order before determining export 
 ## EAR99 Items That Still Need Licenses — Common Mistakes
 
 | Scenario | Why License Needed |
-|----------|--------------------|
+| ---------- | -------------------- |
 | EAR99 electronics exported to Iran | Part 746 embargo — license required |
 | EAR99 software sold to Entity List party | Entity List requirement — license required |
 | EAR99 pump sold for nuclear programme | WMD end-use control § 744.2 |

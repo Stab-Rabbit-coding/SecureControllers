@@ -77,7 +77,7 @@ python scripts/pcap_analyzer.py --file traffic.pcapng --dns --http --top-talkers
 
 **Traffic Analysis Checklist:**
 
-```
+```text
 [ ] Protocol distribution — any unexpected protocols?
 [ ] Top talkers — unusual source/destination combinations
 [ ] DNS analysis — DGA domains, unusually long queries, high volume
@@ -118,7 +118,7 @@ tshark -r capture.pcap -Y "dns" -T fields -e dns.qry.name | \
 
 **Suricata Rule Syntax Reference:**
 
-```
+```text
 action protocol src_ip src_port -> dst_ip dst_port (options)
 ```
 
@@ -281,7 +281,7 @@ iptables -L | grep "0.0.0.0"  # Any-source rules
 
 **iptables Security Checklist:**
 
-```
+```text
 [ ] Default policy is DROP (not ACCEPT) for all chains
 [ ] INPUT chain: only established/related + specific allowed services
 [ ] OUTPUT chain: restrict to necessary outbound (optional but best practice)
@@ -296,7 +296,7 @@ iptables -L | grep "0.0.0.0"  # Any-source rules
 
 **AWS Security Group Audit:**
 
-```
+```text
 Rules that should NEVER exist in production:
 ✗ Inbound: 0.0.0.0/0 → Port 22 (SSH open to internet)
 ✗ Inbound: 0.0.0.0/0 → Port 3389 (RDP open to internet)
@@ -337,7 +337,7 @@ Rules that are acceptable:
 
 **Review Framework:**
 
-```
+```text
 Zone Model (most to least trusted):
   Internal (Core) → DMZ → Internet
 
@@ -370,7 +370,7 @@ python scripts/pcap_analyzer.py --file capture.pcap --detect-beaconing --output 
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Discovered services from recon | ← Skill 01 (Recon & OSINT) |
 | Network IOCs for threat correlation | → Skill 06 (Threat Hunting) |
 | Network evidence for IR timeline | → Skill 07 (Incident Response) |

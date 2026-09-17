@@ -16,7 +16,7 @@ Each safeguard entry shows:
 ## CIS Control 1: Inventory and Control of Enterprise Assets
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 1.1 | Establish and Maintain Detailed Enterprise Asset Inventory | 1 | Devices | Identify |
 | 1.2 | Address Unauthorized Assets | 1 | Devices | Respond |
 | 1.3 | Utilize an Active Discovery Tool | 2 | Devices | Identify |
@@ -38,7 +38,7 @@ Each safeguard entry shows:
 ## CIS Control 2: Inventory and Control of Software Assets
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 2.1 | Establish and Maintain a Software Inventory | 1 | Applications | Identify |
 | 2.2 | Ensure Authorized Software is Currently Supported | 1 | Applications | Protect |
 | 2.3 | Address Unauthorized Software | 1 | Applications | Respond |
@@ -63,7 +63,7 @@ Each safeguard entry shows:
 ## CIS Control 3: Data Protection
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 3.1 | Establish and Maintain a Data Management Process | 1 | Data | Govern |
 | 3.2 | Establish and Maintain a Data Inventory | 1 | Data | Identify |
 | 3.3 | Configure Data Access Control Lists | 1 | Data | Protect |
@@ -97,7 +97,7 @@ Each safeguard entry shows:
 ## CIS Control 4: Secure Configuration
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 4.1 | Establish and Maintain a Secure Configuration Process | 1 | Devices | Protect |
 | 4.2 | Establish and Maintain a Secure Configuration Process for Network Infrastructure | 1 | Network | Protect |
 | 4.3 | Configure Automatic Session Locking on Enterprise Assets | 1 | Devices/Users | Protect |
@@ -127,7 +127,7 @@ Each safeguard entry shows:
 ## CIS Control 5: Account Management
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 5.1 | Establish and Maintain an Inventory of Accounts | 1 | Users | Identify |
 | 5.2 | Use Unique Passwords | 1 | Users | Protect |
 | 5.3 | Disable Dormant Accounts | 1 | Users | Protect |
@@ -149,7 +149,7 @@ Each safeguard entry shows:
 ## CIS Control 6: Access Control Management
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 6.1 | Establish an Access Granting Process | 1 | Users | Protect |
 | 6.2 | Establish an Access Revoking Process | 1 | Users | Protect |
 | 6.3 | Require MFA for Externally-Exposed Applications | 2 | Users | Protect |
@@ -171,7 +171,7 @@ Each safeguard entry shows:
 ## CIS Control 7: Continuous Vulnerability Management
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 7.1 | Establish and Maintain a Vulnerability Management Process | 1 | Devices/Apps | Protect |
 | 7.2 | Establish and Maintain a Remediation Process | 1 | Devices/Apps | Respond |
 | 7.3 | Perform Automated Operating System Patch Management | 1 | Devices | Protect |
@@ -183,7 +183,7 @@ Each safeguard entry shows:
 **Remediation SLAs (common industry standards):**
 
 | CVSS Severity | Recommended Remediation Time |
-|---------------|------------------------------|
+| --------------- | ------------------------------ |
 | Critical (9.0–10.0) | 15 days |
 | High (7.0–8.9) | 30 days |
 | Medium (4.0–6.9) | 90 days |
@@ -196,7 +196,7 @@ Each safeguard entry shows:
 ## CIS Control 8: Audit Log Management
 
 | Safeguard | Title | IG | Asset Type | Security Function |
-|-----------|-------|-----|-----------|------------------|
+| ----------- | ------- | ----- | ----------- | ------------------ |
 | 8.1 | Establish and Maintain an Audit Log Management Process | 1 | Network/Devices | Protect |
 | 8.2 | Collect Audit Logs | 1 | Network/Devices | Detect |
 | 8.3 | Ensure Adequate Audit Log Storage | 2 | Network/Devices | Protect |

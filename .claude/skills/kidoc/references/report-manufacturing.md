@@ -55,7 +55,7 @@ PCB fabrication house, assembly house, test technicians.
 ## Data Requirements
 
 | Source | Required | Provides |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | Schematic analysis | Yes | Assembly overview, BOM |
 | PCB analysis | No | Fab notes (dimensions, layers, stats) |
 | EMC analysis | No | Not used |

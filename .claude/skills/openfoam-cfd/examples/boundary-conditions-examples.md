@@ -247,7 +247,7 @@ outlet
 
 ### Turbulent Kinetic Energy (k)
 
-**Inlet - From Intensity**
+#### Inlet - From Intensity
 
 ```cpp
 inlet
@@ -258,7 +258,7 @@ inlet
 }
 ```
 
-**Inlet - Fixed Value**
+#### Inlet - Fixed Value
 
 ```cpp
 inlet
@@ -268,7 +268,7 @@ inlet
 }
 ```
 
-**Outlet - Zero Gradient**
+#### Outlet - Zero Gradient (Turbulent Kinetic Energy)
 
 ```cpp
 outlet
@@ -277,7 +277,7 @@ outlet
 }
 ```
 
-**Wall - Wall Function**
+#### Wall - Wall Function
 
 ```cpp
 wall
@@ -287,7 +287,7 @@ wall
 }
 ```
 
-**Wall - Low-Re (Resolved)**
+#### Wall - Low-Re (Resolved)
 
 ```cpp
 wall
@@ -299,7 +299,7 @@ wall
 
 ### Dissipation Rate (epsilon)
 
-**Inlet - From Mixing Length**
+#### Inlet - From Mixing Length
 
 ```cpp
 inlet
@@ -310,7 +310,7 @@ inlet
 }
 ```
 
-**Inlet - Fixed Value**
+#### Inlet - Fixed Value (Dissipation Rate)
 
 ```cpp
 inlet
@@ -320,7 +320,7 @@ inlet
 }
 ```
 
-**Wall - Wall Function**
+#### Wall - Wall Function (Dissipation Rate)
 
 ```cpp
 wall
@@ -330,7 +330,7 @@ wall
 }
 ```
 
-**Wall - Low-Re (Resolved)**
+#### Wall - Low-Re (Resolved) (Dissipation Rate)
 
 ```cpp
 wall
@@ -342,7 +342,7 @@ wall
 
 ### Specific Dissipation Rate (omega)
 
-**Inlet - From Mixing Length**
+#### Inlet - From Mixing Length (Specific Dissipation Rate)
 
 ```cpp
 inlet
@@ -353,7 +353,7 @@ inlet
 }
 ```
 
-**Inlet - Fixed Value**
+#### Inlet - Fixed Value (Specific Dissipation Rate)
 
 ```cpp
 inlet
@@ -363,7 +363,7 @@ inlet
 }
 ```
 
-**Wall - Wall Function**
+#### Wall - Wall Function (Specific Dissipation Rate)
 
 ```cpp
 wall
@@ -375,7 +375,7 @@ wall
 
 ### Turbulent Viscosity (nut)
 
-**Inlet - Calculated**
+#### Inlet - Calculated
 
 ```cpp
 inlet
@@ -385,7 +385,7 @@ inlet
 }
 ```
 
-**Wall - Wall Function**
+#### Wall - Wall Function (Turbulent Viscosity)
 
 ```cpp
 wall
@@ -395,7 +395,7 @@ wall
 }
 ```
 
-**Wall - Rough Wall**
+#### Wall - Rough Wall
 
 ```cpp
 wall
@@ -564,7 +564,7 @@ outlet
 
 ### Formula Reference
 
-```
+```text
 Turbulence intensity:    I = u'/U = 0.16 * Re^(-1/8)
 Turbulent kinetic energy: k = 3/2 * (U * I)²
 Dissipation rate:        ε = C_μ^(3/4) * k^(3/2) / L
@@ -599,7 +599,7 @@ Use the provided `calculate_turbulence.py` script for automatic calculation.
 
 ### Internal Flow (Pipe/Channel)
 
-**Velocity-Pressure**
+#### Velocity-Pressure
 
 - Inlet: Fixed velocity, zero gradient pressure
 - Outlet: Zero gradient velocity, fixed pressure
@@ -607,7 +607,7 @@ Use the provided `calculate_turbulence.py` script for automatic calculation.
 
 ### External Flow (Aerodynamics)
 
-**Velocity-Pressure**
+#### Velocity-Pressure (External Flow)
 
 - Inlet: Fixed velocity, zero gradient pressure
 - Outlet: Zero gradient velocity, zero gradient pressure
@@ -616,7 +616,7 @@ Use the provided `calculate_turbulence.py` script for automatic calculation.
 
 ### Natural Convection
 
-**Velocity-Pressure-Temperature**
+#### Velocity-Pressure-Temperature
 
 - All walls: No-slip velocity, zero gradient pressure, fixed temperature
 - Hot wall: Fixed high temperature
@@ -624,7 +624,7 @@ Use the provided `calculate_turbulence.py` script for automatic calculation.
 
 ### Rotating Machinery
 
-**Velocity-Pressure**
+#### Velocity-Pressure (Rotating Machinery)
 
 - Inlet: Fixed velocity, zero gradient pressure
 - Outlet: Zero gradient velocity, fixed pressure

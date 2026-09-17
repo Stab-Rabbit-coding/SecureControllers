@@ -19,7 +19,7 @@ How to analyze schematics provided as PDF files — reference designs, dev board
 ## Common Sources of PDF Schematics
 
 | Source | What You Get | Example |
-|--------|-------------|---------|
+| -------- | ------------- | --------- |
 | **Dev board schematics** | Complete board design — power, MCU, peripherals, connectors | ESP32-DevKitC, STM32 Nucleo, Arduino, Raspberry Pi Pico |
 | **Eval board / reference designs** | Manufacturer's recommended circuit for a specific IC | TI EVM boards, Analog Devices eval boards |
 | **Application notes** | Focused subcircuits solving specific problems | AN-XXX from TI, Maxim, NXP, etc. |
@@ -97,7 +97,7 @@ When reading a PDF schematic, extract a structured BOM.
 ### What to capture per component
 
 | Field | Source in PDF | Notes |
-|-------|--------------|-------|
+| ------- | -------------- | ------- |
 | Reference | Printed next to symbol (R1, C5, U3) | May follow different convention than your project |
 | Value | Printed on or near symbol | "100n", "10K", "4.7u" — note the notation style |
 | Part number / MPN | In the BOM table, or printed on the symbol | Not always visible on the schematic itself |
@@ -111,7 +111,7 @@ When reading a PDF schematic, extract a structured BOM.
 Different manufacturers use different shorthand:
 
 | PDF Notation | Meaning |
-|-------------|---------|
+| ------------- | --------- |
 | `100n`, `0.1u`, `100nF` | 100 nanofarads |
 | `4R7`, `4.7R` | 4.7 ohms (R marks decimal point) |
 | `10K`, `10k` | 10 kilohms |
@@ -157,7 +157,7 @@ For multi-page schematics, track inter-sheet connections:
 
 For complex extractions, build a net map:
 
-```
+```text
 Net Name: USB_DP
   Page 2: U1 pin 33 (MCU USB_DP)
   Page 2: R5 pin 1 (22R series resistor)
@@ -205,7 +205,7 @@ For each subcircuit you extract:
 Rarely can you copy a subcircuit verbatim. Common adaptations:
 
 | Adaptation | When Needed | How |
-|-----------|-------------|-----|
+| ----------- | ------------- | ----- |
 | **Different input voltage** | Your power source differs from the reference | Recalculate input caps, voltage ratings, feedback dividers |
 | **Different output current** | Your load is lighter or heavier | Check regulator rating, adjust inductor/cap sizing |
 | **Different package** | You want a different footprint (e.g., larger for hand soldering) | Find same MPN in different package, or equivalent part |
@@ -220,7 +220,7 @@ Rarely can you copy a subcircuit verbatim. Common adaptations:
 ### Mapping PDF components to KiCad symbols
 
 | PDF Symbol | KiCad Library | Notes |
-|-----------|--------------|-------|
+| ----------- | -------------- | ------- |
 | Resistor (rectangle or zigzag) | `Device:R` | Add MPN, value, footprint |
 | Capacitor (two lines) | `Device:C` or `Device:C_Polarized` | Polarized for electrolytic/tantalum |
 | Inductor (coil) | `Device:L` | Check if shielded version needed |

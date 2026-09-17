@@ -104,7 +104,7 @@ Every piece of state that matters MUST live on disk, not in the agent's memory.
 These are non-negotiable write-then-verify steps. At each checkpoint, the agent MUST write the specified file and then read it back to confirm the write succeeded.
 
 | Checkpoint | File Written | Phase |
-|---|---|---|
+| --- | --- | --- |
 | CP-0: Spec saved | `spec.yaml` | Phase 0, after user approval |
 | CP-1: Baseline recorded | `experiment-log.yaml` (initial with baseline) | Phase 1, after baseline measurement |
 | CP-2: Hypothesis backlog saved | `experiment-log.yaml` (hypothesis_backlog section) | Phase 2, after hypothesis generation |
@@ -122,7 +122,7 @@ These are non-negotiable write-then-verify steps. At each checkpoint, the agent 
 ### File Locations (all under `.context/compound-engineering/ce-optimize/<spec-name>/`)
 
 | File | Purpose | Written When |
-|------|---------|-------------|
+| ------ | --------- | ------------- |
 | `spec.yaml` | Optimization spec (immutable during run) | Phase 0 (CP-0) |
 | `experiment-log.yaml` | Full history of all experiments | Initialized at CP-1, appended at CP-3, updated at CP-4 |
 | `strategy-digest.md` | Compressed learnings for hypothesis generation | Written at CP-4 after each batch |
@@ -682,7 +682,7 @@ If any hypotheses were deferred due to unapproved dependencies:
 
 Present a comprehensive summary:
 
-```
+```text
 Optimization: <spec-name>
 Duration: <wall-clock time>
 Total experiments: <count>

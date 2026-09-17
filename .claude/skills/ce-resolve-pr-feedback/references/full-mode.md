@@ -32,7 +32,7 @@ GH_HOST=<derived-host> bash "$SKILL_DIR/scripts/get-pr-comments" PR_NUMBER OWNER
 Returns a JSON object with four keys:
 
 | Key | Contents | Has file/line? | Resolvable? |
-|-----|----------|---------------|-------------|
+| ----- | ---------- | --------------- | ------------- |
 | `pending_review` | Node ID of your own unsubmitted (PENDING) review on this PR, or `null` | n/a | n/a |
 | `review_threads` | Unresolved inline code review threads (includes outdated; each carries its `isOutdated` flag so line drift can be accounted for) | Yes | Yes (GraphQL) |
 | `pr_comments` | Top-level PR conversation comments (excludes PR author) | No | No |
@@ -263,7 +263,7 @@ Present a concise summary of all work done. Group by verdict, one line per item 
 
 Format:
 
-```
+```text
 Resolved N of M new items on PR #NUMBER:
 
 Fixed (count): [brief description of each fix]
@@ -279,7 +279,7 @@ If any item is `needs-human`, append a decisions section. These are rare but hig
 
 Present the `decision_context` directly -- it's already structured for the user to decide quickly:
 
-```
+```text
 Needs your input (count):
 
 1. [decision_context -- quoted feedback, investigation findings, why it
@@ -290,7 +290,7 @@ The `needs-human` threads already have a natural-sounding acknowledgment reply p
 
 If there are **pending decisions from a previous run** (threads detected in step 2 as already responded to but still unresolved), surface them after the new work:
 
-```
+```text
 Still pending from a previous run (count):
 
 1. [Thread path:line] -- [brief description of what's pending]

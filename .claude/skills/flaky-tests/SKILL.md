@@ -60,7 +60,7 @@ A cross-session routing test polled `if notified_a or notified_b`, then asserted
 
 ## Checklist
 
-```
+```text
 - [ ] For every timeout in the test: timed the actual path - a budget for what, exactly?
 - [ ] Sleep-polls replaced with events the producer signals, where possible
 - [ ] Grepped for skip() conditioned on timing; converted to failure or re-conditioned on absence
@@ -74,7 +74,7 @@ A cross-session routing test polled `if notified_a or notified_b`, then asserted
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "Just widen the timeout" | The number was never measuring what you think. Time the path first. |
 | "It's environment-dependent" | Often a process-global mock whose last call is being overwritten by unrelated code. Check before blaming the environment. |
 | "Skip it if the browser's slow, we'll catch it another way" | Skip on slowness launders a coverage hole into a green run. Convert to a failure. |

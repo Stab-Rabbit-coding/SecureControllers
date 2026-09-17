@@ -35,7 +35,7 @@ Probe what's actually installed with `command -v` before invoking anything; skip
 and *note* absent tools (don't fail the whole loop on one missing linter).
 
 | Target | Lint / format | Tests | Notes |
-|--------|---------------|-------|-------|
+| -------- | --------------- | ------- | ------- |
 | Python | `ruff check --fix`, (ruff format / black) | `pytest`, `python -m py_compile` | `ruff` is fast + auto-fixes |
 | JS/TS | `eslint --fix`, `prettier -w`, `tsc --noEmit` | `vitest`/`jest` | |
 | Go | `golangci-lint run`, `gofmt -w`, `go vet` | `go test ./...` | |

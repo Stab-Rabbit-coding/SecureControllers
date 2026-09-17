@@ -11,7 +11,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Limit system access to authorized users, processes, devices, and types of transactions.
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | AC-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | AC-2 | ✓ | ✓ | ✓ | Account Management — create, enable, modify, disable, remove accounts |
 | AC-2(1) | — | ✓ | ✓ | Automated System Account Management |
@@ -50,7 +50,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## AT — Awareness and Training (6 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | AT-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | AT-2 | ✓ | ✓ | ✓ | Literacy Training and Awareness (annual; new hire; role change) |
 | AT-2(2) | — | ✓ | ✓ | Insider Threat Awareness |
@@ -65,7 +65,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Create and protect system audit records; ensure accountability of user actions.
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | AU-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | AU-2 | ✓ | ✓ | ✓ | Event Logging — define auditable events |
 | AU-3 | ✓ | ✓ | ✓ | Content of Audit Records (what, when, where, source, outcome) |
@@ -90,7 +90,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## CA — Assessment, Authorization, and Monitoring (9 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | CA-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | CA-2 | ✓ | ✓ | ✓ | Control Assessments (annual or event-driven) |
 | CA-2(1) | — | ✓ | ✓ | Independent Assessors (3PAO for FedRAMP) |
@@ -107,7 +107,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## CM — Configuration Management (14 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | CM-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | CM-2 | ✓ | ✓ | ✓ | Baseline Configuration |
 | CM-2(2) | — | ✓ | ✓ | Automation Support for Accuracy and Currency |
@@ -130,7 +130,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## CP — Contingency Planning (13 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | CP-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | CP-2 | ✓ | ✓ | ✓ | Contingency Plan (BCP/DRP) |
 | CP-2(3) | — | ✓ | ✓ | Resume All Missions and Business Functions |
@@ -154,7 +154,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Identify and authenticate users, devices, and processes.
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | IA-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | IA-2 | ✓ | ✓ | ✓ | Identification and Authentication (Organizational Users) |
 | IA-2(1) | ✓ | ✓ | ✓ | MFA for Privileged Accounts |
@@ -180,7 +180,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## IR — Incident Response (10 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | IR-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | IR-2 | ✓ | ✓ | ✓ | Incident Response Training |
 | IR-3 | — | ✓ | ✓ | Incident Response Testing |
@@ -200,7 +200,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## MA — Maintenance (6 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | MA-2 | ✓ | ✓ | ✓ | Controlled Maintenance |
 | MA-3 | — | ✓ | ✓ | Maintenance Tools |
 | MA-4 | ✓ | ✓ | ✓ | Nonlocal Maintenance |
@@ -212,7 +212,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## MP — Media Protection (8 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | MP-2 | ✓ | ✓ | ✓ | Media Access |
 | MP-3 | — | ✓ | ✓ | Media Marking |
 | MP-4 | — | ✓ | ✓ | Media Storage |
@@ -225,7 +225,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## PE — Physical and Environmental Protection (23 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | PE-2 | ✓ | ✓ | ✓ | Physical Access Authorizations |
 | PE-3 | ✓ | ✓ | ✓ | Physical Access Control |
 | PE-6 | ✓ | ✓ | ✓ | Monitoring Physical Access |
@@ -243,7 +243,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## PL — Planning (11 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | PL-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | PL-2 | ✓ | ✓ | ✓ | System Security and Privacy Plan (SSP) |
 | PL-4 | ✓ | ✓ | ✓ | Rules of Behavior |
@@ -256,7 +256,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## PS — Personnel Security (9 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | PS-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | PS-2 | ✓ | ✓ | ✓ | Position Risk Designation |
 | PS-3 | ✓ | ✓ | ✓ | Personnel Screening |
@@ -274,7 +274,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Govern how organizations handle Personally Identifiable Information (PII). New in Rev 5; applies to systems processing PII.
 
 | Control | Description |
-|---------|-------------|
+| --------- | ------------- |
 | PT-1 | Policy and Procedures |
 | PT-2 | Authority to Process PII (legal basis) |
 | PT-3 | Purposing Specification (why PII is collected) |
@@ -291,7 +291,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## RA — Risk Assessment (10 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | RA-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | RA-2 | ✓ | ✓ | ✓ | Security Categorization (FIPS 199) |
 | RA-3 | ✓ | ✓ | ✓ | Risk Assessment (SP 800-30 methodology) |
@@ -310,7 +310,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## SA — System and Services Acquisition (23 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | SA-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | SA-2 | ✓ | ✓ | ✓ | Allocation of Resources |
 | SA-3 | ✓ | ✓ | ✓ | System Development Life Cycle (SDLC security integration) |
@@ -334,7 +334,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Protect communications and system boundaries.
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | SC-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | SC-5 | ✓ | ✓ | ✓ | Denial of Service Protection |
 | SC-7 | ✓ | ✓ | ✓ | Boundary Protection (firewalls, DMZ, NGFW) |
@@ -366,7 +366,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 ## SI — System and Information Integrity (23 controls)
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | SI-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | SI-2 | ✓ | ✓ | ✓ | Flaw Remediation (patch management) |
 | SI-2(2) | — | ✓ | ✓ | Automated Flaw Remediation Status |
@@ -393,7 +393,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Purpose:** Identify, assess, and mitigate risks from the supply chain (new family in Rev 5).
 
 | Control | L | M | H | Description |
-|---------|---|---|---|-------------|
+| --------- | --- | --- | --- | ------------- |
 | SR-1 | ✓ | ✓ | ✓ | Policy and Procedures |
 | SR-2 | — | ✓ | ✓ | Supply Chain Risk Management Plan (SCRM Plan) |
 | SR-2(1) | — | — | ✓ | Establish SCRM Team |
@@ -419,7 +419,7 @@ For each family: key controls with baseline assignment, critical enhancements, a
 **Applies at the organizational level — not specific to any system baseline.**
 
 | Control | Description |
-|---------|-------------|
+| --------- | ------------- |
 | PM-1 | Information Security Program Plan |
 | PM-2 | Information Security Program Leadership Roles (CISO) |
 | PM-5 | System Inventory |

@@ -23,7 +23,7 @@ Suno takes a **Style** field and a **Lyrics** field; they behave differently.
 
 Keep one `.md` per song; copy the STYLE block into the style box and the tagged body into the lyrics box.
 
-```
+```text
 # Title
 
 STYLE (paste into style box, bracket-free):

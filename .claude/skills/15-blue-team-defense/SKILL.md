@@ -258,7 +258,7 @@ ausearch -k identity -i        # Find all user/group changes
 
 #### Linux Hardening Checklist
 
-```
+```text
 Authentication:
 [ ] Root login disabled (local and SSH)
 [ ] Password authentication disabled for SSH (key-only)
@@ -365,7 +365,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" `
 
 **Windows Hardening Checklist (CIS Level 1):**
 
-```
+```text
 Account Security:
 [ ] Guest account disabled
 [ ] Local Administrator account disabled or renamed
@@ -406,7 +406,7 @@ Claude produces complete, ready-to-deploy detection rules.
 
 **Detection Rule Development Workflow:**
 
-```
+```text
 Step 1: Define what you're detecting
   - What specific behavior? (not "malware" but "PowerShell download cradle")
   - Which ATT&CK technique? (T1059.001 — PowerShell)
@@ -579,7 +579,7 @@ python scripts/hardening_checker.py --os windows --cis-level 1 --output report.j
 **Patch Prioritization Matrix:**
 
 | CVSS | Exploitability | In CISA KEV? | Priority | SLA |
-|------|---------------|-------------|---------|-----|
+| ------ | --------------- | ------------- | --------- | ----- |
 | 9.0–10.0 | Remote, no auth | Yes | P1 — Emergency | 24 hours |
 | 9.0–10.0 | Remote, no auth | No | P1 — Critical | 48 hours |
 | 7.0–8.9 | Remote | Any | P2 — High | 7 days |
@@ -589,7 +589,7 @@ python scripts/hardening_checker.py --os windows --cis-level 1 --output report.j
 
 **Patch Rollout Process:**
 
-```
+```text
 1. RECEIVE patch (vendor advisory, CVE, CISA alert)
 2. ASSESS severity and exploitability (CVSS + CISA KEV check)
 3. TEST in non-production environment (Dev → QA → Staging)
@@ -622,7 +622,7 @@ Get-HotFix | Sort-Object InstalledOn -Descending | Select-Object -First 10
 
 **Defense-in-Depth Framework:**
 
-```
+```text
 Layer 1 — Perimeter Defense
   ├── External firewall / WAF
   ├── IDS/IPS (Suricata/Snort)
@@ -662,7 +662,7 @@ Layer 6 — Detection & Response
 
 **Zero Trust Assessment Checklist:**
 
-```
+```text
 Identity Verification:
 [ ] All access requires strong authentication (MFA)
 [ ] Identity verified continuously, not just at login
@@ -738,7 +738,7 @@ python scripts/hardening_checker.py --os windows --cis-level 1 --output report.j
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Red team findings → create remediation plan | ← Skill 14 (Red Team Operations) |
 | Detection rules → deploy to SIEM | → Skill 12 (Log Analysis) |
 | New detection rules → add to CSOC | → Skill 11 (CSOC Automation) |

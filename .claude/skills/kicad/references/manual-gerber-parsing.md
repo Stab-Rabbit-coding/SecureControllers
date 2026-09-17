@@ -80,7 +80,7 @@ for line in lines:
 **Aperture shapes and dimensions:**
 
 | Shape | Params | Dimension extraction |
-|-------|--------|---------------------|
+| ------- | -------- | --------------------- |
 | `C` | `diameter` | Trace width = diameter |
 | `R` | `widthXheight` | Pad size (split on X) |
 | `O` | `widthXheight` | Obround pad size |
@@ -142,7 +142,7 @@ for line in lines:
 **Key operation codes:**
 
 | Code | Name | Action |
-|------|------|--------|
+| ------ | ------ | -------- |
 | `D01` | Draw | Draw line from current position to coordinates |
 | `D02` | Move | Move without drawing (pen up) |
 | `D03` | Flash | Stamp aperture shape at coordinates |
@@ -160,7 +160,7 @@ for line in lines:
 
 Arc commands use I/J offsets from the current position to the arc center:
 
-```
+```text
 G75*                         ; Multi-quadrant mode
 G02*                         ; Clockwise
 X160000000Y100000000I5000000J0D01*  ; Arc to (160,100) with center offset (5,0)
@@ -199,7 +199,7 @@ for m in re.finditer(r'G04 #@! TF\.(\w+),([^*]*)\*', content):
 **Critical TF attributes:**
 
 | Attribute | Example | Purpose |
-|-----------|---------|---------|
+| ----------- | --------- | --------- |
 | `FileFunction` | `Copper,L1,Top` | Layer identification |
 | `FilePolarity` | `Positive` / `Negative` | Mask layers are Negative |
 | `GenerationSoftware` | `KiCad,Pcbnew,9.0.7` | KiCad version detection |
@@ -237,7 +237,7 @@ for line in lines:
 **TA.AperFunction values and meaning:**
 
 | AperFunction | Description | Analysis use |
-|-------------|-------------|-------------|
+| ------------- | ------------- | ------------- |
 | `SMDPad,CuDef` | SMD pad copper | Count unique apertures = pad variety |
 | `ViaPad` | Via pad | Usually 1-2 apertures; count flashes = via count |
 | `ComponentPad` | Through-hole pad | Cross-ref with drill ComponentDrill |
@@ -409,7 +409,7 @@ for line in lines:
 ### KiCad 5 vs 6+ Coordinate Differences
 
 | Aspect | KiCad 5 | KiCad 6+ |
-|--------|---------|----------|
+| -------- | --------- | ---------- |
 | Units header | `INCH` | `METRIC` or `METRIC,TZ` |
 | Format hint | `; FORMAT={-:-/ absolute / inch / decimal}` | `; FORMAT={-:-/ absolute / metric / decimal}` |
 | Coordinate format | Decimal inches: `X1.3875Y-2.77` | Integer microns: `X150000Y100000` |
@@ -430,7 +430,7 @@ for line in lines:
 **Without TA.AperFunction (KiCad 5) — use heuristics:**
 
 | Diameter | Likely function |
-|----------|----------------|
+| ---------- | ---------------- |
 | <= 0.45mm | Via drill |
 | 0.45 - 1.3mm | Component hole (THT pads) |
 | > 1.3mm | Mounting hole or connector |
@@ -499,7 +499,7 @@ patterns = {
 Some fabs prefer Protel-style extensions:
 
 | Extension | Layer |
-|-----------|-------|
+| ----------- | ------- |
 | `.GTL` | F.Cu |
 | `.GBL` | B.Cu |
 | `.G1`-`.G4` | Inner layers |
@@ -561,7 +561,7 @@ for layer in job.get('MaterialStackup', []):
 ### What Can Be Verified from Gerbers Alone
 
 | Check | KiCad 5 | KiCad 6+ |
-|-------|---------|----------|
+| ------- | --------- | ---------- |
 | Board dimensions | Edge.Cuts extents | .gbrjob or Edge.Cuts |
 | Layer count | Inner copper file count + drill span | .gbrjob or same |
 | Layer completeness | Filename matching | .gbrjob expected list |

@@ -33,7 +33,7 @@ nmap -sT -p 47808 --script bacnet-info 10.10.20.0/24
 
 ## Conversational Examples (skill activates automatically)
 
-```
+```text
 > Review this OT network diagram against the Purdue model and flag boundary violations
 > From this capture, which hosts are issuing Modbus write commands to PLCs?
 > Map a TRITON-style attack path to MITRE ATT&CK for ICS for our DCS

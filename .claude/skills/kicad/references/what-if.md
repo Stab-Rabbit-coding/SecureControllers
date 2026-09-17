@@ -40,21 +40,21 @@ The tool operates on analyzer JSON produced by `analyze_schematic.py`. It never 
 
 ## CLI Reference
 
-```
+```text
 python3 what_if.py <input> [changes...] [options]
 ```
 
 ### Positional Arguments
 
 | Argument | Description |
-|----------|-------------|
+| --- | --- |
 | `input` | Analyzer JSON file (from `analyze_schematic.py`) |
 | `changes` | Zero or more `REF=VALUE` pairs (e.g., `R5=4.7k C3=22n`) |
 
 ### Options
 
 | Flag | Description |
-|------|-------------|
+| --- | --- |
 | `--spice` | Re-run SPICE simulations on affected subcircuits (requires ngspice/LTspice/Xyce) |
 | `--output FILE`, `-o FILE` | Write patched analysis JSON to file (for downstream EMC, thermal, or diff analysis) |
 | `--text` | Human-readable text output instead of JSON |
@@ -66,7 +66,7 @@ python3 what_if.py <input> [changes...] [options]
 ### Exit Codes
 
 | Code | Meaning |
-|------|---------|
+| --- | --- |
 | 0 | Success |
 | 1 | Invalid input, parse error, or missing data |
 
@@ -76,7 +76,7 @@ python3 what_if.py <input> [changes...] [options]
 
 ### Single Value
 
-```
+```text
 R5=4.7k
 C3=22n
 L1=10u
@@ -86,7 +86,7 @@ Standard engineering notation. The parser uses `parse_value()` from `kicad_utils
 
 ### Comma Sweep
 
-```
+```text
 R5=1k,2.2k,4.7k,10k
 ```
 
@@ -94,7 +94,7 @@ Evaluates the circuit at each listed value. Results are formatted as a markdown 
 
 ### Log-Range Sweep
 
-```
+```text
 R5=1k..100k:10
 ```
 
@@ -106,7 +106,7 @@ The log distribution is computed as: `v[i] = start * (stop/start)^(i/(N-1))`
 
 ### Tolerance Suffix
 
-```
+```text
 R5=4.7k+-5%
 R5=4.7k±5%
 ```
@@ -116,7 +116,7 @@ Both `+-` and the Unicode `±` character are accepted. The tolerance triggers wo
 Default tolerances when the suffix is omitted but tolerance mode is active:
 
 | Prefix | Default Tolerance |
-|--------|-------------------|
+| --- | --- |
 | `C`, `VC` | 10% |
 | `L` | 20% |
 | All others | 5% |
@@ -125,7 +125,7 @@ Default tolerances when the suffix is omitted but tolerance mode is active:
 
 Sweep and tolerance can be combined on a single component:
 
-```
+```text
 R5=1k,2.2k,4.7k+-5%
 ```
 
@@ -133,7 +133,7 @@ This sweeps through the listed values and also computes tolerance corners at eac
 
 Multiple non-sweep changes can be specified alongside a single sweep:
 
-```
+```text
 R5=1k,2.2k,4.7k C3=22n
 ```
 
@@ -147,7 +147,7 @@ The `--fix` mode runs an inverse solver to find component values that achieve a 
 
 ### Syntax
 
-```
+```text
 python3 what_if.py analysis.json --fix TYPE[INDEX] --target VALUE
 ```
 
@@ -158,7 +158,7 @@ Where `TYPE[INDEX]` references a detection type and index (e.g., `voltage_divide
 When `--target` is omitted, the solver attempts to infer the target from the detection context:
 
 | Detection Type | Inferred Target |
-|---------------|-----------------|
+| --- | --- |
 | `voltage_dividers`, `feedback_networks` | `ratio = regulator_vref / target_vout` (from detection metadata) |
 | `crystal_circuits` | `effective_load_pF = target_load_pF` (from detection metadata) |
 | All others | Error -- `--target` is required |
@@ -170,21 +170,21 @@ For each detection type, the solver holds one component fixed and computes the i
 **voltage_dividers / feedback_networks** (target: `ratio`)
 
 | Solve For | Formula | Equation ID |
-|-----------|---------|-------------|
+| --- | --- | --- |
 | R_bottom (fix R_top) | `R_bot = R_top * ratio / (1 - ratio)` | EQ-WI-001 |
 | R_top (fix R_bottom) | `R_top = R_bot * (1 - ratio) / ratio` | EQ-WI-002 |
 
 **rc_filters** (target: `cutoff_hz`)
 
 | Solve For | Formula | Equation ID |
-|-----------|---------|-------------|
+| --- | --- | --- |
 | C (fix R) | `C = 1 / (2*pi*R*f_c)` | EQ-WI-003 |
 | R (fix C) | `R = 1 / (2*pi*C*f_c)` | EQ-WI-004 |
 
 **lc_filters** (target: `resonant_hz`)
 
 | Solve For | Formula | Equation ID |
-|-----------|---------|-------------|
+| --- | --- | --- |
 | C (fix L) | `C = 1 / ((2*pi*f_0)^2 * L)` | EQ-WI-005 |
 | L (fix C) | `L = 1 / ((2*pi*f_0)^2 * C)` | EQ-WI-006 |
 
@@ -193,14 +193,14 @@ For each detection type, the solver holds one component fixed and computes the i
 When `gain_dB` is the target field, it is converted to linear gain first: `gain = 10^(gain_dB/20)`.
 
 | Configuration | Formula | Equation ID |
-|--------------|---------|-------------|
-| Non-inverting | `R_f = R_i * (|gain| - 1)` | EQ-WI-007 |
-| Inverting / default | `R_f = R_i * |gain|` | EQ-WI-008 |
+| --- | --- | --- |
+| Non-inverting | `R_f = R_i * ( | gain - 1)` EQ-WI-007 |
+| Inverting / default | `R_f = R_i * | gain ` EQ-WI-008 |
 
 **crystal_circuits** (target: `effective_load_pF`)
 
 | Solve For | Formula | Equation ID |
-|-----------|---------|-------------|
+| --- | --- | --- |
 | Each load cap (symmetric) | `C_load = 2 * (target_pF - C_stray)` | EQ-WI-009 |
 
 Default stray capacitance: 3.0 pF.
@@ -208,7 +208,7 @@ Default stray capacitance: 3.0 pF.
 **current_sense** (target: `max_current_100mV_A` or `max_current_50mV_A`)
 
 | Target | Formula | Equation ID |
-|--------|---------|-------------|
+| --- | --- | --- |
 | `max_current_100mV_A` | `R_shunt = 0.100 / I_target` | EQ-WI-010 |
 | `max_current_50mV_A` | `R_shunt = 0.050 / I_target` | EQ-WI-011 |
 
@@ -233,7 +233,7 @@ All fix suggestions are snapped to standard E-series values using `snap_to_e_ser
 **Available series:**
 
 | Series | Values per Decade | Typical Tolerance |
-|--------|-------------------|-------------------|
+| --- | --- | --- |
 | E12 | 12 | 10% |
 | E24 | 24 | 5% |
 | E96 | 96 | 1% |
@@ -257,7 +257,7 @@ The `--emc` flag runs the full EMC analyzer (`analyze_emc.py`) on both the origi
 ### Output Fields
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `before_risk` | string | Overall risk level before change |
 | `after_risk` | string | Overall risk level after change |
 | `resolved` | array | Findings that disappeared after the change |
@@ -282,7 +282,7 @@ When PCB analysis data is available, the tool annotates each affected subcircuit
 
 Trace resistance (EQ-WI-012):
 
-```
+```text
 R_trace = rho * length / (width * thickness)
 ```
 
@@ -290,7 +290,7 @@ Where `rho` = 1.72e-8 ohm-m (copper), `thickness` = 35e-6 m (1 oz copper).
 
 Trace inductance (EQ-WI-013, valid when length > width):
 
-```
+```text
 L_trace = 2e-7 * length * ln(2 * length / width)
 ```
 
@@ -301,7 +301,7 @@ Both are computed per net segment and summed for all track segments connected to
 For capacitor fix suggestions, the tool checks the suggested value against typical maximum capacitance for common package sizes:
 
 | Package | Typical Max (ceramic MLCC) |
-|---------|---------------------------|
+| --- | --- |
 | 0402 | 100 nF |
 | 0603 | 1 uF |
 | 0805 | 10 uF |
@@ -317,7 +317,7 @@ A warning is emitted when a suggested E-series value exceeds the package limit.
 The recalculation engine (`_recalc_derived` in `spice_tolerance.py`) updates these fields after patching component values:
 
 | Detection Type | Field | Formula | Equation ID |
-|---------------|-------|---------|-------------|
+| --- | --- | --- | --- |
 | `rc_filters` | `cutoff_hz` | `1 / (2*pi*R*C)` | EQ-RC-001 |
 | `voltage_dividers`, `feedback_networks` | `ratio` | `R_bot / (R_top + R_bot)` | EQ-VD-001 |
 | `lc_filters` | `resonant_hz` | `1 / (2*pi*sqrt(L*C))` | EQ-LC-001 |
@@ -325,7 +325,7 @@ The recalculation engine (`_recalc_derived` in `spice_tolerance.py`) updates the
 | `crystal_circuits` | `effective_load_pF` | `(C1*C2)/(C1+C2) * 1e12 + C_stray` | EQ-XL-001 |
 | `opamp_circuits` (inverting) | `gain` | `-R_f / R_i` | EQ-OA-001 |
 | `opamp_circuits` (non-inverting) | `gain` | `1 + R_f / R_i` | EQ-OA-002 |
-| `opamp_circuits` | `gain_dB` | `20 * log10(|gain|)` | EQ-OA-003 |
+| `opamp_circuits` | `gain_dB` | `20 * log10( | gain )` EQ-OA-003 |
 | `current_sense` | `max_current_50mV_A` | `0.050 / R_shunt` | EQ-CS-001 |
 | `current_sense` | `max_current_100mV_A` | `0.100 / R_shunt` | EQ-CS-002 |
 | `power_regulators` (feedback divider) | `ratio` | `R_bot / (R_top + R_bot)` | EQ-VD-001 |
@@ -453,7 +453,7 @@ The `parasitics`, `tolerance`, `spice_delta`, and `emc_delta` fields are only pr
 Natural-language queries and their corresponding command invocations.
 
 | User Says | Command |
-|-----------|---------|
+| --- | --- |
 | "What if I change R5 to 4.7k" | `what_if.py analysis.json R5=4.7k --text` |
 | "Sweep R5 through some standard values" | `what_if.py analysis.json R5=1k,2.2k,4.7k,10k --text` |
 | "Sweep R5 from 1k to 100k" | `what_if.py analysis.json R5=1k..100k:10 --text` |
@@ -478,7 +478,7 @@ For fix mode, the `--target` value is in the natural unit of the first derived f
 Which flags and modes work together:
 
 | Combination | Supported | Notes |
-|-------------|-----------|-------|
+| --- | --- | --- |
 | Single change + `--text` | Yes | Primary use case |
 | Single change + `--spice` | Yes | Runs SPICE on original and patched |
 | Single change + `--emc` | Yes | Full EMC diff |

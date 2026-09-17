@@ -19,7 +19,7 @@ Shapeways, Craftcloud, Xometry, Protolabs) rather than owned machines.
 ## Process Selection Guide
 
 | Need | Best process | Why |
-|---|---|---|
+| --- | --- | --- |
 | Tough nylon parts, no supports | SLS | Support-free, isotropic nylon |
 | Short-run production (50-500 units) | SLS or MJF | Cost-effective at volume, consistent |
 | Metal prototype (1-10 units) | DMLS/SLM | Full-density metal, any geometry |
@@ -50,7 +50,7 @@ This enables complex geometries impossible with FDM or resin.
 ### Materials
 
 | Material | Properties | Use for |
-|---|---|---|
+| --- | --- | --- |
 | PA12 (Nylon 12) | Strong, slightly flexible, chemical-resistant | General functional parts, housings, brackets |
 | PA11 (Nylon 11) | More ductile than PA12, better fatigue life, bio-based (castor oil) | Snap fits, living hinges, repeated-stress parts |
 | PA12 GF (glass-filled) | Higher stiffness, better dimensional stability | Stiff structural parts, housings needing rigidity |
@@ -61,7 +61,7 @@ This enables complex geometries impossible with FDM or resin.
 ### Design rules
 
 | Parameter | Minimum | Recommended | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Wall thickness (PA12) | 0.7mm | 1.0mm | 2.0mm for GF-filled |
 | Wall thickness (PA12 GF) | 1.5mm | 2.0-2.5mm | Glass fibre makes it stiffer but more brittle |
 | Feature size | 0.5mm | 0.8mm | Text, thin ribs |
@@ -75,7 +75,7 @@ This enables complex geometries impossible with FDM or resin.
 ### Tolerances
 
 | Dimension range | Tolerance |
-|---|---|
+| --- | --- |
 | General | ±0.3mm or ±0.3%, whichever is greater |
 | Across build volume | ±0.5mm + 0.1% of dimension |
 | Holes and internal features | -0.1 to -0.2mm (undersized due to powder sintering at edges) |
@@ -111,7 +111,7 @@ build chamber), not just material volume. Hollowing and nesting help.
 
 ## MJF
 
-### What it is
+### What it is (MJF)
 
 HP Multi Jet Fusion. Similar concept to SLS (powder bed, no supports) but
 uses an inkjet head to deposit fusing and detailing agents onto nylon powder,
@@ -124,12 +124,12 @@ comparable to SLS but faster and with finer detail on downward-facing surfaces.
 - Short production runs where dimensional consistency matters
 - Parts needing fine text or small features (detailing agent improves edges)
 
-### Materials
+### Materials (MJF)
 
 Primarily PA12 and PA11 (HP branded). Also TPU (HP branded flexible).
 Glass-bead-filled PA12 available for higher stiffness.
 
-### Design rules
+### Design rules (MJF)
 
 Very similar to SLS. Key differences:
 
@@ -159,10 +159,10 @@ frequently used interchangeably.
 - Consolidated assemblies (combining multiple machined parts into one printed
   part)
 
-### Materials
+### Materials (Metal Printing)
 
 | Material | Typical alloy | Use for |
-|---|---|---|
+| --- | --- | --- |
 | Stainless steel | 316L, 17-4 PH | General purpose, corrosion-resistant |
 | Aluminium | AlSi10Mg | Lightweight, good thermal conductivity |
 | Titanium | Ti6Al4V (Grade 5) | Aerospace, medical, high strength-to-weight |
@@ -171,10 +171,10 @@ frequently used interchangeably.
 | Tool steel | H13, Maraging | Moulds, tooling, dies |
 | Copper alloys | CuSn10, pure Cu | Thermal management, electrical |
 
-### Design rules
+### Design rules (Metal Printing)
 
 | Parameter | Minimum | Recommended | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Wall thickness | 0.5mm | 0.8-1.0mm (2.0mm for load-bearing) | Thin walls risk warping or incomplete fusion |
 | Minimum feature size | 0.3mm | 0.5mm | Depends on material and orientation |
 | Overhangs | 45° from vertical | <40° for self-supporting | Steeper overhangs need support |
@@ -183,10 +183,10 @@ frequently used interchangeably.
 | Internal channel (min) | 1.0mm | 2.0mm | Powder removal required |
 | Thread size (min printable) | M6 | M8+ | Finer threads should be tapped post-print |
 
-### Tolerances
+### Tolerances (Metal Printing)
 
 | Specification | Value |
-|---|---|
+| --- | --- |
 | General tolerance | ±0.3mm or ±0.3%, whichever is greater |
 | As-printed surface finish | Ra 5-20 µm (material-dependent) |
 | After machining | Ra 0.8-3.2 µm |
@@ -217,7 +217,7 @@ but flag critical surfaces and toleranced features.
 5. Optional: CNC machining of critical surfaces/interfaces
 6. Optional: surface finishing (bead blasting, polishing, electropolishing)
 
-### Cost
+### Cost (Metal Printing)
 
 Metal 3D printing is expensive. Typical pricing:
 
@@ -231,7 +231,7 @@ is almost always cheaper.
 
 ## Metal Binder Jetting
 
-### What it is
+### What it is (Metal Binder Jetting)
 
 An inkjet head deposits binder onto metal powder layer by layer, creating a
 "green" part. The green part is then cured, depowdered, and sintered in a
@@ -245,12 +245,12 @@ fully metal part at ~97-99% density.
 - Parts that do not need the full density or mechanical properties of SLM
 - Complex geometry that would be expensive to machine
 
-### Materials
+### Materials (Metal Binder Jetting)
 
 Primarily stainless steel 316L and 17-4 PH. Some services offer bronze
 infiltration for improved density. Expanding to tool steels and other alloys.
 
-### Design rules
+### Design rules (Metal Binder Jetting)
 
 Similar to DMLS/SLM with additional considerations:
 
@@ -263,7 +263,7 @@ Similar to DMLS/SLM with additional considerations:
 - **No supports needed** during printing (powder bed is self-supporting, like
   polymer SLS)
 
-### Cost
+### Cost (Metal Binder Jetting)
 
 Significantly cheaper than DMLS/SLM for volume production. Per-part cost
 drops substantially above 50 units. Typical: $20-100 for small stainless
@@ -271,25 +271,25 @@ steel parts.
 
 ## Metal Extrusion
 
-### What it is
+### What it is (Metal Extrusion)
 
 Metal filament or rods (metal powder bound in a polymer matrix) are extruded
 like FDM to create a "green" part. The part is then debinded (polymer removed)
 and sintered in a furnace to produce a solid metal part. Desktop Metal, Markforged,
 and BASF (Ultrafuse) offer this technology.
 
-### When to use
+### When to use (Metal Extrusion)
 
 - Office-safe metal prototyping (no loose powder)
 - Simple metal geometries where DMLS complexity is not needed
 - Small metal parts at lower cost than DMLS/SLM
 
-### Materials
+### Materials (Metal Extrusion)
 
 Stainless steel 316L, 17-4 PH, tool steel H13, copper. Limited selection
 compared to DMLS/SLM.
 
-### Design rules
+### Design rules (Metal Extrusion)
 
 - Wall thickness: ≥ 2.0mm (green parts are very fragile)
 - Shrinkage: ~16-20% during sintering (compensated by slicer)
@@ -311,7 +311,7 @@ users access these through service bureaus.
 ### Recommended services
 
 | Service | Processes | Strengths | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | JLC3DP / JLCPCB 3D | SLS, SLA, MJF, SLM | Budget-friendly, fast, integrates with JLCPCB PCB orders | Good for electronics project enclosures |
 | Xometry | All processes | Instant quoting, wide material selection | US/EU based |
 | Protolabs (Hubs) | All processes | Professional, design feedback | Higher price, higher quality |

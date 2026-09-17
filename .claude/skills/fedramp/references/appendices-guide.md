@@ -223,7 +223,7 @@ Templates: https://www.fedramp.gov/rev5/documents-templates/
 ## Quick Reference: Appendix Checklist
 
 | App | Title | Required | Template |
-|-----|-------|----------|----------|
+| ----- | ------- | ---------- | ---------- |
 | A | Acronyms & Glossary | Yes | CSP-authored |
 | B | Laws & Regulations | Yes | FedRAMP base + CSP additions |
 | C | Security Policies & Procedures | Yes | CSP-authored |

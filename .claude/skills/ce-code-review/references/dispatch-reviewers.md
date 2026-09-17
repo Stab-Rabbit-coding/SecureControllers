@@ -1,6 +1,8 @@
-### Stage 4: Spawn sub-agents
+# Dispatch Reviewers
 
-#### Inline fast pass (emit before the reviewer queue)
+## Stage 4: Spawn sub-agents
+
+### Inline fast pass (emit before the reviewer queue)
 
 To surface findings in seconds, **immediately before the first foreground reviewer dispatch** the orchestrator does a quick first-principles scan of the diff it already holds — emit the fast-pass block as text, then begin the deterministic reviewer queue without an intervening wait.
 
@@ -17,11 +19,11 @@ Do not feed `fast-pass` candidates into the persona or validator prompts — tho
 
 When Stage 3c selected the lite roster, the fast pass still runs.
 
-**Reconcile the preliminary block in the final report.** A preliminary fast-pass item that did not survive (deduped away, demoted at the gate, or dropped by validation) must be accounted for, not left dangling — add a one-line "Preliminary fast-pass items withdrawn: <n> (<reason>)" note so a user who saw a scary preliminary finding learns it was cleared. Mark any final finding that survived from `fast-pass` alone (no persona corroboration) so its weaker provenance is visible.
+**Reconcile the preliminary block in the final report.** A preliminary fast-pass item that did not survive (deduped away, demoted at the gate, or dropped by validation) must be accounted for, not left dangling — add a one-line "Preliminary fast-pass items withdrawn: `<n>` (`<reason>`)" note so a user who saw a scary preliminary finding learns it was cleared. Mark any final finding that survived from `fast-pass` alone (no persona corroboration) so its weaker provenance is visible.
 
 **`mode:agent`:** do **not** emit the preliminary block — that mode's response must be a single raw JSON object with nothing before it. Still run the scan internally and seed its findings into Stage 5 dedup as `fast-pass`.
 
-#### Model tiering
+### Model tiering
 
 Three reviewers inherit the session model with no override: `correctness-reviewer`, `security-reviewer`, and `adversarial-reviewer`. These perform the highest-stakes analysis — logic bugs, security vulnerabilities, adversarial failure scenarios — and should run at whatever capability level the user has configured. If the user is on Opus, these get Opus.
 
@@ -29,13 +31,13 @@ All other persona subagents and CE local prompt assets use the platform's mid-ti
 
 The orchestrator (this skill) also inherits the session model; it handles intent discovery, reviewer selection, finding merge/dedup, and synthesis.
 
-#### Run ID
+### Run ID
 
 Use the run ID and absolute run dir already created at the Stage 3d routing boundary. Pass `{run_id}` and `{run_dir}` to every persona sub-agent so they can write their full analysis to `{run_dir}/{reviewer_name}.json`.
 
 **Large shared context — pass paths, not contents.** The diff and file list go to every reviewer and validator. When inlining them into each subagent prompt would be wasteful (many files / a big diff), write them once into the run dir (e.g. `full.diff`, `files.txt`) and pass those **paths** in the diff / changed-files slots instead of inline content — the subagent and validator templates instruct the child to Read a staged path. Inline a small diff directly.
 
-#### Spawning
+### Spawning
 
 Omit the `mode` parameter when dispatching sub-agents so the user's configured permission settings apply. Do not pass `mode: "auto"`.
 
@@ -102,7 +104,7 @@ The artifact file **must** carry the full detail-tier fields (`why_it_matters`, 
 
 **CE conditional local prompt assets** (`deployment-verification-agent` only) are dispatched as generic subagents through the same deterministic foreground batch dispatch when the migration-artifact gate applies. Read the prompt file from `references/personas/`, then pass the same review context bundle plus the applicability reason (for example, which migration files triggered the prompt asset). Its output is unstructured and must be preserved for Stage 6 synthesis just like the other selected local prompt assets. Schema drift is handled by the `data-migration` persona as structured findings — not here.
 
-#### Cross-model adversarial pass
+### Cross-model adversarial pass
 
 Stage 3d already made the exclusive route choice and, when applicable, started the detached peer. Do not resolve, start, or substitute a route here. Dispatch only the materialized local roster.
 

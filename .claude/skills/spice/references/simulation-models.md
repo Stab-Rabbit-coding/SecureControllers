@@ -60,7 +60,7 @@ For the subcircuits this skill simulates, these parasitics are rarely significan
 
 LC filter testbenches add a small series resistance to the inductor to prevent infinite Q (which makes the resonance unmeasurable in practice). The ESR is calculated as:
 
-```
+```text
 R_esr = 2 * pi * f_resonant * L / Q_assumed
 ```
 
@@ -69,7 +69,7 @@ Where Q_assumed = 100. This gives realistic peak gain (~40 dB) and measurable ba
 Real inductor Q values:
 
 | Inductor Type | Typical Q at Rated Frequency |
-|---------------|------------------------------|
+| --------------- | ------------------------------ |
 | Power inductor (shielded) | 10-30 |
 | Multilayer chip inductor | 20-60 |
 | Wire-wound chip inductor | 40-100 |
@@ -83,7 +83,7 @@ If the simulated Q factor matters (e.g., for a filter selectivity assessment), n
 
 ### Circuit
 
-```
+```text
 .subckt IDEAL_OPAMP inp inn out vcc vee
 Rin inp inn 1e12          * 1 TΩ input impedance
 E1  int 0   inp inn 1e6   * Voltage-controlled source, Aol=1,000,000
@@ -98,7 +98,7 @@ Dlow  vee out DLIMIT       * Rail clamp (negative)
 ### Key Parameters
 
 | Parameter | Value | Notes |
-|-----------|-------|-------|
+| ----------- | ------- | ------- |
 | Open-loop gain (Aol) | 1,000,000 (120 dB) | Real opamps: 100k-10M (100-140 dB) |
 | Gain-bandwidth product | 10 MHz | See comparison table below |
 | Input impedance | 1 TΩ | Real FET-input: 1 TΩ; BJT-input: 1-10 MΩ |
@@ -115,7 +115,7 @@ Dlow  vee out DLIMIT       * Rail clamp (negative)
 The ideal model's 10 MHz GBW is a rough middle ground. Here's how it compares to common opamps:
 
 | Part | GBW | Bandwidth at Gain=10 | Ideal Model BW at Gain=10 |
-|------|-----|----------------------|---------------------------|
+| ------ | ----- | ---------------------- | --------------------------- |
 | LM358 | 1 MHz | 100 kHz | 1 MHz (10x too high) |
 | MCP6002 | 1 MHz | 100 kHz | 1 MHz (10x too high) |
 | TLV2372 | 3 MHz | 300 kHz | 1 MHz (3x too high) |
@@ -151,7 +151,7 @@ These model cards use ngspice built-in equations with typical (not manufacturer-
 ### Diode Models
 
 | Model Name | Based On | Forward Drop | Reverse Breakdown | Use Case |
-|------------|----------|--------------|-------------------|----------|
+| ------------ | ---------- | -------------- | ------------------- | ---------- |
 | D_GENERIC | 1N4148 | ~0.7 V | 100 V | General purpose |
 | D_SCHOTTKY | Generic | ~0.3 V | 40 V | Schottky rectifier |
 | D_ZENER3V3 | Generic | ~0.7 V | 3.3 V (reverse) | 3.3V Zener |
@@ -160,7 +160,7 @@ These model cards use ngspice built-in equations with typical (not manufacturer-
 ### Transistor Models
 
 | Model Name | Based On | hFE/Beta | fT | Use Case |
-|------------|----------|----------|-----|----------|
+| ------------ | ---------- | ---------- | ----- | ---------- |
 | NPN_GENERIC | 2N2222 | 200 | ~300 MHz | General NPN |
 | PNP_GENERIC | 2N2907 | 200 | ~200 MHz | General PNP |
 | NMOS_GENERIC | Level 1 | Vth=1.5V | — | Generic N-MOSFET |
@@ -178,7 +178,7 @@ These models are suitable for DC bias point and basic switching analysis. They a
 
 The Butterworth-Van Dyke (BVD) model represents a quartz crystal as a series RLC (motional branch) in parallel with a shunt capacitance C0:
 
-```
+```text
          Lm       Cm       Rm
 xtal1 ---[===]---||---[===]--- xtal2
   |                               |
@@ -189,7 +189,7 @@ xtal1 ---[===]---||---[===]--- xtal2
 ### Model Parameters by Frequency Range
 
 | Parameter | <1 MHz (e.g., 32.768 kHz) | >1 MHz (e.g., 8-25 MHz) |
-|-----------|---------------------------|--------------------------|
+| ----------- | --------------------------- | -------------------------- |
 | Rm (motional resistance) | 40 kΩ | 30 Ω |
 | Cm (motional capacitance) | 2 fF | 20 fF |
 | Lm (motional inductance) | Calculated from f and Cm | Calculated from f and Cm |
@@ -201,7 +201,7 @@ xtal1 ---[===]---||---[===]--- xtal2
 
 The testbench validates that the **load capacitor values produce a reasonable effective CL**:
 
-```
+```text
 CL_effective = (C1 * C2) / (C1 + C2) + C_stray
 ```
 
@@ -224,7 +224,7 @@ Where C_stray ≈ 3 pF (typical PCB stray capacitance). The analyzer calculates 
 
 The LDO subcircuit models a linear regulator's DC behavior:
 
-```
+```text
 .subckt IDEAL_LDO vin vout gnd fb
 * Error amplifier compares FB pin to internal Vref
 * PMOS pass element with dropout ~0.2V
@@ -239,7 +239,7 @@ This model is **not currently used in Phase 1 testbenches** — regulator simula
 KiCad net names are translated to ngspice-safe names:
 
 | KiCad Net | ngspice Net | Rule |
-|-----------|-------------|------|
+| ----------- | ------------- | ------ |
 | `GND`, `gnd`, `earth`, `VSS` | `0` | Ground nets → node 0 |
 | `3V3` | `n3V3` | Leading digit → prefix with `n` |
 | `Net-(U3-pin7)` | `Net__U3_pin7_` | Special chars → underscores |
@@ -252,7 +252,7 @@ The `_sanitize_net()` function in `spice_models.py` handles this translation. Wh
 For voltage divider simulations, the input voltage is inferred from the top net name:
 
 | Net Name Pattern | Inferred Voltage |
-|------------------|------------------|
+| ------------------ | ------------------ |
 | `3V3`, `+3.3V` | 3.3 V |
 | `5V`, `+5V`, `5V0` | 5.0 V |
 | `1V8` | 1.8 V |
@@ -347,7 +347,7 @@ When a recognized MPN is detected (e.g., LM358, TL072, MCP6002), the skill gener
 ### Model Parameters Used
 
 | Parameter | Source | Impact |
-|-----------|--------|--------|
+| ----------- | -------- | -------- |
 | `gbw_hz` | Datasheet GBW | Sets the dominant pole → correct bandwidth at any gain |
 | `aol_db` | Datasheet open-loop gain | Determines loop gain margin and gain accuracy |
 | `slew_vus` | Datasheet slew rate | (Reserved for future transient simulation) |
@@ -360,7 +360,7 @@ When a recognized MPN is detected (e.g., LM358, TL072, MCP6002), the skill gener
 
 The gain measurement frequency adapts to each circuit's expected bandwidth:
 
-```
+```text
 f_measure = GBW / (100 × |gain|)
 ```
 
@@ -378,7 +378,7 @@ Phase 3 adds the ability to inject PCB layout parasitics into SPICE testbenches 
 
 ### Extraction Pipeline
 
-```
+```text
 analyze_pcb.py --full → pcb.json (with trace_segments and via_details)
 extract_parasitics.py → parasitics.json (per-net R, L, C values)
 simulate_subcircuits.py --parasitics parasitics.json → annotated simulation
@@ -388,7 +388,7 @@ simulate_subcircuits.py --parasitics parasitics.json → annotated simulation
 
 **Trace resistance (IPC-2221A):**
 
-```
+```text
 R = ρ_Cu × L / (W × T)
 ρ_Cu = 1.68×10⁻⁸ Ω·m (copper at 20°C)
 ```
@@ -397,14 +397,14 @@ For 1oz copper (T=0.035mm), 0.254mm wide, 25.4mm long: R = 48 mΩ
 
 **Via resistance:**
 
-```
+```text
 R_via = ρ_Cu × H / (π × ((D/2)² - ((D-2T_plating)/2)²))
 T_plating ≈ 25 µm typical
 ```
 
 **Via inductance:**
 
-```
+```text
 L_via ≈ (µ₀ × H / 2π) × ln(2H/D)
 ```
 

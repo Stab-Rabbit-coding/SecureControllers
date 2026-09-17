@@ -45,7 +45,7 @@ This skill writes dogfood reports under `<root>/dogfood-reports/` and personas u
 `ce-dogfood` is an orchestrator. Prefer delegating to existing CE skills over re-deriving their behavior:
 
 | When | Skill | Why |
-|------|-------|-----|
+| ------ | ------- | ----- |
 | Phase 0 isolation | `ce-worktree` | Run the dogfood in an isolated worktree so the main checkout stays clean. |
 | A failure's root cause is non-obvious | `ce-debug` | Systematic root-cause analysis instead of guess-and-check. |
 | Committing each fix | `ce-commit` | Consistent, well-scoped commit messages. |
@@ -53,7 +53,7 @@ This skill writes dogfood reports under `<root>/dogfood-reports/` and personas u
 
 ## Workflow
 
-```
+```text
 0. Scope        Pick the branch, get onto it (offer worktree), never touch the trunk
 1. Analyze      Diff branch vs trunk, understand every change
 2. Map+Matrix   Map user flows as Mermaid flowcharts, then derive the test matrix as a task list

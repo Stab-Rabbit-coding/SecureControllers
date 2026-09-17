@@ -13,7 +13,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Ensure the organization has formalized policies and processes for AI risk management across the full AI lifecycle.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-1.1 | AI risk management is integrated into the organization's broader enterprise risk management (ERM) processes |
 | GV-1.2 | The characteristics of trustworthy AI are integrated into organizational policies, processes, and practices |
 | GV-1.3 | Organizational risk tolerance for AI is established, communicated, and reflected in AI policies |
@@ -36,7 +36,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Assign clear ownership of AI risk management decisions at the organizational level.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-2.1 | Roles and responsibilities for AI risk management across organizational levels are documented |
 | GV-2.2 | The organization designates senior officials accountable for AI risk outcomes |
 | GV-2.3 | Executive leadership understands AI risk and fosters an accountable culture |
@@ -54,7 +54,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Identify and define all roles involved in AI design, development, deployment, and evaluation.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-3.1 | AI risk management roles span the entire AI lifecycle from design through decommission |
 | GV-3.2 | AI risk responsibilities are defined for development teams, operators, and deployers |
 | GV-3.3 | Responsibilities for AI risk are assigned to both technical and non-technical roles |
@@ -72,7 +72,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Ensure AI risk management involves diverse perspectives across the organization.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-4.1 | Cross-functional AI risk teams include AI/ML, legal, privacy, security, HR, and ethics functions |
 | GV-4.2 | Processes for communicating AI risks between teams are documented |
 | GV-4.3 | Mechanisms for escalating AI risk concerns are established |
@@ -90,7 +90,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Communicate AI risk tolerance and link it to operational decisions.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-5.1 | AI risk tolerance is defined and reflects organizational values |
 | GV-5.2 | AI risk tolerance is reviewed when new AI systems are deployed or contexts change |
 | GV-5.3 | Risk tolerance statements inform go/no-go decisions for AI system deployment |
@@ -108,7 +108,7 @@ GOVERN establishes the organizational culture, policies, accountability, and ris
 **Purpose:** Ensure AI risks and risk management practices align with applicable laws, ethical principles, and industry standards.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | GV-6.1 | Legal and regulatory requirements for AI are identified and tracked |
 | GV-6.2 | AI risk management processes are aligned with applicable ethical principles |
 | GV-6.3 | The organization engages with emerging AI regulations on a proactive basis |
@@ -130,7 +130,7 @@ MAP establishes context before risks are measured or managed. A well-executed MA
 **Purpose:** Understand the intended use, operating environment, and affected populations of each AI system.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MP-1.1 | The organization's mission and goals related to AI are documented |
 | MP-1.2 | Intended uses of the AI system are documented and bounded |
 | MP-1.3 | The AI system's operating environment and constraints are defined |
@@ -151,7 +151,7 @@ MAP establishes context before risks are measured or managed. A well-executed MA
 **Purpose:** Apply current scientific understanding of AI capabilities and limitations to the design and risk assessment.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MP-2.1 | AI and ML capabilities and limitations are documented for the specific system type |
 | MP-2.2 | Assumptions and constraints of the AI system's training data are documented |
 | MP-2.3 | Uncertainty and variability in AI outputs are characterized |
@@ -169,7 +169,7 @@ MAP establishes context before risks are measured or managed. A well-executed MA
 **Purpose:** Identify who benefits from the AI system and who bears its risks — these are often different groups.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MP-3.1 | Benefits and risks are documented for each identified stakeholder group |
 | MP-3.2 | Affected communities are engaged where feasible to understand perceived risks and benefits |
 | MP-3.3 | The distribution of benefits vs. risks across stakeholder groups is evaluated |
@@ -188,7 +188,7 @@ MAP establishes context before risks are measured or managed. A well-executed MA
 **Purpose:** Prioritize identified risks to focus MEASURE and MANAGE resources effectively.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MP-4.1 | Risk prioritization criteria are established (e.g., severity, breadth, reversibility) |
 | MP-4.2 | Risks are ranked and documented in the AI risk register |
 | MP-4.3 | Highest-priority risks are escalated to GOVERN for risk tolerance review |
@@ -206,7 +206,7 @@ MAP establishes context before risks are measured or managed. A well-executed MA
 **Purpose:** Characterize the probability and potential severity of identified harms.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MP-5.1 | Likelihood of harm is estimated using historical data, expert judgment, or red-teaming |
 | MP-5.2 | Potential impact is assessed across physical, psychological, financial, and reputational dimensions |
 | MP-5.3 | Cumulative and systemic risks (e.g., societal effects of widespread deployment) are considered |
@@ -228,7 +228,7 @@ MEASURE employs quantitative and qualitative tools to evaluate AI risks identifi
 **Purpose:** Identify appropriate methods and tools for measuring AI risks.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MS-1.1 | Metrics for each identified risk are defined (technical, operational, and societal) |
 | MS-1.2 | Measurement approaches are appropriate for the AI system type and deployment context |
 | MS-1.3 | Gaps in measurement capabilities are documented and addressed |
@@ -246,7 +246,7 @@ MEASURE employs quantitative and qualitative tools to evaluate AI risks identifi
 **Purpose:** Evaluate AI systems against the trustworthiness properties throughout the lifecycle.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MS-2.1 | AI systems are evaluated pre-deployment for technical performance and safety |
 | MS-2.2 | Bias and fairness testing is conducted across demographic groups |
 | MS-2.3 | Explainability and interpretability requirements are tested and documented |
@@ -268,7 +268,7 @@ MEASURE employs quantitative and qualitative tools to evaluate AI risks identifi
 **Purpose:** Monitor AI risk continuously after deployment to detect drift, degradation, or new harms.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MS-3.1 | Ongoing monitoring metrics are defined and implemented post-deployment |
 | MS-3.2 | Model drift and performance degradation are detected and trigger review |
 | MS-3.3 | New risks identified post-deployment are fed back into MAP |
@@ -288,7 +288,7 @@ MEASURE employs quantitative and qualitative tools to evaluate AI risks identifi
 **Purpose:** Ensure measurement results directly inform risk treatment decisions in MANAGE.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MS-4.1 | Measurement outputs are communicated to decision-makers responsible for MANAGE |
 | MS-4.2 | Measurement limitations and uncertainties are communicated alongside results |
 | MS-4.3 | Measurement results are used to update the AI risk register and treatment plans |
@@ -310,7 +310,7 @@ MANAGE addresses identified AI risks through treatment, monitoring, and improvem
 **Purpose:** Ensure the most impactful AI risks receive treatment resources first.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MG-1.1 | AI risk register entries are prioritized and assigned treatment owners |
 | MG-1.2 | Risk prioritization reflects organizational risk tolerance (GOVERN 1.3) |
 | MG-1.3 | Residual risks after treatment are documented and accepted by appropriate authority |
@@ -328,7 +328,7 @@ MANAGE addresses identified AI risks through treatment, monitoring, and improvem
 **Purpose:** Develop and execute risk treatment strategies that reduce AI risk to acceptable levels.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MG-2.1 | Risk treatment options are identified (mitigate, transfer, avoid, accept) |
 | MG-2.2 | Treatment strategies are resourced and implemented |
 | MG-2.3 | Emergency interventions (e.g., system shutdown) are defined for critical failures |
@@ -347,7 +347,7 @@ MANAGE addresses identified AI risks through treatment, monitoring, and improvem
 **Purpose:** Ensure risk treatments remain effective over time and adapt to changing conditions.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MG-3.1 | Effectiveness of risk treatments is monitored using defined metrics |
 | MG-3.2 | AI incidents are documented, reported, and investigated |
 | MG-3.3 | Lessons learned from incidents are applied to future risk management |
@@ -367,7 +367,7 @@ MANAGE addresses identified AI risks through treatment, monitoring, and improvem
 **Purpose:** Close the loop — feed treatment outcomes back into GOVERN and MAP for continuous improvement.
 
 | Subcategory | Description |
-|-------------|-------------|
+| ------------- | ------------- |
 | MG-4.1 | AI risk management processes are periodically reviewed for effectiveness |
 | MG-4.2 | Improvements to AI risk management are identified and implemented |
 | MG-4.3 | Lessons learned inform updates to organizational AI risk policies |

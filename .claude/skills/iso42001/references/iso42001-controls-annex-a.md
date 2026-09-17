@@ -9,7 +9,7 @@ ISO/IEC 42001:2023 Annex A contains **38 controls** organised across **9 control
 ## A.2 — Policies Related to AI (3 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.2.2 | AI policy | Provider + User | A formal AI policy shall be established, documented, and communicated. The policy shall include the organisation's commitment to responsible AI development or use, alignment with organisational values and legal obligations, and a framework for setting AI objectives. Signed by top management. |
 | A.2.3 | Alignment with other organisational policies | Provider + User | AI-specific requirements shall be incorporated into existing organisational policies (e.g. HR, procurement, IT, data governance, information security) where those policies affect or are affected by AI systems. |
 | A.2.4 | Review of the AI policy | Provider + User | The AI policy shall be reviewed at planned intervals and when significant changes occur, to ensure its continuing suitability, adequacy, and effectiveness. |
@@ -21,7 +21,7 @@ ISO/IEC 42001:2023 Annex A contains **38 controls** organised across **9 control
 ## A.3 — Internal Organisation (2 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.3.2 | AI roles and responsibilities | Provider + User | Roles and responsibilities for AI governance shall be defined, assigned, communicated, and documented. This includes accountability for individual AI systems, data governance, and AIMS oversight. A RACI matrix or equivalent is recommended. |
 | A.3.3 | Reporting of concerns | Provider + User | Mechanisms shall be established for personnel to raise concerns about AI systems — including ethical concerns, bias observations, unexpected outputs, or policy non-compliance — without fear of reprisal. |
 
@@ -32,7 +32,7 @@ ISO/IEC 42001:2023 Annex A contains **38 controls** organised across **9 control
 ## A.4 — Resources for AI Systems (5 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.4.2 | Resource documentation | Provider + User | The resources required to develop, deploy, operate, and maintain AI systems shall be identified and documented, including compute, data, tooling, and human resources. |
 | A.4.3 | Data resources | Provider | Policies and controls shall govern the acquisition, management, and quality assurance of data resources used in AI systems — covering training, validation, and test data. |
 | A.4.4 | Tooling resources | Provider | Controls shall govern the selection, procurement, and management of AI tooling — including development frameworks, model libraries, and evaluation platforms. |
@@ -46,7 +46,7 @@ ISO/IEC 42001:2023 Annex A contains **38 controls** organised across **9 control
 ## A.5 — Assessing Impacts of AI Systems (4 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.5.2 | AI system impact assessment process | Provider + User | A documented process for assessing the impacts of AI systems shall be established and maintained. The process shall define scope, methodology, frequency of assessment, roles, and how assessment results inform control selection and treatment decisions. |
 | A.5.3 | Documentation of AI system impact assessments | Provider + User | Results of AI system impact assessments shall be documented, retained, and updated when significant changes occur to the AI system or its operating context. |
 | A.5.4 | Assessing AI system impact on individuals or groups of individuals | Provider + User | The impact assessment shall evaluate how AI system outputs may affect individual rights, wellbeing, and autonomy. This includes risks of discrimination, profiling, automated decision-making without meaningful human review, and disproportionate impacts on vulnerable individuals or groups. |
@@ -63,14 +63,14 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ### A.6.1 — Management Guidance (2 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.6.1.2 | Objectives for responsible development of AI system | Provider | Specific, measurable objectives for responsible AI development shall be established, documented, and monitored. These shall align with the AI policy and responsible AI principles (fairness, transparency, accountability, safety, reliability). |
 | A.6.1.3 | Processes for responsible AI system design and development | Provider | Formal processes shall govern AI system design and development to embed responsible AI principles: fairness-aware design, documentation of design decisions, explainability requirements proportionate to AI impact level, and human oversight at key development gates. |
 
 ### A.6.2 — AI System Life Cycle (7 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.6.2.2 | AI system requirements and specification | Provider | Requirements for each AI system shall be documented, including intended purpose, performance criteria, operating conditions, input/output specifications, and applicable constraints (legal, ethical, technical). |
 | A.6.2.3 | Documentation of AI system design and development | Provider | Design decisions, architecture choices, model versions, hyperparameters, and development rationale shall be documented to support reproducibility, auditability, and accountability. |
 | A.6.2.4 | AI system verification and validation | Provider | Testing protocols shall be applied before deployment: performance benchmarking, fairness and bias testing across demographic groups, adversarial testing, edge case validation, and go/no-go authorisation criteria. |
@@ -86,7 +86,7 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ## A.7 — Data for AI Systems (5 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.7.2 | Data for development and enhancement of AI system | Provider | A governance framework shall define how data is managed across the full AI data lifecycle: acquisition, quality assurance, labelling, versioning, bias testing, retention, and secure deletion. |
 | A.7.3 | Acquisition of data | Provider | Controls shall govern how training, validation, and test data is sourced: legal basis for data use, consent requirements where applicable, provenance documentation, and prohibition on use of unlawfully obtained data. |
 | A.7.4 | Quality of data for AI systems | Provider | Data quality criteria shall be defined for training, validation, and test data — covering completeness, accuracy, representativeness, and recency — and tested before data is used in AI development. |
@@ -100,7 +100,7 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ## A.8 — Information for Interested Parties of AI Systems (4 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.8.2 | System documentation and information for users | Provider + User | Documentation and information about AI systems shall be provided to users and other interested parties at a level of detail proportionate to the AI system's impact. This includes intended purpose, known limitations, and how to interpret AI outputs. |
 | A.8.3 | External reporting | Provider + User | The organisation shall define what information about AI systems is reported externally, to whom, how frequently, and through what mechanism — including regulatory disclosures, transparency reports, and public-facing AI disclosures. |
 | A.8.4 | Communication of incidents | Provider + User | AI-specific incident communication processes shall be established: internal escalation, notification to affected individuals where required, regulatory reporting (e.g., under sector-specific AI or data protection laws), and post-incident review and disclosure. |
@@ -113,7 +113,7 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ## A.9 — Use of AI Systems (3 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.9.2 | Processes for responsible use of AI systems | User (primarily) | Formal processes shall govern how the organisation uses AI systems responsibly, including acceptable use criteria, human oversight of AI outputs, and procedures for escalating or overriding AI decisions. |
 | A.9.3 | Objectives for responsible use of AI system | User (primarily) | Measurable objectives for responsible AI use shall be established and monitored, aligned to the AI policy and responsible AI principles. These objectives drive continual improvement in AI use practices. |
 | A.9.4 | Intended use of the AI system | Provider + User | The intended use of each AI system shall be documented, communicated, and enforced. Use beyond the documented intended purpose shall be identified, assessed, and controlled. |
@@ -125,7 +125,7 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ## A.10 — Third-Party and Customer Relationships (3 controls)
 
 | Control ID | Control Name | Applies To | Description |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | A.10.2 | Allocating responsibilities | Provider + User | Where AI systems involve multiple parties (providers, users, customers, partners), responsibilities for responsible AI governance shall be clearly allocated and documented — including who is responsible for impact assessment, monitoring, and incident response. |
 | A.10.3 | Suppliers | Provider + User | AI supply chain risk management shall govern third-party AI providers: tiering by risk, due diligence questionnaires, contractual AI-specific clauses (including data handling, bias controls, and right to audit), and ongoing supplier performance monitoring. |
 | A.10.4 | Customers | Provider | Where AI systems are deployed to customers, the organisation shall define what information customers receive about AI system capabilities and limitations, what obligations customers have in responsible use, and how customer feedback and incidents are managed. |
@@ -137,7 +137,7 @@ A.6 is divided into two sub-objectives: **A.6.1 Management guidance** and **A.6.
 ## Summary: Controls by Organisational Role
 
 | Domain | # Controls | AI Provider | AI User |
-|--------|-----------|------------|---------|
+| -------- | ----------- | ------------ | --------- |
 | A.2 Policies | 3 | Both | Both |
 | A.3 Internal Organisation | 2 | Both | Both |
 | A.4 Resources | 5 | Primary (all 5) | A.4.2, A.4.6 |

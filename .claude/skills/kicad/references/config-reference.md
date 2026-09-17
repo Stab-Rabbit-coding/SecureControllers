@@ -20,7 +20,7 @@ JSONC — JSON with `//` and `/* */` comments, and trailing commas allowed. The 
 
 The loader walks upward from the project directory, collecting every `.kicad-happy.json` it finds, then includes `~/.kicad-happy.json` as the base layer (lowest precedence). Files are merged closest-wins:
 
-```
+```text
 ~/.kicad-happy.json          ← base layer (user-wide defaults)
 /home/user/hw/.kicad-happy.json   ← workspace layer
 /home/user/hw/myboard/.kicad-happy.json  ← project layer (wins)
@@ -47,7 +47,7 @@ Always `1`. Reserved for future schema evolution.
 Document metadata. Consumed by kidoc for front matter and by analyzers for report context.
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `name` | string | Product or project name |
 | `number` | string | Model or part number |
 | `revision` | string | Document revision (e.g., "A", "1.2") |
@@ -67,7 +67,7 @@ Suppress specific analyzer findings. **Additive across config layers** — suppr
 Each entry:
 
 | Field | Type | Required | Description |
-|-------|------|----------|-------------|
+| --- | --- | --- | --- |
 | `rule_id` | string | **Yes** | Exact rule ID to suppress (e.g., `"DC-001"`, `"SW-002"`) |
 | `components` | array of strings | No | fnmatch glob patterns for component refs. At least one finding component must match at least one pattern. |
 | `nets` | array of strings | No | fnmatch glob patterns for net names. At least one finding net must match at least one pattern. |
@@ -120,7 +120,7 @@ Unknown values are warned and dropped. Default: `[]` (BOM manager auto-selects).
 BOM conventions for this project.
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `field_priority` | array of strings | Ordered list of schematic field names to search for part numbers (e.g., `["MPN", "Digi-Key_PN"]`). Informational — guides the AI agent; no code enforcement. |
 | `group_by` | string | How to group BOM lines: `"value"`, `"mpn"`, or `"value+footprint"` (default: `"value+footprint"`) |
 
@@ -140,7 +140,7 @@ Invalid `group_by` values are warned and the field is ignored (default behavior 
 Controls analysis script behavior and output.
 
 | Field | Type | Default | Description |
-|-------|------|---------|-------------|
+| --- | --- | --- | --- |
 | `output_dir` | string | `"analysis"` | Directory for analysis JSON output |
 | `retention` | integer | `5` | Number of past analysis runs to keep |
 | `auto_diff` | boolean | `true` | Automatically diff against the previous run |
@@ -153,7 +153,7 @@ Controls analysis script behavior and output.
 Filter and annotate power rails in analysis output. All patterns use fnmatch glob syntax.
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `ignore` | array of strings | Net name patterns to exclude from analysis. Ignored rails are removed from `rail_voltages`, `power_rails`, sleep current audit, and power tree figures. |
 | `flag` | array of strings | Net name patterns to highlight for extra scrutiny. Flagged rails appear in top-level `flagged_rails`. |
 | `voltage_overrides` | object | Manual voltage assignments: `{net_name: voltage_float}`. Overrides auto-detected voltages from regulator outputs and power symbol name inference. |
@@ -185,7 +185,7 @@ Filter and annotate power rails in analysis output. All patterns use fnmatch glo
 Explicit design intent overrides. When absent, each field is **auto-detected** from PCB fab notes, schematic title blocks, component MPNs, and board characteristics. See `design-intent.md` for the full auto-detection logic and per-market review priorities.
 
 | Field | Type | Auto-detected when absent | Description |
-|-------|------|--------------------------|-------------|
+| --- | --- | --- | --- |
 | `product_class` | string | Yes | `"prototype"` or `"production"` |
 | `ipc_class` | integer | Yes (from fab notes / title block) | `1`, `2`, or `3` (default: `2`) |
 | `target_market` | string | Yes (from component MPNs) | `"hobby"`, `"consumer"`, `"industrial"`, `"medical"`, `"automotive"`, `"aerospace"` |
@@ -200,7 +200,7 @@ Explicit design intent overrides. When absent, each field is **auto-detected** f
 **Market-adjusted defaults for auto-detected fields:**
 
 | Market | `operating_temp_range` | `test_coverage_target` | `expected_lifetime_years` |
-|--------|----------------------|----------------------|--------------------------|
+| --- | --- | --- | --- |
 | hobby / consumer | [-10, 70] | 0.85 | 5 |
 | industrial / medical | [-40, 85] | 0.90 | 10 |
 | automotive | [-40, 125] | 0.95 | 15 |
@@ -241,7 +241,7 @@ Document classification label (e.g., `"Company Confidential"`, `"Internal Use On
 #### `reports.revision_history` (array of objects)
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `rev` | string | Revision identifier |
 | `date` | string | Date string |
 | `author` | string | Author name |
@@ -252,7 +252,7 @@ Document classification label (e.g., `"Company Confidential"`, `"Internal Use On
 Each entry defines one document to generate.
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `type` | string | Document type: `"hdd"`, `"ce_technical_file"`, `"design_review"`, `"icd"`, `"manufacturing"`, `"schematic_review"`, `"power_analysis"`, `"emc_report"` |
 | `output` | string | Filename template; supports `{project}` and `{rev}` placeholders |
 | `formats` | array of strings | Output formats: `"pdf"`, `"docx"`, `"odt"`, `"html"` |
@@ -262,7 +262,7 @@ Each entry defines one document to generate.
 #### `reports.branding` (object)
 
 | Field | Type | Description |
-|-------|------|-------------|
+| --- | --- | --- |
 | `logo` | string | Path to logo image file |
 | `company_name` | string | Company name for headers and cover |
 | `header_left` | string | Left header text template; supports `{company}` |
@@ -273,7 +273,7 @@ Each entry defines one document to generate.
 **`reports.branding.colors` keys:**
 
 | Key | Description |
-|-----|-------------|
+| --- | --- |
 | `primary` | Primary brand color |
 | `secondary` | Secondary brand color |
 | `accent` | Accent color (links, highlights) |
@@ -418,7 +418,7 @@ Production consumer electronics board targeting the EU market. LCSC primary supp
 ## Quick Field Index
 
 | Field path | Type | v1.2 | Default | Auto-detected |
-|------------|------|-------|---------|---------------|
+| --- | --- | --- | --- | --- |
 | `version` | int | — | 1 | — |
 | `project.name` | string | — | — | — |
 | `project.number` | string | — | — | — |

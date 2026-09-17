@@ -54,7 +54,7 @@ git diff --name-only main...[branch]
 Map each changed file to the route(s) that render it, then build the list of URLs to test. The table below is a starting point of common patterns, not an exhaustive rule set — apply judgment for the project's actual layout:
 
 | File Pattern | Route(s) |
-|-------------|----------|
+| ------------- | ---------- |
 | `app/views/users/*` | `/users`, `/users/:id`, `/users/new` |
 | `app/controllers/settings_controller.rb` | `/settings` |
 | `app/javascript/controllers/*_controller.js` | Pages using that Stimulus controller |
@@ -117,7 +117,7 @@ Visibility is independent from unattended execution:
 - **`agent-browser` fallback, pipeline mode:** run headless without asking.
 - **`agent-browser` fallback, manual mode:** ask the user whether to run headed or headless using the platform's blocking question tool: `AskUserQuestion` in Claude Code (call `ToolSearch` with `select:AskUserQuestion` first if its schema isn't loaded), `request_user_input` in Codex, `ask_question` in Antigravity CLI (`agy`), `ask_user` in Pi (requires the `pi-ask-user` extension). Fall back to presenting options in chat only when no blocking tool exists in the harness or the call errors. Never silently skip the question:
 
-  ```
+  ```text
   Do you want to watch the browser tests run?
 
   1. Headed (watch) - Opens a visible browser window
@@ -147,7 +147,7 @@ For each affected route, use the selected driver to navigate and capture fresh r
 Pause for human input when testing touches flows that require external interaction. **Pipeline mode:** do not pause — log each such flow as Skip with the reason and continue.
 
 | Flow Type | What to Ask |
-|-----------|-------------|
+| ----------- | ------------- |
 | OAuth | "Please sign in with [provider] and confirm it works" |
 | Email | "Check your inbox for the test email and confirm receipt" |
 | Payments | "Complete a test purchase in sandbox mode" |
@@ -156,7 +156,7 @@ Pause for human input when testing touches flows that require external interacti
 
 Ask the user (using the platform's question tool, or present numbered options and wait):
 
-```
+```text
 Human Verification Needed
 
 This test touches [flow type]. Please:
@@ -178,7 +178,7 @@ When a test fails (**pipeline mode:** do not ask how to proceed — capture the 
 
 2. **Ask the user how to proceed:**
 
-   ```
+   ```text
    Test Failed: [route]
 
    Issue: [description]

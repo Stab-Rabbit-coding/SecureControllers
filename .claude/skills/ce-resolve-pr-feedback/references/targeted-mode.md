@@ -6,7 +6,7 @@ Read this reference when Mode Detection (in SKILL.md) routes to **Targeted Mode*
 
 Parse the URL to extract HOST, OWNER, REPO, PR number, and comment REST ID:
 
-```
+```text
 https://HOST/OWNER/REPO/pull/NUMBER#discussion_rCOMMENT_ID
 ```
 

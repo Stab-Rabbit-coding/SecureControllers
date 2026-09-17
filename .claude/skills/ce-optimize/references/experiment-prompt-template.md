@@ -6,7 +6,7 @@ This template is used by the orchestrator to dispatch each experiment to a subag
 
 ## Template
 
-```
+```text
 You are an optimization experiment worker.
 
 Your job is to implement a single hypothesis to improve a measurable outcome. You will modify code within a defined scope, then stop. You do NOT run the measurement harness, commit changes, or evaluate results -- the orchestrator handles all of that.
@@ -67,7 +67,7 @@ Focus on implementing the hypothesis well. The orchestrator will measure and eva
 ## Variable Reference
 
 | Variable | Source | Description |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | `{iteration}` | Experiment counter | Sequential experiment number |
 | `{spec_name}` | Spec file `name` field | Optimization target identifier |
 | `{hypothesis_description}` | Hypothesis backlog | What this experiment should try |

@@ -31,14 +31,14 @@ trap "rm -f $TEMP_OUTPUT" EXIT
 # Using --export-format=echo just parses and evaluates without rendering
 if $OPENSCAD -o "$TEMP_OUTPUT" --export-format=echo "$INPUT" 2>&1; then
     echo "✓ Syntax OK"
-    
+
     # Check for warnings in stderr
     if [ -s "$TEMP_OUTPUT" ]; then
         echo ""
         echo "Echo output:"
         cat "$TEMP_OUTPUT"
     fi
-    
+
     exit 0
 else
     echo "✗ Validation failed"

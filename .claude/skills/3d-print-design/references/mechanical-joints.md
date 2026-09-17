@@ -32,7 +32,7 @@ handle dozens of screw insertion cycles.
 ### Sizing
 
 | Insert size | Hole diameter | Hole depth | Boss OD (min) | Recommended boss OD |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | M2 × 3.5mm | 3.0-3.2mm | 4.0mm | 5.5mm | 6.0mm |
 | M2.5 × 4mm | 3.5-3.6mm | 4.5mm | 6.5mm | 7.0mm |
 | M3 × 4mm | 4.0-4.2mm | 4.5mm | 7.0mm | 8.0mm |
@@ -75,7 +75,7 @@ heat-set inserts but less durable.
 ### Pilot hole sizing
 
 | Screw | Pilot hole dia | Boss OD (min) | Engagement depth (min) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | M2 self-tap | 1.6-1.7mm | 4.5mm | 4mm |
 | M2.5 self-tap | 2.0-2.1mm | 5.5mm | 5mm |
 | M3 self-tap | 2.4-2.5mm | 6.5mm | 6mm |
@@ -108,7 +108,7 @@ nuts captured in printed pockets.
 ### Through-hole sizing
 
 | Screw | Clearance hole | Close-fit hole |
-|---|---|---|
+| --- | --- | --- |
 | M2 | 2.4mm | 2.2mm |
 | M2.5 | 3.0mm | 2.7mm |
 | M3 | 3.4mm | 3.2mm |
@@ -120,7 +120,7 @@ Print a hexagonal pocket on the blind side so the nut drops in and is held
 captive while the screw is tightened from the other side.
 
 | Nut | Across flats (AF) | Pocket size (AF + clearance) | Pocket depth |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | M2 | 4.0mm | 4.4mm | 1.8mm (or 2.0mm for easy insertion) |
 | M2.5 | 5.0mm | 5.4mm | 2.2mm |
 | M3 | 5.5mm | 5.9mm | 2.6mm |
@@ -147,7 +147,7 @@ No fasteners required.
 A flexible arm with a hook at the end. The arm deflects as the mating part is
 pressed on, then the hook snaps into a catch.
 
-```
+```text
 Design parameters:
   Arm length (L):    10-20mm (longer = more flexible, less insertion force)
   Arm thickness (t): 1.0-1.5mm (thinner = more flexible)
@@ -162,7 +162,7 @@ Design parameters:
 Maximum strain in the arm during deflection must stay below the material's
 yield strain:
 
-```
+```text
 Strain = 1.5 × h × t / L²
 
 Material yield strains:
@@ -202,7 +202,7 @@ friction/interference.
 ### Interference values for FDM
 
 | Application | Interference per side | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Light press (removable) | 0.05-0.1mm | Pin can be pulled out by hand |
 | Medium press (firm) | 0.1-0.15mm | Needs tool to remove |
 | Tight press (semi-permanent) | 0.15-0.2mm | May crack PLA; use PETG |
@@ -252,7 +252,7 @@ FDM is poorly suited to living hinges because:
 FDM can produce functional threads, but only coarse ones:
 
 | Thread | Minimum printable | Notes |
-|---|---|---|
+| --- | --- | --- |
 | M6 × 1.0mm pitch | Marginal | Fine pitch, barely printable |
 | M8 × 1.25mm | Acceptable | Functional with cleanup |
 | M10 × 1.5mm | Good | Reliable |
@@ -277,7 +277,7 @@ male thread needs to be undersized or the female thread oversized.
 ### Adhesive selection
 
 | Adhesive | Best for | Set time | Strength | Gap-filling? |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Cyanoacrylate (super glue) | PLA, PETG, ABS | 10-30 sec | Medium | No (thin bond line only) |
 | CA + accelerator | Same, faster cure | 2-5 sec | Medium | No |
 | 5-minute epoxy | All plastics | 5-10 min | High | Yes |
@@ -299,7 +299,7 @@ male thread needs to be undersized or the female thread oversized.
 ## Joint Selection Guide
 
 | Requirement | Best method |
-|---|---|
+| --- | --- |
 | Repeated disassembly (>10 cycles) | Heat-set inserts + machine screws |
 | Occasional disassembly (5-10 cycles) | Self-tapping screws |
 | Tool-free assembly | Snap fits |

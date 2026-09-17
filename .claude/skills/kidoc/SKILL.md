@@ -53,7 +53,7 @@ Creates `reports/.venv/` automatically on first run (PDF/DOCX/ODT only — HTML 
 ## Document Types
 
 | Type | Name | Key Sections |
-|------|------|-------------|
+| ------ | ------ | ------------- |
 | `hdd` | Hardware Design Description | System overview, power, signals, analog, thermal, EMC, PCB, mechanical, BOM, test, compliance |
 | `ce_technical_file` | CE Technical File | Product ID, essential requirements, harmonized standards, risk assessment, Declaration of Conformity |
 | `design_review` | Design Review Package | Review summary (cross-analyzer scores), findings, action items |
@@ -130,7 +130,7 @@ render_pcb('board.kicad_pcb', 'output/', preset_name='assembly-front')
 Layer presets:
 
 | Preset | Shows |
-|--------|-------|
+| -------- | ------- |
 | `assembly-front` | Front silk, fab, pads, outline |
 | `assembly-back` | Back silk, fab, pads, outline (mirrored) |
 | `routing-front` | Front copper, pads, vias, outline |
@@ -154,7 +154,7 @@ Generated from schematic analysis JSON. Power trees show regulator topology with
 ## Output Formats
 
 | Format | SVG Handling | Dependencies |
-|--------|-------------|------|
+| -------- | ------------- | ------ |
 | **Markdown** | Image references | Zero-dep |
 | **HTML** | Inlined as vector | Zero-dep |
 | **PDF** | Vector via svglib, custom converter fallback, raster fallback | Venv (`reports/.venv/`) |
@@ -195,7 +195,7 @@ Report settings live in `.kicad-happy.json` under the `"reports"` key. Config fi
 
 After generating a scaffold, fill the narrative placeholder sections with engineering prose.
 
-### Workflow
+### Workflow (Writing Narratives)
 
 1. Run the context builder to get focused data for each section:
 
@@ -250,7 +250,7 @@ Write as a senior EE explaining to a peer:
 ## Related Skills
 
 | Skill | Relationship |
-|-------|-------------|
+| ------- | ------------- |
 | `kicad` | Produces schematic/PCB/thermal analysis JSON consumed by scaffolds |
 | `emc` | Produces EMC analysis JSON for EMC sections |
 | `spice` | SPICE simulation results appear in analog design sections |

@@ -18,7 +18,7 @@ This file provides cross-reference mapping between ISO 27001:2013 (114 controls)
 ### A.5 Organisational Controls (2022) → 2013 Equivalents
 
 | 2022 Control | 2022 Name | 2013 Equivalent(s) |
-|-------------|-----------|-------------------|
+| ------------- | ----------- | ------------------- |
 | A.5.1 | Policies for information security | A.5.1.1, A.5.1.2 |
 | A.5.2 | IS roles and responsibilities | A.6.1.1 |
 | A.5.3 | Segregation of duties | A.6.1.2 |
@@ -60,7 +60,7 @@ This file provides cross-reference mapping between ISO 27001:2013 (114 controls)
 ### A.6 People Controls (2022) → 2013 Equivalents
 
 | 2022 Control | 2022 Name | 2013 Equivalent(s) |
-|-------------|-----------|-------------------|
+| ------------- | ----------- | ------------------- |
 | A.6.1 | Screening | A.7.1.1 |
 | A.6.2 | Terms and conditions of employment | A.7.1.2 |
 | A.6.3 | IS awareness, education and training | A.7.2.2 |
@@ -73,7 +73,7 @@ This file provides cross-reference mapping between ISO 27001:2013 (114 controls)
 ### A.7 Physical Controls (2022) → 2013 Equivalents
 
 | 2022 Control | 2022 Name | 2013 Equivalent(s) |
-|-------------|-----------|-------------------|
+| ------------- | ----------- | ------------------- |
 | A.7.1 | Physical security perimeters | A.11.1.1 |
 | A.7.2 | Physical entry | A.11.1.2, A.11.1.6 |
 | A.7.3 | Securing offices, rooms and facilities | A.11.1.3 |
@@ -92,7 +92,7 @@ This file provides cross-reference mapping between ISO 27001:2013 (114 controls)
 ### A.8 Technological Controls (2022) → 2013 Equivalents
 
 | 2022 Control | 2022 Name | 2013 Equivalent(s) |
-|-------------|-----------|-------------------|
+| ------------- | ----------- | ------------------- |
 | A.8.1 | User end point devices | A.6.2.1, A.11.2.8 |
 | A.8.2 | Privileged access rights | A.9.2.3 |
 | A.8.3 | Information access restriction | A.9.4.1 |
@@ -143,7 +143,7 @@ No controls were deleted outright. All were merged:
 ## 11 New Controls in 2022 (not in 2013)
 
 | 2022 ID | Name |
-|---------|------|
+| --------- | ------ |
 | A.5.7 | Threat intelligence |
 | A.5.23 | Information security for use of cloud services |
 | A.5.30 | ICT readiness for business continuity |

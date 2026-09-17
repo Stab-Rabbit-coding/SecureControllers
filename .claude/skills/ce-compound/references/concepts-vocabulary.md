@@ -58,7 +58,7 @@ When two terms were used interchangeably and the team settled on a distinction, 
 
 ## One illustrative entry — the shape, not a template
 
-```
+```text
 ## Booking
 
 ### Reservation

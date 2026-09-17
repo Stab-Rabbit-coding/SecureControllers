@@ -138,7 +138,7 @@ The fixed route passed to the worker accepts exactly these tokens — the worker
 fail-closes on anything else (including route-shaped guesses like `codex-cli`):
 
 | Target | Route token(s) |
-|--------|----------------|
+| -------- | ---------------- |
 | `codex` | `codex` |
 | `claude` | `claude` |
 | `grok` | `grok-cli` (native CLI) or `grok-cursor` (via Cursor intermediary) |

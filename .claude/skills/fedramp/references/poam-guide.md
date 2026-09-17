@@ -11,7 +11,7 @@ document — updated monthly during continuous monitoring.
 ## POA&M Row Fields (Required)
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | POA&M Item ID | Unique identifier (e.g., V-001, F-001) |
 | Controls | NIST 800-53 Rev 5 control ID(s) affected |
 | Weakness Name | Brief name of the finding |
@@ -36,7 +36,7 @@ document — updated monthly during continuous monitoring.
 ## FedRAMP Remediation SLAs
 
 | Risk Rating | Remediation Deadline (from identification) |
-|---|---|
+| --- | --- |
 | Critical (where distinguished from High) | ≤ 30 calendar days — prioritize immediately |
 | High | 30 calendar days |
 | Moderate | 90 calendar days |

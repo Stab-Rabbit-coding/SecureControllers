@@ -71,7 +71,7 @@ Lead engineers, project managers, quality team.
 ## Data Requirements
 
 | Source | Required | Provides |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | Schematic analysis | Yes | Executive summary, system overview, BOM, scorecard |
 | EMC analysis | No | Scorecard EMC row, EMC section |
 | Thermal analysis | No | Scorecard thermal row, thermal section |

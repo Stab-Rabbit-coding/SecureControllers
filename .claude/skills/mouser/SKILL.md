@@ -8,7 +8,7 @@ description: Search Mouser Electronics for electronic components — secondary s
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Schematic analysis — extracts MPNs for part lookup |
 | `bom` | BOM management — orchestrates sourcing across distributors |
 | `digikey` | Primary prototype source (prefer for datasheets — direct PDF links) |
@@ -49,7 +49,7 @@ All search endpoints use the Search API key as a query parameter: `?apiKey=<key>
 
 #### Keyword Search
 
-```
+```text
 POST /api/v1/search/keyword?apiKey=<key>
 ```
 
@@ -70,7 +70,7 @@ POST /api/v1/search/keyword?apiKey=<key>
 
 #### Part Number Search
 
-```
+```text
 POST /api/v1/search/partnumber?apiKey=<key>
 ```
 
@@ -93,7 +93,7 @@ V2 adds manufacturer filtering and pagination by page number.
 
 #### Keyword + Manufacturer Search
 
-```
+```text
 POST /api/v2/search/keywordandmanufacturer?apiKey=<key>
 ```
 
@@ -113,13 +113,13 @@ Note: the wrapper object name is `SearchByKeywordMfrNameRequest` (not `SearchByK
 
 #### Part Number + Manufacturer Search
 
-```
+```text
 POST /api/v2/search/partnumberandmanufacturer?apiKey=<key>
 ```
 
 #### Manufacturer List
 
-```
+```text
 GET /api/v2/search/manufacturerlist?apiKey=<key>
 ```
 
@@ -150,7 +150,7 @@ All search endpoints return the same response format:
 ### Key Part Fields
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | `MouserPartNumber` | string | Mouser's internal part number (prefixed, e.g., `81-GRM155R71C104KA88`) |
 | `ManufacturerPartNumber` | string | Manufacturer's part number (MPN) — use for cross-distributor matching |
 | `Manufacturer` | string | Manufacturer name |

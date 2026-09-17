@@ -105,7 +105,7 @@ Catch-all for items not covered by Cat I–XX that are determined to provide cri
 ## USML vs CCL Jurisdiction Tips
 
 | Scenario | Likely Jurisdiction |
-|----------|-------------------|
+| ---------- | ------------------- |
 | Item specifically listed in USML (Cat I–XXI) | ITAR |
 | Item removed from USML via Export Control Reform | EAR (often ECCN 0Yxxx) |
 | Commercial item with no military application | EAR / EAR99 |

@@ -80,7 +80,7 @@ Evaluate two things before planning:
 **Research need — does this plan depend on facts that change faster than training data?**
 
 | Research need | Signals | Action |
-|--------------|---------|--------|
+| -------------- | --------- | -------- |
 | **None** | Generic, timeless, or conceptual plan (study curriculum methodology, project management approach, personal goal breakdown) | Skip research. Model knowledge is sufficient. After structuring the plan, offer: "I based this on general knowledge. Want me to search for [specific thing research would improve]?" — e.g., sourced recipes, current product recommendations, expert frameworks. Only if the user accepts. |
 | **Recommended** | Plan references specific locations, venues, dates, prices, schedules, seasonal availability, or current events — anything where stale information would break the plan (closed restaurants, changed prices, cancelled events, wrong seasonal dates). | Research before planning. Decompose into 2-5 focused research questions and dispatch parallel web searches. In Claude Code, use the Agent tool with `model: "haiku"` for each search to reduce cost. Collate findings before structuring the plan. |
 
@@ -119,7 +119,7 @@ Create a structured plan guided by these quality principles. Do NOT use the soft
 Not every plan should be a single linear path. Match the format to the task:
 
 | Task type | Best format | Why |
-|-----------|------------|-----|
+| ----------- | ------------ | ----- |
 | **High personal preference** (food, entertainment, activities, gifts) | Curated options per category — present 2-3 choices and let the user compose | Preferences vary; a single pick may miss. Options respect the user's taste. |
 | **Logical sequence** (study plan, project timeline, multi-day trip logistics) | Single prescriptive path with clear ordering | Sequencing matters; options at each step create decision paralysis. |
 | **Hybrid** (event with fixed structure but variable details) | Fixed structure with choice points marked | The skeleton is set but specific vendors/venues/activities are options. |

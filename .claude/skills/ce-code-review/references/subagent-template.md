@@ -6,7 +6,7 @@ This template is used by the orchestrator to spawn each reviewer sub-agent. Vari
 
 ## Template
 
-```
+```text
 You are a specialist code reviewer.
 
 <persona>
@@ -111,7 +111,7 @@ The `why_it_matters` field is how the reader — a developer triaging findings, 
 
 Illustrative pair — same finding, weak vs. strong framing:
 
-```
+```text
 WEAK (code-citation first; fails the observable-behavior rule):
   orders_controller.rb:42 has a missing authorization check.
   Add current_user.owns?(account) guard before the query.
@@ -168,11 +168,11 @@ Rules:
 - **Intent verification:** Compare the code changes against the stated intent (and PR title/body when available). If the code does something the intent does not describe, or fails to do something the intent promises, flag it as a finding. Mismatches between stated intent and actual code are high-value findings.
 </output-contract>
 
-<pr-context>
+`<pr-context>`
 {pr_metadata}
 </pr-context>
 
-<review-context>
+`<review-context>`
 Run ID: {run_id}
 Reviewer name: {reviewer_name}
 
@@ -186,7 +186,7 @@ Diff:
 (For a large staged review, `{file_list}` and `{diff}` may be **file paths** rather than inline content. When a value above is a path, Read that file to get the full list/diff before reviewing — never treat the path string itself as the content to review.)
 </review-context>
 
-```
+```text
 
 ## Variable Reference
 

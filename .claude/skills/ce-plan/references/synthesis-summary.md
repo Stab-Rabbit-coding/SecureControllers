@@ -56,7 +56,7 @@ No upstream document; the synthesis itself is the scope claim:
 Tier-aware budgets are **ceilings, not targets**. Less is correct when there isn't more to say — filling the budget produces noise.
 
 | Plan depth | Restatement (brainstorm-sourced) | Plan-specific scoping (brainstorm-sourced) / Scope claim (solo) |
-|---|---|---|
+| --- | --- | --- |
 | Lightweight | 1 sentence | 1-3 lines prose |
 | Standard | 1-2 sentences | up to 3-5 lines or 2-4 bullets |
 | Deep | 1-2 sentences | up to 4-6 lines or 3-6 bullets |
@@ -100,7 +100,7 @@ The keep test addresses *which* items survive. The detail test addresses *how mu
 The cap is heuristic, not law. The real discipline is the keep test on each candidate. Typical bounds by plan depth:
 
 | Plan depth | Typical | Cap |
-|---|---|---|
+| --- | --- | --- |
 | Lightweight | 0-2 | 3 |
 | Standard | 1-3 | 4 |
 | Deep | 2-5 | 6 |
@@ -131,7 +131,7 @@ The auto-proceed path (announce without waiting for user confirmation) fires onl
 
 When auto-proceed applies (Lightweight + zero call-outs), emit a one-line announcement and continue:
 
-```
+```text
 Planning: [1-3 line summary]
 
 No open decisions to weigh in on — proceeding to [research / plan-write]. Interrupt if I have the scope wrong.
@@ -145,7 +145,7 @@ There is a third skip condition: the **opt-in `SKIP_SCOPING_CONFIRM` setting** (
 
 When the opt-in skip applies, emit this announcement — **not** the auto-proceed template above. The opt-in skip fires for *any* tier and call-out count, so claiming "No open decisions to weigh in on" would be false whenever call-outs survived; the announcement instead names that confirmation is off and that inferred scope is recorded under `## Assumptions`:
 
-```
+```text
 Planning: [1-3 line scope claim]
 
 Scoping confirmation is off, so I'm proceeding to [research / plan-write] without waiting. Inferred scope is recorded under Assumptions in the plan — interrupt if I have it wrong.
@@ -199,7 +199,7 @@ The line is drawn slightly differently per variant. **Solo (Phase 0.7)** stays a
 ### Bad-vs-good examples
 
 | Plan-body in call-out (wrong) | Decision-level (right) |
-|---|---|
+| --- | --- |
 | Timezone source: `users.timezone` (IANA), fallback to destination calendar TZ if null. Research found `useTimezoneSync` and `ProtectionStatsCalculator` establish the pattern. | Timezone source: user-TZ (reverses brainstorm's tentative lean — research found established infra and pattern precedent) |
 | Skip filter goes in `RuleMatcher.eventMatchesRule` at the top, before include/exclude evaluation, using the existing `filteredReason` mechanism. | Skip filter extends the existing event-skip pattern in the matcher (vs. introducing a new mechanism) |
 | Reactivation guard: explicit safety in `[ruleId]/route.ts` PATCH — when `isActive: false → true`, the existing handler clears `status/pausedAt/pausedReason`. | Reactivation guard: pause window state preserved through the isActive toggle's existing system-pause-clearing path |
@@ -211,7 +211,7 @@ The test: a scanner reading a call-out should affirm or reject it without needin
 
 For a PII redaction gate proposal where the internal draft had 4 Stated items, 7 Inferred items, and 3 Out-of-scope items, the compressed stage 2 looks like:
 
-```
+```text
 Planning a mechanical PII redaction gate before promote (the unguarded leak path from the amazon-orders retro) and alongside the existing vendor-prefix scanner at publish. Phase-1 detectors are shape-only — card last-4, postal address, JSON person names. Default halts; per-finding ack via flag.
 
 **Call outs:**
@@ -261,7 +261,7 @@ Each guard is an explicit conditional in SKILL.md, not implicit. R2 solo does NO
 
 The opener defaults to "Based on your request" — add "and our brief discussion" only when the Phase 0.4 bootstrap actually involved back-and-forth clarifying questions. Solo invocations often proceed with no dialogue, and claiming a discussion the user didn't have reads as off.
 
-```
+```text
 Based on your request, here's the scope I'm proposing to plan against:
 
 [scope claim — what the plan will target, what it will not; affirm-or-redirect level; NOT an enumeration of Implementation Units]
@@ -277,7 +277,7 @@ Confirm and I'll proceed to research, drawing on this scope. (You can also redir
 
 **Auto-proceed template (fires only for Lightweight with zero call-outs):**
 
-```
+```text
 Planning: [1-3 line scope claim]
 
 No open decisions to weigh in on — proceeding to research. Interrupt if I have the scope wrong.
@@ -318,7 +318,7 @@ Most of these will not survive the keep test as separate call-outs. Surface only
 
 **Confirmation template (fires for Standard/Deep regardless of call-out count, or for any tier with one or more call-outs surviving):**
 
-```
+```text
 The brainstorm scopes [1-2 sentence restatement of the brainstorm's scope as orientation; in the brainstorm's own vocabulary; NOT an enumeration of Implementation Units, constraints, or acceptance examples].
 
 This plan [plan-specific scoping: what's covered vs. deferred vs. expanded relative to the brainstorm; test scope; any adjacent refactors pulled in or held out. Prose or bullets per substance].
@@ -334,7 +334,7 @@ Confirm and I'll write the plan next, drawing on the brainstorm, research, and t
 
 **Auto-proceed template (fires only for Lightweight with zero call-outs):**
 
-```
+```text
 Planning [brief brainstorm-scope restatement] — [plan-specific shape in one clause].
 
 No open decisions to weigh in on — proceeding to plan-write. Interrupt if I have the scope wrong.
@@ -401,7 +401,7 @@ In either case: stop ce-plan, suggest the alternative skill, offer to load it in
 After user confirmation (or after the soft-cut decision proceeds), Phase 5.2 writes the plan doc. The internal draft does NOT carry into the plan as a `## Synthesis` section. Only the stage-2 summary embeds, under the Product Contract's `### Summary`. Internal-draft content dissolves into the unified plan's sections. In a `ce-unified-plan/v1` artifact these destinations are nested — Summary, Problem Frame, Requirements, and Scope Boundaries live under `## Product Contract`; Key Technical Decisions and Assumptions live under `## Planning Contract`; Implementation Units is its own top-level section. (Legacy standalone plans without `artifact_contract` keep these as top-level `##` headings.)
 
 | Internal-draft element | Where it goes in the unified plan |
-|---|---|
+| --- | --- |
 | Summary (stage 2) | Product Contract `### Summary` (1-3 lines prose, forward-looking) — rewrite to plan convention if the chat-time summary used bullets. Solo variant: scope being targeted. Brainstorm-sourced: implementation approach |
 | Stated bullets | Product Contract `### Requirements` (R-IDs) and where relevant `### Problem Frame` for narrative context |
 | Inferred bullets | Planning Contract `### Key Technical Decisions` (with rationale) and Implementation Units when the bet drives a structural choice. In non-interactive mode **or an interactive `SKIP_SCOPING_CONFIRM` skip run**, route to Planning Contract `### Assumptions` instead — both proceed without confirming the bets, so they must stay labeled; see Headless mode above. |

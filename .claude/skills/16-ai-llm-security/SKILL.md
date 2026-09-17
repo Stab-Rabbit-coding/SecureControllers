@@ -54,7 +54,7 @@ pip install requests pyyaml rich
 When asked to threat-model an AI application, map the system against each category and record exposure:
 
 | ID | Risk | What to look for |
-|----|------|------------------|
+| ---- | ------ | ------------------ |
 | LLM01 | Prompt Injection | Untrusted text reaching the prompt (direct & indirect via RAG/web/email) |
 | LLM02 | Sensitive Information Disclosure | PII/secrets in prompts, outputs, or training data; system-prompt leakage |
 | LLM03 | Supply Chain | Untrusted models, LoRA adapters, datasets, plugins, `pickle` deserialization |
@@ -180,7 +180,7 @@ python scripts/model_supply_chain.py --path ./models/ --recursive --output scan.
 ## Skill Integration
 
 | Next Step | Condition | Target Skill |
-|-----------|-----------|--------------|
+| ----------- | ----------- | -------------- |
 | Web/API vuln testing of the app shell | App exposes web/API surface | → Skill 09 |
 | Cloud/infra hosting the model | Model served on AWS/Azure/GCP/K8s | → Skill 10 |
 | Detection rules for prompt-injection attempts | Need SIEM coverage | → Skill 12 |

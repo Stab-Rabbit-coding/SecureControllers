@@ -87,13 +87,13 @@ One thing I want to push back on: you said variation 1 feels "necessary but bori
 
 **Skill produces:**
 
-# ReOrder: Keep Your Regulars Ordering Direct
+## ReOrder: Keep Your Regulars Ordering Direct
 
-## Problem Statement
+### Problem Statement
 
 How might we help independent restaurants retain their best existing customers through direct ordering, eliminating the 25-30% platform commission on the revenue that matters most?
 
-## Recommended Direction
+### Recommended Direction
 
 Build a **regulars-only retention engine** — not a marketplace, not a full ordering platform. Hyper-focused on one job: make it effortless for a restaurant's repeat customers to reorder directly.
 
@@ -101,13 +101,13 @@ The key insight is that restaurants don't need help *finding* their best custome
 
 SMS-first (not app-first) is likely the right channel. A text saying "Hey, want your usual Thursday order from Marco's?" with a one-tap confirmation is lower friction than any app install.
 
-## Key Assumptions to Validate
+### Key Assumptions to Validate
 
 - [ ] Repeat customers will reorder via SMS/direct link instead of their usual delivery app — test with 5 restaurants, 20 regulars each, measure conversion over 4 weeks
 - [ ] Restaurant owners can identify their top 20-30 regulars and share contact info — test by asking 10 restaurant owners if they'd do this
 - [ ] The commission savings ($8-10 per order) is motivating enough for owners to invest initial setup effort — interview 10 owners about platform fee pain
 
-## MVP Scope
+### MVP Scope
 
 - SMS-based reordering for a restaurant's self-identified regular customers
 - Restaurant owner adds regulars manually (name + phone + usual order) — 15-minute setup
@@ -116,7 +116,7 @@ SMS-first (not app-first) is likely the right channel. A text saying "Hey, want 
 - No delivery — pickup only in v1
 - No discovery, no marketplace, no app
 
-## Not Doing (and Why)
+### Not Doing (and Why)
 
 - **Delivery logistics** — delivery is the expensive, complex part and not the core problem. Pickup-first validates demand without operational burden.
 - **Customer acquisition/discovery** — that's the platform's game. Competing on discovery means competing with DoorDash's budget. We compete on retention instead.
@@ -124,7 +124,7 @@ SMS-first (not app-first) is likely the right channel. A text saying "Hey, want 
 - **Menu management, POS integration** — scope creep. "Your usual" doesn't need a dynamic menu. Start with static orders.
 - **Analytics dashboards** — the owner is in the kitchen. Build reporting that's passive (weekly text summary) not active (log in and look at charts).
 
-## Open Questions
+### Open Questions
 
 - What's the legal/compliance landscape for SMS marketing to restaurant customers?
 - How do you handle menu/price changes for "usual" orders?
@@ -137,7 +137,7 @@ SMS-first (not app-first) is likely the right channel. A text saying "Hey, want 
 
 **User invokes:** `/ideate adding real-time collaboration to our document editor`
 
-### Phase 1: Understand & Expand
+### Phase 1: Understand & Expand (Example 2)
 
 **Skill response:**
 
@@ -183,7 +183,7 @@ Given your architecture and the competitive context, I'd push you toward variati
 
 **User invokes:** `/ideate a better way to run our weekly team retrospectives — they've gotten stale and people dread them`
 
-### Phase 1: Understand & Expand
+### Phase 1: Understand & Expand (Example 3)
 
 **Skill response:**
 

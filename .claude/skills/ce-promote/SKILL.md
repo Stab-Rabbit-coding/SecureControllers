@@ -122,7 +122,7 @@ No Spiral needed — draft strong copy directly using a compact layer of editori
 
 Show every draft as a clean, copy-pasteable block, labeled by channel. For each:
 
-```
+```text
 ### X post
 <the copy>
 ```

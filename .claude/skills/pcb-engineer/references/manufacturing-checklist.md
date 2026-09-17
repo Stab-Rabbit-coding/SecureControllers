@@ -69,7 +69,7 @@ In KiCad: File → Fabrication Outputs → Gerbers (.gbr)
 ### Required layers
 
 | Layer | KiCad name | Gerber suffix | Purpose |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Front copper | F.Cu | .gtl or F_Cu.gbr | Top copper traces |
 | Back copper | B.Cu | .gbl or B_Cu.gbr | Bottom copper traces |
 | Front solder mask | F.Mask | .gts or F_Mask.gbr | Top solder mask openings |
@@ -158,7 +158,7 @@ Also called "centroid file" or "CPL" (Component Placement List).
 
 In KiCad: File → Fabrication Outputs → Component Placement (.pos)
 
-### Settings
+### Settings (Pick-and-Place File)
 
 - Format: CSV
 - Units: millimetres
@@ -281,7 +281,7 @@ Include a text file or drawing with:
 
 ## Ordering from PCBWay
 
-### PCB-only order
+### PCB-only order (Ordering from PCBWay)
 
 1. Go to pcbway.com → "Quote Now"
 2. Enter board dimensions, layers, quantity, etc. manually OR upload Gerbers

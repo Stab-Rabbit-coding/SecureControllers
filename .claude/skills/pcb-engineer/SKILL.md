@@ -71,7 +71,7 @@ For every component:
 Generate the BOM as XLSX using `${CLAUDE_SKILL_DIR}/scripts/generate_bom.py`. Columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | Ref Des | Reference designator(s) — group identical parts |
 | Value | Component value (e.g., 10µF, 100kΩ) |
 | Description | Human-readable description |
@@ -164,7 +164,7 @@ Read these as needed — do not load all of them upfront. Each contains a table
 of contents at the top.
 
 | File | When to consult |
-|---|---|
+| --- | --- |
 | `references/kicad-formats.md` | When generating any KiCad file (.kicad_sch, .kicad_pcb, .kicad_sym, .kicad_mod) |
 | `references/design-rules.md` | During PCB layout, trace width calculation, via sizing, DRC |
 | `references/common-circuits.md` | During schematic design for any standard subcircuit |
@@ -175,7 +175,7 @@ of contents at the top.
 ## Scripts
 
 | Script | Purpose |
-|---|---|
+| --- | --- |
 | `${CLAUDE_SKILL_DIR}/scripts/generate_bom.py` | Generates XLSX BOM from a JSON parts list. Run with: `python ${CLAUDE_SKILL_DIR}/scripts/generate_bom.py input.json output.xlsx` |
 
 ## Educational tone

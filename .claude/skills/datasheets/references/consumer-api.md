@@ -42,7 +42,7 @@ feat = get_regulator_features('TPS61023DRLR')
 Returned dict fields:
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | `topology` | `'boost' \| 'buck' \| 'ldo'` | Circuit topology |
 | `has_pg` | `bool \| None` | Part has a power-good output pin |
 | `has_soft_start` | `bool \| None` | Integrated soft-start circuit |
@@ -80,7 +80,7 @@ mcu = get_mcu_features('ESP32-S3')
 Returned dict fields:
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | `usb_speed` | `'FS' \| 'HS' \| 'SS' \| None` | USB device speed |
 | `has_native_usb_phy` | `bool \| None` | Native USB PHY present |
 | `usb_series_r_required` | `bool \| None` | Series termination resistors required |
@@ -120,7 +120,7 @@ if is_extraction_available('TPS61023DRLR'):
 The contract for all helper functions: individual fields within a returned dict may be `None`, distinct from `False` or `0`.
 
 | Value | Meaning | Detector action |
-|-------|---------|----------------|
+| ------- | --------- | ---------------- |
 | `None` (whole return) | No extraction cached, stale, or low score | Skip the check; emit INFO |
 | `None` (field within dict) | Datasheet didn't specify this field | Treat as unknown; do not fire checks based on this field |
 | `False` | Datasheet explicitly says feature is absent | Fire relevant checks if configured |
@@ -159,7 +159,7 @@ elif feat['has_soft_start']:
 
 Format for the skip message:
 
-```
+```text
 Check <rule_id> skipped for <ref>: no datasheet extraction for <mpn>. Run sync_datasheets to download and extract.
 ```
 

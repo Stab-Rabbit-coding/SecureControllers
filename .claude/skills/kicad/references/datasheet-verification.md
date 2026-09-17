@@ -53,7 +53,7 @@ This step is interactive — it requires the agent to read PDF pages and produce
 
 Extraction JSON files are stored in `datasheets/extracted/` with filenames derived from the MPN (non-alphanumeric characters replaced with underscores). An optional `manifest.json` (legacy name `index.json`) provides case-insensitive MPN-to-file mapping.
 
-```
+```text
 datasheets/extracted/
   TPS61023DRLR.json
   STM32F405RGT6.json
@@ -89,7 +89,7 @@ GND pins are skipped. Pins without a `voltage_abs_max` in the extraction are ski
 
 **Example finding:**
 
-```
+```text
 U3 pin 4 (VIN) on +12V (12.0V) exceeds absolute maximum (6.0V) by 6.00V
 ```
 
@@ -112,7 +112,7 @@ If no `voltage_abs_max` is available, the margin is treated as 0% (HIGH severity
 
 **Example finding:**
 
-```
+```text
 U1 pin 2 (VDD) on +5V (5.0V) exceeds recommended operating maximum (4.5V)
 ```
 
@@ -127,7 +127,7 @@ For each IC pin that has a `required_external` field in the extraction (e.g., "1
 The expected component type is parsed from the `required_external` text:
 
 | Keywords in `required_external` | Expected type(s) |
-|--------------------------------|-------------------|
+| -------------------------------- | ------------------- |
 | cap, capacitor, decoupling, bypass | `capacitor` |
 | resistor, pull-up, pullup, pull-down, divider | `resistor` |
 | inductor, ferrite, bead | `inductor`, `ferrite_bead` |
@@ -139,7 +139,7 @@ If the `required_external` text cannot be parsed into any known component type, 
 
 **Example finding:**
 
-```
+```text
 U2 pin 8 (BYPASS): datasheet requires "100nF bypass cap to GND" but none found on net BYPASS_U2
 ```
 
@@ -170,7 +170,7 @@ Severity depends on how many matching caps were found:
 **Recommendation parsing examples:**
 
 | Text | Parsed as |
-|------|-----------|
+| ------ | ----------- |
 | `"10uF ceramic, X5R or X7R"` | min 10uF, count 1, dielectric [X5R, X7R] |
 | `"22uF ceramic x2"` | min 22uF, count 2 |
 | `"100nF"` | min 100nF, count 1 |
@@ -180,7 +180,7 @@ The count multiplier is parsed from `xN` or `x N` suffixes. Dielectrics are reco
 
 **Example finding:**
 
-```
+```text
 U4 (LM2596): datasheet recommends "22uF ceramic x2" but found 1/2 matching caps on power pins
 ```
 
@@ -195,7 +195,7 @@ The `run_datasheet_verification()` function returns a dict with two keys:
 Array of finding objects. Each finding has:
 
 | Field | Type | Present in | Description |
-|-------|------|------------|-------------|
+| ------- | ------ | ------------ | ------------- |
 | `type` | string | all | Finding type identifier (see check descriptions above) |
 | `severity` | string | all | `CRITICAL`, `HIGH`, or `MEDIUM` |
 | `ref` | string | all | Component reference (e.g., `U3`) |
@@ -221,7 +221,7 @@ Array of finding objects. Each finding has:
 ### summary
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | `ics_checked` | int | Total ICs in the design |
 | `ics_with_extractions` | int | ICs that had extraction data available |
 | `total_findings` | int | Total number of findings |
@@ -263,7 +263,7 @@ Array of finding objects. Each finding has:
 Mapping of which extraction JSON fields drive which verification checks.
 
 | Extraction Field | Location | Used By |
-|-----------------|----------|---------|
+| ----------------- | ---------- | --------- |
 | `pins[].voltage_abs_max` | Pin entry | Pin voltage abs max check |
 | `pins[].voltage_operating_max` | Pin entry | Pin voltage operating range check |
 | `pins[].required_external` | Pin entry | Missing required external check |
@@ -278,7 +278,7 @@ Mapping of which extraction JSON fields drive which verification checks.
 ### Schematic analysis fields consumed
 
 | Analysis Field | Used By |
-|---------------|---------|
+| --------------- | --------- |
 | `components[].type` | All checks (filters to ICs only) |
 | `components[].reference` | All checks (component identification) |
 | `components[].mpn` | All checks (extraction file lookup) |
@@ -313,7 +313,7 @@ Mapping of which extraction JSON fields drive which verification checks.
 ## Common User Intents
 
 | User Says | What Happens |
-|-----------|-------------|
+| ----------- | ------------- |
 | "Verify against datasheet" | Run full verification: all checks against all ICs with available extractions |
 | "Check pin voltages" | Focus on `pin_voltage_abs_max_exceeded` and `pin_voltage_operating_exceeded` findings |
 | "Are my decoupling caps right" | Focus on `decoupling_insufficient` findings; compare actual vs recommended for each IC |

@@ -22,7 +22,7 @@ Systematic debugging with structured triage. When something breaks, stop adding 
 
 When anything unexpected happens:
 
-```
+```text
 1. STOP adding features or making changes
 2. PRESERVE evidence (error output, logs, repro steps)
 3. DIAGNOSE using the triage checklist
@@ -41,7 +41,7 @@ Work through these steps in order. Do not skip steps.
 
 Make the failure happen reliably. If you can't reproduce it, you can't fix it with confidence.
 
-```
+```text
 Can you reproduce the failure?
 ├── YES → Proceed to Step 2
 └── NO
@@ -52,7 +52,7 @@ Can you reproduce the failure?
 
 **When a bug is non-reproducible:**
 
-```
+```text
 Cannot reproduce on demand:
 ├── Timing-dependent?
 │   ├── Add timestamps to logs around the suspected area
@@ -89,7 +89,7 @@ npm test -- --testPathPattern="specific-file" --runInBand
 
 Narrow down WHERE the failure happens:
 
-```
+```text
 Which layer is failing?
 ├── UI/Frontend     → Check console, DOM, network tab
 ├── API/Backend     → Check server logs, request/response
@@ -124,7 +124,7 @@ A minimal reproduction makes the root cause obvious and prevents fixing symptoms
 
 Fix the underlying issue, not the symptom:
 
-```
+```text
 Symptom: "The user list shows duplicate entries"
 
 Symptom fix (bad):
@@ -175,7 +175,7 @@ npm run dev  # Verify in browser
 
 ### Test Failure Triage
 
-```
+```text
 Test fails after code change:
 ├── Did you change code the test covers?
 │   └── YES → Check if the test or the code is wrong
@@ -189,7 +189,7 @@ Test fails after code change:
 
 ### Build Failure Triage
 
-```
+```text
 Build fails:
 ├── Type error → Read the error, check the types at the cited location
 ├── Import error → Check the module exists, exports match, paths are correct
@@ -200,7 +200,7 @@ Build fails:
 
 ### Runtime Error Triage
 
-```
+```text
 Runtime error:
 ├── TypeError: Cannot read property 'x' of undefined
 │   └── Something is null/undefined that shouldn't be
@@ -267,7 +267,7 @@ Add logging only when it helps. Remove it when done.
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I know what the bug is, I'll just fix it" | You might be right 70% of the time. The other 30% costs hours. Reproduce first. |
 | "The failing test is probably wrong" | Verify that assumption. If the test is wrong, fix the test. Don't just skip it. |
 | "It works on my machine" | Environments differ. Check CI, check config, check dependencies. |

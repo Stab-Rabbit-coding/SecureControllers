@@ -7,7 +7,7 @@ The scorer (`datasheet_score.py`) evaluates a completed extraction against a fiv
 ## Thresholds
 
 | Constant | Value | Source |
-|----------|-------|--------|
+| --- | --- | --- |
 | `MIN_SCORE` | 6.0 | `datasheet_extract_cache.py` |
 | `MAX_RETRIES` | 3 | `datasheet_extract_cache.py` |
 | `DEFAULT_MAX_AGE_DAYS` | 90 | `datasheet_extract_cache.py` |
@@ -19,7 +19,7 @@ An extraction with `total >= 6.0` is considered sufficient. An extraction with `
 ## Five-Dimension Rubric
 
 | Dimension | Weight | Score Function |
-|-----------|--------|---------------|
+| --- | --- | --- |
 | Pin coverage | 35% | `_score_pin_coverage()` |
 | Voltage ratings | 25% | `_score_voltage_ratings()` |
 | Application info | 20% | `_score_application_info()` |
@@ -37,7 +37,7 @@ An extraction with `total >= 6.0` is considered sufficient. An extraction with `
 Starting score: 10.0.
 
 | Condition | Deduction |
-|-----------|-----------|
+| --- | --- |
 | No pins in extraction | Score = 0.0 immediately |
 | Fewer than 50% of expected pins present | Score = 0.0 immediately |
 | Each missing pin (vs expected count) | -2.0 |
@@ -54,7 +54,7 @@ Issues list is capped at 5 entries for readability.
 Starting score: 10.0.
 
 | Condition | Deduction |
-|-----------|-----------|
+| --- | --- |
 | `absolute_maximum_ratings` dict missing or empty | -3.0 |
 | No key ending in `_max_v` with a non-null value | -2.0 |
 | `junction_temp_max_c` missing | -1.0 |
@@ -67,7 +67,7 @@ Starting score: 10.0.
 Starting score: 10.0. If `application_circuit` dict is missing or empty: score = 0.0 immediately.
 
 | Condition | Deduction |
-|-----------|-----------|
+| --- | --- |
 | `topology` missing | -2.0 |
 | Zero component recommendation fields populated | -3.0 |
 | Only 1 recommendation field populated (expect 2+) | -1.5 |
@@ -86,14 +86,14 @@ If `electrical_characteristics` dict is missing:
 - Categories without required fields → score = 5.0
 
 | Condition | Deduction |
-|-----------|-----------|
+| --- | --- |
 | Each missing required field for category | -3.0 |
 | Each missing optional (nice-to-have) field | -1.0 |
 
 Required and optional fields by category:
 
 | Category | Required | Optional |
-|----------|----------|---------|
+| --- | --- | --- |
 | `operational_amplifier` | `gbw_hz`, `slew_vus` | `vos_mv`, `aol_db`, `rin_ohms` |
 | `comparator` | `prop_delay_ns` | `vos_mv`, `aol_db` |
 | `linear_regulator` | `vref_v`, `quiescent_current_ua` | `dropout_mv`, `output_current_max_ma` |
@@ -112,7 +112,7 @@ Issues list is capped at 5 entries.
 Starting score: 10.0.
 
 | Condition | Score / Deduction |
-|-----------|-------------------|
+| --- | --- |
 | `spice_specs` dict missing, but `electrical_characteristics` present | Score = 5.0 |
 | `spice_specs` dict missing, no electrical chars either | Score = 0.0 |
 | `spice_specs` section is empty (all values null) | Score = 0.0 |
@@ -122,7 +122,7 @@ Starting score: 10.0.
 Required SPICE fields by category:
 
 | Category | Required SPICE fields |
-|----------|----------------------|
+| --- | --- |
 | `operational_amplifier` | `gbw_hz` |
 | `linear_regulator` | `vref`, `dropout_mv` |
 | `switching_regulator` | `vref` |
@@ -135,7 +135,7 @@ Required SPICE fields by category:
 ## Score Interpretation
 
 | Score | Meaning |
-|-------|---------|
+| --- | --- |
 | >= 8.0 | All critical fields present; high confidence for automated pin audit |
 | 6.0 – 7.9 | Sufficient for design review; some optional specs missing |
 | < 6.0 | Insufficient; cache manager will retry up to `MAX_RETRIES` times |

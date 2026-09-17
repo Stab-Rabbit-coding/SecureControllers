@@ -4,7 +4,7 @@
 
 ## Step 4 — invoke review
 
-```
+```text
 ce-code-review mode:agent plan:<plan-path-from-step-1>
 ```
 

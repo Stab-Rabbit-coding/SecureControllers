@@ -8,25 +8,25 @@ find_openscad() {
         echo "openscad"
         return 0
     fi
-    
+
     # macOS Application bundle
     if [ -d "/Applications/OpenSCAD.app" ]; then
         echo "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD"
         return 0
     fi
-    
+
     # Homebrew on Apple Silicon
     if [ -x "/opt/homebrew/bin/openscad" ]; then
         echo "/opt/homebrew/bin/openscad"
         return 0
     fi
-    
+
     # Homebrew on Intel
     if [ -x "/usr/local/bin/openscad" ]; then
         echo "/usr/local/bin/openscad"
         return 0
     fi
-    
+
     return 1
 }
 

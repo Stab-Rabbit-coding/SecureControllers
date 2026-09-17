@@ -49,7 +49,7 @@ Firmware engineers, systems engineers, external integrators.
 ## Data Requirements
 
 | Source | Required | Provides |
-|--------|----------|----------|
+| --- | --- | --- |
 | Schematic analysis | Yes | All sections |
 | PCB analysis | No | Not used |
 | EMC analysis | No | Not used |

@@ -4,7 +4,7 @@
 #
 # Parses parameter declarations with special comments:
 #   param = value;           // [min:max] Description
-#   param = value;           // [min:step:max] Description  
+#   param = value;           // [min:step:max] Description
 #   param = value;           // [opt1, opt2] Description
 #   param = value;           // Description only
 
@@ -42,16 +42,16 @@ with open(filename, "r") as f:
         in_block += line.count("{") - line.count("}")
         if in_block > 0:
             continue
-            
+
         # Match: varname = value; // comment
         match = re.match(r"^\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*([^;]+);\s*(?://\s*(.*))?", line)
         if not match:
             continue
-            
+
         var_name = match.group(1)
         value = match.group(2).strip()
         comment = match.group(3) or ""
-        
+
         # Determine type
         if value in ("true", "false"):
             var_type = "boolean"
@@ -66,23 +66,23 @@ with open(filename, "r") as f:
             var_type = "array"
         else:
             var_type = "expression"
-        
+
         # Parse comment for range/options
         range_val = ""
         options_val = ""
         description = comment
-        
+
         range_match = re.match(r"\[([^\]]+)\]\s*(.*)", comment)
         if range_match:
             bracket_content = range_match.group(1)
             description = range_match.group(2)
-            
+
             # Check if numeric range (contains :) or options (contains ,)
             if ":" in bracket_content and not "," in bracket_content:
                 range_val = bracket_content
             else:
                 options_val = bracket_content
-        
+
         # Output pipe-delimited
         print(f"{var_name}|{value}|{var_type}|{range_val}|{options_val}|{description}")
 ' "$INPUT"
@@ -97,17 +97,17 @@ if [ "$JSON_OUTPUT" = true ]; then
         else
             echo ","
         fi
-        
+
         # Escape quotes in values
         value=$(echo "$value" | sed 's/"/\\"/g')
         description=$(echo "$description" | sed 's/"/\\"/g')
-        
+
         # Build JSON object
         printf '  {\n'
         printf '    "name": "%s",\n' "$name"
         printf '    "value": "%s",\n' "$value"
         printf '    "type": "%s"' "$type"
-        
+
         if [ -n "$range" ]; then
             printf ',\n    "range": "%s"' "$range"
         fi
@@ -126,7 +126,7 @@ else
     echo "==============================================="
     printf "%-20s %-15s %-10s %s\n" "NAME" "VALUE" "TYPE" "CONSTRAINT/DESC"
     echo "-----------------------------------------------"
-    
+
     while IFS='|' read -r name value type range options description; do
         constraint=""
         if [ -n "$range" ]; then
@@ -141,7 +141,7 @@ else
                 constraint="$description"
             fi
         fi
-        
+
         printf "%-20s %-15s %-10s %s\n" "$name" "$value" "$type" "$constraint"
     done < <(extract_params)
 fi

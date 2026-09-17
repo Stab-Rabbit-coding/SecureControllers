@@ -25,7 +25,7 @@ Automated EMC risk analysis for KiCad PCB designs. Identifies the most common ca
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| --- | --- |
 | `kicad` | Schematic/PCB analysis — produces the analyzer JSON this skill consumes |
 | `spice` | SPICE simulation — provides simulator backend for SPICE-enhanced PDN/filter checks |
 
@@ -88,7 +88,7 @@ Read the JSON report and incorporate findings into the design review. Each findi
 44 rule IDs across 18 categories. Each rule has a specific threshold, rationale, and source citation — see `references/pcb-emc-rules.md` for full details.
 
 | Category | Rules | What it detects |
-|----------|-------|-----------------|
+| --- | --- | --- |
 | **Ground plane** | GP-001 to GP-005 | Signal crossing voids, zone fragmentation, missing ground planes, low fill ratio, multiple ground domains |
 | **Decoupling** | DC-001 to DC-003 | Cap too far from IC, IC with no decoupling cap, cap too far from via |
 | **I/O filtering** | IO-001, IO-002 | Connector without filtering, insufficient ground pins |
@@ -153,7 +153,7 @@ Read the JSON report and incorporate findings into the design review. Each findi
 ### Severity Levels
 
 | Severity | Meaning | Action |
-|----------|---------|--------|
+| --- | --- | --- |
 | **CRITICAL** | Almost certain to cause EMC failure | Must fix before fabrication |
 | **HIGH** | Very likely to cause issues | Strongly recommend fixing |
 | **MEDIUM** | May cause issues depending on specifics | Review and assess |
@@ -183,7 +183,7 @@ Each rule ID contributes at most 3 findings to the score (worst severity first).
 ## EMC Standards
 
 | Standard | Flag | Use Case |
-|----------|------|----------|
+| --- | --- | --- |
 | FCC Part 15 Class B | `fcc-class-b` | US residential (default) |
 | FCC Part 15 Class A | `fcc-class-a` | US commercial/industrial |
 | CISPR 32 Class B | `cispr-class-b` | International (EU CE marking) |

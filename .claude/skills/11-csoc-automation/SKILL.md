@@ -55,7 +55,7 @@ pip install pyyaml jinja2 requests python-dateutil
 
 **Triage Decision Framework:**
 
-```
+```text
 Step 1: Parse alert data
   - Source: SIEM, EDR, WAF, IDS, email security, cloud audit logs
   - Extract: timestamp, source IP, destination, user, process, alert type
@@ -77,7 +77,7 @@ Step 4: Apply triage matrix
 **Alert Triage Matrix:**
 
 | Alert Confidence | Asset Criticality | Recommended Action | SLA |
-|----------------|-------------------|--------------------|-----|
+| ---------------- | ------------------- | -------------------- | ----- |
 | High | Critical | Immediate escalation to Tier 2/3 — declare incident | 15 min |
 | High | High | Tier 1 priority investigation | 30 min |
 | High | Medium | Tier 1 standard investigation | 1 hour |
@@ -237,7 +237,7 @@ tasks:
 **Supported Playbook Types with Trigger Conditions:**
 
 | Playbook | Trigger |
-|----------|---------|
+| ---------- | --------- |
 | Phishing Response | Email security alert, user report |
 | Ransomware Response | Mass file encryption, EDR behavioral alert |
 | Data Exfiltration | DLP alert, large outbound transfer |
@@ -279,7 +279,7 @@ P2 Incident:
 Out-of-hours escalation:
   On-call Tier 2 via PagerDuty → 15 min acknowledge → escalate to Tier 3
 
-```
+```text
 
 ### Notification Templates
 
@@ -295,7 +295,7 @@ Out-of-hours escalation:
 *Ticket:* {{ticket_id}}
 ACTION REQUIRED: All IR team members join the bridge now.
 
-```
+```text
 
 **Email Escalation Template:**
 ```
@@ -321,7 +321,7 @@ Next Update: {{next_update_time}}
 
 SOC Contact: soc@company.com | +1-555-SOC-HELP
 
-```
+```text
 
 ### 4. Shift Handover Report Generation
 
@@ -384,7 +384,7 @@ python scripts/alert_triager.py --report shift --shift night --date 2025-05-28 -
 **Key SOC Metrics:**
 
 | Metric | Formula | Target |
-|--------|---------|--------|
+| -------- | --------- | -------- |
 | **MTTD** (Mean Time to Detect) | Avg(detection_time − attack_start_time) | < 1 hour |
 | **MTTR** (Mean Time to Respond) | Avg(response_complete − detection_time) | < 4 hours |
 | **MTTC** (Mean Time to Contain) | Avg(contain_time − detection_time) | < 1 hour |
@@ -444,7 +444,7 @@ python scripts/report_generator.py --metrics monthly --date 2025-05 --output met
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Alert requires deep investigation | → Skill 07 (Incident Response) |
 | Log deep-dive for alert context | → Skill 12 (Log Analysis) |
 | Threat hunt based on alert patterns | → Skill 06 (Threat Hunting) |

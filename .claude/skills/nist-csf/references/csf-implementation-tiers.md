@@ -132,7 +132,7 @@ Ask:
 Advancing tiers requires sustained investment. Common barriers and enablers:
 
 | From → To | Common Barriers | Key Enablers |
-|-----------|----------------|-------------|
+| ----------- | ---------------- | ------------- |
 | 1 → 2 | No leadership buy-in, no budget | Tie first risk assessment to a business event (audit, incident, M&A) |
 | 2 → 3 | Inconsistent enforcement, siloed teams | Embed cybersecurity in HR processes; create organisation-wide policy with enforcement |
 | 3 → 4 | Technology and process gaps, culture | Implement threat intelligence feeds; automate monitoring; build continuous improvement loops |

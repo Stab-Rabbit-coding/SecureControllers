@@ -11,29 +11,29 @@ Source: [47 CFR §15.109](https://www.law.cornell.edu/cfr/text/47/15.109) — "R
 #### Class B (Residential) — measured at 3m
 
 | Frequency (MHz) | Limit (µV/m) | Limit (dBµV/m) |
-|-----------------|--------------|-----------------|
-| 30–88           | 100          | 40.0            |
-| 88–216          | 150          | 43.5            |
-| 216–960         | 200          | 46.0            |
-| >960            | 500          | 54.0            |
+| --- | --- | --- |
+| 30–88 | 100 | 40.0 |
+| 88–216 | 150 | 43.5 |
+| 216–960 | 200 | 46.0 |
+| >960 | 500 | 54.0 |
 
 #### Class A (Commercial/Industrial) — measured at 10m
 
 | Frequency (MHz) | Limit (µV/m) | Limit (dBµV/m) |
-|-----------------|--------------|-----------------|
-| 30–88           | 90           | 39.1            |
-| 88–216          | 150          | 43.5            |
-| 216–960         | 210          | 46.4            |
-| >960            | 300          | 49.5            |
+| --- | --- | --- |
+| 30–88 | 90 | 39.1 |
+| 88–216 | 150 | 43.5 |
+| 216–960 | 210 | 46.4 |
+| >960 | 300 | 49.5 |
 
 ### CISPR 32 / EN 55032 (International / EU CE) — measured at 10m
 
 Source: IEC CISPR 32:2015+AMD1:2019. EN 55032 is the EU harmonized version. These values replace the older CISPR 22 / EN 55022. CISPR 32 also specifies limits at 3m: Class A = 50/57 dBµV/m, Class B = 40/47 dBµV/m.
 
 | Frequency (MHz) | Class A (dBµV/m) | Class B (dBµV/m) |
-|-----------------|-------------------|-------------------|
-| 30–230          | 40                | 30                |
-| 230–1000        | 47                | 37                |
+| --- | --- | --- |
+| 30–230 | 40 | 30 |
+| 230–1000 | 47 | 37 |
 
 **FCC vs CISPR comparison:** When normalized for distance (3m→10m = −10.5 dB), FCC Class B and CISPR 32 Class B are roughly equivalent — within 0–3 dB depending on frequency band. Designs that pass CISPR 32 Class B generally pass FCC Part 15 Class B and vice versa.
 
@@ -41,11 +41,11 @@ Source: IEC CISPR 32:2015+AMD1:2019. EN 55032 is the EU harmonized version. Thes
 
 Source: IEC CISPR 25:2021. Tested in Absorber Lined Shielded Enclosure (ALSE). Five limit classes; Class 5 is the most stringent.
 
-| Band     | Frequency      | Peak (dBµV/m) |
-|----------|---------------|----------------|
-| FM       | 68–108 MHz    | ~28            |
-| VHF      | 108–230 MHz   | ~26            |
-| UHF      | 230–1000 MHz  | ~32            |
+| Band | Frequency | Peak (dBµV/m) |
+| --- | --- | --- |
+| FM | 68–108 MHz | ~28 |
+| VHF | 108–230 MHz | ~26 |
+| UHF | 230–1000 MHz | ~32 |
 
 *Note: Exact values are in the copyrighted IEC standard. Above are approximate, sourced from published technical articles.*
 
@@ -64,10 +64,10 @@ RE102 covers radiated electric field emissions from 10 kHz to 18 GHz. Limits var
 Source: [47 CFR §15.107](https://www.law.cornell.edu/cfr/text/47/15.107) — "Conducted limits."
 
 | Frequency (MHz) | Quasi-Peak (dBµV) | Average (dBµV) |
-|-----------------|-------------------|----------------|
-| 0.15–0.5        | 66→56             | 56→46          |
-| 0.5–5           | 56                | 46             |
-| 5–30            | 60                | 50             |
+| --- | --- | --- |
+| 0.15–0.5 | 66→56 | 56→46 |
+| 0.5–5 | 56 | 46 |
+| 5–30 | 60 | 50 |
 
 The 0.15–0.5 MHz limits decrease linearly with the logarithm of frequency across the band.
 
@@ -82,18 +82,18 @@ The 0.15–0.5 MHz limits decrease linearly with the logarithm of frequency acro
 Far-field inverse distance law: 20 × log₁₀(d₁/d₂) dB.
 
 | From → To | Correction |
-|-----------|------------|
-| 3m → 10m  | −10.5 dB   |
-| 10m → 3m  | +10.5 dB   |
-| 1m → 3m   | −9.5 dB    |
-| 1m → 10m  | −20.0 dB   |
+| --- | --- |
+| 3m → 10m | −10.5 dB |
+| 10m → 3m | +10.5 dB |
+| 1m → 3m | −9.5 dB |
+| 1m → 10m | −20.0 dB |
 
 ## IEC 61000-4-x Immunity Tests (PCB-Relevant)
 
 Source: IEC 61000-4 series. These define immunity/susceptibility test levels. PCB design directly affects whether a product passes.
 
 | Standard | Test | Level | PCB Design Impact |
-|----------|------|-------|-------------------|
+| --- | --- | --- | --- |
 | IEC 61000-4-2 | ESD | ±4 to ±8 kV | TVS placement near connector; trace routing; ground plane |
 | IEC 61000-4-3 | Radiated RF immunity | 3–10 V/m | RF bypass caps on analog inputs; ground plane shielding |
 | IEC 61000-4-4 | EFT/Burst | ±1–2 kV | Input filtering; ground plane; decoupling |

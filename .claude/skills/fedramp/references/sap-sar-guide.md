@@ -64,7 +64,7 @@ The SAR documents what the 3PAO actually found during testing.
 ### SAR Appendices
 
 | Appendix | Content |
-|---|---|
+| --- | --- |
 | A | Infrastructure Scan Results |
 | B | Security Requirements Traceability Matrix (SRTM) — required for Low, Moderate, High |
 | C | Web Application Scan Results |

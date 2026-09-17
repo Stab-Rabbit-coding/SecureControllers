@@ -3,7 +3,7 @@
 ## CIS Controls v8 ↔ NIST CSF 2.0 (Detailed)
 
 | CIS Control | Safeguard | NIST CSF 2.0 Function | NIST CSF Category | NIST CSF Subcategory |
-|------------|-----------|----------------------|-------------------|----------------------|
+| ------------ | ----------- | ---------------------- | ------------------- | ---------------------- |
 | 1.1 | Enterprise Asset Inventory | Identify | Asset Management (ID.AM) | ID.AM-01, ID.AM-02 |
 | 1.2 | Address Unauthorized Assets | Respond | Incident Management (RS.MA) | RS.MA-01 |
 | 2.1 | Software Inventory | Identify | Asset Management (ID.AM) | ID.AM-02, ID.AM-08 |
@@ -47,7 +47,7 @@
 ## CIS Controls v8 ↔ ISO 27001:2022 Annex A (Detailed)
 
 | CIS Control | CIS Safeguards | ISO 27001:2022 Controls |
-|------------|----------------|-------------------------|
+| ------------ | ---------------- | ------------------------- |
 | **1 (Asset Inventory)** | 1.1, 1.2, 1.3 | 5.9 (Inventory of information and other associated assets), 8.8 (Management of technical vulnerabilities) |
 | **2 (Software Inventory)** | 2.1, 2.2, 2.3 | 5.9 (Inventory), 8.8 (Technical vulnerabilities) |
 | **3 (Data Protection)** | 3.1–3.14 | 5.12 (Classification), 5.13 (Labelling), 5.33 (Protection of records), 8.10 (Info deletion), 8.11 (Data masking), 8.24 (Use of cryptography) |
@@ -72,7 +72,7 @@
 ## CIS Controls v8 ↔ CMMC 2.0 (NIST SP 800-171)
 
 | CIS Control | CMMC Domain | NIST 800-171 Requirements |
-|------------|-------------|--------------------------|
+| ------------ | ------------- | -------------------------- |
 | 1 (Asset Inventory) | Asset Management / System Inventory | Not explicitly in 800-171 but implied by CM.3.068 |
 | 2 (Software Inventory) | Configuration Management (CM) | 3.4.1 (Baseline configurations), 3.4.2 (Configuration settings) |
 | 3 (Data Protection) | Media Protection (MP) | 3.8.1–3.8.9 |
@@ -97,7 +97,7 @@
 ## CIS Controls v8 ↔ SOC 2 Trust Services Criteria
 
 | CIS Control | SOC 2 Criterion | TSC Category |
-|------------|----------------|-------------|
+| ------------ | ---------------- | ------------- |
 | 1 (Asset Inventory) | CC6.1 | Common Criteria |
 | 2 (Software Inventory) | CC6.1, CC6.2 | Common Criteria |
 | 3 (Data Protection) | CC6.1, CC6.5, C1.1, C1.2 | Common Criteria / Confidentiality |
@@ -122,7 +122,7 @@
 ## CIS Controls v8 ↔ PCI DSS v4.0
 
 | PCI DSS Requirement | CIS Controls |
-|--------------------|-------------|
+| -------------------- | ------------- |
 | Req 1: Install network controls | 12, 13 |
 | Req 2: Secure system/network components | 4 |
 | Req 3: Protect stored cardholder data | 3 |
@@ -143,7 +143,7 @@
 Key changes to understand if transitioning from v7.1 to v8:
 
 | Aspect | CIS Controls v7.1 | CIS Controls v8 |
-|--------|------------------|-----------------|
+| -------- | ------------------ | ----------------- |
 | Number of controls | 20 | 18 |
 | Sub-controls | 171 | 153 safeguards |
 | Organization | Technology type | Asset type |

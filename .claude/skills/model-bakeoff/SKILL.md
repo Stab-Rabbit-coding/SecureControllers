@@ -89,7 +89,7 @@ majority class every time, and see.
 Aggregate accuracy hides the errors that cost the most money.
 
 | Check | Why |
-|---|---|
+| --- | --- |
 | **Correlated / whole-item collapse** | Every row on a page sharing one wrong value is not noise, it inverts the item. Count collapsed items, not just wrong rows. |
 | **Fabrication rate** | A confident wrong value in-distribution is the only error that spends money. "Low" is not a target; state it separately from accuracy. |
 | **Fields the schema never asked for** | If the output schema omits a flag, no model will return it, and every model will look equally bad at it. That is your bug, not theirs. |
@@ -97,7 +97,7 @@ Aggregate accuracy hides the errors that cost the most money.
 
 ## Quick reference
 
-```
+```text
 Before running:
   [ ] ground truth built independently of every candidate
   [ ] do-nothing baseline computed from THIS set
@@ -119,7 +119,7 @@ In the report:
 ## Rationalisations
 
 | Excuse | Reality |
-|---|---|
+| --- | --- |
 | "The failures are probably the model's fault" | Then say which, with the error. A 429 is not a misread. |
 | "One page's tokens are enough to price it" | Items vary 3x. Measure a sample, not an example. |
 | "The baseline is obviously low here" | Compute it. The one that shocked everyone was 63.4%, and the incumbent scored 65.1%. |

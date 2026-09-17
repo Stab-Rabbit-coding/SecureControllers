@@ -53,7 +53,7 @@ Some parts tracked in symbol properties, others in external files. Or different 
 
 Each distributor gets its own property field on every symbol.
 
-```
+```text
 (property "MPN" "GRM155R71C104KA88D" ...)
 (property "DigiKey" "490-10698-1-ND" ...)
 (property "Mouser" "81-GRM155R71C104KA8D" ...)
@@ -66,7 +66,7 @@ The `bom_manager.py` script handles this pattern and recognizes 50+ field name v
 
 Generic numbered supplier slots where the supplier name is in one field and the PN in another.
 
-```
+```text
 (property "Supplier 1" "Digikey" ...)
 (property "Supplier 1 Part #" "490-10698-1-ND" ...)
 (property "Supplier 1 Link" "https://www.digikey.com/..." ...)
@@ -82,7 +82,7 @@ Variants: `Vendor` / `Vendor Part Number`, `Source` / `Source Part Number`, `Dis
 
 A project-internal identifier (slug, database ID, or custom code) instead of or alongside MPNs.
 
-```
+```text
 (property "Key" "cap-cer-0402-100n" ...)
 (property "UST_ID" "UST-CAP-0042" ...)
 (property "PartID" "P00123" ...)
@@ -96,7 +96,7 @@ Some projects use `Key` fields with slugs like `ic-cy7c68013a-56`, or custom IDs
 
 Component specifications stored as individual fields rather than relying on the Value field alone.
 
-```
+```text
 (property "Value" "100n" ...)
 (property "Tolerance" "10%" ...)
 (property "Voltage" "16V" ...)
@@ -113,7 +113,7 @@ These are parametric search criteria, not part numbers. Useful for finding the r
 
 Full LCSC catalog metadata embedded from EasyEDA imports, including stock counts, pricing, process type, and category.
 
-```
+```text
 (property "LCSC" "C14663" ...)
 (property "Part" "100nF ±10% 16V X7R 0402 MLCC" ...)
 (property "Category" "Capacitors,Multilayer Ceramic Capacitors MLCC - SMD/SMT" ...)
@@ -128,7 +128,7 @@ Stock and price values are stale the moment they're saved. Don't use them for or
 
 Symbols downloaded from SnapEDA or SamacSys inject a distinctive set of metadata fields.
 
-```
+```text
 (property "Manufacturer_Part_Number" "TPS61023DRLR" ...)
 (property "Manufacturer_Name" "Texas Instruments" ...)
 (property "Mouser Part Number" "595-TPS63020DSJR" ...)
@@ -146,7 +146,7 @@ These often coexist with the project's own field naming convention, creating inc
 
 Some projects (especially for commodity passives) put what looks like a part number in the Value or Description field, not in a dedicated MPN field.
 
-```
+```text
 (property "Value" "EEEFK1V470P" ...)     # This is actually an MPN
 (property "Value" "RC0805FR-071ML" ...)   # This too
 (property "Value" "100n" ...)             # This is a value, not an MPN
@@ -205,7 +205,7 @@ These are generated outputs, not source-of-truth files. Don't edit them — edit
 
 Some projects keep freeform notes about parts in README, docs, or text files.
 
-```
+```text
 ## Parts List
 - U1: ESP32-S3-WROOM-1-N4 (DigiKey: 1965-ESP32-S3-WROOM-1-N4CT-ND)
 - All 0402 caps: Murata GRM series, LCSC C14663 or equivalent
@@ -224,7 +224,7 @@ When encountering a new project, check in this order:
 2. **Check for unrecognized fields** — the JSON output includes `unrecognized_fields` with values that look like part numbers in unknown field names
 3. **Look for external BOM files:**
 
-   ```
+   ```text
    *.csv, *.tsv, *.xlsx, *.xls, *.ods in the project directory
    bom/, docs/, exports/ subdirectories
    README or docs mentioning parts/sourcing
@@ -242,7 +242,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### MPN (Manufacturer Part Number)
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `MPN` | Most common, canonical name |
 | `PartNumber` | Common in older projects |
 | `Part Number` | Space-separated variant |
@@ -263,7 +263,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### Manufacturer
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `Manufacturer` | Most common |
 | `Manufacturer_Name` | SnapEDA imports |
 | `MF` | Abbreviated |
@@ -274,7 +274,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### DigiKey
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `DigiKey` | Common short form |
 | `Digi-Key Part Number` | Verbose variant |
 | `Digi-Key_PN` | Underscore variant |
@@ -288,7 +288,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### Mouser
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `Mouser` | Common short form |
 | `Mouser Part Number` | Verbose variant |
 | `Mouser Part` | Space variant |
@@ -297,7 +297,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### LCSC / JLCPCB
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `LCSC` | Most common |
 | `LCSCStockCode` | Rare variant |
 | `LCSC Part #` | Hash-suffixed |
@@ -311,7 +311,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### Newark / Farnell / element14
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `Newark` | Newark (US) |
 | `Farnell` | Farnell (UK/EU) |
 | `element14` | element14 (APAC) |
@@ -320,7 +320,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### Other Distributors
 
 | Field Name | Notes |
-|---|---|
+| --- | --- |
 | `TME` | Transfer Multisort Elektronik (European) |
 | `Adafruit PN` | Adafruit |
 | `Arrow` | Arrow Electronics (rare) |
@@ -328,7 +328,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 ### DNP (Do Not Populate)
 
 | Field Name | Meaning |
-|---|---|
+| --- | --- |
 | `DNP` | KiCad 9 built-in attribute |
 | `(dnp yes)` | KiCad 9 S-expression flag |
 | `DONOTPLACE` | Boolean "TRUE" |
@@ -343,7 +343,7 @@ Comprehensive list of every field name variant observed across 56 open-source Ki
 When a value is found in an ambiguous field (like `PN` or `Part Number`), these patterns help classify it:
 
 | Pattern | Likely Distributor | Examples |
-|---|---|---|
+| --- | --- | --- |
 | Ends with `-ND` | DigiKey | `490-10698-1-ND`, `296-TPS61023DRLRCT-ND` |
 | `C` + 3-8 digits | LCSC | `C14663`, `C2913202` |
 | 2-3 digits + `-` + alphanum | Mouser | `81-GRM155R71C104KA8D`, `595-TPS63020DSJR` |

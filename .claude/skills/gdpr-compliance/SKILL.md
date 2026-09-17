@@ -93,7 +93,7 @@ Evaluate against Art. 25 (Privacy by Design/Default) and Art. 32 (Security):
 
 ### Audit Output Format
 
-```
+```text
 ## GDPR Audit Report
 
 ### Personal Data Identified
@@ -126,7 +126,7 @@ All document templates are in `references/documents.md`. Load that file and navi
 relevant section:
 
 | Document Requested | Section in documents.md |
-|--------------------|-------------------------|
+| -------------------- | ------------------------- |
 | Privacy Policy / Notice | `# Privacy Notice / Privacy Policy Template` |
 | Data Processing Agreement (DPA) | `# Data Processing Agreement (DPA) Template` |
 | Consent Notice / Banner | `# Consent Notice / Cookie Banner Template` |
@@ -167,7 +167,7 @@ When answering GDPR questions:
 ### Key Article Quick Reference
 
 | Topic | Articles |
-|-------|----------|
+| ------- | ---------- |
 | Definitions | Art. 4 |
 | Lawful basis | Art. 6 |
 | Special categories | Art. 9–10 |
@@ -253,7 +253,7 @@ High-stakes triggers requiring this disclaimer:
 Load `references/updates-2025.md` for detailed guidance on these material developments:
 
 | Development | Summary |
-|---|---|
+| --- | --- |
 | **EDPB Opinion 28/2024 on AI Models** | AI models are not automatically anonymous; legitimate interests can be used for AI training; unlawful training data can taint deployment |
 | **CJEU SRB ruling on pseudonymisation** | "Relative personal data" — pseudonymised data may not be personal in the hands of a specific recipient; critical for anonymisation defences and Art. 17 erasure |
 | **CJEU Russmedia ruling** | Online marketplace operators are controllers for special category data in user-generated ads, even if they don't create the content |

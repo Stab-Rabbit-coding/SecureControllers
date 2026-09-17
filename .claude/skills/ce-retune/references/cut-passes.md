@@ -23,7 +23,7 @@ Fanning out by **problem** looks natural and collides immediately: a single clas
 Fan out by **unit** instead: one agent owns one skill directory and applies the class everywhere inside it. Ownership is then a partition of the filesystem, and the invariant is checkable before dispatch: every path appears in exactly one manifest row.
 
 | Manifest column | Content |
-|---|---|
+| --- | --- |
 | unit | the directory the agent owns, e.g. `skills/<name>/` |
 | paths | explicit glob or file list inside it |
 | forbidden | shared assets and anything outside `unit`, listed by path |
@@ -51,7 +51,7 @@ Some corpora hold byte-identical copies of a file inside several units, delibera
 
 Discover them before dispatch. Shape (POSIX shell; hash every candidate file, key by basename, report pairs appearing in more than one path):
 
-```
+```text
 find . -type f \( -name '*.md' -o -name '*.py' -o -name '*.sh' \) -exec shasum {} + \
   | awk '{ n = $2; sub(/.*\//, "", n); print $1, n }' \
   | sort | uniq -c | awk '$1 > 1'
@@ -67,7 +67,7 @@ When one class spans many files and the strings **cross-reference each other** â
 
 Serialize the decision. One high-effort agent (or you) writes the canonical mapping to a file first:
 
-```
+```text
 old string (exact)  ->  new string (exact)  |  rationale  |  units affected
 ```
 

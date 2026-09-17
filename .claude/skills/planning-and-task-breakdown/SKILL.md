@@ -36,7 +36,7 @@ Before writing any code, operate in read-only mode:
 
 Map what depends on what:
 
-```
+```text
 Database schema
     │
     ├── API models/types
@@ -60,7 +60,7 @@ Instead of building all the database, then all the API, then all the UI — buil
 
 **Bad (horizontal slicing):**
 
-```
+```text
 Task 1: Build entire database schema
 Task 2: Build all API endpoints
 Task 3: Build all UI components
@@ -69,7 +69,7 @@ Task 4: Connect everything
 
 **Good (vertical slicing):**
 
-```
+```text
 Task 1: User can create an account (schema + API + UI for registration)
 Task 2: User can log in (auth schema + API + UI for login)
 Task 3: User can create a task (task schema + API + UI for creation)
@@ -127,7 +127,7 @@ Add explicit checkpoints:
 ## Task Sizing Guidelines
 
 | Size | Files | Scope | Example |
-|------|-------|-------|---------|
+| ------ | ------- | ------- | --------- |
 | **XS** | 1 | Single function or config change | Add a validation rule |
 | **S** | 1-2 | One component or endpoint | Add a new API endpoint |
 | **M** | 3-5 | One feature slice | User registration flow |
@@ -206,7 +206,7 @@ When multiple agents or sessions are available:
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'll figure it out as I go" | That's how you end up with a tangled mess and rework. 10 minutes of planning saves hours. |
 | "The tasks are obvious" | Write them down anyway. Explicit tasks surface hidden dependencies and forgotten edge cases. |
 | "Planning is overhead" | Planning is the task. Implementation without a plan is just typing. |

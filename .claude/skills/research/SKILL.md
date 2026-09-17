@@ -31,7 +31,7 @@ Fix it two ways: declare `model:` in the agent's own frontmatter for anything di
 Note - the built-in `researcher` and `general-purpose` agent types **cannot be overridden by a local file**. Tested 2026-07-11: a `~/.claude/agents/researcher.md` with `model: sonnet` was ignored, and a dispatched `researcher` still loaded the built-in (no Write, no Bash, built-in system prompt). The harness reserves built-in names and only registers *new* ones. So for research, dispatch **`house-researcher`** (which does load our definition and carries `model: sonnet` + Write), or if you must use a built-in, pass `model` on the `Agent` call every time.
 
 | Task shape | Model | Why |
-|---|---|---|
+| --- | --- | --- |
 | Search, fetch, extract, cite a specific claim | Sonnet | Mechanical - no judgement call in the loop |
 | Inventory / enumeration (list every X that matches Y) | Sonnet | Same |
 | Mechanical comparison (spec vs implementation, version A vs B) | Sonnet | Comparison is structural, not evaluative |
@@ -105,7 +105,7 @@ When dispatching multiple research subagents:
 ## Red Flags - STOP
 
 | Excuse | Reality |
-|---|---|
+| --- | --- |
 | "The URL returned 200, so it's real" | 200 confirms the server responded, not that the page says what's claimed - soft-404s pass this check |
 | "The URL pattern matches the site's other pages" | A plausible URL is not a fetched URL - fetch it or mark unverified |
 | "I'm confident this is roughly right" | Confidence is not a citation - either it's sourced or it's flagged |

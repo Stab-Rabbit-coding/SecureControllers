@@ -82,7 +82,7 @@ When you find relevant skills, present them to the user with:
 
 Example response:
 
-```
+```text
 I found a skill that might help! The "react-best-practices" skill provides
 React and Next.js performance optimization guidelines from Vercel Engineering.
 (185K installs)
@@ -133,7 +133,7 @@ If no relevant skills exist:
 
 Example:
 
-```
+```text
 I searched for skills related to "xyz" but didn't find any matches.
 I can still help you with this task directly! Would you like me to proceed?
 

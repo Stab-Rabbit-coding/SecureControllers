@@ -37,7 +37,7 @@ while IFS= read -r line; do
     # Parse each key-value pair
     key=$(echo "$line" | cut -d'=' -f1)
     value=$(echo "$line" | cut -d'=' -f2-)
-    
+
     if [ -n "$key" ]; then
         DEFINES+=("-D" "$key=$value")
     fi

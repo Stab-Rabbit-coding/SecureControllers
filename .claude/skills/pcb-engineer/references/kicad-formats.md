@@ -9,9 +9,8 @@ Reference for generating KiCad 8.x project files programmatically.
 3. [Schematic Format (.kicad_sch)](#schematic-format)
 4. [Symbol Library Format (.kicad_sym)](#symbol-library-format)
 5. [PCB Format (.kicad_pcb)](#pcb-format)
-6. [Footprint Format (.kicad_mod)](#footprint-format)
-7. [Project File (.kicad_pro)](#project-file)
-8. [Common Patterns](#common-patterns)
+6. [Project File (.kicad_pro)](#project-file)
+7. [Common Patterns](#common-patterns)
 
 ---
 
@@ -19,7 +18,7 @@ Reference for generating KiCad 8.x project files programmatically.
 
 A KiCad 8 project directory typically contains:
 
-```
+```text
 project-name/
 ├── project-name.kicad_pro    # Project settings (JSON)
 ├── project-name.kicad_sch    # Root schematic (S-expression)
@@ -34,7 +33,7 @@ project-name/
 KiCad files (except .kicad_pro) use S-expressions — nested parenthesised
 lists. The general form is:
 
-```
+```text
 (keyword value ...)
 (keyword (sub-keyword value ...) ...)
 ```
@@ -54,7 +53,7 @@ File extension: `.kicad_sch`
 
 ### Minimal valid schematic
 
-```
+```text
 (kicad_sch
   (version 20231120)
   (generator "pcb-engineer-skill")
@@ -72,7 +71,7 @@ File extension: `.kicad_sch`
 
 ### Symbol instance (placing a component)
 
-```
+```text
 (symbol
   (lib_id "Device:R")
   (at 100 50 0)          ;; x, y, rotation in degrees
@@ -115,7 +114,7 @@ File extension: `.kicad_sch`
 
 ### Wire
 
-```
+```text
 (wire
   (pts
     (xy 100 50)
@@ -128,7 +127,7 @@ File extension: `.kicad_sch`
 
 ### Net label
 
-```
+```text
 (label "VCC_3V3"
   (at 110 50 0)
   (effects (font (size 1.27 1.27)))
@@ -138,7 +137,7 @@ File extension: `.kicad_sch`
 
 ### Global label (for inter-sheet connections)
 
-```
+```text
 (global_label "SDA"
   (shape bidirectional)
   (at 120 60 0)
@@ -153,7 +152,7 @@ File extension: `.kicad_sch`
 
 ### Power symbol
 
-```
+```text
 (symbol
   (lib_id "power:GND")
   (at 100 70 0)
@@ -184,7 +183,7 @@ File extension: `.kicad_sch`
 
 ### Hierarchical sheet (sub-schematic)
 
-```
+```text
 (sheet
   (at 150 80)
   (size 20 15)
@@ -214,7 +213,7 @@ File extension: `.kicad_sym`
 
 Used for custom symbols not in KiCad's standard libraries.
 
-```
+```text
 (kicad_symbol_lib
   (version 20231120)
   (generator "pcb-engineer-skill")
@@ -281,7 +280,7 @@ Used for custom symbols not in KiCad's standard libraries.
 Use the correct pin type for accurate ERC (Electrical Rule Check):
 
 | Type | Use for |
-|---|---|
+| --- | --- |
 | `input` | Digital/analogue inputs |
 | `output` | Digital/analogue outputs |
 | `bidirectional` | I2C SDA, data bus lines |
@@ -298,7 +297,7 @@ File extension: `.kicad_pcb`
 
 ### Minimal valid PCB
 
-```
+```text
 (kicad_pcb
   (version 20240108)
   (generator "pcb-engineer-skill")
@@ -365,7 +364,7 @@ File extension: `.kicad_pcb`
 
 For 4-layer boards, add inner layers:
 
-```
+```text
 (layers
   (0 "F.Cu" signal)
   (1 "In1.Cu" signal)       ;; Typically ground plane
@@ -377,7 +376,7 @@ For 4-layer boards, add inner layers:
 
 ### Footprint instance
 
-```
+```text
 (footprint "Resistor_SMD:R_0402_1005Metric"
   (layer "F.Cu")
   (uuid "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
@@ -414,7 +413,7 @@ For 4-layer boards, add inner layers:
 
 ### Trace
 
-```
+```text
 (segment
   (start 25 15)
   (end 30 15)
@@ -427,7 +426,7 @@ For 4-layer boards, add inner layers:
 
 ### Via
 
-```
+```text
 (via
   (at 30 15)
   (size 0.6)               ;; Annular ring outer diameter
@@ -440,7 +439,7 @@ For 4-layer boards, add inner layers:
 
 ### Copper zone (ground pour)
 
-```
+```text
 (zone
   (net 1)
   (net_name "GND")
@@ -468,7 +467,7 @@ For 4-layer boards, add inner layers:
 
 ### Mounting hole
 
-```
+```text
 (footprint "MountingHole:MountingHole_3.2mm_M3"
   (layer "F.Cu")
   (uuid "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
@@ -545,7 +544,7 @@ Custom properties (MPN, supplier part number, etc.) are added as additional
 `property` entries in both the symbol instance (schematic) and the footprint
 (PCB). These survive round-tripping between schematic and PCB.
 
-```
+```text
 (property "MPN" "LM1117MPX-3.3/NOPB"
   (at 0 0 0)
   (effects (font (size 1.27 1.27)) hide)
@@ -568,7 +567,7 @@ Custom properties (MPN, supplier part number, etc.) are added as additional
 
 ### Net class definitions (in .kicad_pcb setup section)
 
-```
+```text
 (net_class "Default" ""
   (clearance 0.2)
   (trace_width 0.25)

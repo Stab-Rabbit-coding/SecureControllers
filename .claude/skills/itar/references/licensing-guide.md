@@ -3,7 +3,7 @@
 ## License Types at a Glance
 
 | License / Agreement | CFR Reference | Purpose | Typical Use |
-|--------------------|---------------|---------|-------------|
+| -------------------- | --------------- | --------- | ------------- |
 | DSP-5 | 22 CFR § 123.1 | Permanent export of defense articles | Hardware sale/transfer to foreign end-user |
 | DSP-73 | 22 CFR § 123.5 | Temporary export | Trade shows, testing, repair abroad |
 | DSP-94 | 22 CFR § 123.6 | Temporary import | Foreign defense article entering US temporarily |
@@ -47,7 +47,7 @@ Submit via DDTC's D-Trade portal:
 
 ## DSP-73 (Temporary Export)
 
-### When Required
+### When Required (DSP-73)
 
 Hardware leaving the US temporarily (not for resale/transfer to foreign ownership).
 
@@ -92,14 +92,14 @@ Any change to scope, parties, or authorised countries requires a formal amendmen
 
 ## Manufacturing License Agreement (MLA)
 
-### Purpose
+### Purpose (Manufacturing License Agreement)
 
 Allows a foreign person to manufacture a defense article under US licence — typically for local production under an FMS programme or commercial arrangement.
 
 ### Key Differences from TAA
 
 | Feature | TAA | MLA |
-|---------|-----|-----|
+| --------- | ----- | ----- |
 | What is transferred | Technical data / services | Manufacturing rights + technical data |
 | Foreign party produces? | No | Yes |
 | Sub-licensing allowed? | Conditional | Usually yes, with restrictions |
@@ -123,7 +123,7 @@ Certain transfers do not require a licence if all conditions are met. **Exemptio
 ### Key Exemptions (22 CFR Part 123–126)
 
 | Exemption | CFR Reference | Conditions |
-|-----------|--------------|-----------|
+| ----------- | -------------- | ----------- |
 | US government | § 126.4 | Export by/for US Dept of Defense, State, etc. with government orders |
 | Canada exemption | § 126.5 | Certain unclassified hardware to Canada only; does not apply to all categories |
 | Australian/UK exemption | § 126.7 | Limited scope for certain Gov-to-Gov and industry-to-industry transfers; requires eligibility verification |
@@ -138,7 +138,7 @@ Certain transfers do not require a licence if all conditions are met. **Exemptio
 ## Foreign Military Sales (FMS) vs Direct Commercial Sales (DCS)
 
 | Aspect | FMS | DCS |
-|--------|-----|-----|
+| -------- | ----- | ----- |
 | Contract party | US Government (DSCA) | US company directly |
 | ITAR licence | Not required (US Gov exemption) | DSP-5 / TAA required |
 | End-use assurance | US Government provides | US company responsible |

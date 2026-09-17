@@ -7,7 +7,7 @@ Classify the request into exactly one input shape — concept, diff, idea, or wo
 Tokens exist so automation and chained calls can force a decision. Plain language is the ordinary way a person invokes this skill and is not a lesser path — most requests carry no token at all and must classify just as reliably.
 
 | Token | Example | Effect |
-|-------|---------|--------|
+| ------- | --------- | -------- |
 | `diff:<ref-or-range>` | `diff:abc1234`, `diff:main..HEAD`, `diff:PR#42` | Forces diff mode on that change |
 | `since:<window-or-ref>` | `since:monday`, `since:7d`, `since:v2.1.0` | Forces recap mode over that window |
 | `output:<md\|html>` | `output:md` | Overrides the artifact format (default `html`) |
@@ -46,7 +46,7 @@ Classify the remaining text by shape:
 Audience is orthogonal to input shape — resolve it for every shape, including recaps.
 
 - **Default: the user personally.** Absent a signal, do not ask and do not adapt.
-- **Another reader** when the `audience:` token is present, or when the request plainly says someone else will read it — "write this up for the team", "I'm sharing this with <person/group>", "for the design review", "a share-out", "something I can post in <channel>". The test is whether the *artifact itself* lands in front of other people. Carry the named reader forward verbatim; the rendering rule lives in the compose-time reference.
+- **Another reader** when the `audience:` token is present, or when the request plainly says someone else will read it — "write this up for the team", "I'm sharing this with <person/group>", "for the design review", "a share-out", "something I can post in `<channel>`". The test is whether the *artifact itself* lands in front of other people. Carry the named reader forward verbatim; the rendering rule lives in the compose-time reference.
 - Wanting to *speak* from the material is not an audience signal. "Prep me for standup", "catch me up before the meeting", "walk engineering through it — get me ready", and "so I can explain it to them" all stay personal: the user is still the reader. That resolves the case, so no re-render note is needed.
 - **A request to share is not a request for a status update.** "Something I can drop in the #eng channel about this week's work" reads like a status-update ask in ordinary usage, and this skill does not write status updates. Honor the *audience* and refuse the *form*: render the explainer for that reader at full depth. Decline only if the user wants the terse update itself rather than an explainer for it — and say which you're doing.
 - Ambiguous between personal and another reader (for example, "write up what shipped this week"), default to personal and say in one line that it can be re-rendered for a reader. Do not spend a blocking question on this.

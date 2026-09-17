@@ -363,7 +363,7 @@ Compares actual design parameters against JLCPCB standard and advanced process l
 ### Checked Parameters
 
 | Parameter | Standard Limit | Advanced Limit |
-|-----------|---------------|----------------|
+| ----------- | --------------- | ---------------- |
 | Min track width | 0.127mm (5 mil) | 0.100mm (4 mil) |
 | Min track spacing | 0.127mm (5 mil) | 0.100mm (4 mil) |
 | Min via drill | 0.200mm | 0.150mm |

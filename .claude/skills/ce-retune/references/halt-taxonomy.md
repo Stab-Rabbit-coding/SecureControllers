@@ -10,7 +10,7 @@ If the archive carries no session or child ids (`references/baseline-mining.md` 
 
 Each class below gives what to grep, why the match halts, and the replacement. Grep terms are starting points for a corpus that never used exactly these words — read the matches, do not batch-edit them. Case-insensitive, whole corpus including reference files, one class at a time:
 
-```
+```text
 grep -rniE 'return control|hand back|hand off to|the caller (owns|applies)' <corpus-dir>
 ```
 
@@ -46,7 +46,7 @@ grep -rniE 'return control|hand back|hand off to|the caller (owns|applies)' <cor
 
 **Why it halts:** "X is done once ..." with nothing after it reads as the end of the turn, not the end of a step.
 
-**Replacement:** say what follows being done. "X is done once <criteria>; then <next step>."
+**Replacement:** say what follows being done. "X is done once `<criteria>`; then `<next step>`."
 
 ## 5. An output envelope labeled as a return
 
@@ -89,7 +89,7 @@ grep -rniE 'return control|hand back|hand off to|the caller (owns|applies)' <cor
 **Resolution:** classify each prompt asset by who actually consumes it. Grep every unit that dispatches the asset for an inlining fallback — `if you cannot dispatch`, `if subagents are unavailable`, `run this yourself`, `inline`. Then:
 
 | Consumer | Action |
-|---|---|
+| --- | --- |
 | Always a real subagent | Leave as is. The boundary is real. |
 | Any documented inline fallback | Rewrite so the text is safe in both paths, or remove the fallback. |
 | Asset shared by several units | Resolve once, for the union of consumers (see the shared-asset rule in `references/cut-passes.md`). |

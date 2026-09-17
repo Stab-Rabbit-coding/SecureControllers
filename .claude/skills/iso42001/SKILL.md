@@ -27,7 +27,7 @@ Always clarify the organisation's role if not stated — **AI provider** (develo
 Match your output to the task type:
 
 | Task | Output Format |
-|------|--------------|
+| ------ | -------------- |
 | Gap analysis | Table: Clause/Control ID \| Requirement \| Status 🔴/🟡/🟢 \| Evidence Needed \| Gap Notes |
 | AIMS scope definition | Structured narrative: boundaries, AI systems in scope, roles |
 | AI risk/impact assessment | Risk register table or structured narrative with likelihood × severity |
@@ -54,7 +54,7 @@ Always cite the specific clause or Annex A control (e.g., Clause 6.1.2, A.4.3) i
 ### Key Unique Elements vs Other ISO Standards
 
 | Element | ISO 42001 Specific |
-|---------|-------------------|
+| --------- | ------------------- |
 | AI system impact assessment (AISIA) | Required — assess societal and individual impacts |
 | AI risk assessment | Separate from general organisational risk — AI-specific likelihood × severity |
 | AI objectives | Must be measurable and linked to responsible AI principles |
@@ -68,7 +68,7 @@ Always cite the specific clause or Annex A control (e.g., Clause 6.1.2, A.4.3) i
 ## Clause Structure (Mandatory — Clauses 4–10)
 
 | Clause | Title | Key Deliverables |
-|--------|-------|-----------------|
+| -------- | ------- | ----------------- |
 | 4 | Context of the Organisation | AIMS scope document, stakeholder register, interested party needs, AI system register |
 | 5 | Leadership | AI policy (signed by top management), roles and responsibilities (RACI), management commitment evidence |
 | 6 | Planning | AI risk assessment, AI system impact assessment (AISIA), AIMS objectives, plan to achieve objectives |
@@ -98,7 +98,7 @@ For AI risk and impact assessment methodology → read `references/iso42001-ai-r
 
 **Output format:**
 
-```
+```text
 CLAUSE/CONTROL | REQUIREMENT | STATUS | EVIDENCE NEEDED | GAP/ACTION
 4.1            | Context documented | 🔴 Not started | Context analysis (PESTLE or equivalent) | Identify external/internal issues relevant to AI governance
 4.3            | AIMS scope defined | 🔴 Not started | AIMS Scope doc | Define AI system boundary, inclusions, exclusions, and justification
@@ -123,7 +123,7 @@ The AISIA is a **mandatory** process under Clause 6.1.2. It assesses the potenti
 **AISIA impact classification:**
 
 | Level | Description | Control implication |
-|-------|-------------|-------------------|
+| ------- | ------------- | ------------------- |
 | Low | Limited, easily reversible impact on non-vulnerable individuals | Standard controls apply |
 | Medium | Moderate impact, partially reversible, some vulnerable individuals | Enhanced transparency + human oversight |
 | High | Significant, hard-to-reverse impact on vulnerable individuals or society | Maximum controls — mandatory human review, full transparency disclosure, formal right to challenge AI decisions |
@@ -153,7 +153,7 @@ Generate a SoA table covering all Annex A controls across domains A.2–A.10 (38
 
 **SoA format:**
 
-```
+```text
 Control ID | Control Name | Applicable? | Justification | Implementation Status | Evidence Reference
 A.2.2 | AI policy | Yes | Required for all AIMS | Implemented | AI-POL-001
 A.4.3 | Data resources | Yes | Provider role — training data governance | In progress | N/A
@@ -176,7 +176,7 @@ For all 38 controls with descriptions → read `references/iso42001-controls-ann
 
 **Policy document structure (use for all):**
 
-```
+```text
 [Organisation Name] — [Policy Name]
 Document ID: [ID] | Version: 1.0 | Owner: [Role] | Approved by: [Title]
 Effective Date: [Date] | Next Review: [Date +1yr]
@@ -235,7 +235,7 @@ Annual — auditor verifies continued compliance and improvement. Recertificatio
 ISO 42001 uses HLS so it integrates cleanly:
 
 | ISO Standard | Integration Point |
-|-------------|-----------------|
+| ------------- | ----------------- |
 | ISO 27001:2022 | A.7 (data governance) maps to ISO 27001 Annex A.8 (technological controls); AI incident management links to 27001 Annex A.5.24–A.5.28 (incident management controls); supplier AI risk maps to 27001 A.5.19–A.5.22 |
 | ISO 9001:2015 | Quality management processes (Clause 8) align with AI lifecycle; PDCA cycle shared |
 | ISO 31000 | AI risk assessment methodology aligns with ISO 31000 risk framework |
@@ -259,7 +259,7 @@ ISO 42001 uses HLS so it integrates cleanly:
 ## Key Terminology
 
 | Term | Definition |
-|------|-----------|
+| ------ | ----------- |
 | AIMS | AI Management System — the overarching governance framework for managing AI |
 | AISIA | AI System Impact Assessment — mandatory assessment of societal/individual impacts |
 | AI provider | Organisation that develops, trains, or deploys AI systems for others |

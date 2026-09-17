@@ -60,7 +60,7 @@ Use `scripts/risk_register.py` to score and rank a YAML/CSV risk list and emit a
 Maintain one control statement mapped to many frameworks so evidence is reused, not duplicated. Anchor on **NIST CSF 2.0 functions** (GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, RECOVER) and crosswalk outward:
 
 | Need | Framework | Anchor |
-|------|-----------|--------|
+| ------ | ----------- | -------- |
 | Program governance | NIST CSF 2.0 | GV / ID / PR / DE / RS / RC |
 | Certifiable ISMS | ISO/IEC 27001:2022 | Annex A (93 controls, 4 themes) |
 | Service-org attestation | SOC 2 | Trust Services Criteria (CC1–CC9, A/C/PI/P) |
@@ -100,7 +100,7 @@ Tier vendors by data access and criticality; drive assessment via SIG/CAIQ-style
 
 **Risk register row:**
 
-```
+```text
 ID | Risk | Asset | Threat | Likelihood(1-5) | Impact(1-5) | Inherent | Controls | Residual | Treatment | Owner | Due
 R-001 | Ransomware encrypts file servers | File svc | Crime group | 4 | 5 | 20 (Critical) | Backups, EDR, MFA | 8 (Medium) | Mitigate | IT Ops | 2026-09-30
 ```
@@ -156,7 +156,7 @@ python scripts/control_mapper.py --csf PR.AA --output crosswalk.json
 ## Skill Integration
 
 | Next Step | Condition | Target Skill |
-|-----------|-----------|--------------|
+| ----------- | ----------- | -------------- |
 | Technical validation of a control | Need to prove a control works | → Skill 02 / 09 / 10 |
 | Cloud compliance scanning | Cloud controls in scope | → Skill 10 |
 | Detection coverage evidence | DE function controls | → Skill 12 / 15 |

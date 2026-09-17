@@ -126,7 +126,7 @@ PATH — and cross-host per the repo's eval default: Claude Code AND Codex.
 
 14. **Unverified-identity announce (lifecycle R8).** On a route without a
     served-model receipt, assert the announce/reconcile wording reads
-    "requested <model>; serving model unverified on this route" rather than
+    "requested `<model>`; serving model unverified on this route" rather than
     asserting the concrete model as serving.
 
 15. **Preferred-first bounded adaptation (U8).** The declared mapping is tried

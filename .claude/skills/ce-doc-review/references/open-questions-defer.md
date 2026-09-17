@@ -29,7 +29,7 @@ Date format: ISO 8601 calendar date (`YYYY-MM-DD`). If multiple reviews occur on
 
 Per deferred finding, append a reader-facing bullet-point entry. The entry carries no HTML comment — the markdown rendering contract forbids mixed-in HTML, and every field Step 4's dedup needs is reconstructable from the visible entry text:
 
-```
+```text
 - **{title}** — {section} ({severity}, {reviewer}, confidence {confidence})
 
   {why_it_matters}
@@ -84,7 +84,7 @@ When the append cannot complete — document is read-only on disk, path is inval
 
 **Options (exactly three; fixed order):**
 
-```
+```text
 A. Retry the append
 B. Record the deferral in the completion report only (don't mutate the document)
 C. Convert this finding to Skip
@@ -94,7 +94,7 @@ C. Convert this finding to Skip
 
 - **A Retry** — try the append again. On repeated failure, loop back to the same sub-question.
 - **B Record only** — skip the document mutation; record the Deferred action in the completion report with a note that the append failed. The finding does not end up in the document but the user sees in the report that they deferred it.
-- **C Convert to Skip** — record the finding as Skip with an explanatory reason ("append to Open Questions failed: <error>"). The finding is treated as no-action for the remainder of the session.
+- **C Convert to Skip** — record the finding as Skip with an explanatory reason ("append to Open Questions failed: `<error>`"). The finding is treated as no-action for the remainder of the session.
 
 Silent failure is not acceptable. If the user does not respond to the sub-question (session ends, terminal disconnects), default to option B so the in-memory decision state stays consistent even if the document wasn't written.
 

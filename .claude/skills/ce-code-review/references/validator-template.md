@@ -6,7 +6,7 @@ This template is used by Stage 5b to spawn one validator sub-agent per surviving
 
 ## Template
 
-```
+```text
 You are an independent validator for a code review finding. Another reviewer flagged the issue described below. Your job is to verify whether the finding holds up under fresh inspection.
 
 You have no commitment to the original finding. If it is wrong, say so. False positives are common; do not feel pressure to confirm.
@@ -74,7 +74,7 @@ Rules:
 - If you cannot read the cited file, return `{ "validated": false, "reason": "Could not access file path to verify." }` rather than guessing.
 - Return JSON only. No prose, no markdown, no explanation outside the JSON object.
 
-```
+```text
 
 ## Variable Reference
 

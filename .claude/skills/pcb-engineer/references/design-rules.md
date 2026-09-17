@@ -25,7 +25,7 @@ fabrication. Generic/conservative values noted where they differ.
 ### JLCPCB standard capabilities (2-layer, most common)
 
 | Parameter | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Minimum trace width | 0.127mm (5mil) | 0.2mm (8mil) or wider |
 | Minimum spacing | 0.127mm (5mil) | 0.2mm (8mil) or wider |
 | Minimum via drill | 0.3mm | 0.3mm |
@@ -41,7 +41,7 @@ fabrication. Generic/conservative values noted where they differ.
 ### JLCPCB 4-layer standard capabilities
 
 | Parameter | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Minimum trace width | 0.09mm (3.5mil) | 0.15mm (6mil) |
 | Minimum spacing | 0.09mm (3.5mil) | 0.15mm (6mil) |
 | Standard stackup | 1.6mm total | Sig/GND/PWR/Sig |
@@ -53,7 +53,7 @@ fabrication. Generic/conservative values noted where they differ.
 When designing for unknown or high-reliability fabrication:
 
 | Parameter | Conservative value |
-|---|---|
+| --- | --- |
 | Minimum trace width | 0.25mm (10mil) |
 | Minimum spacing | 0.25mm (10mil) |
 | Minimum via drill | 0.4mm |
@@ -76,7 +76,7 @@ Use IPC-2152 methodology. The key variables:
 ### Quick reference table (1oz copper, 10°C rise, external layer)
 
 | Current (A) | Min width (mm) | Recommended width (mm) |
-|---|---|---|
+| --- | --- | --- |
 | 0.5 | 0.13 | 0.25 |
 | 1.0 | 0.38 | 0.50 |
 | 2.0 | 1.10 | 1.50 |
@@ -89,7 +89,7 @@ Use IPC-2152 methodology. The key variables:
 Internal layers have worse thermal dissipation — traces must be wider:
 
 | Current (A) | Min width (mm) | Recommended width (mm) |
-|---|---|---|
+| --- | --- | --- |
 | 0.5 | 0.25 | 0.40 |
 | 1.0 | 0.76 | 1.00 |
 | 2.0 | 2.20 | 2.80 |
@@ -100,7 +100,7 @@ Internal layers have worse thermal dissipation — traces must be wider:
 
 For precise calculation, use the IPC-2152 formula:
 
-```
+```text
 Area (mil²) = (I / (k × ΔT^b))^(1/c)
 Width (mil) = Area / (thickness in mil)
 ```
@@ -116,7 +116,7 @@ understand why the width was chosen.
 ### Standard via (through-hole)
 
 | Application | Drill | Pad diameter | Current capacity |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Signal via (general) | 0.3mm | 0.6mm | ~1A |
 | Power via (moderate) | 0.4mm | 0.8mm | ~1.5A |
 | Power via (high current) | 0.6mm | 1.0mm | ~3A |
@@ -153,7 +153,7 @@ QFN thermal pads with no room for dog-bones).
 ### Copper-to-copper clearance
 
 | Voltage difference | Minimum clearance (IPC-2221B, internal) | Min clearance (external, conformal coated) |
-|---|---|---|
+| --- | --- | --- |
 | 0-15V | 0.1mm | 0.1mm |
 | 16-30V | 0.1mm | 0.1mm |
 | 31-50V | 0.6mm | 0.6mm |
@@ -170,7 +170,7 @@ professional review.
 ### Other clearances
 
 | Rule | JLCPCB min | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Pad-to-pad | 0.127mm | 0.2mm |
 | Pad-to-trace | 0.127mm | 0.2mm |
 | Trace-to-board-edge | 0.3mm | 0.5mm |
@@ -183,7 +183,7 @@ professional review.
 ### Common controlled-impedance targets
 
 | Interface | Impedance | Type | Typical trace width (1.6mm FR4, outer) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | USB 2.0 | 90Ω ±10% | Differential pair | ~0.2mm trace, ~0.15mm gap |
 | USB 3.0 | 90Ω ±10% | Differential pair | ~0.2mm trace, ~0.15mm gap |
 | Ethernet 100BASE-TX | 100Ω ±10% | Differential pair | ~0.15mm trace, ~0.2mm gap |
@@ -220,7 +220,7 @@ impedance control.
 ### Pour parameters
 
 | Parameter | Value | Why |
-|---|---|---|
+| --- | --- | --- |
 | Clearance to traces | 0.3mm | Prevents unintended coupling |
 | Thermal relief spoke width | 0.5mm | Allows soldering without heat sink effect |
 | Thermal relief gap | 0.5mm | Balance between thermal relief and ground connection |
@@ -234,7 +234,7 @@ flag these; always run a zone fill check before generating Gerbers.
 ## Silkscreen Rules
 
 | Parameter | JLCPCB min | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Minimum text height | 0.8mm | 1.0mm |
 | Minimum line width | 0.15mm | 0.2mm |
 | Silk-to-pad clearance | 0.15mm | 0.2mm |
@@ -259,7 +259,7 @@ handling. JLCPCB and PCBWay offer auto-panelisation, but custom panels give
 more control.
 
 | Parameter | Typical value |
-|---|---|
+| --- | --- |
 | Panel border | 5mm (for tooling rails) |
 | Tab width | 3-5mm |
 | Mouse-bite drill | 0.6mm holes, 0.8mm pitch |
@@ -269,7 +269,7 @@ more control.
 ## Surface Finishes
 
 | Finish | Cost | Shelf life | Lead-free | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | HASL (leaded) | Cheapest | Long | No | Uneven surface, fine for through-hole and large SMD |
 | HASL (lead-free) | Low | Long | Yes | Same as above but compliant |
 | ENIG | Medium | 12+ months | Yes | Flat pads, good for fine-pitch. Gold over nickel. |
@@ -284,7 +284,7 @@ option requires LeadFree HASL or ENIG.
 ## Solder Mask
 
 | Parameter | JLCPCB min | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Solder mask expansion | 0.05mm | 0.05mm |
 | Solder mask bridge (between pads) | 0.1mm | 0.15mm |
 | Available colours | Green, black, white, blue, red, yellow, purple | Green (cheapest/fastest) |
@@ -299,7 +299,7 @@ Quick-copy values for KiCad DRC setup:
 
 ### Budget fab (JLCPCB/PCBWay) — recommended values
 
-```
+```text
 Minimum clearance:           0.2mm
 Minimum track width:         0.2mm
 Minimum via diameter:        0.6mm
@@ -316,7 +316,7 @@ Solder mask bridge min:      0.15mm
 
 ### Conservative (any fab)
 
-```
+```text
 Minimum clearance:           0.25mm
 Minimum track width:         0.25mm
 Minimum via diameter:        0.8mm

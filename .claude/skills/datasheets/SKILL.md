@@ -26,7 +26,7 @@ This skill owns:
 
 ## Cache location
 
-```
+```text
 <project>/
   design.kicad_sch
   datasheets/

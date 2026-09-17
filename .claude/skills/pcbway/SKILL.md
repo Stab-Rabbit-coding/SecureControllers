@@ -12,7 +12,7 @@ PCBWay is a PCB fabrication and assembly service based in Shenzhen, China. It is
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Read/analyze KiCad project files, DFM scoring |
 | `bom` | BOM management, gerber/CPL export, stencil ordering |
 | `digikey` | Search DigiKey (prototype sourcing, primary — also preferred for datasheet downloads via API) |
@@ -25,7 +25,7 @@ PCBWay is a PCB fabrication and assembly service based in Shenzhen, China. It is
 ## Key Differences from JLCPCB
 
 | Feature | PCBWay | JLCPCB |
-|---------|--------|--------|
+| --------- | -------- | -------- |
 | Component sourcing | Turnkey (PCBWay sources by MPN) | LCSC parts library (you provide LCSC PNs) |
 | Parts library | No fixed library — sources globally | LCSC library (basic/extended parts) |
 | Assembly fee model | Quote-based per project | Per-part fees (basic free, extended $3 each) |
@@ -41,7 +41,7 @@ PCBWay is a PCB fabrication and assembly service based in Shenzhen, China. It is
 ## Assembly Options
 
 | Option | Description |
-|--------|-------------|
+| -------- | ------------- |
 | **Turnkey** | PCBWay sources all parts by MPN — you just provide the BOM |
 | **Partial turnkey** | PCBWay sources some parts, you supply others |
 | **Consigned/Kitted** | You supply all parts, PCBWay assembles |
@@ -61,7 +61,7 @@ Line#,Qty,Designator,MPN,Manufacturer,Description,Package,Type
 Required columns:
 
 | Column | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `Line#` | Row number |
 | `Qty` | Quantity per board |
 | `Designator` | Reference designators (comma-separated) |
@@ -86,7 +86,7 @@ For gerber export settings and CPL format, see the `bom` skill — both JLCPCB a
 ### Standard PCB (1-2 layers)
 
 | Parameter | Minimum |
-|-----------|---------|
+| ----------- | --------- |
 | Trace width | 0.1mm (4mil) |
 | Trace spacing | 0.1mm (4mil) |
 | Via diameter | 0.3mm |
@@ -100,7 +100,7 @@ For gerber export settings and CPL format, see the `bom` skill — both JLCPCB a
 ### Multi-layer (4+ layers)
 
 | Parameter | Minimum |
-|-----------|---------|
+| ----------- | --------- |
 | Trace width | 0.09mm (3.5mil) |
 | Trace spacing | 0.09mm (3.5mil) |
 | Via drill | 0.15mm |
@@ -110,7 +110,7 @@ For gerber export settings and CPL format, see the `bom` skill — both JLCPCB a
 ### Additional Capabilities
 
 | Feature | Specification |
-|---------|---------------|
+| --------- | --------------- |
 | Copper weight (outer) | 1oz-8oz |
 | Copper weight (inner) | 1oz-4oz |
 | Solder mask colors | Green, Red, Yellow, Blue, White, Black, Matt Green, Matte Black, Purple |

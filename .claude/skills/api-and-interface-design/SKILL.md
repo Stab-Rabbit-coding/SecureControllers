@@ -148,7 +148,7 @@ interface CreateTaskInput {
 ### 5. Predictable Naming
 
 | Pattern | Convention | Example |
-|---------|-----------|---------|
+| --------- | ----------- | --------- |
 | REST endpoints | Plural nouns, no verbs | `GET /api/tasks`, `POST /api/tasks` |
 | Query params | camelCase | `?sortBy=createdAt&pageSize=20` |
 | Response fields | camelCase | `{ createdAt, updatedAt, taskId }` |
@@ -159,7 +159,7 @@ interface CreateTaskInput {
 
 ### Resource Design
 
-```
+```sql
 GET    /api/tasks              → List tasks (with query params for filtering)
 POST   /api/tasks              → Create a task
 GET    /api/tasks/:id          → Get a single task
@@ -194,7 +194,7 @@ GET /api/tasks?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc
 
 Use query parameters for filters:
 
-```
+```text
 GET /api/tasks?status=in_progress&assignee=user123&createdAfter=2025-01-01
 ```
 
@@ -264,7 +264,7 @@ function getTask(id: TaskId): Promise<Task> { ... }
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "We'll document the API later" | The types ARE the documentation. Define them first. |
 | "We don't need pagination for now" | You will the moment someone has 100+ items. Add it from the start. |
 | "PATCH is complicated, let's just use PUT" | PUT requires the full object every time. PATCH is what clients actually want. |

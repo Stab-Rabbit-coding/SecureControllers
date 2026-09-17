@@ -29,7 +29,7 @@ MCP tool names vary by platform:
 
 If the tool is not found or errors, inform the user they need to add the XcodeBuildMCP MCP server:
 
-```
+```text
 XcodeBuildMCP not installed
 
 Install via Homebrew:
@@ -106,7 +106,7 @@ Simulated taps (via XcodeBuildMCP or any simulator automation tool) do not trigg
 Pause for human input when testing touches flows that require device interaction.
 
 | Flow Type | What to Ask |
-|-----------|-------------|
+| ----------- | ------------- |
 | Sign in with Apple | "Please complete Sign in with Apple on the simulator" |
 | Push notifications | "Send a test push and confirm it appears" |
 | In-app purchases | "Complete a sandbox purchase" |
@@ -116,7 +116,7 @@ Pause for human input when testing touches flows that require device interaction
 
 Ask the user using the platform's blocking question tool: `AskUserQuestion` in Claude Code (call `ToolSearch` with `select:AskUserQuestion` first if its schema isn't loaded), `request_user_input` in Codex, `ask_question` in Antigravity CLI (`agy`), `ask_user` in Pi (requires the `pi-ask-user` extension). Fall back to numbered options in chat only when no blocking tool exists in the harness or the call errors (e.g., Codex edit modes) — not because a schema load is required. Never silently skip the question:
 
-```
+```text
 Human Verification Needed
 
 This test requires [flow type]. Please:
@@ -139,7 +139,7 @@ When a test fails:
 
 2. **Ask the user how to proceed:**
 
-   ```
+   ```text
    Test Failed: [screen/feature]
 
    Issue: [description]

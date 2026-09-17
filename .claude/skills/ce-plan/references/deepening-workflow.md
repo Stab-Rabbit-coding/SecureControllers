@@ -26,7 +26,7 @@ If the plan already has a `deepened:` date:
 
 **Section Checklists:**
 
-**Requirements**
+### Requirements
 
 - Requirements are vague or disconnected from implementation units
 - Success criteria are missing or not reflected downstream
@@ -34,14 +34,14 @@ If the plan already has a `deepened:` date:
 - Origin requirements are not clearly carried forward
 - Origin A/F/AE IDs (when supplied by the upstream brainstorm) are not preserved where planning decisions touch them, or are referenced inconsistently across Requirements, units, and test scenarios
 
-**Context & Research / Sources & References**
+### Context & Research / Sources & References
 
 - Relevant repo patterns are named but never used in decisions or implementation units
 - Cited learnings or references do not materially shape the plan
 - High-risk work lacks appropriate external or internal grounding
 - Research is generic instead of tied to this repo or this plan
 
-**Key Technical Decisions**
+### Key Technical Decisions
 
 - A decision is stated without rationale
 - Rationale does not explain tradeoffs or rejected alternatives
@@ -49,14 +49,14 @@ If the plan already has a `deepened:` date:
 - An obvious design fork exists but the plan never addresses why one path won
 - Agent/tool/workflow features lack an explicit decision about action parity, context parity, shared workspace, tool granularity, or approval posture
 
-**Open Questions**
+### Open Questions
 
 - Product blockers are hidden as assumptions
 - Planning-owned questions are incorrectly deferred to implementation
 - Resolved questions have no clear basis in repo context, research, or origin decisions
 - Deferred items are too vague to be useful later
 
-**High-Level Technical Design (when present)**
+### High-Level Technical Design (when present)
 
 - The sketch uses the wrong medium for the work
 - The sketch contains implementation code rather than pseudo-code
@@ -69,7 +69,7 @@ If the plan already has a `deepened:` date:
 - Key technical decisions would be easier to validate with a visual or pseudo-code representation
 - The approach section of implementation units is thin and a higher-level technical design would provide context
 
-**Implementation Units**
+### Implementation Units
 
 - Dependency order is unclear or likely wrong
 - File paths or test file paths are missing where they should be explicit
@@ -82,7 +82,7 @@ If the plan already has a `deepened:` date:
 - Existing U-IDs were renumbered after a unit was reordered, split, or deleted (U-IDs are stable: never renumber existing IDs; gaps from deletions are preserved; new units take the next unused number)
 - A unit realizing an origin Key Flow does not cite the F-ID, or a unit enforcing an origin Acceptance Example does not cite the AE-ID, when origin supplies them
 
-**System-Wide Impact**
+### System-Wide Impact
 
 - Affected interfaces, callbacks, middleware, entry points, or parity surfaces are missing
 - Failure propagation is underexplored
@@ -90,7 +90,7 @@ If the plan already has a `deepened:` date:
 - Integration coverage is weak for cross-layer work
 - Agent-facing tools, prompts, runtime context, shared workspaces, approval gates, or human-only boundaries are missing when the feature affects agent-capable systems
 
-**Risks & Dependencies / Documentation / Operational Notes**
+### Risks & Dependencies / Documentation / Operational Notes
 
 - Risks are listed without mitigation
 - Rollout, monitoring, migration, or support implications are missing when warranted
@@ -113,12 +113,12 @@ The names below are skill-local prompt asset file stems under `references/agents
 
 **Deterministic Section-to-Agent Mapping:**
 
-**Requirements / Open Questions classification**
+### Requirements / Open Questions classification
 
 - `spec-flow-analyzer` for missing user flows, edge cases, and handoff gaps
 - `repo-research-analyst` (Scope: `architecture, patterns`) for repo-grounded patterns, conventions, and implementation reality checks
 
-**Context & Research / Sources & References gaps**
+### Context & Research / Sources & References gaps
 
 - `learnings-researcher` for institutional knowledge and past solved problems
 - `framework-docs-researcher` for official framework or library behavior
@@ -126,27 +126,27 @@ The names below are skill-local prompt asset file stems under `references/agents
 - `web-researcher` for landscape/prior-art gaps — competitor patterns, market signals, or an unsettled external option set (which library/provider/approach) that recommendations depend on
 - Add `git-history-analyzer` only when historical rationale or prior art is materially missing
 
-**Key Technical Decisions**
+### Key Technical Decisions (5.3.4 Report and Dispatch Targeted Resea)
 
 - `architecture-strategist` for design integrity, boundaries, and architectural tradeoffs
 - `agent-native-planning-strategist` when the decision involves agents, prompts, tools, MCP, workflow automation, action/context parity, shared workspace, approval gates, or agent execution lifecycle
 - Add `framework-docs-researcher` or `best-practices-researcher` when the decision needs external grounding beyond repo evidence
 
-**High-Level Technical Design**
+### High-Level Technical Design
 
 - `architecture-strategist` for validating that the technical design accurately represents the intended approach and identifying gaps
 - `repo-research-analyst` (Scope: `architecture, patterns`) for grounding the technical design in existing repo patterns and conventions
 - `agent-native-planning-strategist` when the technical design includes agent orchestration, MCP/tools, prompt-defined behavior, shared workspace, checkpoint/resume, approvals, or agent-to-UI communication
 - Add `best-practices-researcher` when the technical design involves a DSL, API surface, or pattern that benefits from external validation
 
-**Implementation Units / Verification**
+### Implementation Units / Verification
 
 - `repo-research-analyst` (Scope: `patterns`) for concrete file targets, patterns to follow, and repo-specific sequencing clues
 - `pattern-recognition-specialist` for consistency, duplication risks, and alignment with existing patterns
 - `agent-native-planning-strategist` when units should cover agent-accessible domain actions, tool/context changes, prompt changes, or parity testing
 - Add `spec-flow-analyzer` when sequencing depends on user flow or handoff completeness
 
-**System-Wide Impact**
+### System-Wide Impact (5.3.4 Report and Dispatch Targeted Resea)
 
 - `architecture-strategist` for cross-boundary effects, interface surfaces, and architectural knock-on impact
 - `agent-native-planning-strategist` for action parity, context parity, shared workspace, tool granularity, approval boundaries, and agent execution lifecycle in agent-capable systems
@@ -155,7 +155,7 @@ The names below are skill-local prompt asset file stems under `references/agents
   - `security-sentinel` for auth, validation, exploit surfaces, and security boundary review
   - `data-integrity-guardian` for migrations, persistent state safety, consistency, and data lifecycle risks
 
-**Risks & Dependencies / Operational Notes**
+### Risks & Dependencies / Operational Notes
 
 - Use the specialist that matches the actual risk:
   - `security-sentinel` for security, auth, privacy, and exploit risk

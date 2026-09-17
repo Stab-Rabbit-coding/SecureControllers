@@ -290,7 +290,7 @@ FedRAMP baselines (Rev 5): Low ≈ 156 | Moderate = 323 | High = 421 controls an
 ## Summary: Control Count by Baseline (Rev 5)
 
 | Baseline | Controls & Enhancements | Primary Use |
-|----------|------------------------|-------------|
+| ---------- | ------------------------ | ------------- |
 | LI-SaaS | Subset of Low (~54 controls) | Low-impact SaaS with no PII, no sensitive federal data |
 | Low | ~156 | Limited adverse effect on federal mission/assets |
 | Moderate | 323 | Serious adverse effect — most common baseline |

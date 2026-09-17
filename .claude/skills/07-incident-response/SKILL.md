@@ -53,7 +53,7 @@ pip install pyyaml jinja2 pandas python-dateutil
 Every IR engagement follows the PICERL lifecycle:
 
 | Phase | Key Actions | Skill Outputs |
-|-------|------------|---------------|
+| ------- | ------------ | --------------- |
 | **P**reparation | Verify tools, comms, access | Readiness checklist |
 | **I**dentification | Confirm incident, scope, severity | Incident classification |
 | **C**ontainment | Isolate systems, stop spread | Containment actions list |
@@ -156,7 +156,7 @@ Version: 2.0 | Owner: SOC Manager | Review: Quarterly
 
 **Order of Volatility (most volatile → least volatile):**
 
-```
+```text
 1. CPU registers and cache
 2. Routing tables, ARP cache, process table
 3. Memory (RAM) — ALWAYS capture first
@@ -377,7 +377,7 @@ python scripts/timeline_builder.py --logs ./logs/ --format html --start "2025-05
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Alert received from SOC → activate IR | ← Skill 11 (CSOC Automation) |
 | Malware samples collected → analyze | → Skill 05 (Malware Analysis) |
 | IOCs extracted → hunt in environment | → Skill 06 (Threat Hunting) |

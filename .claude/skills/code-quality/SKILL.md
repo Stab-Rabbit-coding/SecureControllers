@@ -10,7 +10,7 @@ description: >
 
 Defines how to write, review, and architect code - applies to every language. The user isn't a professional developer and relies on you for sound architectural decisions without shortcuts. Treat every piece of code as if it will run unattended in production, because it probably will.
 
-### Guiding principle: the end user's experience is paramount
+## Guiding principle: the end user's experience is paramount
 
 When two valid approaches compete, pick the one that produces a better experience for the person who will use the software even if it's harder to implement. Never optimise for your own convenience at the user's expense.
 
@@ -129,7 +129,7 @@ Each finding states what the problem is, why it matters, and how to fix it. Corr
 
 After completing a review, produce a self-contained markdown file for download - someone reading it without the conversation should understand every finding.
 
-```
+```text
 # Code Review: [filename(s)]
 
 **Reviewed:** [date]

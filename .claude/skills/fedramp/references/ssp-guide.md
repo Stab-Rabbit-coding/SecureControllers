@@ -81,7 +81,7 @@ data flows, control implementations, roles, and boundary. Many SSPs exceed 500 p
 
 For each control in the applicable baseline:
 
-```
+```text
 [Control ID] [Control Name]
 Implementation Status: Implemented | Partially Implemented | Planned | Not Applicable | Alternative Implementation
 
@@ -106,7 +106,7 @@ Customer Responsibility (if applicable):
 ### SSP Appendices (A through Q)
 
 | Appendix | Content | Required? |
-|---|---|---|
+| --- | --- | --- |
 | A | Acronyms & Glossary | Yes |
 | B | Related Laws & Regulations (Attachment 12) | Yes |
 | C | Security Policies & Procedures | Yes (CSP-authored) |

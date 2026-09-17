@@ -25,7 +25,7 @@ layer, building the part upside-down from a build plate that lifts out of (or
 peels away from) a resin vat.
 
 | Process | Light source | How it works | Strengths |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SLA | UV laser | Laser traces each layer point by point | Highest accuracy, excellent surface finish |
 | MSLA | UV LED + LCD mask | Entire layer exposed at once through LCD | Fast (entire layer at once), affordable printers |
 | DLP | UV projector | Entire layer projected at once | Fast, good detail, higher power than LCD |
@@ -59,7 +59,7 @@ Use FDM instead when:
 ### Dimensional accuracy by printer class
 
 | Printer class | XY tolerance | Z tolerance | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Desktop MSLA (Elegoo, Anycubic) | ±0.1-0.15mm | ±0.05-0.1mm | Good for hobbyist use |
 | Prosumer MSLA/DLP (Phrozen, Prusa) | ±0.05-0.1mm | ±0.05mm | Higher-res LCD panels |
 | Professional SLA (Formlabs Form 4) | ±0.15% (min ±0.02mm) for <30mm features | ±0.05mm | Best accuracy at small scale |
@@ -80,7 +80,7 @@ because differential cooling creates internal stresses.
 ### Clearance for mating parts
 
 | Fit type | Clearance per side | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Press fit | 0.05mm | Very tight, may need sanding |
 | Snug/push fit | 0.1mm | Parts stay together without fasteners |
 | Sliding fit | 0.15-0.2mm | Moveable joints |
@@ -91,7 +91,7 @@ because differential cooling creates internal stresses.
 ### Minimum wall thickness
 
 | Feature | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Unsupported wall | 0.5mm | 0.8-1.0mm |
 | Supported wall (backed by other geometry) | 0.3mm | 0.5mm |
 | Floor/ceiling (horizontal thin section) | 0.3mm | 0.5mm |
@@ -137,7 +137,7 @@ Every layer must resist peel forces. Supports serve two purposes:
 ### Support settings
 
 | Parameter | Typical value | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Support tip diameter | 0.3-0.5mm | Smaller = easier removal, larger = more reliable |
 | Support density | Medium (auto-generated) | More supports = safer print but more cleanup |
 | Contact depth | 0.2-0.3mm | How deep supports penetrate the part surface |
@@ -277,7 +277,7 @@ Resin printing involves hazardous chemicals. The skill must warn the user:
 
 Quick reference for resin design:
 
-```
+```text
 Minimum wall thickness:          0.5mm (unsupported), 0.3mm (supported)
 Minimum feature size:            0.2mm
 Minimum pin diameter:            1.0mm

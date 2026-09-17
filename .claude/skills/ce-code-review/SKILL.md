@@ -63,7 +63,7 @@ For the multi-agent path, once the review scope is resolved, use the platform's 
 Parse the arguments you were invoked with for optional tokens. Strip each recognized token before interpreting the remainder as a PR number, GitHub URL, or branch name.
 
 | Token | Example | Effect |
-|-------|---------|--------|
+| ------- | --------- | -------- |
 | `mode:agent` | `mode:agent` | **Report-only**: return **JSON** instead of markdown tables and skip the Stage 5c apply (the caller applies). Does not change reviewer selection, merge logic, or scope rules (see Output format) |
 | `mode:headless` | `mode:headless` | **Deprecated alias** for `mode:agent` |
 | `mode:report-only` | `mode:report-only` | **Deprecated — ignored.** Former no-artifacts mode; default behavior is review-only without checkout |
@@ -105,7 +105,7 @@ Same review pipeline for default and `mode:agent`:
 ## Output format
 
 | Invocation | Deliverable |
-|------------|-------------|
+| ------------ | ------------- |
 | **Default** | Report-only markdown (pipe-delimited finding tables) + Actionable Findings summary |
 | **Explicit local apply** | The same markdown report plus verified local fixes and an Applied section |
 | **`mode:agent`** | One JSON object (see ### JSON output format below) + the same `/tmp/.../ce-code-review/<run-id>/` artifacts |
@@ -131,7 +131,7 @@ Sequence:
 All reviewers use P0-P3:
 
 | Level | Meaning | Action |
-|-------|---------|--------|
+| ------- | --------- | -------- |
 | **P0** | Critical breakage, exploitable vulnerability, data loss/corruption | Must fix before merge |
 | **P1** | High-impact defect likely hit in normal usage, breaking contract | Should fix |
 | **P2** | Moderate issue with meaningful downside (edge case, perf regression, maintainability trap) | Fix if straightforward |
@@ -142,7 +142,7 @@ All reviewers use P0-P3:
 Severity answers **urgency**. `autofix_class` and `owner` are **signal** describing follow-up shape for callers; this metadata does not grant apply permission. Apply authority is separate, explicit, and checked before Stage 5c. See `references/action-class-rubric.md` for persona guidance.
 
 | `autofix_class` | Default owner | Meaning |
-|-----------------|---------------|---------|
+| ----------------- | --------------- | --------- |
 | `gated_auto` | `downstream-resolver` or `human` | Concrete `suggested_fix` proposed; caller applies after judgment |
 | `manual` | `downstream-resolver` or `human` | Actionable work needing design input or handoff |
 | `advisory` | `human` or `release` | Report-only — learnings, rollout notes, residual risk |
@@ -234,14 +234,14 @@ Compute the diff range, file list, and diff. Minimize permission prompts by comb
 
 The caller already knows the diff base. Skip all base-branch detection, remote resolution, and merge-base computation. Use the provided value directly:
 
-```
+```text
 BASE_ARG="{base_arg}"
 BASE=$(git merge-base HEAD "$BASE_ARG" 2>/dev/null) || BASE="$BASE_ARG"
 ```
 
 Then produce the same output as the other paths:
 
-```
+```bash
 echo "BASE:$BASE" && echo "FILES:" && git diff --name-only $BASE && echo "DIFF:" && git diff -U10 $BASE && echo "UNTRACKED:" && git ls-files --others --exclude-standard
 ```
 
@@ -253,7 +253,7 @@ Do **not** check out the PR branch. Scope comes from GitHub read APIs plus optio
 
 **Skip-condition pre-check.** Before scope detection, run a PR-state probe:
 
-```
+```text
 gh pr view <number-or-url> --json state,title,body,files
 ```
 
@@ -266,7 +266,7 @@ When any skip rule fires, stop without dispatching reviewers. **Default mode:** 
 
 If no skip rule fires, fetch PR metadata **without checkout**:
 
-```
+```text
 gh pr view <number-or-url> --json title,body,baseRefName,headRefName,headRefOid,isCrossRepository,url,files,reviews,comments --jq '{title, body, baseRefName, headRefName, headRefOid, isCrossRepository, url, files: [.files[].path], hasPriorComments: ((.reviews | map(select(.state != "APPROVED" or .body != "")) | length) > 0 or (.comments | length) > 0)}'
 ```
 
@@ -312,7 +312,7 @@ On success for remote branch diff, set **branch-remote scope**. The working tree
 
 Produce:
 
-```
+```bash
 echo "BASE:$BASE" && echo "FILES:" && git diff --name-only $BASE <branch-ref> && echo "DIFF:" && git diff -U10 $BASE <branch-ref> && echo "UNTRACKED:" && git ls-files --others --exclude-standard
 ```
 
@@ -324,7 +324,7 @@ If no base can be resolved, **stop**. Do not fall back to `git diff HEAD` — a 
 
 On success, produce the diff:
 
-```
+```bash
 echo "BASE:$BASE" && echo "FILES:" && git diff --name-only $BASE && echo "DIFF:" && git diff -U10 $BASE && echo "UNTRACKED:" && git ls-files --others --exclude-standard
 ```
 
@@ -363,13 +363,13 @@ Understand what the change is trying to accomplish. The source of intent depends
 
 **Standalone (current branch):** Run:
 
-```
+```bash
 echo "BRANCH:" && git rev-parse --abbrev-ref HEAD && echo "COMMITS:" && git log --oneline ${BASE}..HEAD
 ```
 
 Combined with conversation context (plan section summary, PR description), write a 2-3 line intent summary:
 
-```
+```text
 Intent: Simplify tax calculation by replacing the multi-tier rate lookup
 with a flat-rate computation. Must not regress edge cases in tax-exempt handling.
 ```
@@ -517,7 +517,7 @@ Do not run post-review triage (no per-finding walk-through, bulk ticket filing, 
 ### Mode-specific completion
 
 | Mode | After Stage 6 + actionable summary |
-|------|-----------------------------------|
+| ------ | ----------------------------------- |
 | **Default** | Markdown tables + Actionable Findings summary. |
 | **`mode:agent`** | JSON object + `review.json` in run artifact dir. |
 
@@ -559,7 +559,7 @@ If the platform doesn't support parallel sub-agents, run reviewers sequentially.
 Every reference lives in this skill's directory and loads **on demand at the stage that needs it** — none is `@`-inlined, because all of them are late-sequence and inlining would carry their full weight through the orchestrator's many early-stage turns and subagent dispatches. Each stage below already names the file to read; this is the maintainer index. Do not reintroduce `@` includes here.
 
 | Reference | Load at | Purpose |
-|-----------|---------|---------|
+| ----------- | --------- | --------- |
 | `references/persona-catalog.md` | Stage 3 | Full per-persona selection criteria and spawn gates |
 | `references/cross-model-review.md` | Stage 3d (only when the cross-model adversarial pass runs) | Host attestation + provider candidate resolution + peer-CLI shell-out |
 | `references/dispatch-reviewers.md` | Stage 4 | Inline fast pass, model tiers, persona dispatch contract, and peer collection |

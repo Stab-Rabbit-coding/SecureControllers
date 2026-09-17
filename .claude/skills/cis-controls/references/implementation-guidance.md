@@ -20,34 +20,34 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 
 ### IG1 Quick-Start Checklist (56 Safeguards)
 
-**Week 1-2: Know Your Assets**
+#### Week 1-2: Know Your Assets
 
 - [ ] Create hardware asset inventory (all computers, servers, printers, network devices) — Safeguard 1.1
 - [ ] Create software inventory (all installed applications) — Safeguard 2.1
 - [ ] Document all user accounts — Safeguard 5.1
 - [ ] Document all data types and where they are stored — Safeguard 3.2
 
-**Week 3-4: Secure Configuration**
+#### Week 3-4: Secure Configuration
 
 - [ ] Enable host-based firewall on all workstations and servers — Safeguards 4.4, 4.5
 - [ ] Set screen lock timeout to 15 minutes — Safeguard 4.3
 - [ ] Change all default passwords on network devices, routers, and systems — Safeguard 4.7
 - [ ] Enable full-disk encryption on all laptops — Safeguard 3.6
 
-**Month 2: Account and Access Controls**
+#### Month 2: Account and Access Controls
 
 - [ ] Enforce strong password policy (14+ characters) — Safeguard 5.2
 - [ ] Separate admin accounts from day-to-day user accounts — Safeguard 5.4
 - [ ] Disable accounts unused for 90+ days — Safeguard 5.3
 - [ ] Define and document access request/revoke process — Safeguards 6.1, 6.2
 
-**Month 2: Patch Management**
+#### Month 2: Patch Management
 
 - [ ] Enable automatic OS updates on all endpoints — Safeguard 7.3
 - [ ] Enable automatic application updates (browsers, Office, etc.) — Safeguard 7.4
 - [ ] Define a remediation SLA (e.g., critical patches within 15 days) — Safeguard 7.2
 
-**Month 3: Backups, Training, Incident Response**
+#### Month 3: Backups, Training, Incident Response
 
 - [ ] Implement automated, tested backups (3-2-1 rule) — Safeguard 11.2, 11.4
 - [ ] Conduct security awareness training for all employees — Safeguard 14.1, 14.2
@@ -63,50 +63,50 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 
 ### Key IG2 Additions Beyond IG1
 
-**MFA Everywhere (Control 6)**
+#### MFA Everywhere (Control 6)
 
 - Deploy MFA on all externally accessible systems (VPN, webmail, SaaS, remote access) — Safeguard 6.3
 - Require MFA for administrative access — Safeguard 6.5
 - Phishing-resistant MFA (FIDO2/hardware keys) for privileged users
 
-**Application Allowlisting (Control 2)**
+#### Application Allowlisting (Control 2)
 
 - Implement application allowlisting via Microsoft AppLocker, WDAC, or Carbon Black
 - Allowlist approved scripts (PowerShell Constrained Language Mode) — Safeguard 2.7
 - Block unauthorized DLLs and libraries — Safeguard 2.6
 
-**Vulnerability Scanning (Control 7)**
+#### Vulnerability Scanning (Control 7)
 
 - Deploy authenticated vulnerability scanner (Nessus, Qualys, Tenable, Rapid7)
 - Weekly authenticated scans of all internal assets — Safeguard 7.5
 - Monthly scans of external attack surface — Safeguard 7.6
 - Track and remediate findings per SLA — Safeguard 7.7
 
-**SIEM and Log Centralization (Control 8)**
+#### SIEM and Log Centralization (Control 8)
 
 - Deploy SIEM or log aggregation platform — Safeguard 8.9
 - Collect: Windows event logs (4624, 4625, 4648, 4720, 4728), Linux auth.log, firewall deny logs, DNS, VPN — Safeguard 8.5
 - Retain logs for minimum 12 months — Safeguard 8.10
 - Enable NTP synchronization across all assets — Safeguard 8.4
 
-**Email Security (Control 9)**
+#### Email Security (Control 9)
 
 - Implement DMARC policy (start with p=none monitoring, move to p=quarantine/reject) — Safeguard 9.5
 - Deploy email filtering with sandboxing — Safeguard 9.7
 - Block dangerous attachment types (.exe, .js, .vbs, .bat, .macro-enabled Office) — Safeguard 9.6
 
-**EDR/Next-Gen AV (Control 10)**
+#### EDR/Next-Gen AV (Control 10)
 
 - Replace signature-only AV with EDR/XDR (CrowdStrike, SentinelOne, Microsoft Defender for Endpoint) — Safeguard 10.7
 - Enable behavioral analysis and memory protection — Safeguard 10.5
 
-**Network Architecture (Control 12)**
+#### Network Architecture (Control 12)
 
 - Segment network by function (servers, workstations, IoT, guest Wi-Fi) — Safeguard 12.2
 - Implement DMZ for externally accessible services — Safeguard 12.2
 - Deploy Next-Gen Firewall with deep packet inspection — Safeguard 12.2
 
-**Vendor Risk Management (Control 15)**
+#### Vendor Risk Management (Control 15)
 
 - Classify all service providers by data access and criticality — Safeguard 15.3
 - Include security requirements in all vendor contracts — Safeguard 15.4
@@ -121,14 +121,14 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 
 ### Key IG3 Capabilities
 
-**Penetration Testing (Control 18)**
+#### Penetration Testing (Control 18)
 
 - External pen test: Annual minimum; quarterly for high-risk targets — Safeguard 18.2
 - Internal pen test: Semi-annual — Safeguard 18.5
 - Red team exercises with full adversary simulation — beyond base CIS scope
 - Purple team exercises — combine red team and SOC for knowledge transfer
 
-**Advanced Network Defense (Control 13)**
+#### Advanced Network Defense (Control 13)
 
 - Deploy Network Detection and Response (NDR/NTA) solution — Safeguard 13.3
 - Implement SOAR for automated incident response playbooks
@@ -136,7 +136,7 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 - Tune SIEM alert thresholds to reduce false positives — Safeguard 13.11
 - Threat hunting program: proactive analysis for unknown threats
 
-**Application Security (Control 16)**
+#### Application Security (Control 16)
 
 - SAST integrated into CI/CD pipeline (pre-commit, PR gate) — Safeguard 16.12
 - DAST for deployed applications (OWASP ZAP, Burp Suite) — Safeguard 16.12
@@ -144,7 +144,7 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 - Threat modeling for new features and applications — Safeguard 16.14
 - Bug bounty program or responsible disclosure policy — related to 16.4
 
-**Data Protection (Control 3)**
+#### Data Protection (Control 3)
 
 - Deploy DLP across email, endpoints, and cloud — Safeguard 3.13
 - Segment data stores by sensitivity — Safeguard 3.12
@@ -191,7 +191,7 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 ### IG1 KPIs
 
 | Metric | Target | Frequency |
-|--------|--------|-----------|
+| -------- | -------- | ----------- |
 | % assets in inventory | ≥ 95% | Monthly |
 | % endpoints with current AV | 100% | Weekly |
 | % endpoints with disk encryption | 100% | Monthly |
@@ -202,7 +202,7 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 ### IG2 KPIs
 
 | Metric | Target | Frequency |
-|--------|--------|-----------|
+| -------- | -------- | ----------- |
 | % external systems with MFA | 100% | Monthly |
 | Mean Time to Patch (MTTP) — Critical | ≤ 15 days | Monthly |
 | Mean Time to Patch (MTTP) — High | ≤ 30 days | Monthly |
@@ -213,7 +213,7 @@ Start with IG1 completely before moving to IG2. IG1 is the minimum acceptable ba
 ### IG3 KPIs
 
 | Metric | Target | Frequency |
-|--------|--------|-----------|
+| -------- | -------- | ----------- |
 | Pen test critical findings remediated | 100% within 30 days | After test |
 | Mean Time to Detect (MTTD) | ≤ 24 hours | Monthly |
 | Mean Time to Respond (MTTR) | ≤ 4 hours for P1 | Monthly |

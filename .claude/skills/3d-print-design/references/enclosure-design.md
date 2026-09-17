@@ -35,7 +35,7 @@ Start with these measurements from the PCB design (or physical board):
 
 ### Internal cavity formula
 
-```
+```text
 Internal width  = Board X + 2 × side_clearance
 Internal depth  = Board Y + 2 × side_clearance
 Internal height = bottom_clearance + Board Z + top_clearance + lid_clearance
@@ -47,7 +47,7 @@ Where:
 
 ### Overall external dimensions
 
-```
+```text
 External width  = Internal width  + 2 × wall_thickness
 External depth  = Internal depth  + 2 × wall_thickness
 External height = Internal height + floor_thickness + ceiling_thickness
@@ -62,7 +62,7 @@ Where:
 
 Define all dimensions as parameters at the top of the design:
 
-```
+```text
 // Example parameters (adapt to actual board)
 pcb_x = 65;          // Board width
 pcb_y = 35;          // Board depth
@@ -131,7 +131,7 @@ Cylindrical posts rising from the enclosure floor, with holes matching the
 PCB mounting holes. The PCB sits on the standoff shoulders and is secured with
 screws from below or above.
 
-```
+```python
 Standoff dimensions:
   Height = bot_clearance (space under PCB for bottom components/solder joints)
   Outer diameter = mounting_hole_dia + 2 × 2.0mm (minimum wall around hole)
@@ -151,7 +151,7 @@ standoff hole is slightly smaller than the screw's major diameter. The screw
 cuts its own thread on first insertion.
 
 | Screw size | Pilot hole diameter | Boss OD (minimum) |
-|---|---|---|
+| --- | --- | --- |
 | M2 self-tap | 1.6-1.7mm | 4.0mm |
 | M2.5 self-tap | 2.0-2.1mm | 5.0mm |
 | M3 self-tap | 2.4-2.5mm | 6.0mm |
@@ -200,7 +200,7 @@ Measure the connector's mating face (where the cable plugs in) and add
 clearance:
 
 | Connector | Opening width | Opening height | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | USB-C | 9.5mm | 3.5mm | Centred on connector; allow ±0.5mm alignment tolerance |
 | USB Micro-B | 8.5mm | 3.2mm | Wider at top for cable strain relief |
 | USB-A | 13.5mm | 6.0mm | Tight fit reduces wobble |
@@ -219,7 +219,7 @@ clearance:
 3. The cutout in the enclosure wall must align with the connector position
    on the mounted PCB
 
-```
+```text
 cutout_centre_from_floor = floor_t + bot_clearance + pcb_z/2 + connector_centre_above_pcb
 cutout_centre_from_wall  = wall + side_clearance + connector_centre_from_pcb_edge
 ```
@@ -241,7 +241,7 @@ small, quick print if it needs adjustment.
 For tactile switches on the PCB, a printed plunger passes through a hole in
 the enclosure wall and contacts the switch button.
 
-```
+```text
 Plunger design:
   Shaft diameter = hole diameter - 0.4mm (0.2mm clearance per side)
   Shaft length = wall_thickness + travel + 1mm (so it protrudes slightly)
@@ -281,7 +281,7 @@ Light spills and is visible. Not elegant but functional.
 A transparent or translucent cylindrical rod bridging from the LED to the
 enclosure surface. Print in transparent PETG or clear resin.
 
-```
+```text
 Light pipe dimensions:
   Inner end: sits 0.5-1mm above the LED
   Outer end: flush with or slightly protruding from enclosure surface
@@ -313,7 +313,7 @@ per side. Simple but exposes the display to dust and fingers.
 The cutout is larger than the display, with a step (rebate) on the inside for
 a clear acrylic or polycarbonate window panel to sit in.
 
-```
+```text
 Window rebate:
   Outer opening: display active area + 1mm per side
   Rebate depth: acrylic panel thickness + 0.3mm (e.g., 1.8mm for 1.5mm acrylic)
@@ -418,7 +418,7 @@ for outdoor or wet-environment enclosures.
 ### Achievable IP ratings with FDM
 
 | Rating | Protection | Achievable with FDM? | How |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IP20 | Touch-safe (no finger entry) | Yes, trivially | <12.5mm openings |
 | IP40 | No objects >1mm | Yes | Vent slots <1mm or filtered |
 | IP54 | Dust-protected, splash-proof | Difficult | Gaskets at parting line, sealed cutouts |

@@ -22,14 +22,14 @@ Measure before optimizing. Performance work without measurement is guessing — 
 ## Core Web Vitals Targets
 
 | Metric | Good | Needs Improvement | Poor |
-|--------|------|-------------------|------|
+| -------- | ------ | ------------------- | ------ |
 | **LCP** (Largest Contentful Paint) | ≤ 2.5s | ≤ 4.0s | > 4.0s |
 | **INP** (Interaction to Next Paint) | ≤ 200ms | ≤ 500ms | > 500ms |
 | **CLS** (Cumulative Layout Shift) | ≤ 0.1 | ≤ 0.25 | > 0.25 |
 
 ## The Optimization Workflow
 
-```
+```text
 1. MEASURE  → Establish baseline with real data
 2. IDENTIFY → Find the actual bottleneck (not assumed)
 3. FIX      → Address the specific bottleneck
@@ -78,7 +78,7 @@ console.timeEnd('db-query');
 
 Use the symptom to decide what to measure first:
 
-```
+```text
 What is slow?
 ├── First page load
 │   ├── Large bundle? --> Measure bundle size, check code splitting
@@ -107,7 +107,7 @@ Common bottlenecks by category:
 **Frontend:**
 
 | Symptom | Likely Cause | Investigation |
-|---------|-------------|---------------|
+| --------- | ------------- | --------------- |
 | Slow LCP | Large images, render-blocking resources, slow server | Check network waterfall, image sizes |
 | High CLS | Images without dimensions, late-loading content, font shifts | Check layout shift attribution |
 | Poor INP | Heavy JavaScript on main thread, large DOM updates | Check long tasks in Performance trace |
@@ -116,7 +116,7 @@ Common bottlenecks by category:
 **Backend:**
 
 | Symptom | Likely Cause | Investigation |
-|---------|-------------|---------------|
+| --------- | ------------- | --------------- |
 | Slow API responses | N+1 queries, missing indexes, unoptimized queries | Check database query log |
 | Memory growth | Leaked references, unbounded caches, large payloads | Heap snapshot analysis |
 | CPU spikes | Synchronous heavy computation, regex backtracking | CPU profiling |
@@ -297,7 +297,7 @@ res.set('Cache-Control', 'public, max-age=300'); // 5 minutes
 
 Set budgets and enforce them:
 
-```
+```text
 JavaScript bundle: < 200KB gzipped (initial load)
 CSS: < 50KB gzipped
 Images: < 200KB per image (above the fold)
@@ -324,7 +324,7 @@ For detailed performance checklists, optimization commands, and anti-pattern ref
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "We'll optimize later" | Performance debt compounds. Fix obvious anti-patterns now, defer micro-optimizations. |
 | "It's fast on my machine" | Your machine isn't the user's. Profile on representative hardware and networks. |
 | "This optimization is obvious" | If you didn't measure, you don't know. Profile first. |

@@ -12,7 +12,7 @@
 ## A.5 Organisational Controls
 
 | ID | Control Name | Description |
-|----|-------------|-------------|
+| ---- | ------------- | ------------- |
 | A.5.1 | Policies for information security | Define, approve, publish, and review IS policies |
 | A.5.2 | Information security roles and responsibilities | Assign and communicate IS roles |
 | A.5.3 | Segregation of duties | Separate conflicting duties to reduce fraud/error risk |
@@ -56,7 +56,7 @@
 ## A.6 People Controls
 
 | ID | Control Name | Description |
-|----|-------------|-------------|
+| ---- | ------------- | ------------- |
 | A.6.1 | Screening | Background verification checks on all candidates |
 | A.6.2 | Terms and conditions of employment | Contractual IS responsibilities for employees and contractors |
 | A.6.3 | Information security awareness, education and training | IS awareness and training for all personnel |
@@ -71,7 +71,7 @@
 ## A.7 Physical Controls
 
 | ID | Control Name | Description |
-|----|-------------|-------------|
+| ---- | ------------- | ------------- |
 | A.7.1 | Physical security perimeters | Define and use security perimeters to protect sensitive areas |
 | A.7.2 | Physical entry | Control physical access with authentication mechanisms |
 | A.7.3 | Securing offices, rooms and facilities | Design and apply physical security for offices |
@@ -92,7 +92,7 @@
 ## A.8 Technological Controls
 
 | ID | Control Name | Description |
-|----|-------------|-------------|
+| ---- | ------------- | ------------- |
 | A.8.1 | User end point devices | Protect end-point devices with policies and controls |
 | A.8.2 | Privileged access rights | Restrict, manage, and monitor privileged access |
 | A.8.3 | Information access restriction | Restrict access to information per access control policy |

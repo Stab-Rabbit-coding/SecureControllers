@@ -3,7 +3,7 @@
 ## Standard Fields
 
 | Field | Description | Example |
-|-------|-------------|---------|
+| ------- | ------------- | --------- |
 | `Reference` | Designator (auto) | `C1`, `U3`, `R5` |
 | `Value` | Component value | `100nF`, `ESP32-S3-WROOM-1` |
 | `Footprint` | Library:footprint | `Capacitor_SMD:C_0402_1005Metric` |
@@ -13,7 +13,7 @@
 ## Custom BOM Fields
 
 | Field | Purpose | When | Example |
-|-------|---------|------|---------|
+| ------- | --------- | ------ | --------- |
 | `MPN` | Manufacturer Part Number | Always | `GRM155R71C104KA88D` |
 | `Manufacturer` | Part manufacturer | Always | `Murata` |
 | `DigiKey` | DigiKey PN — primary prototype source | Prototype | `490-10698-1-ND` |
@@ -27,7 +27,7 @@
 Projects use inconsistent field names. The analyzer recognizes all common variants:
 
 | Canonical | Also Recognized As |
-|---|---|
+| --- | --- |
 | `MPN` | `Manufacturer Part Number`, `Manufacturer_Part_Number`, `Manufacturer Part #`, `PartNumber`, `Part Number`, `Mfr_No`, `ManufacturerPartNumber` |
 | `Manufacturer` | `Manufacturer_Name`, `Mfr`, `MFR` |
 | `DigiKey` | `Digi-Key Part Number`, `Digi-Key_PN`, `DigiKey Part`, `DigiKey_Part_Number`, `DK` |
@@ -42,7 +42,7 @@ When writing new fields, use the canonical names for consistency. When a project
 
 Custom fields in `.kicad_sch` files:
 
-```
+```text
 (property "MPN" "GRM155R71C104KA88D"
     (at 0 0 0)
     (effects (font (size 1.27 1.27)) (hide yes))

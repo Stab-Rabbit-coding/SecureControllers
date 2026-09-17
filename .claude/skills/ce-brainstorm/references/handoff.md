@@ -5,7 +5,7 @@ unified plan is written.
 
 ---
 
-#### 4.1 Present Next-Step Options
+## 4.1 Present Next-Step Options
 
 The Phase 4 menu's visible option count varies by state: no unified plan
 artifact hides the review and Proof options, `OUTPUT_FORMAT=html` also hides
@@ -33,7 +33,7 @@ In both preambles below, the "Pick a number or describe what you want." hint app
 
 **Preamble when no blocking questions remain:**
 
-```
+```text
 Brainstorm complete.
 
 Plan artifact: <absolute path to requirements-only unified plan>  # omit line if no artifact was created
@@ -45,7 +45,7 @@ What would you like to do next? (Pick a number or describe what you want.)
 
 **Preamble when blocking questions remain and user wants to pause:**
 
-```
+```text
 Brainstorm paused. I'm holding planning until the remaining questions are resolved — say the word and I'll proceed anyway, recording each open item as an explicit assumption or a question deferred to planning.
 
 Plan artifact: <absolute path to requirements-only unified plan>  # omit line if no artifact was created
@@ -68,7 +68,7 @@ There is no "done" / "pause" option — the blocking question already waits, and
 
 **Post-review nudge (subsequent rounds only):** If the user has already run `ce-doc-review` this session and residual P0/P1 findings remain unaddressed, add a one-line prose nudge adjacent to the menu (e.g., "Document review flagged 2 P1 findings you may want to address — pick \"Pressure-test the requirements\" to run another pass."). Reference the option by label, not number: the menu renumbers when `Resolve Before Planning` hides `Create the implementation plan` and the lfg option, so a hardcoded option number can point users at the wrong action. Do not add a separate menu option; reuse the existing `Pressure-test the requirements` option. Suppress this nudge when `OUTPUT_FORMAT=html` — that option is hidden in that mode, so the nudge would point users at a missing action.
 
-#### 4.2 Handle the Selected Option
+## 4.2 Handle the Selected Option
 
 Selections may be the literal option label (when the user types the label or a close paraphrase) or the option number. Match numbers against the currently-rendered (post-trim) list. Free-form input that doesn't match an option or describe an alternative action should be treated as clarification — ask a follow-up rather than guessing.
 
@@ -133,7 +133,7 @@ If the upload fails (network error, Proof API down), retry once after a short wa
 
 **If the user indicates they're finished** (says "done"/"that's all", or dismisses the menu without picking an option): display the closing summary (see 4.3) and end the turn.
 
-#### 4.3 Closing Summary
+## 4.3 Closing Summary
 
 Use the closing summary only when this run of the workflow is ending or handing off, not when returning to the Phase 4 options.
 

@@ -16,7 +16,9 @@ required_fields:
   name:
     type: string
     pattern: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
-    description: "Unique identifier for this optimization run (lowercase kebab-case, safe for git refs and worktree paths)"
+    description: >-
+      Unique identifier for this optimization run (lowercase kebab-case, safe for git refs and
+      worktree paths)
     example: "improve-issue-clustering"
 
   description:
@@ -39,11 +41,15 @@ required_fields:
             values:
               - hard    # scalar metric from measurement command (e.g., build time, test pass rate)
               - judge   # LLM-as-judge quality score from sampled outputs
-            description: "Whether the primary metric comes from the measurement command directly or from LLM-as-judge evaluation"
+            description: >-
+              Whether the primary metric comes from the measurement command directly or from
+              LLM-as-judge evaluation
 
           name:
             type: string
-            description: "Metric name — must match a key in the measurement command's JSON output (for hard type) or a scoring field (for judge type)"
+            description: >-
+              Metric name — must match a key in the measurement command's JSON output (for hard
+              type) or a scoring field (for judge type)
             example: "cluster_coherence"
 
           direction:
@@ -68,7 +74,9 @@ required_fields:
 
       degenerate_gates:
         type: array
-        description: "Fast boolean checks that reject obviously broken solutions before expensive evaluation. Run first, before the primary metric or judge."
+        description: >-
+          Fast boolean checks that reject obviously broken solutions before expensive
+          evaluation. Run first, before the primary metric or judge.
         required: true
         items:
           type: object
@@ -90,7 +98,9 @@ required_fields:
       diagnostics:
         type: array
         default: []
-        description: "Metrics logged for understanding but never gated on. Useful for understanding WHY a primary metric changed."
+        description: >-
+          Metrics logged for understanding but never gated on. Useful for understanding WHY a
+          primary metric changed.
         items:
           type: object
           required_children:
@@ -100,7 +110,9 @@ required_fields:
 
       judge:
         type: object
-        description: "LLM-as-judge configuration. Required when metric.primary.type is 'judge'. Ignored when type is 'hard'."
+        description: >-
+          LLM-as-judge configuration. Required when metric.primary.type is 'judge'. Ignored when
+          type is 'hard'.
         required_when: "metric.primary.type == 'judge'"
         required_children:
           rubric:
@@ -169,11 +181,18 @@ required_fields:
           minimum_improvement:
             type: number
             default: 0.3
-            description: "Minimum judge score improvement required to accept an experiment as 'better'. Accounts for sample-composition variance when output structure changes between experiments. Distinct from measurement.stability.noise_threshold which handles run-to-run flakiness."
+            description: >-
+              Minimum judge score improvement required to accept an experiment as 'better'.
+              Accounts for sample-composition variance when output structure changes between
+              experiments. Distinct from measurement.stability.noise_threshold which handles
+              run-to-run flakiness.
           max_total_cost_usd:
             type: number
             default: 5
-            description: "Stop judge evaluation when cumulative judge spend reaches this cap. This is a first-run safety default; raise it only after the rubric and harness are trustworthy. Set to null only with explicit user approval."
+            description: >-
+              Stop judge evaluation when cumulative judge spend reaches this cap. This is a
+              first-run safety default; raise it only after the rubric and harness are
+              trustworthy. Set to null only with explicit user approval.
 
   measurement:
     type: object
@@ -181,7 +200,9 @@ required_fields:
     required_children:
       command:
         type: string
-        description: "Shell command that runs the evaluation and outputs JSON to stdout. The JSON must contain keys matching all gate names and diagnostic names."
+        description: >-
+          Shell command that runs the evaluation and outputs JSON to stdout. The JSON must
+          contain keys matching all gate names and diagnostic names.
         example: "python evaluate.py"
     optional_children:
       timeout_seconds:
@@ -200,7 +221,7 @@ required_fields:
         description: "Working directory for the measurement command, relative to the repo root"
       stability:
         type: object
-        default: { mode: "stable" }
+        default: {mode: "stable"}
         description: "How to handle metric variance across runs"
         required_children:
           mode:
@@ -226,7 +247,9 @@ required_fields:
           noise_threshold:
             type: number
             default: 0.02
-            description: "Minimum improvement that must exceed this value to count as a real improvement (not noise). Applied to hard metrics only."
+            description: >-
+              Minimum improvement that must exceed this value to count as a real improvement
+              (not noise). Applied to hard metrics only.
 
   scope:
     type: object
@@ -244,7 +267,9 @@ required_fields:
           - "config/clustering.yaml"
       immutable:
         type: array
-        description: "Files and directories the agent MUST NOT modify. The measurement harness should always be listed here."
+        description: >-
+          Files and directories the agent MUST NOT modify. The measurement harness should always
+          be listed here.
         items:
           type: string
         example:
@@ -260,7 +285,7 @@ optional_fields:
 
   execution:
     type: object
-    default: { mode: "parallel", backend: "worktree", max_concurrent: 4 }
+    default: {mode: "parallel", backend: "worktree", max_concurrent: 4}
     description: "How experiments are executed"
     optional_children:
       mode:
@@ -279,7 +304,9 @@ optional_fields:
         type: integer
         default: 4
         minimum: 1
-        description: "Maximum experiments to run in parallel. Capped at 6 for worktree backend. 8+ only valid for Codex backend."
+        description: >-
+          Maximum experiments to run in parallel. Capped at 6 for worktree backend. 8+ only
+          valid for Codex backend.
       codex_security:
         type: enum
         values:
@@ -323,7 +350,7 @@ optional_fields:
 
   dependencies:
     type: object
-    default: { approved: [] }
+    default: {approved: []}
     description: "Dependency management for experiments"
     optional_children:
       approved:
@@ -345,7 +372,7 @@ optional_fields:
 
   stopping:
     type: object
-    default: { max_iterations: 100, max_hours: 8, plateau_iterations: 10, target_reached: true }
+    default: {max_iterations: 100, max_hours: 8, plateau_iterations: 10, target_reached: true}
     description: "When the optimization loop should stop. Any criterion can trigger a stop."
     optional_children:
       max_iterations:
@@ -368,7 +395,9 @@ optional_fields:
   max_runner_up_merges_per_batch:
     type: integer
     default: 1
-    description: "Maximum number of file-disjoint runner-up experiments to attempt merging per batch after keeping the best experiment"
+    description: >-
+      Maximum number of file-disjoint runner-up experiments to attempt merging per batch after
+      keeping the best experiment
 
 # ============================================================================
 # VALIDATION RULES
@@ -388,5 +417,7 @@ validation_rules:
   - "execution.max_concurrent must not exceed 6 when execution.backend is 'worktree'"
   - "If parallel.exclusive_resources is non-empty, execution.mode should be 'serial'"
   - "If metric.judge.singleton_sample > 0, metric.judge.singleton_rubric must be present"
-  - "If metric.primary.type is 'judge' and metric.judge.max_total_cost_usd is null, the user should explicitly approve uncapped spend"
+  - >-
+      If metric.primary.type is 'judge' and metric.judge.max_total_cost_usd is null, the user
+      should explicitly approve uncapped spend
   - "stopping must have at least one non-default criterion or use defaults"

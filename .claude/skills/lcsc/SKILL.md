@@ -8,7 +8,7 @@ description: Search LCSC Electronics for electronic components — find parts by
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Schematic analysis — extracts MPNs for part lookup |
 | `bom` | BOM management — orchestrates sourcing across distributors |
 | `jlcpcb` | PCB assembly — shares the same parts library |
@@ -42,7 +42,7 @@ The jlcsearch community API is the recommended way to search LCSC. **No authenti
 
 ### General Search
 
-```
+```text
 GET /api/search?q=<query>&limit=20&full=true
 ```
 
@@ -55,7 +55,7 @@ Parameters:
 
 ### Category-Specific Search
 
-```
+```text
 GET /resistors/list.json?search=10k+0402
 GET /capacitors/list.json?search=100nF+0402
 GET /microcontrollers/list.json?search=STM32
@@ -206,7 +206,7 @@ The script:
 
 If the jlcsearch API is unavailable, search LCSC by fetching the website directly:
 
-```
+```text
 https://www.lcsc.com/search?q=<query>
 ```
 

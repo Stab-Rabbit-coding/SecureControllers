@@ -18,7 +18,7 @@ This cascade runs **only when** `.claude/launch.json` is absent or has no `port`
 ## Framework defaults
 
 | Framework | Default port |
-|-----------|-------------|
+| ----------- | ------------- |
 | Rails | 3000 |
 | Next.js | 3000 |
 | Nuxt | 3000 |

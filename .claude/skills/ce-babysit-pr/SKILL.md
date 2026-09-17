@@ -170,6 +170,7 @@ These are decisions the resolver judged would change intended behavior or need a
    ```
 
    (A new head SHA clears these automatically.)
+
 1. **Branch currency & conflicts (the third stream — after comments and CI).** Consume the exact current `branch_currency` item; never infer a new item from merge-state prose. `UNKNOWN` mergeability or any non-null `base_ref_blocker` yields no item and is only re-polled. Managed stacks and `probe-error` are excluded from this route. A `normal-base` item may be target-local for an independent PR or an eligible manual dependency; do not redirect a manual dependency to its parent. An open child dependent does not disqualify a root PR, but this route never rewrites, rebases, or mutates dependent heads.
 
 - **Inspection and claim lifecycle.** If `attention == "inspect"`, first preview the current conflict and compute its semantic conflict fingerprint. Compare it with `parked_semantic_fingerprints`, then mark the exact item with `--currency-inspected-fingerprint <fingerprint>`. Unchanged evidence stays parked; changed evidence retires the old park and reopens the item. Do not claim before that inspection clears. For `attention == "claim"`, and only while fixed budget remains, atomically mark the exact item **before any external mutation or local merge starts**:

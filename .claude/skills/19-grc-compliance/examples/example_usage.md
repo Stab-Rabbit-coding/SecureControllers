@@ -54,7 +54,7 @@ python scripts/control_mapper.py --list
 
 ## Conversational Examples (skill activates automatically)
 
-```
+```text
 > Run a risk assessment for our customer-facing web app and build a risk register
 > We're pursuing SOC 2 Type II — do a gap analysis and remediation roadmap
 > Map our existing ISO 27001 controls to NIST CSF 2.0 so we don't double our audit work

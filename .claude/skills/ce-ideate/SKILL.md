@@ -406,7 +406,7 @@ The axis analysis itself is a single orchestrator-side pass against the groundin
 **Worked examples (illustrative, not a template — derive from actual grounding):**
 
 | Topic | Axes |
-|---|---|
+| --- | --- |
 | Social sharing of crossfire and convergence pages | Send mechanics; discovery (receive side); arrival/dwell experience; compounding over time; actor types (first-party, expert, reader) |
 | Improve our authentication system | Sign-in flow; session management; account recovery; permissions; identity providers |
 | Dark mode for our app | Visual surfaces; toggle UX; system-preference detection; asset variants; edge cases (third-party content) |

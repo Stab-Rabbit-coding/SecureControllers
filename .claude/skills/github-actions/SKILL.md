@@ -159,7 +159,7 @@ jobs:
 Choose triggers based on workflow purpose:
 
 | Purpose | Triggers |
-|---|---|
+| --- | --- |
 | CI (test on every change) | `push:` (branches), `pull_request:` (branches) |
 | Deploy to staging | `push:` to `main` / `develop` |
 | Deploy to production | `release:` (types: [published]), or manual `workflow_dispatch:` |
@@ -294,7 +294,7 @@ Composite actions require `shell:` on every `run:` step - no `defaults.run.shell
 
 For rich GitHub API interaction or complex logic:
 
-```
+```text
 my-action/
 ├── action.yml
 ├── src/

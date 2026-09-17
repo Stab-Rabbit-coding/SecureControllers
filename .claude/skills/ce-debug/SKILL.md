@@ -52,7 +52,7 @@ This skill may record residuals under `<root>/residual-review-findings/` and com
 ## Execution Flow
 
 | Phase | Name | Purpose |
-|-------|------|---------|
+| ------- | ------ | --------- |
 | 0 | Triage | Parse input, fetch issue if referenced, proceed to investigation |
 | 1 | Investigate | Reproduce the bug, trace the code path |
 | 2 | Root Cause | Form hypotheses with predictions for uncertain links, test them, **causal chain gate**, smart escalation |
@@ -227,7 +227,7 @@ Do not suggest brainstorm for bugs that are large but have a clear fix — size 
 If 2-3 hypotheses are exhausted without confirmation, diagnose why:
 
 | Pattern | Diagnosis | Next move |
-|---------|-----------|-----------|
+| --------- | ----------- | ----------- |
 | Hypotheses point to different subsystems | Architecture/design problem, not a localized bug | Present findings, suggest `ce-brainstorm` |
 | Evidence contradicts itself | Wrong mental model of the code | Step back, re-read the code path without assumptions |
 | Works locally, fails in CI/prod | Environment problem | Focus on env differences, config, dependencies, timing |
@@ -278,7 +278,7 @@ Analyze how this was introduced and what allowed it to survive. Note any systemi
 
 **Structured summary** — always write this first:
 
-```
+```text
 ## Debug Summary
 **Problem**: [What was broken]
 **Root Cause**: [Full causal chain, with file:line references]
@@ -310,7 +310,7 @@ Run this tail after Phase 3 ran and before the branch-based commit/PR handoff. T
 
 **Post-fix quality summary.** After the tail, append this block below the Debug Summary before the commit/PR decision:
 
-```
+```text
 ## Post-Fix Quality
 **Scope**: [fix-only branch / base:<pre-fix-HEAD> / fix-owned files only / targeted manual due to unrelated branch work]
 **Simplify**: [ran/skipped + reason]

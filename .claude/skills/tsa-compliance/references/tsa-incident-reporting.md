@@ -50,7 +50,7 @@ A cybersecurity incident is reportable if it results in — or is reasonably lik
 ### CISA Reporting Channels (24/7)
 
 | Channel | Contact |
-|---------|---------|
+| --------- | --------- |
 | **Phone** | 1-888-282-0870 (CISA 24/7 Operations Center) |
 | **Email** | CISAgov@mail.dhs.gov |
 | **Online** | https://myservices.cisa.gov/report (CISA Reporting Portal) |
@@ -141,7 +141,7 @@ If the incident is significant, CISA may:
 Information Sharing and Analysis Centers (ISACs) provide sector-specific threat intelligence and incident coordination:
 
 | Sector | ISAC | Website |
-|--------|------|---------|
+| -------- | ------ | --------- |
 | Pipeline / Energy | E-ISAC (Energy ISAC) | https://www.eisac.com |
 | Oil and Natural Gas | ONG-ISAC | https://www.ongisac.org |
 | Rail / Surface Transportation | Surface Transportation ISAC (ST-ISAC) | https://www.surfacetransportationisac.org |
@@ -172,7 +172,7 @@ The annual IRP testing requirement (test two objectives) does not reset due to a
 Maintain a log of all regulatory notifications made for each incident. Recommended fields:
 
 | Field | Example |
-|-------|---------|
+| ------- | --------- |
 | Incident ID | INC-2026-001 |
 | Date/time identified | 2026-03-10 14:32 UTC |
 | Date/time CISA notified | 2026-03-11 09:15 UTC (within 24h ✅) |

@@ -134,7 +134,7 @@ curl -sS -X POST "https://www.proofeditor.ai/api/agent/{slug}/v3/edit" \
 **Content operations:**
 
 | op | body |
-|---|---|
+| --- | --- |
 | `replace` | `find`, `with` (optional `occurrence` / `before` / `after`) |
 | `insert` | `after` or `before` + `markdown` (anchor: quote, `heading:Title`, `section:Title`, `"start"`, or `"end"`) |
 | `delete` | `find` |
@@ -143,7 +143,7 @@ curl -sS -X POST "https://www.proofeditor.ai/api/agent/{slug}/v3/edit" \
 **Review operations:**
 
 | op | body |
-|---|---|
+| --- | --- |
 | `comment` | `on`, `body` (optional `occurrence`) |
 | `reply` | `comment` (id), `body`, optional `resolve: true` |
 | `resolve` / `unresolve` | `comment` (id) |

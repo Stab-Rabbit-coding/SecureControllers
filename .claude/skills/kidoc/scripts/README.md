@@ -5,7 +5,7 @@ Engineering documentation generation scripts.
 ## Top-level scripts
 
 | Script | Input | Purpose | Deps |
-|--------|-------|---------|------|
+| -------- | ------- | --------- | ------ |
 | `kidoc_scaffold.py` | project dir + config | Markdown scaffold with GENERATED markers and NARRATIVE placeholders | zero-dep |
 | `kidoc_generate.py` | markdown | Orchestrator — dispatches to venv for PDF/DOCX/ODT | zero-dep |
 | `kidoc_orchestrator.py` | analysis JSON + project | Figure generation coordinator — augments analysis, calls run_all() | zero-dep |
@@ -31,7 +31,7 @@ Engineering documentation generation scripts.
 
 ## Figure engine (`figures/`)
 
-```
+```text
 figures/
 ├── __init__.py                    # Exports run_all(), FigureTheme
 ├── registry.py                    # @register decorator + GeneratorEntry dataclass

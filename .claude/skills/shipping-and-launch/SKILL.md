@@ -93,7 +93,7 @@ return null;
 
 **Feature flag lifecycle:**
 
-```
+```text
 1. DEPLOY with flag OFF     → Code is in production but inactive
 2. ENABLE for team/beta     → Internal testing in production environment
 3. GRADUAL ROLLOUT          → 5% → 25% → 50% → 100% of users
@@ -112,7 +112,7 @@ return null;
 
 ### The Rollout Sequence
 
-```
+```text
 1. DEPLOY to staging
    └── Full test suite in staging environment
    └── Manual smoke test of critical flows
@@ -145,7 +145,7 @@ return null;
 Use these thresholds to decide whether to advance, hold, or roll back at each stage:
 
 | Metric | Advance (green) | Hold and investigate (yellow) | Roll back (red) |
-|--------|-----------------|-------------------------------|-----------------|
+| -------- | ----------------- | ------------------------------- | ----------------- |
 | Error rate | Within 10% of baseline | 10-100% above baseline | >2x baseline |
 | P95 latency | Within 20% of baseline | 20-50% above baseline | >50% above baseline |
 | Client JS errors | No new error types | New errors at <0.1% of sessions | New errors at >0.1% of sessions |
@@ -165,7 +165,7 @@ Roll back immediately if:
 
 ### What to Monitor
 
-```
+```text
 Application metrics:
 ├── Error rate (total and by endpoint)
 ├── Response time (p50, p95, p99)
@@ -228,7 +228,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 In the first hour after launch:
 
-```
+```text
 1. Check health endpoint returns 200
 2. Check error monitoring dashboard (no new error types)
 3. Check latency dashboard (no regression)
@@ -276,7 +276,7 @@ Every deployment needs a rollback plan before it happens:
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "It works in staging, it'll work in production" | Production has different data, traffic patterns, and edge cases. Monitor after deploy. |
 | "We don't need feature flags for this" | Every feature benefits from a kill switch. Even "simple" changes can break things. |
 | "Monitoring is overhead" | Not having monitoring means you discover problems from user complaints instead of dashboards. |

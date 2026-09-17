@@ -7,7 +7,7 @@ Reference tables and formulas for checking PCB designs against industry standard
 ## Verification Status
 
 | Section | Standard | Status |
-|---|---|---|
+| --- | --- | --- |
 | Product Classification | IPC-A-600G, IPC-2221A | VERIFIED |
 | Conductor Spacing | IPC-2221A Table 6-1 | VERIFIED |
 | Current Capacity (classic) | IPC-2221A §6.2 | VERIFIED |
@@ -37,7 +37,7 @@ Reference tables and formulas for checking PCB designs against industry standard
 ## Contents
 
 | Section | Line | Standard |
-|---------|------|----------|
+| --------- | ------ | ---------- |
 | Product Classification | ~56 | IPC-A-600G, IPC-2221A |
 | Conductor Spacing | ~73 | IPC-2221A Table 6-1 |
 | Current Carrying Capacity | ~109 | IPC-2221A Section 6.2 |
@@ -58,7 +58,7 @@ Reference tables and formulas for checking PCB designs against industry standard
 Three product classes determine acceptable imperfection levels. Source: IPC-A-600G Section 1.4, IPC-2221A.
 
 | Class | Name | Description | Examples |
-|-------|------|-------------|----------|
+| ------- | ------ | ------------- | ---------- |
 | 1 | General Electronic Products | Consumer products; cosmetic imperfections not important; function is primary requirement | Consumer electronics, toys, non-critical appliances |
 | 2 | Dedicated Service Electronic Products | High performance and extended life required; uninterrupted service desired but not critical; cosmetic imperfections allowed | Communications equipment, business machines, instruments |
 | 3 | High Reliability Electronic Products | Continued performance or on-demand performance critical; equipment downtime not tolerable; must function when required | Life support, flight control, military, medical implants |
@@ -78,7 +78,7 @@ Source: **IPC-2221A Table 6-1** (page 43), verified from PDF.
 Minimum spacing in mm between uninsulated conductors. Columns B1-B4 are bare board conditions; A5-A7 are assembly conditions.
 
 | Voltage (DC or AC peak) | B1: Internal | B2: External, uncoated, sea level | B3: External, uncoated, >3050m | B4: External, polymer coated, sea level | A5: External, conformal coated over assembly | A6: External, uncoated, sea level | A7: External, uncoated, >3050m |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 0–15 V | 0.05 | 0.1 | 0.1 | 0.05 | 0.13 | 0.13 | 0.13 |
 | 16–30 V | 0.05 | 0.1 | 0.1 | 0.05 | 0.13 | 0.25 | 0.13 |
 | 31–50 V | 0.1 | 0.6 | 0.6 | 0.13 | 0.13 | 0.4 | 0.13 |
@@ -115,7 +115,7 @@ Source: **IPC-2221A Section 6.2** (page 40), verified from PDF. These are the cl
 
 ### Formula (from IPC-2221A Section 6.2)
 
-```
+```text
 I = k × ΔT^0.44 × A^0.725
 ```
 
@@ -128,7 +128,7 @@ Where:
 
 **Converting trace width to cross-sectional area:**
 
-```
+```text
 A (sq. mils) = width_mils × thickness_mils
 ```
 
@@ -138,7 +138,7 @@ For 2 oz copper: thickness = 2.74 mils (0.070 mm = 70 µm)
 ### Quick Reference Table (1 oz copper, 10°C rise, external layer)
 
 | Trace Width (mm) | Trace Width (mils) | Area (sq. mils) | Current (A) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0.15 | 5.9 | 8.1 | 0.3 |
 | 0.25 | 9.8 | 13.5 | 0.5 |
 | 0.5 | 19.7 | 27.0 | 0.8 |
@@ -168,7 +168,7 @@ Source: **IPC-2221A Tables 9-1 and 9-2** (page 74), verified from PDF.
 ### Table 9-1: Fabrication Allowance
 
 | Producibility Level | Min Fabrication Allowance |
-|---|---|
+| --- | --- |
 | Level A (Preferred/Standard) | 0.4 mm |
 | Level B (Standard/Moderate) | 0.25 mm |
 | Level C (Reduced/Advanced) | 0.2 mm |
@@ -176,7 +176,7 @@ Source: **IPC-2221A Tables 9-1 and 9-2** (page 74), verified from PDF.
 ### Table 9-2: Minimum Annular Ring
 
 | Feature | Minimum Annular Ring |
-|---|---|
+| --- | --- |
 | External, Supported (plated through) | 0.050 mm |
 | External, Unsupported (non-plated) | 0.150 mm |
 | Internal, Supported | 0.025 mm |
@@ -185,13 +185,13 @@ Source: **IPC-2221A Tables 9-1 and 9-2** (page 74), verified from PDF.
 
 **Annular ring calculation:**
 
-```
+```text
 Annular ring = (pad diameter - drill diameter) / 2
 ```
 
 The fabrication allowance must be added to account for drill registration tolerance:
 
-```
+```text
 Minimum pad diameter = drill diameter + (2 × annular ring) + fabrication allowance
 ```
 
@@ -206,7 +206,7 @@ Source: **IPC-2221A Tables 9-3, 9-4, 9-5** (page 76), verified from PDF.
 ### Table 9-3: Min Drilled Hole Size — Buried Vias
 
 | Board Thickness at Via | Level A | Level B | Level C |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ≤1.0 mm | 0.25 mm | 0.20 mm | 0.15 mm |
 | >1.0 mm to ≤2.0 mm | 0.30 mm | 0.25 mm | 0.20 mm |
 | >2.0 mm | 0.35 mm | 0.30 mm | 0.25 mm |
@@ -214,7 +214,7 @@ Source: **IPC-2221A Tables 9-3, 9-4, 9-5** (page 76), verified from PDF.
 ### Table 9-4: Min Drilled Hole Size — Blind Vias
 
 | Board Thickness at Via | Level A | Level B | Level C |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ≤1.0 mm | 0.25 mm | 0.20 mm | 0.15 mm |
 | >1.0 mm to ≤2.0 mm | 0.30 mm | 0.25 mm | 0.20 mm |
 | >2.0 mm | 0.35 mm | 0.30 mm | 0.25 mm |
@@ -222,7 +222,7 @@ Source: **IPC-2221A Tables 9-3, 9-4, 9-5** (page 76), verified from PDF.
 ### Table 9-5: Hole Location Tolerance
 
 | Producibility Level | Hole Location Tolerance |
-|---|---|
+| --- | --- |
 | Level A (Preferred) | ±0.25 mm |
 | Level B (Standard) | ±0.20 mm |
 | Level C (Reduced) | ±0.15 mm |
@@ -235,7 +235,7 @@ Source: **IPC-2221A Section 6.4** (pages 43-48), verified from PDF. These are fi
 
 ### Microstrip (outer layer trace over ground plane)
 
-```
+```text
 Z₀ = (87 / √(εᵣ + 1.41)) × ln(5.98h / (0.8w + t))
 ```
 
@@ -252,13 +252,13 @@ Valid for: `w/h < 1` (narrow trace relative to dielectric height)
 
 ### Embedded Microstrip (inner trace with reference plane)
 
-```
+```text
 Z₀ = (60 / √εᵣ) × ln(4h / (0.67(0.8w + t)))
 ```
 
 ### Stripline (inner trace between two ground planes)
 
-```
+```text
 Z₀ = (60 / √εᵣ) × ln(4b / (0.67π(0.8w + t)))
 ```
 
@@ -273,7 +273,7 @@ Where `b` = distance between the two reference planes.
 Source: **IPC-2221A Table 6-2** (page 45), verified from PDF.
 
 | Material | Dielectric Constant (εᵣ) at 1 MHz |
-|---|---|
+| --- | --- |
 | FR-4 (glass epoxy) | 4.2–4.9 |
 | Polyimide (Kapton) | 3.2–3.5 |
 | BT/Epoxy | 3.9–4.2 |
@@ -292,7 +292,7 @@ Source: **IPC-4761** (July 2006), verified from PDF. Complete document (12 pages
 Seven via protection types identified by the IPC D-33d Via Protection Task Group:
 
 | Type | Name | Description | Via-in-Pad? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I | Tented | Dry film mask bridging over via, no fill material | No |
 | II | Tented and Covered | Type I + secondary mask covering | No |
 | III | Plugged | Material partially penetrates via (screened/roller coated) | No |
@@ -358,7 +358,7 @@ These requirements apply to mains-connected equipment and safety-critical insula
 Source: **ECMA-287 Table 3.3**, verified from PDF.
 
 | Nominal AC Mains (line-to-neutral) | OVC I | OVC II | OVC III | OVC IV |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ≤50 V rms | 330 V pk | 500 V pk | 800 V pk | 1500 V pk |
 | ≤100 V rms | 500 V pk | 800 V pk | 1500 V pk | 2500 V pk |
 | ≤150 V rms ¹ | 800 V pk | 1500 V pk | 2500 V pk | 4000 V pk |
@@ -374,7 +374,7 @@ Use this table to determine the **required withstand voltage** for clearance loo
 Source: **ECMA-287 Table 3.4**, verified from PDF.
 
 | Required Withstand Voltage | Basic/Supplementary Insulation | Reinforced Insulation |
-|---|---|---|
+| --- | --- | --- |
 | ≤400 V peak/dc | 0.2 mm (0.1 mm) | 0.4 mm (0.2 mm) |
 | ≤800 V | 0.2 mm | 0.4 mm |
 | ≤1000 V | 0.3 mm | 0.6 mm |
@@ -399,7 +399,7 @@ Values in parentheses apply only with routine dielectric strength testing under 
 Source: **ECMA-287 Table 3.5**, verified from PDF. Values for basic and supplementary insulation. For **reinforced insulation**, use **2× the basic insulation values**.
 
 | Working Voltage (rms/dc) | PD1 (all groups) | PD2, Grp I | PD2, Grp II | PD2, Grp IIIa/IIIb | PD3, Grp I | PD3, Grp II | PD3, Grp IIIa/IIIb |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 50 V | Use clearance | 0.6 mm | 0.9 mm | 1.2 mm | 1.5 mm | 1.7 mm | 1.9 mm |
 | 100 V | value from | 0.7 mm | 1.0 mm | 1.4 mm | 1.8 mm | 2.0 mm | 2.2 mm |
 | 125 V | appropriate | 0.8 mm | 1.1 mm | 1.5 mm | 1.9 mm | 2.1 mm | 2.4 mm |
@@ -421,7 +421,7 @@ Linear interpolation between entries is permitted (round up to 0.1 mm).
 Source: **ECMA-287 Table 3.9**, verified from PDF. Applies to Type II coated boards (section 3.2.4.2) where ≥80% of the distance between conductive parts is coated. Requires routine dielectric strength testing for double/reinforced insulation.
 
 | Working Voltage (rms/dc) | Basic/Supplementary | Reinforced |
-|---|---|---|
+| --- | --- | --- |
 | ≤63 V | 0.1 mm | 0.2 mm |
 | ≤125 V | 0.2 mm | 0.4 mm |
 | ≤160 V | 0.3 mm | 0.6 mm |
@@ -503,7 +503,7 @@ Source: IPC-7351B — Generic Requirements for Surface Mount Design and Land Pat
 Three density levels for component footprint land patterns:
 
 | Level | Name | Courtyard Excess | Application |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | A | Most (Maximum) | 0.50 mm | Hand soldering, prototyping, maximum reliability |
 | B | Nominal | 0.25 mm | Typical production, wave or reflow |
 | C | Least (Minimum) | 0.10 mm | High-density, miniaturized products |
@@ -532,7 +532,7 @@ IPC-2152 supersedes the current capacity charts in IPC-2221A. The IPC-2221A char
 
 Approximate formula (from secondary sources, commonly used in online calculators):
 
-```
+```text
 A = (117.555 × ΔT^(-0.913) + 1.15) × I^(0.84 × ΔT^(-0.108) + 1.159)
 ```
 
@@ -626,7 +626,7 @@ Canonical reference for DFM tier determination. The analyzer (`analyze_pcb.py`) 
 ### JLCPCB
 
 | Parameter | Standard Tier | Advanced Tier |
-|-----------|---------------|---------------|
+| ----------- | --------------- | --------------- |
 | Min trace width | 0.127 mm (5 mil) | 0.1 mm (4 mil) |
 | Min trace spacing | 0.127 mm (5 mil) | 0.1 mm (4 mil) |
 | Min PTH drill | 0.2 mm | 0.15 mm |
@@ -645,7 +645,7 @@ Canonical reference for DFM tier determination. The analyzer (`analyze_pcb.py`) 
 ### PCBWay
 
 | Parameter | Standard |
-|-----------|----------|
+| ----------- | ---------- |
 | Min trace width | 0.1 mm (4 mil) |
 | Min trace spacing | 0.1 mm (4 mil) |
 | Min PTH drill | 0.2 mm |

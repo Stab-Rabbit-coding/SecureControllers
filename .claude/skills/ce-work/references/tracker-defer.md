@@ -35,7 +35,7 @@ The agent determines the project's tracker from whatever documentation is obviou
 
 A tracker can be surfaced via MCP tool (e.g., a Linear MCP server), CLI (e.g., `gh`), or direct API. All are acceptable. The detection output is a tuple with two availability flags — one for the named tracker specifically (drives label confidence in Interactive mode) and one for the full fallback chain (drives whether Defer is offered at all):
 
-```
+```text
 { tracker_name, confidence, named_sink_available, any_sink_available }
 ```
 
@@ -114,7 +114,7 @@ When ticket creation fails at execution (API error, auth expiry mid-session, rat
 **Interactive mode:** surface the failure inline and ask the user using the platform's blocking question tool.
 
 Stem:
-> Defer failed: <tracker name> returned <error summary>. How should the agent handle this finding?
+> Defer failed: `<tracker name>` returned `<error summary>`. How should the agent handle this finding?
 
 Options:
 
@@ -135,7 +135,7 @@ Only when `ToolSearch` explicitly returns no match or the tool call errors — o
 Concrete behavior per tracker at execution time. The agent may invoke any of these through the appropriate interface (MCP, CLI, or API) — the choice depends on what is available in the current environment.
 
 | Tracker | Interface | Invocation sketch | Body format | Labels |
-|---------|-----------|-------------------|-------------|--------|
+| --------- | ----------- | ------------------- | ------------- | -------- |
 | Linear | MCP (preferred) or API | Create issue in the project/workspace identified by documentation; assign to the reporter if the MCP tool exposes user context | Markdown | Severity priority field if the MCP exposes it; otherwise include severity in body |
 | GitHub Issues | `gh issue create` | Repo defaults to the current repo. Use `--label` for severity tag when labels exist; omit `--label` if the repo has no label fixture. Fall back to a label-less issue on first failure. | Markdown | `--label P0` / `--label P1` / etc. when labels exist |
 | Jira | MCP or API | Create issue in the project identified by documentation; Jira's markdown dialect differs from GitHub's — use plain text in the body when MCP does not handle conversion | Plain text when MCP does not handle markdown | Severity priority field |

@@ -75,7 +75,7 @@ patterns per ISO 128-2.  The `_dash_pattern()` function scales dash/gap
 lengths relative to line width `w`:
 
 | Style | Pattern |
-|-------|---------|
+| ------- | --------- |
 | dash | 11w on, 4w off |
 | dot | 0.2w on, 4w off |
 | dash_dot | 11w, 4w, 0.2w, 4w |
@@ -107,7 +107,7 @@ schematic SVGs to show connectivity information without requiring full netlists.
 defined in `layer_presets.py`.  Available presets:
 
 | Preset | Layers shown | Use case |
-|--------|-------------|----------|
+| -------- | ------------- | ---------- |
 | `assembly-front` | Edge.Cuts, F.SilkS, F.Fab, F.CrtYd | Assembly drawing |
 | `assembly-back` | Edge.Cuts, B.SilkS, B.Fab, B.CrtYd | Back assembly |
 | `routing-front` | Edge.Cuts, F.Cu, F.SilkS (dimmed) | Front copper review |

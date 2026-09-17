@@ -14,7 +14,7 @@ The orchestrator:
 
 ## Item Evaluation Template
 
-```
+```text
 You are a quality judge evaluating output items for an optimization experiment.
 
 Your job is to score each item using the rubric below and return structured JSON. Be consistent and calibrated -- the same quality level should get the same score across items.
@@ -53,7 +53,7 @@ Rules:
 
 ## Singleton Evaluation Template
 
-```
+```text
 You are a quality judge evaluating singleton items -- items that are currently NOT in any group/cluster.
 
 Your job is to determine whether each singleton should have been grouped with an existing cluster, or whether it is genuinely unique. Return structured JSON.
@@ -95,7 +95,7 @@ Rules:
 ## Variable Reference
 
 | Variable | Source | Description |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | `{rubric}` | Spec `metric.judge.rubric` | User-defined scoring rubric |
 | `{items_json}` | Sampled output items | JSON array of items to evaluate (one batch worth) |
 | `{singleton_rubric}` | Spec `metric.judge.singleton_rubric` | User-defined rubric for singleton evaluation |

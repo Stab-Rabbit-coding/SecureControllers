@@ -38,7 +38,7 @@ or switching regulator instead.
 
 ### Standard LDO circuit
 
-```
+```text
 VIN ──┬──[C_IN]──┐
       │          │
       └──[ LDO ]─┤── VOUT ──┬──[C_OUT]──┐
@@ -67,7 +67,7 @@ VIN ──┬──[C_IN]──┐
 ### Recommended LDO parts
 
 | Vout | Part | Package | Max current | Dropout | Features |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 3.3V | AP2112K-3.3 | SOT-23-5 | 600mA | 250mV | Low cost, widely available |
 | 3.3V | MIC5504-3.3YM5 | SOT-23-5 | 300mA | 115mV | Very low quiescent current |
 | 3.3V | AMS1117-3.3 | SOT-223 | 1A | 1.1V | Not a true LDO, but dirt cheap and everywhere |
@@ -85,7 +85,7 @@ VIN ──┬──[C_IN]──┐
 
 ## Buck Converters
 
-### When to use
+### When to use (Buck Converters)
 
 - Voltage step-down with high efficiency needed (>85% typical)
 - Moderate to high current (>500mA, or when LDO thermal dissipation is a problem)
@@ -100,7 +100,7 @@ sensitive loads with an LC filter or LDO post-regulator.
 
 ### Standard buck converter circuit
 
-```
+```text
 VIN ──┬──[C_IN]──┬───────────────────────────┐
       │          │                             │
       │      [BUCK IC]─── SW ──[L]──┬── VOUT ─┤
@@ -140,7 +140,7 @@ electrolytic for energy storage if load has large transients.
 ### Recommended buck converter parts
 
 | Vout | Part | Package | Max current | Freq | Notes |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 3.3V | AP3429 | SOT-23-5 | 600mA | 1.4MHz | Tiny, low component count |
 | 3.3V | TPS562201 | SOT-23-6 | 2A | 580kHz | Good all-rounder |
 | 5V/3.3V | MP2359 | SOT-23-6 | 1.2A | 1.4MHz | Widely available |
@@ -167,7 +167,7 @@ meet spec and may oscillate or produce excessive EMI.
 
 ## Boost Converters
 
-### When to use
+### When to use (Boost Converters)
 
 - Voltage step-up needed (e.g., 3.3V battery to 5V, or 5V to 12V)
 - Single-cell LiPo (3.0-4.2V) to 5V for USB output
@@ -175,7 +175,7 @@ meet spec and may oscillate or produce excessive EMI.
 
 ### Standard boost circuit
 
-```
+```text
 VIN ──┬──[C_IN]──┬──[L]──┬── SW (IC) ──┐
       │          │        │              │
       │         GND       └──[D]── VOUT ─┤
@@ -191,7 +191,7 @@ Key differences from buck: the inductor is on the input side, and a diode
 ### Recommended boost converter parts
 
 | Application | Part | Package | Max current | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 3.3V→5V, low power | TPS61023 | WSON-6 | 1A output | High efficiency at light load |
 | LiPo→5V, USB out | TPS61030 | QFN-10 | 4A switch | Powers USB peripherals from battery |
 | General purpose | MT3608 | SOT-23-6 | 2A switch | Very cheap, adequate for prototypes |
@@ -236,7 +236,7 @@ Every external-facing signal needs ESD protection. Use TVS diode arrays rated
 for IEC 61000-4-2 (±8kV contact, ±15kV air discharge).
 
 | Interface | Recommended part | Package | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | USB 2.0 | USBLC6-2SC6 | SOT-23-6 | 2-channel, very common |
 | General I/O | PRTR5V0U2X | SOT-363 | 2-channel, ultra-low capacitance |
 | Single line | PESD5V0S1BA | SOD-323 | Single unidirectional |
@@ -298,7 +298,7 @@ This is one of the most important aspects of PCB design for digital circuits.
 ### Capacitor dielectric selection
 
 | Dielectric | Use for | Avoid for |
-|---|---|---|
+| --- | --- | --- |
 | C0G/NP0 | Timing circuits, filters, precision — no DC bias derating | Bulk decoupling (too expensive per µF) |
 | X5R | General decoupling up to 85°C | High-temp or high-reliability |
 | X7R | General decoupling up to 125°C | Precision timing circuits |
@@ -321,7 +321,7 @@ manufacturer's DC bias curves. Solutions:
 
 ### Standard crystal circuit for MCU
 
-```
+```text
 MCU_OSC_IN ──┬──[C_LOAD1]──GND
              │
           [XTAL]
@@ -354,7 +354,7 @@ Use 18pF or nearest standard value (15pF or 18pF).
 
 Use a dual N-MOSFET level shifter (e.g., BSS138-based circuit):
 
-```
+```text
 3.3V ──[R_PULL_3V3]──┬── LOW_SIDE
                       │
                     D ┤
@@ -383,7 +383,7 @@ Buffer IC (74LVC1T45) for low-to-high with proper drive strength.
 
 ### Simple indicator LED
 
-```
+```text
 GPIO ──[R_SERIES]──[LED]──GND
 ```
 
@@ -402,7 +402,7 @@ can source 5-20mA; check the datasheet.
 
 ### Standard MCU reset circuit
 
-```
+```text
 VCC ──[R_PULL]──┬── RESET_N (MCU)
                 │
               [C]──GND

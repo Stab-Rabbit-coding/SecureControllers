@@ -79,7 +79,7 @@ When program context is present, extend the map with: (1) **Program outcome** â€
 Decision cost raises the content floor, not the length ceiling (high-uncertainty *small* diffs get a sharper lead, not an essay). Uncertainty moves a change at most one size row. Fold risk into the narrative unless the PR is already large. Include evidence only when it changes confidence in a material claim. Subtract fix-up commits when sizing. Large PRs need more selectivity, not more content.
 
 | Change profile | Description approach |
-|---|---|
+| --- | --- |
 | Small + simple (typo, config, dep bump) | 1-2 sentences, no headers. Under ~300 characters. |
 | Small + non-trivial (bug fix, behavioral change) | 3-5 sentences. No headers unless two distinct concerns. User-visible before/after when the bug was observable. |
 | Medium feature or refactor | Narrative frame, then what changed and why. Call out design decisions. |
@@ -118,7 +118,7 @@ Do not put a non-closing reference next to close/fix/resolve/address/report word
 - Good: "Related: #123"
 
 | Tracker | Closing reference | Non-closing reference | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GitHub Issues | `Fixes #123`; cross-repo: `Fixes owner/repo#123` | `Related: #123`; cross-repo: `Related: owner/repo#123` | Closing keywords: `close(s/d)`, `fix(es/ed)`, `resolve(s/d)`. Use closing only when the PR targets the default branch and truly resolves the issue. Repeat the keyword per closing issue. |
 | Linear | `Fixes ENG-123` | `Related to ENG-123` | Magic words in the PR description, not a PR comment. Multiple issues may share one magic word when intent matches, e.g. `Fixes ENG-123, DES-5 and ENG-256`. |
 | Other trackers | Project-documented closing keyword only when known. | Full URL or tracker ID under `Related`. | Never guess a closing action. |

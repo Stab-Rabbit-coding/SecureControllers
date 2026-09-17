@@ -26,7 +26,7 @@ unless noted otherwise.
 ### Minimum wall thickness by purpose
 
 | Purpose | Minimum | Recommended | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Structural wall | 1.2mm (3 perimeters) | 1.6-2.0mm (4-5 perimeters) | Load-bearing walls, enclosure sides |
 | Non-structural wall | 0.8mm (2 perimeters) | 1.2mm | Internal dividers, cosmetic panels |
 | Snap-fit arm | 1.0mm | 1.2-1.5mm | Needs flexibility without breaking |
@@ -54,7 +54,7 @@ An "overhang" is any surface that extends outward from the layer below with no
 support underneath.
 
 | Overhang angle (from vertical) | Printability |
-|---|---|
+| --- | --- |
 | 0-40° | Prints cleanly with no support |
 | 40-50° | Acceptable, slight surface degradation |
 | 50-60° | Marginal, noticeable sagging |
@@ -81,7 +81,7 @@ A "bridge" is a horizontal span between two supported points with nothing
 underneath. The printer stretches filament across the gap.
 
 | Bridge length | Reliability |
-|---|---|
+| --- | --- |
 | <20mm | Usually successful with standard settings |
 | 20-40mm | May sag slightly; use bridge-specific settings in slicer |
 | 40-60mm | Likely to sag noticeably; consider supports or redesign |
@@ -96,7 +96,7 @@ adhesion).
 ### General dimensional tolerance
 
 | Printer quality | Typical tolerance |
-|---|---|
+| --- | --- |
 | Well-calibrated consumer (Prusa, Bambu, Voron) | ±0.15mm |
 | Average consumer printer | ±0.2-0.3mm |
 | Cheap/poorly calibrated | ±0.3-0.5mm |
@@ -107,7 +107,7 @@ proportionally larger.
 ### Clearance for mating parts
 
 | Fit type | Clearance per side | Total gap | Use for |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Press fit | -0.05 to 0mm (interference) | Tight | Permanent assembly, pins |
 | Snug fit | 0.1mm | 0.2mm total | Lids that stay put without fasteners |
 | Sliding fit | 0.15-0.2mm | 0.3-0.4mm total | Lids that slide on/off, drawers |
@@ -120,7 +120,7 @@ for the user's specific printer.
 ### Clearance for specific applications
 
 | Application | Clearance | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PCB in slot | 0.2-0.3mm per side | PCB is 1.6mm; slot should be 2.0-2.2mm |
 | Screw through-hole (M3) | 3.4-3.5mm hole dia | M3 screw is 3.0mm shaft |
 | Heat-set insert hole | See insert datasheet | Typically 0.1-0.2mm smaller than insert OD |
@@ -150,7 +150,7 @@ circle is a bridge/overhang.
 Vertical holes print much more accurately because each layer is a circle.
 
 | Hole purpose | Design diameter | Notes |
-|---|---|---|
+| --- | --- | --- |
 | M2 screw clearance | 2.4mm | M2 shaft is 2.0mm |
 | M2.5 screw clearance | 3.0mm | M2.5 shaft is 2.5mm |
 | M3 screw clearance | 3.4mm | M3 shaft is 3.0mm |
@@ -198,7 +198,7 @@ A screw boss is a cylindrical protrusion with a hole for a screw. Design:
 ### Infill percentage guidelines
 
 | Application | Infill % | Pattern | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Visual prototype | 10-15% | Gyroid or grid | Saves material and time |
 | General functional part | 20-30% | Gyroid or cubic | Good balance of strength and speed |
 | Structural part | 40-60% | Gyroid or cubic | Significant strength increase |
@@ -245,7 +245,7 @@ decisions in FDM design.
 ### Orientation for common parts
 
 | Part type | Recommended orientation | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Enclosure bottom shell | Open side up | No overhangs, smooth outside bottom |
 | Enclosure top/lid | Upside down (outside face on bed) | Smooth outer surface |
 | Bracket (L-shape) | Standing on the long leg | Maximises strength at the bend |
@@ -258,7 +258,7 @@ decisions in FDM design.
 ### Embossed text (raised)
 
 | Parameter | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Height above surface | 0.4mm (1 layer at 0.2mm LH) | 0.6-0.8mm |
 | Line width | 0.5mm | 0.8mm |
 | Font size | 6pt | 8-10pt |
@@ -267,7 +267,7 @@ decisions in FDM design.
 ### Debossed text (recessed into surface)
 
 | Parameter | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Depth below surface | 0.4mm | 0.6-0.8mm |
 | Line width | 0.5mm | 0.8mm |
 
@@ -277,7 +277,7 @@ handles it as an inward offset rather than a tiny raised feature.
 ### Fine detail limits
 
 | Feature | Minimum dimension |
-|---|---|
+| --- | --- |
 | Positive detail (bump, ridge) | 0.5mm wide, 0.4mm tall |
 | Negative detail (groove, channel) | 0.5mm wide, 0.4mm deep |
 | Pin / post diameter | 1.5mm (structural), 1.0mm (decorative) |
@@ -328,7 +328,7 @@ layers, pulling corners off the bed. Worse with:
 ### Material warping tendency
 
 | Material | Warp risk | Needs heated bed? | Needs enclosure? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | PLA | Very low | Helpful (50-60°C) | No |
 | PETG | Low | Yes (70-80°C) | No |
 | ABS | High | Yes (90-110°C) | Yes |
@@ -362,7 +362,7 @@ When splitting a part, add registration features so the pieces align correctly:
 ### Joining methods for printed parts
 
 | Method | Strength | Reversible? | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Cyanoacrylate (super glue) | Medium | No | Quick, works on PLA/PETG |
 | Epoxy | High | No | Best strength, gap-filling |
 | Solvent welding (acetone for ABS) | High | No | Fuses the plastic together |
@@ -376,7 +376,7 @@ When splitting a part, add registration features so the pieces align correctly:
 Quick reference for expected accuracy across common features:
 
 | Feature | Expected accuracy | How to improve |
-|---|---|---|
+| --- | --- | --- |
 | Overall X/Y dimension | ±0.2mm | Calibrate printer steps/mm, enable pressure advance |
 | Overall Z dimension | ±0.1mm | Z is the most accurate axis (stepper-controlled) |
 | Hole diameter (vertical) | -0.1 to -0.2mm (undersized) | Oversize in design or drill after |

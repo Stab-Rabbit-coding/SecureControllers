@@ -58,7 +58,7 @@ do not invoke `ce-handoff` yet.
 
 For one winner, use this shape in natural prose:
 
-> The clearest next area is **<area>** because <reason>. If you want to continue
+> The clearest next area is **`<area>`** because `<reason>`. If you want to continue
 > it in a fresh agent session, I can create a `ce-handoff` for that brainstorm.
 
 For a real tie, name the tied areas and offer a fresh-session handoff focused on

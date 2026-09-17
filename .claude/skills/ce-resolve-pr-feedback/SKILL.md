@@ -33,7 +33,7 @@ GitHub only — **including GitHub Enterprise**. This skill speaks GitHub's API 
 ## Mode Detection
 
 | Argument | Mode |
-|----------|------|
+| ---------- | ------ |
 | No argument | **Full** -- all unresolved threads on the current branch's PR |
 | PR number (e.g., `123`) | **Full** -- all unresolved threads on that PR |
 | PR URL (e.g., `https://HOST/OWNER/REPO/pull/123`, no comment fragment) | **Full** -- all unresolved threads on that PR; parse `HOST`, `OWNER/REPO`, and the number from the URL (this is how `ce-babysit-pr` hands a fork→upstream PR to full mode against the right host/base) |

@@ -9,7 +9,7 @@ Load this when the input's fit for `ce-pov` is in doubt, or to route a Hold (SKI
 ## Where the lines fall
 
 | If the user wants... | Route to | The line |
-|---|---|---|
+| --- | --- | --- |
 | A neutral explainer ("tell me about X") | general research / answer it directly | `ce-pov` only returns a project-grounded verdict; with no project angle, answer it as a normal research question — or a dedicated deep-research-style tool *if the environment has one* — rather than forcing a verdict |
 | A holistic take on a supplied document ("what do you think of this doc?") | `ce-pov` | A take judges the document's direction, strengths, risks, and bottom line; "review this doc" or "find the issues" asks for findings and routes to `ce-doc-review`. When the wording is ambiguous, ask one clarifying line rather than guessing |
 | A judgment among approaches the user already supplied | `ce-pov` | Options supplied → judge them against the project; options still need to be invented → `ce-ideate` |

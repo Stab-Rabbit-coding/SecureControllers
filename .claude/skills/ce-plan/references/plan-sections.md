@@ -69,7 +69,7 @@ heading text; HTML uses matching visible headings and anchor IDs. Downstream
 skills grep or anchor-scan for these names before reading large bodies.
 
 | Logical section | Markdown heading | HTML id | Reader use |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Goal Capsule | `## Goal Capsule` | `goal-capsule` | Objective, authority hierarchy, and stop conditions |
 | Product Contract | `## Product Contract` | `product-contract` | Requirements, actors, flows, acceptance examples, product scope |
 | Product Requirements | `### Requirements` under Product Contract | `product-requirements` | Requirement extraction for review and implementation trace |

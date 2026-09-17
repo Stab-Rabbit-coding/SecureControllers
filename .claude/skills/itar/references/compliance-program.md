@@ -24,7 +24,7 @@ A TCP controls access to ITAR-controlled technical data, especially by foreign n
 
 **TCP Sections:**
 
-```
+```text
 1. Purpose and Scope
 2. ITAR-controlled items and data inventory
 3. Physical access controls (secure areas, visitor escorts, badging)
@@ -136,7 +136,7 @@ Submit comprehensive written report including:
 - Corrective actions already implemented
 - Proposed additional remediation
 
-**Step 4 — DDTC Review and Resolution**
+#### Step 4 — DDTC Review and Resolution
 
 - DDTC reviews report; may request additional information
 - Outcomes: no action, warning letter, civil penalty (usually reduced), or referral for criminal review
@@ -180,7 +180,7 @@ The **Blue Lantern** programme is DDTC's end-use monitoring initiative. US embas
 ## Checklist — ITAR Compliance Programme Readiness
 
 | Area | ✅ | Key Questions |
-|------|----|--------------|
+| ------ | ---- | -------------- |
 | Registration | | Is registration current? Renewal filed on time? |
 | Empowered Official | | Named EO with written authority? |
 | Policy | | IS Policy signed by senior management? |

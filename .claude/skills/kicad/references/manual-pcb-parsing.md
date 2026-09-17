@@ -159,7 +159,7 @@ def pad_to_absolute(fp_x, fp_y, fp_angle_deg, pad_rx, pad_ry):
 ### Key Footprint Fields
 
 | Field | Where | Purpose |
-|-------|-------|---------|
+| ------- | ------- | --------- |
 | `(property "Reference" "U1")` | Footprint block | Component designator |
 | `(property "Value" "STM32F407")` | Footprint block | Component value |
 | `(at X Y ANGLE)` | 2nd-level child | Position and rotation |
@@ -398,7 +398,7 @@ KiCad 5 PCB files use `(module ...)` instead of `(footprint ...)`, and `(fp_text
 ### Key Differences
 
 | Modern (KiCad 6+) | Legacy (KiCad 5) |
-|--------------------|------------------|
+| -------------------- | ------------------ |
 | `(footprint "Lib:Name" ...)` | `(module "Lib:Name" ...)` |
 | `(property "Reference" "U1" ...)` | `(fp_text reference "U1" ...)` |
 | `(property "Value" "STM32" ...)` | `(fp_text value "STM32" ...)` |
@@ -409,7 +409,7 @@ KiCad 5 PCB files use `(module ...)` instead of `(footprint ...)`, and `(fp_text
 
 KiCad 5 stores net classes directly in the PCB file:
 
-```
+```text
 (net_class Default "Default net class"
   (clearance 0.2)
   (trace_width 0.25)
@@ -424,7 +424,7 @@ KiCad 5 stores net classes directly in the PCB file:
 
 ### Dimension Annotations (KiCad 5)
 
-```
+```text
 (dimension 50.0
   (width 0.12)
   (layer "F.SilkS")

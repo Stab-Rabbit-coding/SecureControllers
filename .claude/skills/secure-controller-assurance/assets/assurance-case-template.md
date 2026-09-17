@@ -37,7 +37,7 @@ A claim that cannot be falsified is not a claim.  "The board is secure" is not a
 
 ### 2.2 Expected customer and use cases
 
-*(SCA-GOV-02; IR 8259r1 §3.2 Activity 1.)*
+#### (SCA-GOV-02; IR 8259r1 §3.2 Activity 1.)
 
 [Named customer type and concrete use cases.  "Anyone who buys a servo" is not acceptable.]
 
@@ -49,7 +49,7 @@ potential misuses.]
 
 ### 2.4 Regulatory applicability triage
 
-*(SCA-SL-06.)*
+#### (SCA-SL-06.)
 
 | Instrument | Applies? | Basis |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ write "methodology applied; standard does not bind this platform."
 
 ## 3. Threat model summary
 
-*(SCA-GOV-04.)*
+### (SCA-GOV-04.)
 
 | Adversary | Capability | Access assumed | Motivation |
 | --- | --- | --- | --- |
@@ -90,13 +90,13 @@ risk and belongs in §6.]
 
 ### 4.1 Zone and conduit placement
 
-*(SCA-OT-01.)*
+#### (SCA-OT-01.)
 
 [Zones, conduits, SL-T per zone.  Purdue level if in an OT context.]
 
 ### 4.2 Zero trust allocation
 
-*(SP 800-207 §3 logical components.)*
+#### (SP 800-207 §3 logical components.)
 
 | ZT component | Where it lives | Notes |
 | --- | --- | --- |
@@ -107,7 +107,7 @@ risk and belongs in §6.]
 
 ### 4.3 Fail-state policy
 
-*(SCA-ZT-05 — the control that differs most between overlays.)*
+#### (SCA-ZT-05 — the control that differs most between overlays.)
 
 | Resource class | Behavior on policy expiry or link loss | Rationale |
 | --- | --- | --- |
@@ -121,7 +121,7 @@ ships into more than one overlay, it must be provisioned — see `platform-overl
 
 ### 4.4 Board / host division of responsibility
 
-*(Overlay C only — SCA-HC-05.  Delete for standalone boards.)*
+#### (Overlay C only — SCA-HC-05.  Delete for standalone boards.)
 
 | Capability | Board | Host | Notes |
 | --- | --- | --- | --- |
@@ -164,14 +164,14 @@ Full register: [link to the project's control register CSV].
 
 ### 5.1 Evidence index
 
-*(One row per Implemented control.  Assertion without evidence does not close a control.)*
+#### (One row per Implemented control.  Assertion without evidence does not close a control.)
 
 | Control | Evidence artifact | Location | Date | Verified by |
 | --- | --- | --- | --- | --- |
 
 ### 5.2 Negative test results
 
-*(SCA verification requires that controls were tested by trying to break them.)*
+#### (SCA verification requires that controls were tested by trying to break them.)
 
 | Test | Control | Expected | Observed | Pass? | Date |
 | --- | --- | --- | --- | --- | --- |
@@ -191,7 +191,7 @@ Never on a live vehicle or live plant.**
 
 ## 6. Safety–security interaction
 
-*(SCA-SL-01 — all four directions must be populated.)*
+### (SCA-SL-01 — all four directions must be populated.)
 
 | Direction | Finding | Resolution |
 | --- | --- | --- |
@@ -210,7 +210,7 @@ hazard log.)*
 
 ### 6.2 Independent hardware limits
 
-*(SCA-SL-04.)*
+#### (SCA-SL-04.)
 
 [What bounds the damage a fully compromised firmware can do, and how it was verified.  If
 the answer is "nothing," say so — it is a finding, not an omission.]
@@ -219,7 +219,7 @@ the answer is "nothing," say so — it is a finding, not an omission.]
 
 ## 7. Assumptions transferred to the integrator
 
-*(SCA-NT-01; IR 8259r1 §4.3.1.  This section is a deliverable, not internal notes.)*
+### (SCA-NT-01; IR 8259r1 §4.3.1.  This section is a deliverable, not internal notes.)
 
 | # | Assumption | Risk transferred | Who must handle it |
 | --- | --- | --- | --- |
@@ -258,7 +258,7 @@ Gross platform mass: [x lbm (y kg)].  Security fraction: [z %].
 
 ## 10. Support commitment
 
-*(SCA-SU-06, SCA-NT-07; IR 8259r1 §4.3.2.)*
+### (SCA-SU-06, SCA-NT-07; IR 8259r1 §4.3.2.)
 
 | Item | Value |
 | --- | --- |

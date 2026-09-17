@@ -19,40 +19,129 @@ MD_OUT = SKILLS_DIR / "INDEX.md"
 # (category label, match predicate on skill dir name) — first match wins.
 CATEGORIES: list[tuple[str, callable]] = [
     ("Security & SOC Operations", lambda n: re.match(r"^\d\d-", n) is not None),
-    ("GRC & Compliance", lambda n: n in {
-        "iso27001", "iso27701", "iso42001", "fedramp", "nist-csf", "nist-800-53",
-        "nist-ai-rmf", "tsa-compliance", "ear", "itar", "cis-controls",
-        "gdpr-compliance", "secure-controller-assurance",
-    }),
-    ("Engineering (PE-aligned)", lambda n: n in {
-        "aeronautical-engineering", "mechanical-engineering", "statics-and-dynamics",
-        "control-systems-engineering",
-    }),
-    ("PCB / KiCad / Electronics", lambda n: n in {
-        "kicad", "create", "autoroute", "emc", "spice", "bom", "datasheets",
-        "digikey", "mouser", "lcsc", "element14", "jlcpcb", "pcbway", "kidoc",
-        "pcb-designer", "pcb-engineer",
-    }),
-    ("3D / Mechanical Design", lambda n: n in {"3d-print-design", "openscad", "openfoam-cfd"}),
+    (
+        "GRC & Compliance",
+        lambda n: (
+            n
+            in {
+                "iso27001",
+                "iso27701",
+                "iso42001",
+                "fedramp",
+                "nist-csf",
+                "nist-800-53",
+                "nist-ai-rmf",
+                "tsa-compliance",
+                "ear",
+                "itar",
+                "cis-controls",
+                "gdpr-compliance",
+                "secure-controller-assurance",
+            }
+        ),
+    ),
+    (
+        "Engineering (PE-aligned)",
+        lambda n: (
+            n
+            in {
+                "aeronautical-engineering",
+                "mechanical-engineering",
+                "statics-and-dynamics",
+                "control-systems-engineering",
+            }
+        ),
+    ),
+    (
+        "PCB / KiCad / Electronics",
+        lambda n: (
+            n
+            in {
+                "kicad",
+                "create",
+                "autoroute",
+                "emc",
+                "spice",
+                "bom",
+                "datasheets",
+                "digikey",
+                "mouser",
+                "lcsc",
+                "element14",
+                "jlcpcb",
+                "pcbway",
+                "kidoc",
+                "pcb-designer",
+                "pcb-engineer",
+            }
+        ),
+    ),
+    (
+        "3D / Mechanical Design",
+        lambda n: n in {"3d-print-design", "openscad", "openfoam-cfd"},
+    ),
     ("Compound Engineering (ce-*)", lambda n: n.startswith("ce-") or n == "lfg"),
-    ("Project & Workflow Governance", lambda n: n in {
-        "project-overseer", "wbs-generator", "planning-and-task-breakdown",
-        "spec-driven-development", "source-driven-development", "incremental-implementation",
-        "git-workflow-and-versioning", "readme-conventions", "documentation-and-adrs",
-        "deprecation-and-migration", "disposition-ledger", "shipping-and-launch",
-        "negative-controls", "doubt-driven-development", "fleet-audit-loop",
-        "fleet-qa-loop", "flaky-tests", "wiki-first", "idea-refine",
-        "upstream-prs-to-hermes-agent", "github-actions", "cosmos-compose",
-    }),
-    ("Code Quality & Dev Practice", lambda n: n in {
-        "code-quality", "test-driven-development", "debugging-and-error-recovery",
-        "performance-optimization", "api-and-interface-design", "context-engineering",
-        "observability-and-instrumentation", "security-and-hardening",
-        "browser-testing-with-devtools", "frontend-design",
-    }),
-    ("Meta / Tooling", lambda n: n in {
-        "skill-creator", "find-skills", "model-bakeoff", "remember", "claude-security",
-    }),
+    (
+        "Project & Workflow Governance",
+        lambda n: (
+            n
+            in {
+                "project-overseer",
+                "wbs-generator",
+                "planning-and-task-breakdown",
+                "spec-driven-development",
+                "source-driven-development",
+                "incremental-implementation",
+                "git-workflow-and-versioning",
+                "readme-conventions",
+                "documentation-and-adrs",
+                "deprecation-and-migration",
+                "disposition-ledger",
+                "shipping-and-launch",
+                "negative-controls",
+                "doubt-driven-development",
+                "fleet-audit-loop",
+                "fleet-qa-loop",
+                "flaky-tests",
+                "wiki-first",
+                "idea-refine",
+                "upstream-prs-to-hermes-agent",
+                "github-actions",
+                "cosmos-compose",
+            }
+        ),
+    ),
+    (
+        "Code Quality & Dev Practice",
+        lambda n: (
+            n
+            in {
+                "code-quality",
+                "test-driven-development",
+                "debugging-and-error-recovery",
+                "performance-optimization",
+                "api-and-interface-design",
+                "context-engineering",
+                "observability-and-instrumentation",
+                "security-and-hardening",
+                "browser-testing-with-devtools",
+                "frontend-design",
+            }
+        ),
+    ),
+    (
+        "Meta / Tooling",
+        lambda n: (
+            n
+            in {
+                "skill-creator",
+                "find-skills",
+                "model-bakeoff",
+                "remember",
+                "claude-security",
+            }
+        ),
+    ),
     ("Misc", lambda n: True),
 ]
 
@@ -75,8 +164,14 @@ def load_skills() -> list[dict]:
                 # description: either inline ("description: foo") or a YAML
                 # folded/literal block scalar ("description: >" / "|" followed
                 # by indented lines until the next top-level key or EOF).
-                ds_inline = re.search(r"^description:\s*(?![>|][+-]?\s*$)(\S.*)$", fm, re.MULTILINE)
-                ds_block = re.search(r"^description:\s*[>|][+-]?\s*\n((?:[ \t]+.*\n?)*)", fm, re.MULTILINE)
+                ds_inline = re.search(
+                    r"^description:\s*(?![>|][+-]?\s*$)(\S.*)$", fm, re.MULTILINE
+                )
+                ds_block = re.search(
+                    r"^description:\s*[>|][+-]?\s*\n((?:[ \t]+.*\n?)*)",
+                    fm,
+                    re.MULTILINE,
+                )
                 if ds_inline:
                     desc = ds_inline.group(1).strip().strip('"').strip("'")
                 elif ds_block:
@@ -84,14 +179,16 @@ def load_skills() -> list[dict]:
                     desc = " ".join(ln for ln in block_lines if ln)
         file_count = sum(1 for _ in d.rglob("*") if _.is_file())
         category = next(label for label, pred in CATEGORIES if pred(d.name))
-        entries.append({
-            "dir": d.name,
-            "name": name,
-            "description": desc,
-            "path": f".claude/skills/{d.name}",
-            "category": category,
-            "file_count": file_count,
-        })
+        entries.append(
+            {
+                "dir": d.name,
+                "name": name,
+                "description": desc,
+                "path": f".claude/skills/{d.name}",
+                "category": category,
+                "file_count": file_count,
+            }
+        )
     return entries
 
 
@@ -108,18 +205,24 @@ def write_md(entries: list[dict]) -> None:
     lines = [
         "# Skills Index",
         "",
-        f"{len(entries)} agent skills available under `.claude/skills/` in this repo "
-        "(local Claude Code, and any cloud/web session running against this repo or "
-        "branch). Token-optimized for lookup: scan the table for your task, then invoke "
-        "the skill by directory name — do not read every `SKILL.md` to find the right "
-        "one.",
+        (
+            f"{len(entries)} agent skills available under `.claude/skills/` in this repo "
+            "(local Claude Code, and any cloud/web session running against this repo or "
+            "branch). Token-optimized for lookup: scan the table for your task, then invoke "
+            "the skill by directory name — do not read every `SKILL.md` to find the right "
+            "one."
+        ),
         "",
-        "Regenerate with `python3 tools/build_skills_index.py` after adding, removing, "
-        "or editing any skill. Machine-readable form: `index/skills.json`.",
+        (
+            "Regenerate with `python3 tools/build_skills_index.py` after adding, removing, "
+            "or editing any skill. Machine-readable form: `index/skills.json`."
+        ),
         "",
-        "For other reusable assets in this repo (datasheets, KiCad symbols/footprints, "
-        "mechanical shapes, shared scripts) see [`../../INDEX.md`](../../INDEX.md) at "
-        "the repo root — same lookup pattern, different asset types.",
+        (
+            "For other reusable assets in this repo (datasheets, KiCad symbols/footprints, "
+            "mechanical shapes, shared scripts) see [`../../INDEX.md`](../../INDEX.md) at "
+            "the repo root — same lookup pattern, different asset types."
+        ),
         "",
     ]
     for cat in cat_order:

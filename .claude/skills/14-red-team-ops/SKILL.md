@@ -63,7 +63,7 @@ pip install pyyaml requests
 
 **Before any operational planning, Claude asks:**
 
-```
+```text
 Red team assistance requires authorization confirmation:
 
 1. What is the engagement type?
@@ -158,7 +158,7 @@ python scripts/engagement_planner.py --scope scope.json --output plan.md
 
 **Multi-Tier C2 Architecture:**
 
-```
+```text
 [Team Server] ← (internal/VPN only) → [Redirector 1 (HTTPS)] ← → [Beacon]
                                     → [Redirector 2 (DNS)]   ← → [Beacon]
                                     → [Backup Redirector]
@@ -192,7 +192,7 @@ RewriteRule ^(.*)$ https://microsoft.com/ [R=302,L]  # Decoy redirect
 
 **OPSEC Checklist:**
 
-```
+```text
 Infrastructure OPSEC:
 [ ] Team server not directly accessible from internet
 [ ] All redirectors provisioned from different providers than each other
@@ -237,7 +237,7 @@ SharpHound.exe -c All --outputdirectory C:\temp\
 **Key AD Attack Techniques (authorized):**
 
 | Technique | ATT&CK ID | Tool | Description |
-|-----------|-----------|------|-------------|
+| ----------- | ----------- | ------ | ------------- |
 | Kerberoasting | T1558.003 | Rubeus, Impacket | Request TGS for SPNs → crack offline |
 | AS-REP Roasting | T1558.004 | Rubeus, GetNPUsers.py | Users with no pre-auth required |
 | Pass-the-Hash | T1550.002 | Impacket, CrackMapExec | Use NTLM hash without cracking |
@@ -295,7 +295,7 @@ rdesktop -u admin -p password 192.168.1.20
 
 **Pretext Template (for authorized campaigns):**
 
-```
+```text
 Subject: Action Required: IT Security Policy Update — Password Reset Required
 
 From: IT Help Desk <helpdesk@[spoofed-or-lookalike-domain]>
@@ -321,7 +321,7 @@ IT Security Team
 
 **Vishing Script Template:**
 
-```
+```text
 Caller: "Hi, this is [Name] from IT Security. We've detected some unusual 
 activity on your account. I need to verify your identity. Can I get your
 employee ID and the last four digits of your SSN?..."
@@ -408,7 +408,7 @@ python scripts/engagement_planner.py --scope scope.json --output plan.md
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Initial recon phase | → Skill 01 (Recon & OSINT) |
 | Exploit confirmed vulnerabilities | ← Skill 03 (Exploit Development) |
 | Provide findings for defensive improvements | → Skill 15 (Blue Team Defense) |

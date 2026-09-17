@@ -46,7 +46,7 @@ python scripts/model_supply_chain.py --path ./models --recursive --output model_
 
 ## Conversational Examples (skill activates automatically)
 
-```
+```text
 > Threat-model this RAG chatbot against the OWASP LLM Top 10
 > Review my LangChain agent's tools for excessive agency
 > Build a test set to check whether indirect injection via retrieved docs can trigger tool calls

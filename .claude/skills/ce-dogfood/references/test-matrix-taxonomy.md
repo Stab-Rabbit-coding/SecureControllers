@@ -51,7 +51,7 @@ Walk each flow as each primary persona (from STRATEGY.md "Who it's for", VISION.
 ## Mapping files to routes
 
 | Changed file | Routes to test |
-|--------------|----------------|
+| -------------- | ---------------- |
 | `app/views/<x>/*`, `src/app/<x>/*` | The pages for `<x>` (index, show, new, edit) |
 | component files | Every page that renders the component |
 | layout / global stylesheet | All key pages (visual regression) — at minimum the homepage |

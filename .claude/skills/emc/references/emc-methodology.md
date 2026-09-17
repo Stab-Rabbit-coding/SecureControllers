@@ -4,7 +4,7 @@ How the `analyze_emc.py` script works — data sources, check categories, scorin
 
 ## Architecture
 
-```
+```text
 analyze_schematic.py ──→ schematic.json ──┐
                                           ├──→ analyze_emc.py ──→ emc.json
 analyze_pcb.py ────────→ pcb.json ────────┘
@@ -107,18 +107,18 @@ Calculates connector aperture slot resonance frequencies and flags coincidences 
 
 ## Risk Scoring
 
-```
+```text
 score = 100 - (CRITICAL × 15) - (HIGH × 8) - (MEDIUM × 3) - (LOW × 1)
 ```
 
 Clamped to [0, 100]. Interpretation:
 
 | Score | Assessment |
-|-------|-----------|
+| ------- | ----------- |
 | 90-100 | Low EMC risk — basic hygiene checks pass |
-| 70-89  | Moderate risk — some issues to address |
-| 50-69  | Significant risk — multiple issues likely to cause failures |
-| <50    | High risk — fundamental design issues need resolution |
+| 70-89 | Moderate risk — some issues to address |
+| 50-69 | Significant risk — multiple issues likely to cause failures |
+| <50 | High risk — fundamental design issues need resolution |
 
 ## Severity Assignment
 

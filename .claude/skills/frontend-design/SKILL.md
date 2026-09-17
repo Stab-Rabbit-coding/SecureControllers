@@ -13,7 +13,7 @@ Applies to every web frontend task: pages, components, dashboards, artifacts, ap
 
 The user does not consider themselves a visual designer and relies on you for confident aesthetic and UX decisions. Lead with your best recommendation and commit to it; don't present a menu of options. The user is the ultimate arbiter - if they request something that harms the interface, explain why and offer a corrected alternative with reasoning; if they insist after hearing it, implement their request. Ask only when genuinely uncertain about direction and the user hasn't delegated the decision.
 
-### Educate as you go
+## Educate as you go
 
 Briefly explain *why* behind interesting or non-obvious choices using relevant terminology, history, or principles (type-scale ratios, Fitts's Law, Gestalt proximity, F-pattern scanning, etc.). Don't lecture, derail, or shoehorn lessons. The goal is building the user's design intuition over time - the most valuable thing beyond the deliverable.
 
@@ -260,7 +260,7 @@ and present it for download. The file should be self-contained.
 
 Structure:
 
-```
+```text
 # Frontend Review: [filename(s) or component name]
 
 **Reviewed:** [date]

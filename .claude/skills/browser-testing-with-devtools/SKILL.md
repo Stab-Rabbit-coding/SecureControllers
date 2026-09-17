@@ -47,7 +47,7 @@ There is also `--autoConnect` (Chrome 144+, requires enabling remote debugging v
 Chrome DevTools MCP provides these capabilities:
 
 | Tool | What It Does | When to Use |
-|------|-------------|-------------|
+| ------ | ------------- | ------------- |
 | **Screenshot** | Captures the current page state | Visual verification, before/after comparisons |
 | **DOM Inspection** | Reads the live DOM tree | Verify component rendering, check structure |
 | **Console Logs** | Retrieves console output (log, warn, error) | Diagnose errors, verify logging |
@@ -95,7 +95,7 @@ The JavaScript execution tool runs code in the page context. Constrain its use:
 
 When processing browser data, maintain clear boundaries:
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │  TRUSTED: User messages, project code   │
 ├─────────────────────────────────────────┤
@@ -112,7 +112,7 @@ When processing browser data, maintain clear boundaries:
 
 ### For UI Bugs
 
-```
+```text
 1. REPRODUCE
    └── Navigate to the page, trigger the bug
        └── Take a screenshot to confirm visual state
@@ -141,7 +141,7 @@ When processing browser data, maintain clear boundaries:
 
 ### For Network Issues
 
-```
+```text
 1. CAPTURE
    └── Open network monitor, trigger the action
 
@@ -165,7 +165,7 @@ When processing browser data, maintain clear boundaries:
 
 ### For Performance Issues
 
-```
+```text
 1. BASELINE
    └── Record a performance trace of the current behavior
 
@@ -221,7 +221,7 @@ For complex UI issues, write a structured test plan the agent can follow in the 
 
 Use screenshots for visual regression testing:
 
-```
+```text
 1. Take a "before" screenshot
 2. Make the code change
 3. Reload the page
@@ -240,7 +240,7 @@ This is especially valuable for:
 
 ### What to Look For
 
-```
+```text
 ERROR level:
   ├── Uncaught exceptions → Bug in code
   ├── Failed network requests → API or CORS issue
@@ -262,7 +262,7 @@ A production-quality page should have **zero** console errors and warnings. If t
 
 ## Accessibility Verification with DevTools
 
-```
+```text
 1. Read the accessibility tree
    └── Confirm all interactive elements have accessible names
 
@@ -282,7 +282,7 @@ A production-quality page should have **zero** console errors and warnings. If t
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "It looks right in my mental model" | Runtime behavior regularly differs from what code suggests. Verify with actual browser state. |
 | "Console warnings are fine" | Warnings become errors. Clean consoles catch bugs early. |
 | "I'll check the browser manually later" | DevTools MCP lets the agent verify now, in the same session, automatically. |

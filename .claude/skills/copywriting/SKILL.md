@@ -164,7 +164,7 @@ Skipping any step = unverified, not a finding.
 ## Red Flags - STOP
 
 | Excuse | Reality |
-|--------|---------|
+| -------- | --------- |
 | "It reads fine to me" | Reading silently skips hiccups. Read aloud. |
 | "AI detectors say it's human" | Detectors are unreliable; human raters outperform them (Russell et al., 2025). |
 | "I just need to change a few words" | AI tells are structural, not cosmetic. Word-by-word rewriting preserves the machine shape. |

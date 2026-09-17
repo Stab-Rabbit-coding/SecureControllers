@@ -24,7 +24,7 @@ Art. 13 applies when data collected directly from subject; Art. 14 when collecte
 For each processing activity, state both purpose AND lawful basis:
 
 | Purpose | Personal Data | Lawful Basis (Art. 6) |
-|---------|--------------|----------------------|
+| --------- | -------------- | ---------------------- |
 | [e.g. Account creation] | [Name, email] | Contract (Art. 6(1)(b)) |
 | [e.g. Marketing emails] | [Email, preferences] | Consent (Art. 6(1)(a)) |
 | [e.g. Fraud prevention] | [Transaction data] | Legitimate interests (Art. 6(1)(f)) |

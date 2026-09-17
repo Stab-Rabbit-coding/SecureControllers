@@ -84,7 +84,7 @@ aws iam get-account-summary --query 'SummaryMap.AccountMFAEnabled'
 
 **AWS IAM Security Checklist:**
 
-```
+```text
 Identity & Access Management:
 [ ] Root account has MFA enabled
 [ ] Root account has no access keys
@@ -167,7 +167,7 @@ az keyvault list --query "[*].name" | xargs -I{} az keyvault show --name {} \
 
 **Azure Security Checklist:**
 
-```
+```text
 Identity:
 [ ] Global Administrator role has MFA
 [ ] No more than 3-5 Global Administrators
@@ -231,7 +231,7 @@ CMD ["./myapp"]
 
 **Dockerfile Audit Checklist:**
 
-```
+```text
 [ ] Base image version pinned (not latest)
 [ ] Multi-stage build used to minimize final image
 [ ] Runs as non-root user (USER instruction)
@@ -336,7 +336,7 @@ spec:
 
 **Kubernetes Security Checklist:**
 
-```
+```text
 RBAC:
 [ ] No wildcards (*) in ClusterRole rules
 [ ] cluster-admin role not assigned to service accounts
@@ -431,7 +431,7 @@ python scripts/iac_scanner.py --path ./k8s-manifests/ --type kubernetes --output
 ## Compliance Framework Mapping
 
 | Finding | CIS AWS | SOC2 | PCI-DSS | HIPAA |
-|---------|---------|------|---------|-------|
+| --------- | --------- | ------ | --------- | ------- |
 | MFA not enforced | 1.10, 1.14 | CC6.1 | 8.3.2 | 164.312(d) |
 | Public S3 bucket | 2.1.5 | CC6.7 | 3.4 | 164.312(a)(2)(iv) |
 | CloudTrail disabled | 3.1, 3.2 | CC7.2 | 10.2 | 164.312(b) |
@@ -454,7 +454,7 @@ python scripts/iac_scanner.py --path ./k8s-manifests/ --type kubernetes --output
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Cloud assets discovered via recon | ← Skill 01 (Recon & OSINT) |
 | Cloud vulnerabilities for CSOC alerts | → Skill 11 (CSOC Automation) |
 | Implement cloud hardening recommendations | → Skill 15 (Blue Team Defense) |

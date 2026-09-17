@@ -97,7 +97,7 @@ Designing engineer, review board, future maintainers.
 ## Data Requirements
 
 | Source | Required | Provides |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | Schematic analysis | Yes | All core sections |
 | PCB analysis | No | PCB design, mechanical, exec summary enrichment |
 | EMC analysis | No | EMC section, compliance section, exec summary score |
@@ -137,7 +137,7 @@ The PDF generator's colors, company name, and header text are configurable via `
 ```
 
 | Key | Default | Description |
-|-----|---------|-------------|
+| ----- | --------- | ------------- |
 | `company_name` | `project.company` | Company name shown in headers and cover |
 | `logo` | (none) | Path to logo image for cover page |
 | `colors.primary` | `#1a1a2e` | Dark navy used for header bars and H1 text |

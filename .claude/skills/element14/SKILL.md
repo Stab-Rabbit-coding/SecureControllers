@@ -8,7 +8,7 @@ description: Search Newark, Farnell, and element14 for electronic components —
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `kicad` | Schematic analysis — extracts MPNs for part lookup |
 | `bom` | BOM management — orchestrates sourcing across distributors |
 | `spice` | Uses element14 parametric data for behavioral SPICE models |
@@ -16,7 +16,7 @@ description: Search Newark, Farnell, and element14 for electronic components —
 One API covers three regional storefronts — same catalog, same datasheets, only pricing/stock vary by region:
 
 | Storefront | Region | Store ID |
-|------------|--------|----------|
+| ------------ | -------- | ---------- |
 | **Newark** | North America | `www.newark.com` |
 | **Farnell** | UK / Europe | `uk.farnell.com` |
 | **element14** | Asia-Pacific | `au.element14.com` |
@@ -68,14 +68,14 @@ All requests use GET with query parameters. Authentication is via `callInfo.apiK
 The `term` parameter supports three search types:
 
 | Mode | Format | Example |
-|------|--------|---------|
+| ------ | -------- | --------- |
 | **Keyword** | `any:<keywords>` | `term=any:100nF 0402 X7R` |
 | **MPN** | `manuPartNum:<mpn>` | `term=manuPartNum:GRM155R71C104KA88D` |
 | **Distributor PN** | `id:<sku>` | `term=id:94AK6874` |
 
 ### Full Example
 
-```
+```text
 GET https://api.element14.com/catalog/products
   ?term=manuPartNum:GRM155R71C104KA88D
   &storeInfo.id=www.newark.com
@@ -89,7 +89,7 @@ GET https://api.element14.com/catalog/products
 ### Response Groups
 
 | Group | Fields |
-|-------|--------|
+| ------- | -------- |
 | `small` | SKU, displayName, brandName, MPN, attributes |
 | `medium` | + datasheets[], prices[], stock |
 | `large` | + images, related products, country of origin |
@@ -159,7 +159,7 @@ Key fields:
 Common store IDs for the `storeInfo.id` parameter:
 
 | Store ID | Region |
-|----------|--------|
+| ---------- | -------- |
 | `www.newark.com` | US (default) |
 | `uk.farnell.com` | UK |
 | `www.farnell.com` | EU |
@@ -267,7 +267,7 @@ The script:
 
 If the API is unavailable, search by fetching product pages directly:
 
-```
+```text
 https://www.newark.com/search?st=<query>
 https://uk.farnell.com/search?st=<query>
 ```

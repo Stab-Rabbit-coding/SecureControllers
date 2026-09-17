@@ -26,7 +26,7 @@ Every framework-specific code decision must be backed by official documentation.
 
 ## The Process
 
-```
+```text
 DETECT ──→ FETCH ──→ IMPLEMENT ──→ CITE
   │          │           │            │
   ▼          ▼           ▼            ▼
@@ -39,7 +39,7 @@ DETECT ──→ FETCH ──→ IMPLEMENT ──→ CITE
 
 Read the project's dependency file to identify exact versions:
 
-```
+```text
 package.json    → Node/React/Vue/Angular/Svelte
 composer.json   → PHP/Symfony/Laravel
 requirements.txt / pyproject.toml → Python/Django/Flask
@@ -50,7 +50,7 @@ Gemfile         → Ruby/Rails
 
 State what you found explicitly:
 
-```
+```text
 STACK DETECTED:
 - React 19.1.0 (from package.json)
 - Vite 6.2.0
@@ -67,7 +67,7 @@ Fetch the specific documentation page for the feature you're implementing. Not t
 **Source hierarchy (in order of authority):**
 
 | Priority | Source | Example |
-|----------|--------|---------|
+| ---------- | -------- | --------- |
 | 1 | Official documentation | react.dev, docs.djangoproject.com, symfony.com/doc |
 | 2 | Official blog / changelog | react.dev/blog, nextjs.org/blog |
 | 3 | Web standards references | MDN, web.dev, html.spec.whatwg.org |
@@ -87,7 +87,7 @@ Never write a comment asserting external behaviour you have not observed. If you
 
 **Be precise with what you fetch:**
 
-```
+```text
 BAD:  Fetch the React homepage
 GOOD: Fetch react.dev/reference/react/useActionState
 
@@ -110,7 +110,7 @@ Write code that matches what the documentation shows:
 
 **When docs conflict with existing project code:**
 
-```
+```text
 CONFLICT DETECTED:
 The existing codebase uses useState for form loading state,
 but React 19 docs recommend useActionState for this pattern.
@@ -138,7 +138,7 @@ const [state, formAction, isPending] = useActionState(submitOrder, initialState)
 
 **In conversation:**
 
-```
+```text
 I'm using useActionState instead of manual useState for the
 form submission state. React 19 replaced the manual
 isPending/setIsPending pattern with this hook.
@@ -156,7 +156,7 @@ pending states automatically"
 - Include browser/runtime support data when recommending platform features
 - If you cannot find documentation for a pattern, say so explicitly:
 
-```
+```text
 UNVERIFIED: I could not find official documentation for this
 pattern. This is based on training data and may be outdated.
 Verify before using in production.
@@ -183,7 +183,7 @@ A neowall commit message said `wl->initialized` is set at `wayland_core.c:536` o
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "I'm confident about this API" | Confidence is not evidence. Training data contains outdated patterns that look correct but break against current versions. Verify. |
 | "Fetching docs wastes tokens" | Hallucinating an API wastes more. The user debugs for an hour, then discovers the function signature changed. One fetch prevents hours of rework. |
 | "The docs won't have what I need" | If the docs don't cover it, that's valuable information — the pattern may not be officially recommended. |

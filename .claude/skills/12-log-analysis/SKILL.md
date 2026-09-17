@@ -58,7 +58,7 @@ Claude directly reads and analyzes logs to extract security-relevant events.
 **Windows Event Log — Critical Event IDs:**
 
 | Event ID | Log | Description |
-|----------|-----|-------------|
+| ---------- | ----- | ------------- |
 | 4624 | Security | Successful logon — Logon Type 3 (network) is interesting |
 | 4625 | Security | Failed logon — track source IP for brute force |
 | 4648 | Security | Logon with explicit credentials (RunAs) |
@@ -265,7 +265,7 @@ python scripts/anomaly_detector.py --logs parsed.json --baseline baseline.json -
 **Anomaly Categories:**
 
 | Category | Indicators |
-|----------|-----------|
+| ---------- | ----------- |
 | Volume spike | 10x normal event rate in 5 minutes |
 | Off-hours activity | Admin access at 03:00 local time |
 | New geography | Login from country with no prior history |
@@ -351,7 +351,7 @@ Step 4: If successful login → escalate to HIGH severity
 Step 5: Watch for lateral movement from the successfully logged-in host
 Step 6: Declare incident if all 3 events observed
 
-```
+```text
 
 **Splunk Correlation (corr_rule.conf):**
 ```spl
@@ -412,7 +412,7 @@ python scripts/anomaly_detector.py --logs parsed.json --baseline baseline.json -
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Anomaly found → escalate to SOC | → Skill 11 (CSOC Automation) |
 | Anomaly is a hunt lead | → Skill 06 (Threat Hunting) |
 | Build timeline from logs for IR | → Skill 07 (Incident Response) |

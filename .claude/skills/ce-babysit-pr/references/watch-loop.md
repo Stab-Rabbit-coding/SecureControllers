@@ -15,7 +15,7 @@ Watcher ownership is **latest-valid-watcher-wins**. A newer invocation cancels a
 The needed capability is generic — *run a background process and be woken when it emits a line, without ending the turn* — so **describe the capability and use whatever tool the harness has**, rather than hardcoding a scheduler. A skill drives **tool calls**, never user-typed slash commands. Known instances (examples, not a required list; verified live this session):
 
 | Harness | Background-and-wake tool the agent uses | Durable beyond the session? |
-|---------|-----------------------------------------|-----------------------------|
+| --------- | ----------------------------------------- | ----------------------------- |
 | Claude Code (CLI) | background `Bash` + a `Monitor`/wait; or `ScheduleWakeup` under `/loop` | No (session-bound) — cron for durable |
 | Grok (CLI/TUI) | background `run_terminal_command` + `get_command_or_subagent_output`; `scheduler_create --durable` for a cross-session schedule | Yes via `scheduler_create --durable` (60s min, 7d) |
 | Cursor (CLI) | `Shell` background + `notify_on_output` sentinel (its `/loop` is user-typed, **not** skill-invocable) | No (session-bound) |

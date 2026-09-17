@@ -40,7 +40,7 @@ bash "$SKILL_DIR/scripts/detect-project-type.sh"
 Route by type to the matching recipe reference for start command and port defaults:
 
 | Type | Recipe |
-|------|--------|
+| ------ | -------- |
 | `rails` | `references/dev-server-rails.md` |
 | `next` | `references/dev-server-next.md` |
 | `vite` | `references/dev-server-vite.md` |
@@ -75,7 +75,7 @@ Load `references/ide-detection.md` for the env-var probe table. Open the browser
 
 Tell the user:
 
-```
+```text
 Dev server running on http://localhost:<port>
 Browse the feature and tell me what could be better.
 ```

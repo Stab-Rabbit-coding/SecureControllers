@@ -21,7 +21,7 @@ Only when the caller reached this file **without** already running review (no re
 
 Invoke the skill explicitly — do not treat a casual "review my changes" prompt as a substitute unless the harness routed it to `ce-code-review`.
 
-```
+```text
 ce-code-review mode:agent plan:<plan-path> base:<merge-base-or-ref>
 ```
 

@@ -7,7 +7,7 @@ Source: NIST CSF 2.0 (February 2024) and CSF 1.1 (April 2018)
 ## Summary of Changes
 
 | Aspect | CSF 1.1 | CSF 2.0 |
-|--------|---------|---------|
+| -------- | --------- | --------- |
 | Functions | 5 (ID, PR, DE, RS, RC) | 6 (+ **GV: Govern**) |
 | Total subcategories | 108 | 106 |
 | Govern function | Embedded across ID/PR | Standalone — 6 categories, 23 subcategories |
@@ -27,7 +27,7 @@ Source: NIST CSF 2.0 (February 2024) and CSF 1.1 (April 2018)
 Many CSF 1.1 subcategories were re-homed to the new **GV (Govern)** function:
 
 | CSF 1.1 Location | CSF 2.0 Location | Topic |
-|-----------------|-----------------|-------|
+| ----------------- | ----------------- | ------- |
 | ID.GV-01 | GV.PO-01 | Cybersecurity policy |
 | ID.GV-02 | GV.RR-02 | Roles and responsibilities |
 | ID.GV-03 | GV.OC-03 | Legal/regulatory requirements |
@@ -44,7 +44,7 @@ Many CSF 1.1 subcategories were re-homed to the new **GV (Govern)** function:
 ### New Subcategories in CSF 2.0 (no CSF 1.1 equivalent)
 
 | CSF 2.0 ID | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | GV.OC-02 | Stakeholder needs and expectations understood |
 | GV.OC-04 | Critical services stakeholders depend on are understood |
 | GV.OC-05 | Organizational dependencies are understood |
@@ -80,7 +80,7 @@ Many CSF 1.1 subcategories were re-homed to the new **GV (Govern)** function:
 ### Subcategories Removed in CSF 2.0 (CSF 1.1 only)
 
 | CSF 1.1 ID | Description | Disposition |
-|-----------|-------------|-------------|
+| ----------- | ------------- | ------------- |
 | ID.BE-01 to 05 | Business Environment | Merged into GV.OC and GV.RM |
 | PR.IP-01 to 12 | Information Protection Processes and Procedures | Split across PR.PS and PR.IR |
 | PR.MA-01, 02 | Maintenance | Merged into PR.PS-02, PR.PS-03 |
@@ -99,7 +99,7 @@ Many CSF 1.1 subcategories were re-homed to the new **GV (Govern)** function:
 
 Use this checklist when transitioning an existing CSF 1.1 implementation:
 
-**Governance (new GV function)**
+### Governance (new GV function)
 
 - [ ] Formally document cybersecurity strategy and risk tolerance (GV.RM-01, GV.RM-02)
 - [ ] Assign explicit cybersecurity roles with accountability to leadership (GV.RR-01, GV.RR-02)
@@ -108,7 +108,7 @@ Use this checklist when transitioning an existing CSF 1.1 implementation:
 - [ ] Expand supply chain risk management to cover GV.SC-01 through GV.SC-10
 - [ ] Document organizational context and stakeholder dependencies (GV.OC-01 to 05)
 
-**Identify updates**
+### Identify updates
 
 - [ ] Add data and metadata inventories (ID.AM-07)
 - [ ] Implement asset lifecycle management (ID.AM-08)
@@ -116,22 +116,22 @@ Use this checklist when transitioning an existing CSF 1.1 implementation:
 - [ ] Assess hardware/software authenticity before acquisition (ID.RA-09)
 - [ ] Create an improvement tracking process (ID.IM-01 to 04)
 
-**Protect updates**
+### Protect updates
 
 - [ ] Add data-in-use protection controls (PR.DS-10)
 - [ ] Integrate secure software development practices (PR.PS-06)
 
-**Detect updates**
+### Detect updates
 
 - [ ] Integrate threat intelligence into event analysis (DE.AE-07)
 - [ ] Define and document incident declaration criteria (DE.AE-08)
 
-**Respond updates**
+### Respond updates
 
 - [ ] Formalize incident triage, categorization, and escalation (RS.MA-02 to 04)
 - [ ] Improve incident data collection and integrity (RS.AN-07)
 
-**Recover updates**
+### Recover updates
 
 - [ ] Add post-incident operational norms assessment (RC.RP-04)
 - [ ] Define incident recovery end criteria (RC.RP-06)

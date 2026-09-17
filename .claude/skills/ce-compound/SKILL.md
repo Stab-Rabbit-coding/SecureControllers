@@ -53,7 +53,7 @@ Enter non-interactive mode when **either** holds: the arguments you were invoked
 Depth is an explicit non-interactive-only selector. In non-interactive mode, accept at most one depth token: `depth:lightweight` routes directly to Lightweight Mode, while `depth:full` routes to Full Mode with its automatic session-history probe. `mode:non-interactive` without a `depth:` token remains backward compatible and runs Full Mode (same for the deprecated `mode:headless` alias). Non-interactive lightweight asks no blocking questions and launches no subagents. If the invocation contains an unknown `depth:` token, multiple `depth:` tokens, or a `depth:` token without non-interactive intent, do not guess; emit the non-interactive failure report with the reason and end with `Documentation skipped`.
 
 | Mode | When | Behavior |
-|------|------|----------|
+| --- | --- | --- |
 | **Interactive** (default) | No non-interactive token or clear non-interactive intent | Auto-pick Full vs Lightweight and report the choice; run session history as an automatic probe (Full only); prompt for Discoverability Check consent; end with a plain summary (no "What's next?" menu) |
 | **Non-interactive** | `mode:non-interactive` or deprecated alias `mode:headless` present, or the invocation makes non-interactive intent unmistakable | No blocking questions. Run the explicitly requested depth, defaulting to **Full mode** with the automatic session-history probe. If the Discoverability Check finds a gap, report it without editing instruction files. Skip Phase 3 specialized reviews. End with a structured terminal report — no "What's next?" menu. |
 
@@ -135,7 +135,7 @@ Before launching Phase 1 subagents, check the auto-memory block injected into yo
 3. Scan the entries for anything related to the problem being documented -- use semantic judgment, not keyword matching
 4. If relevant entries are found, prepare a labeled excerpt block:
 
-```
+```text
 ## Supplementary notes from auto memory
 Treat as additional context, not primary evidence. Conversation history
 and codebase findings take priority over these notes.
@@ -272,7 +272,7 @@ Pass `{run_id}` and the resolved absolute `{run_dir}` into every Phase 1 subagen
 - **Filter rule (one line)**: "Only surface findings directly relevant to this specific problem. Ignore unrelated work from the same sessions or branches."
 - **Output schema**:
 
-     ```
+     ```text
      Structure your response with these sections (omit any with no findings):
      - What was tried before
      - What didn't work
@@ -335,26 +335,26 @@ The orchestrating agent (main conversation) performs these steps:
 1. **Collect Phase 1 results from the run artifacts.** For each Phase 1 subagent, `Read` its artifact file under `{run_dir}/` (`context.json`, `solution.md`, `related.json`, and `session-history.md` when session history ran). The artifact holds the subagent's full output. **Fall back to the subagent's inline return only when its artifact file is absent or empty** (e.g., `{run_id}` did not resolve, or the subagent failed to write). The artifact is authoritative when present — this is what makes the workflow resilient to the issue #956 summary-collapse, where the inline return is only an executive summary.
 2. **Check the overlap assessment** from the Related Docs Finder before deciding what to write:
 
-   | Overlap | Action |
-   |---------|--------|
-   | **High** — existing doc covers the same problem, root cause, and solution | **Update the existing doc** with fresher context (new code examples, updated references, additional prevention tips) rather than creating a duplicate. The existing doc's path and structure stay the same. |
-   | **Moderate** — same problem area but different angle, root cause, or solution | **Create the new doc** normally. Flag the overlap for Phase 2.5 to recommend consolidation review. |
-   | **Low or none** | **Create the new doc** normally. |
+| Overlap | Action |
+| --- | --- |
+| **High** — existing doc covers the same problem, root cause, and solution | **Update the existing doc** with fresher context (new code examples, updated references, additional prevention tips) rather than creating a duplicate. The existing doc's path and structure stay the same. |
+| **Moderate** — same problem area but different angle, root cause, or solution | **Create the new doc** normally. Flag the overlap for Phase 2.5 to recommend consolidation review. |
+| **Low or none** | **Create the new doc** normally. |
 
    The reason to update rather than create: two docs describing the same problem and solution will inevitably drift apart. The newer context is fresher and more trustworthy, so fold it into the existing doc rather than creating a second one that immediately needs consolidation.
 
    When updating an existing doc, preserve its file path and frontmatter structure. Update the solution, code examples, prevention tips, and any stale references. Add a `last_updated: YYYY-MM-DD` field to the frontmatter. Do not change the title unless the problem framing has materially shifted.
 
-3. **Incorporate session history findings** (if available). When the internal session-history flow returned relevant prior-session context:
+1. **Incorporate session history findings** (if available). When the internal session-history flow returned relevant prior-session context:
    - Fold investigation dead ends and failed approaches into the **What Didn't Work** section (bug track) or **Context** section (knowledge track)
    - Use cross-session patterns to enrich the **Prevention** or **Why This Matters** sections
    - Tag session-sourced content with "(session history)" so its origin is clear to future readers
    - If findings are thin or "no relevant prior sessions," proceed without session context
-4. Assemble complete markdown file from the collected pieces, reading `assets/resolution-template.md` for the section structure of new docs
-5. Validate YAML frontmatter against `references/schema.yaml`, including the YAML-safety quoting rule for array items (see `references/yaml-schema.md` > YAML Safety Rules)
-6. Create directory if needed: `mkdir -p <root>/solutions/[category]/`
-7. Write the file: either the updated existing doc or the new `<root>/solutions/[category]/[filename].md`
-8. **Validate parser-safety of the written frontmatter** to catch silent-corruption issues the prose rules miss: malformed `---` delimiter lines, unquoted `#` in scalar values (silent comment truncation), and unquoted `:` in scalar values (silent mapping confusion). The bundled validator ships **inside the skill bundle**; set `SKILL_DIR` to the absolute path of the directory containing this SKILL.md and run it through an existence guard so platforms that cannot locate the script fall back to a manual check instead of silently skipping the protection:
+2. Assemble complete markdown file from the collected pieces, reading `assets/resolution-template.md` for the section structure of new docs
+3. Validate YAML frontmatter against `references/schema.yaml`, including the YAML-safety quoting rule for array items (see `references/yaml-schema.md` > YAML Safety Rules)
+4. Create directory if needed: `mkdir -p <root>/solutions/[category]/`
+5. Write the file: either the updated existing doc or the new `<root>/solutions/[category]/[filename].md`
+6. **Validate parser-safety of the written frontmatter** to catch silent-corruption issues the prose rules miss: malformed `---` delimiter lines, unquoted `#` in scalar values (silent comment truncation), and unquoted `:` in scalar values (silent mapping confusion). The bundled validator ships **inside the skill bundle**; set `SKILL_DIR` to the absolute path of the directory containing this SKILL.md and run it through an existence guard so platforms that cannot locate the script fall back to a manual check instead of silently skipping the protection:
 
    ```bash
    SKILL_DIR="<absolute path of the directory containing the SKILL.md you just read>";
@@ -496,13 +496,13 @@ After the learning is written and the refresh decision is made, check whether th
 
       When there's an existing directory listing or architecture section — add a line:
 
-      ```
+      ```text
       <root>/solutions/  # documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (module, tags, problem_type)
       ```
 
       When nothing in the file is a natural fit — a small headed section is appropriate:
 
-      ```
+      ```text
       ## Documented Solutions
 
       `<root>/solutions/` — documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`). Relevant when implementing or debugging in documented areas.
@@ -512,7 +512,7 @@ After the learning is written and the refresh decision is made, check whether th
 
 5. **If `CONCEPTS.md` exists at repo root, run a parallel discoverability check for it.** Assess whether the instruction file would lead an agent to discover the project's shared domain vocabulary. Use the same workflow as the `<root>/solutions/` check above: same target file, same edit-placement judgment, same consent-then-edit interaction shape per mode. A line in an existing section is almost always better than a new headed section. Example calibration when nothing else fits:
 
-   ```
+   ```text
    CONCEPTS.md  # shared domain vocabulary (entities, named processes, status concepts) — relevant when orienting to the codebase or discussing domain concepts
    ```
 
@@ -569,7 +569,7 @@ The orchestrator (main conversation) performs ALL of the following in one sequen
 
 **Lightweight completion output:** In non-interactive Lightweight, do not emit this interactive block; use the depth-specific report under `Success Output` > `Non-interactive mode` instead. In interactive Lightweight, emit:
 
-```
+```text
 ✓ Documentation complete (lightweight mode)
 
 File created:
@@ -605,6 +605,7 @@ In lightweight mode, the overlap check is skipped (no Related Docs Finder subage
 
 ## Preconditions
 
+```xml
 <preconditions enforcement="advisory">
   <check condition="problem_solved">
     Problem has been solved (not in-progress)
@@ -616,6 +617,7 @@ In lightweight mode, the overlap check is skipped (no Related Docs Finder subage
     Non-trivial problem (not simple typo or obvious error)
   </check>
 </preconditions>
+```
 
 ## What It Creates
 
@@ -651,7 +653,7 @@ Knowledge track:
 ## Common Mistakes to Avoid
 
 | ❌ Wrong | ✅ Correct |
-|----------|-----------|
+| --- | --- |
 | Subagents write product files into `docs/` or edit tracked paths | Subagents write only scratch artifacts under `<run-dir>/` and return the path; orchestrator writes the one final doc |
 | Subagent returns a long prose body only as its inline response | Subagent writes full output to its run artifact; orchestrator Reads it back (inline return is fallback only) |
 | Research and assembly run in parallel | Research completes → then assembly runs |
@@ -669,7 +671,7 @@ Emit a structured terminal report and end the turn. No "What's next?" question, 
 
 For `depth:lightweight`, use this lower-overhead report after the Lightweight Mode workflow:
 
-```
+```text
 ✓ Documentation complete (non-interactive lightweight mode)
 
 File: <root>/solutions/<category>/<filename>.md  (created | updated)
@@ -686,7 +688,7 @@ Documentation complete
 
 For `depth:full` or backward-compatible non-interactive calls with no depth token, use the Full report:
 
-```
+```text
 ✓ Documentation complete (non-interactive mode)
 
 File: <root>/solutions/<category>/<filename>.md  (created | updated)
@@ -703,7 +705,7 @@ Documentation complete
 
 When no doc was written (e.g., non-interactive invoked on a session where the problem is not yet solved), emit a structured failure instead and end with `Documentation skipped` so callers can distinguish success from no-op:
 
-```
+```text
 ✗ Documentation skipped (non-interactive mode)
 
 Reason: <one-sentence explanation — e.g., "no solved problem detected in
@@ -714,7 +716,7 @@ Documentation skipped
 
 ### Interactive mode
 
-```
+```text
 ✓ Documentation complete
 
 Ran Full mode.
@@ -748,7 +750,7 @@ Refresh recommendation: none
 
 **Alternate interactive output (when updating an existing doc due to high overlap):** in non-interactive mode, this case is communicated via the `Overlap: high — existing doc updated` line of the non-interactive terminal report above, not as a separate output block.
 
-```
+```text
 ✓ Documentation updated (existing doc refreshed with current context)
 
 Overlap detected: <root>/solutions/performance-issues/n-plus-one-queries.md
@@ -764,13 +766,13 @@ File updated:
 This creates a compounding knowledge system:
 
 1. First time you solve "N+1 query in brief generation" → Research (30 min)
-2. Document the solution → <root>/solutions/performance-issues/n-plus-one-briefs.md (5 min)
+2. Document the solution → `<root>`/solutions/performance-issues/n-plus-one-briefs.md (5 min)
 3. Next time similar issue occurs → Quick lookup (2 min)
 4. Knowledge compounds → Team gets smarter
 
 The feedback loop:
 
-```
+```text
 Build → Test → Find Issue → Research → Improve → Document → Validate → Deploy
     ↑                                                                      ↓
     └──────────────────────────────────────────────────────────────────────┘
@@ -815,5 +817,5 @@ Based on problem type, these local prompt assets can enhance documentation:
 
 ## Related Commands
 
-- `/research [topic]` - Deep investigation (searches <root>/solutions/ for patterns)
+- `/research [topic]` - Deep investigation (searches `<root>`/solutions/ for patterns)
 - `ce-plan` - Planning workflow (references documented solutions)

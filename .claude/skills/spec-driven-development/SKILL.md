@@ -25,7 +25,7 @@ If the input is still a genuinely vague idea rather than unclear-but-real requir
 
 Spec-driven development has four phases. Do not advance to the next phase until the current one is validated.
 
-```
+```text
 SPECIFY ──→ PLAN ──→ TASKS ──→ IMPLEMENT
    │          │        │          │
    ▼          ▼        ▼          ▼
@@ -39,7 +39,7 @@ Start with a high-level vision. Ask the human clarifying questions until require
 
 **Surface assumptions immediately.** Before writing any spec content, list what you're assuming:
 
-```
+```text
 ASSUMPTIONS I'M MAKING:
 1. This is a web application (not native mobile)
 2. Authentication uses session-based cookies (not JWT)
@@ -56,7 +56,7 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
 
 2. **Commands** — Full executable commands with flags, not just tool names.
 
-   ```
+   ```text
    Build: npm run build
    Test: npm test -- --coverage
    Lint: npm run lint --fix
@@ -65,7 +65,7 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
 
 3. **Project Structure** — Where source code lives, where tests go, where docs belong.
 
-   ```
+   ```text
    src/           → Application source code
    src/components → React components
    src/lib        → Shared utilities
@@ -120,7 +120,7 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
 
 **Reframe instructions as success criteria.** When receiving vague requirements, translate them into concrete conditions:
 
-```
+```text
 REQUIREMENT: "Make the dashboard faster"
 
 REFRAMED SUCCESS CRITERIA:
@@ -185,7 +185,7 @@ The spec is a living document, not a one-time artifact:
 ## Common Rationalizations
 
 | Rationalization | Reality |
-|---|---|
+| --- | --- |
 | "This is simple, I don't need a spec" | Simple tasks don't need *long* specs, but they still need acceptance criteria. A two-line spec is fine. |
 | "I'll write the spec after I code it" | That's documentation, not specification. The spec's value is in forcing clarity *before* code. |
 | "The spec will slow us down" | A 15-minute spec prevents hours of rework. Waterfall in 15 minutes beats debugging in 15 hours. |

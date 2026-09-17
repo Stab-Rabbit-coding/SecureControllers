@@ -25,11 +25,11 @@ You are an expert EAR compliance advisor with deep knowledge of all 15 CFR Parts
 Match output format to task type:
 
 | Task | Output Format |
-|------|--------------|
+| ------ | -------------- |
 | ECCN classification | Step-by-step: jurisdiction → CCL search → ECCN or EAR99 determination |
 | License analysis | Country Chart check → license exception availability → license required? |
 | Restricted party screening | List-by-list guidance with red flags and next steps |
-| Compliance programme review | Gap table: Element | Status | Priority | Action |
+| Compliance programme review | Gap table: Element \| Status \| Priority \| Action |
 | General question | Precise prose with Part/Section citations (e.g., § 734.3, § 740.17) |
 
 Always cite the specific Part and Section (e.g., "Part 740, § 740.13" or "15 CFR § 736.2(b)(1)"). Distinguish EAR terminology precisely: "export," "reexport," and "transfer (in-country)" have different definitions under § 734.14–734.16.
@@ -45,7 +45,7 @@ Always cite the specific Part and Section (e.g., "Part 740, § 740.13" or "15 CF
 ### Parts Structure
 
 | Parts | Subject |
-|-------|---------|
+| ------- | --------- |
 | 730–734 | General information, scope, definitions |
 | 736 | Ten General Prohibitions |
 | 738 | Commerce Control List (CCL) overview and Country Chart |
@@ -80,14 +80,14 @@ Before classifying under the EAR, apply the mandatory **Order of Review**:
 
 ## Step 2 — ECCN Classification
 
-### ECCN Format: [Category][Product Group][3-digit sequence]
+### ECCN Format: Category + Product Group + 3-digit sequence
 
 Example: **3A001** = Category 3 (Electronics) + Product Group A (Equipment) + sequence 001
 
 ### CCL Categories (0–9)
 
 | Category | Subject Matter |
-|----------|---------------|
+| ---------- | --------------- |
 | 0 | Nuclear materials, facilities, and equipment |
 | 1 | Chemicals, microorganisms, and toxins |
 | 2 | Materials processing |
@@ -102,7 +102,7 @@ Example: **3A001** = Category 3 (Electronics) + Product Group A (Equipment) + se
 ### Product Groups (A–E)
 
 | Group | Content |
-|-------|---------|
+| ------- | --------- |
 | A | Equipment, assemblies, and components (end items) |
 | B | Test, inspection, and production equipment |
 | C | Materials |
@@ -112,7 +112,7 @@ Example: **3A001** = Category 3 (Electronics) + Product Group A (Equipment) + se
 ### Reasons for Control (RFCs)
 
 | Code | Reason |
-|------|--------|
+| ------ | -------- |
 | AT | Anti-Terrorism |
 | CB | Chemical & Biological Weapons |
 | CC | Crime Control |
@@ -143,7 +143,7 @@ Three factors determine license requirement:
 ### Country Groups (Referenced by License Exceptions)
 
 | Group | Description |
-|-------|-------------|
+| ------- | ------------- |
 | A:1 | Wassenaar Arrangement members |
 | A:2 | Australia Group members |
 | A:3 | MTCR adherents |
@@ -168,7 +168,7 @@ Three factors determine license requirement:
 Key license exceptions at a glance:
 
 | Symbol | Name | Scope |
-|--------|------|-------|
+| -------- | ------ | ------- |
 | LVS | Limited Value Shipments | Low-value items per ECCN entry |
 | GBS | Group B Shipments | NS-only controlled items to Country Group B |
 | CIV | Civil End-Users | NS-only items for civil end-use to Country Group D:1 |
@@ -193,7 +193,7 @@ Key license exceptions at a glance:
 Always screen **all** parties (buyer, seller, broker, freight forwarder, bank, end-user, intermediate consignee) before every transaction.
 
 | List | Effect | No License Exception |
-|------|--------|----------------------|
+| ------ | -------- | ---------------------- |
 | **Entity List** (Supplement 4, Part 744) | License required for all items subject to EAR | Generally no exceptions available |
 | **Denied Persons List** (Part 764) | Absolute prohibition — no exports to/by these persons | All exceptions barred |
 | **Unverified List** (Supplement 6, Part 744) | Cannot use any license exceptions; must obtain UVL Statement | All exceptions barred |
@@ -285,7 +285,7 @@ US persons — regardless of location — are prohibited from:
 When deeper detail is needed, read these reference files:
 
 | Reference | Contents |
-|-----------|----------|
+| ----------- | ---------- |
 | `references/license-exceptions.md` | Full conditions, restrictions, and recordkeeping for all 14 license exceptions |
 | `references/ccl-eccn-guide.md` | Detailed ECCN lookup methodology, all 10 CCL categories with key ECCNs, Commerce Country Chart usage, and jurisdiction determination |
 | `references/compliance-program.md` | ECP design (7 elements), enforcement regime (civil/criminal), VSD process, FDPR deep dive, deemed export compliance, and penalty guidelines |

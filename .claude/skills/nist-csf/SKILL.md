@@ -26,8 +26,8 @@ Always clarify which version (CSF 1.1, CSF 2.0, or both) is relevant if not stat
 Match your output to the task type:
 
 | Task | Output Format |
-|------|--------------|
-| Gap assessment | Table: Function | Category | Subcategory ID | Current State | Target State | Gap | Priority |
+| --- | --- |
+| Gap assessment | Table: Function Category Subcategory ID Current State Target State Gap Priority |
 | Profile creation | Structured profile document: Current Profile + Target Profile |
 | Tier assessment | Narrative assessment with tier rating per dimension and rationale |
 | Implementation roadmap | Prioritised action plan table with effort and impact ratings |
@@ -42,7 +42,7 @@ Match your output to the task type:
 CSF 2.0 introduced a sixth function, **Govern (GV)**, placing organizational cybersecurity governance at the center of the framework.
 
 | Function | ID | Purpose | Key Outputs |
-|----------|----|---------|------------|
+| --- | --- | --- | --- |
 | **Govern** | GV | Establish and monitor the org's cybersecurity risk management strategy, expectations, and policy | Cybersecurity policy, roles/responsibilities, risk tolerance, supply chain risk strategy |
 | **Identify** | ID | Understand cybersecurity risks to systems, assets, data, people, and capabilities | Asset inventory, risk assessment, improvement planning |
 | **Protect** | PR | Implement safeguards to manage cybersecurity risks | Access controls, awareness training, data security, platform security, tech resilience |
@@ -61,7 +61,7 @@ Consult `references/csf-20-functions-categories.md` for the complete list of all
 Implementation Tiers describe the degree to which an organization's cybersecurity risk management practices exhibit the characteristics defined in the framework. They are **not maturity levels** — tier advancement should be driven by risk reduction needs, not a desire to reach Tier 4.
 
 | Tier | Name | Description |
-|------|------|-------------|
+| --- | --- | --- |
 | 1 | Partial | Ad hoc, reactive. Risk management practices are not formalised. |
 | 2 | Risk-Informed | Risk management is approved by management but not org-wide policy. |
 | 3 | Repeatable | Org-wide risk management policy is formally approved and consistently applied. |
@@ -115,7 +115,7 @@ When asked to build an organisational profile:
 **Profile table format:**
 
 | Function | Category | Subcategory | Current | Target | Notes |
-|----------|----------|-------------|---------|--------|-------|
+| --- | --- | --- | --- | --- | --- |
 | GV | Organizational Context (GV.OC) | GV.OC-01 | Partial | Full | Board risk appetite not formally documented |
 
 ### 3. Implementation Roadmap
@@ -143,7 +143,7 @@ When asked to map CSF to other frameworks:
 - Common mappings:
 
 | CSF Subcategory Area | NIST SP 800-53 Rev 5 | ISO 27001:2022 Annex A | CIS Controls v8 |
-|---------------------|---------------------|----------------------|----------------|
+| --- | --- | --- | --- |
 | GV.OC (Org Context) | PM-1, PM-2, PM-8 | 4.1, 4.2 | CIS 17 |
 | ID.AM (Asset Mgmt) | CM-8, PM-5 | A.5.9, A.5.10 | CIS 1, 2 |
 | ID.RA (Risk Assess) | RA-3, RA-5 | 6.1.2 | CIS 18 |
@@ -165,7 +165,7 @@ When generating policies or documents aligned to CSF:
 **CSF-aligned policy types:**
 
 | Policy | Primary CSF Function | Key Subcategories |
-|--------|---------------------|-------------------|
+| --- | --- | --- |
 | Cybersecurity Governance Policy | GV | GV.OC, GV.RM, GV.RR, GV.PO |
 | Asset Management Policy | ID | ID.AM |
 | Risk Assessment Policy | ID | ID.RA |
@@ -184,7 +184,7 @@ When generating policies or documents aligned to CSF:
 ## CSF 2.0 vs CSF 1.1 — Key Differences
 
 | Topic | CSF 1.1 | CSF 2.0 |
-|-------|---------|---------|
+| --- | --- | --- |
 | Functions | 5 (ID, PR, DE, RS, RC) | 6 (+ **GV: Govern**) |
 | Govern function | Governance embedded in ID | Standalone GV function — 6 categories |
 | Supply chain risk | Limited (ID.SC) | Expanded: GV.SC (6 subcategories) |
@@ -204,7 +204,7 @@ Consult `references/csf-10-to-20-mapping.md` for a detailed migration guide from
 Different sectors have developed **Community Profiles** built on CSF. When the user's industry is known, tailor guidance accordingly:
 
 | Sector | Notes |
-|--------|-------|
+| --- | --- |
 | Financial services | FFIEC CAT maps closely to CSF; highlight GV.RM and DE.CM |
 | Healthcare | HIPAA Security Rule maps to PR and DE functions; HHS HPH Profile available |
 | Energy / OT | ICS/SCADA environments: emphasise PR.IR (resilience) and DE.CM; reference NERC CIP |

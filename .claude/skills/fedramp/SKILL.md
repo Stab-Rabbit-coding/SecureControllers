@@ -27,7 +27,7 @@ readiness through ATO and ongoing continuous monitoring.
 Identify the user's goal and jump to the appropriate section:
 
 | User Goal | Go To |
-|---|---|
+| --- | --- |
 | "Are we ready for FedRAMP?" / gap assessment | → [Readiness & Gap Assessment](#1-readiness--gap-assessment) |
 | Writing SSP, POA&M, SAR, SAP, or other docs | → [ATO Documentation](#2-ato-documentation) |
 | "Which controls apply to us?" / control mapping | → [NIST 800-53 Control Mapping](#3-nist-800-53-control-mapping) |
@@ -88,7 +88,7 @@ Identify the user's goal and jump to the appropriate section:
 
 The core FedRAMP authorization package consists of:
 
-```
+```text
 Authorization Package
 ├── System Security Plan (SSP) + Appendices A–Q
 ├── Security Assessment Plan (SAP) + Appendices A–D  [3PAO-prepared]
@@ -123,7 +123,7 @@ For detailed guidance on each document type, read the appropriate reference file
 ### Control Families (Rev 5)
 
 | ID | Family | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AC | Access Control | IAM, RBAC, least privilege, remote access |
 | AT | Awareness & Training | Security + **privacy** training (new in Rev 5) |
 | AU | Audit & Accountability | Log retention, SIEM, audit review |
@@ -187,20 +187,20 @@ Key principles:
 
 ### Cloud Platform Considerations
 
-**AWS GovCloud (US)**
+#### AWS GovCloud (US)
 
 - AWS GovCloud is FedRAMP High authorized — most PE and some SC controls are fully inherited
 - Use AWS Config, CloudTrail, GuardDuty, Security Hub to satisfy AU, RA, SI controls
 - Ensure use of GovCloud region endpoints (not standard commercial) to stay in boundary
 - FIPS endpoints available for IA controls
 
-**Azure Government**
+#### Azure Government
 
 - Azure Government is FedRAMP High authorized
 - Azure Policy + Defender for Cloud maps well to CM, RA, SI
 - Use Azure Blueprints / Policy Initiatives aligned to FedRAMP Moderate/High
 
-**Google Cloud (FedRAMP-authorized regions)**
+#### Google Cloud (FedRAMP-authorized regions)
 
 - Assured Workloads for FedRAMP compliance
 - Chronicle SIEM for AU controls
@@ -257,7 +257,7 @@ Once authorized, CSPs must maintain compliance through ConMon activities:
 Match output format to request type:
 
 | Request Type | Preferred Format |
-|---|---|
+| --- | --- |
 | Gap assessment | Table + prose summary |
 | SSP control narrative | Prose paragraphs (one per control/enhancement) |
 | POA&M entry | Structured table row with all required fields |

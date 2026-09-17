@@ -57,7 +57,7 @@ pip install requests beautifulsoup4 urllib3 lxml
 **When the user asks to assess for OWASP Top 10 vulnerabilities:**
 
 | # | Vulnerability | Claude's Assessment Approach |
-|---|--------------|------------------------------|
+| --- | -------------- | ------------------------------ |
 | A01 | Broken Access Control | Test IDOR, path traversal, forced browsing, privilege escalation |
 | A02 | Cryptographic Failures | Audit TLS, check sensitive data exposure, weak algorithms |
 | A03 | Injection | Test all inputs for SQLi, NoSQLi, OS command, LDAP, SSTI |
@@ -75,7 +75,7 @@ pip install requests beautifulsoup4 urllib3 lxml
 
 **Input Discovery — Map all injection points:**
 
-```
+```xml
 GET/POST parameters
 URL path segments (/users/INJECT/profile)
 HTTP headers (X-Forwarded-For, User-Agent, Referer, Cookie)
@@ -87,7 +87,7 @@ File upload names and metadata
 
 **SQL Injection Testing Methodology:**
 
-```
+```text
 Step 1: Detection — Test for error-based confirmation
   ' → SQL error = likely vulnerable
   ' OR '1'='1 → true condition
@@ -140,7 +140,7 @@ Step 3: Extraction (authorized PoC only)
 
 **XSS Testing Methodology:**
 
-```
+```xml
 Step 1: Find reflection points
   Input: test123  →  Search in source for "test123"
   What HTML context is it in?
@@ -192,7 +192,7 @@ $(id)
 
 **SSRF Testing Methodology:**
 
-```
+```text
 Step 1: Find URL input points
   - Import functionality (import from URL)
   - Webhooks (send notification to URL)
@@ -222,7 +222,7 @@ Step 4: SSRF filter bypass techniques
 
 **SSTI Testing:**
 
-```
+```text
 # Universal detection probes
 {{7*7}}           → 49 (Jinja2, Twig, Freemarker)
 ${7*7}            → 49 (FreeMarker, Velocity, Mako)
@@ -244,7 +244,7 @@ ${7*7}            → 49 (FreeMarker, Velocity, Mako)
 
 **API Test Checklist:**
 
-```
+```text
 Authentication:
 [ ] Endpoints accessible without token? (missing auth)
 [ ] JWT validation: alg:none attack, weak secret, expired token accepted?
@@ -309,7 +309,7 @@ jwt_tool JWT_TOKEN_HERE -C -d /usr/share/wordlists/rockyou.txt
 
 **Session Token Analysis:**
 
-```
+```text
 Entropy check:
 [ ] Token length sufficient? (≥128 bits recommended)
 [ ] Token appears random? (not predictable, sequential, or time-based)
@@ -333,7 +333,7 @@ Password security:
 
 **OAuth 2.0 Testing:**
 
-```
+```text
 [ ] State parameter present and validated? (CSRF in OAuth flow)
 [ ] Redirect URI strictly validated? (open redirect)
 [ ] Authorization code reusable? (should be single-use)
@@ -408,7 +408,7 @@ requests.get(url, headers={"Origin": "https://evil.target.com"})
 
    {"id": "1' OR '1'='1"}
 
-   ```
+   ```text
 3. Observe the response contains [evidence of vulnerability]
 
 ### Impact
@@ -443,7 +443,7 @@ python scripts/api_security_tester.py --spec openapi.yaml --base-url https://api
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Web apps discovered during recon | ← Skill 01 (Recon & OSINT) |
 | Vulnerable components identified | → Skill 02 (Vulnerability Scanner) |
 | Develop PoC for confirmed vuln | → Skill 03 (Exploit Development) |

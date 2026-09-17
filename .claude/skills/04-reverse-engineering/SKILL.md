@@ -77,7 +77,7 @@ python scripts/binary_analyzer.py --file binary --entropy
 
 **Binary Triage Checklist:**
 
-```
+```text
 [ ] File type and format (magic bytes): ELF / PE / Mach-O / raw
 [ ] Target architecture: x86 / x64 / ARM32 / ARM64 / MIPS / RISC-V
 [ ] Endianness: little-endian / big-endian
@@ -117,7 +117,7 @@ Claude will:
 **Common x86-64 Patterns:**
 
 | Pattern | Instructions | Meaning |
-|---------|--------------|---------|
+| --------- | -------------- | --------- |
 | Function prologue | `push rbp; mov rbp, rsp; sub rsp, N` | Stack frame setup |
 | Function epilogue | `leave; ret` or `pop rbp; ret` | Stack frame teardown |
 | Local variable | `mov [rbp-N], rax` | Store value on stack |
@@ -133,7 +133,7 @@ Claude will:
 **Common ARM64 Patterns:**
 
 | Pattern | Instructions | Meaning |
-|---------|--------------|---------|
+| --------- | -------------- | --------- |
 | Function prologue | `stp x29, x30, [sp, #-N]!` | Save frame pointer & LR |
 | Return | `ret` (uses x30) | Return from function |
 | Load/store pair | `ldp/stp` | Load/store two registers |
@@ -177,7 +177,7 @@ strings -a httpd | grep -E "(password|auth|key)"
 
 **Firmware Analysis Checklist:**
 
-```
+```text
 [ ] Identify firmware packaging format (SquashFS, JFFS2, CPIO, raw)
 [ ] Extract filesystem using binwalk -e
 [ ] Identify target OS and RTOS (Linux, VxWorks, ThreadX, FreeRTOS)
@@ -205,7 +205,7 @@ strings -a httpd | grep -E "(password|auth|key)"
 
 2. **Field type identification:**
 
-   ```
+   ```text
    Common field patterns:
    - 4 bytes, big-endian, values 0-65535 → likely length or port
    - 16 bytes uniform random → UUID or AES key
@@ -219,7 +219,7 @@ strings -a httpd | grep -E "(password|auth|key)"
 
 4. **State machine construction:**
 
-   ```
+   ```text
    [INIT] → send magic handshake → [AUTH] → send credentials →
    [CONNECTED] → send commands → [DATA] → receive data → [IDLE]
    ```
@@ -252,7 +252,7 @@ strings -a httpd | grep -E "(password|auth|key)"
 **When the user encounters anti-analysis measures:**
 
 | Technique | Indicators | Bypass |
-|-----------|-----------|--------|
+| ----------- | ----------- | -------- |
 | UPX packing | `UPX!` string, high entropy | `upx -d binary` |
 | Anti-debug: IsDebuggerPresent | API call in imports | Patch: NOP or force return 0 |
 | Anti-debug: ptrace check | `ptrace(PTRACE_TRACEME)` | GDB: `catch syscall ptrace` + return 1 |
@@ -342,7 +342,7 @@ python scripts/binary_analyzer.py --file firmware.bin --entropy
 ## Skill Integration
 
 | Condition | Adjacent Skill |
-|-----------|---------------|
+| ----------- | --------------- |
 | Sample needs dynamic behavioral analysis | → Skill 05 (Malware Analysis) |
 | Vulnerability found → develop exploit | → Skill 03 (Exploit Development) |
 | Extract IOCs from analysis | → Skill 06 (Threat Hunting) |

@@ -5,7 +5,7 @@ Quick reference for the JSON output of the three analysis scripts. Use `--schema
 ## analyze_schematic.py
 
 | Key | Type | Description |
-|-----|------|-------------|
+| ----- | ------ | ------------- |
 | `analyzer_type` | string | Always `"schematic"` |
 | `schema_version` | string | Semver (currently `"1.3.0"`) |
 | `summary` | object | `{total_findings: int, by_severity: {error, warning, info}}` |
@@ -28,7 +28,7 @@ Quick reference for the JSON output of the three analysis scripts. Use `--schema
 
 ### trust_summary
 
-```
+```text
 total_findings: int,
 trust_level: "high" | "mixed" | "low",
 by_confidence: {deterministic: int, heuristic: int, "datasheet-backed": int},
@@ -41,7 +41,7 @@ Emitted by all 6 analyzers (schematic, PCB, gerber, thermal, EMC, cross_analysis
 
 ### statistics
 
-```
+```text
 total_components: int, unique_parts: int, dnp_parts: int,
 total_nets: int, total_wires: int, total_no_connects: int,
 component_types: {type_name: count},
@@ -51,14 +51,14 @@ missing_mpn: [reference], missing_footprint: [reference]
 
 ### bom entries
 
-```
+```text
 {value, footprint, mpn, manufacturer, digikey, mouser, lcsc, element14,
  datasheet, description, references: [string], quantity: int, dnp: bool, type}
 ```
 
 ### components entries
 
-```
+```text
 {reference, value, lib_id, footprint, datasheet, description,
  mpn, manufacturer, digikey, mouser, lcsc, element14,
  x: float, y: float, angle: float, mirror_x: bool, mirror_y: bool,
@@ -71,7 +71,7 @@ missing_mpn: [reference], missing_footprint: [reference]
 
 Keyed by net name:
 
-```
+```text
 {name, pins: [{component, pin_number, pin_name, pin_type}], point_count: int}
 ```
 
@@ -79,7 +79,7 @@ Keyed by net name:
 
 All subcircuit detections, validation checks, and design observations are in the flat `findings[]` array. Each finding has a common envelope:
 
-```
+```text
 {detector, rule_id, category, severity, confidence, summary, recommendation,
  evidence_source, fix_params, report_context, ...detector-specific fields}
 ```
@@ -89,7 +89,7 @@ Use `detector` to filter by type. The `finding_schema.py` module provides `get_f
 **Detector types and their key fields:**
 
 | Detector | Key Fields |
-|----------|------------|
+| ---------- | ------------ |
 | `voltage_dividers` | `top_ref, bottom_ref, ratio, estimated_vout, input_net, output_net` |
 | `rc_filters` | `resistor, capacitor, cutoff_frequency_hz, type: lowpass\|highpass` |
 | `lc_filters` | `inductor, capacitors, resonant_formatted` |
@@ -128,7 +128,7 @@ Use `detector` to filter by type. The `finding_schema.py` module provides `get_f
 
 ### design_analysis
 
-```
+```text
 net_classification: {net: {type: 'power'|'ground'|'data'|...}}
 power_domains: {ic_power_rails: {ref: {voltage, rail_net}}, ...}
 cross_domain_signals: [signals crossing voltage domains]
@@ -147,7 +147,7 @@ passive_warnings: [string]
 ## analyze_pcb.py
 
 | Key | Type | Description |
-|-----|------|-------------|
+| ----- | ------ | ------------- |
 | `analyzer_type` | string | Always `"pcb"` |
 | `schema_version` | string | Semver (currently `"1.3.0"`) |
 | `summary` | object | `{total_findings: int, by_severity: {error, warning, info}}` |
@@ -170,9 +170,9 @@ passive_warnings: [string]
 | `connectivity` | object | Routing completeness, unconnected pads |
 | `net_lengths` | object | Per-net trace length, via count, layer transitions |
 
-### statistics
+### statistics (analyze_pcb.py)
 
-```
+```text
 footprint_count: int, front_side: int, back_side: int,
 smd_count: int, tht_count: int, copper_layers_used: int,
 copper_layer_names: [string], track_segments: int, via_count: int,
@@ -183,7 +183,7 @@ net_count: int, routing_complete: bool, unrouted_net_count: int
 
 ### footprints entries
 
-```
+```text
 {reference, value, lib_id, layer, x: float, y: float, angle: float,
  type: smd|through_hole|mixed, mpn, manufacturer, description,
  exclude_from_bom: bool, exclude_from_pos: bool, dnp: bool,
@@ -192,14 +192,14 @@ net_count: int, routing_complete: bool, unrouted_net_count: int
 
 ### tracks (--full adds segments/arcs arrays)
 
-```
+```text
 segment_count: int, arc_count: int,
 width_distribution: {width_mm: count}, layer_distribution: {layer: count}
 ```
 
 ### vias (--full adds vias array)
 
-```
+```text
 count: int, size_distribution: {size: count}
 vias (--full): [{x, y: float, layers: [string], size, drill: float,
                   net: int|null, type: 'through|blind|buried|micro'}]
@@ -217,7 +217,7 @@ via_fanout: {ref: {via_count, fanout_traces}}
 ## analyze_gerbers.py
 
 | Key | Type | Description |
-|-----|------|-------------|
+| ----- | ------ | ------------- |
 | `analyzer_type` | string | Always `"gerber"` |
 | `schema_version` | string | Semver (currently `"1.3.0"`) |
 | `summary` | object | `{total_findings: int, by_severity: {error, warning, info}}` |
@@ -237,7 +237,7 @@ via_fanout: {ref: {via_count, fanout_traces}}
 
 ### gerbers entries
 
-```
+```text
 {file, filename, layer_type, format: {zero_omit, notation, x/y_integer, x/y_decimal},
  units: mm|inch, flash_count: int, draw_count: int, region_count: int,
  apertures: {d_code: {type, params, function}}, x2_attributes: {FileFunction, ...}}
@@ -245,13 +245,13 @@ via_fanout: {ref: {via_count, fanout_traces}}
 
 ### drills entries
 
-```
+```text
 {file, filename, units: mm|inch|null, type: PTH|NPTH|unknown,
  hole_count: int, coordinate_range, tools: {tool_id: {diameter_mm, hole_count}},
  x2_attributes}
 ```
 
-### Optional sections
+### Optional sections (analyze_gerbers.py)
 
 `component_analysis`, `net_analysis`, `trace_widths`, `job_file`, `zip_archives`, `connectivity` (with `--full`)
 

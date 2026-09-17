@@ -140,11 +140,11 @@ Quantitative design rules used by the EMC analyzer. Each rule has a threshold, r
 ### Via stitching spacing requirements (FR4, εr = 4.4)
 
 | Frequency | λ (in FR4) | λ/20 spacing |
-|-----------|-----------|--------------|
-| 100 MHz   | 1430 mm   | 71 mm        |
-| 500 MHz   | 286 mm    | 14 mm        |
-| 1 GHz     | 143 mm    | 7.1 mm       |
-| 2.4 GHz   | 60 mm     | 3.0 mm       |
+| --- | --- | --- |
+| 100 MHz | 1430 mm | 71 mm |
+| 500 MHz | 286 mm | 14 mm |
+| 1 GHz | 143 mm | 7.1 mm |
+| 2.4 GHz | 60 mm | 3.0 mm |
 
 ## Stackup
 
@@ -189,7 +189,7 @@ All formulas below verified by derivation from first principles and cross-checke
 
 ### Differential-mode loop radiation
 
-```
+```text
 E = K × f² × A × I / r
   K = 1.316×10⁻¹⁴ (free space)
   K = 2.632×10⁻¹⁴ (with ground plane image, ×2)
@@ -201,7 +201,7 @@ Source: Ott, *EMC Engineering*, Ch. 6; Paul, *Introduction to EMC*, Ch. 10; [Lea
 
 ### Common-mode cable radiation
 
-```
+```text
 E = µ₀ × f × L × I_CM / r = 1.257×10⁻⁶ × f × L × I_CM / r
 ```
 
@@ -211,7 +211,7 @@ Source: Ott, *EMC Engineering*, Ch. 6; Paul, *Introduction to EMC*, Ch. 10; [Lea
 
 ### Bandwidth and knee frequency
 
-```
+```text
 BW_3dB = 0.35 / t_r         (single-pole RC, exact: ln(9)/2π ≈ 0.3497)
 f_knee = 0.5 / t_r          (Johnson convention — practical EMC boundary)
 f₂     = 1/(π × t_r)        (Paul convention — trapezoidal envelope corner)
@@ -224,7 +224,7 @@ Source: Johnson, H. *High-Speed Digital Design*, Ch. 1 (0.35/t_r and 0.5/t_r). P
 ### Scaling rules (from E ∝ f²AI/r)
 
 | Change | Effect | dB |
-|--------|--------|-----|
+| --- | --- | --- |
 | Double loop area (A) | ×2 | +6 dB |
 | Double frequency (f) | ×4 (f²) | +12 dB |
 | Double current (I) | ×2 | +6 dB |
@@ -232,7 +232,7 @@ Source: Johnson, H. *High-Speed Digital Design*, Ch. 1 (0.35/t_r and 0.5/t_r). P
 
 ### Via inductance
 
-```
+```text
 L = 0.2 × h × [ln(4h/d) + 1] nH    (h, d in mm)
 L = 5.08 × h × [ln(4h/d) + 1] nH   (h, d in inches)
 ```

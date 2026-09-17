@@ -93,7 +93,7 @@ Cut anything that doesn't match a keep-test category, including:
 The cap is heuristic, not law. The real discipline is each section's keep test on each candidate. Typical bounds by tier, counting bullets across Trade-offs + Deferred + Call outs combined:
 
 | Tier | Typical total | Hard ceiling |
-|---|---|---|
+| --- | --- | --- |
 | Lightweight | 0–1 | 2 |
 | Standard | 2–4 | 5 |
 | Deep — feature | 3–5 | 7 |
@@ -117,7 +117,7 @@ Two tests:
 Bad vs good — detail level:
 
 | Too detailed (wrong) | Conversational (right) |
-|---|---|
+| --- | --- |
 | Per-channel mute scoped to notification rules; mute applies to all events through that rule including @mentions, DMs forwarded as notifications, and bot messages; persists 24h with extension | Per-channel over per-user — support team isn't a single user |
 | Rule-delete loss path is silent and could surprise users who configured extended mutes; consider a confirmation dialog, soft-delete with state preservation, or a 7-day undo window | Rule-delete silently loses pause state — confirm no warning needed |
 
@@ -144,7 +144,7 @@ This is directional guidance — adjust phrasing to fit dialogue context. Open-e
 
 ### Path B template (questions were asked)
 
-```
+```text
 Based on our dialogue, here's the scope I'm proposing for the Product Contract:
 
 **What we're building:** [1–3 sentences — the shape that emerged from dialogue, forward-looking, plain words]
@@ -166,7 +166,7 @@ Based on our dialogue, here's the scope I'm proposing for the Product Contract:
 
 ### Path A template (no questions were asked — typically Phase 0.2 short-circuit)
 
-```
+```text
 Proposing: [1–3 line shape — what the doc will say in plain words].
 
 No open decisions — writing the requirements-only plan now. Interrupt if the shape is wrong.
@@ -180,7 +180,7 @@ Ask the user open-ended on Path B (no `AskUserQuestion` menu). The justification
 
 For a notification-mute feature where the internal draft had 5 Stated items, 4 Inferred items, and 3 Out-of-scope items, the compressed Stage 2 looks like:
 
-```
+```text
 Based on our dialogue, here's the scope I'm proposing for the Product Contract:
 
 **What we're building:** Per-channel mute on notification rules, with a 24h preset for the support team's 3 AM ping problem. Mute lives on the rule itself and survives rule edits.
@@ -267,7 +267,7 @@ This support exists because the scoping synthesis is an honest checkpoint. If th
 After user confirmation (or after the soft-cut decision proceeds), Phase 3 writes the requirements-only unified plan. The internal draft does NOT carry into the artifact as a `## Synthesis` section. Only the "What we're building" prose embeds, as `## Summary` inside the Product Contract. Internal-draft content dissolves into the Product Contract's body sections:
 
 | Internal-draft element | Where it goes in the doc |
-|---|---|
+| --- | --- |
 | "What we're building" prose | `## Summary` (1–3 lines, forward-looking, what's proposed) |
 | Stated bullets | `## Requirements` (numbered R-IDs, full detail) and where relevant `## Problem Frame` for narrative context |
 | Inferred bullets | `## Key Decisions` (with rationale) — bets the user accepted in dialogue become decisions in the doc. |

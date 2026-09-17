@@ -8,7 +8,7 @@ Each distributor has a paste/upload format for adding parts to a cart. The `bom_
 
 Paste into the bulk-add box at [digikey.com/ordering/shoppingcart](https://www.digikey.com/ordering/shoppingcart):
 
-```
+```text
 3, 490-10698-1-ND, C1/C2/C5
 1, ESP32-S3-WROOM-1-N16R8-ND, U1
 5, 311-10.0KCRCT-ND, R1/R2/R3/R4/R5
@@ -18,7 +18,7 @@ Format: `quantity, DigiKey_PN, customer_reference` — comma or tab delimited, o
 
 **FastAdd URL** — programmatic cart building:
 
-```
+```text
 https://www.digikey.com/classic/ordering/fastadd.aspx?part1=490-10698-1-ND&qty1=3&cref1=C1/C2/C5&part2=...&newcart=true
 ```
 
@@ -30,7 +30,7 @@ GET supports ~1700 chars; POST supports 400+ parts.
 
 Paste at [mouser.com/tools/part-list-import.aspx](https://www.mouser.com/tools/part-list-import.aspx) (requires login):
 
-```
+```text
 595-TPS63020DSJR|10
 81-GRM155R71C104KA8D|3
 ```
@@ -55,7 +55,7 @@ Same format for JLCPCB assembly orders — see the `jlcpcb` skill.
 
 Paste at [newark.com/quick-order](https://www.newark.com/quick-order):
 
-```
+```text
 94AK6875,3
 82AC7952,10
 ```
@@ -71,7 +71,7 @@ Format: `Newark_OrderCode, quantity` — comma or tab delimited.
 ### Quick Reference
 
 | Distributor | Format | Delimiter |
-|---|---|---|
+| --- | --- | --- |
 | DigiKey | `qty, DK_PN, ref` | comma/tab |
 | Mouser | `Mouser_PN\|qty` | pipe |
 | LCSC | `Comment,Designator,Footprint,LCSC Part #` | comma |
@@ -87,7 +87,7 @@ Format: `Newark_OrderCode, quantity` — comma or tab delimited.
 Export from KiCad: Fabrication > Plot (format: Gerber, coordinate format: 4.6 mm).
 
 | KiCad Layer | Description |
-|---|---|
+| --- | --- |
 | F.Cu / B.Cu | Front/back copper |
 | F.Paste / B.Paste | Solder paste (stencil) |
 | F.SilkS / B.SilkS | Silkscreen |
@@ -101,7 +101,7 @@ Also generate Excellon drill files (Fabrication > Generate Drill Files). Zip all
 Export from KiCad: Fabrication > Generate Placement Files (CSV format).
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | `Designator` | Reference designator |
 | `Mid X` / `Mid Y` | Component center (mm) |
 | `Rotation` | Angle (degrees) |
@@ -117,7 +117,7 @@ Order a **framed stencil** alongside bare prototype PCBs (~$7 from JLCPCB). Gene
 
 ## Cost Summary Template
 
-```
+```text
 BOM Summary — Project: <name>
 ===================================
 Unique parts:     23

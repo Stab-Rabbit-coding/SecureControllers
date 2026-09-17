@@ -261,7 +261,7 @@ When rendering a unified plan, every major logical section gets a stable
 anchor ID and visible heading text:
 
 | Logical section | Required id |
-|---|---|
+| --- | --- |
 | Goal Capsule | `goal-capsule` |
 | Product Contract | `product-contract` |
 | Product Requirements | `product-requirements` |

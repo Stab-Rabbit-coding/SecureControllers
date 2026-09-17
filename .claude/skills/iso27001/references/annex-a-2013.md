@@ -11,10 +11,10 @@
 - [A.11 Physical and Environmental Security (15)](#a11-physical-and-environmental-security)
 - [A.12 Operations Security (14)](#a12-operations-security)
 - [A.13 Communications Security (7)](#a13-communications-security)
-- [A.14 System Acquisition, Development and Maintenance (13)](#a14-system-acquisition)
+- [A.14 System Acquisition, Development and Maintenance (13)](#a14-system-acquisition-development-and-maintenance)
 - [A.15 Supplier Relationships (5)](#a15-supplier-relationships)
 - [A.16 Information Security Incident Management (7)](#a16-information-security-incident-management)
-- [A.17 IS Aspects of Business Continuity Management (4)](#a17-business-continuity)
+- [A.17 IS Aspects of Business Continuity Management (4)](#a17-is-aspects-of-business-continuity-management)
 - [A.18 Compliance (8)](#a18-compliance)
 
 ---
@@ -22,14 +22,14 @@
 ## A.5 Information Security Policies
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.5.1.1 | Policies for information security |
 | A.5.1.2 | Review of the policies for information security |
 
 ## A.6 Organisation of Information Security
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.6.1.1 | Information security roles and responsibilities |
 | A.6.1.2 | Segregation of duties |
 | A.6.1.3 | Contact with authorities |
@@ -41,7 +41,7 @@
 ## A.7 Human Resource Security
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.7.1.1 | Screening |
 | A.7.1.2 | Terms and conditions of employment |
 | A.7.2.1 | Management responsibilities |
@@ -52,7 +52,7 @@
 ## A.8 Asset Management
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.8.1.1 | Inventory of assets |
 | A.8.1.2 | Ownership of assets |
 | A.8.1.3 | Acceptable use of assets |
@@ -67,7 +67,7 @@
 ## A.9 Access Control
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.9.1.1 | Access control policy |
 | A.9.1.2 | Access to networks and network services |
 | A.9.2.1 | User registration and de-registration |
@@ -86,14 +86,14 @@
 ## A.10 Cryptography
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.10.1.1 | Policy on the use of cryptographic controls |
 | A.10.1.2 | Key management |
 
 ## A.11 Physical and Environmental Security
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.11.1.1 | Physical security perimeter |
 | A.11.1.2 | Physical entry controls |
 | A.11.1.3 | Securing offices, rooms and facilities |
@@ -113,7 +113,7 @@
 ## A.12 Operations Security
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.12.1.1 | Documented operating procedures |
 | A.12.1.2 | Change management |
 | A.12.1.3 | Capacity management |
@@ -132,7 +132,7 @@
 ## A.13 Communications Security
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.13.1.1 | Network controls |
 | A.13.1.2 | Security of network services |
 | A.13.1.3 | Segregation in networks |
@@ -144,7 +144,7 @@
 ## A.14 System Acquisition, Development and Maintenance
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.14.1.1 | Information security requirements analysis and specification |
 | A.14.1.2 | Securing application services on public networks |
 | A.14.1.3 | Protecting application services transactions |
@@ -162,7 +162,7 @@
 ## A.15 Supplier Relationships
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.15.1.1 | Information security policy for supplier relationships |
 | A.15.1.2 | Addressing security within supplier agreements |
 | A.15.1.3 | Information and communication technology supply chain |
@@ -172,7 +172,7 @@
 ## A.16 Information Security Incident Management
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.16.1.1 | Responsibilities and procedures |
 | A.16.1.2 | Reporting information security events |
 | A.16.1.3 | Reporting information security weaknesses |
@@ -184,7 +184,7 @@
 ## A.17 IS Aspects of Business Continuity Management
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.17.1.1 | Planning information security continuity |
 | A.17.1.2 | Implementing information security continuity |
 | A.17.1.3 | Verify, review and evaluate information security continuity |
@@ -193,7 +193,7 @@
 ## A.18 Compliance
 
 | ID | Control Name |
-|----|-------------|
+| ---- | ------------- |
 | A.18.1.1 | Identification of applicable legislation and contractual requirements |
 | A.18.1.2 | Intellectual property rights |
 | A.18.1.3 | Protection of records |

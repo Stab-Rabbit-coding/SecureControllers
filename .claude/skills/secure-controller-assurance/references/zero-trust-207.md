@@ -146,7 +146,7 @@ not only the security one.  See `ot-ics-62443.md` on safety precedence.
 
 ## The three ZTA approach variants (§3.1) for a vehicle platform
 
-| Variant | SP 800-207 §  | Fit for a vehicle bus |
+| Variant | SP 800-207 § | Fit for a vehicle bus |
 | --- | --- | --- |
 | Enhanced identity governance | 3.1.1 | Strong fit — per-unit cryptographic identity is achievable and is the foundation for the rest |
 | Micro-segmentation | 3.1.2 | Partial — a gateway between flight-critical and payload domains is a realistic PEP |

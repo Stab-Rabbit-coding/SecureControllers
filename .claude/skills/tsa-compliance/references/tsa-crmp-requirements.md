@@ -12,21 +12,21 @@ The CIP (or COIP under the NPRM) is the master compliance document that demonstr
 
 ### Required Sections
 
-**Section 1: Leadership and Accountability**
+#### Section 1: Leadership and Accountability
 
 - Identity of the Accountable Executive (named C-suite individual with authority over cybersecurity decisions and resources)
 - Identity of the Cybersecurity Coordinator (primary) and backup designee
 - Contact information for both (including 24/7 phone numbers)
 - Reporting structure between coordinator and accountable executive
 
-**Section 2: Critical Cyber System (CCS) Inventory**
+#### Section 2: Critical Cyber System (CCS) Inventory
 
 - Complete list of systems designated as Critical Cyber Systems
 - For each CCS: system name, type (IT/OT/ICS), function, owner, physical location, network zone
 - Methodology used for CCS determination
 - Process for updating the inventory when architecture changes
 
-**Section 3: Network Architecture Overview**
+#### Section 3: Network Architecture Overview
 
 - Current network topology diagrams (IT and OT — must be accurate and current)
 - Description of IT/OT boundary mechanisms (firewalls, DMZs, data diodes)
@@ -34,7 +34,7 @@ The CIP (or COIP under the NPRM) is the master compliance document that demonstr
 - Third-party and vendor connectivity to CCS
 - Identification of any legacy systems with limited segmentation capability
 
-**Section 4: Cybersecurity Measures (Four Technical Domains)**
+#### Section 4: Cybersecurity Measures (Four Technical Domains)
 
 *Domain 1 — Network Segmentation:*
 
@@ -64,14 +64,14 @@ The CIP (or COIP under the NPRM) is the master compliance document that demonstr
 - OT-specific patching process (vendor approval, testing, maintenance windows)
 - Compensating controls for unpatched legacy OT systems
 
-**Section 5: Incident Detection and Response**
+#### Section 5: Incident Detection and Response
 
 - High-level description of how incidents are detected (monitoring, alerting, user reporting)
 - Escalation path from detection to Cybersecurity Coordinator
 - Reference to the Cybersecurity Incident Response Plan (separate document)
 - CISA 24-hour reporting procedure
 
-**Section 6: Annual Review Process**
+#### Section 6: Annual Review Process
 
 - Frequency and process for reviewing and updating the CIP
 - Triggers for out-of-cycle review (major architecture change, significant incident, new threat intelligence)
@@ -92,12 +92,12 @@ The CIP (or COIP under the NPRM) is the master compliance document that demonstr
 
 ### Required IRP Elements
 
-**1. Scope and Objectives**
+#### 1. Scope and Objectives
 
 - What systems are covered (all CCS)
 - IRP objectives: contain, eradicate, recover, report
 
-**2. Roles and Responsibilities**
+#### 2. Roles and Responsibilities
 
 - Incident Commander (typically Cybersecurity Coordinator)
 - IT response team
@@ -109,40 +109,40 @@ The CIP (or COIP under the NPRM) is the master compliance document that demonstr
 Define severity tiers:
 
 | Tier | Definition | Response Time |
-|------|-----------|--------------|
+| --- | --- | --- |
 | Critical | Active threat to CCS operations/safety | Immediate — all hands |
 | High | Confirmed unauthorised access to CCS | Within 1 hour |
 | Medium | Suspected compromise; investigation underway | Within 4 hours |
 | Low | Indicator of compromise; no confirmed access | Within 24 hours |
 
-**4. Detection and Initial Analysis**
+#### 4. Detection and Initial Analysis
 
 - How anomalies are identified (monitoring alerts, user reports, third-party notification)
 - Initial triage process: confirm vs false positive
 - Evidence preservation from first moments
 
-**5. Containment Procedures**
+#### 5. Containment Procedures
 
 - IT containment: isolate affected systems from network
 - OT containment: procedures for isolating OT from IT (IT/OT segregation under incident conditions)
 - Manual operation fallback: how to operate OT assets if control systems are isolated
 - Preserve operational capability while containing cyber threat
 
-**6. Eradication and Recovery**
+#### 6. Eradication and Recovery
 
 - Threat removal procedures
 - Backup restoration: integrity verification before restoration
 - System rebuild and hardening before reconnecting
 - Phased return to operation
 
-**7. CISA and TSA Notification**
+#### 7. CISA and TSA Notification
 
 - 24-hour CISA reporting trigger (see `tsa-incident-reporting.md`)
 - TSA notification procedure
 - Internal escalation to Accountable Executive
 - Regulatory notification log (record of all notifications made)
 
-**8. Post-Incident Review**
+#### 8. Post-Incident Review
 
 - After-action review within 30 days of incident closure
 - Root cause analysis
@@ -190,7 +190,7 @@ Covered entities must **test at least two IRP objectives annually**. Testing may
 
 ### ADR Process
 
-**Step 1: Inventory and Documentation Review**
+#### Step 1: Inventory and Documentation Review
 
 - Collect current network topology diagrams (IT and OT)
 - Review CCS inventory for completeness
@@ -206,20 +206,20 @@ For each IT/OT boundary connection:
 - Is there a default-deny rule on the OT side?
 - Are any direct connections from internet to OT environment?
 
-**Step 3: Remote Access Review**
+#### Step 3: Remote Access Review
 
 - Inventory all remote access paths into OT (VPN, RDP, vendor jump servers)
 - Confirm MFA is enforced for all remote OT access
 - Confirm all remote access is logged and monitored
 - Confirm vendor access is time-limited and requires explicit approval
 
-**Step 4: Third-Party Connectivity**
+#### Step 4: Third-Party Connectivity
 
 - Map all third-party connections to CCS (vendor remote support, SCADA hosting, cloud-based OT monitoring)
 - Assess contractual cybersecurity obligations of third parties
 - Confirm third parties cannot access OT without entity approval and monitoring
 
-**Step 5: Vulnerability and Risk Identification**
+#### Step 5: Vulnerability and Risk Identification
 
 - Identify high-risk architecture patterns:
   - Flat networks where IT and OT share the same subnet
@@ -232,7 +232,7 @@ For each IT/OT boundary connection:
 For each finding:
 
 | Finding ID | Description | Risk Level | Recommendation | Owner | Target Date |
-|-----------|-------------|-----------|----------------|-------|-------------|
+| --- | --- | --- | --- | --- | --- |
 | ADR-001 | PLC subnet not segmented from corporate LAN | Critical | Deploy firewall; implement DMZ | OT Manager | Q2 |
 
 ### ADR Outputs
@@ -246,13 +246,13 @@ For each finding:
 
 ## CRMP Component 4: Cybersecurity Assessment Plan (CAP)
 
-### Purpose
+### Purpose (CAP)
 
 The CAP documents how the entity will assess the effectiveness of its CRMP each year. It is not the assessment itself — it is the plan for conducting assessments. Results are reported to TSA annually.
 
 ### Required CAP Elements
 
-**1. Assessment Scope**
+#### 1. Assessment Scope
 
 - Which CCS and CRMP components are in scope each assessment cycle
 - Rationale for any CCS excluded from scope (with compensating coverage explanation)
@@ -261,7 +261,7 @@ The CAP documents how the entity will assess the effectiveness of its CRMP each 
 Define the types of assessments to be performed:
 
 | Assessment Type | Description | Applicable To |
-|----------------|-------------|---------------|
+| --- | --- | --- |
 | Vulnerability scan | Automated scan of IT/OT assets for known CVEs | IT; limited OT (passive preferred) |
 | Penetration testing | Authorised simulated attack to test defences | IT; OT where safe and agreed |
 | Configuration review | Compare system configs against hardening standards | IT servers; network devices; OT where possible |
@@ -278,19 +278,19 @@ Define the types of assessments to be performed:
 Provide a 12-month schedule:
 
 | Quarter | Assessment Activity | CCS in Scope |
-|---------|-------------------|-------------|
+| --- | --- | --- |
 | Q1 | Vulnerability scan (IT); IRP tabletop exercise | All IT CCS; IRP |
 | Q2 | Configuration review (OT); ADR | OT CCS; architecture |
 | Q3 | Penetration test (IT external + internal) | IT CCS |
 | Q4 | Process review (all CRMP components); CAP results compilation | All |
 
-**4. Responsible Parties**
+#### 4. Responsible Parties
 
 - Internal assessment teams or third-party assessors
 - OT assessment requires OT-qualified personnel (GICSP, GCIA, or equivalent)
 - Independence requirements: assessors should not assess their own implementations
 
-**5. Annual Reporting to TSA**
+#### 5. Annual Reporting to TSA
 
 - Compile assessment findings and remediation status
 - Submit results to TSA via designated secure channel annually
@@ -304,7 +304,7 @@ Provide a 12-month schedule:
 
 **Minimum acceptable architecture:**
 
-```
+```text
 [Internet] → [Edge Firewall] → [Corporate IT Network]
                                       ↓
                               [IT/OT Firewall / DMZ]
@@ -340,7 +340,7 @@ Provide a 12-month schedule:
 **Solutions for OT access control limitations**:
 
 | Challenge | Solution |
-|-----------|---------|
+| --- | --- |
 | Legacy HMI, no MFA | Deploy a jump server/bastion host with MFA in front of HMI; access HMI only via jump server |
 | Shared OT admin account | Log all access via PAM tool; require check-out with approval for shared account use |
 | Vendor remote access | Use vendor-specific VPN with MFA; time-limited sessions; all sessions logged; revoke after job |
@@ -358,7 +358,7 @@ Provide a 12-month schedule:
 **Recommended OT monitoring approaches:**
 
 | Approach | Tools | Notes |
-|---------|-------|-------|
+| --- | --- | --- |
 | Passive network monitoring | Claroty, Dragos Platform, Nozomi Networks Guardian, Armis | No traffic injection; learn by listening |
 | Asset discovery | Passive discovery via monitoring tools | Builds CCS inventory automatically |
 | Anomaly detection | Dragos, Claroty, Nozomi | Alert on deviations from OT communication baselines |
@@ -390,7 +390,7 @@ Provide a 12-month schedule:
 **Unpatched legacy OT systems (compensating controls)**:
 
 | Compensating Control | Description |
-|--------------------|-------------|
+| --- | --- |
 | Network isolation | Further isolate the legacy system to its own VLAN; restrict to minimum required communications |
 | Enhanced monitoring | Increase monitoring sensitivity for the legacy system |
 | Application whitelisting | If OS supports it, whitelist only authorised executables |
@@ -400,7 +400,7 @@ Provide a 12-month schedule:
 **Patch prioritisation (risk-based):**
 
 | CVSS Score | Severity | Target Patch Timeline |
-|-----------|---------|----------------------|
+| --- | --- | --- |
 | 9.0–10.0 | Critical | 30 days (or compensating controls within 7 days) |
 | 7.0–8.9 | High | 60 days |
 | 4.0–6.9 | Medium | 90 days |

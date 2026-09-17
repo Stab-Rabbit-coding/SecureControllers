@@ -31,7 +31,7 @@ The `(setup ...)` section contains board-level configuration. The analyzer extra
 
 ### Stackup Structure
 
-```
+```text
 (setup
   (stackup
     (layer "F.Cu" (type "copper") (thickness 0.035))
@@ -46,7 +46,7 @@ The `(setup ...)` section contains board-level configuration. The analyzer extra
 ### Key Stackup Fields
 
 | Field | Description |
-|-------|-------------|
+| ------- | ------------- |
 | `thickness` | Layer thickness in mm (copper: typically 0.035 = 1oz) |
 | `material` | Dielectric material (FR4, Rogers, etc.) |
 | `epsilon_r` | Relative permittivity (affects impedance calculations) |
@@ -128,7 +128,7 @@ Differential pairs in KiCad use a naming convention: nets ending in `+` and `-` 
 ### Common Differential Pairs
 
 | Interface | Impedance | Typical Width/Gap (FR4 1.6mm) |
-|-----------|-----------|-------------------------------|
+| ----------- | ----------- | ------------------------------- |
 | USB 2.0 | 90 ohm diff | 0.2mm / 0.15mm |
 | USB 3.0 | 85 ohm diff | varies by stackup |
 | HDMI | 100 ohm diff | varies by stackup |
@@ -158,7 +158,7 @@ For motor controllers, power supplies, and other high-current designs, check the
 The analyzer provides `current_capacity` data with min/max track widths per net. Cross-reference against net function:
 
 | Net Function | Minimum Width (1oz Cu, 10°C rise) | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Signal (< 100mA) | 0.15-0.2mm | Default netclass is fine |
 | Low power (100mA-1A) | 0.3-0.5mm | LED drives, logic power |
 | Medium power (1-5A) | 0.5-1.0mm | Motor phases (small motors) |
@@ -231,7 +231,7 @@ For 2-layer boards, this is less applicable since both layers reference the same
 ### High-Risk Patterns
 
 | Pattern | Risk | Mitigation |
-|---------|------|------------|
+| --------- | ------ | ------------ |
 | Signal crossing a ground plane split | Return current detours around the split, creating a large loop | Route signal around the split, or bridge the split with a stitching via |
 | Signal via between GND-referenced and VCC-referenced layers | Return current has no path between planes | Place 100nF stitching cap between GND and VCC near the via |
 | High-speed trace on a layer with no adjacent plane | No defined return path, uncontrolled impedance | Route high-speed signals only on layers adjacent to continuous planes |
@@ -243,7 +243,7 @@ For 2-layer boards, this is less applicable since both layers reference the same
 
 Imbalanced copper distribution between layers causes board warping during reflow soldering due to differential thermal expansion. This is a manufacturing concern, not an electrical one, but warped boards can cause assembly defects.
 
-### Procedure
+### Procedure (Copper Balance Assessment)
 
 1. **Estimate per-layer copper coverage**: Use the analyzer's zone data and segment counts. Approximate copper fill percentage as: (total zone area + total trace area) / board area. Exact calculation requires zone polygon analysis, but a rough comparison between layers is usually sufficient.
 2. **Compare corresponding layer pairs**:
@@ -254,7 +254,7 @@ Imbalanced copper distribution between layers causes board warping during reflow
 ### Guidelines
 
 | Board Type | Acceptable Imbalance | Common Issue |
-|------------|---------------------|--------------|
+| ------------ | --------------------- | -------------- |
 | 2-layer | <15% difference between F.Cu and B.Cu | One side has large ground pour, other side has only traces |
 | 4-layer | Inner layers usually balanced (full planes); check outer layers <15% | Component-heavy front with sparse back |
 
@@ -277,7 +277,7 @@ Components placed too close to the board edge risk damage during depaneling (V-s
 ### Minimum Clearances
 
 | Component Type | Min Distance from Board Edge | Rationale |
-|----------------|----------------------------|-----------|
+| ---------------- | ---------------------------- | ----------- |
 | SMD (low profile) | 1 mm | Mechanical stress during handling |
 | SMD (tall, e.g., electrolytic caps) | 3 mm | Leverage from tall components amplifies stress |
 | Through-hole | 2 mm | Leads extend through board, vulnerable to flex |
@@ -288,20 +288,20 @@ Components placed too close to the board edge risk damage during depaneling (V-s
 ### Depaneling Method Considerations
 
 | Method | Keep-out from Score/Tab | Notes |
-|--------|------------------------|-------|
+| -------- | ------------------------ | ------- |
 | V-score | 2 mm from V-score line | 0.3mm residual web can crack nearby joints during snap |
 | Tab routing (breakaway tabs) | 3 mm from tab connections | Mechanical stress during break-out radiates outward |
 | Saw cutting | 1 mm from cut line | Clean cut, minimal stress |
 | Laser cutting | 0.5 mm from cut line | Precision cut, heat-affected zone is small |
 
-### Procedure
+### Procedure (Board Edge Clearance)
 
 1. Get the board outline from the Edge.Cuts layer (the analyzer provides board dimensions)
 2. For each component, compute the minimum distance from any pad to the nearest board edge
 3. Compare against the clearance table above
 4. For panelized designs, also check clearance from panel rails and mouse bites
 
-### Severity
+### Severity (Board Edge Clearance)
 
 Flag as **Warning** if components violate the minimums above. Flag as **Info** for edge-mounted connectors (intentional placement) — just verify they're oriented correctly.
 

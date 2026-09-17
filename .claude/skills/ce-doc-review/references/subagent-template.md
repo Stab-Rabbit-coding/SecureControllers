@@ -6,7 +6,7 @@ This template is used by the ce-doc-review orchestrator to spawn each reviewer s
 
 ## Template
 
-```
+```text
 You are a specialist document reviewer.
 
 <persona>
@@ -120,7 +120,7 @@ The `why_it_matters` field is how the reader — a developer triaging findings, 
 
 Illustrative pair — same finding, weak vs. strong framing:
 
-```
+```text
 WEAK (document-citation first; fails the observable-consequence rule):
   Section "Classification Tiers" lists four tiers but Section "Synthesis"
   routes three. Reconcile.
@@ -153,7 +153,7 @@ False-positive categories to actively suppress. Do NOT emit a finding when any o
 **Precedence over the false-positive catalog.** The false-positive catalog above (speculative future-work concerns, theoretical concerns without baseline data, pedantic style nitpicks, etc.) is stricter than the advisory rule — if a shape matches the FP catalog, it is a non-finding and must be suppressed entirely. Do NOT route it to anchor `50` / FYI. The advisory rule applies only to shapes that are NOT in the FP catalog.
 </output-contract>
 
-<review-context>
+`<review-context>`
 Document type: {document_type}
 Document path: {document_path}
 Origin: {origin_path}
@@ -165,7 +165,8 @@ Document content:
 {document_content}
 </review-context>
 
-<context-slots-rules>
+`<context-slots-rules>`
+
 - `Document type:` is the orchestrator's authoritative classification (`requirements`, `plan`, `unified-requirements`, or `unified-plan`). Trust it; do not re-classify by inspecting content shape. The orchestrator already used frontmatter, readiness metadata, and section structure to decide.
 - **Where your persona below adapts on `Document type: requirements` vs `Document type: plan`, apply the `requirements` branch for `unified-requirements` and the `plan` branch for `unified-plan`.** The `unified-*` values carry the same review lens as their base type — they differ only in living in one readiness-staged artifact, which the slice rules above already account for. Without this, a persona keyed on the bare `requirements`/`plan` value would skip its adaptation entirely on a unified artifact.
 - For `unified-requirements`, review the Product Contract slice as product requirements. Do not flag missing Planning Contract, Implementation Units, Verification Contract, or Definition of Done; those are added by `ce-plan`.
@@ -174,7 +175,7 @@ Document content:
 - `Settled decisions:` lists the document's `session-settled:`-labeled Key Technical Decisions or Product Contract Key Decisions (name, class, rejected alternative), or the literal token `none`. Entries listed here are decisions the document's author and user already settled in conversation. Treat the annotation itself as protected content — never propose stripping or rewording it away. Frame any challenge to a listed decision as infeasibility-versus-preference: a preference for a different alternative is advisory-grade (`autofix_class: manual`, anchor `50`) unless you have evidence the decision cannot work; genuine infeasibility evidence keeps normal severity. Read this line directly — do not re-parse the document for these entries.
 </context-slots-rules>
 
-<decision-primer-rules>
+`<decision-primer-rules>`
 When the `<prior-decisions>` block above lists entries (round 2+), honor them:
 
 - Do not re-raise a finding whose title and evidence pattern-match a prior-round rejected (Skipped or Deferred) entry, unless the current document state makes the concern materially different. "Materially different" means the section was substantively edited and your evidence quote no longer appears in the current text — a light-touch edit doesn't count.
@@ -184,4 +185,4 @@ When the `<prior-decisions>` block above lists entries (round 2+), honor them:
 This is a soft instruction; the orchestrator enforces the rule authoritatively via synthesis-level suppression (R29) regardless of persona behavior. Following the primer here reduces noisy re-raises and keeps the Coverage section clean.
 </decision-primer-rules>
 
-```
+```text

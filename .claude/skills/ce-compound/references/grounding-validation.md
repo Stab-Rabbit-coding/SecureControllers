@@ -16,7 +16,7 @@ Before running the script, optionally run `git fetch --quiet` (best-effort — s
 The script reports flags; you decide each one. Three resolutions — **fix**, **annotate**, or **confirm intentional** — never an automatic rewrite and never an automatic pass:
 
 | Flag | Likely meaning | Resolution |
-|------|----------------|------------|
+| ------ | ---------------- | ------------ |
 | path not found anywhere | Typo, or drafted from memory | Fix the citation or remove the claim |
 | path missing here, exists at upstream | Stale checkout | Verify the claim against upstream; annotate if the doc implies the file is present locally |
 | path deliberately gone (doc says removed/renamed) | Historical citation | Confirm the surrounding prose marks it as historical ("removed by this fix", "pre-fix state"); add that marker if absent |
@@ -35,7 +35,7 @@ After any body edit from this step or Step 2, re-run the script until it reports
 
 Dispatch **one generic read-only subagent** covering the written solution doc plus any `CONCEPTS.md` entries added or edited this run (Phase 2.4's entries are claims too — a glossary entry written from a session-level summary is exactly how wrong semantics enter the vocabulary). Use the same mid-tier model class as other reviewer subagents when the platform exposes one. Build its prompt from this template:
 
-```
+```text
 You are a grounding validator for documentation about to enter a permanent
 knowledge store. You are read-only: never edit files. Inspect with Read,
 Grep, Glob, git (non-mutating), and gh when available.

@@ -160,7 +160,7 @@ python scripts/apk_analyzer.py --apk app.apk --sources ./jadx_out --output apk_r
 ## Skill Integration
 
 | Next Step | Condition | Target Skill |
-|-----------|-----------|--------------|
+| ----------- | ----------- | -------------- |
 | Backend API testing | App talks to REST/GraphQL API | → Skill 09 |
 | Deeper native/binary RE | `.so` / obfuscated logic | → Skill 04 |
 | Malware classification | Suspicious/packed APK | → Skill 05 |

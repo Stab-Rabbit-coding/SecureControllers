@@ -16,7 +16,7 @@ When a bug manifests deep in the call stack, the instinct is to fix where the er
 
 **Worked example:**
 
-```
+```text
 Symptom: API returns 500 with "Cannot read property 'email' of undefined"
 Where it crashes: sendWelcomeEmail(user.email) in NotificationService
 Who called this? UserController.create() after saving the user record
@@ -28,7 +28,7 @@ The fix belongs at the origin (UserRepo.create should throw on duplicate key), n
 
 **When manual tracing stalls**, add instrumentation:
 
-```
+```text
 // Before the problematic operation
 const stack = new Error().stack;
 console.error('DEBUG [operation]:', { value, cwd: process.cwd(), stack });
@@ -201,7 +201,7 @@ Mixed use is common: instrument first to localize, then attach a debugger at the
 **Entry points by language:**
 
 | Language | Interactive breakpoint | Attach to running process |
-|----------|------------------------|---------------------------|
+| ---------- | ------------------------ | --------------------------- |
 | Python | `breakpoint()` in code, or `python -m pdb script.py` | `python -m pdb -p <pid>` (Python 3.14+ only); on earlier versions, instrument the target with `rpdb` / `remote-pdb` and connect after it triggers |
 | Node.js | `debugger;` in code + `node --inspect-brk`, then connect via Chrome DevTools or VS Code | `kill -SIGUSR1 <pid>` to enable the inspector on the running process (Linux/macOS), then connect Chrome DevTools or VS Code to the default port 9229 |
 | Ruby | `binding.irb` (stdlib), `binding.pry` (pry gem), `debugger` (debug gem), `rdbg` | `rdbg --attach <pid>` with `debug` gem loaded |
@@ -219,7 +219,7 @@ When timing or concurrency is suspected:
 
 **Timing isolation.** Add deliberate delays at suspect points to widen the race window and make it reproducible:
 
-```
+```text
 // Simulate slow operation to expose race
 await new Promise(r => setTimeout(r, 100));
 ```

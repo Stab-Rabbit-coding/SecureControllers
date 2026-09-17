@@ -214,7 +214,7 @@ Trace nets outward from each IC. The IC plus everything directly connected to it
 ### Common subcircuit types
 
 | Type | Key Components | Identifying Features |
-|------|---------------|---------------------|
+| ------ | --------------- | --------------------- |
 | **Linear regulator (LDO)** | Regulator IC, Cin, Cout, feedback divider (if adjustable) | IC with VIN, VOUT, GND pins; caps on input and output |
 | **Switching regulator (buck/boost)** | Controller IC, inductor, diode/FET, Cin, Cout, feedback divider | Inductor in the power path, SW/LX pin |
 | **Crystal oscillator** | Crystal (Y), 2 load caps | Connected to XIN/XOUT or OSC1/OSC2 pins of an MCU |
@@ -388,7 +388,7 @@ These are reference patterns for common subcircuits. Compare the schematic again
 
 ### LDO Voltage Regulator (Fixed Output)
 
-```
+```text
 VIN ──┬── [Cin 1-10uF] ──┬── GND
       │                    │
       └── VIN [REG] VOUT ─┬── [Cout 1-22uF] ──┬── GND
@@ -408,7 +408,7 @@ VIN ──┬── [Cin 1-10uF] ──┬── GND
 
 ### Buck Converter
 
-```
+```text
 VIN ──┬── [Cin 10-22uF] ──┬── GND
       │                     │
       └── VIN [CTRL] SW ───┬── [L 1-47uH] ──┬── VOUT
@@ -429,7 +429,7 @@ VIN ──┬── [Cin 10-22uF] ──┬── GND
 
 ### Crystal Oscillator
 
-```
+```text
 MCU_XIN ──┬── [Y1 crystal] ──┬── MCU_XOUT
            │                    │
            [CL1] ── GND        [CL2] ── GND
@@ -452,7 +452,7 @@ MCU_XIN ──┬── [Y1 crystal] ──┬── MCU_XOUT
 
 ### USB Type-C (Device/UFP)
 
-```
+```text
 VBUS ──┬── [ESD/TVS] ──┬── 5V rail
         │                │
         [Cin 10uF]       [100nF]
@@ -477,7 +477,7 @@ Shield/Shell ──── GND (via 1M + 4.7nF to GND, or direct)
 
 ### I2C Bus
 
-```
+```text
 VCC ──┬── [Rp1 2.2-10k] ──── SDA bus
       │
       └── [Rp2 2.2-10k] ──── SCL bus
@@ -500,7 +500,7 @@ VCC ──┬── [Rp1 2.2-10k] ──── SDA bus
 
 ### LED Indicator
 
-```
+```text
 GPIO ──── [R] ──── [LED] ──── GND    (active high, sourcing)
     or
 VCC ──── [R] ──── [LED] ──── GPIO    (active low, sinking)
@@ -525,7 +525,7 @@ When the supply comes from a switching regulator with tolerance, you must check 
 
 ### Reset Circuit
 
-```
+```text
 VCC ──── [R 10k] ──┬──── MCU_RESET
                      │
                     [C 100nF] ──── GND    (optional, delays reset release)
@@ -542,7 +542,7 @@ VCC ──── [R 10k] ──┬──── MCU_RESET
 
 ### Voltage Divider for ADC
 
-```
+```text
 VIN ──── [R_TOP] ──┬── ADC_INPUT
                      │
                     [R_BOT] ──── GND
@@ -571,7 +571,7 @@ MCU ADCs have a sample-and-hold capacitor (typically a few pF) that must charge 
 
 ### Power Input with Reverse Polarity Protection
 
-```
+```text
 VIN ──── [F1 fuse or PTC] ──┬── [D1 Schottky] ──── VCC_PROTECTED
                               │
                               [C_BULK 10-100uF]
@@ -581,7 +581,7 @@ VIN ──── [F1 fuse or PTC] ──┬── [D1 Schottky] ──── VCC
 
 or (lower loss, P-FET method):
 
-```
+```text
 VIN ──── [F1] ──── S [Q1 P-FET] D ──── VCC_PROTECTED
                         │
                         G ── GND (via R, optional TVS across G-S)
@@ -602,7 +602,7 @@ For every computed value in the schematic, verify the math. Show your work so th
 
 ### Resistor Divider (General)
 
-```
+```text
 VOUT = VIN * R_BOTTOM / (R_TOP + R_BOTTOM)
 ```
 
@@ -623,7 +623,7 @@ Different ICs use different formulas. Common patterns:
 
 Regulator output voltage has combined tolerance from VREF accuracy and feedback resistor tolerance. Always compute the full range:
 
-```
+```text
 Vout_max = VREF_max × (1 + R_upper×(1+tol) / (R_lower×(1-tol)))
 Vout_min = VREF_min × (1 + R_upper×(1-tol) / (R_lower×(1+tol)))
 ```
@@ -644,14 +644,14 @@ Use Vout_max when checking downstream current limits. Use Vout_min when checking
 
 ### Current Limiting Resistor
 
-```
+```text
 R = (V_SOURCE - V_LOAD) / I_TARGET
 P_RESISTOR = (V_SOURCE - V_LOAD) * I_TARGET = I_TARGET^2 * R
 ```
 
 ### RC Filter Cutoff
 
-```
+```text
 f_cutoff = 1 / (2 * pi * R * C)
 ```
 
@@ -660,7 +660,7 @@ f_cutoff = 1 / (2 * pi * R * C)
 
 ### Crystal Load Capacitors
 
-```
+```text
 CL_each = 2 * (CL_crystal - C_stray)
 ```
 
@@ -668,14 +668,14 @@ Where C_stray includes PCB trace capacitance (~1-2pF) and MCU pin capacitance (~
 
 ### Pull-up Resistor for Open-Drain
 
-```
+```text
 R_min = (VCC - VOL_max) / IOL_max
 R_max = VCC / (I_leakage * N_devices)     (rough guide)
 ```
 
 For timing-critical buses (I2C), rise time constraint:
 
-```
+```text
 R_max = t_rise / (0.8473 * C_bus)
 ```
 
@@ -689,7 +689,7 @@ Verify VGS at the actual drive voltage exceeds VGS(th) with margin:
 
 ### Voltage Divider Power Dissipation
 
-```
+```text
 P_total = VIN^2 / (R_TOP + R_BOTTOM)
 P_R_TOP = P_total * R_TOP / (R_TOP + R_BOTTOM)
 P_R_BOTTOM = P_total * R_BOTTOM / (R_TOP + R_BOTTOM)
@@ -793,7 +793,7 @@ Enumerate all current draws during deep sleep / low-power mode:
 
 Sum all contributions and compute battery life:
 
-```
+```text
 Life (hours) = Battery_capacity_mAh / Total_sleep_current_mA
 ```
 
@@ -840,7 +840,7 @@ For any computed value that depends on multiple components, substitute worst-cas
 
 The regulator feedback divider tolerance stacking formula is covered in [Tolerance Stacking for Regulator Output](#tolerance-stacking-for-regulator-output). Apply the same approach to any voltage divider — ADC scaling, level detection thresholds, comparator references:
 
-```
+```text
 V_max = VIN_max × R_bot×(1+tol) / (R_top×(1-tol) + R_bot×(1+tol))
 V_min = VIN_min × R_bot×(1-tol) / (R_top×(1+tol) + R_bot×(1-tol))
 ```
@@ -851,7 +851,7 @@ V_min = VIN_min × R_bot×(1-tol) / (R_top×(1+tol) + R_bot×(1-tol))
 
 Both R and C have manufacturing tolerances. The cutoff frequency range is:
 
-```
+```text
 f_max = 1 / (2π × R_min × C_min) = 1 / (2π × R×(1-tol_R) × C×(1-tol_C))
 f_min = 1 / (2π × R_max × C_max) = 1 / (2π × R×(1+tol_R) × C×(1+tol_C))
 ```
@@ -868,7 +868,7 @@ For anti-alias filters before ADCs, ensure f_min is still above the Nyquist freq
 
 Crystal frequency accuracy depends on correct load capacitance. With cap tolerance:
 
-```
+```text
 CL_actual_max = CL_cap×(1+tol)/2 + C_stray
 CL_actual_min = CL_cap×(1-tol)/2 + C_stray
 ```
@@ -906,7 +906,7 @@ MCU pins serve multiple functions (alternate function muxing). A pin assigned to
 ### Common Conflict Patterns
 
 | Conflict | Example | Risk |
-|----------|---------|------|
+| ---------- | --------- | ------ |
 | SPI + UART on same pin | SPI1_MISO and USART1_RX both on PA10 | Only one works at a time |
 | I2C + ADC on same pin | I2C1_SDA on a pin also used for ADC input | Can't do both |
 | Timer PWM + SPI | TIM1_CH1 and SPI1_NSS on same pin | PWM output conflicts with chip select |
@@ -919,7 +919,7 @@ MCU pins serve multiple functions (alternate function muxing). A pin assigned to
 
 Connector pinout errors are among the most common schematic mistakes and often aren't caught until board bring-up. Verify every connector's pin-to-net mapping against the relevant standard.
 
-### Procedure
+### Procedure (Connector Pinout Verification)
 
 1. **Identify connector type** from the footprint or symbol library name (e.g., `USB_C_Receptacle`, `Conn_ARM_JTAG_SWD_10`, `Conn_01x06_FTDI`)
 2. **Extract pin-to-net mapping** from the analyzer output for that connector's reference designator
@@ -929,7 +929,7 @@ Connector pinout errors are among the most common schematic mistakes and often a
 ### Standard Pinouts
 
 | Connector | Key Pins | Common Errors |
-|-----------|----------|---------------|
+| ----------- | ---------- | --------------- |
 | **USB Type-A** | 1=VBUS, 2=D-, 3=D+, 4=GND | D+/D- swap |
 | **USB Type-B** | Same as Type-A | D+/D- swap |
 | **USB Micro-B** | 1=VBUS, 2=D-, 3=D+, 4=ID, 5=GND | D+/D- swap, ID left floating (should be NC for device) |
@@ -957,7 +957,7 @@ If the schematic labels match the FTDI cable labeling, the connections are **cro
 
 Clock integrity is critical for reliable digital operation. Marginal clock circuits can cause intermittent failures that are extremely difficult to debug.
 
-### Procedure
+### Procedure (Clock Tree Analysis)
 
 1. **Identify all clock sources**: crystals, crystal oscillators (packaged), MEMS oscillators, PLL outputs, clock buffers/distributors, RC oscillators
 2. **Trace clock distribution**: from each source, follow the clock net to all consumers (MCU, FPGA, ADC, communication ICs)
@@ -969,18 +969,18 @@ Clock integrity is critical for reliable digital operation. Marginal clock circu
 
 A clock trace must be treated as a transmission line (requiring impedance control and termination) when trace length exceeds λ/10:
 
-```
+```text
 λ = c / (f × √εr)
 ```
 
 For FR4 (εr ≈ 4.5):
 
-```
+```text
 λ ≈ 141mm / f_GHz
 ```
 
 | Clock Frequency | λ (FR4) | λ/10 (trace threshold) |
-|----------------|---------|----------------------|
+| ---------------- | --------- | ---------------------- |
 | 8 MHz | 17.7 m | 1.77 m (never an issue) |
 | 25 MHz | 5.65 m | 565 mm (rarely an issue) |
 | 48 MHz | 2.94 m | 294 mm (rarely an issue) |
@@ -1050,7 +1050,7 @@ Verify the presence and correctness of:
 ### Common Motor Control Errors
 
 | Error | Consequence | Check |
-|-------|-------------|-------|
+| ------- | ------------- | ------- |
 | Bootstrap cap too small | High-side gate voltage sags, FET partially on, overheats | C_boot >> Q_gate / ΔV |
 | Shunt resistor under-rated for power | Resistor overheats, value drifts, possible open circuit | P_shunt = I² × R at peak current |
 | Missing gate resistor | Gate ringing, EMI, false triggering | Every gate should have series R |
@@ -1080,13 +1080,13 @@ For battery-powered designs, estimate operational lifetime to validate the desig
 
 4. **Compute weighted average current**:
 
-   ```
+   ```text
    I_avg = I_active × duty + I_sleep × (1 - duty)
    ```
 
 5. **Compute battery life**:
 
-   ```
+   ```text
    Life_hours = Capacity_mAh / I_avg_mA
    Life_days = Life_hours / 24
    ```
@@ -1096,7 +1096,7 @@ For battery-powered designs, estimate operational lifetime to validate the desig
 Nominal capacity is measured under ideal conditions. Actual usable capacity depends on discharge rate, temperature, and cutoff voltage:
 
 | Chemistry | Nominal | Usable Capacity | Notes |
-|-----------|---------|-----------------|-------|
+| ----------- | --------- | ----------------- | ------- |
 | LiPo 3.7V single cell | rated mAh | 90-95% (3.0V cutoff) | Linear down to ~3.4V, then drops fast |
 | AA alkaline 1.5V | ~2500 mAh | 60-80% depending on drain | Voltage sags under load; 1.0V cutoff typical |
 | CR2032 coin cell | ~220 mAh | ~200 mAh at <2mA | Capacity drops sharply above 2mA continuous draw |
@@ -1118,7 +1118,7 @@ Even if average current is low, peak current events can cause problems:
 Include a power budget table in the analysis report:
 
 | Mode | Current | Duty Cycle | Weighted |
-|------|---------|-----------|----------|
+| ------ | --------- | ----------- | ---------- |
 | Active (MCU + WiFi TX) | 250 mA | 3% | 7.5 mA |
 | Active (MCU only) | 50 mA | 2% | 1.0 mA |
 | Deep sleep | 15 µA | 95% | 14.3 µA |
@@ -1131,7 +1131,7 @@ Include a power budget table in the analysis report:
 
 Identify components that pose sourcing risks — sole-source parts, obsolete components, or parts with historically constrained supply.
 
-### Procedure
+### Procedure (Supply Chain Risk Assessment)
 
 1. **For each IC in the BOM**, determine:
    - How many manufacturers make pin-compatible alternatives?
@@ -1159,7 +1159,7 @@ Identify components that pose sourcing risks — sole-source parts, obsolete com
 ### Severity Levels
 
 | Situation | Severity | Action |
-|-----------|----------|--------|
+| ----------- | ---------- | -------- |
 | Obsolete/EOL part | **Warning** | Must find replacement before production |
 | NRND part | **Suggestion** | Plan migration, current stock usually available |
 | Sole-source, active, good stock | **Info** | Note the risk, suggest monitoring |

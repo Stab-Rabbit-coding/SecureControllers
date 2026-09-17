@@ -26,7 +26,7 @@ Use the platform's blocking question tool (`AskUserQuestion` in Claude Code, `re
 
 **Options (fixed order; no option is labeled `(recommended)` — the routing choice is user-intent):**
 
-```
+```text
 A. Review each finding one by one — accept the recommendation or choose another action
 B. Auto-resolve with best judgment — apply per-finding edits the agent can defend, surface the rest
 C. Append findings to the doc's Open Questions section and proceed
@@ -85,7 +85,7 @@ Each finding is presented in two parts: a terminal output block carrying the exp
 
 Render as markdown. Labels on their own line, blank lines between sections:
 
-```
+```text
 ## Finding {N} of {M} — {severity} {plain-English title}
 
 Section: {section}
@@ -131,7 +131,7 @@ Substitutions:
 
 After the terminal block renders, fire the platform's blocking question tool. Most adapters expose a single question string (`AskUserQuestion`, `request_user_input`, `ask_question`, `ask_user`), so the stem and the compact decision fields share that string. Shape:
 
-```
+```text
 Finding {N} of {M} — {severity} {short handle}.
 What's wrong: {consequence-first sentence, no opaque identifier}
 Proposed fix: {intent sentence}
@@ -157,7 +157,7 @@ After the user answers and before printing the next finding's terminal block, em
 
 These four options are the **complete, exclusive set** for the regular per-finding question. Fixed order — never reorder, never add, never substitute. In particular, **`Acknowledge` is NOT one of these options** — it appears only in the no-fix sub-question described under "Per-finding routing" below, which fires only when the user picks Apply on a finding that lacks a `suggested_fix`. Importing `Acknowledge` into the regular menu (in place of D, or as a fifth option) is a bug — it silently drops the `Auto-resolve with best judgment on the rest` workflow shortcut, and surfacing `Acknowledge` outside the no-fix path mislabels the user's choice in the completion report's bucket counts.
 
-```
+```text
 A. Apply the proposed fix
 B. Defer — append to the doc's Open Questions section
 C. Skip — don't apply, don't append
@@ -166,7 +166,7 @@ D. Auto-resolve with best judgment on the rest
 
 **Mark the post-tie-break recommendation with `(recommended)` on its option label.** Required, not optional. Only A, B, or C can carry it — synthesis emits `recommended_action` as Apply/Defer/Skip, which maps to A/B/C. D (`Auto-resolve with best judgment on the rest`) is a workflow shortcut for bulk execution across remaining findings, not a finding-level resolution action, so it is never marked `(recommended)`.
 
-```
+```text
 A. Apply the proposed fix  (recommended)
 B. Defer — append to the doc's Open Questions section
 C. Skip — don't apply, don't append
@@ -208,7 +208,7 @@ Fire a blocking sub-question using the platform's question tool. The stem explai
 
 **Options (fixed order):**
 
-```
+```text
 A. Defer to Open Questions  (recommended)
 B. Skip — don't apply, don't append
 C. Acknowledge without applying — record the decision, no document edit
@@ -303,7 +303,7 @@ When the routing question was skipped because no `gated_auto` / `manual` finding
 
 No FYI or residual concerns:
 
-```
+```text
 All findings resolved — 3 fixes applied.
 
 Verdict: Ready.
@@ -311,7 +311,7 @@ Verdict: Ready.
 
 FYI or residual concerns remain:
 
-```
+```text
 All actionable findings resolved — 3 fixes applied. (2 FYI observations, 1 residual concern remain in the report.)
 
 Verdict: Ready.

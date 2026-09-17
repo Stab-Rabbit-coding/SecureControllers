@@ -110,7 +110,7 @@ BIS's enforcement arm investigates violations through:
 ### Civil Penalties (§ 764.3, Part 766)
 
 | Violation Type | Maximum Penalty |
-|---------------|----------------|
+| --------------- | ---------------- |
 | Per civil violation | Greater of $374,474 per violation (adjusted annually for inflation) OR **2× the value of the transaction** |
 | Egregious violations | Higher penalties; may approach statutory maximum |
 | Denial of export privileges | Temporary or permanent denial of all export privileges |
@@ -271,7 +271,7 @@ BIS applies the **"most restrictive" nationality rule** for dual nationals or pe
 ## EAR Recordkeeping Quick Reference
 
 | Document Type | Retention Period | Format |
-|---------------|-----------------|--------|
+| --------------- | ----------------- | -------- |
 | Commercial invoices, purchase orders | 5 years from export date | Any readable format |
 | Bills of lading, air waybills | 5 years | Any |
 | EEI/AES filings | 5 years | Any |
@@ -287,7 +287,7 @@ BIS applies the **"most restrictive" nationality rule** for dual nationals or pe
 ## Compliance Programme Maturity Assessment
 
 | Level | Characteristics |
-|-------|----------------|
+| ------- | ---------------- |
 | **Basic** | Written policy exists; some screening; training ad hoc; no formal audit |
 | **Developing** | Formal ECCN classification; screening tool in place; annual training; no automated integration |
 | **Proficient** | ERP-integrated screening; annual audits; full classification database; documented due diligence |

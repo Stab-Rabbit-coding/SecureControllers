@@ -23,7 +23,7 @@ ePrivacy Directive Art. 5(3) additionally applies to cookies/device storage.
 
 ### Layer 1 (Initial Banner)
 
-```
+```text
 We use cookies to [improve your experience / personalise content / analyse traffic].
 [ACCEPT ALL]   [REJECT ALL]   [MANAGE PREFERENCES]
 
@@ -38,7 +38,7 @@ pre-selected toggles) violate Art. 7 and Art. 5(1)(a) (fairness).
 Group cookies by purpose; each requires a separate opt-in toggle defaulting to OFF:
 
 | Category | Description | Default |
-|----------|-------------|---------|
+| ---------- | ------------- | --------- |
 | Strictly Necessary | Required for site function — no consent needed | Always ON |
 | Analytics | [Provider, purpose] | OFF |
 | Marketing | [Provider, purpose] | OFF |
@@ -63,14 +63,14 @@ Group cookies by purpose; each requires a separate opt-in toggle defaulting to O
 ---
 ---
 
-# DPIA Template (Data Protection Impact Assessment)
+## DPIA Template (Data Protection Impact Assessment)
 
-## Legal Basis
+### Legal Basis (DPIA)
 
 Art. 35 GDPR — mandatory when processing is "likely to result in a high risk" to individuals.
 Art. 35(3) lists mandatory triggers; supervisory authorities publish lists (Art. 35(4)).
 
-## When Required (Art. 35(3) + WP29/EDPB guidance — any 2+ of these factors)
+### When Required (Art. 35(3) + WP29/EDPB guidance — any 2+ of these factors)
 
 - Systematic and extensive profiling
 - Large-scale special category data (Art. 9)
@@ -82,9 +82,9 @@ Art. 35(3) lists mandatory triggers; supervisory authorities publish lists (Art.
 
 ---
 
-## DPIA Structure
+### DPIA Structure
 
-### 1. Description of Processing (Art. 35(7)(a))
+#### 1. Description of Processing (Art. 35(7)(a))
 
 - **System / project name**: [NAME]
 - **Controller**: [NAME + DPO if applicable]
@@ -94,7 +94,7 @@ Art. 35(3) lists mandatory triggers; supervisory authorities publish lists (Art.
 - **Purpose**: [What is the legitimate aim]
 - **Lawful basis**: Art. 6[1](X); Art. 9[2](X) if special category
 
-### 2. Necessity and Proportionality Assessment (Art. 35(7)(b))
+#### 2. Necessity and Proportionality Assessment (Art. 35(7)(b))
 
 Assess whether processing is:
 
@@ -102,17 +102,17 @@ Assess whether processing is:
 - **Proportionate** — do the benefits outweigh the risks to individuals?
 - **Compliant** with data minimisation (Art. 5(1)(c)), purpose limitation (Art. 5(1)(b))
 
-### 3. Risk Assessment (Art. 35(7)(c))
+#### 3. Risk Assessment (Art. 35(7)(c))
 
 For each identified risk:
 
 | Risk | Likelihood (1–3) | Severity (1–3) | Risk Score | Mitigation |
-|------|-----------------|---------------|-----------|------------|
+| ------ | ----------------- | --------------- | ----------- | ------------ |
 | Unauthorised access | 2 | 3 | High | Encryption, access controls |
 | Function creep | 1 | 2 | Medium | Purpose limitation controls |
 | Re-identification | 2 | 3 | High | Pseudonymisation |
 
-### 4. Measures to Address Risks (Art. 35(7)(d))
+#### 4. Measures to Address Risks (Art. 35(7)(d))
 
 For each High/Medium risk:
 
@@ -120,7 +120,7 @@ For each High/Medium risk:
 - Organisational measure: [DESCRIBE]
 - Residual risk after mitigation: [Low/Medium/High]
 
-### 5. DPO / Stakeholder Sign-off (Art. 35(2))
+#### 5. DPO / Stakeholder Sign-off (Art. 35(2))
 
 - DPO consulted: Yes / No — DPO opinion: [ATTACH]
 - Data subjects consulted (where appropriate): Yes / No
@@ -129,19 +129,19 @@ For each High/Medium risk:
 ---
 ---
 
-# Data Retention Policy Template
+## Data Retention Policy Template
 
-## Legal Basis
+### Legal Basis (Retention Policy)
 
 Art. 5(1)(e) — storage limitation: data kept no longer than necessary for purpose.
 Art. 17 — right to erasure triggers where retention period expired.
 
 ---
 
-## Retention Schedule
+### Retention Schedule
 
 | Data Category | Business Purpose | Retention Period | Lawful Basis | Deletion Method |
-|--------------|-----------------|-----------------|--------------|----------------|
+| -------------- | ----------------- | ----------------- | -------------- | ---------------- |
 | Customer account data | Service provision | Duration of contract + 2 years | Contract (Art. 6(1)(b)) | Secure deletion |
 | Marketing preferences | Direct marketing | Until withdrawal of consent | Consent (Art. 6(1)(a)) | Anonymisation |
 | Transaction records | Financial/legal obligations | 7 years | Legal obligation (Art. 6(1)(c)) | Secure archival then deletion |
@@ -152,7 +152,7 @@ Art. 17 — right to erasure triggers where retention period expired.
 
 ---
 
-## Operational Requirements
+### Operational Requirements
 
 - Automated deletion jobs should run [FREQUENCY] against retention schedule
 - Backups must be included in retention policy — purge from backups within [X] days of primary deletion
@@ -162,18 +162,18 @@ Art. 17 — right to erasure triggers where retention period expired.
 ---
 ---
 
-# Data Subject Rights Procedure
+## Data Subject Rights Procedure
 
-## Legal Basis
+### Legal Basis (Subject Rights)
 
 Arts. 15–22 (individual rights), Art. 12 (modalities — response within 1 month, extendable by 2 months).
 
 ---
 
-## Rights Summary
+### Rights Summary
 
 | Right | Article | When Applicable | Response Time |
-|-------|---------|----------------|--------------|
+| ------- | --------- | ---------------- | -------------- |
 | Access (SAR) | Art. 15 | Always (with exceptions) | 1 month (Art. 12(3)) |
 | Rectification | Art. 16 | Inaccurate/incomplete data | 1 month |
 | Erasure | Art. 17 | Consent withdrawn; no longer necessary; unlawful processing | 1 month |
@@ -184,7 +184,7 @@ Arts. 15–22 (individual rights), Art. 12 (modalities — response within 1 mon
 
 ---
 
-## Request Handling Process
+### Request Handling Process
 
 1. **Receive**: Accept requests via [EMAIL / WEB FORM / POST]. Identity verification required — proportionate to risk; do not request excessive info (Art. 12(6)).
 2. **Verify identity**: [METHOD — e.g., match against account details; 2FA confirmation]
@@ -194,7 +194,7 @@ Arts. 15–22 (individual rights), Art. 12 (modalities — response within 1 mon
 6. **Response must be**: Free of charge (Art. 12(5)); in concise, plain language (Art. 12(1)); in writing or by electronic means where requested.
 7. **Refusal**: If request is refused, inform subject of reasons and right to complain to SA and seek judicial remedy (Art. 12(4)).
 
-## Exemptions to Document
+### Exemptions to Document
 
 - Legal claims (Art. 17(3)(e))
 - Freedom of expression (Art. 17(3)(a))
@@ -203,7 +203,7 @@ Arts. 15–22 (individual rights), Art. 12 (modalities — response within 1 mon
 
 ---
 
-## SLA & Escalation
+### SLA & Escalation
 
 - Day 0: Request received and logged
 - Day 3: Identity verified; request categorised

@@ -13,7 +13,7 @@ SP 800-53A Rev 5 (January 2022) provides **assessment procedures** for every con
 ### The Three Assessment Methods
 
 | Method | Description | Examples |
-|--------|-------------|---------|
+| -------- | ------------- | --------- |
 | **Examine** | Review artifacts and documentation | Policy documents, SSP, configuration files, system logs, architecture diagrams, audit records, training records |
 | **Interview** | Discuss implementation with personnel | ISSO, system owner, help desk, IT administrators, end users, senior leaders |
 | **Test** | Exercise mechanisms directly | Vulnerability scans, penetration tests, configuration checks, firewall rule reviews, backup restoration tests |
@@ -21,7 +21,7 @@ SP 800-53A Rev 5 (January 2022) provides **assessment procedures** for every con
 ### Assessment Depth
 
 | Depth | Description | When Used |
-|-------|-------------|----------|
+| ------- | ------------- | ---------- |
 | **Basic** | Check for existence of controls | Initial assessments; Low impact systems |
 | **Focused** | Evaluate implementation | Most common approach |
 | **Comprehensive** | Thorough, in-depth assessment | High impact systems; 3PAO assessments |
@@ -40,7 +40,7 @@ The SAR documents assessment results:
 
 **Finding format:**
 
-```
+```text
 Control: AC-2(3)
 Objective: Determine if inactive accounts are disabled within the defined period.
 Status: Other Than Satisfied
@@ -61,7 +61,7 @@ The POA&M (CA-5) is a living document tracking all security weaknesses found dur
 ### POA&M Required Fields
 
 | Field | Description |
-|-------|-------------|
+| ------- | ------------- |
 | POA&M ID | Unique identifier |
 | Weakness/Deficiency | Description of the finding |
 | Source | How discovered (scan, audit, assessment, pen test) |
@@ -75,7 +75,7 @@ The POA&M (CA-5) is a living document tracking all security weaknesses found dur
 ### POA&M Timelines (FedRAMP Guidance)
 
 | Risk Level | Remediation Deadline |
-|-----------|---------------------|
+| ----------- | --------------------- |
 | Critical | 30 days |
 | High | 90 days |
 | Moderate | 180 days |
@@ -220,7 +220,7 @@ When a weakness cannot be remediated within the standard timeline:
 ### ConMon Frequencies (SP 800-137 / CA-7)
 
 | Activity | Recommended Frequency | FedRAMP Frequency |
-|----------|----------------------|------------------|
+| ---------- | ---------------------- | ------------------ |
 | Vulnerability scans (OS) | Monthly | Monthly |
 | Vulnerability scans (Web app) | Monthly | Monthly |
 | Vulnerability scans (Database) | Monthly | Weekly |
@@ -250,7 +250,7 @@ OSCAL (developed by NIST) provides machine-readable representations of SP 800-53
 ### OSCAL Layers
 
 | Layer | Purpose | Formats |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | **Catalog** | Control definitions (SP 800-53 catalog) | JSON, XML, YAML |
 | **Profile** | Baseline selection and tailoring | JSON, XML, YAML |
 | **Component Definition** | Reusable component implementations | JSON, XML, YAML |
@@ -268,7 +268,7 @@ OSCAL (developed by NIST) provides machine-readable representations of SP 800-53
 ### SP 800-53 Rev 5 → ISO 27001:2022
 
 | SP 800-53 Family | ISO 27001:2022 Annex A Controls |
-|-----------------|-------------------------------|
+| ----------------- | ------------------------------- |
 | AC (Access Control) | 5.15–5.18 (Access, privilege), 8.2–8.5 |
 | AT (Awareness & Training) | 6.3 (Security awareness) |
 | AU (Audit) | 8.15 (Logging), 8.16 (Monitoring) |
@@ -288,7 +288,7 @@ OSCAL (developed by NIST) provides machine-readable representations of SP 800-53
 The CSF 2.0 (February 2024) maps to SP 800-53:
 
 | CSF Function | Key SP 800-53 Families |
-|-------------|----------------------|
+| ------------- | ---------------------- |
 | **GV (Govern)** | PM, PL, AT, RA |
 | **ID (Identify)** | RA, CA, CM, PM |
 | **PR (Protect)** | AC, AT, CM, IA, MA, MP, PE, SC, SI, SR |
@@ -303,7 +303,7 @@ Full mapping: SP 800-53B Appendix B provides CSF subcategory → SP 800-53 contr
 CMMC 2.0 is based on **NIST SP 800-171 Rev 2**, which derives from SP 800-53:
 
 | CMMC Level | SP 800-53 Basis |
-|-----------|----------------|
+| ----------- | ---------------- |
 | Level 1 (Foundational) | Subset of 800-171 practices (17 practices from FAR clause) |
 | Level 2 (Advanced) | Full SP 800-171 Rev 2 (110 practices = ~320 SP 800-53 controls) |
 | Level 3 (Expert) | SP 800-171 + selected SP 800-172 controls |
@@ -315,7 +315,7 @@ SP 800-171 Appendix D provides the mapping from each 800-171 requirement to the 
 FedRAMP uses the SP 800-53 Moderate or High baseline with overlay parameters:
 
 | FedRAMP Difference | Detail |
-|-------------------|--------|
+| ------------------- | -------- |
 | Specific ODV values | Defined in FedRAMP baseline documentation |
 | Additional requirements | Incident reporting to US-CERT; 3PAO requirement |
 | Cryptography | FIPS 140-2/140-3 validated modules explicitly required |
@@ -328,7 +328,7 @@ FedRAMP uses the SP 800-53 Moderate or High baseline with overlay parameters:
 ## Key Roles in the RMF / SP 800-53 Context
 
 | Role | Abbreviation | Responsibility |
-|------|-------------|---------------|
+| ------ | ------------- | --------------- |
 | Authorizing Official | AO | Accepts risk; grants/denies ATO |
 | Authorizing Official Designated Representative | AODR | Acts on behalf of AO |
 | Chief Information Officer | CIO | Overall IT governance |
@@ -345,7 +345,7 @@ FedRAMP uses the SP 800-53 Moderate or High baseline with overlay parameters:
 ## Key NIST Publications Related to SP 800-53
 
 | Publication | Title | Role |
-|-------------|-------|------|
+| ------------- | ------- | ------ |
 | SP 800-53 Rev 5 | Security and Privacy Controls | Main control catalog |
 | SP 800-53A Rev 5 | Assessing Security and Privacy Controls | Assessment procedures |
 | SP 800-53B | Control Baselines | Baseline definitions |
