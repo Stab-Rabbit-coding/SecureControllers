@@ -1,0 +1,35 @@
+# TI TLV757P 1 A LDO, fixed 2.5 V, WSON-6 2x2 (DRV) with thermal pad.
+# Verified 2026-09-26 (Claude Opus 5.5) against tlv757p.pdf Fig. 4-3 and
+# Pin Functions (DRV column); thermal pad -> large-area ground plane.
+footprint_check = "stock WSON-6 2x2 P0.65, EP land 1.0 x 1.6 mm (pad 7, heatsink) -- matches TI DRV0006A (EP 1.6 +/-0.1 mm)"
+recommendation = "Preferred over DBV: ~50% smaller and the thermal pad lowers theta-JA. Owner-approved swap 2026-09-26 (Observer U_REG_2V5)."
+
+[symbol]
+name = "TLV75725PDRV"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TLV75725PDRVR"
+description = "1 A low-dropout regulator, fixed 2.5 V, WSON-6 2x2 mm with thermal pad"
+keywords = "LDO linear regulator 2.5V"
+footprint = "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+fp_filters = "WSON*6*2x2mm*"
+
+[datasheet]
+doc = "TI TLV757P data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tlv757p.pdf"
+section = "Fig. 4-3 and Pin Functions (DRV column); DRV0006A outline"
+
+[[packages]]
+code = "DRV (WSON-6)"
+pins = 6
+body = "2.0 x 2.0 mm"
+
+[[packages]]
+code = "DBV (SOT-23-5)"
+pins = 5
+body = "2.9 x 1.6 mm"
+
+[pins]
+left = ["6 IN W", "4 EN I"]
+right = ["1 OUT w", "2 NC N", "5 NC N"]
+bottom = ["3 GND W", "7 EP W"]

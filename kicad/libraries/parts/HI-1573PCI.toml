@@ -16,7 +16,8 @@ fp_filters = "QFN*44*7x7mm*"
 
 [datasheet]
 doc = "Holt HI-1573/HI-1574 data sheet DS1573 Rev U"
-url = "https://www.holtic.com/documents/370-hi-1573_v-rev-u.do"
+url = "datasheets/hi-1573.pdf"
+status = "verified (pin map); public URL requires verification"
 section = "p.1 Pin Configurations (44-pin QFN); Heat Sink application note"
 
 [[packages]]

@@ -1,7 +1,7 @@
 # TI TLV62569P 2 A buck with power-good, SOT-563 (DRL).
 # Verified 2026-09-26 (Claude Opus 5.5) against tlv62569.pdf Pin Functions
 # (SOT563-6 column).
-recommendation = "Preferred fleet part for 2 A point-of-load rails: smallest package and has PG for sequencing."
+recommendation = "Preferred fleet part for 2 A point-of-load rails: smallest package and has PG for sequencing. Owner-approved swap 2026-09-26 (CAN-PERIPH-GW-1 U_REG_3V3, Observer U_REG_3V3/U_REG_1V2, Flight Engineer U_REG_3V3_H)."
 footprint_check = "stock SOT-563 -- DRL 1.6 x 1.6 mm"
 
 [symbol]
