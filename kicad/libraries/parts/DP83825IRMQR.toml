@@ -1,0 +1,28 @@
+# TI DP83825I 10/100 Ethernet PHY, RMII, WQFN-24 3x3.
+# Verified 2026-09-26 (Claude Opus 5.5) against dp83825i.pdf Table 4-1
+# Pin Functions (DAP = GND).
+recommendation = "Only WQFN-24 (3 x 3 mm) offered -- already among the smallest 10/100 PHYs."
+footprint_check = "stock TI RMQ0024A WQFN-24 3x3 P0.4 EP1.9 (TI land-pattern drawing name)"
+
+[symbol]
+name = "DP83825IRMQR"
+reference = "U"
+manufacturer = "Texas Instruments"
+description = "Low-power 10/100 Ethernet PHY, RMII, WQFN-24 3x3 mm"
+keywords = "Ethernet PHY RMII 100BASE-TX"
+footprint = "Package_DFN_QFN:Texas_RMQ0024A_WQFN-24-1EP_3x3mm_P0.4mm_EP1.9x1.9mm"
+fp_filters = "*RMQ0024A*"
+
+[datasheet]
+doc = "TI DP83825I data sheet"
+url = "https://www.ti.com/lit/ds/symlink/dp83825i.pdf"
+section = "Table 4-1 Pin Functions"
+
+[[packages]]
+code = "RMQ (WQFN-24)"
+pins = 24
+body = "3.0 x 3.0 mm"
+
+[pins]
+left = ["6 VDDA3V3 W", "19 VDDIO W", "", "1 TX_EN I", "23 TX_D0 I", "24 TX_D1 I", "18 RX_D0/PHYAD0 B", "17 RX_D1/LEADER B", "20 CRS_DV/PHYAD1 B", "22 RX_ER/AMDIX B", "2 50MHZ_OUT O", "", "15 MDIO B", "16 MDC I", "3 INTR/PWRDN B", "5 ~{RST} I"]
+right = ["11 TD_P B", "10 TD_M B", "8 RD_P B", "7 RD_M B", "", "13 XI I", "12 XO O", "14 RBIAS P", "4 LED0/ANEG B", "", "9 GND W", "21 GND W", "25 DAP W"]

@@ -1,0 +1,29 @@
+# TI ISOW1412 isolated RS-485/RS-422 transceiver with integrated DC/DC.
+# Verified 2026-09-26 (Claude Opus 5.5) against TI isow1412.pdf pin
+# configuration figure + Pin Functions table (20-pin DFM).
+recommendation = "Only package offered (DFM)."
+findings = ["Gateway/Observer copy is named GW_ISOW1412 -- board-scoped name; Pilot copy types every pin passive."]
+footprint_check = "stock SOIC-20W 7.5x12.8 P1.27 -- matches DFM body 12.83 x 7.5 mm"
+
+[symbol]
+name = "ISOW1412DFMR"
+reference = "U"
+manufacturer = "Texas Instruments"
+description = "Isolated RS-485/RS-422 full/half-duplex transceiver, integrated isolated DC/DC, SOIC-20 DFM"
+keywords = "RS485 RS422 isolated transceiver DC/DC"
+footprint = "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
+fp_filters = "SOIC*7.5x12.8mm*P1.27mm*"
+
+[datasheet]
+doc = "TI ISOW1412 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/isow1412.pdf"
+section = "Pin Configuration and Functions (DFM, 20 pin)"
+
+[[packages]]
+code = "DFM"
+pins = 20
+body = "12.83 x 7.5 mm"
+
+[pins]
+left = ["1 VIO W", "9 VDD W", "", "2 D I", "3 DE I", "4 R O", "5 ~{RE} I", "8 EN/FLT B", "14 IN I", "7 OUT O", "", "6 GNDIO W", "10 GND1 W"]
+right = ["12 VISOOUT w", "16 VISOIN W", "13 MODE I", "", "20 A B", "19 B B", "17 Y O", "18 Z O", "", "", "", "15 GISOIN W", "11 GND2 W"]

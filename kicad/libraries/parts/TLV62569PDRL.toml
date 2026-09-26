@@ -1,0 +1,30 @@
+# TI TLV62569P 2 A buck with power-good, SOT-563 (DRL).
+# Verified 2026-09-26 (Claude Opus 5.5) against tlv62569.pdf Pin Functions
+# (SOT563-6 column).
+recommendation = "Preferred fleet part for 2 A point-of-load rails: smallest package and has PG for sequencing."
+footprint_check = "stock SOT-563 -- DRL 1.6 x 1.6 mm"
+
+[symbol]
+name = "TLV62569PDRL"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TLV62569PDRLR"
+description = "2.5-5.5 V in, 2 A synchronous buck with power-good, SOT-563"
+keywords = "buck regulator DC-DC step-down power good"
+footprint = "Package_TO_SOT_SMD:SOT-563"
+fp_filters = "SOT?563*"
+
+[datasheet]
+doc = "TI TLV62569 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tlv62569.pdf"
+section = "Pin Functions (SOT563-6 column)"
+
+[[packages]]
+code = "DRL (SOT-563)"
+pins = 6
+body = "1.6 x 1.6 mm"
+
+[pins]
+left = ["3 VIN W", "5 EN I"]
+right = ["4 SW w", "1 FB I", "6 PG C"]
+bottom = ["2 GND W"]

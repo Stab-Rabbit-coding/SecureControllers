@@ -1,0 +1,30 @@
+# Wurth WE-LAN 749010012A 10/100BASE-TX SMT LAN transformer, 16 lead.
+# Verified 2026-09-26 (Claude Opus 5.5) against 749010012A.pdf rev 004.000
+# p.1 schematic + recommended land pattern (pins 4,5,12,13 unused).
+footprint_check = "16 pads 0.64 x 1.91 mm, 1.27 mm pitch, 8.77 mm row c-c -- matches datasheet p.1 land pattern"
+recommendation = "Single package (12.2 x 9.52 mm). Wurth's datasheet excludes aerospace/aviation use without prior notice to Wurth -- owner action; a smaller LAN transformer is a candidate only once qualified."
+findings = ["Observer uses an 8-pin symbol with invented PHY_/LINE_ pin names and an 8-pad footprint -- does not match the 16-lead part.", "Wurth datasheet p.1: not intended for aviation use unless Wurth is informed before design-in."]
+
+[symbol]
+name = "749010012A"
+reference = "T"
+manufacturer = "Wurth Elektronik"
+description = "WE-LAN 10/100BASE-TX SMT LAN transformer, 1:1, 1500 Vrms, 16-lead"
+keywords = "Ethernet magnetics LAN transformer"
+footprint = "SecureControllers:Wurth_749010012A_WE-LAN"
+fp_filters = "*749010012A*"
+
+[datasheet]
+doc = "Wurth Elektronik 749010012A data sheet rev 004.000 (2024-04-11)"
+url = "https://www.we-online.com/components/products/datasheet/749010012A.pdf"
+section = "p.1 schematic and recommended land pattern"
+
+[[packages]]
+code = "SMT-16"
+pins = 16
+body = "12.2 x 9.52 mm"
+
+[pins]
+left = ["1 TD+ P", "2 CTD P", "3 TD- P", "", "6 RD+ P", "7 CRD P", "8 RD- P"]
+right = ["16 TX+ P", "15 CTX P", "14 TX- P", "", "11 RX+ P", "10 CRX P", "9 RX- P"]
+bottom = ["4 NC N", "5 NC N", "12 NC N", "13 NC N"]
