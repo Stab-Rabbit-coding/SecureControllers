@@ -1,0 +1,28 @@
+# Generic SMAJ-series 400 W unidirectional TVS, DO-214AC (SMA).
+# Verified 2026-09-27 (Claude Sonnet 5) against the SMAJ-series TVS
+# datasheet: pinning table (1 Cathode, 2 Anode), DO-214AC package outline.
+footprint_check = "stock D_SMA (2-pad, polarity band = cathode = pin 1)"
+recommendation = "Only package offered across the SMAJ family (SMA/DO-214AC)."
+
+[symbol]
+name = "SMAJ-TVS"
+reference = "D"
+manufacturer = "Littelfuse (SMAJ family is second-sourced by multiple vendors with the same pinning)"
+description = "400 W unidirectional TVS diode, DO-214AC (SMA); value = breakdown voltage variant (e.g. SMAJ33CA, SMAJ5.0A)"
+keywords = "TVS diode surge protection unidirectional SMA"
+footprint = "Diode_SMD:D_SMA"
+fp_filters = "D?SMA"
+
+[datasheet]
+doc = "Littelfuse TVS Diode SMAJ series data sheet"
+url = "https://www.mouser.com/datasheet/2/240/Littelfuse_TVS_Diode_SMAJ_Datasheet_pdf-540740.pdf"
+section = "Pinning table (Cathode/Anode); DO-214AC package outline"
+
+[[packages]]
+code = "DO-214AC (SMA)"
+pins = 2
+body = "4.06 x 2.62 mm"
+
+[pins]
+top = ["1 K P"]
+bottom = ["2 A P"]

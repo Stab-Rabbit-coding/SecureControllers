@@ -149,6 +149,75 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "AO3400A"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "Q"
+			(at -7.62 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "AO3400A"
+			(at -7.62 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "30 V N-channel MOSFET, RDS(on) < 26.5 mOhm @ VGS=10V, SOT-23"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Alpha & Omega Semiconductor"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "AO3400A"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "MOSFET N-channel load switch"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "SOT?23"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "AO3400A_0_1"
+			(rectangle (start -7.62 7.62) (end 7.62 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "AO3400A_1_1"
+			(pin input line
+				(at -10.16 5.08 0)
+				(length 2.54)
+				(name "G" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin passive line
+				(at 10.16 5.08 180)
+				(length 2.54)
+				(name "S" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(pin passive line
+				(at 0.00 10.16 270)
+				(length 2.54)
+				(name "D" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "DP83825IRMQR"
 		(pin_names (offset 1.016))
 		(exclude_from_sim no)
@@ -1068,6 +1137,324 @@
 				(length 2.54)
 				(name "GND2" (effects (font (size 1.27 1.27))))
 				(number "11" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "LMV331"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at -7.62 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "LMV331"
+			(at -7.62 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lmv331.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "Single low-voltage comparator, 2.7-5.5 V, open-drain output, SOT-23-5"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "LMV331IDBVR"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "comparator single low-voltage open-drain"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "SOT?23*"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "LMV331_0_1"
+			(rectangle (start -7.62 7.62) (end 7.62 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "LMV331_1_1"
+			(pin input line
+				(at -10.16 5.08 0)
+				(length 2.54)
+				(name "IN-" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -10.16 2.54 0)
+				(length 2.54)
+				(name "IN+" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(pin open_collector line
+				(at 10.16 5.08 180)
+				(length 2.54)
+				(name "OUT" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0.00 10.16 270)
+				(length 2.54)
+				(name "VCC" (effects (font (size 1.27 1.27))))
+				(number "5" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0.00 -10.16 90)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "4" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "MBRD1045CT"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "D"
+			(at -7.62 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "MBRD1045CT"
+			(at -7.62 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TO-252-3_TabPin2"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://www.goodark.com/specification/MBRD1045CT.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "45 V, 10 A dual Schottky rectifier, common cathode, TO-252 (D-PAK)"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Good-Ark Semiconductor"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "MBRD1045CT"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "Schottky diode rectifier dual common-cathode"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "TO-252*"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "MBRD1045CT_0_1"
+			(rectangle (start -7.62 7.62) (end 7.62 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "MBRD1045CT_1_1"
+			(pin passive line
+				(at -10.16 5.08 0)
+				(length 2.54)
+				(name "A1" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin passive line
+				(at 10.16 5.08 180)
+				(length 2.54)
+				(name "A2" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 0.00 10.16 270)
+				(length 2.54)
+				(name "K" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "MCP1703A"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at -10.16 6.35 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "MCP1703A"
+			(at -10.16 -6.35 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP1703-Data-Sheet-20005122.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "250 mA, 16 V, low quiescent current LDO regulator, SOT-23A"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Microchip"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "MCP1703AT-3302E/MB"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "LDO linear regulator low quiescent"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "SOT?23*"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "MCP1703A_0_1"
+			(rectangle (start -10.16 5.08) (end 10.16 -5.08)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "MCP1703A_1_1"
+			(pin power_in line
+				(at -12.70 2.54 0)
+				(length 2.54)
+				(name "VIN" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 12.70 2.54 180)
+				(length 2.54)
+				(name "GND" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_out line
+				(at 12.70 0.00 180)
+				(length 2.54)
+				(name "VOUT" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "MCP4921"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at -10.16 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "MCP4921"
+			(at -10.16 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/22248a.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "12-bit single-channel SPI voltage-output DAC, SOIC-8"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Microchip"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "MCP4921-E/SN"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "DAC 12-bit SPI single-channel"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "SOIC*3.9x4.9*"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "MCP4921_0_1"
+			(rectangle (start -10.16 7.62) (end 10.16 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "MCP4921_1_1"
+			(pin power_in line
+				(at -12.70 5.08 0)
+				(length 2.54)
+				(name "VDD" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -12.70 2.54 0)
+				(length 2.54)
+				(name "{CS}" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -12.70 0.00 0)
+				(length 2.54)
+				(name "SCK" (effects (font (size 1.27 1.27))))
+				(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at -12.70 -2.54 0)
+				(length 2.54)
+				(name "SDI" (effects (font (size 1.27 1.27))))
+				(number "4" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_out line
+				(at 12.70 5.08 180)
+				(length 2.54)
+				(name "VOUT" (effects (font (size 1.27 1.27))))
+				(number "8" (effects (font (size 1.27 1.27))))
+			)
+			(pin power_in line
+				(at 12.70 2.54 180)
+				(length 2.54)
+				(name "VSS" (effects (font (size 1.27 1.27))))
+				(number "7" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 12.70 0.00 180)
+				(length 2.54)
+				(name "VREF" (effects (font (size 1.27 1.27))))
+				(number "6" (effects (font (size 1.27 1.27))))
+			)
+			(pin input line
+				(at 12.70 -2.54 180)
+				(length 2.54)
+				(name "{LDAC}" (effects (font (size 1.27 1.27))))
+				(number "5" (effects (font (size 1.27 1.27))))
 			)
 		)
 		(embedded_fonts no)
@@ -2047,6 +2434,132 @@
 				(length 2.54)
 				(name "EP" (effects (font (size 1.27 1.27))))
 				(number "33" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "SMAJ-TVS"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "D"
+			(at -5.08 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SMAJ-TVS"
+			(at -5.08 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/240/Littelfuse_TVS_Diode_SMAJ_Datasheet_pdf-540740.pdf"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "400 W unidirectional TVS diode, DO-214AC (SMA); value = breakdown voltage variant (e.g. SMAJ33CA, SMAJ5.0A)"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Littelfuse (SMAJ family is second-sourced by multiple vendors with the same pinning)"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "SMAJ-TVS"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "TVS diode surge protection unidirectional SMA"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "D?SMA"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "SMAJ-TVS_0_1"
+			(rectangle (start -5.08 7.62) (end 5.08 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "SMAJ-TVS_1_1"
+			(pin passive line
+				(at 0.00 10.16 270)
+				(length 2.54)
+				(name "K" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin passive line
+				(at 0.00 -10.16 90)
+				(length 2.54)
+				(name "A" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "SMBJ-TVS"
+		(pin_names (offset 1.016))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "D"
+			(at -5.08 8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Value" "SMBJ-TVS"
+			(at -5.08 -8.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" "Diode_SMD:D_SMB"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Datasheet" "https://www.littelfuse.com/assetdocs/tvs-diodes-smbj-datasheet"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Description" "600 W unidirectional TVS diode, DO-214AA (SMB); value = breakdown voltage variant (e.g. SMBJ33CA)"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "Manufacturer" "Littelfuse"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "MPN" "SMBJ-TVS"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_keywords" "TVS diode surge protection unidirectional SMB"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(property "ki_fp_filters" "D?SMB"
+			(at 0.00 0.00 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(symbol "SMBJ-TVS_0_1"
+			(rectangle (start -5.08 7.62) (end 5.08 -7.62)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+		)
+		(symbol "SMBJ-TVS_1_1"
+			(pin passive line
+				(at 0.00 10.16 270)
+				(length 2.54)
+				(name "K" (effects (font (size 1.27 1.27))))
+				(number "1" (effects (font (size 1.27 1.27))))
+			)
+			(pin passive line
+				(at 0.00 -10.16 90)
+				(length 2.54)
+				(name "A" (effects (font (size 1.27 1.27))))
+				(number "2" (effects (font (size 1.27 1.27))))
 			)
 		)
 		(embedded_fonts no)

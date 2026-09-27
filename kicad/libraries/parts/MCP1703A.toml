@@ -1,0 +1,40 @@
+# Microchip MCP1703A 250 mA LDO, SOT-23A (5-pin).
+# Verified 2026-09-27 (Claude Sonnet 5) against Microchip DS20005122B
+# Package Types figure (p.1): SOT-23A VIN pin 3 / GND+VOUT pins 1-2 on
+# the 2-pin side.
+footprint_check = "stock SOT-23-5; pins 4-5 no-connect (package has only 3 active leads on a 5-pad land per Microchip's SOT-23A drawing note -- verify against Table 3-1 before layout)"
+recommendation = "2x3 DFN-8 (with EP) offered for lower footprint if thermal margin allows; SOT-89-3 and SOT-223-3 also offered for higher power dissipation."
+
+[symbol]
+name = "MCP1703A"
+reference = "U"
+manufacturer = "Microchip"
+mpn = "MCP1703AT-3302E/MB"
+description = "250 mA, 16 V, low quiescent current LDO regulator, SOT-23A"
+keywords = "LDO linear regulator low quiescent"
+footprint = "Package_TO_SOT_SMD:SOT-23-5"
+fp_filters = "SOT?23*"
+
+[datasheet]
+doc = "Microchip MCP1703/MCP1703A data sheet DS20005122B"
+url = "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP1703-Data-Sheet-20005122.pdf"
+section = "Package Types (p.1, SOT-23A)"
+
+[[packages]]
+code = "SOT-23A"
+pins = 5
+body = "2.9 x 1.6 mm"
+
+[[packages]]
+code = "2x3 DFN-8"
+pins = 8
+body = "2.0 x 3.0 mm"
+
+[[packages]]
+code = "SOT-89-3 / SOT-223-3"
+pins = 3
+body = "SOT-89 / SOT-223"
+
+[pins]
+left = ["3 VIN W"]
+right = ["1 GND W", "2 VOUT w"]

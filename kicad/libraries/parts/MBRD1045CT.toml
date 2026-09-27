@@ -1,0 +1,31 @@
+# Good-Ark MBRD1045CT dual Schottky rectifier, common cathode, TO-252.
+# Verified 2026-09-27 (Claude Sonnet 5) against Good-Ark MBRD1045CT data
+# sheet: package photo (A/K/A pins) + schematic diagram (2x diode, common
+# cathode = center tab).
+footprint_check = "stock TO-252-3 TabPin2 -- tab/pin2 = cathode (common), pins 1 and 3 = anode 1 / anode 2"
+recommendation = "Only package for this exact MPN; this is a DUAL diode (common cathode) -- if only one leg is used, the unused anode is left floating (DNP), not grounded."
+findings = ["Note for the fetching agent: this is the Good-Ark MBRD1045CT (Schottky rectifier); an ON Semi/Vishay part of a similar name (MBRD1035/1045) may have a different pinout -- this entry is verified against the Good-Ark datasheet specifically, matching the MPN actually used in Flight Engineer (D_OR1/D_OR2)."]
+
+[symbol]
+name = "MBRD1045CT"
+reference = "D"
+manufacturer = "Good-Ark Semiconductor"
+description = "45 V, 10 A dual Schottky rectifier, common cathode, TO-252 (D-PAK)"
+keywords = "Schottky diode rectifier dual common-cathode"
+footprint = "Package_TO_SOT_SMD:TO-252-3_TabPin2"
+fp_filters = "TO-252*"
+
+[datasheet]
+doc = "Good-Ark MBRD1045CT data sheet"
+url = "https://www.goodark.com/specification/MBRD1045CT.pdf"
+section = "Package photo + schematic diagram (p.1)"
+
+[[packages]]
+code = "TO-252 (D-PAK)"
+pins = 3
+body = "TO-252"
+
+[pins]
+left = ["1 A1 P"]
+right = ["3 A2 P"]
+top = ["2 K W"]
