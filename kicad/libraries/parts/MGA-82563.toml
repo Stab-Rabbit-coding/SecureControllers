@@ -1,0 +1,32 @@
+# Broadcom (Avago) MGA-82563 0.1-6 GHz GaAs MMIC amplifier, SOT-363.
+# Verified 2026-09-27 (Claude Sonnet 5) against MGA-82563-TR1G.pdf "Pin
+# Connections and Package Marking": pins 1,2,4,5 = GND, 3 = INPUT,
+# 6 = OUTPUT and Vd (output pin also carries the DC bias feed, needs an
+# external bias tee / RF choke to the +3V supply).
+footprint_check = "stock SOT-363_SC-70-6"
+recommendation = "Only package offered for this MPN."
+
+[symbol]
+name = "MGA-82563"
+reference = "U"
+manufacturer = "Broadcom (Avago)"
+description = "0.1-6 GHz, 17 dBm GaAs MMIC amplifier, single +3V supply, SOT-363"
+keywords = "RF amplifier LNA MMIC GaAs"
+footprint = "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+fp_filters = "SOT?363*"
+
+[datasheet]
+doc = "Broadcom MGA-82563-TR1G data sheet"
+url = "datasheets/MGA-82563-TR1G.pdf"
+status = "verified (pin map); public URL requires verification (docs.broadcom.com link 404s)"
+section = "Pin Connections and Package Marking"
+
+[[packages]]
+code = "SOT-363 (SC-70)"
+pins = 6
+body = "2.0 x 1.25 mm"
+
+[pins]
+left = ["3 INPUT I"]
+right = ["6 OUTPUT/Vd O"]
+bottom = ["1 GND W ~", "2 GND W ~", "4 GND W ~", "5 GND W ~"]
