@@ -101,7 +101,7 @@ or wrong and were caught before being committed to any citation-tracked file —
   control-plane access.
 - **U4 — TI ISOW1044BDFMR** galvanically-isolated CAN-FD transceiver (**20-pin DFM package**,
   5 kV reinforced insulation — the part is 20-pin DFM per TI SLLSFF7A, NOT the "SOIC-16W" earlier
-  docs claimed; the Observer U4 footprint must be 20-pad DFM) — replaces an earlier non-isolated
+  docs claimed; the Observer U4 footprint shall be 20-pad DFM) — replaces an earlier non-isolated
   TCAN1042HG-Q1 to match the
   Wash/TACCO Rev R EMI-hardening standard (see below).
 - **Y1** — 25 MHz crystal for U2's reference clock.
@@ -156,6 +156,12 @@ laser BOM to a single green diode family. Rationale in full: `docs/JAYNE_LASER_A
 - **Class 2 at both sites drops the Class 3B key-interlock and mechanical shutter.** The
   `LASER_KEY_IN`/`LASER_IND` lines already on Observer become optional defense-in-depth. Keep each
   ≤ 1 mW cap **HARDWARE-enforced** (fixed current limit), not firmware-only.
+
+  > **WARNING:** The IEC 60825-1 Class 2 eye-safety classification for both laser
+  > installs depends on the ≤ 1 mW output cap being enforced in hardware (fixed
+  > current limit), not by firmware. A firmware-only limit, or a current limit that
+  > drifts above 1 mW, invalidates the Class 2 classification and creates an eye
+  > injury hazard.
 - **Firmware dependency:** the nose Class 2 margin depends on strobe + frame-difference
   detection in the AM62A7 ISP (laser-sync GPIO/PWM) — budget it in the Observer firmware WBS
   (TODO.md §4.6). 3B would only return if a *human at the 50 ft target* must see a *spread
@@ -277,7 +283,7 @@ Mounting holes: 4× M3, symmetric 4 mm margin from each edge — (4,4), (65.85,4
 - Wurth 749010012A magnetics, Bourns SRF2012-100Y CMC, Nexperia PRTR5V0U2X TVS — all reused
   verbatim (pinout + footprint reference) from this project's own working Wash/TACCO generator.
 
-**Placeholder / NOT real — must be replaced before fabrication:**
+**Placeholder / NOT real — shall be replaced before fabrication:**
 
 - *(Resolved)* Placeholder ICs have been removed. U1 (AM62A) and U_PMIC are now integrated onto the real `phyCORE-AM62x_PCM071` SoM footprint. U2, U3, U4, and U5 now utilize verified, datasheet-accurate TQFP, QFN, and SOIC footprints.
 - The JST-GH 5-pin Ethernet connector footprint is an untuned approximation of Wash's real
@@ -338,7 +344,7 @@ The sensor cluster sits on the bow's 40° flat, in `bow_sensor_pod.scad`'s own p
 (head-shell) frame: `CAM_POS=[170.80,-282.68,55.01]`, `TOF_POS=[154.33,-282.98,55.61]`,
 `LASER_POS=[161.33,-281.94,56.14]`, all normal to the flat via `BOW_ROT=[130,0,0]`, gathered
 under one `FACEPLATE_CTR=[162.15,-282.53,55.59]` seat (29×17mm, 4× M2 heat-set inserts). The
-apertures face −Y (forward/bow direction) in this local frame — i.e. Observer must sit **aft of**
+apertures face −Y (forward/bow direction) in this local frame — i.e. Observer shall sit **aft of**
 the faceplate, back along the pod's own +Y (into the fuselage).
 
 - **Proposed pose:** Observer mounted flat, board plane roughly parallel to the faceplate,
@@ -397,7 +403,7 @@ gondola belly Y-coordinate and all positions are marked "verify in slicer before
 this is pre-existing, inherited uncertainty in the shell file, not new uncertainty introduced
 here.
 
-- **Camera:** Observer's camera output (J_CAM1/J_CAM2) can reuse the existing `fpv_cut`
+- **Camera:** Observer's camera output (J_CAM1/J_CAM2) may reuse the existing `fpv_cut`
   aperture/bezel as-is — no new SCAD needed for the camera path.
 - **Open — new SCAD required for ToF + laser:** unlike the nose, **no ToF or laser aperture
   exists in `cargo_sect_shell24.scad` today** — only the camera cut. To match the nose
@@ -411,7 +417,7 @@ here.
   belly, standoff-offset upward (+Z, away from the nadir skin) from the camera/ToF/laser
   cluster, hole pattern centered under the bezel group. Cargo section has the largest cross-
   section of the four fuselage shells (`Cargo_Shell` baked extent Z 0.0..+163.2mm) — no
-  tightness concern expected, but **must be verified against the cargo bay door mechanism and
+  tightness concern expected, but **shall be verified against the cargo bay door mechanism and
   Observer (cargo handling) hardware clearances** once cargo interior boss work resumes (see
   memory: cargo SCAD modules are in a legacy Y-as-dorsal frame that needs reconciling with the
   hull-frame standard before adding new geometry there — do this reconciliation before, not

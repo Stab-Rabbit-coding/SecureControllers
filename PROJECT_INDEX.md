@@ -109,4 +109,4 @@ USB-C, switches, LED). Full per-file listing: `index/shapes.json`.
 
 Regenerate both after any workspace repo's assets change:
 `/usr/bin/python3 tools/inventory_scan.py && /usr/bin/python3 tools/build_manifests.py`
-(must use `/usr/bin/python3`, not a repo-local `.venv`).
+(shall use `/usr/bin/python3`, not a repo-local `.venv`).

@@ -70,6 +70,12 @@ requirements.
 | J_BAL | JST XH-7P 2.54 mm male right-angle | 6S balance lead (7 wires: BAL_GND + B1–B6) |
 | J_PGND_BATT | M3 × 6 mm PCB-mount threaded brass insert (adjacent to J_BATT) | Battery cable braid/foil shield drain → chassis PGND |
 
+> **WARNING:** J_BATT and J_BAL carry a 6S LiPo pack's full pack voltage and cell-level
+> balance leads. Reversed polarity, a shorted balance lead, or a damaged/swollen cell
+> can cause fire or explosion. Observe LiPo handling precautions (fireproof storage/
+> charging bag, current-limited charger, no charging or handling of a damaged cell)
+> whenever connecting, disconnecting, or servicing J_BATT/J_BAL.
+
 ### ESC Outputs
 
 | Reference | Part | Current rating | EDF served |
@@ -81,6 +87,11 @@ requirements.
 | J_ESC5 | DNP (Amass XT60PW-F footprint, unpopulated Phase 5–10) | 80 A / 110 A | Fuse 120 mm (EDF4, Phase 11) |
 | J_SHLD_ESC1–4 | M3 × 6 mm PCB-mount threaded brass insert (×4, one adjacent to each J_ESCn) | ESC cable braid/foil shield drain → chassis PGND |
 | J_SHLD_ESC5 | M3 × 6 mm PCB-mount threaded brass insert (DNP, adjacent to J_ESC5 footprint) | Phase 11 ESC5 cable shield drain (unpopulated) |
+
+> **CAUTION:** ESC outputs carry up to 60 A burst per channel (up to 160 A burst
+> combined across all four EDFs). Undersized wiring, a loose XT30 connection, or a
+> missing branch fuse (F_ESC1–4) can overheat the harness or damage the PDB and
+> connected ESCs/EDFs.
 
 ### BEC Outputs
 
@@ -463,7 +474,7 @@ to this threat level.
 | IEC 61000-4-5 [REF-IEC-005] | Level 3 (±2 kV CM, ±1 kV DM) | Surge on VBAT | D1 SMBJ33CA TVS + bulk caps + Y-caps |
 | IEC 61000-4-2 [REF-IEC-003] | Level 4 (±8 kV contact) | ESD on connectors | D1 TVS; shielded enclosure prevents direct connector exposure |
 
-Pre-compliance testing against CE102, CS101, and CS114 at system level is required
+Pre-compliance testing against CE102, CS101, and CS114 at system level shall be completed
 before first flight. Full MIL-STD-461G / 500 W/m² qualification testing is deferred
 pending airframe integration.
 
@@ -532,10 +543,10 @@ Default assembly: R_CHGND = 0 Ω (direct chassis bond, single point).
 
 ## Harness Specification
 
-All cables leaving the FlightEngineer must comply with the construction rules below.  The
+All cables leaving the FlightEngineer shall comply with the construction rules below.  The
 500 W/m² EMI design environment mandates shielded twisted-pair construction with
 continuous braid coverage and snap-on ferrite treatment at both cable ends.  All
-wire insulation must be silicone-rated (200 °C continuous) for propulsion cables
+wire insulation shall be silicone-rated (200 °C continuous) for propulsion cables
 and PVC/PTFE acceptable for signal cables.
 
 ### Power Cables (J_BATT, J_ESC1–4)
@@ -601,9 +612,9 @@ not connect to the FlightEngineer.  They are documented here for completeness.
   paths (J_BATT to F1, F1 to ESC fuse holders, ESC fuse holders to J_ESCn).
 - **GND return:** In1.Cu is full-plane PGND. All GND vias stitch through at ≤ 5 mm
   spacing in high-current areas.
-- **Kelvin shunt connections:** Each 4-terminal shunt resistor must be wired with
+- **Kelvin shunt connections:** Each 4-terminal shunt resistor shall be wired with
   Kelvin force and sense pairs on separate traces/vias — do not share via with current
-  path. Sense traces (INA226 IN+ / IN−) must be ≥ 0.3 mm trace on signal layer,
+  path. Sense traces (INA226 IN+ / IN−) shall be ≥ 0.3 mm trace on signal layer,
   routed away from power planes.
 - **BQ76930 isolation:** Maintain ≥ 8 mm creepage between individual VC_n cell
   terminals (each at different potentials). Balance resistors (100 Ω in series with
@@ -612,13 +623,13 @@ not connect to the FlightEngineer.  They are documented here for completeness.
 - **INA226 bypass:** 100 nF + 10 nF at each INA226 VCC pin (0402, within 0.5 mm).
 - **TVS D1 placement:** Within 10 mm of J_BATT positive pin. GND return via ≥ 3 ×
   0.4 mm vias to In1.Cu PGND plane.
-- **BEC switching noise:** TPS54620 and TPS54540 switching nodes (SW pin) must be
+- **BEC switching noise:** TPS54620 and TPS54540 switching nodes (SW pin) shall be
   enclosed in a copper keepout from the GND pour (prevent CM noise injection). Place
   bootstrap capacitor (C_BOOT) within 1 mm of BST pin.
 - **Thermal vias:** Place ≥ 6 × 0.3 mm vias under the TPS54620 PowerPAD exposed
   pad (thermal relief) to In2.Cu; add thermal copper pour on B.Cu under each SMPS.
 - **Chassis ground lugs (J_PGND_BATT, J_SHLD_ESC1–4):** Place M3 threaded insert
-  footprints within 8 mm of their associated power connector. Each lug pad must
+  footprints within 8 mm of their associated power connector. Each lug pad shall
   have ≥ 4 × 0.4 mm vias to In1.Cu PGND plane. Include a 3 mm copper flood
   connecting the via cluster to the nearest GND pour edge.
 - **Shield drain via-pads (J_SHLD_5V, J_SHLD_6V, J_SHLD_I2C, J_SHLD_ALERT,

@@ -88,7 +88,7 @@ sudo apt install cmake gcc-aarch64-linux-gnu libc6-dev-arm64-cross
 
 ```
 
-> **Note:**libgpiod**2.x** is required (Debian Trixie ships 2.2.1).
+> **NOTE:** Builds shall use **libgpiod 2.x** (Debian Trixie ships 2.2.1).
 > The libgpiod 1.x API (Ubuntu 24.04) is **incompatible** with this code.
 > Build directly on a PocketBeagle 2 or in a Trixie arm64 container if
 > a full cross-compilation sysroot is not available.

@@ -27,7 +27,7 @@ sudo apt install device-tree-compiler    # provides dtc 1.7.x
 
 ```
 
-`dtc` version 1.7 or later is required for the `-@` flag (generates
+`dtc` version 1.7 or later shall be used, for the `-@` flag (generates
 `__symbols__` section enabling runtime overlay application).
 
 ## Build
@@ -73,7 +73,7 @@ Each node loads only one overlay (the one matching its installed cape).
 ## Pad Offset Verification
 
 All `AM62X_IOPAD` offsets tagged `[ESTIMATE]` in the DTS source files
-**must be verified** before production use by cross-referencing:
+**shall be verified** before production use by cross-referencing:
 
 1. **TI AM6254 TRM, SPRUJ40**, Table 7-1 "MAIN Domain Pad Control Registers"
 
@@ -84,7 +84,7 @@ All `AM62X_IOPAD` offsets tagged `[ESTIMATE]` in the DTS source files
 Offsets tagged `[CONFIRMED]` are sourced from `k3-am625-sk.dtsi` in the
 Linux 6.x kernel tree and have been validated against production hardware.
 
-GPIO line numbers are logical (relative to `main_gpio0`) and must also
+GPIO line numbers are logical (relative to `main_gpio0`) and shall also
 be verified against the PocketBeagle 2 expansion header pin map.
 
 ## Cape-A Peripheral Details
@@ -127,7 +127,7 @@ be verified against the PocketBeagle 2 expansion header pin map.
 
 ## PRU Firmware
 
-PRU firmware binaries must be installed to `/lib/firmware/serenity/` on
+PRU firmware binaries shall be installed to `/lib/firmware/serenity/` on
 the target before loading the overlays:
 
 ```bash
