@@ -3,7 +3,7 @@
 ## Platform Selection Matrix
 
 | Platform | Core | Max MHz | Flash | SRAM | WiFi | BLE | 5V Tolerant | Eco-system | Best For |
-|----------|------|:---:|-------|------|:---:|:---:|:---:|------------|----------|
+| ---------- | ------ | :---: | ------- | ------ | :---: | :---: | :---: | ------------ | ---------- |
 | ESP32-S3 | Xtensa LX7 | 240 | 16MB | 512KB | ✓ | ✓ | ✗ | ESP-IDF, Arduino | IoT, WiFi/BLE, AI |
 | ESP32-C3 | RISC-V | 160 | 4MB | 400KB | ✓ | ✓ | ✗ | ESP-IDF, Arduino | Low-cost IoT |
 | ESP32-C6 | RISC-V | 160 | 8MB | 512KB | ✓ | ✓* | ✗ | ESP-IDF | WiFi6 + Thread/Zigbee |

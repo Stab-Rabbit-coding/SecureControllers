@@ -45,7 +45,7 @@ Ask for each component: "What happens if we remove it?"
 ### 5. Source Alternatives
 
 | Original | Alternative | Savings |
-|----------|------------|:---:|
+| ---------- | ------------ | :---: |
 | TI / Analog Devices IC | Chinese equivalent (when available) | 30-70% |
 | Name-brand passives (Murata, TDK) | Samsung, Yageo, Walsin | 20-50% |
 | Gold-plated connectors | Tin-plated (for internal connections) | 30-50% |
@@ -71,7 +71,7 @@ Rotate boards, pack tight, use V-cut (cheaper than router).
 ### 2. Layer Count
 
 | Layers | 5pcs (50×50mm) | 100pcs |
-|:---:|:---:|:---:|
+| :---: | :---: | :---: |
 | 2L | ~¥5 | ~¥80 |
 | 4L | ~¥35 | ~¥350 |
 | 6L | ~¥80 | ~¥900 |
@@ -88,7 +88,7 @@ Go 4L if: ESP32/RF, SPI >20MHz, production, EMC important
 ### 4. Material Choices
 
 | Choice | Cost vs Baseline |
-|--------|:---:|
+| -------- | :---: |
 | Standard FR-4, 1.6mm, 1oz, green solder mask | Baseline |
 | High-Tg FR-4 | +30-50% |
 | 2oz copper | +20-40% |
@@ -122,7 +122,7 @@ Go 4L if: ESP32/RF, SPI >20MHz, production, EMC important
 ### 3. Avoid Special Processes
 
 | Process | Extra Cost |
-|---------|:---:|
+| --------- | :---: |
 | Through-hole soldering (hand) | ¥3-5/joint |
 | BGA placement + X-ray | ¥20-50/board |
 | Conformal coating | ¥10-20/board |
@@ -140,7 +140,7 @@ Go 4L if: ESP32/RF, SPI >20MHz, production, EMC important
 ## Quantity vs Cost Trade-offs
 
 | Qty | PCB Cost/board (50×35mm 4L) | Assembly Surcharge | Notes |
-|:---:|:---:|:---:|------|
+| :---: | :---: | :---: | ------ |
 | 5 | ¥7 | Per-joint + setup | Prototype |
 | 10 | ¥3.5 | Per-joint + setup | Proto + spares |
 | 50 | ¥1.5 | Setup amortized | Pilot run |

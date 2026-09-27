@@ -122,9 +122,9 @@ Claude invokes the skill automatically and applies the right reference documents
 
 For **programmatic control** of 立创 EDA Pro (auto-placement, routing, DRC via WebSocket):
 
-| Skill | Role |
-|-------|------|
-| `pcb-designer` | 🧠 **Design brain** — what to do and why |
+| Skill               | Role                                         |
+| ------------------- | -------------------------------------------- |
+| `pcb-designer`      | 🧠 **Design brain** — what to do and why     |
 | `easyeda-api-skill` | 🤖 **Automation hands** — API control of EDA |
 
 ---

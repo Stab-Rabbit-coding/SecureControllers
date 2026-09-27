@@ -74,7 +74,7 @@ Typical: 4.7kΩ (standard mode), 2.2kΩ (fast mode)
 ### Layout
 
 | Parameter | ≤20MHz | >20MHz |
-|-----------|--------|--------|
+| ----------- | -------- | -------- |
 | Trace width | 6mil | 6mil |
 | Spacing | 12mil (2×W) | 18mil (3×W) |
 | Max length | 100mm | 50mm |
@@ -98,7 +98,7 @@ MCU_CAN_RX ── (e.g., SN65HVD230) ── CANL ──┴── 120Ω ──┴
 ### Common CAN Transceivers
 
 | Part | Speed | Standby | 3.3V I/O | Package |
-|------|:---:|:---:|:---:|---------|
+| ------ | :---: | :---: | :---: | --------- |
 | SN65HVD230 | 1Mbps | ✓ | ✓ | SOIC-8 |
 | MCP2551 | 1Mbps | ✗ | 5V | SOIC-8 |
 | TJA1050 | 1Mbps | ✗ | 5V | SOIC-8 |
@@ -117,7 +117,7 @@ MCU_CAN_RX ── (e.g., SN65HVD230) ── CANL ──┴── 120Ω ──┴
 ### Key Differences
 
 | | RS-485 | RS-422 |
-|---|--------|--------|
+| --- | -------- | -------- |
 | Topology | Multi-drop (up to 32/256 nodes) | Point-to-point or multi-drop (1 driver, 10 receivers) |
 | Duplex | Half or Full | Full |
 | Termination | 120Ω both ends | 100Ω at receiver |
@@ -136,7 +136,7 @@ Rb1 = Rb2 = 560Ω-1kΩ  ensures idle state is well-defined
 ### Common RS-485 Transceivers
 
 | Part | Speed | Duplex | Nodes | Package |
-|------|:---:|:---:|:---:|---------|
+| ------ | :---: | :---: | :---: | --------- |
 | MAX485 | 2.5Mbps | Half | 32 | SOIC-8 |
 | SN65HVD75 | 20Mbps | Half | 256 | SOIC-8 |
 | MAX3485 | 10Mbps | Half | 256 | SOIC-8 |
@@ -194,7 +194,7 @@ PHY ── TX+/-, RX+/- ── Magnetics ── RJ45
 ### Common Ethernet PHYs
 
 | Part | Speed | Interface | Package |
-|------|:---:|-----------|---------|
+| ------ | :---: | ----------- | --------- |
 | LAN8720A | 10/100M | RMII | QFN-24 |
 | DP83848 | 10/100M | RMII/MII | LQFP-48 |
 | W5500 | 10/100M | SPI (HW TCP/IP) | LQFP-48 |

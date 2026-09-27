@@ -7,7 +7,7 @@ Applies when signal rise time tr < 2× propagation delay (roughly >50MHz clock o
 ### Single-Ended
 
 | Impedance | Application |
-|:---:|------------|
+| :---: | ------------ |
 | 40Ω | DDR3/DDR4 address |
 | 50Ω | RF, general high-speed, DDR3 data |
 | 60Ω | DDR2 data, some memory interfaces |
@@ -15,7 +15,7 @@ Applies when signal rise time tr < 2× propagation delay (roughly >50MHz clock o
 ### Differential
 
 | Impedance | Application |
-|:---:|------------|
+| :---: | ------------ |
 | 85Ω | PCIe (some) |
 | 90Ω | USB 2.0/3.0 |
 | 100Ω | Ethernet MDI, LVDS, MIPI, HDMI |
@@ -75,7 +75,7 @@ Crucial: orthogonally route adjacent signal layers to minimize coupling.
 ### Matching Rules
 
 | Signal Group | Tolerance | Notes |
-|-------------|:---:|-------|
+| ------------- | :---: | ------- |
 | DDR data byte lane | ±5mil | Within same byte group |
 | DDR address/command | ±25mil | Group match |
 | SPI bus (MOSI/SCLK) | ±2mm (80mil) | Same bus only |
@@ -151,7 +151,7 @@ Signal ──┬── L1
 ### Stub Impact by Data Rate
 
 | Data Rate | Stub Length | Issue? |
-|-----------|:---:|:---:|
+| ----------- | :---: | :---: |
 | ≤1Gbps | Any | Minimal |
 | 1-5Gbps | <1mm | OK |
 | 5-10Gbps | <0.5mm | Required |

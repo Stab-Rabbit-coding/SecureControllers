@@ -15,7 +15,7 @@
 ### LDO Comparison
 
 | Part | Vout | Imax | Vdropout | PSRR | Package | LCSC # |
-|------|------|:---:|:---:|:---:|---------|--------|
+| ------ | ------ | :---: | :---: | :---: | --------- | -------- |
 | AMS1117-3.3 | 3.3V | 1A | 1.1V | 60dB | SOT-223 | C6186 |
 | ME6211C33M5G | 3.3V | 500mA | 0.14V | 70dB | SOT-23-5 | C82942 |
 | HT7333-1 | 3.3V | 250mA | 50mV | 60dB | SOT-89 | — |
@@ -70,7 +70,7 @@ Need isolation?    ── YES ── Flyback / Forward
 #### Common Buck ICs
 
 | Part | Vin Range | Vout | Imax | fsw | Package |
-|------|-----------|------|:---:|:---:|---------|
+| ------ | ----------- | ------ | :---: | :---: | --------- |
 | MT2492 | 4.5-16V | Adj | 2A | 500kHz | SOT-23-6 |
 | MP1584 | 4.5-28V | Adj | 3A | 1.5MHz | SOIC-8 |
 | AP63205 | 3.8-32V | 5V fixed | 2A | 500kHz | SOT-23-6 |
