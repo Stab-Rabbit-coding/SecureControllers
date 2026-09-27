@@ -1,0 +1,30 @@
+# TI TPS63031 buck-boost converter, VSON-10 (DSK).
+# Verified 2026-09-27 (Claude Sonnet 5) against tps63031.pdf Pin
+# Configuration and Functions (DSK/VSON-10 Top View), Pin Functions table.
+footprint_check = "stock TPS6303x_VSON-10_2p5 -- EP tied to PGND"
+recommendation = "Only VSON-10 2.5x2.5mm package offered for this MPN."
+
+[symbol]
+name = "TPS63031DSK"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TPS63031DSKR"
+description = "1-cell Li-ion buck-boost converter, 96% efficiency, VSON-10"
+keywords = "buck-boost converter DC-DC"
+footprint = "SecureControllers:TPS6303x_VSON-10_2p5"
+fp_filters = "*VSON-10*"
+
+[datasheet]
+doc = "TI TPS6303x data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tps63031.pdf"
+section = "Pin Configuration and Functions (DSK Package, VSON-10 Top View)"
+
+[[packages]]
+code = "DSK (VSON-10)"
+pins = 10
+body = "2.5 x 2.5 mm"
+
+[pins]
+left = ["1 VOUT w", "2 L2 P", "3 PGND W", "4 L1 P", "5 VIN W"]
+right = ["10 FB I", "9 GND W", "8 VINA W", "7 PS/SYNC I", "6 EN I"]
+bottom = ["11 EP W"]
