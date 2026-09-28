@@ -1,0 +1,35 @@
+# Infineon ESD101-B1-02ELS single-line bidirectional ultra-low-C ESD diode.
+# Verified 2026-09-26 (Claude Opus 5.5) against Infineon ESD101-B1-02 Series
+# datasheet Rev 1.4 (2017-10-26): Fig. 1 pin configuration (symmetric),
+# electrical table p.4 (CL 0.1 pF typ @1 GHz, 0.2 pF max @1 MHz, VRWM +/-5.5 V),
+# Fig. 10/11 TSSLP-2-4 outline + footprint.
+footprint_check = "hand-built from Fig. 11: copper 0.32 x 0.24 mm, 0.14 mm gap (centres +/-0.19 mm); paste ratio -0.2 approximates 0.27 x 0.19 mm stencil"
+recommendation = "Owner decision 2026-09-26: replaces deprecated RCLAMP0502B on the three antenna feeds (Wi-Fi/BT 2.4/5 GHz, LoRa and SiK 915 MHz). 0201 TSSLP-2-4 chosen over 0402 TSLP-2-20 (ESD101-B1-02EL) for lowest series inductance (0.2 nH). RClamp0504FA (3 pF) rejected for RF: ~3.7-8.8 dB mismatch loss at 2.4/5 GHz."
+findings = ["TACCO/Commo used RCLAMP0502B (deprecated per owner 2026-09-26).", "RClamp0504FA proposed as successor is a 3 pF USB-class array -- unsuitable for 50-ohm antenna feeds."]
+
+[symbol]
+name = "ESD101-B1-02ELS"
+reference = "D"
+manufacturer = "Infineon"
+description = "Single-line bidirectional ESD diode, 0.1 pF, +/-5.5 V, TSSLP-2-4 (0201)"
+keywords = "ESD TVS RF antenna ultra low capacitance"
+footprint = "SecureControllers:Infineon_TSSLP-2-4_0.62x0.32mm"
+
+[datasheet]
+doc = "Infineon ESD101-B1-02 Series datasheet Rev 1.4 (2017-10-26)"
+url = "https://www.infineon.com/assets/row/public/documents/24/49/infineon-esd101-b1-datasheet-en.pdf"
+section = "Fig. 1; electrical characteristics p.4; Sec. 4.1 Fig. 10-11"
+
+[[packages]]
+code = "TSSLP-2-4 (-02ELS)"
+pins = 2
+body = "0.62 x 0.32 x 0.31 mm"
+
+[[packages]]
+code = "TSLP-2-20 (-02EL)"
+pins = 2
+body = "1.0 x 0.6 mm"
+
+[pins]
+top = ["1 A1 P"]
+bottom = ["2 A2 P"]

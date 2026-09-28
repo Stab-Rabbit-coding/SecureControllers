@@ -1,0 +1,41 @@
+# Holt HI-1573 3.3 V MIL-STD-1553 dual transceiver, 44-pin QFN 7x7.
+# Verified 2026-09-26 (Claude Opus 5.5) against hi-1573.pdf (DS1573 Rev U)
+# p.1 Pin Configurations; heat sink is electrically isolated.
+recommendation = "44-pin 7x7 QFN is the smallest of the three packages offered (20-pin ESOIC-WB 12.8 x 10.3 mm, 20-pin ceramic DIP)."
+findings = ["Pilot/TACCO copies type the exposed pad power_in; datasheet says the heat sink is electrically isolated -> passive."]
+footprint_check = "stock QFN-44 7x7 P0.5 EP-land 5.2 mm under a 5.50 mm isolated heat sink -- land smaller than EP is accepted practice, keeps ~0.5 mm to lead toes"
+
+[symbol]
+name = "HI-1573PCI"
+reference = "U"
+manufacturer = "Holt Integrated Circuits"
+description = "3.3 V MIL-STD-1553 dual bus transceiver, 44-pin QFN 7x7 mm, industrial"
+keywords = "MIL-STD-1553 transceiver avionics bus"
+footprint = "Package_DFN_QFN:QFN-44-1EP_7x7mm_P0.5mm_EP5.2x5.2mm"
+fp_filters = "QFN*44*7x7mm*"
+
+[datasheet]
+doc = "Holt HI-1573/HI-1574 data sheet DS1573 Rev U"
+url = "datasheets/hi-1573.pdf"
+status = "verified (pin map); public URL requires verification"
+section = "p.1 Pin Configurations (44-pin QFN); Heat Sink application note"
+
+[[packages]]
+code = "PCI/PCT/PCM (QFN-44)"
+pins = 44
+body = "7 x 7 mm"
+
+[[packages]]
+code = "PSI/PST/PSM (ESOIC-20 WB)"
+pins = 20
+body = "12.8 x 7.5 mm"
+
+[[packages]]
+code = "CDI/CDT/CDM (ceramic DIP-20)"
+pins = 20
+body = "25.4 x 7.6 mm"
+
+[pins]
+left = ["38 VDDA W", "39 VDDA W ~", "", "36 TXA I", "37 ~{TXA} I", "31 TXINHA I", "30 RXA O", "29 ~{RXA} O", "2 RXENA I", "", "3 GNDA W", "4 GNDA W ~", "5 GNDA W ~", "", "40 BUSA B", "41 BUSA B ~", "42 ~{BUSA} B", "43 ~{BUSA} B ~"]
+right = ["6 VDDB W", "7 VDDB W ~", "", "25 TXB I", "26 ~{TXB} I", "24 TXINHB I", "21 RXB O", "20 ~{RXB} O", "16 RXENB I", "", "17 GNDB W", "18 GNDB W ~", "19 GNDB W ~", "", "8 BUSB B", "9 BUSB B ~", "10 ~{BUSB} B", "11 ~{BUSB} B ~"]
+bottom = ["1 NC N", "12 NC N", "13 NC N", "14 NC N", "15 NC N", "22 NC N", "23 NC N", "27 NC N", "28 NC N", "32 NC N", "33 NC N", "34 NC N", "35 NC N", "44 NC N", "45 EP P"]

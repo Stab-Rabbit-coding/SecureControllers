@@ -1,0 +1,32 @@
+# Infineon OPTIGA TPM SLB 9672 (TPM 2.0, SPI), PG-UQFN-32.
+# Verified 2026-09-26 (Claude Opus 5.5) against slb9672.pdf Rev 1.3
+# Tables 11-13 and Fig. 1 (EP 3.6 +/-0.1 mm, internally GND, Sec. 2.1.2).
+recommendation = "Single package (PG-UQFN-32, 5x5 mm). Prefer the AU2.0 ordering code (-40..105 C) over XU2.0 (-40..85 C) for an aircraft; pin-identical, so this one symbol covers both via the MPN field."
+findings = ["Commo footprint uses EP3.45x3.45 -- datasheet EP is 3.6 x 3.6 mm.", "Gateway/Observer copy lists pin 10 as NCI; datasheet Table 13 is NCI/VDD."]
+footprint_check = "stock QFN-32 5x5 P0.5, EP land 3.6 x 3.6 = package EP 3.6 +/-0.1 (Fig. 1)"
+
+[symbol]
+name = "SLB9672"
+reference = "U"
+manufacturer = "Infineon"
+mpn = "SLB9672AU20FW1610XTMA1"
+description = "OPTIGA TPM 2.0, SPI, PG-UQFN-32 5x5 mm, EP to GND"
+keywords = "TPM TPM2.0 secure element SPI Infineon"
+footprint = "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm"
+fp_filters = "QFN*1EP*5x5mm*P0.5mm*EP3.6x3.6mm*"
+
+[datasheet]
+doc = "Infineon OPTIGA TPM SLB9672 FW16 data sheet Rev 1.3"
+url = "datasheets/slb9672.pdf"
+status = "verified (pin map); public URL requires verification"
+section = "Tables 11-13, Fig. 1, Sec. 2.1.2"
+
+[[packages]]
+code = "PG-UQFN-32"
+pins = 32
+body = "5.0 x 5.0 x 0.6 mm"
+
+[pins]
+left = ["1 VDD W", "14 VDD W ~", "22 VDD W ~", "8 NCI/VDD P", "10 NCI/VDD P", "", "20 ~{CS} I", "19 SCLK I", "21 MOSI I", "24 MISO T", "", "17 ~{RST} I", "18 ~{PIRQ} C"]
+right = ["3 GPIO_00 B", "4 GPIO_01 B", "7 GPIO_02 B", "", "6 NC N", "29 NC N", "30 NC N", "5 NCI N", "11 NCI N", "12 NCI N", "13 NCI N", "15 NCI N", "25 NCI N", "26 NCI N", "27 NCI N", "28 NCI N", "31 NCI N"]
+bottom = ["2 GND W", "9 GND W", "23 GND W", "32 GND W", "16 NCI/GND P", "33 EP W"]

@@ -1,0 +1,29 @@
+# TI ISOW1044 isolated CAN-FD transceiver with integrated isolated DC/DC.
+# Verified 2026-09-26 (Claude Opus 5.5) against TI isow1044.pdf pin
+# configuration figure + Pin Functions table (20-pin DFM).
+recommendation = "Only package offered (DFM). Basic (B) vs reinforced isolation is the only variant; keep B unless a reinforced-isolation requirement is added."
+findings = ["Pilot/TACCO/Flight Engineer copies type every pin passive -- ERC driver checks disabled.", "Observer/gateway copy is named Observer_ISOW1044BDFMR -- board-scoped name."]
+footprint_check = "stock SOIC-20W 7.5x12.8 P1.27 -- matches DFM body 12.83 x 7.5 mm"
+
+[symbol]
+name = "ISOW1044BDFMR"
+reference = "U"
+manufacturer = "Texas Instruments"
+description = "Isolated CAN-FD transceiver, integrated 5 kVrms isolated DC/DC, basic isolation, SOIC-20 DFM"
+keywords = "CAN FD isolated transceiver DC/DC"
+footprint = "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
+fp_filters = "SOIC*7.5x12.8mm*P1.27mm*"
+
+[datasheet]
+doc = "TI ISOW1044 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/isow1044.pdf"
+section = "Pin Configuration and Functions (DFM, 20 pin)"
+
+[[packages]]
+code = "DFM"
+pins = 20
+body = "12.83 x 7.5 mm"
+
+[pins]
+left = ["1 VIO W", "9 VDD W", "", "3 TXD I", "5 RXD O", "4 STB I", "8 EN/FLT B", "2 IN I", "14 OUT O", "7 NC N", "", "6 GNDIO W", "10 GND1 W"]
+right = ["12 VISOOUT w", "13 VSIN W", "20 VISOIN W", "", "19 CANH B", "18 CANL B", "", "", "", "", "15 GISOIN W", "16 GISOIN W", "17 GISOIN W", "11 GND2 W"]

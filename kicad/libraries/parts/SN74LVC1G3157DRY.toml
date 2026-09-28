@@ -1,0 +1,53 @@
+# TI SN74LVC1G3157 single SPDT analog switch, USON-6 (DRY).
+# Verified 2026-09-26 (Claude Opus 5.5) against sn74lvc1g3157.pdf (SCES424O,
+# rev. June 2025) Pin Configuration and Functions (all packages share
+# B2 1, GND 2, B1 3, A 4, VCC 5, S 6) and the DRY0006A outline.
+footprint_check = "stock Texas_USON-6_1x1.45mm_P0.5mm_SMD -- TI DRY-package land pattern (same DRY0006A outline)"
+recommendation = "DRY USON-6 (1.45 x 1.0 mm) chosen by owner 2026-09-26 for Commo MUX1; YZP DSBGA (1.41 x 0.91 mm) is the only smaller option. S low selects B1, S high selects B2 (datasheet function table)."
+findings = ["Commo MUX1 (SN74LVC1G157 symbol) had +3V3 on pin 4 and MODE_SEL on pin 5 -- matches neither the '157 nor the '3157 pinout; rewired on the '3157 (owner decision 2026-09-26)."]
+
+[symbol]
+name = "SN74LVC1G3157DRY"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "SN74LVC1G3157DRYR"
+description = "Single SPDT analog switch, 1.65-5.5 V, USON-6 1.45 x 1.0 mm"
+keywords = "analog switch SPDT mux 2:1"
+footprint = "Package_SON:Texas_USON-6_1x1.45mm_P0.5mm_SMD"
+fp_filters = "*USON*6*1x1.45mm*"
+
+[datasheet]
+doc = "TI SN74LVC1G3157 data sheet SCES424O"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf"
+section = "Pin Configuration and Functions; function table; DRY0006A"
+
+[[packages]]
+code = "DCK (SC-70-6)"
+pins = 6
+body = "2.0 x 1.25 mm"
+
+[[packages]]
+code = "DBV (SOT-23-6)"
+pins = 6
+body = "2.9 x 1.6 mm"
+
+[[packages]]
+code = "DRL (SOT-563)"
+pins = 6
+body = "1.6 x 1.2 mm"
+
+[[packages]]
+code = "DRY (USON-6)"
+pins = 6
+body = "1.45 x 1.0 mm"
+
+[[packages]]
+code = "YZP (DSBGA-6)"
+pins = 6
+body = "1.41 x 0.91 mm"
+
+[pins]
+left = ["3 B1 B", "1 B2 B", "6 S I"]
+right = ["4 A B"]
+top = ["5 VCC W"]
+bottom = ["2 GND W"]

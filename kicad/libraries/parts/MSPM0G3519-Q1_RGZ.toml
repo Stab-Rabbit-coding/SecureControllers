@@ -1,0 +1,39 @@
+# TI MSPM0G3519-Q1 automotive Arm Cortex-M0+ MCU with CAN-FD, RGZ VQFN-48.
+# Verified 2026-09-26 (Claude Opus 5.5) against TI SLASFA6B (Oct 2025)
+# Fig. 6-5 and Table 6-2 Pin Attributes; thermal pad soldered to VSS.
+footprint_check = "stock VQFN-48 7x7 P0.5 EP4.1 -- matches TI RGZ0048F drawing (EP 4.1 mm)"
+recommendation = "-Q1 family offers RHB VQFN-32 5x5 (smallest), RGZ VQFN-48 7x7, PT/PM/PN/PZ LQFP 48-100; no DSBGA in -Q1 (commercial G351x has a 2.8 x 2.4 mm YCJ DSBGA, not AEC-Q100)."
+
+[symbol]
+name = "MSPM0G3519-Q1_RGZ"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "MSPM0G3519-Q1"
+description = "80 MHz Arm Cortex-M0+ MCU, CAN-FD, AES/secure keystore, AEC-Q100, RGZ VQFN-48"
+keywords = "MCU MSPM0 CAN-FD automotive Cortex-M0+"
+footprint = "Package_DFN_QFN:VQFN-48-1EP_7x7mm_P0.5mm_EP4.1x4.1mm"
+
+[datasheet]
+doc = "TI MSPM0G351x-Q1 data sheet SLASFA6B"
+url = "https://www.ti.com/lit/ds/symlink/mspm0g3519-q1.pdf"
+section = "Fig. 6-5; Table 6-2 Pin Attributes"
+
+[[packages]]
+code = "RHB (VQFN-32)"
+pins = 32
+body = "5 x 5 mm"
+
+[[packages]]
+code = "RGZ (VQFN-48)"
+pins = 48
+body = "7 x 7 mm"
+
+[[packages]]
+code = "PT/PM/PN/PZ (LQFP)"
+pins = 48
+body = "9x9 to 16x16 mm"
+
+[pins]
+left = ["4 NRST I", "6 VDD W", "48 VCORE P", "", "1 PA0 B", "2 PA1 B", "8 PA2 B", "9 PA3 B", "10 PA4 B", "11 PA5 B", "12 PA6 B", "13 PA7 B", "16 PA8 B", "17 PA9 B", "18 PA10 B", "19 PA11 B", "27 PA12 B", "28 PA13 B", "29 PA14 B", "30 PA15 B", "31 PA16 B", "32 PA17 B", "33 PA18 B", "34 PA19/SWDIO B", "35 PA20/SWCLK B", "39 PA21 B"]
+right = ["40 PA22 B", "43 PA23 B", "44 PA24 B", "45 PA25 B", "46 PA26 B", "47 PA27 B", "3 PA28 B", "5 PA31 B", "14 PB2 B", "15 PB3 B", "20 PB6 B", "21 PB7 B", "22 PB8 B", "23 PB9 B", "24 PB14 B", "25 PB15 B", "26 PB16 B", "36 PB17 B", "37 PB18 B", "38 PB19 B", "41 PB20 B", "42 PB24 B"]
+bottom = ["7 VSS W", "49 VSS W"]

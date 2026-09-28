@@ -1,0 +1,40 @@
+# TI TLV62569 2 A buck, SOT-23-5 (DBV) -- no power-good.
+# Verified 2026-09-26 (Claude Opus 5.5) against tlv62569.pdf Pin Functions.
+recommendation = "Superseded on all Serenity boards by TLV62569PDRL (owner-approved swap 2026-09-26); kept for reference."
+findings = ["Gateway/Observer symbol puts FB on pin 5 and PG on pin 6 on a SOT-23-6 footprint -- matches no TI variant (TLV62569PDDC has PG=5, FB=6).", "Flight Engineer places TLV62569DBVR on a 3-pad SOT-23 footprint."]
+footprint_check = "stock SOT-23-5 -- DBV"
+
+[symbol]
+name = "TLV62569DBV"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TLV62569DBVR"
+description = "2.5-5.5 V in, 2 A synchronous buck, SOT-23-5, no PG"
+keywords = "buck regulator DC-DC step-down"
+footprint = "Package_TO_SOT_SMD:SOT-23-5"
+fp_filters = "SOT?23*"
+
+[datasheet]
+doc = "TI TLV62569 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tlv62569.pdf"
+section = "Pin Functions (SOT23-5 column)"
+
+[[packages]]
+code = "DBV (SOT-23-5)"
+pins = 5
+body = "2.9 x 2.8 mm"
+
+[[packages]]
+code = "DDC (SOT-23-6, P variant)"
+pins = 6
+body = "2.9 x 2.8 mm"
+
+[[packages]]
+code = "DRL (SOT-563)"
+pins = 6
+body = "1.6 x 1.6 mm"
+
+[pins]
+left = ["4 VIN W", "1 EN I"]
+right = ["3 SW w", "5 FB I"]
+bottom = ["2 GND W"]

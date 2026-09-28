@@ -1,0 +1,32 @@
+# Nexperia PMBT2222A NPN switching transistor, SOT23.
+# Verified 2026-09-26 (Claude Opus 5.5) against Nexperia PMBT2222A product
+# data sheet (27 July 2022): pinning 1 B, 2 E, 3 C; VCEO 40 V; IC 600 mA;
+# fT >= 300 MHz (VCE 20 V, IC 20 mA, f 100 MHz); AEC-Q101. Lifecycle
+# "Production" on nexperia.com (checked 2026-09-26).
+footprint_check = "stock SOT-23 (pads 1/2/3 = B/E/C per Nexperia pinning table)"
+recommendation = "Owner decision 2026-09-26: replaces the deprecated MMBT2222A as the Commo 49 MHz class-A PA driver; identical pinout and footprint."
+
+[symbol]
+name = "PMBT2222A"
+reference = "Q"
+manufacturer = "Nexperia"
+mpn = "PMBT2222A,215"
+description = "NPN switching transistor, 40 V, 600 mA, fT >= 300 MHz, SOT23, AEC-Q101"
+keywords = "NPN BJT transistor 2222"
+footprint = "Package_TO_SOT_SMD:SOT-23"
+fp_filters = "SOT?23*"
+
+[datasheet]
+doc = "Nexperia PMBT2222A product data sheet (27 July 2022)"
+url = "https://assets.nexperia.com/documents/data-sheet/PMBT2222A.pdf"
+section = "Pinning information; limiting values; characteristics (fT)"
+
+[[packages]]
+code = "SOT23 (TO-236AB)"
+pins = 3
+body = "2.9 x 1.3 mm"
+
+[pins]
+left = ["1 B I"]
+top = ["3 C P"]
+bottom = ["2 E P"]
