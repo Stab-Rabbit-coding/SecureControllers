@@ -42,6 +42,19 @@
     // field labels, no blank-line padding) — a tooling/format
     // characteristic of every plan this skill produces, not an authoring
     // lapse in this one document.
-    "docs/plans/**/*.md"
+    "docs/plans/**/*.md",
+    // .claude/skills/pcb-designer/** was re-added verbatim by commit
+    // 188c96b ("restore pcb-designer content lost as a broken gitlink")
+    // after an earlier bandit sweep had silently dropped it entirely —
+    // the restoration deliberately preserved the original content as-is
+    // rather than reformatting it, so it carries this skill's own
+    // upstream conventions: a badge/table README (MD033 inline HTML,
+    // shields.io badges) and reference docs whose fenced blocks are
+    // ASCII-art schematics/pinouts and pseudo-code, not code in any one
+    // real language (MD040). Table-pipe spacing (MD060) was fixed
+    // 2026-09-27 since that's a mechanical, content-neutral change; the
+    // rest is left alone to avoid degrading the upstream skill content
+    // for a lint pass unrelated to this repo's own authoring.
+    ".claude/skills/pcb-designer/**/*.md"
   ]
 }

@@ -7,7 +7,7 @@
 Create a table of every power-consuming component:
 
 | Designator | Component | Vsupply | Imax | Pmax(mW) | Duty Cycle | Pavg(mW) |
-|------------|-----------|:---:|:---:|:---:|:---:|:---:|
+| ------------ | ----------- | :---: | :---: | :---: | :---: | :---: |
 | U3 | ESP32-S3 | 3.3V | 300mA | 990 | 30% | 300 |
 | U4 | ICM-42688 | 3.3V | 3mA | 10 | 100% | 10 |
 | U7 | MT2492 | 5V | 500mA | 250 (loss) | 100% | 250 |
@@ -38,7 +38,7 @@ Pd  = power dissipation (W)
 ### Typical θJA Values
 
 | Package | θJA (min Cu) | θJA (1cm² Cu) | θJA (4cm² Cu) |
-|---------|:---:|:---:|:---:|
+| --------- | :---: | :---: | :---: |
 | SOT-23 | 250 | 180 | 130 |
 | SOT-23-5 | 200 | 150 | 110 |
 | SOT-223 | 60 | 40 | 25 |

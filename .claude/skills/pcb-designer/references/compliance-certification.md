@@ -3,7 +3,7 @@
 ## Quick Reference by Market
 
 | Market | EMC | Safety | Radio | Environmental |
-|--------|:---:|:---:|:---:|:---:|
+| -------- | :---: | :---: | :---: | :---: |
 | **US** | FCC Part 15 | UL 62368 | FCC Part 15.247 | — |
 | **EU** | EN 55032/55035 | EN 62368 | RED (2014/53/EU) | RoHS, REACH, WEEE |
 | **UK** | UK SI 2016/1091 | UK SI 2016/1101 | UK RED | RoHS, WEEE |
@@ -47,7 +47,7 @@ Cost: $3,000-$15,000 (depends on lab and complexity)
 ### Applicable Directives
 
 | Directive | Scope | Standard |
-|-----------|-------|----------|
+| ----------- | ------- | ---------- |
 | **RED** (2014/53/EU) | Radio equipment | EN 300 328 (2.4GHz) |
 | **EMCD** (2014/30/EU) | EMC (non-radio) | EN 55032, EN 55035 |
 | **LVD** (2014/35/EU) | Safety (50-1000V AC, 75-1500V DC) | EN 62368 |
@@ -78,7 +78,7 @@ Cost: €5,000-€20,000
 ### Restricted Substances (Max Concentration)
 
 | Substance | Limit |
-|-----------|:---:|
+| ----------- | :---: |
 | Lead (Pb) | 0.1% |
 | Mercury (Hg) | 0.1% |
 | Cadmium (Cd) | 0.01% |

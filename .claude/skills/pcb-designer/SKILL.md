@@ -53,7 +53,7 @@ Pairs with `easyeda-api-skill` for automated EDA control.
 ## Reference Index
 
 | Scenario | Reference |
-|----------|-----------|
+| ---------- | ----------- |
 | 立创 EDA / LCEDA workflow | `references/lceda-workflow.md` |
 | KiCad workflow | `references/kicad-workflow.md` |
 | DFM pre-export checklist | `references/dfm-checklist.md` |
@@ -104,7 +104,7 @@ Ask about:
 ### 2.1 Supply Chain Strategy
 
 | Priority | Source | Notes |
-|----------|--------|-------|
+| ---------- | -------- | ------- |
 | 1st | LCSC Basic Parts | No JLCPCB assembly surcharge |
 | 2nd | LCSC Extended | ¥3/part surcharge |
 | 3rd | Digi-Key / Mouser | Consigned to JLCPCB |
@@ -113,7 +113,7 @@ Ask about:
 ### 2.2 Package Preference
 
 | Density | Passives | ICs | Hand-solderable |
-|---------|----------|-----|:---:|
+| --------- | ---------- | ----- | :---: |
 | Ultra-compact | 0201 | WLCSP/BGA | ✗ |
 | High density | 0402 | QFN/LGA | ✗ |
 | **Sweet spot** | **0603** | **QFN/QFP** | ✓ (with practice) |
@@ -123,7 +123,7 @@ Ask about:
 ### 2.3 Common Components (LCSC)
 
 | Function | Part | Package | LCSC # |
-|----------|------|---------|--------|
+| ---------- | ------ | --------- | -------- |
 | ESP32-S3 (PCB ant) | ESP32-S3-WROOM-1-N16R8 | Module | C2913201 |
 | ESP32-S3 (IPEX) | ESP32-S3-WROOM-1U-N16R8 | Module | C2913203 |
 | 3.3V LDO 1A | AMS1117-3.3 | SOT-223 | C6186 |
@@ -163,7 +163,7 @@ Before layout, verify:
 ### 4.1 Stackup Decision
 
 | Factor | 2-Layer | 4-Layer | 6+ Layer |
-|--------|---------|---------|----------|
+| -------- | --------- | --------- | ---------- |
 | Cost (50×50mm, 5pcs) | ~¥5 | ~¥30 | ~¥80+ |
 | Signal integrity | Fair | Good | Excellent |
 | EMI control | Hard | Good | Easy |
@@ -201,7 +201,7 @@ L4: Signal + GND fill       ← Bottom
 ## 5. Routing Rules
 
 | Signal | Min Width | Min Spacing | Special |
-|--------|-----------|-------------|---------|
+| -------- | ----------- | ------------- | --------- |
 | Digital ≤20MHz | 6mil | 6mil | — |
 | SPI 40MHz | 6mil | 18mil (3×W) | 22Ω series term, ±2mm match |
 | SPI 20MHz | 6mil | 12mil (2×W) | Pull-ups |
@@ -309,7 +309,7 @@ Full checklist at `references/dfm-checklist.md`. Quick checks:
 ### Minimum Fab Capability (JLCPCB)
 
 | Parameter | Min | Recommended |
-|-----------|-----|-------------|
+| ----------- | ----- | ------------- |
 | Trace/space | 3.5mil | 6mil |
 | Via hole | 0.2mm | 0.3mm |
 | Via pad | 0.45mm | 0.6mm |
@@ -383,7 +383,7 @@ See `references/power-design.md`.
 ### DC-DC Topology
 
 | Topology | Vin vs Vout | Complexity | EMI |
-|----------|:---:|:---:|:---:|
+| ---------- | :---: | :---: | :---: |
 | Buck | Vin > Vout | Low | Medium |
 | Boost | Vin < Vout | Low | Medium |
 | Buck-Boost | Either | Medium | High |
@@ -412,7 +412,7 @@ See `references/mcu-platforms.md`.
 ### Platform Selection Guide
 
 | Platform | Best For | Max Clock | Wireless | Eco-system |
-|----------|----------|:---------:|:--------:|:----------:|
+| ---------- | ---------- | :---------: | :--------: | :----------: |
 | ESP32-S3 | IoT, WiFi/BLE | 240MHz | ✓ | Arduino, ESP-IDF |
 | STM32F4 | Industrial, DSP | 180MHz | ✗ | STM32Cube, HAL |
 | STM32H7 | High-perf, GUI | 550MHz | ✗ | STM32Cube |
@@ -431,7 +431,7 @@ See `references/mcu-platforms.md`.
 See `references/communication-interfaces.md`.
 
 | Interface | Speed | Topology | Key Rules |
-|-----------|-------|----------|-----------|
+| ----------- | ------- | ---------- | ----------- |
 | UART | ≤3Mbps | Point-to-point | Cross TX/RX |
 | I2C | 100k/400k/1M | Multi-drop bus | Pull-ups, ≤400pF |
 | SPI | ≤50MHz | Star, multi-CS | 22Ω term, ±2mm match |
@@ -469,7 +469,7 @@ See `references/analog-design.md`.
 ### Current Sensing
 
 | Method | Range | Accuracy | Isolation |
-|--------|-------|:---:|:---:|
+| -------- | ------- | :---: | :---: |
 | Shunt + op-amp | μA–kA | ±0.1% | ✗ |
 | Hall effect | 1A–1000A | ±1% | ✓ |
 | CT (AC only) | 0.1A–100A | ±0.5% | ✓ |
@@ -489,7 +489,7 @@ See `references/rf-design.md`.
 ### Antenna Types
 
 | Type | Size | Bandwidth | Cost | Use Case |
-|------|------|:---:|------|----------|
+| ------ | ------ | :---: | ------ | ---------- |
 | PCB trace (IFA/meander) | 15×8mm | Narrow | Free | ESP32 modules |
 | Ceramic chip | 3×2mm | Narrow | ¥1-3 | GPS, BLE compact |
 | External whip | 50-100mm | Wide | ¥10-50 | Gateway, base station |
@@ -512,7 +512,7 @@ See `references/high-speed-digital.md`.
 ### Impedance Control
 
 | Signal | Z0 Single | Zdiff |
-|--------|:---:|:---:|
+| -------- | :---: | :---: |
 | 50Ω RF | 50Ω | — |
 | USB D+/D- | — | 90Ω |
 | Ethernet | — | 100Ω |
@@ -546,7 +546,7 @@ See `references/pcb-materials.md`.
 ### Substrate
 
 | Material | εr | Tan δ | Tg | Cost | Use |
-|----------|:---:|:---:|:---:|------|-----|
+| ---------- | :---: | :---: | :---: | ------ | ----- |
 | FR-4 (standard) | 4.2-4.6 | 0.02 | 130°C | ¥ | Digital, low-freq |
 | FR-4 (high-Tg) | 4.2-4.6 | 0.02 | 170°C | ¥¥ | Lead-free, automotive |
 | Rogers 4350B | 3.48 | 0.004 | 280°C | ¥¥¥¥ | RF/microwave |
@@ -555,7 +555,7 @@ See `references/pcb-materials.md`.
 ### Surface Finish
 
 | Finish | Shelf Life | Flatness | Cost | Lead-free |
-|--------|:---:|:---:|------|:---:|
+| -------- | :---: | :---: | ------ | :---: |
 | HASL (有铅) | 12mo | Poor | ¥ | ✗ |
 | HASL (无铅) | 12mo | Poor | ¥ | ✓ |
 | ENIG | 12mo | Excellent | ¥¥ | ✓ |
@@ -613,7 +613,7 @@ See `references/protection-reliability.md`.
 ### ESD Protection
 
 | Level | Voltage | Standard | Protection |
-|-------|:---:|----------|------------|
+| ------- | :---: | ---------- | ------------ |
 | HBM | 2kV | JESD22-A114 | On-chip diodes |
 | CDM | 500V | JESD22-C101 | On-chip |
 | IEC 61000-4-2 Contact | ±8kV | System-level | TVS at connector |
@@ -640,7 +640,7 @@ See `references/protection-reliability.md`.
 ### Isolation
 
 | Type | Voltage | Speed | Cost |
-|------|:---:|:---:|------|
+| ------ | :---: | :---: | ------ |
 | Optocoupler | 5kV | ≤10Mbps | ¥ |
 | Digital isolator (SiO2) | 5kV | ≤150Mbps | ¥¥ |
 | Transformer | >10kV | AC/pulse | ¥¥ |
@@ -670,7 +670,7 @@ See `references/testing-debug.md`.
 ### Debug Interfaces
 
 | Interface | Pins | Use |
-|-----------|:---:|-----|
+| ----------- | :---: | ----- |
 | SWD (ARM) | SWCLK+SWDIO+GND | Programming + debug |
 | JTAG | TMS+TDI+TDO+TCK+GND | Boundary scan |
 | cJTAG (2-wire) | Same as SWD | ARM debug alternative |
@@ -706,7 +706,7 @@ See `references/compliance-certification.md`.
 ### Key Certifications
 
 | Certification | Region | Scope | Est. Cost |
-|---------------|--------|-------|:---:|
+| --------------- | -------- | ------- | :---: |
 | **FCC Part 15** | US | Intentional/unintentional radiator | $3k-15k |
 | **CE (RED)** | EU | Radio Equipment Directive | €5k-20k |
 | **UKCA** | UK | Post-Brexit equivalent of CE | £3k-15k |
@@ -783,10 +783,10 @@ When asked to **review a PCB**, use three-tier:
 
 ## Pairing with easyeda-api-skill
 
-| Skill | Role |
-|-------|------|
-| `pcb-designer` (this) | **Design brain** — what to do and why |
-| `easyeda-api-skill` | **Automation hands** — execute in EDA via bridge |
+| Skill                 | Role                                             |
+| --------------------- | ------------------------------------------------ |
+| `pcb-designer` (this) | **Design brain** — what to do and why            |
+| `easyeda-api-skill`   | **Automation hands** — execute in EDA via bridge |
 
 ```bash
 cd ~/.claude/skills/

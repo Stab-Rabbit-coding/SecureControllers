@@ -5,7 +5,7 @@
 ### Minimum Test Points (Every Board)
 
 | Net | Purpose | Pad Size |
-|-----|---------|:---:|
+| ----- | --------- | :---: |
 | GND | Reference, probe clip | 2.0mm |
 | 3V3 | Power verification | 1.5mm |
 | UART TX | Serial debug output | 1.0mm |
@@ -16,7 +16,7 @@
 ### Recommended Additional Test Points
 
 | Net | Purpose |
-|-----|---------|
+| ----- | --------- |
 | All power rails | Verify voltage levels |
 | SPI MOSI/MISO/SCLK | Bus debug with logic analyzer |
 | I2C SDA/SCL | Bus debug |
