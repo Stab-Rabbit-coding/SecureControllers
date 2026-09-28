@@ -177,6 +177,12 @@ value cannot address.
   board perimeter ring (3 mm width around all four edges). Signal GND and PGND connect
   at the single-point J-PWR star under the mounting hole.
 
+> **WARNING:** The 5 kV reinforced galvanic isolation between GND1 and GND2 on the
+> ISOW1044BDFMR (CAN FD) and ADM2795EBRWZ (RS-485) depends on the creepage/clearance
+> below being met. Fabricating or fielding the board without meeting it (see the DRC
+> finding below) risks isolation breakdown and an electric shock hazard to anyone
+> connected to the field-side bus wiring.
+
 - **Isolation creepage:** Maintain ≥ 8 mm creepage and ≥ 1.5 mm clearance between
 
   GND1 and GND2 copper pours on the ISOW1044BDFMR and ADM2795EBRWZ
@@ -198,11 +204,11 @@ value cannot address.
   > errors). This verification did not change layout — per `CLAUDE.md`, footprint/route
   > rework to close this gap is referred to the user, not performed automatically.
 
-- **CMC placement:** CM1 and CM2 must be placed on the board side of the field
+- **CMC placement:** CM1 and CM2 shall be placed on the board side of the field
 
   connector (between the IC and the JST-GH pin row), not on the cable side.
 
-- **TVS placement:** TVS-CAN and TVS-485 must be placed within 5 mm of the JST-GH
+- **TVS placement:** TVS-CAN and TVS-485 shall be placed within 5 mm of the JST-GH
 
   connector body, on the outer copper layer, with GND return via ≥ 2× 0.3 mm vias to
   the inner PGND plane.
@@ -290,7 +296,7 @@ to the Serenity UAV airframe operating environment:
 | MIL-STD-461G RE102 [REF-MIL-002] | Limit C | Radiated emissions | 100BASE-TX EMI suppressed via HX1188NL magnetics, CMCs, and TVS arrays |
 | MIL-STD-461G RS103 [REF-MIL-002] | 200 V/m, 10 kHz–18 GHz | Radiated susceptibility | Isolated buses + chassis ground |
 
-Pre-compliance testing against IEC 61000-4-2 through 4-5 is required before first
+Pre-compliance testing against IEC 61000-4-2 through 4-5 shall be completed before first
 flight. Formal MIL-STD-461G testing is deferred pending airframe integration.
 
 ---
