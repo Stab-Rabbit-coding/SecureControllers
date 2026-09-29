@@ -323,6 +323,38 @@ Every schematic and PCB modification **must** be verified:
     - Proper IC footprints for all components
     - Production-ready Gerber files
 
+## Documentation Standards
+
+### Warnings, Cautions, Notes, and Wording
+
+Callout severity and requirement-verb usage follow CNAF M-3710.7 §1.5–1.6
+(NATOPS General Flight and Operating Instructions Manual) [REF-MIL-001
+§1.5, §1.6] — the manual is held locally at `docs/cnaf-3710.7_1-52.pdf` (the
+source of this convention for this workspace):
+
+- **WARNING** — a procedure or condition that may result in injury, death,
+  or destruction of hardware if not carefully observed or followed.
+- **CAUTION** — a procedure or condition that may result in equipment
+  damage (board, MCU, secure element) with no injury or asset-loss risk.
+- **Note** — information that must be emphasized but carries no
+  WARNING/CAUTION-level risk.
+
+Never downgrade a WARNING-level risk into a Note, and never use an ad hoc
+label ("IMPORTANT:", "ATTENTION:") in place of one of these three.
+
+Requirement wording, same source [REF-MIL-001 §1.6]:
+
+- **Shall** — mandatory.
+- **Should** — recommended, not mandatory.
+- **May** / **need not** — optional.
+- **Will** — futurity only; never a degree of requirement. Do not write
+  "will" where "shall" is meant.
+
+**Active vs. passive voice (project addition, not in CNAF M-3710.7):** write
+procedural text in the active voice except where the shall/should/may/will
+wording above requires the passive construction to state the requirement
+itself.
+
 ## Security and Cryptography Requirements
 
 Every message, internal and external, must be:
