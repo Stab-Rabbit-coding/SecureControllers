@@ -22,6 +22,7 @@ treat those as the source of truth for asset inventories.
 | `LICENSE.md` | Repository license |
 | `not-a-real-datasheet.txt` | Test fixture (deliberately not a real datasheet; excluded from the scanner's matched extensions) |
 | `PROJECT_INDEX.md` | This file |
+| `REFERENCES.md` | Standards and external-source catalog (REF-IDs), including the NoNFO-Pilot design sources (REF-NFP-xxx) |
 | `SecureControllers.code-workspace` | VS Code workspace file |
 | `TODO.md` | Work Breakdown Structure. Currently scoped as "Serenity UAV — Avionics WBS"; identity vs. this repo's new workspace-library role is an open question in the plan (see `docs/plans/`) |
 
@@ -51,7 +52,8 @@ MPN guesses: `index/datasheets.json`.
 
 | Path | Purpose |
 | --- | --- |
-| `docs/plans/` | Compound-engineering plan documents (`ce-plan` output). Currently: `2026-09-08-001-feat-workspace-resource-library-plan.md` |
+| `docs/plans/` | Compound-engineering plan documents (`ce-plan` output). Currently: `2026-09-08-001-feat-workspace-resource-library-plan.md`, `2026-10-12-001-feat-nonfo-pilot-bbe-plan.md` (NoNFO-Pilot on the SanCloud BBE) |
+| `docs/ideation/` | Compound-engineering ideation documents (`ce-ideate` output). Currently: `2026-10-12-nonfo-pilot-pb2-ideation.html` (NoNFO-Pilot-PB2 variant) |
 
 ## `firmware/`
 
@@ -89,6 +91,7 @@ Zephyr-based firmware tree, shared across the CN (comms node) and FC
 | `kicad/Serenity-Custom.pretty/` | Shared custom footprint library |
 | `kicad/Vera.pretty/` | Vera-board-specific footprint library |
 | `kicad/Emma/`, `kicad/Jayne/`, `kicad/Kaylee/`, `kicad/Wash/`, `kicad/Zoë/` | Per-board `kicads/`, `gerbers/`, `scripts/`, and board `.md` docs |
+| `kicad/NoNFO-Pilot/` | NoNFO-Pilot board family home: `NoNFO-Pilot.md` indexes the BBE-hosted and PB2-I-hosted variants (requirements stage, no KiCad files yet) |
 | `kicad/ENC-NACELLE-1.kicad_sch`, `.md` | Nacelle tilt-encoder schematic + notes |
 | `kicad/*.py` | Per-board generator/fixup scripts (not indexed as reusable — see `INDEX.md`'s script-classification note) |
 | `kicad/fp-lib-table`, `kicad/drc_report.txt`, `kicad/xcrv-DRC.rpt` | KiCad project config and DRC output |
