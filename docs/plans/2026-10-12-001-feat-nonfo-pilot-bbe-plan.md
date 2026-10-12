@@ -23,7 +23,7 @@ execution: code
 
 - **Objective:** define one cape, NoNFO-Pilot, that gives a SanCloud BeagleBone Enhanced (BBE) node the full capability of one Serenity avionics stack (today a Pilot cape and a TACCO cape on two PocketBeagle 2 Industrial (PB2-I) nodes), with every duplicated function fitted once.
 - **Product authority:** S. Griffing. NoNFO-Pilot is a SecureControllers fleet product; Serenity-UAV is its first and most demanding customer. The PB2-I-hosted, BBE-outline sibling variant is separate work (see "How This Work Fits Together").
-- **Open blockers:** none block planning. The first planning gates are listed under Outstanding Questions.
+- **Open blockers:** the GNSS source (R13) must be resolved before planning; see Outstanding Questions.
 
 ---
 
@@ -150,6 +150,10 @@ This plan owns the BBE-hosted NoNFO-Pilot. The breakdown below is the current un
 - The BBE Industrial temperature range is stated as both -40 to 105 degC and -40 to 85 degC on SanCloud's page; design to 85 degC.
 
 ### Outstanding Questions
+
+#### Resolve Before Planning
+
+- R13 conflicts with the 2026-10-12 owner decision to move GNSS to isolated CAN-FD pucks in the dorsal cups (Serenity-UAV `avionics/WBS.md`, GNSS puck item). Decide whether NoNFO-Pilot keeps an on-cape MAX-M10S or consumes the puck over CAN-FD.
 
 #### Deferred to Planning (first gates)
 
