@@ -813,6 +813,32 @@ snapshot (`TODO.md`, md5 `829246af291844cd6b557230e8430a12`).
 *No open items — baseline complete; retained for traceability.*
 
 
+## §5 — NoNFO-Pilot board family (SecureControllers fleet product)
+
+Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/NoNFO-Pilot.md`.
+
+### §5.0 — Shared gates
+
+- [ ] 5.0.1 Decide the GNSS source for both variants: on-cape receiver or the isolated CAN-FD dorsal puck (Serenity decision 2026-10-12).
+- [ ] 5.0.2 Verify REF-NFP-004..006 against the issuing bodies, and catalogue the inherited IEC 61000-4-x, MIL-STD-461G and MIL-STD-1553C entries under non-colliding REF-IDs.
+- [ ] 5.0.3 Add an 86.4 x 53.3 mm node envelope to the Serenity cargo fit gates (chin floor fits; aft strip does not).
+- [ ] 5.0.4 Report the RMII2-only finding to Serenity-UAV: the dual-PHY CPSW ring in `docs/AVIONICS_PB2_REDESIGN.md` and `docs/ETHERNET_PHY_TRADE.md` cannot be built on a PB2 host.
+
+### §5.1 — NoNFO-Pilot (BBE host)
+
+- [x] 5.1.1 Requirements-only plan (`docs/plans/2026-10-12-001-feat-nonfo-pilot-bbe-plan.md`).
+- [ ] 5.1.2 Confirm with SanCloud: mass, mounting drawing, Wi-Fi chip, Ethernet PHY, boot strap to TrustME, temperature range.
+- [ ] 5.1.3 Verify CPSW port-2 RMII and reference clock on P8/P9 (first planning gate).
+- [ ] 5.1.4 Bench-load ArduPilot plus the comms stack on a BBE Industrial WiFi (60 % CPU ceiling).
+- [ ] 5.1.5 Run `ce-plan` on the BBE plan once 5.0.1 is closed.
+
+### §5.2 — NoNFO-Pilot-PB2 (PB2-I host)
+
+- [x] 5.2.1 Ranked ideation (`docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`).
+- [ ] 5.2.2 Brainstorm the chosen direction into a requirements-only plan.
+- [ ] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1).
+- [ ] 5.2.4 Owner decision: architecture A or B first for this variant (ideation idea 3).
+
 ## Procurement (master §2.x — BOM tables)
 
 - [`TODO.md` §2.4 — Avionics (Phase 6, 4-node minimum viable)](../TODO.md)
