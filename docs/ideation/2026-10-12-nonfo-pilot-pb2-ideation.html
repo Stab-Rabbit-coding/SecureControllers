@@ -1,0 +1,352 @@
+<!doctype html>
+<!--
+  Ideation: NoNFO-Pilot-PB2 (BBE outline, PB2-I host).
+  Decisions and direction: Steve Griffing (GitHub Stab-Rabbit-coding).
+  Composed by Claude Opus 5.5 (claude-opus-5-5) via the ce-ideate workflow; ideation frames by
+  Claude Sonnet 5.5 (pain, inversion, leverage, basis verification) and Claude Opus 5.5
+  (cross-domain analogy, assumption/constraint flipping); evidence extraction by Claude Haiku 5.5.
+  License: CC BY-SA 4.0 (documentation).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoNFO-Pilot-PB2 Ideation</title>
+<style>
+    :root {
+        --bg: #fbfaf7;
+        --surface: #ffffff;
+        --text: #1d1f23;
+        --muted: #555b66;
+        --border: #dcd9d2;
+        --accent: #1f5f8b;
+        --accent-soft: #e4eef6;
+        --accent-text: #154766;
+        --warn-soft: #fbefdc;
+        --warn-text: #7a4a06;
+        --ok-soft: #e3f1e6;
+        --ok-text: #1f5a2c;
+        --line: #4a5160;
+        --halo: #fbfaf7;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #15171b;
+            --surface: #1d2025;
+            --text: #e6e6e3;
+            --muted: #a3a9b3;
+            --border: #343841;
+            --accent: #7fb6dd;
+            --accent-soft: #1d3346;
+            --accent-text: #b9d9ef;
+            --warn-soft: #3a2c15;
+            --warn-text: #f0c98a;
+            --ok-soft: #1d3424;
+            --ok-text: #a8dcb4;
+            --line: #b6bcc6;
+            --halo: #15171b;
+        }
+    }
+    :root[data-theme="dark"] {
+        --bg: #15171b;
+        --surface: #1d2025;
+        --text: #e6e6e3;
+        --muted: #a3a9b3;
+        --border: #343841;
+        --accent: #7fb6dd;
+        --accent-soft: #1d3346;
+        --accent-text: #b9d9ef;
+        --warn-soft: #3a2c15;
+        --warn-text: #f0c98a;
+        --ok-soft: #1d3424;
+        --ok-text: #a8dcb4;
+        --line: #b6bcc6;
+        --halo: #15171b;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 920px; margin-inline: auto; padding: 32px 16px 64px; }
+    p, li, dd { max-width: 72ch; }
+    h1 { font-size: 1.6rem; margin: 0 0 8px; }
+    h2 { font-size: 1.25rem; margin: 40px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    h3 { font-size: 1.08rem; margin: 0 0 8px; }
+    a { color: var(--accent); }
+    strong { color: inherit; }
+    code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+    .chip { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.82rem; background: var(--accent-soft); color: var(--accent-text); }
+    .chip.warn { background: var(--warn-soft); color: var(--warn-text); }
+    .chip.ok { background: var(--ok-soft); color: var(--ok-text); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 8px; margin: 16px 0; }
+    .card dl { display: grid; grid-template-columns: 8.5rem 1fr; gap: 6px 14px; margin: 10px 0; }
+    .card dt { color: var(--muted); font-weight: 600; font-size: 0.92rem; }
+    .card dd { margin: 0; }
+    .callout { background: var(--warn-soft); color: var(--warn-text); border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+    .callout p { margin: 6px 0; }
+    nav.jump ol { padding-left: 1.4rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+    th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; }
+    figure { margin: 12px 0 16px; }
+    figure svg { width: 100%; height: auto; display: block; }
+    figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
+    .svg-text { fill: var(--text); font: 12px system-ui, sans-serif; paint-order: stroke; stroke: var(--halo); stroke-width: 3px; }
+    .svg-muted { fill: var(--muted); font: 11px system-ui, sans-serif; paint-order: stroke; stroke: var(--halo); stroke-width: 3px; }
+    .svg-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.4; }
+    .svg-accent { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
+    .svg-warn { fill: var(--warn-soft); stroke: var(--warn-text); stroke-width: 1.4; }
+    .svg-ok { fill: var(--ok-soft); stroke: var(--ok-text); stroke-width: 1.4; }
+    .svg-line { stroke: var(--line); stroke-width: 1.6; fill: none; }
+    .svg-cross { stroke: var(--warn-text); stroke-width: 2.4; }
+    footer.composition-signal { margin-top: 48px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 12px; }
+    @media (max-width: 560px) {
+        .card dl { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+    <h1>Ideation: NoNFO-Pilot-PB2 (BBE outline, PocketBeagle 2 Industrial host)</h1>
+    <ul class="meta">
+        <li class="chip">date: <time datetime="2026-10-12">2026-10-12</time></li>
+        <li class="chip">topic: nonfo-pilot-pb2</li>
+        <li class="chip">mode: repo-grounded</li>
+        <li class="chip">7 survivors of 46 raw ideas, 19 clusters</li>
+    </ul>
+    <p><strong>Focus:</strong> a sibling of the BBE-hosted NoNFO-Pilot (<code>docs/plans/2026-10-12-001-feat-nonfo-pilot-bbe-plan.md</code>) with the same 3.402 x 2.098 in (86.4 x 53.3 mm) outline, mounts and harness positions, but carrying a PB2-I (TI AM6254) as its SBC. It must merge the Serenity Pilot and TACCO capes into one board with duplicates consolidated, in similar or smaller volume and mass than the two-node stack it replaces.</p>
+</header>
+
+<section class="callout" id="findings">
+    <h3>Two findings that matter beyond this variant</h3>
+    <p><strong>The dual-PHY Ethernet ring cannot be built on any PB2.</strong> <code>avionics/kicad/PB2_HEADER_PINMAP.md</code> lines 70-71 state that RMII0/RGMII1 stay on the PB2 and only RMII2 plus MDIO0 reach the headers. <code>docs/AVIONICS_PB2_REDESIGN.md</code> lines 245 and 263 and <code>docs/ETHERNET_PHY_TRADE.md</code> line 27 still assume two CPSW MAC ports per node. Pilot and TACCO inherit the same defect (Serenity-UAV paths).</p>
+    <p><strong>The 2026-10-12 GNSS puck decision</strong> (<code>avionics/WBS.md</code> lines 426-437: isolated CAN-FD GNSS pucks in the dorsal cups) supersedes on-cape GNSS. The BBE plan's R13 still specifies an on-cape MAX-M10S and needs reconciling.</p>
+</section>
+
+<section id="grounding-context">
+    <h2>Grounding Context (Codebase Context)</h2>
+    <ul>
+        <li><strong>Host:</strong> PB2-I, 2.165 x 1.378 in (55 x 35 mm), 0.028 lbm (12.7 g, standard PB2 figure). Quad Cortex-A53 at 1.4 GHz plus a Cortex-M4F, 1 GB DDR4, 64 GB eMMC, -40 to +85 degC, one USB-C (power and data), female P1/P2 receptacles, JST-SH debug UART. Sources: CNX Software 2026-02-24; docs.beagleboard.io PB2 pages.</li>
+        <li><strong>Pin budget is the binding constraint:</strong> the header is "fully subscribed" by TACCO alone (PINMAP line 79). P2-35 (AIN5) is the only spare (line 111). USB1 is the only high-bandwidth port besides SPI0 (lines 72-73), and there is no SDIO (line 70). TACCO's mLRS UART0 collides with the console. Pilot and TACCO put different nets on 24 of 36 P1 positions and 21 of 36 P2 positions.</li>
+        <li><strong>Routability history:</strong> Pilot is at 195 unconnected and TACCO at about 90 unrouted plus 140 hard DRC findings, both at about 95% courtyard fill on 55 x 35 mm. Unrouted pins were walled off by the isolation band, and freerouting 2.2.4 hangs on existing copper.</li>
+        <li><strong>Isolation:</strong> functional 0.5 mm moat (named rule area plus <code>.kicad_dru</code>). The owner-binding ISOW layout rules (10 nF under 1 mm, BLM15EX331SN1 beads, 4 mm keep-away around pins 11/12) displaced GNSS off-board.</li>
+        <li><strong>Envelope:</strong> two pouched nodes are 2 x 2.28 x 1.46 x 0.87 in (2 x 58 x 37 x 22 mm), 5.76 in3 (94.4 cm3). The 86.4 x 53.3 mm outline needs a stack height of at most 0.75 in (19.1 mm) pouched, or 0.81 in (20.5 mm) unpouched, to match.</li>
+        <li><strong>Prior art:</strong> Pixhawk Autopilot Bus (Pixhawk DS-010) FMU-on-baseboard carriers such as the ARK PAB Carrier (Hirose DF40). No existing PocketBeagle-on-BeagleBone-footprint carrier was found.</li>
+    </ul>
+</section>
+
+<section id="topic-axes">
+    <h2>Topic Axes</h2>
+    <ol>
+        <li>Host integration and pin budget</li>
+        <li>Mechanical stack, outline and mounting</li>
+        <li>Bus front ends and Ethernet ring</li>
+        <li>RF, antennas and EMC partition</li>
+        <li>Power, harness, programming and failover</li>
+    </ol>
+</section>
+
+<section id="ranked-ideas">
+    <h2>Ranked Ideas</h2>
+    <nav class="jump" aria-label="Ranked ideas">
+        <ol>
+            <li><a href="#idea-1">Header diet with a computed pin ledger</a></li>
+            <li><a href="#idea-2">Carrier-powered 3-port switch on RMII2</a></li>
+            <li><a href="#idea-3">Make architecture B the merge enabler</a></li>
+            <li><a href="#idea-4">PB2-I rides on top: native USB-C, hold-down bridge</a></li>
+            <li><a href="#idea-5">One-edge isolation island from pre-proven cells</a></li>
+            <li><a href="#idea-6">USB1 radio site behind a hub</a></li>
+            <li><a href="#idea-7">Shared zone contract and envelope gate for both variants</a></li>
+        </ol>
+    </nav>
+
+    <article class="card" id="idea-1">
+        <h3>1. Header diet with a computed pin ledger</h3>
+        <ul class="meta"><li class="chip">Axis 1</li><li class="chip ok">Confidence 85%</li><li class="chip">Complexity Medium</li></ul>
+        <dl>
+            <dt>Description</dt>
+            <dd>One machine-readable ledger owns every P1/P2 position: ball, aliases, mux mode, net and owner. It generates the schematic header table, the device-tree overlay and <code>PB2_HEADER_PINMAP.md</code>, and CI fails on any VIN, GND or shared-ball conflict. Against that ledger, put the merged net list on a diet: tie each standby pin to its default level, drive RS-485 DE from the UART's hardware RTS, use one supervisor reset, wire-OR the slow interrupts behind a status register, and move the PLD interlock status reads to an expander (never in the latch path). Then check that the merge fits with spare positions left.</dd>
+            <dt>Basis</dt>
+            <dd>direct: PINMAP line 79 "fully subscribed"; line 111 "spare ... P2-35"; WBS lines 1685-1689 (a past map "would have shorted VIN to ground"); WBS line 1718 (Pilot's map still to be re-derived); 24 of 36 P1 and 21 of 36 P2 positions disagree between the two capes.</dd>
+            <dt>Rationale</dt>
+            <dd>TACCO alone fills the header, so the merge only fits if nets disappear. The ledger makes "does it fit" a computed answer, and it is the input every other idea here edits.</dd>
+            <dt>Downsides</dt>
+            <dd>Each strap or shared-IRQ move needs a datasheet check. Pilot's SLB9672 TPM may change to an OPTIGA secure element, so confirm which applies before allocating its pins.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-2">
+        <h3>2. Carrier-powered 3-port switch on RMII2</h3>
+        <ul class="meta"><li class="chip">Axis 3</li><li class="chip ok">Confidence 80%</li><li class="chip">Complexity Medium</li></ul>
+        <figure>
+            <svg viewBox="0 0 640 220" role="img" aria-labelledby="ring-title">
+                <title id="ring-title">Today's assumed dual-MAC ring versus a switch on the single RMII2 port</title>
+                <text class="svg-text" x="20" y="22">Assumed today (not buildable on PB2)</text>
+                <rect class="svg-box" x="20" y="40" width="120" height="60" rx="6"/>
+                <text class="svg-text" x="36" y="66">AM6254 CPSW</text>
+                <text class="svg-muted" x="36" y="84">RMII1 + RMII2</text>
+                <rect class="svg-warn" x="190" y="34" width="100" height="30" rx="6"/>
+                <text class="svg-text" x="200" y="54">PHY on RMII1</text>
+                <rect class="svg-box" x="190" y="78" width="100" height="30" rx="6"/>
+                <text class="svg-text" x="200" y="98">PHY on RMII2</text>
+                <line class="svg-line" x1="140" y1="56" x2="190" y2="49"/>
+                <line class="svg-line" x1="140" y1="84" x2="190" y2="93"/>
+                <line class="svg-cross" x1="150" y1="40" x2="180" y2="62"/>
+                <line class="svg-cross" x1="180" y1="40" x2="150" y2="62"/>
+                <text class="svg-muted" x="20" y="132">RMII1 is not on P1/P2 (PINMAP 70-71)</text>
+                <text class="svg-text" x="340" y="22">Proposed</text>
+                <rect class="svg-box" x="340" y="60" width="110" height="50" rx="6"/>
+                <text class="svg-text" x="352" y="82">PB2-I</text>
+                <text class="svg-muted" x="352" y="98">RMII2 only</text>
+                <rect class="svg-accent" x="480" y="50" width="140" height="70" rx="6"/>
+                <text class="svg-text" x="492" y="74">3-port switch</text>
+                <text class="svg-muted" x="492" y="92">2 PHYs, carrier 3V3</text>
+                <text class="svg-muted" x="492" y="108">forwards if PB2 is down</text>
+                <line class="svg-line" x1="450" y1="85" x2="480" y2="85"/>
+                <line class="svg-line" x1="520" y1="120" x2="500" y2="170"/>
+                <line class="svg-line" x1="580" y1="120" x2="600" y2="170"/>
+                <text class="svg-text" x="452" y="190">ring port A</text>
+                <text class="svg-text" x="560" y="190">ring port B</text>
+            </svg>
+            <figcaption>Illustrative. One MAC cannot be two ring ports; a switch on the carrier both fixes that and keeps the ring closed through a host reboot.</figcaption>
+        </figure>
+        <dl>
+            <dt>Description</dt>
+            <dd>Hang a 3-port switch (one RMII host port, two integrated 10/100 PHYs; candidates Microchip KSZ8863 or KSZ8463) on RMII2 plus MDIO0, powered from the carrier's own 3.3 V rail. The ring keeps forwarding while the PB2 boots or hangs. This replaces the two DP83825I PHYs, the RMII1 pin group and the bit-banged MDIO1.</dd>
+            <dt>Basis</dt>
+            <dd>direct: PINMAP lines 70-71 ("RMII0/RGMII1 (used by the PB2's own Ethernet)") against AVIONICS_PB2_REDESIGN line 245 ("two external MAC ports"); WBS lines 348-349 (PHY2 MDIO as <code>mdio-gpio</code>). external: KSZ8863 48-LQFP 7 x 7 mm, KSZ8463 64-LQFP 10 x 10 mm with IEEE 1588 (aggregator listings; RSTP support unverified, Microchip AN6048 not yet read).</dd>
+            <dt>Rationale</dt>
+            <dd>It is the only buildable ring on a PB2 host. With the fleet at 4 nodes, a rebooting node must not also break the ring for the other three.</dd>
+            <dt>Downsides</dt>
+            <dd>Adds a switch IC and still needs two sets of magnetics (Würth 749010012A is 0.51 x 0.44 in, 12.9 x 11.3 mm). <code>ETHERNET_PHY_TRADE.md</code> baselines KSZ9477 and must be reconciled. A powered-on switch with a dead host needs an RSTP port-state test.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-3">
+        <h3>3. Make architecture B the merge enabler, not an upgrade</h3>
+        <ul class="meta"><li class="chip">Axis 1</li><li class="chip warn">Confidence 65%</li><li class="chip">Complexity High</li></ul>
+        <dl>
+            <dt>Description</dt>
+            <dd>Put the fleet trust-module front end (MSPM0G3519 in RGZ-48, as on Observer, with its secure element, ISOW1044 and ISOW1412) on the carrier from day one. It owns CAN-FD, RS-485 and the HI-6138 on its own SPI, and talks to the PB2 over one SPI0 chip-select plus an IRQ. The header then carries only RMII2, that link, DSHOT and the IMU. An optional extension runs the heartbeat on the AM6254's M4F via the shared MCU_MCAN0 balls (P1-26/28); that extension is unverified and is not part of the core idea.</dd>
+            <dt>Basis</dt>
+            <dd>direct: PINMAP rows for P1-26/28 ("+MCU_MCAN0_TX/RX"); HI6138_FOOTPRINT_VERIFICATION lines 84-85 (HI-6138 is already SPI-hosted); WBS line 101 ("RHB-32 is too small (28 GPIO)", from the Commo node). reasoned: "A first" requires fitting two capes' pins into one header, which idea 1 shows is marginal at best. B moves about 20 bus-control nets off the header onto an MCU the fleet already uses.</dd>
+            <dt>Rationale</dt>
+            <dd>On the BBE variant "A first" was the cheaper path. On a pin-starved PB2 the order may reverse. It also gives the 4-node fleet a node whose bus presence survives a host reboot.</dd>
+            <dt>Downsides</dt>
+            <dd>Two firmware images from the first build. The G3519 has one CAN-FD, so check the merged node needs only one. It reverses a sequencing choice settled for the BBE variant, so the owner must decide it for this variant.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-4">
+        <h3>4. PB2-I rides on top: native USB-C, hold-down bridge</h3>
+        <ul class="meta"><li class="chip">Axis 2</li><li class="chip ok">Confidence 75%</li><li class="chip">Complexity Medium</li></ul>
+        <dl>
+            <dt>Description</dt>
+            <dd>Invert the cape stack. The carrier is the base, with its male TSM-118 strips facing up, and the PB2-I plugs on top. Only the 55 x 35 mm shadow under the PB2 keeps the 0.20 in (5.0 mm) height limit; the rest of the carrier and its whole bottom face take tall parts. Register the PB2 so its own USB-C lands at an outline edge as the programming port, with no second USB-C. A screwed bridge over the PB2 clamps it against vibration, spreads AM6254 heat and can serve as the shield lid. Qualify this rail stack once for every PB2 board.</dd>
+            <dt>Basis</dt>
+            <dd>direct: Pilot.md lines 48-49 (stack gap 5.54 mm, parts on B.Cu limited to 5.04 mm, less over the microSD and JST-SH); WBS line 1552 ("T-ETH (~8.9 mm) is top-face only"); TACCO.md lines 488-495 (rail "unqualified until the stack passes the airframe vibration test"); PINMAP line 83 (the cape supplies VIN).</dd>
+            <dt>Rationale</dt>
+            <dd>It removes the most-cited placement constraint, meets the USB-C programming-port requirement natively, and closes the open rail-vibration gap with one part.</dd>
+            <dt>Downsides</dt>
+            <dd>USB-C and carrier VIN back-feed must be designed for explicitly. The bridge adds mass. The PB2-I's own mounting holes and the AM6254's height above the board are unverified.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-5">
+        <h3>5. One-edge isolation island from pre-proven cells</h3>
+        <ul class="meta"><li class="chip">Axis 3</li><li class="chip ok">Confidence 75%</li><li class="chip">Complexity Medium</li></ul>
+        <figure>
+            <svg viewBox="0 0 640 230" role="img" aria-labelledby="floor-title">
+                <title id="floor-title">Illustrative carrier floorplan on the 86.4 by 53.3 mm outline</title>
+                <rect class="svg-box" x="20" y="20" width="600" height="190" rx="8"/>
+                <rect class="svg-accent" x="40" y="45" width="300" height="140" rx="6"/>
+                <text class="svg-text" x="56" y="70">PB2-I shadow (on top)</text>
+                <text class="svg-muted" x="56" y="88">55 x 35 mm; height-limited beneath</text>
+                <text class="svg-muted" x="56" y="170">USB-C at the outline edge</text>
+                <rect class="svg-ok" x="360" y="45" width="110" height="140" rx="6"/>
+                <text class="svg-text" x="372" y="70">Logic zone</text>
+                <text class="svg-muted" x="372" y="88">switch, IMU, B-MCU</text>
+                <rect class="svg-warn" x="490" y="30" width="120" height="170" rx="6"/>
+                <text class="svg-text" x="500" y="56">GND2 island</text>
+                <text class="svg-muted" x="500" y="74">ISOW cells, 1553</text>
+                <text class="svg-muted" x="500" y="92">magnetics</text>
+                <text class="svg-muted" x="500" y="182">JST-GH on edge</text>
+                <line class="svg-line" x1="480" y1="30" x2="480" y2="200"/>
+                <text class="svg-muted" x="428" y="222">one seam, crossed only by ISOW pins</text>
+            </svg>
+            <figcaption>Illustrative only, not a placement. The RF zone and power entry are omitted for clarity.</figcaption>
+        </figure>
+        <dl>
+            <dt>Description</dt>
+            <dd>Put every isolated device (ISOW1044, ISOW1412, HI-6138 and PM-DB2791S, and the ring magnetics) in one GND2 island along a short edge, with its locking JST-GH connectors on that same edge. The PB2 shadow sits at the far end, so no logic net crosses the band. Each bus cell is placed, routed and DRC-proven once on its own stripped board, with the owner's ISOW rules built in, then injected as a locked group.</dd>
+            <dt>Basis</dt>
+            <dd>direct: TACCO.md line 538 ("About 90 logic connections remain unrouted at either size"); TACCO.md lines 528-529 (the exporter "writes every rule area as a keepout"); Pilot.md line 57 (the band ran inward from the edge over the rail); owner memory "route stripped boards only".</dd>
+            <dt>Rationale</dt>
+            <dd>This attacks the root cause of both predecessor capes' routing failures (the band walling off rail pins) at floorplan time, and the cells are reusable on the BBE variant, Commo and the gateways.</dd>
+            <dt>Downsides</dt>
+            <dd>Each cell's fixed port-pad row constrains top-level placement. A milled creepage slot along the seam is possible, but its credit under the cited standard needs a REFERENCES.md entry first.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-6">
+        <h3>6. USB1 radio site behind a hub</h3>
+        <ul class="meta"><li class="chip">Axis 4</li><li class="chip">Confidence 70%</li><li class="chip">Complexity Medium</li></ul>
+        <dl>
+            <dt>Description</dt>
+            <dd>Define a shielded RF zone fed by a small USB 2.0 hub on USB1 (P1-9/11 and DRVVBUS P1-3). The Wi-Fi/BT module and the 802.15.4 radio hang off the hub, and one spare port takes the console through a USB-UART. The carrier PCB can fab before the Wi-Fi module is chosen. The mLRS STM32WLE5JC stays on a UART: as far as known it has no USB device peripheral, which needs a datasheet check.</dd>
+            <dt>Basis</dt>
+            <dd>direct: PINMAP lines 72-73 (USB1 the only high-bandwidth port besides SPI0); lines 115-119 (Type 2EL Wi-Fi is SDIO-only); lines 127-128 (the console must move off UART0); WBS lines 1698-1706 (Wi-Fi module "FAB BLOCKER"). external: Microchip USB2422 (2-port, 24-QFN about 4 x 4 mm) and USB2514B (4-port, 36-QFN 6 x 6 mm, industrial grade).</dd>
+            <dt>Rationale</dt>
+            <dd>One decision clears the fab blocker and the console collision and frees the UART1 BT and 802.15.4 chip-select pins, all without using a header pin.</dd>
+            <dt>Downsides</dt>
+            <dd>The radios gain a USB enumeration dependency at boot. Keep link families distinct per the mLRS path-diversity lesson. Hub and module power add to a 5 V budget that has not yet been merged.</dd>
+        </dl>
+    </article>
+
+    <article class="card" id="idea-7">
+        <h3>7. Shared zone contract and envelope gate for both variants</h3>
+        <ul class="meta"><li class="chip">Axis 5</li><li class="chip">Confidence 70%</li><li class="chip">Complexity Medium</li></ul>
+        <dl>
+            <dt>Description</dt>
+            <dd>One file defines the 86.4 x 53.3 mm outline, holes, connector edge, zones (host, isolation island, RF, power entry, programming access) and height limits. Both the BBE and PB2 variants' generators, the DRC rule areas, the envelope-sync check and a real-mesh fit gate at every node site read it. Only the host zone may differ, which a check enforces. The same gate computes the merged 5 V budget and mass. It fails if the stack exceeds 0.75 in (19.1 mm) pouched, or if a shield frame and lid replace the pouch and the stack exceeds 0.81 in (20.5 mm).</dd>
+            <dt>Basis</dt>
+            <dd>direct: no 86.4 x 53.3 outline is recorded anywhere in the repo (mounting dossier E-01); <code>tools/check_tacco_envelope_sync.py</code> lines 44-48 (pouch allowance constants); the 2.7 mm starboard chin miss that area maths hid; AVIONICS_PB2_REDESIGN lines 155 and 235 (2.0 A and 3.0 A budgets, never merged). reasoned: 86.4 x 53.3 x 22 mm is 101.3 cm3, about 7% over the 94.4 cm3 goal.</dd>
+            <dt>Rationale</dt>
+            <dd>It makes "same mounts and harness as the BBE variant" and "similar volume" into checks rather than claims, before layout starts.</dd>
+            <dt>Downsides</dt>
+            <dd>The two variants become coupled through the contract. Replacing the foil pouch with a shield lid changes an EMC element whose role is not yet characterised.</dd>
+        </dl>
+    </article>
+</section>
+
+<section id="rejection-summary">
+    <h2>Rejection Summary</h2>
+    <table>
+        <thead><tr><th>#</th><th>Idea</th><th>Reason rejected</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>M4F safety island on MCU_MCAN0 as a standalone idea</td><td>Weak: MCU-domain survival through a main-domain reset, M4F firmware loading and pin reuse are all unverified. Folded into idea 3 as an optional extension.</td></tr>
+            <tr><td>2</td><td>All radios and GNSS to antenna-collocated pucks</td><td>Stretches the owner's GNSS-only puck decision to four more unproven pucks, each needing power, isolation and a trust-module node.</td></tr>
+            <tr><td>3</td><td>RF annex bringing GNSS back on-board</td><td>Contradicts the owner's 2026-10-12 decision to move GNSS to isolated dorsal pucks.</td></tr>
+            <tr><td>4</td><td>Populate 1553 bus B</td><td>Scope growth, not a merge need. The fleet constraint is bus A. Kept as an owner option, not a survivor.</td></tr>
+            <tr><td>5</td><td>Resistor-ladder role pin on P2-35</td><td>Spends the only spare header position before the pin ledger (idea 1) is settled. Revisit afterwards.</td></tr>
+            <tr><td>6</td><td>One locking harness per node</td><td>Violates the "same harness positions as the BBE variant" constraint and mixes isolation domains in one plug.</td></tr>
+            <tr><td>7</td><td>Isolation only at the far end of each bus</td><td>Refuted: the fleet requires galvanic isolation at every node.</td></tr>
+            <tr><td>8</td><td>Deliberate dead zone and mass removal</td><td>Fails the meeting test: marginal benefit.</td></tr>
+            <tr><td>9</td><td>"Node that outlives its host" synthesis</td><td>Its sound core is ideas 2 and 3; the remainder depends on the unverified M4F island.</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<footer class="composition-signal">
+    Composed <time datetime="2026-10-12">2026-10-12</time> by ce-ideate (Claude Opus 5.5) from the session's NoNFO-Pilot brainstorm and the Serenity-UAV avionics corpus; source plan <code>docs/plans/2026-10-12-001-feat-nonfo-pilot-bbe-plan.md</code>.
+</footer>
+
+</main>
+</body>
+</html>

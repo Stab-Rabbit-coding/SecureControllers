@@ -9,7 +9,7 @@ of least impedance — which at high frequencies is the path directly under the
 signal trace.
 
 | Stackup | Return path | Quality |
-|---------|------------|---------|
+| --------- | ------------ | --------- |
 | 2-layer (no GND plane) | Returns wander, find path through GND pour | Poor |
 | 4-layer (L2 = GND) | Returns directly under trace on L1 | Excellent |
 | 4-layer (L4 = signal, L3 = GND) | Same, but coupling to L3 not L2 | Good |

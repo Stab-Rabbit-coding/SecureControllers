@@ -5,7 +5,7 @@
 ### Standard vs High-Tg
 
 | Property | Standard FR-4 | High-Tg FR-4 |
-|----------|:---:|:---:|
+| ---------- | :---: | :---: |
 | Tg (glass transition) | 130-140°C | 170-180°C |
 | Td (decomposition) | 300°C | 350°C |
 | εr @ 1GHz | 4.2-4.6 | 4.0-4.4 |
@@ -36,7 +36,7 @@ L2: 1oz Cu                     L2: 0.5oz Cu
 ### When to Upgrade from FR-4
 
 | Application | Min Material | Why |
-|-------------|-------------|-----|
+| ------------- | ------------- | ----- |
 | WiFi/BLE 2.4GHz | FR-4 (OK) | Short traces, pre-certified module |
 | 5GHz WiFi | FR-4 (marginal) | Higher loss, tighter impedance |
 | LoRa 868/915MHz | FR-4 (OK) | Sub-GHz, tolerant |
@@ -47,7 +47,7 @@ L2: 1oz Cu                     L2: 0.5oz Cu
 ### High-Frequency Material Comparison
 
 | Material | εr | Tan δ | Tg | 4L Cost |
-|----------|:---:|:---:|:---:|:---:|
+| ---------- | :---: | :---: | :---: | :---: |
 | FR-4 (standard) | 4.4 | 0.02 | 130°C | ¥30 |
 | FR-4 (high-Tg) | 4.2 | 0.018 | 170°C | ¥45 |
 | Rogers 4350B | 3.48 | 0.0037 | 280°C | ¥300 |
@@ -61,7 +61,7 @@ L2: 1oz Cu                     L2: 0.5oz Cu
 ### Finish Comparison
 
 | Finish | Shelf Life | Solderability | Flatness | Wire-bondable | Lead-free | Cost |
-|--------|:---:|:---:|:---:|:---:|:---:|:---:|
+| -------- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **HASL (SnPb)** | 12mo | Excellent | Poor | ✗ | ✗ | ¥ |
 | **HASL (无铅)** | 12mo | Good | Poor | ✗ | ✓ | ¥ |
 | **ENIG** | 12mo | Excellent | Excellent | ✓ | ✓ | ¥¥ |
@@ -89,7 +89,7 @@ Edge connectors:              Hard Gold (durability)
 ### Thickness Options
 
 | oz | µm | mil | Use |
-|:---:|:---:|:---:|-----|
+| :---: | :---: | :---: | ----- |
 | 0.5oz | 17.5 | 0.7 | Inner layers (4L) |
 | 1oz | 35 | 1.4 | Standard outer layers |
 | 2oz | 70 | 2.8 | High current, improved thermal |
@@ -199,7 +199,7 @@ Drilled before lamination.
 ## Solder Mask Colors
 
 | Color | Properties | Notes |
-|-------|-----------|-------|
+| ------- | ----------- | ------- |
 | **Green** | Standard, best resolution | Best for fine pitch |
 | **Blue** | Good resolution | Popular for dev boards |
 | **Red** | Good resolution | Popular for OSH Park |
@@ -218,7 +218,7 @@ Black is harder to rework (hard to see traces).
 ### Printing Methods
 
 | Method | Resolution | Durability | Cost |
-|--------|:---:|:---:|------|
+| -------- | :---: | :---: | ------ |
 | Ink-jet | Good | Good | ¥ |
 | Screen printing | Fair | Excellent | ¥ |
 | LPI (photo-imageable) | Excellent | Good | ¥¥ |

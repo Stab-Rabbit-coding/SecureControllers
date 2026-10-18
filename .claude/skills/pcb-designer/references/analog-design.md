@@ -5,7 +5,7 @@
 ### Key Parameters
 
 | Parameter | Precision | General Purpose | High Speed | Low Power |
-|-----------|-----------|-----------------|------------|-----------|
+| ----------- | ----------- | ----------------- | ------------ | ----------- |
 | Vos (offset) | <100µV | <5mV | <5mV | <5mV |
 | GBW | 1-10MHz | 1-10MHz | >50MHz | <1MHz |
 | Slew Rate | 0.5-5V/µs | 0.5-5V/µs | >50V/µs | <1V/µs |
@@ -24,7 +24,7 @@ Slew Rate ≥ 2π × f × Vpeak
 ### Common Op-Amps (LCSC/JLCPCB)
 
 | Part | Channels | GBW | Vos | Iq/ch | Package |
-|------|:---:|:---:|:---:|:---:|---------|
+| ------ | :---: | :---: | :---: | :---: | --------- |
 | LM358 | 2 | 1MHz | 2mV | 0.5mA | SOIC-8 |
 | LM324 | 4 | 1MHz | 2mV | 0.5mA | SOIC-14 |
 | TL072 | 2 | 3MHz | 3mV | 1.4mA | SOIC-8 |
@@ -145,7 +145,7 @@ Vshunt across shunt → differential amp or INA
 ### Current Sense Amplifiers
 
 | Part | Type | Vcm Range | Gain | Package |
-|------|------|-----------|:---:|---------|
+| ------ | ------ | ----------- | :---: | --------- |
 | INA180 | High-side | 0-26V | 20/50/100/200 | SOT-23-5 |
 | INA219 | I2C digital | 0-26V | Programmable | SOIC-8 |
 | MAX4080 | High-side | 4.5-76V | 20/50/100 | SOIC-8 |

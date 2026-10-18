@@ -173,7 +173,7 @@ high-impedance when PGO is high, reducing power and noise.
 
 ## Installation Notes
 
-1. **Pivot shaft material** must be non-magnetic (aluminium 6061, PETG, or fibreglass).
+1. **Pivot shaft material** shall be non-magnetic (aluminium 6061, PETG, or fibreglass).
    A steel or ferrite shaft will distort the field and invalidate angle readings.
 2. **Magnet alignment:** Orient the magnet so the diametric axis is perpendicular to
    the pivot rotation axis.  The AS5600 detects the in-plane field component.

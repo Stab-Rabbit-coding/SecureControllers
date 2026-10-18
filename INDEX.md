@@ -102,7 +102,7 @@ provisional "scripts live under `tools/`" classification rule used by
 /usr/bin/python3 tools/build_manifests.py   # rebuild index/*.json from the raw scan
 ```
 
-Both scripts are stdlib-only (no `kiutils`/`manifold3d` dependency) and must
+Both scripts are stdlib-only (no `kiutils`/`manifold3d` dependency) and shall
 be run with `/usr/bin/python3`, not a repo's local `.venv`, which shadows
 system packages without providing everything the workspace tooling needs.
 

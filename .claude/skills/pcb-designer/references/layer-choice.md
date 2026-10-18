@@ -3,7 +3,7 @@
 ## Quick Decision Matrix
 
 | Factor | 2-Layer | 4-Layer |
-|--------|---------|---------|
+| -------- | --------- | --------- |
 | **Cost (5pcs, 50×50mm)** | ~¥5 ($0.70) | ~¥30 ($4) |
 | **Cost (5pcs, 100×100mm)** | ~¥20 ($3) | ~¥80 ($12) |
 | **Signal integrity** | Fair | Good |
@@ -66,10 +66,10 @@ Stick with 2-layer for:
 
 ## Real-World Example: Rocket Black Box
 
-| Revision | Layers | Reasoning |
-|----------|--------|-----------|
-| **v0.1 (prototype)** | 2-layer | Test layout, verify sensor placement, cost ¥5 per board |
-| **v1.0 (flight)** | 4-layer | ESP32 WiFi reliability, clean sensor signals, production quality |
+| Revision             | Layers  | Reasoning                                                        |
+| -------------------- | ------- | ---------------------------------------------------------------- |
+| **v0.1 (prototype)** | 2-layer | Test layout, verify sensor placement, cost ¥5 per board          |
+| **v1.0 (flight)**    | 4-layer | ESP32 WiFi reliability, clean sensor signals, production quality |
 
 The v0.1 prototype on 2-layer lets you:
 

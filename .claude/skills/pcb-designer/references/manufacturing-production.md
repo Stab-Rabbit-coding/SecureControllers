@@ -5,7 +5,7 @@
 ### Quantities and Approaches
 
 | Stage | Qty | Assembly Method | Testing |
-|-------|:---:|-----------------|---------|
+| ------- | :---: | ----------------- | --------- |
 | Prototype | 5-10 | Hand-solder or manual PnP | Visual + manual |
 | Pilot run | 50-100 | Small-batch SMT | Flying probe + manual functional |
 | Production | 500+ | Full SMT line | ICT + AOI + functional |
@@ -17,7 +17,7 @@
 ### Thickness Guidelines
 
 | Component Pitch | Stencil Thickness |
-|----------------|:---:|
+| ---------------- | :---: |
 | ≥0.8mm pitch QFP | 0.15mm |
 | 0.5mm pitch QFP/QFN | 0.12mm |
 | 0.4mm pitch QFN/BGA | 0.10mm |
@@ -66,7 +66,7 @@ Type 5 (15-25µm powder): for ultra-fine pitch, stencil printing challenging
 ### Component Packaging
 
 | Package | Feed Method | Notes |
-|---------|------------|-------|
+| --------- | ------------ | ------- |
 | 0603/0402 passives | 8mm tape, 2mm/4mm pitch | Standard feeder |
 | SOT-23, SOD-123 | 8mm tape, 4mm pitch | Standard feeder |
 | SOIC-8/14/16 | 12mm/16mm tape | Standard feeder |
@@ -167,7 +167,7 @@ Cool: <4°C/s to <100°C
 ## Common Assembly Defects
 
 | Defect | Cause | Fix |
-|--------|-------|-----|
+| -------- | ------- | ----- |
 | Tombstoning (one end lifted) | Uneven heating, pad size mismatch | Match pad sizes, balance thermal mass |
 | Solder bridging | Too much paste, fine pitch | Reduce aperture, check stencil alignment |
 | Insufficient solder | Too little paste, clogged aperture | Check stencil cleaning, increase aperture |
@@ -217,7 +217,7 @@ Cool: <4°C/s to <100°C
 ### Moisture Sensitivity (MSL)
 
 | MSL | Floor Life | Bake Before Reflow |
-|:---:|-----------|:---:|
+| :---: | ----------- | :---: |
 | 1 | Unlimited | No |
 | 2 | 1 year | No |
 | 2a | 4 weeks | No |

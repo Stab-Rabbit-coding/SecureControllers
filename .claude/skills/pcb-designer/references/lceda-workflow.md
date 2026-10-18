@@ -3,7 +3,7 @@
 ## Choosing the Right Version
 
 | Version | Use case | Pros | Cons |
-|---------|----------|------|------|
+| --------- | ---------- | ------ | ------ |
 | **LCEDA Pro** (离线客户端) | Multi-sheet, complex designs | Fast, full-featured, offline | Windows/Linux only |
 | **LCEDA Standard** (Web) | Quick prototypes, single-sheet | No install, easy sharing | Slower, limited for large designs |
 | **EasyEDA** (International) | Same as Standard, English UI | Same as Standard | Less LCSC integration |
@@ -90,7 +90,7 @@ Red LED 0603               C2286
 ## Keyboard Shortcuts (LCEDA Pro)
 
 | Key | Action |
-|-----|--------|
+| ----- | -------- |
 | `W` | Wire / Route |
 | `G` | Place GND symbol |
 | `P` | Place VCC symbol |

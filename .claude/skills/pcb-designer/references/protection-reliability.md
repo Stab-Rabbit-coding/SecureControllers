@@ -5,7 +5,7 @@
 ### ESD Standards for Product Design
 
 | Standard | Level | Test Type | Application |
-|----------|:-----:|-----------|-------------|
+| ---------- | :-----: | ----------- | ------------- |
 | IEC 61000-4-2 | ±8kV contact, ±15kV air | System | Consumer, industrial |
 | ISO 10605 | ±15kV contact, ±25kV air | System | Automotive |
 | HBM (JESD22-A114) | 2kV | Component | IC qualification |
@@ -22,7 +22,7 @@
 ### Common TVS Diodes (LCSC/JLCPCB)
 
 | Part | Vrwm | Channels | Cline | Package |
-|------|:---:|:---:|:---:|---------|
+| ------ | :---: | :---: | :---: | --------- |
 | LESD5D5.0CT1G | 5V | 1 | 15pF | SOD-523 |
 | SRV05-4 | 5V | 4 | 3pF | SOT-23-6 |
 | USBLC6-2SC6 | 5.25V | 2 | 2.5pF | SOT-23-6 |
@@ -118,7 +118,7 @@ Signal ──└──────┘── Signal (return)
 ### Isolation Technologies
 
 | Type | Max Voltage | Max Speed | Power Transfer | Cost |
-|------|:---:|:---:|:---:|------|
+| ------ | :---: | :---: | :---: | ------ |
 | Optocoupler | 5kV | 10Mbps | ✗ | ¥ |
 | Digital Isolator | 5kV | 150Mbps | ✗ | ¥¥ |
 | Integrated DC-DC + Data | 5kV | 100Mbps | ✓ | ¥¥¥ |
@@ -127,7 +127,7 @@ Signal ──└──────┘── Signal (return)
 ### Common Isolators
 
 | Part | Channels | Speed | Isolation | Package |
-|------|:---:|:---:|:---:|---------|
+| ------ | :---: | :---: | :---: | --------- |
 | Si8621 | 2 (1+1) | 150Mbps | 5kV | SOIC-8 |
 | ISO7741 | 4 (3+1) | 100Mbps | 5kV | SOIC-16 |
 | ADUM1250 | I2C | 1Mbps | 2.5kV | SOIC-8 |
@@ -179,7 +179,7 @@ Zero voltage drop when conducting!
 ## IPC Reliability Standards
 
 | Standard | Scope | Key Requirements |
-|----------|-------|------------------|
+| ---------- | ------- | ------------------ |
 | **IPC-2221** | Generic PCB design | Conductor spacing, creepage, clearance |
 | **IPC-2222** | Rigid PCB | Sectional design standard |
 | **IPC-6012** | Rigid PCB qualification | Class 1/2/3 requirements |
@@ -190,7 +190,7 @@ Zero voltage drop when conducting!
 ### IPC Class Definitions
 
 | Class | Description | Example |
-|:---:|------|---------|
+| :---: | ------ | --------- |
 | 1 | General electronic | Toys, consumer gadgets |
 | 2 | Dedicated service | Industrial, communications |
 | 3 | High reliability | Medical, military, aerospace |
@@ -214,7 +214,7 @@ Zero voltage drop when conducting!
 ### IP Ratings (Ingress Protection)
 
 | IP | Dust | Water |
-|:---:|------|-------|
+| :---: | ------ | ------- |
 | IP54 | Protected | Splashing |
 | IP65 | Dust-tight | Water jets |
 | IP67 | Dust-tight | 1m immersion |

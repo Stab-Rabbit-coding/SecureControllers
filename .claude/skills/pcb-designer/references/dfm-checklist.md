@@ -8,7 +8,7 @@ Each unchecked item is a potential manufacturing failure or yield loss.
 ## Fab Capability Limits (JLCPCB)
 
 | Parameter | Min | Recommended |
-|-----------|-----|-------------|
+| ----------- | ----- | ------------- |
 | Trace width (outer) | 3.5mil (0.09mm) | 6mil |
 | Trace spacing (outer) | 3.5mil | 6mil |
 | Trace width (inner) | 4mil | 6mil |

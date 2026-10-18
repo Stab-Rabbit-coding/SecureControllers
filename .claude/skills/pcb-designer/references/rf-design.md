@@ -7,7 +7,7 @@
 Simplified formula for FR-4 (εr ≈ 4.4):
 
 | Board | Layer Stack | 50Ω Width (approx) |
-|-------|------------|:---:|
+| ------- | ------------ | :---: |
 | 2L, 1.6mm | L1 signal, L2 GND | 2.9mm |
 | 4L, 0.2mm prepreg | L1 signal, L2 GND | 0.35mm |
 | 4L, 0.1mm prepreg | L1 signal, L2 GND | 0.19mm |
@@ -40,7 +40,7 @@ Use **Saturn PCB Toolkit** or **TXLine** for accurate calculation with your actu
 ### PCB Trace Antennas
 
 | Type | Size (2.4GHz) | BW | Gain | Pattern |
-|------|:---:|:---:|:---:|:---:|
+| ------ | :---: | :---: | :---: | :---: |
 | IFA (Inverted-F) | 15×8mm | 80-100MHz | 2-3dBi | Near-omni |
 | Meander | 15×5mm | 50-80MHz | 1-2dBi | Omni |
 | PIFA | 15×8mm | 80MHz | 1-3dBi | Omni |
@@ -153,7 +153,7 @@ RF_IC ──┬──[===]──┬── ANT
 ## Common RF Issues & Fixes
 
 | Symptom | Likely Cause | Fix |
-|---------|-------------|-----|
+| --------- | ------------- | ----- |
 | Poor range | Antenna mismatch | VNA tune matching network |
 | Poor range | Copper in keep-out zone | Clear all layers in antenna zone |
 | Poor range | Battery blocking antenna | Move battery away from antenna |

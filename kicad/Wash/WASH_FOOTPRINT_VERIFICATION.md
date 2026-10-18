@@ -43,7 +43,7 @@ Note: BARO plus the two ETH-PHYs make the "wrong" list 6 refs across 5 part type
 Each of these is a hard fabrication defect: wrong pad count and/or wrong pitch
 means the pads do not land on the part's leads. **Correcting them remaps
 which net lands on which pin** — a flight-hardware footprint↔symbol change that
-must be done against the confirmed schematic pinout, not guessed (root
+shall be done against the confirmed schematic pinout, not guessed (root
 `CLAUDE.md`, avionics `CLAUDE.md`).
 
 ## ❌ Placeholder footprints (2-pad stubs, not real)
@@ -83,7 +83,7 @@ drills) versus the current SMD stub.
      "isolate RMII with two 4-channel digital isolators" scheme needs design review.
 
   This is a **schematic/net-correctness defect, not a land-pattern defect** — but
-  it means the ETH-isolation subcircuit as drawn is non-functional and must be
+  it means the ETH-isolation subcircuit as drawn is non-functional and shall be
   re-architected + re-netted, not merely routed. Depends on a clean ERC (§1.2a).
 
 ## ❗ Net→pin maps are wrong on multiple parts (schematic-rooted, not geometry)
@@ -102,7 +102,7 @@ of the land-pattern errors. Confirmed on two parts so far:
 These are **schematic/netlist errors**, not land-pattern errors: the wrong pin→net
 associations originate in the symbols that drive the netlist. **Fixing only the PCB
 footprints would fight the schematic on the next sync and re-create the exact
-sch↔pcb divergence documented for Emma/TACCO.** The rebuild must therefore be
+sch↔pcb divergence documented for Emma/TACCO.** The rebuild shall therefore be
 **schematic-first** (author correct symbols/pinouts → correct footprints follow →
 re-sync PCB), or explicitly accept a PCB-first patch with the schematic to catch up.
 
@@ -162,7 +162,7 @@ Confirmed 2026-07-13 by inspecting `Wash.kicad_sch` lib_symbols/instances:
   board revisions.
 
 **Neither file is currently a clean source of truth.** A proper schematic-first
-rebuild must (1) pick the Ethernet architecture (DP83825I vs ADIN1300), (2) author
+rebuild shall (1) pick the Ethernet architecture (DP83825I vs ADIN1300), (2) author
 datasheet-accurate full-pinout symbols for each IC, (3) wire them correctly,
 (4) associate correct footprints, (5) regenerate/re-sync the PCB, (6) ERC/DRC clean.
 
@@ -173,7 +173,7 @@ confirm the **PCB's** Ethernet front-end is authoritative and **`Wash.md` §1 is
 stale**. `Wash.md` still documents a DP83825I + HX1188NL + TPS62933 design that
 is not on the board. `Wash.md` §§1–3 need to be rewritten to the as-built
 ADIN1300 + 749010012A + ISO6442 + ADM2795E (RW-16) design, and the §3 claim that
-the ADM2795E is "SOIC-20W" with an "internal DC/DC" must be reconciled with the
+the ADM2795E is "SOIC-20W" with an "internal DC/DC" shall be reconciled with the
 16-lead RW-16 datasheet.
 
 ## Recommended fix order

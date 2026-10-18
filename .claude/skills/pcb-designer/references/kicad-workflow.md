@@ -41,7 +41,7 @@ Use KiCad 8.0 or later (major UI improvements in 8.x).
 ## KiCad vs LCEDA for This Project
 
 | Aspect | KiCad | LCEDA |
-|--------|-------|-------|
+| -------- | ------- | ------- |
 | LCSC parts integration | Manual (import BOM) | Built-in search |
 | JLCPCB assembly | Extra steps | One-click |
 | 3D viewer | Excellent (built-in ray tracer) | Good |
