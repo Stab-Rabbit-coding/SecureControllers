@@ -1,0 +1,39 @@
+# Microchip (Atmel) ATF16V8BQL programmable logic device, TSSOP-20.
+# Verified 2026-09-27 (Claude Sonnet 5) against Atmel-0364 PLD data sheet
+# "Pin Configurations" (TSSOP, All Pinouts Top View).
+footprint_check = "stock TSSOP-20_4.4x6.5mm_P0.65mm"
+recommendation = "TSSOP-20 (4.4 mm wide) chosen over SOIC-20W for a smaller board footprint (2026-09 XO board-area-reduction directive); PLCC-20 also offered but larger."
+
+[symbol]
+name = "ATF16V8BQL"
+reference = "U"
+manufacturer = "Microchip (Atmel)"
+mpn = "ATF16V8BQL-15XI"
+description = "Simple PLD, 8 macrocells, TSSOP-20 4.4mm wide"
+keywords = "PLD GAL PAL programmable logic"
+footprint = "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
+fp_filters = "TSSOP*20*4.4x6.5*"
+
+[datasheet]
+doc = "Atmel-0364 PLD ATF16V8B/8BQ/8BQL data sheet"
+url = "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-0364-PLD-ATF16V8B-8BQ-8BQL-Datasheet.pdf"
+section = "Pin Configurations (TSSOP, All Pinouts Top View)"
+
+[[packages]]
+code = "20X (TSSOP-20, 4.4mm wide)"
+pins = 20
+body = "4.4 x 6.5 mm"
+
+[[packages]]
+code = "20 (SOIC-20W)"
+pins = 20
+body = "SOIC-20W"
+
+[[packages]]
+code = "PC (PLCC-20)"
+pins = 20
+body = "PLCC-20"
+
+[pins]
+left = ["1 I/CLK I", "2 I1 I", "3 I2 I", "4 I3 I", "5 I4 I", "6 I5 I", "7 I6 I", "8 I7 I", "9 I8 I", "10 GND W"]
+right = ["20 VCC W", "19 IO7 B", "18 IO6 B", "17 IO5 B", "16 IO4 B", "15 IO3 B", "14 IO2 B", "13 IO1 B", "12 IO0 B", "11 I9/OE I"]

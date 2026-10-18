@@ -1,0 +1,34 @@
+# pSemi PE4259 UltraCMOS SPDT RF switch, SC-70 6-lead.
+# Verified 2026-09-27 (Claude Sonnet 5) against pe4259.pdf Fig. 14 pin
+# configuration + Table 7 pin descriptions. Pin 6 is a dual-purpose
+# CTRL-bar/VDD pin (single-pin control mode: VDD supply; complementary
+# mode: inverted control input) -- modeled as VDD (single-pin control
+# mode, the simpler/typical application).
+footprint_check = "stock SOT-363_SC-70-6"
+recommendation = "Only package offered for this MPN."
+
+[symbol]
+name = "PE4259"
+reference = "U"
+manufacturer = "pSemi (Peregrine)"
+mpn = "PE4259-63"
+description = "UltraCMOS high-power SPDT RF switch, DC-6 GHz, SC-70-6"
+keywords = "RF switch SPDT T/R switch"
+footprint = "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+fp_filters = "SOT?363*"
+
+[datasheet]
+doc = "pSemi PE4259 data sheet"
+url = "https://www.psemi.com/pdf/datasheets/pe4259ds.pdf"
+section = "Fig. 14 pin configuration; Table 7 pin descriptions"
+
+[[packages]]
+code = "SC-70 (6-lead)"
+pins = 6
+body = "2.0 x 1.25 mm"
+
+[pins]
+left = ["1 RF1 B", "3 RF2 B"]
+right = ["5 RFC B"]
+top = ["6 VDD W"]
+bottom = ["2 GND W", "4 CTRL I"]

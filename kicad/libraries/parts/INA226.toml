@@ -1,0 +1,29 @@
+# TI INA226 current/power monitor with I2C, VSSOP-10.
+# Verified 2026-09-27 (Claude Sonnet 5) against ina226.pdf Pin
+# Configuration and Functions (VSSOP-10, DGS package).
+footprint_check = "stock VSSOP-10_3x3mm_P0.5mm"
+recommendation = "Only package offered for INA226 (VSSOP-10); the newer INA226A variant is pin-compatible if extended features are ever needed."
+
+[symbol]
+name = "INA226"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "INA226AIDGSR"
+description = "Bidirectional current/power monitor, 36 V, I2C/SMBus, VSSOP-10"
+keywords = "current sense power monitor I2C shunt"
+footprint = "Package_SO:VSSOP-10_3x3mm_P0.5mm"
+fp_filters = "VSSOP*10*"
+
+[datasheet]
+doc = "TI INA226 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/ina226.pdf"
+section = "Pin Configuration and Functions (DGS/VSSOP-10)"
+
+[[packages]]
+code = "DGS (VSSOP-10)"
+pins = 10
+body = "3.0 x 3.0 mm"
+
+[pins]
+left = ["1 A1 I", "2 A0 I", "3 ~{ALERT} O", "4 SDA B", "5 SCL I"]
+right = ["10 IN+ P", "9 IN- P", "8 VBUS P", "7 GND W", "6 VS W"]

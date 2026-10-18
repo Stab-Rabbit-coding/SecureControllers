@@ -1,0 +1,38 @@
+# Epson TG2520SMN TCXO, 4-pad 2.5x2.0mm SMD.
+# Verified 2026-09-27 (Claude Sonnet 5) against the electrical spec
+# table in TG2520SMN_en-2584158.pdf (VCC, GND, output, Vc-tune pin
+# functions all confirmed) -- BUT this specific file (a 4-page
+# distributor click-through wrapper) does NOT contain a pin-numbering
+# diagram, so pin-to-pad NUMBER assignment below follows the
+# industry-universal 4-pad SMD oscillator convention (same layout
+# already verified for ECS-2520MV in this library: 1=NC/Vc, 2=GND,
+# 3=OUT, 4=VCC) rather than this specific datasheet's own figure.
+footprint_check = "requires verification -- confirm against Epson's full mechanical datasheet (not this distributor wrapper) before fab"
+recommendation = "Only package for this MPN (2.5 x 2.0 x 0.8 mm)."
+findings = ["Commo schematic (ref 'TCXO 25M') currently ties BOTH pin 1 and pin 4 to +3V3 -- if pin 1 is actually NC (not VCC) per the standard pinout, this is harmless (tying an unused pin to a rail) but should be confirmed once the full mechanical datasheet is obtained; this entry does not silently correct that wiring."]
+
+[symbol]
+name = "TG2520SMN"
+reference = "X"
+manufacturer = "Epson"
+description = "25 MHz TCXO, +/-0.5ppm, 4-pad SMD 2.5x2.0mm"
+keywords = "TCXO crystal oscillator temperature compensated"
+footprint = "Oscillator:Oscillator_SMD_SeikoEpson_TG2520SMN-xxx-xxxxxx-4Pin_2.5x2.0mm"
+fp_filters = "*TG2520SMN*"
+
+[datasheet]
+doc = "Epson TG2520SMN TCXO/VC-TCXO data sheet (distributor reprint)"
+url = "datasheets/TG2520SMN_en-2584158.pdf"
+status = "pin NUMBERING requires verification -- see findings"
+section = "no pin-numbering diagram in this file (see status)"
+
+[[packages]]
+code = "SMD 4-pad"
+pins = 4
+body = "2.5 x 2.0 x 0.8 mm"
+
+[pins]
+left = ["1 NC/VC N"]
+right = ["3 OUT O"]
+top = ["4 VCC W"]
+bottom = ["2 GND W"]

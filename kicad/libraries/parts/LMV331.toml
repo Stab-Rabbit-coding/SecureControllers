@@ -1,0 +1,38 @@
+# TI LMV331 single low-voltage comparator, SOT-23-5.
+# Verified 2026-09-27 (Claude Sonnet 5) against TI LMV331/393/339 data
+# sheet SLCS136V (rev. May 2025): Device Information table (SOT-23 5-pin,
+# 1.60 x 2.90 mm), simplified schematic (IN+, IN-, OUT).
+footprint_check = "stock SOT-23-5 pad count matches"
+recommendation = "Only 5-pin single-comparator package for this family (SC-70-5 also offered, smaller: 1.25 x 2.00 mm)."
+findings = ["Commo RSSI_CMP (Value \"LMV331 RSSI Carrier-Detect\") correctly uses this 5-pin pinout.", "Commo's OTHER SOT-23-5 comparator, ref \"RX Demod\" (Value \"LM393 Comparator RX-AFSK Demodulator\"), is mislabeled: real TI LM393 is a DUAL comparator with no 5-pin package (SOIC-8/VSSOP-8/SOT-23-8/TSSOP-8/WSON-8 only per the same datasheet's Device Information table). The drawn symbol has only 5 pins (AFSK_IN, +3V3, COMP_IN, GND, GND) with NO output pin at all -- pin 5 is wired to GND instead of an output net. This is almost certainly meant to be a single comparator (LMV331-class, same as RSSI_CMP) with pin 5 miswired. NOT fixed this session -- flagged per root AGENTS.md (no fabricated pin assignments); needs the intended output net traced before relinking."]
+
+[symbol]
+name = "LMV331"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "LMV331IDBVR"
+description = "Single low-voltage comparator, 2.7-5.5 V, open-drain output, SOT-23-5"
+keywords = "comparator single low-voltage open-drain"
+footprint = "Package_TO_SOT_SMD:SOT-23-5"
+fp_filters = "SOT?23*"
+
+[datasheet]
+doc = "TI LMV331/LMV393/LMV339 data sheet SLCS136V"
+url = "https://www.ti.com/lit/ds/symlink/lmv331.pdf"
+section = "Device Information table; simplified schematic"
+
+[[packages]]
+code = "DBV (SOT-23-5)"
+pins = 5
+body = "1.60 x 2.90 mm"
+
+[[packages]]
+code = "DCK (SC-70-5)"
+pins = 5
+body = "1.25 x 2.00 mm"
+
+[pins]
+left = ["3 IN- I", "2 IN+ I"]
+right = ["1 OUT C"]
+top = ["5 VCC W"]
+bottom = ["4 GND W"]

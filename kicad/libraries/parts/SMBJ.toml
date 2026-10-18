@@ -1,0 +1,30 @@
+# Littelfuse SMBJ-series 600 W TVS, DO-214AA (SMB).
+# Verified 2026-09-27 (Claude Sonnet 5); Littelfuse SMAJ/SMBJ family
+# share the same cathode-band pinning convention (pin 1 = cathode band
+# side, pin 2 = anode); SMBJ is the larger DO-214AA / 600 W sibling of
+# SMAJ (400 W, DO-214AC).
+footprint_check = "stock D_SMB (2-pad, cathode band = pin 1)"
+recommendation = "Only package offered across the SMBJ family (SMB/DO-214AA)."
+
+[symbol]
+name = "SMBJ-TVS"
+reference = "D"
+manufacturer = "Littelfuse"
+description = "600 W unidirectional TVS diode, DO-214AA (SMB); value = breakdown voltage variant (e.g. SMBJ33CA)"
+keywords = "TVS diode surge protection unidirectional SMB"
+footprint = "Diode_SMD:D_SMB"
+fp_filters = "D?SMB"
+
+[datasheet]
+doc = "Littelfuse TVS Diodes SMBJ series data sheet"
+url = "https://www.littelfuse.com/assetdocs/tvs-diodes-smbj-datasheet"
+section = "Cathode band pinning (p.1); DO-214AA package outline"
+
+[[packages]]
+code = "DO-214AA (SMB)"
+pins = 2
+body = "5.4 x 3.3 mm"
+
+[pins]
+top = ["1 K P"]
+bottom = ["2 A P"]

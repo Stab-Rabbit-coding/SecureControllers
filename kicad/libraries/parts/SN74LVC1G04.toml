@@ -1,0 +1,35 @@
+# TI SN74LVC1G04 single inverter, SOT-23-5.
+# Verified 2026-09-27 (Claude Sonnet 5) against sn74lvc1g04.pdf Pin
+# Configuration (all packages: NC1, A2, GND3, Y4, VCC5).
+footprint_check = "stock SOT-23-5"
+recommendation = "DBV (SOT-23-5) chosen; DCK (SC-70-5) and DRL (SOT-553) also offered, smaller."
+
+[symbol]
+name = "SN74LVC1G04"
+reference = "U"
+manufacturer = "Texas Instruments"
+description = "Single inverter gate, 1.65-5.5 V, SOT-23-5"
+keywords = "inverter logic gate single"
+footprint = "Package_TO_SOT_SMD:SOT-23-5"
+fp_filters = "SOT?23*"
+
+[datasheet]
+doc = "TI SN74LVC1G04 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf"
+section = "Pin Configuration and Functions"
+
+[[packages]]
+code = "DBV (SOT-23-5)"
+pins = 5
+body = "2.9 x 1.6 mm"
+
+[[packages]]
+code = "DCK (SC-70-5) / DRL (SOT-553)"
+pins = 5
+body = "smaller"
+
+[pins]
+left = ["2 A I"]
+right = ["4 Y O"]
+top = ["5 VCC W"]
+bottom = ["3 GND W", "1 NC N"]
