@@ -838,8 +838,9 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 - [x] 5.2.2 Requirements for the PB2 variant — done 2026-11-14 in the Serenity-UAV plan `docs/plans/2026-11-14-001-feat-nonfo-pilot-pb2-stern-stack-plan.md` (Product Contract R1–R15), from the owner's 2026-11-12 decisions: stern stack of Serenity, specification outline gated first, Pilot Ethernet pattern, on-cape GNSS.
 - [ ] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1). Header side built 2026-11-14 (`kicad/NoNFO-Pilot/PB2/pin_ledger/`): A, A-diet and B do not fit; B+ fits with 2 spare. Still open: the MCU-side ledger, tests, and CI (sprint S34).
 - [ ] 5.2.4 Owner decision OD-18: architecture A / A-diet / B / B+ for this variant. Brief: `kicad/NoNFO-Pilot/PB2/ARCHITECTURE_BRIEF.md` (recommends B+).
+- [ ] 5.2.4a Pre-decision check PD1: map the 31 B+ lines onto the MSPM0G3519-Q1 RGZ-48 function table and append the result to the brief (before OD-18).
 - [ ] 5.2.5 Owner decision OD-20: USB Wi-Fi module part.
-- [ ] 5.2.6 S34: zone contract, Simon fit gate, mass gate (≤ 0.132 lbm (60 g) stack).
+- [ ] 5.2.6 S34: zone contract, Simon fit gate, mass gate (≤ 0.108 lbm (49 g) pouched stack, or the owner's OD-21 floor), electrical load budget, first thermal estimate.
 - [ ] 5.2.7 S35: parts sourced and every footprint verified against its OEM datasheet.
 - [ ] 5.2.8 S36: generated schematic, ERC 0, ledger match, KiCad CI job.
 - [ ] 5.2.9 S37: isolation cells each DRC 0 and unconnected 0 on a stripped board.
