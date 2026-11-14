@@ -1,11 +1,11 @@
 {
  "_source": {
+  "copied_from": "Serenity-UAV avionics/datasheets/extracted/AM625_PB2I_header_mux.json at commit fe01cdd (2026-11-14); the datasheet PDF checksum is recorded in that original",
   "datasheet": "TI SPRSP58C AM62x data sheet, rev. Oct 2025, Table 5-1 (ALW)",
   "doc": "avionics/kicad/PB2I_AM625_HEADER_CAPABILITIES.md",
   "extracted_by": "Claude Opus 5.5, 2026-10-17",
   "header_ball_list": "BeagleBoard.org PocketBeagle 2 SRM Ch. 4 + schematic sheet 016_BP P1 & P2",
   "local_copy": "avionics/datasheets/ti/am625.pdf",
-  "md5": "0bf05eb5e8fe8649fe010b244d7ef6e6",
   "note": "Pins suffixed A are the second SoC ball tied to the same header pin"
  },
  "balls": {
