@@ -10,7 +10,7 @@
 
 NoNFO-Pilot-PB2 puts the Pilot and TACCO functions on one PocketBeagle 2 Industrial (PB2-I). The PB2-I header has 53 usable signal pins once the console is kept. The question is which processor drives the fleet buses and the slow housekeeping lines: the PB2-I alone, or the PB2-I with a trust-module microcontroller (MCU) beside it.
 
-**Recommendation: option B+.** It is the only option that fits the header with every function aboard, including the on-cape GNSS receiver. It costs a second firmware image and a host-link protocol that does not exist yet.
+**Decided 2026-11-14: option B+** (owner). The recommendation was B+. It is the only option that fits the header with every function aboard, including the on-cape GNSS receiver. It costs a second firmware image and a host-link protocol that does not exist yet.
 
 ## How the answer was computed
 
@@ -44,7 +44,7 @@ Source: `python3 pin_ledger/pin_ledger.py`, and the same with `--drop GNSS` and 
 
 - **PB2-I header** [REF-SENSOR-049 Table 5-1]. 55 signal positions; three are the fixed USB1 pins and two are the console. RMII2, MDIO0, SPI0 and USB1 each exist on one set of pins only, so those 16 positions are not negotiable in any option.
 - **MSPM0-shared pins.** Eight header pins also carry the PB2-I's own MSPM0L1105 analog pins. In B+ with everything aboard, two inputs land on them: the 802.15.4 interrupt on P1-21 and the GNSS PPS on P1-23. The four DSHOT outputs move off the shared pins (Pilot has two there today). With GNSS jettisoned, no non-Ethernet net lands on a shared pin.
-- **MCU.** MSPM0G3519-Q1 in the 48-pin RGZ package: Cortex-M0+ at 80 MHz, 512 KB flash, 128 KB SRAM, one CAN-FD controller in this package, AES and TRNG [REF-SENSOR-017 §1 and ordering table]. It is already on Observer, with a verified symbol and footprint in `Serenity-UAV/avionics/kicad/symbols/`. B+ asks about 31 of its I/O pins (CAN 3, RS-485 3, HI-6138 SPI and control 7, host SPI and IRQ 5, PLD 9, fan 1, Wi-Fi enable 1, SWD 2). Whether those 31 fit the RGZ-48 function map is **not yet verified**; it is the first check of sprint S34.
+- **MCU.** MSPM0G3519-Q1 in the 48-pin RGZ package: Cortex-M0+ at 80 MHz, 512 KB flash, 128 KB SRAM, one CAN-FD controller in this package, AES and TRNG [REF-SENSOR-017 §1 and ordering table]. It is already on Observer, with a verified symbol and footprint in `Serenity-UAV/avionics/kicad/symbols/`. B+ asks about 31 of its I/O pins (CAN 3, RS-485 3, HI-6138 SPI and control 7, host SPI and IRQ 5, PLD 9, fan 1, Wi-Fi enable 1, SWD 2). Whether those 31 fit the RGZ-48 function map is **not yet verified**; it is pre-decision check PD1, owed before OD-18.
 - **One CAN-FD bus only.** The RGZ-48 has one CAN-FD controller. The merged node needs one. A second bus would force the 64-pin package.
 - **Sensors and motor outputs stay on the PB2-I in every option.** The IMU, barometer, TPM, flash and 802.15.4 radio stay on SPI0, and DSHOT stays on PRU0. No flight-critical loop crosses the MCU link.
 - **Area.** B+ adds a 0.28 in (7 mm) square MCU and about ten passives. It removes nothing from the board that A would not also carry.
@@ -57,24 +57,34 @@ Source: `python3 pin_ledger/pin_ledger.py`, and the same with `--drop GNSS` and 
 - **What B and B+ buy.** The MCU answers bus heartbeats and holds the node's bus address while the PB2-I reboots. The stern stack is the bus-end terminator, and under the 2026-10-31 forward-trim plan it is the PACE Emergency path, so a node that drops off the bus for a Linux boot is the case to avoid.
 - **Throughput.** A CAN-FD bus at 5 Mbit/s and 1553 at 1 Mbit/s are both below what an SPI link of several megahertz carries. The HI-6138 runs the 1553 protocol itself; the MCU only services its registers. Worst-case link latency is **not yet measured**.
 
-## The six checks
+## The checks
+
+Avionics check set, Serenity-UAV `docs/DOC_TEMPLATES.md` (owner direction 2026-11-14).
 
 | Check | Result |
 |---|---|
-| Statics and dynamics | Does not apply: no load or motion changes between options. |
+| Electrical engineering: load | B and B+ add one MCU on the 3V3 rail. Its current is small beside the radios and the PB2-I, but it is **not yet computed**; the merged 5 V and 3V3 budget is sprint S34 work and applies to every option. |
+| Electrical engineering: emissions | No option adds a switching converter or a radio. B and B+ add one SPI host link on the already-busy SPI0 and move the bus transceivers' logic side to the MCU. A-diet adds an I²C bus. No option changes the isolated converters, which are the board's main emitters. Not yet quantified. |
 | Function | A, A-diet and B cannot carry the full function set. A-diet works only without GNSS and without the expansion SPI port. B+ carries everything. |
 | Structural integrity | Does not apply: same board, same mounts in every option. |
 | Mechanism and component interactions | B+ changes who talks to the three bus transceivers and the PLD. The write-block interlock moves from the logged host to the MCU, which separates the lock from the processor it protects. The MCU becomes a single point for the node's three wired buses; Ethernet and the radios do not pass through it. |
-| Weight and balance | MCU and passives add under 0.02 oz (0.5 g). No measurable CG effect. |
-| Canonical shape | Internal only. |
+| Weight and balance | MCU and passives add under 0.02 oz (0.5 g). No option changes a fastener, a connector or the harness, so those ledger lines are equal across options. |
+| Wire harness, fastener and mounting fit | Does not apply between options: connectors, harness and mounts are the same in all four. |
+| Thermal load | B and B+ add the MCU's dissipation, expected to be a few tens of milliwatts and **not yet computed**. It does not change the board's main heat sources (PB2-I, radios, isolated converters). |
 
 ## Still unverified
 
-1. The MSPM0G3519-Q1 RGZ-48 function map for the 31 lines above [REF-SENSOR-017 Table 6-2].
+1. The MSPM0G3519-Q1 RGZ-48 function map for the 31 lines above [REF-SENSOR-017 Table 6-2]. The package bonds 44 I/O pins, so the count fits; the function assignment is unchecked. This is pre-decision check PD1 in the Serenity-UAV plan, and its result is to be appended here before OD-18 is decided.
 2. Host-link latency and the SocketCAN bridge design.
 3. Whether the MCU needs its own secure element, or takes its keys from the PB2-I's SLB9672 at provisioning. This brief assumes one TPM, on the PB2-I.
 4. The JEDEC fuse map of the write-block PLD, which decides how many of its nine inputs are really needed.
 
 ## Owner decision
 
-- [ ] OD-18: architecture for NoNFO-Pilot-PB2 — A / A-diet / B / **B+ (recommended)**.
+The PACE role of the stern stack (OD-19) is an input: the case for B+ leans on the Emergency role, and Serenity-UAV `AGENTS.md` §9 lists Simon as A / C / A / P.
+
+- [x] OD-18: architecture for NoNFO-Pilot-PB2 — A / A-diet / B / **B+ (recommended)**. **Decided 2026-11-14 by the owner: B+.** The MCU function-map check (PD1) becomes the first task of sprint S34; a failure there means the 64-pin package, not a different option.
+
+## PD1 result (2026-11-14, sprint S34)
+
+All 31 B+ lines fit the MSPM0G3519-Q1 RGZ-48 with 12 ports to spare, SWD and the BSL invoke pin kept free; the 64-pin package is not needed. The allocation and its source table are in `NoNFO-Pilot-PB2.md` and `pin_ledger/mcu_ledger.py` [REF-SENSOR-017 Table 6-2].

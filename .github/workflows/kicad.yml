@@ -1,0 +1,40 @@
+name: KiCad boards
+
+# NoNFO-Pilot-PB2 pin ledgers (header and MCU) and their tests. Sprint S36
+# extends this workflow with the KiCad ERC and ledger-to-schematic match jobs.
+
+on:
+  push:
+    branches: [initial, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kicad-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pin-ledger:
+    name: NoNFO-Pilot-PB2 pin ledgers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Header ledger, option B+ (owner decision OD-18)
+        run: python3 kicad/NoNFO-Pilot/PB2/pin_ledger/pin_ledger.py --require B+
+
+      - name: MCU ledger, MSPM0G3519-Q1 RGZ-48
+        run: python3 kicad/NoNFO-Pilot/PB2/pin_ledger/mcu_ledger.py
+
+      - name: Ledger tests
+        run: python3 -m pytest -q kicad/NoNFO-Pilot/PB2/tests
