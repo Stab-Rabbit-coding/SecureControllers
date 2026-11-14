@@ -10,7 +10,7 @@
 
 NoNFO-Pilot-PB2 puts the Pilot and TACCO functions on one PocketBeagle 2 Industrial (PB2-I). The PB2-I header has 53 usable signal pins once the console is kept. The question is which processor drives the fleet buses and the slow housekeeping lines: the PB2-I alone, or the PB2-I with a trust-module microcontroller (MCU) beside it.
 
-**Recommendation: option B+.** It is the only option that fits the header with every function aboard, including the on-cape GNSS receiver. It costs a second firmware image and a host-link protocol that does not exist yet.
+**Decided 2026-11-14: option B+** (owner). The recommendation was B+. It is the only option that fits the header with every function aboard, including the on-cape GNSS receiver. It costs a second firmware image and a host-link protocol that does not exist yet.
 
 ## How the answer was computed
 
@@ -83,4 +83,4 @@ Avionics check set, Serenity-UAV `docs/DOC_TEMPLATES.md` (owner direction 2026-1
 
 The PACE role of the stern stack (OD-19) is an input: the case for B+ leans on the Emergency role, and Serenity-UAV `AGENTS.md` §9 lists Simon as A / C / A / P.
 
-- [ ] OD-18: architecture for NoNFO-Pilot-PB2 — A / A-diet / B / **B+ (recommended)**.
+- [x] OD-18: architecture for NoNFO-Pilot-PB2 — A / A-diet / B / **B+ (recommended)**. **Decided 2026-11-14 by the owner: B+.** The MCU function-map check (PD1) becomes the first task of sprint S34; a failure there means the 64-pin package, not a different option.
