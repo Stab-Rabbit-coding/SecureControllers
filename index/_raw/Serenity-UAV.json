@@ -2469,12 +2469,34 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
-    "mtime": 1794692222,
+    "mtime": 1794693841,
     "possible_duplicate": true,
-    "rel_path": "avionics/datasheets/ezurio/sterling-lwb5plus-usb-adapter-datasheet-v1.2.pdf",
+    "rel_path": "avionics/datasheets/ezurio/ezurio-datasheet-sterling-lwb5plus-usb-adapter.pdf",
     "repo": "Serenity-UAV",
-    "sha256": "11a33f94828adf9e22b95fccec9ef09a08b464fc838a09c3883ef0b8e1f631df",
-    "size_bytes": 3335507
+    "sha256": "9047c58f87b6da0154f6189bf2316323cb3446c09c8e883980388b50cb126067",
+    "size_bytes": 3282709
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794693841,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/ezurio/ezurio-datasheet-sterling-lwb5plus-v5.2.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "73ae563218ae6633839b08c92d528f5055d2b52b9f8b77bf3393abbe61b335de",
+    "size_bytes": 8500355
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794693841,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/ezurio/ezurio-guide-dvk-lwb5plus-v2.1.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "f39b87668758378036ee1f5e5e5e0679c84bd8ed70a2b4d8a28598a6b85abe27",
+    "size_bytes": 1054114
   },
   {
     "asset_type": "datasheet",
