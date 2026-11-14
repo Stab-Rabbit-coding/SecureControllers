@@ -6075,6 +6075,15 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1794694907,
+    "rel_path": "tools/nonfo_simon_fit.py",
+    "repo": "Serenity-UAV",
+    "sha256": "3163e09af361f639fc739234e57f19d5b257d05482c2916496c9c9e72b8725a1",
+    "size_bytes": 6553
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1794493364,
     "rel_path": "tools/nozzle_servo_linkage.py",
     "repo": "Serenity-UAV",
@@ -6487,6 +6496,15 @@
     "repo": "Serenity-UAV",
     "sha256": "b8275218ac59c0b5db250109070c29ba6e2214a52dd33bf29d433d6c23f88617",
     "size_bytes": 1083
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1794694880,
+    "rel_path": "tools/tests/test_nonfo_simon_fit.py",
+    "repo": "Serenity-UAV",
+    "sha256": "7e07d6e2b6b24273eb5f5b9e900a558b47c622f6c8256a6325df3616b7ef2ae2",
+    "size_bytes": 1558
   },
   {
     "asset_type": "script",

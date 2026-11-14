@@ -820,8 +820,8 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 ### §5.0 — Shared gates
 
 - [ ] 5.0.1 Decide the GNSS source for the BBE variant: on-cape receiver or the isolated CAN-FD dorsal puck (Serenity decision 2026-10-12). PB2 variant decided 2026-11-12 (owner): on-cape MAX-M10S, the first function removed if space, mass or routing is short.
-- [ ] 5.0.2 Verify REF-NFP-004..006 against the issuing bodies, and catalogue the inherited IEC 61000-4-x, MIL-STD-461G and MIL-STD-1553C entries under non-colliding REF-IDs.
-- [ ] 5.0.3 Add an 86.4 x 53.3 mm node envelope to the Serenity cargo fit gates (chin floor fits; aft strip does not).
+- [ ] 5.0.2 Verify REF-NFP-004..006 against the issuing bodies, and catalogue the inherited IEC 61000-4-x, MIL-STD-461G and MIL-STD-1553C entries under non-colliding REF-IDs. 2026-11-14: REF-NFP-004 verified from the PB2 SRM; inherited standards catalogued as REF-NFP-007..011. Left: REF-NFP-005 and 006 (hosts outside this session's network).
+- [x] 5.0.3 Add a node envelope to the Serenity fit gates — done 2026-11-14 for the PB2 variant at Simon (`tools/nonfo_simon_fit.py`, BeagleBone Black outline 86.36 x 54.61 mm): PASS portrait.
 - [ ] 5.0.4 Report the RMII2-only finding to Serenity-UAV: the dual-PHY CPSW ring in `docs/AVIONICS_PB2_REDESIGN.md` and `docs/ETHERNET_PHY_TRADE.md` cannot be built on a PB2 host.
 
 ### §5.1 — NoNFO-Pilot (BBE host)
@@ -836,11 +836,11 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 
 - [x] 5.2.1 Ranked ideation (`docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`).
 - [x] 5.2.2 Requirements for the PB2 variant — done 2026-11-14 in the Serenity-UAV plan `docs/plans/2026-11-14-001-feat-nonfo-pilot-pb2-stern-stack-plan.md` (Product Contract R1–R15), from the owner's 2026-11-12 decisions: stern stack of Serenity, specification outline gated first, Pilot Ethernet pattern, on-cape GNSS.
-- [ ] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1). Header side built 2026-11-14 (`kicad/NoNFO-Pilot/PB2/pin_ledger/`): A, A-diet and B do not fit; B+ fits with 2 spare. Still open: the MCU-side ledger, tests, and CI (sprint S34).
+- [x] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1). Header side built 2026-11-14 (`kicad/NoNFO-Pilot/PB2/pin_ledger/`): A, A-diet and B do not fit; B+ fits with 2 spare. MCU-side ledger, tests and CI done 2026-11-14 (S34).
 - [x] 5.2.4 Owner decision OD-18: architecture for this variant — decided 2026-11-14: B+. Brief: `kicad/NoNFO-Pilot/PB2/ARCHITECTURE_BRIEF.md`.
-- [ ] 5.2.4a PD1 (first task of S34): map the 31 B+ lines onto the MSPM0G3519-Q1 RGZ-48 function table and append the result to the brief.
-- [ ] 5.2.5 Owner decision OD-20: USB Wi-Fi module part.
-- [ ] 5.2.6 S34: zone contract, Simon fit gate, mass minimised and below the 107 g pair it replaces (owner 2026-11-14: BBE-Black outline kept; heavier than a Pilot cape is acceptable), electrical load budget, first thermal estimate.
+- [x] 5.2.4a PD1 (first task of S34): map the 31 B+ lines onto the MSPM0G3519-Q1 RGZ-48 function table and append the result to the brief. Done 2026-11-14: fits, 12 ports spare.
+- [x] 5.2.5 Owner decision OD-20: USB Wi-Fi module part — decided 2026-11-14: Ezurio Sterling-LWB5+ 453-00046 (MHF4), USB mode.
+- [x] 5.2.6 S34: zone contract, Simon fit gate, mass minimised and below the 107 g pair it replaces (owner 2026-11-14: BBE-Black outline kept; heavier than a Pilot cape is acceptable), electrical load budget, first thermal estimate. Done 2026-11-14: see `kicad/NoNFO-Pilot/PB2/NoNFO-Pilot-PB2.md`.
 - [ ] 5.2.7 S35: parts sourced and every footprint verified against its OEM datasheet.
 - [ ] 5.2.8 S36: generated schematic, ERC 0, ledger match, KiCad CI job.
 - [ ] 5.2.9 S37: isolation cells each DRC 0 and unconnected 0 on a stripped board.

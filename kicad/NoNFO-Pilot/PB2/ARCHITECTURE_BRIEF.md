@@ -84,3 +84,7 @@ Avionics check set, Serenity-UAV `docs/DOC_TEMPLATES.md` (owner direction 2026-1
 The PACE role of the stern stack (OD-19) is an input: the case for B+ leans on the Emergency role, and Serenity-UAV `AGENTS.md` §9 lists Simon as A / C / A / P.
 
 - [x] OD-18: architecture for NoNFO-Pilot-PB2 — A / A-diet / B / **B+ (recommended)**. **Decided 2026-11-14 by the owner: B+.** The MCU function-map check (PD1) becomes the first task of sprint S34; a failure there means the 64-pin package, not a different option.
+
+## PD1 result (2026-11-14, sprint S34)
+
+All 31 B+ lines fit the MSPM0G3519-Q1 RGZ-48 with 12 ports to spare, SWD and the BSL invoke pin kept free; the 64-pin package is not needed. The allocation and its source table are in `NoNFO-Pilot-PB2.md` and `pin_ledger/mcu_ledger.py` [REF-SENSOR-017 Table 6-2].

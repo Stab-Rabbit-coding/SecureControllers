@@ -57,10 +57,11 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 | Field | Value |
 | --- | --- |
 | **Publisher** | BeagleBoard.org Foundation |
-| **Official URL** | <https://docs.beagleboard.io/boards/pocketbeagle-2/01-introduction.html> and <https://docs.beagleboard.io/boards/pocketbeagle-2/03-design-and-specifications.html> (**requires verification**: retrieved by a research sub-agent, not yet read by a human reviewer) |
-| **Applied sections** | Board size 55 x 35 mm, mass 12.7 g, USB-C power and data, expansion-header shared-ball warning |
+| **Official URL** | <https://docs.beagleboard.io/boards/pocketbeagle-2/01-introduction.html> and <https://docs.beagleboard.io/boards/pocketbeagle-2/03-design-and-specifications.html> (not re-fetched: this host is outside the session's network allowance) |
+| **Verified against** | The PocketBeagle 2 System Reference Manual held in Serenity-UAV at `avionics/datasheets/beagleboard/pocketbeagle2_srm.pdf` (Serenity REF-SENSOR-041), read 2026-11-14 |
+| **Applied sections** | SRM §3.8.1 Table 3.2, Dimensions & weight: PCB 55 x 35 mm, 1.6 mm, 10 layers, max height 13.6 mm, net weight 12.7 g; SRM Quick Start: 5 V at 1 A supply via USB-C or the cape header |
 
-**Used in:** `docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`.
+**Used in:** `docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`; `kicad/NoNFO-Pilot/PB2/zone_contract.json`.
 
 ### REF-NFP-005: CNX Software, "PocketBeagle 2 SBC gets Industrial version with 1GB RAM, 64GB eMMC flash" (2026-02-24)
 
@@ -84,7 +85,158 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 ### EMC and bus standards inherited from Serenity-UAV
 
-The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets (IEC 61000-4-2, 61000-4-4 and 61000-4-5; MIL-STD-461G RE102/RS103) and MIL-STD-1553C. Those are catalogued in Serenity-UAV's `REFERENCES.md` (`REF-IEC-003`, `REF-IEC-004`, `REF-IEC-005`, `REF-MIL-002`; Serenity's MIL-STD-1553 entry). They are **not yet** catalogued here; their Serenity IDs collide with this repository's `REF-MIL-001`. **Requires verification** before any NoNFO-Pilot design file cites them, tracked in `TODO.md` §5.0.
+The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.
+
+### REF-NFP-007 (Serenity REF-IEC-003): IEC 61000-4-2:2008 — Electromagnetic Compatibility (EMC) — Testing and Measurement Techniques — Electrostatic Discharge (ESD) Immunity Test
+
+| Field | Value |
+| --- | --- |
+| **Issuing authority** | International Electrotechnical Commission (IEC) |
+| **Edition** | Second edition (2008-12) |
+| **Official URL (purchase)** | <https://webstore.iec.ch/> — search "IEC 61000-4-2" |
+| **Note** | Supersedes IEC 61000-4-2:1995+AMD1:1998+AMD2:2000. Exact webstore product-page URL not confirmed during catalog entry (see Open Standards Verification Items). |
+
+**Clauses applied in this project:**
+
+| Clause | Title | Application |
+| --- | --- | --- |
+| §5 | Classification of ESD generators | Contact discharge ±8 kV (Level 4), air discharge ±15 kV (Level 4) at all field connectors |
+| §8 | Test levels | Level 4 is the highest defined test level; selected as design target for the 500 W/m² hostile EMI environment [REF-NIST-002 §6.2.5] |
+
+**Applied to:** TVS arrays at all JST-GH field connectors on Pilot (ESD2CAN24-Q1 on CAN, CDSOT23-SM712
+on RS-485 since 2026-10-18) and XO (PRTR5V0U2X, pending the fleet sourcing audit);
+shielded Flight Engineer enclosure provides ESD isolation for PDB connectors.
+
+**Used in:** `avionics/kicad/Pilot.md`, `avionics/kicad/XO.md`, `avionics/kicad/FlightEngineer.md`
+
+---
+
+### REF-NFP-008 (Serenity REF-IEC-004): IEC 61000-4-4:2012 — Electromagnetic Compatibility (EMC) — Testing and Measurement Techniques — Electrical Fast Transient/Burst (EFT/Burst) Immunity Test
+
+| Field | Value |
+| --- | --- |
+| **Issuing authority** | IEC |
+| **Edition** | Third edition (2012-04) |
+| **Official URL (purchase)** | <https://webstore.iec.ch/> — search "IEC 61000-4-4" |
+| **Note** | Supersedes IEC 61000-4-4:2004+AMD1:2010. Exact webstore product-page URL not confirmed during catalog entry (see Open Standards Verification Items). |
+
+**Clauses applied in this project:**
+
+| Clause | Title | Application |
+| --- | --- | --- |
+| §5.2 | Test levels | Level 4 (4 kV peak, 5/50 ns) on all signal lines |
+
+**Applied to:** Common-mode chokes (CM2: Bourns SRF2012-100Y) and isolated transceivers
+(ISOW1044BDFMR, ADM2795EBRWZ) on Pilot and XO signal buses.
+
+**Used in:** `avionics/kicad/Pilot.md`, `avionics/kicad/XO.md`
+
+---
+
+### REF-NFP-009 (Serenity REF-IEC-005): IEC 61000-4-5:2014+AMD1:2017 — Electromagnetic Compatibility (EMC) — Testing and Measurement Techniques — Surge Immunity Test
+
+| Field | Value |
+| --- | --- |
+| **Issuing authority** | IEC |
+| **Edition** | Third edition 2014-05, consolidated with Amendment 1 (2017-03) |
+| **Official URL (purchase)** | <https://webstore.iec.ch/> — search "IEC 61000-4-5" |
+| **Note** | Supersedes IEC 61000-4-5:2005. The 2017 Amendment 1 introduced clarifications to coupling/decoupling network parameters. Exact webstore product-page URL not confirmed during catalog entry (see Open Standards Verification Items). |
+
+**Clauses applied in this project:**
+
+| Clause | Title | Application |
+| --- | --- | --- |
+| §5.2 | Test levels | Level 3 (2 kV CM, 1 kV DM) on CAN FD and RS-485 bus lines; Level 3 (±2 kV CM, ±1 kV DM) on VBAT |
+| Annex A | Combination wave generator | Defines the 1.2/50 µs (voltage) / 8/20 µs (current) surge waveform |
+
+**Applied to:** ADM2795EBRWZ RS-485 transceiver (rated ±42 V bus fault — exceeds IEC 61000-4-5
+Level 3 ±2 kV CM surge on bus); SMBJ33CA TVS (D1) on Flight Engineer VBAT line; TVS arrays at
+field connectors on Pilot (ESD2CAN24-Q1 / CDSOT23-SM712, both rated to IEC 61000-4-5 surge per
+REF-SENSOR-053 / REF-SENSOR-054) and XO (PRTR5V0U2X).
+
+**Used in:** `avionics/kicad/Pilot.md`, `avionics/kicad/XO.md`, `avionics/kicad/FlightEngineer.md`
+
+---
+
+### REF-NFP-010 (Serenity REF-MIL-002): MIL-STD-461G — Requirements for the Control of Electromagnetic Interference Characteristics of Subsystems and Equipment
+
+| Field | Value |
+| --- | --- |
+| **Issuing authority** | U.S. Department of Defense (DoD), Assistant Secretary of Defense for Acquisition |
+| **Edition** | Revision G (11 August 2015); Change Notice 1 (CN1) issued 9 December 2019 |
+| **Official access** | DLA ASSIST QuickSearch: <https://assist.dla.mil/> (search "MIL-STD-461") |
+| **Note** | Public domain per 10 U.S.C. §4252; no purchase required. Revision G supersedes MIL-STD-461F (2007). The CN1 addendum corrects test procedures; G+CN1 is the current applicable revision. |
+
+**Requirements applied in this project:**
+
+| Requirement | Title | Application |
+| --- | --- | --- |
+| RE102 | Radiated Emissions, Electric Field | Limit C applies to all avionics subsystems; 100BASE-TX EMI suppressed via HX1188NL magnetics, CMCs, and TVS arrays on Pilot and XO |
+| RS103 | Radiated Susceptibility, Electric Field | 200 V/m, 10 kHz–18 GHz; isolated buses + chassis-grounded Flight Engineer enclosure provide margin |
+| CS101 | Conducted Susceptibility, Power Leads | 50 V, 30 Hz – 150 kHz; π-filter bulk caps on Flight Engineer BECs |
+| CS114 | Conducted Susceptibility, Bulk Cable Injection | Curve 05; two-stage CM filter (CM1+CM2, > 80 dB at 10 MHz) + Y-caps to chassis |
+| CE102 | Conducted Emissions, Power Leads | Limit B; CM1+CM2 input chokes + π-filter on each BEC |
+
+**Applied to:** Pilot (Cape-A-2), XO (Cape-B-2), and Flight Engineer EMC compliance targets.  The
+design environment (500 W/m², E ≈ 434 V/m) [REF-NIST-002 §6.2.5] exceeds all MIL-STD-461G
+RS103 limits; compliance with 200 V/m RS103 is a design floor, not the design ceiling.  Full
+MIL-STD-461G qualification testing is deferred pending airframe integration.
+
+**Used in:** `avionics/kicad/Pilot.md`, `avionics/kicad/XO.md`, `avionics/kicad/FlightEngineer.md`,
+`docs/AVIONICS_PB2_REDESIGN.md`
+
+---
+
+### REF-NFP-011 (Serenity REF-MIL-001): MIL-STD-1553C — Digital Time Division Command/Response Multiplex Data Bus
+
+| Field | Value |
+| --- | --- |
+| **Issuing authority** | U.S. Department of Defense (DoD); comments to AFLCMC/EZSS, Wright-Patterson AFB |
+| **Edition** | MIL-STD-1553C, 28 February 2018, superseding MIL-STD-1553B (21 September 1978). AMSC N/A, Area AVCS. |
+| **Official access** | DLA ASSIST: <https://assist.dla.mil/> (search "MIL-STD-1553"). Public mirror of the ASSIST copy: <https://www.altadt.com/wp-content/uploads/dlm_uploads/2020/12/MIL-STD-1553C.pdf> |
+| **Distribution** | Distribution Statement A: approved for public release; distribution is unlimited |
+| **Verified** | Text checked against the ASSIST-sourced copy on 2026-09-28 (Claude Opus 5.5) |
+
+**Relation to 1553B.** 1553C is a document revision. Its electrical and protocol
+requirements are the same as 1553B. The changes are clarified text and figures, the EMC
+wiring reference moved to MIL-STD-464 (§4.5.1.5.3), and added "superseding valid commands"
+paragraphs for RT and BC operation (§4.4.3.2, §4.6.3.2). Alta Data Technologies, which
+publishes the mirror, says in its cover note: "1553C is a document change only … There
+are no functional changes to 1553B." A terminal that meets 1553B electrically therefore
+meets 1553C electrically. RT firmware must still implement §4.4.3.2.
+
+**Sections applied in this project (verified against the 1553C text):**
+
+| Section | Title | Requirement applied |
+| --- | --- | --- |
+| §4.3.3.8 | Response time | RT responds to a valid command within 4.0–12.0 µs |
+| §4.4.3.2 | Superseding valid commands | RT behavior when a new valid command arrives; required in the RT firmware or protocol engine |
+| §4.5.1.2 | Characteristic impedance | Cable Zo of 70.0–85.0 Ω at 1.0 MHz |
+| §4.5.1.3 | Cable attenuation | ≤ 1.5 dB per 100 ft (30.5 m) at 1.0 MHz |
+| §4.5.1.5.1 | Transformer coupled stubs | Stub should not exceed 20 ft (6.1 m) |
+| §4.5.1.5.1.1 | Coupling transformer | Bus coupler turns ratio 1:1.41 ± 3.0 % |
+| §4.5.1.5.2 | Direct coupled stubs | Stub should not exceed 1 ft (0.305 m) |
+| §4.5.1.5.2.1 | Fault isolation | 55.0 Ω ± 2.0 % isolation resistor in series with each bus connection |
+| §4.5.1.5.3 | Wiring and cabling for EMC | MIL-STD-464 wiring and cabling provisions apply |
+| §4.5.2 | Terminal characteristics | Terminal output and input levels for transformer and direct coupling |
+
+**Corrected 2026-09-28.** The earlier 1553B entry cited §4.1, §4.2, §4.3, §4.4, §4.6, and
+Table IV. It also gave a transformer-coupling threshold of "0.9 m (0.03 ft)", which is
+wrong: the direct-stub limit is 1 ft (0.305 m). Those citations did not match the
+standard's paragraph numbering and are replaced by the verified rows above. The old
+"Applied to" text described the retired DS26LV31/DS26LV32 and PE-68515 chain. The current
+chain is the HI-1573 or HI-6138 with the PM-DB2791S (`avionics/WBS.md` §1.2a.2 and
+§1.2a.3).
+
+**Used in:** `docs/AVIONICS_PB2_REDESIGN.md`, `avionics/kicad/Pilot/Pilot.md`,
+`avionics/kicad/TACCO/TACCO.md`, `avionics/WBS.md` §1.2a.2 and §1.2a.3,
+`avionics/kicad/HI6138_FOOTPRINT_VERIFICATION.md`, `avionics/kicad/Pilot/scripts/gen_pilot_sch.py`,
+`avionics/kicad/TACCO/scripts/gen_tacco_sch.py`, `avionics/firmware/WBS.md`,
+`avionics/firmware/dts/Pilot/k3-am6254-pocketbeagle2-serenity-cape-a2.dts`,
+`avionics/firmware/dts/TACCO/k3-am6254-pocketbeagle2-serenity-cape-b2.dts`,
+`docs/plans/2026-09-29-001-feat-commo-standalone-bus-node-plan.md`
+
+---
 
 ## Removed / Superseded Citations
 

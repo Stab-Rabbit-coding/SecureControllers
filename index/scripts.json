@@ -1286,6 +1286,18 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": false,
+    "path": "tools/nonfo_simon_fit.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "3163e09af361f639fc739234e57f19d5b257d05482c2916496c9c9e72b8725a1",
+    "size_bytes": 6553,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
     "path": "tools/nozzle_servo_linkage.py",
     "possible_duplicate": false,
     "renamed_duplicate": false,
@@ -1832,6 +1844,18 @@
     "repo": "Serenity-UAV",
     "sha256": "b8275218ac59c0b5db250109070c29ba6e2214a52dd33bf29d433d6c23f88617",
     "size_bytes": 1083,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "path": "tools/tests/test_nonfo_simon_fit.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "7e07d6e2b6b24273eb5f5b9e900a558b47c622f6c8256a6325df3616b7ef2ae2",
+    "size_bytes": 1558,
     "verification_tier": "unverified",
     "verified": false
   },
