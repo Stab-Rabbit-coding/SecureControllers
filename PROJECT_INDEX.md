@@ -91,7 +91,7 @@ Zephyr-based firmware tree, shared across the CN (comms node) and FC
 | `kicad/Serenity-Custom.pretty/` | Shared custom footprint library |
 | `kicad/Vera.pretty/` | Vera-board-specific footprint library |
 | `kicad/Emma/`, `kicad/Jayne/`, `kicad/Kaylee/`, `kicad/Wash/`, `kicad/Zoë/` | Per-board `kicads/`, `gerbers/`, `scripts/`, and board `.md` docs |
-| `kicad/NoNFO-Pilot/` | NoNFO-Pilot board family home: `NoNFO-Pilot.md` indexes the BBE-hosted and PB2-I-hosted variants (requirements stage, no KiCad files yet) |
+| `kicad/NoNFO-Pilot/` | NoNFO-Pilot board family home: `NoNFO-Pilot.md` indexes the BBE-hosted and PB2-I-hosted variants. `PB2/` holds the PB2 variant: `ARCHITECTURE_BRIEF.md` (owner decision OD-18) and `pin_ledger/` (header mux table, merged net demand, `pin_ledger.py`). No KiCad files yet |
 | `kicad/ENC-NACELLE-1.kicad_sch`, `.md` | Nacelle tilt-encoder schematic + notes |
 | `kicad/*.py` | Per-board generator/fixup scripts (not indexed as reusable — see `INDEX.md`'s script-classification note) |
 | `kicad/fp-lib-table`, `kicad/drc_report.txt`, `kicad/xcrv-DRC.rpt` | KiCad project config and DRC output |

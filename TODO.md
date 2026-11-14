@@ -819,7 +819,7 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 
 ### §5.0 — Shared gates
 
-- [ ] 5.0.1 Decide the GNSS source for both variants: on-cape receiver or the isolated CAN-FD dorsal puck (Serenity decision 2026-10-12).
+- [ ] 5.0.1 Decide the GNSS source for the BBE variant: on-cape receiver or the isolated CAN-FD dorsal puck (Serenity decision 2026-10-12). PB2 variant decided 2026-11-12 (owner): on-cape MAX-M10S, the first function removed if space, mass or routing is short.
 - [ ] 5.0.2 Verify REF-NFP-004..006 against the issuing bodies, and catalogue the inherited IEC 61000-4-x, MIL-STD-461G and MIL-STD-1553C entries under non-colliding REF-IDs.
 - [ ] 5.0.3 Add an 86.4 x 53.3 mm node envelope to the Serenity cargo fit gates (chin floor fits; aft strip does not).
 - [ ] 5.0.4 Report the RMII2-only finding to Serenity-UAV: the dual-PHY CPSW ring in `docs/AVIONICS_PB2_REDESIGN.md` and `docs/ETHERNET_PHY_TRADE.md` cannot be built on a PB2 host.
@@ -835,9 +835,17 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 ### §5.2 — NoNFO-Pilot-PB2 (PB2-I host)
 
 - [x] 5.2.1 Ranked ideation (`docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`).
-- [ ] 5.2.2 Brainstorm the chosen direction into a requirements-only plan.
-- [ ] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1).
-- [ ] 5.2.4 Owner decision: architecture A or B first for this variant (ideation idea 3).
+- [x] 5.2.2 Requirements for the PB2 variant — done 2026-11-14 in the Serenity-UAV plan `docs/plans/2026-11-14-001-feat-nonfo-pilot-pb2-stern-stack-plan.md` (Product Contract R1–R15), from the owner's 2026-11-12 decisions: stern stack of Serenity, specification outline gated first, Pilot Ethernet pattern, on-cape GNSS.
+- [ ] 5.2.3 Build the merged PB2 pin ledger and prove the Pilot + TACCO net set fits the header (ideation idea 1). Header side built 2026-11-14 (`kicad/NoNFO-Pilot/PB2/pin_ledger/`): A, A-diet and B do not fit; B+ fits with 2 spare. Still open: the MCU-side ledger, tests, and CI (sprint S34).
+- [ ] 5.2.4 Owner decision OD-18: architecture A / A-diet / B / B+ for this variant. Brief: `kicad/NoNFO-Pilot/PB2/ARCHITECTURE_BRIEF.md` (recommends B+).
+- [ ] 5.2.5 Owner decision OD-20: USB Wi-Fi module part.
+- [ ] 5.2.6 S34: zone contract, Simon fit gate, mass gate (≤ 0.132 lbm (60 g) stack).
+- [ ] 5.2.7 S35: parts sourced and every footprint verified against its OEM datasheet.
+- [ ] 5.2.8 S36: generated schematic, ERC 0, ledger match, KiCad CI job.
+- [ ] 5.2.9 S37: isolation cells each DRC 0 and unconnected 0 on a stripped board.
+- [ ] 5.2.10 S38: placement, 0 courtyard overlaps, height map within the zone contract.
+- [ ] 5.2.11 S39: routing, DRC 0, parity 0, unconnected 0.
+- [ ] 5.2.12 S40: Gerbers, drill, position, BOM, STEP; EMC and fabricator rule reviews; manifests regenerated.
 
 ## Procurement (master §2.x — BOM tables)
 
