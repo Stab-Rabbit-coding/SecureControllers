@@ -152,30 +152,30 @@ def lwb5plus() -> Path:
     )
 
 
-def usb2422() -> Path:
-    """Microchip USB2422 24-pin SQFN 4 x 4 mm, 0.50 mm pitch, exposed pad.
+def usb2641i() -> Path:
+    """Microchip USB2641i 48-pin VQFN 7 x 7 mm (HZH), 0.50 mm pitch, exposed pad variant C.
 
-    Source: Microchip DS00001726B, §7.0 Figure 7-1 "24-SQFN Package", PCB LAND PATTERN table:
-    GD/GE 3.05 to 3.10 (inner edge to inner edge), D2'/E2' 2.50, pad X 0.28, pad Y 0.69,
-    e 0.50. Figure 2-1 numbers counter-clockwise from the bottom-left corner; this footprint is
-    that drawing turned 90 degrees clockwise, so pin 1 heads the left column at the marked corner.
+    Source: Microchip DS00001948C, Figure 11-1 sheet 2, RECOMMENDED LAND PATTERN (drawing
+    C04-2223B): C1 = C2 6.90 (pad centre to pad centre across the package), X1 0.30 max,
+    Y1 0.85 max, E 0.50, centre pad X2 = Y2 4.20 (variant C, the note says "This product is a
+    variant 'C'"). Pin 1 heads the left column at the marked corner; pins run counter-clockwise.
     """
-    name = "Microchip_SQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm"
-    gd, px, py, e = 3.10, 0.28, 0.69, 0.50
-    c = gd / 2 + py / 2  # pad centre distance from package centre
+    name = "Microchip_VQFN-48-1EP_7x7mm_P0.5mm_EP4.2x4.2mm"
+    c, px, py, e = 6.90 / 2, 0.30, 0.85, 0.50
     p: list[str] = []
-    offs = [(-2.5 + i) * e for i in range(6)]
+    offs = [(-5.5 + i) * e for i in range(12)]
     for i, o in enumerate(offs):
         p.append(pad(name, str(1 + i), -c, o, py, px))  # left, top->bottom
-        p.append(pad(name, str(7 + i), o, c, px, py))  # bottom, left->right
-        p.append(pad(name, str(13 + i), c, -o, py, px))  # right, bottom->top
-        p.append(pad(name, str(19 + i), -o, -c, px, py))  # top, right->left
-    p.append(pad(name, "25", 0, 0, 2.50, 2.50, "rect"))
+        p.append(pad(name, str(13 + i), o, c, px, py))  # bottom, left->right
+        p.append(pad(name, str(25 + i), c, -o, py, px))  # right, bottom->top
+        p.append(pad(name, str(37 + i), -o, -c, px, py))  # top, right->left
+    p.append(pad(name, "49", 0, 0, 4.20, 4.20, "rect"))
     return write(
         name,
-        "Microchip USB2422 SQFN-24 4x4 mm, DS00001726B Fig 7-1 land pattern",
+        "Microchip USB2641i VQFN-48 7x7 mm (HZH), DS00001948C Fig 11-1 land pattern "
+        "variant C",
         p,
-        (-2.0, -2.0, 2.0, 2.0),
+        (-3.5, -3.5, 3.5, 3.5),
         0.4,
     )
 
@@ -206,7 +206,7 @@ def ti_dsk0010a() -> Path:
 
 
 def main() -> None:
-    for f in (lwb5plus, usb2422, ti_dsk0010a):
+    for f in (lwb5plus, usb2641i, ti_dsk0010a):
         print("wrote", f().relative_to(OUT.parents[1]))
 
 

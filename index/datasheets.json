@@ -1496,6 +1496,19 @@
   },
   {
     "canonical_path": null,
+    "duplicate_hash_match": false,
+    "mpn_guess": "DS00001948C",
+    "path": "datasheets/USB2640i-USB2641i-DS00001948C.pdf",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
+    "size_bytes": 582118,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
     "duplicate_hash_match": true,
     "mpn_guess": null,
     "path": "datasheets/Vishay_45273MDSK.pdf",

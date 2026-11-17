@@ -65,11 +65,11 @@ def test_generated_footprints_match_their_land_patterns():
         and lwb["sizes"]["(0.4, 1.0)"] == 42
         and lwb["sizes"]["(1.2, 1.2)"] == 9
     )
-    hub = g["Microchip_SQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm"]
+    hub = g["Microchip_VQFN-48-1EP_7x7mm_P0.5mm_EP4.2x4.2mm"]
     assert (
-        hub["pads"] == 25
-        and hub["sizes"]["(2.5, 2.5)"] == 1
-        and hub["sizes"]["(0.69, 0.28)"] == 12
+        hub["pads"] == 49
+        and hub["sizes"]["(4.2, 4.2)"] == 1
+        and hub["sizes"]["(0.85, 0.3)"] == 24
     )
     dsk = g["TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm"]
     assert (

@@ -107,6 +107,18 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 **Used in:** `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`; `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`.
 
+### REF-NFP-014: Microchip USB2640i/USB2641i industrial USB 2.0 hub and flash media controller, data sheet DS00001948C
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Microchip Technology Inc., DS00001948C (2015-2021) |
+| **Official URL** | <https://ww1.microchip.com/downloads/aemDocuments/documents/UNG/ProductDocuments/DataSheets/USB2640i-USB2641i-Data-Sheet-DS00001948C.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/USB2640i-USB2641i-DS00001948C.pdf` (MD5 132e0d33cbe65b2074dc651efb96bc5d) |
+| **Applied sections** | General Description (three downstream ports, one wired to the internal flash media reader; -40 to +85 C); pin diagram (pin 13 SD_WP, pin 14 SD_nCD); Figure 11-1 sheet 2 recommended land pattern, variant C; product identification (USB2641i-HZH-02) |
+| **Openness / sourcing** | Public, no NDA. Microchip is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`; `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`.
+
 ### EMC and bus standards inherited from Serenity-UAV
 
 The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.
