@@ -1,0 +1,739 @@
+{
+ "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 2,
+  "sizes": {
+   "(0.9, 1.0)": 4
+  },
+  "min_pitch": 1.6,
+  "courtyard": [
+   5.69,
+   3.69
+  ],
+  "drill": []
+ },
+ "Capacitor_SMD:C_0402_1005Metric": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.56, 0.62)": 2
+  },
+  "min_pitch": 0.96,
+  "courtyard": [
+   1.91,
+   1.01
+  ],
+  "drill": []
+ },
+ "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical": {
+  "pads": 9,
+  "smd": 0,
+  "numbers": 7,
+  "sizes": {
+   "(0.991, 0.991)": 3,
+   "(0.787, 0.787)": 6
+  },
+  "min_pitch": 0.381,
+  "courtyard": [
+   7.09,
+   4.09
+  ],
+  "drill": [
+   0.99
+  ]
+ },
+ "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical": {
+  "pads": 3,
+  "smd": 3,
+  "numbers": 2,
+  "sizes": {
+   "(1.05, 1.0)": 1,
+   "(2.2, 1.05)": 2
+  },
+  "min_pitch": 1.475,
+  "courtyard": [
+   4.39,
+   5.09
+  ],
+  "drill": []
+ },
+ "Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal": {
+  "pads": 5,
+  "smd": 5,
+  "numbers": 4,
+  "sizes": {
+   "(0.6, 1.7)": 3,
+   "(1.0, 2.7)": 2
+  },
+  "min_pitch": 1.25,
+  "courtyard": [
+   8.29,
+   6.49
+  ],
+  "drill": []
+ },
+ "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal": {
+  "pads": 6,
+  "smd": 6,
+  "numbers": 5,
+  "sizes": {
+   "(0.6, 1.7)": 4,
+   "(1.0, 2.7)": 2
+  },
+  "min_pitch": 1.25,
+  "courtyard": [
+   9.55,
+   6.49
+  ],
+  "drill": []
+ },
+ "Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal": {
+  "pads": 8,
+  "smd": 8,
+  "numbers": 7,
+  "sizes": {
+   "(0.6, 1.7)": 6,
+   "(1.0, 2.7)": 2
+  },
+  "min_pitch": 1.25,
+  "courtyard": [
+   12.05,
+   6.49
+  ],
+  "drill": []
+ },
+ "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 4,
+  "sizes": {
+   "(1.4, 1.2)": 4
+  },
+  "min_pitch": 1.7,
+  "courtyard": [
+   4.29,
+   3.59
+  ],
+  "drill": []
+ },
+ "Diode_SMD:D_SMA": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(2.5, 1.8)": 2
+  },
+  "min_pitch": 4.0,
+  "courtyard": [
+   7.09,
+   3.59
+  ],
+  "drill": []
+ },
+ "Fuse:Fuse_0805_2012Metric": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.975, 1.4)": 2
+  },
+  "min_pitch": 1.876,
+  "courtyard": [
+   3.45,
+   1.99
+  ],
+  "drill": []
+ },
+ "Inductor_SMD:L_0402_1005Metric": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.59, 0.64)": 2
+  },
+  "min_pitch": 0.97,
+  "courtyard": [
+   1.95,
+   1.03
+  ],
+  "drill": []
+ },
+ "Inductor_SMD:L_0805_2012Metric": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.875, 1.2)": 2
+  },
+  "min_pitch": 2.124,
+  "courtyard": [
+   3.59,
+   1.79
+  ],
+  "drill": []
+ },
+ "LED_SMD:LED_0603_1608Metric": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.875, 0.95)": 2
+  },
+  "min_pitch": 1.574,
+  "courtyard": [
+   3.05,
+   1.55
+  ],
+  "drill": []
+ },
+ "MountingHole:MountingHole_3.2mm_M3_DIN965": {
+  "pads": 1,
+  "smd": 0,
+  "numbers": 1,
+  "sizes": {
+   "(3.2, 3.2)": 1
+  },
+  "min_pitch": null,
+  "courtyard": [
+   6.19,
+   6.19
+  ],
+  "drill": [
+   3.2
+  ]
+ },
+ "NoNFO:Ezurio_LWB5plus_LGA-68_17x12mm": {
+  "pads": 68,
+  "smd": 68,
+  "numbers": 68,
+  "sizes": {
+   "(0.4, 1.0)": 42,
+   "(1.0, 0.4)": 15,
+   "(1.0, 1.0)": 2,
+   "(1.2, 1.2)": 9
+  },
+  "min_pitch": 0.14,
+  "courtyard": [
+   17.79,
+   12.79
+  ],
+  "drill": []
+ },
+ "NoNFO:Microchip_SQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm": {
+  "pads": 25,
+  "smd": 25,
+  "numbers": 25,
+  "sizes": {
+   "(0.69, 0.28)": 12,
+   "(0.28, 0.69)": 12,
+   "(2.5, 2.5)": 1
+  },
+  "min_pitch": 0.25,
+  "courtyard": [
+   4.89,
+   4.89
+  ],
+  "drill": []
+ },
+ "NoNFO:TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm": {
+  "pads": 11,
+  "smd": 11,
+  "numbers": 11,
+  "sizes": {
+   "(0.6, 0.25)": 10,
+   "(1.2, 2.0)": 1
+  },
+  "min_pitch": 0.5,
+  "courtyard": [
+   3.29,
+   3.29
+  ],
+  "drill": []
+ },
+ "Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 4,
+  "sizes": {
+   "(0.8, 0.9)": 4
+  },
+  "min_pitch": 1.45,
+  "courtyard": [
+   2.85,
+   3.35
+  ],
+  "drill": []
+ },
+ "Oscillator:Oscillator_SMD_SeikoEpson_TG2520SMN-xxx-xxxxxx-4Pin_2.5x2.0mm": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 4,
+  "sizes": {
+   "(1.0, 0.8)": 4
+  },
+  "min_pitch": 1.4,
+  "courtyard": [
+   2.99,
+   3.49
+  ],
+  "drill": []
+ },
+ "Package_DFN_QFN:QFN-32-1EP_4x4mm_P0.4mm_EP2.9x2.9mm": {
+  "pads": 37,
+  "smd": 37,
+  "numbers": 34,
+  "sizes": {
+   "(1.17, 1.17)": 4,
+   "(0.7, 0.2)": 16,
+   "(0.2, 0.7)": 16,
+   "(2.9, 2.9)": 1
+  },
+  "min_pitch": 0.125,
+  "courtyard": [
+   5.29,
+   5.29
+  ],
+  "drill": []
+ },
+ "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm": {
+  "pads": 42,
+  "smd": 42,
+  "numbers": 34,
+  "sizes": {
+   "(0.97, 0.97)": 9,
+   "(0.8, 0.25)": 16,
+   "(0.25, 0.8)": 16,
+   "(3.6, 3.6)": 1
+  },
+  "min_pitch": 0.25,
+  "courtyard": [
+   6.29,
+   6.29
+  ],
+  "drill": []
+ },
+ "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm": {
+  "pads": 65,
+  "smd": 65,
+  "numbers": 50,
+  "sizes": {
+   "(1.13, 1.13)": 16,
+   "(0.875, 0.25)": 24,
+   "(0.25, 0.875)": 24,
+   "(5.6, 5.6)": 1
+  },
+  "min_pitch": 0.15,
+  "courtyard": [
+   8.35,
+   8.35
+  ],
+  "drill": []
+ },
+ "Package_DFN_QFN:Texas_RMQ0024A_WQFN-24-1EP_3x3mm_P0.4mm_EP1.9x1.9mm": {
+  "pads": 26,
+  "smd": 26,
+  "numbers": 26,
+  "sizes": {
+   "(1.53, 1.53)": 1,
+   "(0.675, 0.2)": 8,
+   "(0.675, 0.4)": 2,
+   "(0.25, 0.25)": 4,
+   "(0.2, 0.675)": 8,
+   "(0.4, 0.675)": 2,
+   "(1.9, 1.9)": 1
+  },
+  "min_pitch": 0.213,
+  "courtyard": [
+   4.35,
+   3.59
+  ],
+  "drill": []
+ },
+ "Package_DFN_QFN:VQFN-48-1EP_7x7mm_P0.5mm_EP4.1x4.1mm": {
+  "pads": 58,
+  "smd": 58,
+  "numbers": 50,
+  "sizes": {
+   "(1.1, 1.1)": 9,
+   "(0.875, 0.25)": 24,
+   "(0.25, 0.875)": 24,
+   "(4.1, 4.1)": 1
+  },
+  "min_pitch": 0.12,
+  "courtyard": [
+   8.35,
+   8.35
+  ],
+  "drill": []
+ },
+ "Package_LGA:Bosch_LGA-14_3x2.5mm_P0.5mm": {
+  "pads": 14,
+  "smd": 14,
+  "numbers": 14,
+  "sizes": {
+   "(0.675, 0.25)": 8,
+   "(0.25, 0.675)": 6
+  },
+  "min_pitch": 0.262,
+  "courtyard": [
+   3.79,
+   3.29
+  ],
+  "drill": []
+ },
+ "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm": {
+  "pads": 20,
+  "smd": 20,
+  "numbers": 20,
+  "sizes": {
+   "(2.05, 0.6)": 20
+  },
+  "min_pitch": 1.27,
+  "courtyard": [
+   11.95,
+   13.39
+  ],
+  "drill": []
+ },
+ "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm": {
+  "pads": 8,
+  "smd": 8,
+  "numbers": 8,
+  "sizes": {
+   "(1.625, 0.65)": 8
+  },
+  "min_pitch": 1.27,
+  "courtyard": [
+   9.39,
+   5.89
+  ],
+  "drill": []
+ },
+ "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm": {
+  "pads": 20,
+  "smd": 20,
+  "numbers": 20,
+  "sizes": {
+   "(1.475, 0.4)": 20
+  },
+  "min_pitch": 0.65,
+  "courtyard": [
+   7.79,
+   7.09
+  ],
+  "drill": []
+ },
+ "Package_TO_SOT_SMD:SOT-23": {
+  "pads": 3,
+  "smd": 3,
+  "numbers": 3,
+  "sizes": {
+   "(1.475, 0.6)": 3
+  },
+  "min_pitch": 0.95,
+  "courtyard": [
+   3.95,
+   3.49
+  ],
+  "drill": []
+ },
+ "Package_TO_SOT_SMD:SOT-23-5": {
+  "pads": 5,
+  "smd": 5,
+  "numbers": 5,
+  "sizes": {
+   "(1.325, 0.6)": 5
+  },
+  "min_pitch": 0.95,
+  "courtyard": [
+   4.19,
+   3.49
+  ],
+  "drill": []
+ },
+ "Package_TO_SOT_SMD:SOT-323_SC-70": {
+  "pads": 3,
+  "smd": 3,
+  "numbers": 3,
+  "sizes": {
+   "(0.45, 0.7)": 3
+  },
+  "min_pitch": 0.65,
+  "courtyard": [
+   3.49,
+   2.69
+  ],
+  "drill": []
+ },
+ "Package_TO_SOT_SMD:SOT-363_SC-70-6": {
+  "pads": 6,
+  "smd": 6,
+  "numbers": 6,
+  "sizes": {
+   "(0.65, 0.4)": 6
+  },
+  "min_pitch": 0.65,
+  "courtyard": [
+   3.29,
+   2.89
+  ],
+  "drill": []
+ },
+ "Package_TO_SOT_SMD:SOT-583-8": {
+  "pads": 8,
+  "smd": 8,
+  "numbers": 8,
+  "sizes": {
+   "(0.67, 0.3)": 8
+  },
+  "min_pitch": 0.5,
+  "courtyard": [
+   2.73,
+   2.69
+  ],
+  "drill": []
+ },
+ "RF_GPS:ublox_MAX": {
+  "pads": 18,
+  "smd": 18,
+  "numbers": 18,
+  "sizes": {
+   "(1.8, 0.7)": 4,
+   "(1.8, 0.8)": 14
+  },
+  "min_pitch": 1.1,
+  "courtyard": [
+   11.89,
+   10.69
+  ],
+  "drill": []
+ },
+ "SecureControllers:Infineon_TSSLP-2-4_0.62x0.32mm": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(0.32, 0.24)": 2
+  },
+  "min_pitch": 0.38,
+  "courtyard": [
+   0.75,
+   1.03
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Bosch_BMP388_LGA-10_2x2mm": {
+  "pads": 10,
+  "smd": 10,
+  "numbers": 10,
+  "sizes": {
+   "(0.25, 0.275)": 4,
+   "(0.275, 0.25)": 6
+  },
+  "min_pitch": 0.25,
+  "courtyard": [
+   2.79,
+   2.79
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Bourns_SRF2012_4T": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 4,
+  "sizes": {
+   "(1.1, 0.45)": 4
+  },
+  "min_pitch": 0.8,
+  "courtyard": [
+   4.29,
+   2.09
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Holt_HI-6138_QFN-48_6x6mm_P0.4mm_EP4.6mm": {
+  "pads": 58,
+  "smd": 58,
+  "numbers": 50,
+  "sizes": {
+   "(0.8, 0.2)": 24,
+   "(0.2, 0.8)": 24,
+   "(4.6, 4.6)": 1,
+   "(1.2, 1.2)": 9
+  },
+  "min_pitch": 0.1,
+  "courtyard": [
+   7.29,
+   7.29
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:L_WE-MAPI_3015": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(1.3, 3.4)": 2
+  },
+  "min_pitch": 2.1,
+  "courtyard": [
+   4.09,
+   4.09
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Molex_NanoFit_1x04_Horizontal": {
+  "pads": 4,
+  "smd": 0,
+  "numbers": 4,
+  "sizes": {
+   "(1.5, 1.5)": 4
+  },
+  "min_pitch": 2.5,
+  "courtyard": [
+   12.29,
+   7.09
+  ],
+  "drill": [
+   1.0
+  ]
+ },
+ "Serenity-Custom:Murata_Type2EL_LGA107": {
+  "pads": 107,
+  "smd": 107,
+  "numbers": 107,
+  "sizes": {
+   "(0.25, 0.55)": 32,
+   "(0.55, 0.25)": 75
+  },
+  "min_pitch": 0.125,
+  "courtyard": [
+   9.49,
+   8.39
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:PocketBeagle2_2x18_P1_TSM-DV-LC": {
+  "pads": 38,
+  "smd": 36,
+  "numbers": 37,
+  "sizes": {
+   "(1.27, 3.68)": 36,
+   "(1.19, 1.19)": 2
+  },
+  "min_pitch": 1.27,
+  "courtyard": [
+   46.69,
+   8.99
+  ],
+  "drill": [
+   1.19
+  ]
+ },
+ "Serenity-Custom:PocketBeagle2_2x18_P2_TSM-DV-LC": {
+  "pads": 38,
+  "smd": 36,
+  "numbers": 37,
+  "sizes": {
+   "(1.27, 3.68)": 36,
+   "(1.19, 1.19)": 2
+  },
+  "min_pitch": 1.27,
+  "courtyard": [
+   46.69,
+   8.99
+  ],
+  "drill": [
+   1.19
+  ]
+ },
+ "Serenity-Custom:Pulse_TC1G00_PulseChip_4.7x3.2mm": {
+  "pads": 6,
+  "smd": 6,
+  "numbers": 6,
+  "sizes": {
+   "(1.2, 0.41)": 5,
+   "(1.2, 0.5)": 1
+  },
+  "min_pitch": 0.605,
+  "courtyard": [
+   5.79,
+   4.29
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Samtec_TSM-108-01-x-DV": {
+  "pads": 16,
+  "smd": 16,
+  "numbers": 16,
+  "sizes": {
+   "(1.27, 3.68)": 16
+  },
+  "min_pitch": 2.54,
+  "courtyard": [
+   21.41,
+   9.29
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:TI_DQA0010A_USON-10_2.5x1.0mm_P0.5mm": {
+  "pads": 10,
+  "smd": 10,
+  "numbers": 10,
+  "sizes": {
+   "(0.565, 0.2)": 8,
+   "(0.565, 0.4)": 2
+  },
+  "min_pitch": 0.5,
+  "courtyard": [
+   1.99,
+   3.19
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm": {
+  "pads": 10,
+  "smd": 10,
+  "numbers": 10,
+  "sizes": {
+   "(0.75, 0.35)": 10
+  },
+  "min_pitch": 0.5,
+  "courtyard": [
+   2.69,
+   3.19
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:X2Y_0805_4T": {
+  "pads": 4,
+  "smd": 4,
+  "numbers": 4,
+  "sizes": {
+   "(0.89, 1.27)": 2,
+   "(0.56, 0.7)": 2
+  },
+  "min_pitch": 0.665,
+  "courtyard": [
+   3.69,
+   2.69
+  ],
+  "drill": []
+ },
+ "Serenity-Custom:Xfmr_1553_SMD_0.40in_8pin": {
+  "pads": 8,
+  "smd": 8,
+  "numbers": 8,
+  "sizes": {
+   "(1.524, 0.889)": 8
+  },
+  "min_pitch": 1.905,
+  "courtyard": [
+   13.29,
+   11.29
+  ],
+  "drill": []
+ }
+}

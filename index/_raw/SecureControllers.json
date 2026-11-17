@@ -305,6 +305,17 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1794918758,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/USB2422-DS00001726B.pdf",
+    "repo": "SecureControllers",
+    "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
+    "size_bytes": 449402
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1794493379,
     "possible_duplicate": true,
     "rel_path": "datasheets/Vishay_45273MDSK.pdf",
@@ -784,6 +795,17 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794918758,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/tusb4020bi-SLLSEI0E.pdf",
+    "repo": "SecureControllers",
+    "sha256": "7c3ca7fb9af56bb093b2349be8e4566bbee61f56c6d7693b77aa1570edba99a9",
+    "size_bytes": 1854673
+  },
+  {
+    "asset_type": "datasheet",
     "ext": ".pdf",
     "mtime": 1794493380,
     "rel_path": "docs/cnaf-3710.7.pdf",
@@ -876,6 +898,33 @@
     "repo": "SecureControllers",
     "sha256": "77c44b4d5a4e16a0fbd8d7d0f32ede325299b493959458a8517657d2c7e07b68",
     "size_bytes": 3367
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1794918774,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Ezurio_LWB5plus_LGA-68_17x12mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "202bca651bece9825ae163103b4671b86c3a094bd748cf65ce49ffeb0e8d970d",
+    "size_bytes": 12759
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1794918774,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Microchip_SQFN-24-1EP_4x4mm_P0.5mm_EP2.5x2.5mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "3fd2d39e4cad0495cf26e3ccee3e00f893a56ba077920adfd5d29d810e33fa49",
+    "size_bytes": 5340
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1794918774,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "fd735c0fcfa4c5f4728fbf568b631d6582f3fe338471627b47e2ed76a027ae6d",
+    "size_bytes": 2966
   },
   {
     "asset_type": "kicad_footprint",

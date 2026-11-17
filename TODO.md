@@ -841,7 +841,9 @@ Added 2026-10-12 by Claude Opus 5.5 for S. Griffing. Home: `kicad/NoNFO-Pilot/No
 - [x] 5.2.4a PD1 (first task of S34): map the 31 B+ lines onto the MSPM0G3519-Q1 RGZ-48 function table and append the result to the brief. Done 2026-11-14: fits, 12 ports spare.
 - [x] 5.2.5 Owner decision OD-20: USB Wi-Fi module part — decided 2026-11-14: Ezurio Sterling-LWB5+ 453-00046 (MHF4), USB mode.
 - [x] 5.2.6 S34: zone contract, Simon fit gate, mass minimised and below the 107 g pair it replaces (owner 2026-11-14: BBE-Black outline kept; heavier than a Pilot cape is acceptable), electrical load budget, first thermal estimate. Done 2026-11-14: see `kicad/NoNFO-Pilot/PB2/NoNFO-Pilot-PB2.md`.
-- [ ] 5.2.7 S35: parts sourced and every footprint verified against its OEM datasheet.
+- [ ] 5.2.7 S35: parts sourced and every footprint verified against its OEM datasheet. 2026-11-17: 53-line BOM, sourcing gate and 3 new footprints done (`kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`). Left: Nano-Fit and KMR2 drawings, OD-22, OD-23, logic-zone courtyard 82 % (to S38).
+- [ ] 5.2.7a Owner decision OD-22: the AX88772E exists only as a 0 to 70 C part (finding F3).
+- [ ] 5.2.7b Owner decision OD-23: logging medium, given the microSD requirement and no SD bus on the PB2-I (finding F5).
 - [ ] 5.2.8 S36: generated schematic, ERC 0, ledger match, KiCad CI job.
 - [ ] 5.2.9 S37: isolation cells each DRC 0 and unconnected 0 on a stripped board.
 - [ ] 5.2.10 S38: placement, 0 courtyard overlaps, height map within the zone contract.

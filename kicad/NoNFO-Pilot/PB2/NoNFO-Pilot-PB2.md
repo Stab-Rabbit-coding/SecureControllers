@@ -4,7 +4,7 @@
 **Drafted by:** Claude (Anthropic), sprint S34, 2026-11-14
 **License:** CC BY-SA 4.0 (documentation)
 **Plan:** Serenity-UAV `docs/plans/2026-11-14-001-feat-nonfo-pilot-pb2-stern-stack-plan.md` (sprints S34 to S41)
-**Stage:** S34 complete. No schematic, PCB or generator exists yet; S35 (parts and footprints) is next.
+**Stage:** S35 in progress (2026-11-17): BOM, sourcing gate and new footprints done; two drawings and two owner decisions open. No schematic or PCB yet.
 
 ## What this board is
 
@@ -61,6 +61,10 @@ S36 may reassign ports inside these instances for routing; the ledger re-checks 
 | `zone_contract.json` | Outline, holes, zones, height limits, mass and power lines (canonical; Serenity-UAV keeps a copy) |
 | `pin_ledger/` | AM625 and MSPM0G3519 mux tables, net demand, solvers |
 | `tests/test_pin_ledger.py` | Ledger tests (run in `.github/workflows/kicad.yml`) |
+
+## S35 results (2026-11-17)
+
+See `NONFO_PB2_FOOTPRINT_VERIFICATION.md`: 53-line BOM, all makers pass the sourcing gate, three footprints drawn from OEM land patterns (Sterling-LWB5+, USB2422, TPS63031), one corrected (W25Q128JV 208-mil). Findings F1 to F7, including two TACCO footprint defects and a commercial-temperature NIC on every Pilot.
 
 ## Open items
 

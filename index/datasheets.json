@@ -1484,6 +1484,19 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": true,
+    "mpn_guess": "DS00001726B",
+    "path": "datasheets/USB2422-DS00001726B.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
+    "size_bytes": 449402,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
     "mpn_guess": null,
     "path": "datasheets/Vishay_45273MDSK.pdf",
     "possible_duplicate": true,
@@ -2063,6 +2076,19 @@
     "repo": "SecureControllers",
     "sha256": "16ec2eac43c7374eb9e7edd7df7bdb24de6862f695e1582c68716ced4820e5f6",
     "size_bytes": 4034940,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
+    "mpn_guess": "TUSB4020BI",
+    "path": "datasheets/tusb4020bi-SLLSEI0E.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "7c3ca7fb9af56bb093b2349be8e4566bbee61f56c6d7693b77aa1570edba99a9",
+    "size_bytes": 1854673,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -3181,6 +3207,19 @@
     "repo": "Serenity-UAV",
     "sha256": "73deb606faa230e834c6175490e24e4b6aec67fe22f136c9b3160751cc6c6d6f",
     "size_bytes": 1736257,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
+    "mpn_guess": "DS00001726B",
+    "path": "avionics/datasheets/microchip/USB2422-DS00001726B.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
+    "size_bytes": 449402,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -4702,6 +4741,19 @@
     "repo": "Serenity-UAV",
     "sha256": "e872dfc8b0894be4c2a8a5a3c29bbfd33674d4902f157ea484f19c8765ed3167",
     "size_bytes": 5862460,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
+    "mpn_guess": "TUSB4020BI",
+    "path": "avionics/datasheets/ti/tusb4020bi-SLLSEI0E.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "7c3ca7fb9af56bb093b2349be8e4566bbee61f56c6d7693b77aa1570edba99a9",
+    "size_bytes": 1854673,
     "verification_tier": "unverified",
     "verified": false
   },

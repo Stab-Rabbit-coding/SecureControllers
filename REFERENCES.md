@@ -83,6 +83,30 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 **Used in:** `docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`.
 
+### REF-NFP-012: Microchip USB2422 2-port USB 2.0 hub controller, data sheet DS00001726B
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Microchip Technology Inc., DS00001726B (2013-2015) |
+| **Official URL** | <https://ww1.microchip.com/downloads/en/DeviceDoc/00001726B.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/USB2422-DS00001726B.pdf` (MD5 a98a88516e71d96bd846e0b8afd5d52c) |
+| **Applied sections** | Features (24 MHz crystal, -40 to +85 C industrial grade -I/MJ); Figure 2-1 pinout; §7.0 Figure 7-1 24-SQFN package and PCB land pattern |
+| **Openness / sourcing** | Public, no NDA. Microchip is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`; `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`.
+
+### REF-NFP-013: TI TUSB4020BI two-port USB 2.0 hub, data sheet SLLSEI0E (rejected candidate)
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Texas Instruments, SLLSEI0E, July 2015, revised July 2024 |
+| **Official URL** | <https://www.ti.com/lit/ds/symlink/tusb4020bi.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/tusb4020bi-SLLSEI0E.pdf` (MD5 b50cf563fcef53e51397946646911ce9) |
+| **Applied sections** | Package HTQFP-48 (PHP); -40 to +85 C. Recorded as the rejected alternative on area. |
+| **Openness / sourcing** | Public, no NDA. TI is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`; `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`.
+
 ### EMC and bus standards inherited from Serenity-UAV
 
 The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.
