@@ -22,7 +22,7 @@
 |---|---|---|---|
 | F1 | TACCO's `TPS6303x_VSON-10_2p5` was scaled from a 3 x 3 mm part and draws 3-2-3-2 pads on four sides. TI's DSK0010A has 5 pads on each of two sides (example board layout 4218903/C). It would not solder. | Replaced by `NoNFO:TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm`. | TACCO carries the defect. |
 | F2 | TACCO's W25Q128JVSIQ uses the 150-mil SOIC-8 footprint. Winbond package code S is the 8-pin SOIC 208-mil (D/E 5.28 mm, H 7.90 mm; data sheet §10.1). | Corrected to `Package_SO:SOIC-8_5.3x5.3mm_P1.27mm` (pad centres 7.17 mm apart). | TACCO carries the defect. |
-| F3 | The AX88772E is sold only as AX88772EQF, "Commercial temperature range: 0 to 70 C" (ASIX data sheet v1.03 §7). The fleet requires -40 to +85 C. | The owner-chosen Ethernet pattern (OD-4) carries a commercial-grade part. **Owner decision OD-22.** | Every Pilot carries it. |
+| F3 | The AX88772E is sold only as AX88772EQF, "Commercial temperature range: 0 to 70 C" (ASIX data sheet v1.03 §7). **Withdrawn 2026-11-17:** I had treated -40 to +85 C as a requirement because the PB2-I is industrial-grade; the owner confirmed no specification requires an industrial temperature rating. | None: AX88772EQF stays. OD-22 closed. | None. |
 | F4 | TACCO's CAN and RS-485 TVS, Nexperia PRTR5V0U2X, fails the sourcing rule: Nexperia is owned by Wingtech (PRC). It is also a 5 V part on a -7 to +12 V RS-485 line. | Not used: Pilot's ESD2CAN24 and CDSOT23-SM712 are kept. | TACCO carries it. |
 | F5 | `avionics/AGENTS.md` requires logging to "hardware-enforced non-executable microSD", but the PB2-I header carries no SD bus. **Resolved by OD-23 (owner, 2026-11-17): the microSD runs on the USB hub.** The hub becomes the Microchip USB2641i, which has a built-in SD reader on its third port; the write-block PLD drives the reader's SD_WP input (pin 13), as it drives the NOR flash /WP. | Molex 105162-0001 socket restored; USB2422 replaced by USB2641i-HZH-02. | TACCO's slot is unhosted for the same reason; the same hub fix applies. |
 | F6 | The LWB5+ module data sheet is behind a free Ezurio login. Root `AGENTS.md` §5 allows a free registration wall when the documents carry no confidentiality terms; none were found. | Passes; access route recorded in Serenity `REFERENCES.md` REF-SENSOR-066. | — |
@@ -64,7 +64,7 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 | 8 | ESD2CAN24DCKRQ1 | Texas Instruments (US) | `SOT-323_SC-70` | kicad-lib-vs-ds |
 | 9 | CDSOT23-SM712 | Bourns (US) | `SOT-23` | kicad-lib-vs-ds |
 | 10 | DP83825IRMQR | Texas Instruments (US) | `Texas_RMQ0024A_WQFN-24-1EP_3x3mm_P0.4mm_EP1.` | kicad-lib-vs-ds |
-| 11 | AX88772EQF | ASIX Electronics (Taiwan) | `QFN-32-1EP_4x4mm_P0.4mm_EP2.9x2.9mm` | kicad-lib-vs-ds; PART FAILS -40 to +85 C (0 to 70 C only): owner decision OD-22 |
+| 11 | AX88772EQF | ASIX Electronics (Taiwan) | `QFN-32-1EP_4x4mm_P0.4mm_EP2.9x2.9mm` | kicad-lib-vs-ds (0 to 70 C part; no temperature requirement applies) |
 | 12 | TC1G00 | Pulse Electronics (YAGEO) (Taiwan) | `Pulse_TC1G00_PulseChip_4.7x3.2mm` | generator-cited |
 | 13 | ECS-2520MV-500-BN-TR | ECS Inc. (US) | `Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.` | kicad-lib-vs-ds |
 | 14 | ECS-2520MV-250-BN-TR | ECS Inc. (US) | `Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.` | kicad-lib-vs-ds |
@@ -116,5 +116,4 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 ## Open items
 
 - **105313-1204** (Molex Nano-Fit power entry): the Molex sales drawing could not be fetched (molex.com is outside this session's network allowance; Mouser serves a bot-block page). Pilot's generator already flags this land as not verified. Owner: supply the drawing, or allow `www.molex.com`.
-- **OD-22**: industrial-grade replacement for the AX88772EQF, or accept a commercial part (F3).
 - S38: logic-zone courtyard fill (89 % against 80 %).
