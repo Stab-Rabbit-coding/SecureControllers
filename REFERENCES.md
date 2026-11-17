@@ -14,6 +14,7 @@ Catalogs every applicable standard cited anywhere in this repository, per
 | **Official URL** | <https://www.mynatec.navair.navy.mil/> (NATEC NATOPS library, access-restricted); verified against pages 1–52 of the issued manual (front matter, Chapter 1, Glossary, List of Abbreviations/Acronyms), held locally in this repository at `docs/cnaf-3710.7_1-52.pdf` — the canonical local copy referenced by every sibling repo's own `REFERENCES.md`/`REF-MIL-001` entry in this workspace |
 | **Applied sections** | §1.5 "Warnings, Cautions, and Notes" (p.1-5); §1.6 "Wording" (p.1-5) |
 | **Note** | This repository is not a Navy NATOPS publication and does not claim compliance as a whole — only the §1.5 callout-severity definitions and §1.6 requirement-verb conventions are adopted. The active-vs-passive-voice guidance paired with this citation in `CLAUDE.md` is a project addition, not sourced from CNAF M-3710.7. |
+| **Cross-repo ID** | The same manual is **REF-MIL-003** in Serenity-UAV's `REFERENCES.md` (there, REF-MIL-001 is MIL-STD-1553C). IDs are repo-local: cite the ID of the repository you are writing in. |
 
 **Used in:** `CLAUDE.md` "Documentation Standards → Warnings, Cautions, Notes, and Wording".
 
