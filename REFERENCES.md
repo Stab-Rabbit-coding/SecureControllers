@@ -119,6 +119,18 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 **Used in:** `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`; `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`.
 
+### REF-NFP-015: C&K (Littelfuse) KMR2 Series tactile switch data sheet
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Littelfuse, Inc. (C&K Switches), KMR2 Series data sheet, revised 01/28/26 |
+| **Official URL** | Supplied by the owner 2026-11-17 (Littelfuse/C&K product documentation) |
+| **Local copy** | `datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf` (MD5 5d8b01a9b0bbd012a3dcad50e27d6585) |
+| **Applied sections** | p.1 NG terminations recommended layout; Environmental Characteristics (silver: -40 to +85 C); ordering table (KMR211NG LFS) |
+| **Openness / sourcing** | Public, no NDA. Littelfuse is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`; `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`.
+
 ### EMC and bus standards inherited from Serenity-UAV
 
 The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.

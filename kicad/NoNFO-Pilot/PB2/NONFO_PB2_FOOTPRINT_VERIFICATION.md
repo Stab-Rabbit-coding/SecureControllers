@@ -100,7 +100,7 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 | 43 | SM04B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
 | 44 | SM03B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
 | 45 | SM06B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
-| 46 | KMR211NG LFS | C&K (US) | `SW_Push_1P1T_NO_CK_KMR2` | UNVERIFIED |
+| 46 | KMR211NG LFS | C&K (Littelfuse) (US) | `SW_Push_1P1T_NO_CK_KMR2` | kicad-lib-vs-ds |
 | 47 | TC2030-IDC-NL footprint | Tag-Connect (no part) (US) | `Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Verti` | not-a-part |
 | 48 | 0603 green / red | to select in S36 (-) | `LED_0603_1608Metric` | passive-case |
 | 49 | BLM15EX331SN1D | Murata (Japan) | `L_0402_1005Metric` | passive-case |
@@ -109,9 +109,12 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 | 52 | CC0402/0603/0805/1210 series | YAGEO (Taiwan) | `C_0402/0603/0805/1210` | passive-case |
 | 53 | RC0402/0603 series | YAGEO (Taiwan) | `R_0402/0603` | passive-case |
 
+## Verified 2026-11-17 from owner-supplied data sheets
+
+- **KMR211NG LFS**: KiCad `SW_Push_1P1T_NO_CK_KMR2` pads are 0.9 x 1.0 mm at x +/-2.05, y +/-0.80, exactly the NG recommended layout (5.0 mm outer span, 3.2 mm inner gap, 0.6 mm row gap) [REF-NFP-015]. Pads 1/4 and 2/3 pair as the electrical diagram connects them. Silver contacts rated -40 to +85 C.
+
 ## Open items
 
 - **105313-1204** (Molex Nano-Fit power entry): the Molex sales drawing could not be fetched (molex.com is outside this session's network allowance; Mouser serves a bot-block page). Pilot's generator already flags this land as not verified. Owner: supply the drawing, or allow `www.molex.com`.
-- **KMR211NG LFS** (C&K KMR2 mLRS boot button): no data sheet in the repository. Owner: supply it, or drop the button if the STM32WLE5 boot pin can be reached over the Tag-Connect pads.
 - **OD-22**: industrial-grade replacement for the AX88772EQF, or accept a commercial part (F3).
 - S38: logic-zone courtyard fill (89 % against 80 %).

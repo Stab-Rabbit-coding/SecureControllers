@@ -94,6 +94,17 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1794937188,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf",
+    "repo": "SecureControllers",
+    "sha256": "bf652d3f66e5b39a6b5d5692b13e46bb62257f7572f2ebf85753b3c94c93781b",
+    "size_bytes": 534340
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1794493379,
     "possible_duplicate": true,
     "rel_path": "datasheets/MBRD1045CT.pdf",
@@ -314,8 +325,10 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
     "ext": ".pdf",
     "mtime": 1794936840,
+    "possible_duplicate": true,
     "rel_path": "datasheets/USB2640i-USB2641i-DS00001948C.pdf",
     "repo": "SecureControllers",
     "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
@@ -911,7 +924,7 @@
   {
     "asset_type": "kicad_footprint",
     "ext": ".kicad_mod",
-    "mtime": 1794936880,
+    "mtime": 1794937188,
     "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Ezurio_LWB5plus_LGA-68_17x12mm.kicad_mod",
     "repo": "SecureControllers",
     "sha256": "202bca651bece9825ae163103b4671b86c3a094bd748cf65ce49ffeb0e8d970d",
@@ -920,7 +933,7 @@
   {
     "asset_type": "kicad_footprint",
     "ext": ".kicad_mod",
-    "mtime": 1794936880,
+    "mtime": 1794937188,
     "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Microchip_VQFN-48-1EP_7x7mm_P0.5mm_EP4.2x4.2mm.kicad_mod",
     "repo": "SecureControllers",
     "sha256": "57a76dff615098e5e44aeb4ff1786940aaf0f0154b11dddc4bf45160022795f0",
@@ -929,7 +942,7 @@
   {
     "asset_type": "kicad_footprint",
     "ext": ".kicad_mod",
-    "mtime": 1794936880,
+    "mtime": 1794937188,
     "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.kicad_mod",
     "repo": "SecureControllers",
     "sha256": "fd735c0fcfa4c5f4728fbf568b631d6582f3fe338471627b47e2ed76a027ae6d",

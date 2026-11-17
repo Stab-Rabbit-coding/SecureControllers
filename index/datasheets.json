@@ -1211,6 +1211,19 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": true,
+    "mpn_guess": "KMR2",
+    "path": "datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "bf652d3f66e5b39a6b5d5692b13e46bb62257f7572f2ebf85753b3c94c93781b",
+    "size_bytes": 534340,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
     "mpn_guess": "MBRD1045CT",
     "path": "datasheets/MBRD1045CT.pdf",
     "possible_duplicate": true,
@@ -1496,10 +1509,10 @@
   },
   {
     "canonical_path": null,
-    "duplicate_hash_match": false,
+    "duplicate_hash_match": true,
     "mpn_guess": "DS00001948C",
     "path": "datasheets/USB2640i-USB2641i-DS00001948C.pdf",
-    "possible_duplicate": false,
+    "possible_duplicate": true,
     "renamed_duplicate": false,
     "repo": "SecureControllers",
     "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
@@ -2744,6 +2757,19 @@
   },
   {
     "canonical_path": null,
+    "duplicate_hash_match": true,
+    "mpn_guess": "KMR2",
+    "path": "avionics/datasheets/ck/Littelfuse-CK-KMR2-Series-Datasheet.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "bf652d3f66e5b39a6b5d5692b13e46bb62257f7572f2ebf85753b3c94c93781b",
+    "size_bytes": 534340,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
     "duplicate_hash_match": false,
     "mpn_guess": "CMX994DS",
     "path": "avionics/datasheets/cml-microcircuits/cmx994ds.pdf",
@@ -3233,6 +3259,19 @@
     "repo": "Serenity-UAV",
     "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
     "size_bytes": 449402,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": true,
+    "mpn_guess": "DS00001948C",
+    "path": "avionics/datasheets/microchip/USB2640i-USB2641i-DS00001948C.pdf",
+    "possible_duplicate": true,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
+    "size_bytes": 582118,
     "verification_tier": "unverified",
     "verified": false
   },

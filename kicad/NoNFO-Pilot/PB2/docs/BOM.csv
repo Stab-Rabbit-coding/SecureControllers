@@ -45,7 +45,7 @@ line,function,mpn,manufacturer,domicile,footprint,qty,zone,height_mm,datasheet,f
 43,Field connectors 4-pin (CAN; RS-485; 1553; ETH x2),SM04B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal,5,iso_island,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds
 44,Fan connector 3-pin,SM03B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal,1,logic,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds
 45,Expansion SPI connector 6-pin,SM06B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal,1,logic,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds
-46,mLRS boot button,KMR211NG LFS,C&K,US,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,1,rf,1.9,NOT IN REPO: C&K KMR2 data sheet,UNVERIFIED
+46,mLRS boot button,KMR211NG LFS,C&K (Littelfuse),US,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,1,rf,1.9,SecureControllers datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf p.1 NG recommended layout (4 pads 0.9 x 1.0; 5.0 outer; 3.2 inner; 0.6 row gap); -40 to +85 C (silver),kicad-lib-vs-ds
 47,SWD pads (mLRS MCU; trust-module MCU),TC2030-IDC-NL footprint,Tag-Connect (no part),US,Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical,2,logic,0,pad pattern only; no fitted part,not-a-part
 48,Status LEDs,0603 green / red,to select in S36,-,LED_SMD:LED_0603_1608Metric,2,rf,0.8,0603 EIA case,passive-case
 49,Ferrite beads (bus supply / signal),BLM15EX331SN1D,Murata,Japan,Inductor_SMD:L_0402_1005Metric,6,iso_island,0.55,Murata BLM15EX data sheet; 0402 case,passive-case

@@ -2393,6 +2393,17 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794937188,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/ck/Littelfuse-CK-KMR2-Series-Datasheet.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "bf652d3f66e5b39a6b5d5692b13e46bb62257f7572f2ebf85753b3c94c93781b",
+    "size_bytes": 534340
+  },
+  {
+    "asset_type": "datasheet",
     "ext": ".pdf",
     "mtime": 1794493358,
     "rel_path": "avionics/datasheets/cml-microcircuits/cmx994ds.pdf",
@@ -2770,6 +2781,17 @@
     "repo": "Serenity-UAV",
     "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
     "size_bytes": 449402
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794937027,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/microchip/USB2640i-USB2641i-DS00001948C.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
+    "size_bytes": 582118
   },
   {
     "asset_type": "datasheet",
