@@ -2869,6 +2869,28 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1795025305,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/molex/1053131204.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "a1a1c6f8219030a6162260576387f0e1442c5bda648698a25a6879d6d4b8b42c",
+    "size_bytes": 65646
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1795025305,
+    "possible_duplicate": true,
+    "rel_path": "avionics/datasheets/molex/1053131204_sd.pdf",
+    "repo": "Serenity-UAV",
+    "sha256": "514f2cdbeb5684063282eb36fc00316d3e0da758b8b71e9f12961755e7afed01",
+    "size_bytes": 377980
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1794493359,
     "possible_duplicate": true,
     "rel_path": "avionics/datasheets/molex/987651-1223.pdf",

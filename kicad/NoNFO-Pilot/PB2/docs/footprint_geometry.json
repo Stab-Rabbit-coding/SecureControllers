@@ -754,5 +754,25 @@
    8.61
   ],
   "drill": []
+ },
+ "NoNFO:Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs": {
+  "pads": 6,
+  "smd": 0,
+  "numbers": 5,
+  "sizes": {
+   "(1.9, 1.9)": 4,
+   "(1.75, 1.6)": 1,
+   "(1.6, 1.6)": 1
+  },
+  "min_pitch": 2.5,
+  "courtyard": [
+   11.53,
+   13.79
+  ],
+  "drill": [
+   1.2,
+   1.6,
+   1.75
+  ]
  }
 }

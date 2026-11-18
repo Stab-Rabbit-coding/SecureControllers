@@ -96,7 +96,7 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 | 39 | TSM-118-04-L-DV-LC | Samtec (US) | `PocketBeagle2_2x18_P1_TSM-DV-LC` | generator-cited |
 | 40 | TSM-118-04-L-DV-LC | Samtec (US) | `PocketBeagle2_2x18_P2_TSM-DV-LC` | generator-cited |
 | 41 | TSM-108-01-L-DV | Samtec (US) | `Samtec_TSM-108-01-x-DV` | generator-cited |
-| 42 | 105313-1204 | Molex (US) | `Molex_NanoFit_1x04_Horizontal` | UNVERIFIED |
+| 42 | 105313-1204 | Molex (US) | `Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs` | regenerated-S35 |
 | 43 | SM04B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
 | 44 | SM03B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
 | 45 | SM06B-GHS-TB(LF)(SN) | JST (Japan) | `JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizon` | kicad-lib-vs-ds |
@@ -113,7 +113,16 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 
 - **KMR211NG LFS**: KiCad `SW_Push_1P1T_NO_CK_KMR2` pads are 0.9 x 1.0 mm at x +/-2.05, y +/-0.80, exactly the NG recommended layout (5.0 mm outer span, 3.2 mm inner gap, 0.6 mm row gap) [REF-NFP-015]. Pads 1/4 and 2/3 pair as the electrical diagram connects them. Silver contacts rated -40 to +85 C.
 
+## Verified 2026-11-18 from the owner-supplied Molex drawing
+
+- **105313-1204** (finding F8): the inherited `Serenity-Custom:Molex_NanoFit_1x04_Horizontal` land is wrong. It has 1.0 mm drills, where the drawing calls for dia 1.20 +/-0.05 contact holes, and it has no locator holes, so the part's pegs cannot seat. Molex's own KiCad download (`CONN_SD-105313-100_04_MOL`) is also wrong: it has two round 1.854 mm holes, where the drawing calls for one round dia 1.60 +0.05/-0 hole and one 1.75 x 1.60 slot. The pegs would then be loose, and the board would no longer locate the part along the row. Regenerated as `Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs` [REF-NFP-016 sheet 1; sheet 4 row 105313-1204]:
+  - Four contact holes, dia 1.20 mm, at 2.50 mm pitch, on 1.90 mm pads (0.35 mm ring for the 8 A contacts).
+  - Locator holes 7.18 mm behind the contact row and B = 7.50 mm apart: the slot under circuit 1 and the round hole under circuit 4.
+  - Courtyard runs to the 12.00 mm (MAX) PCB-edge line.
+
+  The courtyard grows from 12.29 x 7.09 mm to 11.53 x 13.79 mm (+72 mm2 in power_entry). The header weighs 0.510 g (0.018 oz).
+  - **Caution (Pilot fleet):** Pilot uses the same Serenity-Custom footprint. It inherits F8, and it is carried to NFP-TACCO-FP for the fleet pass.
+
 ## Open items
 
-- **105313-1204** (Molex Nano-Fit power entry): the Molex sales drawing could not be fetched (molex.com is outside this session's network allowance; Mouser serves a bot-block page). Pilot's generator already flags this land as not verified. Owner: supply the drawing, or allow `www.molex.com`.
-- S38: logic-zone courtyard fill (89 % against 80 %).
+- S38: courtyard fill against 80 %: logic 89 %, power_entry 94 % (the Nano-Fit grew 72 mm2 once its pegs and edge line were drawn).

@@ -41,7 +41,7 @@ line,function,mpn,manufacturer,domicile,footprint,qty,zone,height_mm,datasheet,f
 39,PB2-I header rail P1 (male; PB2-I rides on top),TSM-118-04-L-DV-LC,Samtec,US,Serenity-Custom:PocketBeagle2_2x18_P1_TSM-DV-LC,1,logic,2.54,Serenity avionics/datasheets/samtec/samtec_tsm-dv-footprint.pdf,generator-cited
 40,PB2-I header rail P2,TSM-118-04-L-DV-LC,Samtec,US,Serenity-Custom:PocketBeagle2_2x18_P2_TSM-DV-LC,1,logic,2.54,Serenity avionics/datasheets/samtec/samtec_tsm-dv-footprint.pdf,generator-cited
 41,DSHOT/PWM header,TSM-108-01-L-DV,Samtec,US,Serenity-Custom:Samtec_TSM-108-01-x-DV,1,logic,2.54,Serenity avionics/datasheets/samtec/samtec_tsm-dv-footprint.pdf Rev F Fig 1,generator-cited
-42,5 V power entry,105313-1204,Molex,US,Serenity-Custom:Molex_NanoFit_1x04_Horizontal,1,power_entry,7.0,NOT IN REPO: Molex 105313 sales drawing,UNVERIFIED
+42,5 V power entry,105313-1204,Molex,US,NoNFO:Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs,1,power_entry,7.0,REF-NFP-016 SD-105313-100 rev P1 sheet 1,generator-cited
 43,Field connectors 4-pin (CAN; RS-485; 1553; ETH x2),SM04B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal,5,iso_island,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds
 44,Fan connector 3-pin,SM03B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal,1,logic,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds
 45,Expansion SPI connector 6-pin,SM06B-GHS-TB(LF)(SN),JST,Japan,Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal,1,logic,4.25,Serenity avionics/datasheets/jst/eGH.pdf,kicad-lib-vs-ds

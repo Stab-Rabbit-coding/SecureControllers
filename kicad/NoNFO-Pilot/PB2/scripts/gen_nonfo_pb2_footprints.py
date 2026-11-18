@@ -64,10 +64,12 @@ def write(
     body: tuple[float, float, float, float],
     crt_margin: float,
     extra: list[str] | None = None,
+    attr: str = "smd",
+    pin1: tuple[float, float] | None = None,
 ) -> Path:
     """Write one footprint; a pin-1 dot goes just outside the body's top-left corner."""
     x0, y0, x1, y1 = body
-    extra = [dot(x0 - 0.45, y0 - 0.45), *(extra or [])]
+    extra = [dot(*(pin1 or (x0 - 0.45, y0 - 0.45))), *(extra or [])]
     lines = [
         f'(footprint "{name}"',
         "\t(version 20241229)",
@@ -76,7 +78,7 @@ def write(
         f'\t(descr "{descr}")',
         text("Reference", "REF**", y0 - 1.0, "F.SilkS"),
         text("Value", name, y1 + 1.0, "F.Fab"),
-        "\t(attr smd)",
+        f"\t(attr {attr})",
         rect("F.Fab", x0, y0, x1, y1),
         rect(
             "F.CrtYd",
@@ -205,8 +207,44 @@ def ti_dsk0010a() -> Path:
     )
 
 
+def th(fp: str, num: str, x: float, y: float, size: tuple[float, float], drill: tuple[float, float], plated: bool = True) -> str:
+    """A through-hole pad; a non-plated hole when plated is False (oval when drill sizes differ)."""
+    kind, layers = ("thru_hole", '"*.Cu" "*.Mask"') if plated else ("np_thru_hole", '"*.Cu" "*.Mask"')
+    shape = "circle" if size[0] == size[1] else "oval"
+    d = f"{drill[0]:.4f}" if drill[0] == drill[1] else f"oval {drill[0]:.4f} {drill[1]:.4f}"
+    return (
+        f'\t(pad "{num}" {kind} {shape} (at {x:.4f} {y:.4f}) (size {size[0]:.4f} {size[1]:.4f}) '
+        f'(drill {d}) (layers {layers}) (uuid "{_u(fp, num, x, y)}"))'
+    )
+
+
+def molex_105313_1x04() -> Path:
+    """Molex Nano-Fit 105313-1204 right-angle header, 4 circuits, 2.50 mm pitch, pegged.
+
+    Source: Molex sales drawing SD-105313-100 rev P1 (2025/06/26), sheet 1 "RECOMMENDED PCB
+    (CONNECTOR SIDE VIEW)" and sheet 4 table row 105313-1204 (A 10.94, B 7.50, C 8.14):
+    contact holes dia 1.20 +/-0.05 at 2.50 pitch; locator holes 7.18 behind the contact row,
+    B = 7.50 apart, one round dia 1.60 +0.05/-0 (under circuit 4) and one slot 1.75 +0.10/-0
+    x 1.60 +0.05/-0 (under circuit 1); keep-out A wide; PCB edge 12.00 max from the row.
+    Pad dia 1.90 gives a 0.35 mm ring for the 8 A contacts.
+    """
+    name = "Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs"
+    p = [th(name, str(1 + i), -2.5 * i, 0, (1.9, 1.9), (1.2, 1.2)) for i in range(4)]
+    p.append(th(name, "", 0, 7.18, (1.75, 1.6), (1.75, 1.6), plated=False))
+    p.append(th(name, "", -7.5, 7.18, (1.6, 1.6), (1.6, 1.6), plated=False))
+    return write(
+        name,
+        "Molex Nano-Fit 105313-1204 R/A header, SD-105313-100 rev P1 recommended PCB",
+        p,
+        (-9.22, -1.2, 1.72, 12.0),
+        0.25,
+        attr="through_hole",
+        pin1=(1.6, -1.6),
+    )
+
+
 def main() -> None:
-    for f in (lwb5plus, usb2641i, ti_dsk0010a):
+    for f in (lwb5plus, usb2641i, ti_dsk0010a, molex_105313_1x04):
         print("wrote", f().relative_to(OUT.parents[1]))
 
 

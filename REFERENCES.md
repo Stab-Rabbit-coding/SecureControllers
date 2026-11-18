@@ -131,6 +131,18 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 **Used in:** `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`; `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`.
 
+### REF-NFP-016: Molex Nano-Fit 105313 right-angle header sales drawing and product sheet
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Molex Electronic Technologies, LLC, sales drawing SD-105313-100 rev P1 (released 2025/06/26, EC 826596), and product sheet for 1053131204 (generated 2026-11-18) |
+| **Official URL** | Supplied by the owner 2026-11-18 from the molex.com part page for 1053131204 |
+| **Local copy** | `datasheets/molex/1053131204_sd.pdf` (MD5 276602c0cdc35cfd3e95e8173daabd34); `datasheets/molex/1053131204.pdf` (MD5 8d9eb01aec0167edafec7f23d97d5d48) |
+| **Applied sections** | Drawing sheet 1 "RECOMMENDED PCB (CONNECTOR SIDE VIEW)"; sheet 4 table row 105313-1204 (A 10.94, B 7.50, C 8.14); product sheet: 8.0 A per contact, 0.510 g, PCB locator and retention |
+| **Openness / sourcing** | Public, no NDA. Molex is US-domiciled (Lisle, Illinois). |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`; `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`.
+
 ### EMC and bus standards inherited from Serenity-UAV
 
 The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.
