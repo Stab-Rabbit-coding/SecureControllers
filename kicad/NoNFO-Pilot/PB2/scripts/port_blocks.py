@@ -16,7 +16,9 @@ Each ported part keeps its pins, nets and data-sheet note and gains an ``origin`
 Net renames and the B+ re-pointing happen in ``gen_nonfo_pb2_sch.py``, not here, so the
 port is a faithful copy that can be re-run and diffed.
 
-Usage: python3 port_blocks.py /path/to/Serenity-UAV
+Usage: python3 port_blocks.py /path/to/Serenity-UAV /path/to/pilot_gnss.py SHORT_SHA
+  where pilot_gnss.py is ``git show 3f55d58^:avionics/kicad/Pilot/scripts/gen_pilot_sch.py``
+  and SHORT_SHA is Serenity-UAV's ``git rev-parse --short HEAD`` (recorded as the origin).
 Author: Claude (Anthropic), 2026-11-18, for S. Griffing.
 """
 
@@ -24,9 +26,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parents[1] / "sch" / "ported_blocks.json"
@@ -64,16 +64,8 @@ def main() -> None:
     kic = root / "avionics" / "kicad"
     pilot = load("pilot", kic / "Pilot" / "scripts" / "gen_pilot_sch.py")
     tacco = load("tacco", kic / "TACCO" / "scripts" / "gen_tacco_sch.py")
-    old = subprocess.run(
-        ["git", "-C", str(root), "show", "3f55d58^:avionics/kicad/Pilot/scripts/gen_pilot_sch.py"],
-        check=True, capture_output=True, text=True,
-    ).stdout
-    with tempfile.TemporaryDirectory() as td:
-        p = Path(td) / "pilot_gnss.py"
-        p.write_text(old)
-        gnss = load("pilot_gnss", p)
-    head = subprocess.run(["git", "-C", str(root), "rev-parse", "--short", "HEAD"],
-                          check=True, capture_output=True, text=True).stdout.strip()
+    gnss = load("pilot_gnss", Path(sys.argv[2]).resolve())
+    head = sys.argv[3]
     parts = [part(i, f"Pilot@{head}") for i in pilot.ICS if i["ref"] not in PILOT_SKIP]
     taken = {p["ref"] for p in parts}
     parts += [part(i, f"TACCO@{head}") for i in tacco.ICS
