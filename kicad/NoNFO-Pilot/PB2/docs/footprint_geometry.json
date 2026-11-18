@@ -774,5 +774,19 @@
    1.6,
    1.75
   ]
+ },
+ "NoNFO:Wurth_742792510_1812_HighCurrent": {
+  "pads": 2,
+  "smd": 2,
+  "numbers": 2,
+  "sizes": {
+   "(1.9, 3.0)": 2
+  },
+  "min_pitch": 5.4,
+  "courtyard": [
+   7.89,
+   3.79
+  ],
+  "drill": []
  }
 }

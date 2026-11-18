@@ -1,7 +1,7 @@
 name: KiCad boards
 
-# NoNFO-Pilot-PB2 pin ledgers (header and MCU) and their tests. Sprint S36
-# extends this workflow with the KiCad ERC and ledger-to-schematic match jobs.
+# NoNFO-Pilot-PB2: pin ledgers (header and MCU), the generated schematic and its
+# ledger-match tests (Python job), and KiCad 9.0.2 ERC on the generated sheet (S36).
 
 on:
   push:
@@ -36,5 +36,32 @@ jobs:
       - name: MCU ledger, MSPM0G3519-Q1 RGZ-48
         run: python3 kicad/NoNFO-Pilot/PB2/pin_ledger/mcu_ledger.py
 
-      - name: Ledger tests
+      - name: Schematic is up to date with its generator
+        run: |
+          python3 kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_sch.py
+          git diff --exit-code -- kicad/NoNFO-Pilot/PB2/kicads
+
+      - name: Ledger, parts and schematic tests
         run: python3 -m pytest -q kicad/NoNFO-Pilot/PB2/tests
+
+  erc:
+    name: NoNFO-Pilot-PB2 ERC (KiCad 9.0.2)
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:9.0.2
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      # Serenity-UAV's footprint library is not checked out here, so footprint-link
+      # warnings are expected in CI; any ERC error fails the job.
+      - name: ERC, errors fail the job
+        run: >
+          kicad-cli sch erc --severity-error --exit-code-violations
+          -o erc.rpt kicad/NoNFO-Pilot/PB2/kicads/NoNFO-Pilot-PB2.kicad_sch
+
+      - name: Full ERC report
+        if: always()
+        run: |
+          kicad-cli sch erc --severity-all -o erc-all.rpt kicad/NoNFO-Pilot/PB2/kicads/NoNFO-Pilot-PB2.kicad_sch || true
+          cat erc-all.rpt

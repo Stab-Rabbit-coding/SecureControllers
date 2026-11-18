@@ -104,10 +104,12 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
 | 47 | TC2030-IDC-NL footprint | Tag-Connect (no part) (US) | `Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Verti` | not-a-part |
 | 48 | 0603 green / red | to select in S36 (-) | `LED_0603_1608Metric` | passive-case |
 | 49 | BLM15EX331SN1D | Murata (Japan) | `L_0402_1005Metric` | passive-case |
-| 50 | 742792512 | Wurth Elektronik (Germany) | `L_0805_2012Metric` | passive-case |
+| 50 | 742792510 | Wurth Elektronik (Germany) | `Wurth_742792510_1812_HighCurrent` | regenerated-S36 |
 | 51 | M3 PGND | (no part) (-) | `MountingHole_3.2mm_M3_DIN965` | kicad-template |
 | 52 | CC0402/0603/0805/1210 series | YAGEO (Taiwan) | `C_0402/0603/0805/1210` | passive-case |
 | 53 | RC0402/0603 series | YAGEO (Taiwan) | `R_0402/0603` | passive-case |
+| 55 | TPSM82822SILR | Texas Instruments (US) | `TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm` | generator-cited |
+| 56 | 32.768kHz LPO (to select) | to select in S37 (-) | `Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm` | UNVERIFIED |
 
 ## Verified 2026-11-17 from owner-supplied data sheets
 
@@ -123,6 +125,14 @@ The logic zone fails because the two PB2-I header rails alone take about 840 mm2
   The courtyard grows from 12.29 x 7.09 mm to 11.53 x 13.79 mm (+72 mm2 in power_entry). The header weighs 0.510 g (0.018 oz).
   - **Caution (Pilot fleet):** Pilot uses the same Serenity-Custom footprint. It inherits F8, and it is carried to NFP-TACCO-FP for the fleet pass.
 
+## Added or changed in S36 (2026-11-18)
+
+- **F10, input bead (line 50).** Pilot's 742792512 is rated 2 A. The merged board's 5 V peak is 3.4 A (budget in `NoNFO-Pilot-PB2.md`). Changed to TACCO's Wurth 742792510: 5 A at a 20 K rise, 6 A at 40 K, 30 mOhm max, 70 Ohm at 100 MHz. That part is an 1812, not an 0805. Its high-current land is W = 7.3 outer, 3.5 between pads and 3.0 tall, which is wider than KiCad's IPC `L_1812_4532Metric` (1.125 x 3.4 pads at +/-2.14). Regenerated from the Wurth land as `Wurth_742792510_1812_HighCurrent`. TACCO uses the IPC land, which is noted for the fleet pass.
+- **Line 55, TPSM82822SILR.** This is the adjustable member of the same TI family and package as line 34 [REF-PWR-008 Table 5-1]. It sets the LWB5+ supply to 3.67 V (R1 511 k, R2 100 k, 120 pF feed-forward, sec 9.2.1.2). The TPS63031 is rated 800 mA in step-down, so it cannot carry the LWB5+ 768 mA calibration peak alongside the mLRS and BT/15.4 radios.
+- **Lines 35 and 36** (TPS62933 and its inductor) are not fitted, because S36 picked the TPSM828224.
+
 ## Open items
+
+- **32.768kHz LPO (to select)** (line 56): the LWB5+ needs an external 32.768 kHz sleep clock on SUSCLK. Ezurio's standard software does not support running without one (DVK guide sec 5.3.2). The schematic carries a 2.5 x 2.0 mm CMOS oscillator placeholder (pin 1 OE, 2 GND, 3 OUT, 4 VDD, the ECS-2520MV pin-out). Owner: pick the part (US or allied maker, 3.3 V, 200 mVp-p minimum swing). The footprint is checked against that part's drawing in S37.
 
 - S38: courtyard fill against 80 %: logic 89 %, power_entry 94 % (the Nano-Fit grew 72 mm2 once its pegs and edge line were drawn).

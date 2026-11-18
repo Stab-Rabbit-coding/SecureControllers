@@ -243,8 +243,23 @@ def molex_105313_1x04() -> Path:
     )
 
 
+def wurth_742792510() -> Path:
+    """Wurth WE-MPSB 742792510 1812 high-current ferrite bead (S36 input bead, 5 A).
+
+    Source: Wurth data sheet 742792510 p.1 "Recommended Land Pattern", HIGH CURRENT:
+    W = 7.3 outer, 3.5 between pads, pad height 3.0 -> two 1.9 x 3.0 pads at x +/-2.70.
+    Body 4.5 +/-0.2 x 3.2 +/-0.2.  KiCad's L_1812_4532Metric (1.125 x 3.4 at +/-2.14) is
+    the IPC land, narrower than Wurth's high-current land.
+    """
+    name = "Wurth_742792510_1812_HighCurrent"
+    p = [pad(name, "1", -2.7, 0, 1.9, 3.0), pad(name, "2", 2.7, 0, 1.9, 3.0)]
+    return write(name, "Wurth 742792510 1812 ferrite bead, data sheet high-current land",
+                 p, (-3.65, -1.6, 3.65, 1.6), 0.25, extra=[rect("F.Fab", -2.25, -1.6, 2.25, 1.6)],
+                 pin1=(-3.9, -1.9))
+
+
 def main() -> None:
-    for f in (lwb5plus, usb2641i, ti_dsk0010a, molex_105313_1x04):
+    for f in (lwb5plus, usb2641i, ti_dsk0010a, molex_105313_1x04, wurth_742792510):
         print("wrote", f().relative_to(OUT.parents[1]))
 
 

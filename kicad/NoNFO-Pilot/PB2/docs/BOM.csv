@@ -33,9 +33,9 @@ line,function,mpn,manufacturer,domicile,footprint,qty,zone,height_mm,datasheet,f
 31,Logging write-block PLD (NOR /WP and microSD SD_WP),ATF16V8BQL-15XU,Microchip Technology,US,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,1,logic,1.2,Serenity avionics/datasheets/microchip/atf16v8bql.pdf TSSOP-20 [REF-SENSOR-037],kicad-lib-vs-ds
 32,Expansion SPI port ESD,TPD4E05U06DQAR,Texas Instruments,US,Serenity-Custom:TI_DQA0010A_USON-10_2.5x1.0mm_P0.5mm,1,logic,0.6,Serenity avionics/datasheets/TPDxE05U06_SLVSBO7O.pdf DQA0010A,generator-cited
 33,Expansion SPI port fuse,MF-PSMF035X-2,Bourns,US,Fuse:Fuse_0805_2012Metric,1,logic,0.85,Serenity avionics/datasheets/bourns/Bourns_MF-PSMF.pdf 0805,kicad-lib-vs-ds
-34,3V3 logic regulator (S36 picks one),TPSM828224SILR,Texas Instruments,US,Serenity-Custom:TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm,1,power_entry,1.0,Serenity avionics/datasheets/ti/tpsm82822.pdf SIL0010D,generator-cited
-35,3V3 regulator alternative (S36 picks one),TPS62933DRLR,Texas Instruments,US,Package_TO_SOT_SMD:SOT-583-8,1,power_entry,0.6,Serenity avionics/datasheets/ti/tps62933.pdf DRL,kicad-lib-vs-ds
-36,TPS62933 inductor,74438335033,Wurth Elektronik,Germany,Serenity-Custom:L_WE-MAPI_3015,1,power_entry,1.5,74438335033.pdf p.1 land,generator-cited
+34,3V3 logic regulator (S36 pick: 1.15 A worst case of 2 A),TPSM828224SILR,Texas Instruments,US,Serenity-Custom:TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm,1,power_entry,1.0,Serenity avionics/datasheets/ti/tpsm82822.pdf SIL0010D,generator-cited
+35,3V3 regulator alternative (S36 picks one) - not fitted (S36 picked TPSM828224),TPS62933DRLR,Texas Instruments,US,Package_TO_SOT_SMD:SOT-583-8,0,power_entry,0.6,Serenity avionics/datasheets/ti/tps62933.pdf DRL,kicad-lib-vs-ds
+36,TPS62933 inductor - not fitted (S36 picked TPSM828224),74438335033,Wurth Elektronik,Germany,Serenity-Custom:L_WE-MAPI_3015,0,power_entry,1.5,74438335033.pdf p.1 land,generator-cited
 37,RF rail buck-boost,TPS63031DSKR,Texas Instruments,US,NoNFO:TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm,1,power_entry,0.8,Serenity avionics/datasheets/ti/tps63031.pdf DSK0010A Example Board Layout 4218903/C,regenerated-S35
 38,1V8 RF LDO,TLV75718PDBVR,Texas Instruments,US,Package_TO_SOT_SMD:SOT-23-5,1,power_entry,1.45,Serenity avionics/datasheets/ti/tlv757p.pdf DBV,kicad-lib-vs-ds
 39,PB2-I header rail P1 (male; PB2-I rides on top),TSM-118-04-L-DV-LC,Samtec,US,Serenity-Custom:PocketBeagle2_2x18_P1_TSM-DV-LC,1,logic,2.54,Serenity avionics/datasheets/samtec/samtec_tsm-dv-footprint.pdf,generator-cited
@@ -49,7 +49,9 @@ line,function,mpn,manufacturer,domicile,footprint,qty,zone,height_mm,datasheet,f
 47,SWD pads (mLRS MCU; trust-module MCU),TC2030-IDC-NL footprint,Tag-Connect (no part),US,Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical,2,logic,0,pad pattern only; no fitted part,not-a-part
 48,Status LEDs,0603 green / red,to select in S36,-,LED_SMD:LED_0603_1608Metric,2,rf,0.8,0603 EIA case,passive-case
 49,Ferrite beads (bus supply / signal),BLM15EX331SN1D,Murata,Japan,Inductor_SMD:L_0402_1005Metric,6,iso_island,0.55,Murata BLM15EX data sheet; 0402 case,passive-case
-50,Ferrite bead (input),742792512,Wurth Elektronik,Germany,Inductor_SMD:L_0805_2012Metric,1,power_entry,0.9,Wurth 742792512; 0805 case,passive-case
+50,Ferrite bead (5 V input; 3.4 A merged peak),742792510,Wurth Elektronik,Germany,NoNFO:Wurth_742792510_1812_HighCurrent,1,power_entry,1.5,Serenity avionics/datasheets/wurth-elektronik/wurth-742792510.pdf p.1 Recommended Land Pattern (HIGH CURRENT); 5 A at dT 20 K,regenerated-S36
 51,Mounting holes M3 (BeagleBone Black pattern),M3 PGND,(no part),-,MountingHole:MountingHole_3.2mm_M3_DIN965,4,logic,0,KiCad BeagleBone-Black-Cape template MH1-MH4,kicad-template
 52,Capacitors (MLCC families),CC0402/0603/0805/1210 series,YAGEO,Taiwan,Capacitor_SMD:C_0402/0603/0805/1210,~120,all,1.0,Serenity avionics/datasheets YAGEO_UPY-GPHC_X7R_6.3V-250V.pdf,passive-case
 53,Resistors,RC0402/0603 series,YAGEO,Taiwan,Resistor_SMD:R_0402/0603,~70,all,0.35,Serenity avionics/datasheets YAGEO_PYU-RC_51_ROHS_P.pdf,passive-case
+55,Wi-Fi rail +3V6 regulator (TPSM82822 adjustable; LWB5+ 768 mA peak),TPSM82822SILR,Texas Instruments,US,Serenity-Custom:TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm,1,rf,1.0,Serenity avionics/datasheets/ti/tpsm82822.pdf SIL0010D,generator-cited
+56,32.768 kHz LPO for LWB5+ SUSCLK (required by Ezurio standard software),32.768kHz LPO (to select),to select in S37,-,Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm,1,rf,0.8,Serenity avionics/datasheets/ezurio/ezurio-guide-dvk-lwb5plus-v2.1.pdf sec 5.3.2 (requirement only),UNVERIFIED

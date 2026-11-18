@@ -589,6 +589,20 @@
   },
   {
     "canonical_path": null,
+    "duplicate_hash_match": false,
+    "library": "NoNFO-PB2.pretty",
+    "path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Wurth_742792510_1812_HighCurrent.kicad_mod",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "9da26bcc6b2b7b4fa11301a2ab33dfea679c47919067e073dac007291a1c06f8",
+    "size_bytes": 1550,
+    "symbol_or_footprint_name": "Wurth_742792510_1812_HighCurrent",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
     "duplicate_hash_match": true,
     "library": "Serenity-Custom.pretty",
     "path": "kicad/Serenity-Custom.pretty/TI_WL1837MOD.kicad_mod",
