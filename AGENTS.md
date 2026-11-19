@@ -45,14 +45,14 @@ repository's work plan.
 - **No restricted-country silicon.** No integrated circuit, discrete semiconductor or
   semiconductor-bearing module shall be used whose manufacturer (the design owner / brand of
   record) is:
-    - domiciled in a restricted country: the People's Republic of China (including Hong Kong and
-      Macau), the Russian Federation, the Islamic Republic of Iran, the Democratic People's
-      Republic of Korea, or any country later designated a "foreign country of concern"
-      [REF-LAW-003];
-    - owned by, controlled by, or subject to the direction of the government or ruling party of a
-      restricted country, or a subsidiary or affiliate of such an entity [REF-LAW-002
-      §1822(1)(D)-(E)]; or
-    - a named or determined covered entity [REF-LAW-001 §5949(j)(3)] [REF-LAW-002 §1822(1)].
+  - domiciled in a restricted country: the People's Republic of China (including Hong Kong and
+    Macau), the Russian Federation, the Islamic Republic of Iran, the Democratic People's
+    Republic of Korea, or any country later designated a "foreign country of concern"
+    [REF-LAW-003];
+  - owned by, controlled by, or subject to the direction of the government or ruling party of a
+    restricted country, or a subsidiary or affiliate of such an entity [REF-LAW-002
+    §1822(1)(D)-(E)]; or
+  - a named or determined covered entity [REF-LAW-001 §5949(j)(3)] [REF-LAW-002 §1822(1)].
 
   **Scope.** The test is manufacturer domicile and control (owner decision 2026-10-17); wafer-fab
   and assembly/test sites are recorded where the vendor publishes them but do not disqualify a
