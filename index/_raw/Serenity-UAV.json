@@ -5295,11 +5295,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794917757,
+    "mtime": 1795047513,
     "rel_path": "tools/auw_ledger.py",
     "repo": "Serenity-UAV",
-    "sha256": "a59b93d07f2bb3e0356b201101012e37a4776b3c1d69b4eaf609dcac04bf03a4",
-    "size_bytes": 41501
+    "sha256": "611d1b1f084515a51e497e35e6816b7282c30245ca512825e2e0fd4f68a1efac",
+    "size_bytes": 45080
   },
   {
     "asset_type": "script",
@@ -5394,11 +5394,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794493364,
+    "mtime": 1795047513,
     "rel_path": "tools/cfd_internal_air_domain.py",
     "repo": "Serenity-UAV",
-    "sha256": "a184d520dbda4a7c445b2baa487d444a2fc1f69ca8bbc9c5950b591f4625c851",
-    "size_bytes": 6585
+    "sha256": "0ccdd16d942f8b63a791f9b2c0abb785aba6d97cf022a5b5956e185d6eb79fa1",
+    "size_bytes": 6592
   },
   {
     "asset_type": "script",
@@ -5417,6 +5417,15 @@
     "repo": "Serenity-UAV",
     "sha256": "431d08f0edacbcd30b1a3ff74f6a1f182066fcec4afb3e94c8b233aa10c44aaa",
     "size_bytes": 21829
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/check_agents_size.py",
+    "repo": "Serenity-UAV",
+    "sha256": "5afe081b2b74fcc6db0328fe620210dcb89d28647728e6f4bd54b3e4fbdbcee0",
+    "size_bytes": 2950
   },
   {
     "asset_type": "script",
@@ -5601,11 +5610,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794493364,
+    "mtime": 1795047513,
     "rel_path": "tools/gen_build_guide_cards.py",
     "repo": "Serenity-UAV",
-    "sha256": "33bd1b4adbd77bc9fb3adfa933ca19552d4a6ba3765b676789305341a02d4387",
-    "size_bytes": 55689
+    "sha256": "363433e134e736d688676e04cde672e6198c05719c3efae3f7e9c47c199dd1c8",
+    "size_bytes": 55667
   },
   {
     "asset_type": "script",
@@ -5660,6 +5669,15 @@
     "repo": "Serenity-UAV",
     "sha256": "a07bdf9f27d0049656793445ae9670acecae515d4df9a69bb9fb708e182c9294",
     "size_bytes": 45369
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/hover_trim_rcs.py",
+    "repo": "Serenity-UAV",
+    "sha256": "7a132344d57cdbee77c3fc477b0763510d7d2fe553f758b459eda95bb47d744e",
+    "size_bytes": 36000
   },
   {
     "asset_type": "script",
@@ -5799,11 +5817,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794493364,
+    "mtime": 1795047513,
     "rel_path": "tools/landing_gear_r6_sizing.py",
     "repo": "Serenity-UAV",
-    "sha256": "53258beefada87721eb311abd9455a8062a762375ae9eacafc4116973797b143",
-    "size_bytes": 43276
+    "sha256": "40218ded39d19e19c6f2bb33501db7311ddbaecf39917aee5cb6849a5776ce3a",
+    "size_bytes": 43283
   },
   {
     "asset_type": "script",
@@ -5925,11 +5943,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794493364,
+    "mtime": 1795047513,
     "rel_path": "tools/middle_layout_fit.py",
     "repo": "Serenity-UAV",
-    "sha256": "3e135f321c0a39683f359d48b6d4280679735dd46ea63253162cd7d0fe2033ed",
-    "size_bytes": 31467
+    "sha256": "87aa1123d9b1027b5594854c091831302a6169ec55c2259a2a73354c609e2467",
+    "size_bytes": 31495
   },
   {
     "asset_type": "script",
@@ -6132,11 +6150,11 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794493364,
+    "mtime": 1795047513,
     "rel_path": "tools/node_thermal_forced_air.py",
     "repo": "Serenity-UAV",
-    "sha256": "45fdc7cf1a3165d875b20c0b82424b9f3cdd5620c645995be3895be26cd07893",
-    "size_bytes": 18646
+    "sha256": "b521dcbe808bcd78fea5225473862f6ed71e23f5d0e173a2128e196dcc42daf7",
+    "size_bytes": 18857
   },
   {
     "asset_type": "script",
@@ -6323,11 +6341,20 @@
   {
     "asset_type": "script",
     "ext": ".py",
-    "mtime": 1794917757,
+    "mtime": 1795047513,
+    "rel_path": "tools/rcs_jets.py",
+    "repo": "Serenity-UAV",
+    "sha256": "618584cf07d9b3c8cb8ba154570a94abe0f1adf24d74cd22514a291cc6ddb7f6",
+    "size_bytes": 3228
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1795047513,
     "rel_path": "tools/rear_cone_layout_fit.py",
     "repo": "Serenity-UAV",
-    "sha256": "cc8a5ce0f7b559ec2ba68cc5efe56b8c8bd181aba593dedebda0868ac26c0701",
-    "size_bytes": 24644
+    "sha256": "217f58e01b8144b0524a3d4eaae6a796b0993ab423fe1a66181d8631c61ccf2c",
+    "size_bytes": 52927
   },
   {
     "asset_type": "script",
@@ -6476,6 +6503,15 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/tail_edf_flow.py",
+    "repo": "Serenity-UAV",
+    "sha256": "67ab6e8390336c2217ca6a8087edd611bb137a6cee45eb698dfbf3c8f9c3b246",
+    "size_bytes": 15780
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1794493364,
     "rel_path": "tools/tail_strike_requirement.py",
     "repo": "Serenity-UAV",
@@ -6530,6 +6566,15 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/tests/test_check_agents_size.py",
+    "repo": "Serenity-UAV",
+    "sha256": "07c3dccc51c5a66544276909eb179c98dfa6c3d17ae3602070f109c19552c887",
+    "size_bytes": 1498
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1794493364,
     "rel_path": "tools/tests/test_check_hull_tarballs.py",
     "repo": "Serenity-UAV",
@@ -6553,6 +6598,15 @@
     "repo": "Serenity-UAV",
     "sha256": "a9eb9e9604b840df937e06627423c012f0067a74b51ce1d15a2d6f324d21d252",
     "size_bytes": 1553
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/tests/test_hover_trim_rcs.py",
+    "repo": "Serenity-UAV",
+    "sha256": "37d2627545f93f3d798d97cd7218395bd35a9d500c9b28b7848fa018e5f9cadd",
+    "size_bytes": 13048
   },
   {
     "asset_type": "script",
@@ -6611,11 +6665,29 @@
   {
     "asset_type": "script",
     "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/tests/test_rear_cone_layout_fit.py",
+    "repo": "Serenity-UAV",
+    "sha256": "238f9703a5e41b6543e3c2268b8367ad56429820b68f63c90f498cfe1b1f60c7",
+    "size_bytes": 17171
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
     "mtime": 1794493364,
     "rel_path": "tools/tests/test_sync_operators_manual.py",
     "repo": "Serenity-UAV",
     "sha256": "361d5deea44ecaedd733310aa5d6ee704b4c7835d22f45a5365214031762a70a",
     "size_bytes": 2225
+  },
+  {
+    "asset_type": "script",
+    "ext": ".py",
+    "mtime": 1795047513,
+    "rel_path": "tools/tests/test_tail_edf_flow.py",
+    "repo": "Serenity-UAV",
+    "sha256": "028b839308211397ef8680b6c336d16326cd052a273fab4c1d51f4e05a7be73b",
+    "size_bytes": 5873
   },
   {
     "asset_type": "script",

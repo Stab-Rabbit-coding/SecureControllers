@@ -117,6 +117,10 @@ PIN_SET: Dict[Tuple[str, str], Optional[str]] = {
     ("WIFI-BT-ZB", "72"): None,
     # GNSS: crossed UART, RESET_N left open (internal pull-up, MAX-M10S Table 10).
     ("GPS", "9"): None,
+    # Finding F11 (S37): Pilot's MIL-1553 connector pin 3 carries logic GND onto the field
+    # side of the 1553 transformer, which defeats its isolation.  A transformer-coupled stub
+    # carries the bus pair and the shield (pin 4, PGND) only.  Left open; owner review.
+    ("MIL-1553", "3"): None,
     # Write-block PLD: I/O 18 drives the hub card reader's SD_WP (OD-23).
     ("SD-WB", "18"): "HUB_SD_WP",
     # microSD on the hub's card reader (OD-23) instead of the AM625 MMC.
