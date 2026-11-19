@@ -162,8 +162,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "8f3e720c9b3aea8b4c65e69fb57d4c9833e98b3ebe8b0d6729003da43c83dee4",
-    "size_bytes": 35491,
+    "sha256": "a59b93d07f2bb3e0356b201101012e37a4776b3c1d69b4eaf609dcac04bf03a4",
+    "size_bytes": 41501,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -174,8 +174,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "bc78f88c4043ed8c79c960560bc69ebfd072ced89d86d9c241c2784903ef0cc3",
-    "size_bytes": 21575,
+    "sha256": "08ae56cd6fda5ab2b985b16e4782e11e7cabb0b7b98cd1362f2c98e9cf4f0b32",
+    "size_bytes": 21675,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -1110,7 +1110,7 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "66c9ac9fd988706cf06200880c36d94848765988a7145b84a77b9691fee503a8",
+    "sha256": "40af0067f3ada0c7d8a578e06437e66e949b163eba98adb0b6ac83f1de83beff",
     "size_bytes": 16079,
     "verification_tier": "unverified",
     "verified": false
@@ -1362,8 +1362,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "96b4e294255fae4e53da473a98fa2eb0f23927f76237d0ce47f4bde77372e36c",
-    "size_bytes": 3445,
+    "sha256": "cbb74f45df33aa4d929e6842e402eb6dc95011fd171d924f9d376b5177087243",
+    "size_bytes": 4846,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -1520,6 +1520,18 @@
     "repo": "Serenity-UAV",
     "sha256": "a8a38358f4a9b7f4a9574f04ce9c8ced0ce9834b2e7cf4918ab2decf1423b0f0",
     "size_bytes": 3391,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "path": "tools/rear_cone_layout_fit.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "cc8a5ce0f7b559ec2ba68cc5efe56b8c8bd181aba593dedebda0868ac26c0701",
+    "size_bytes": 24644,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -1742,6 +1754,18 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": false,
+    "path": "tools/tests/test_auw_ledger_cooling.py",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "Serenity-UAV",
+    "sha256": "d2014749a82569f38ce607e7b0bcd935b9143121a097966bbac6e5940cc5808b",
+    "size_bytes": 1339,
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
     "path": "tools/tests/test_bay_a_fwd_mounts.py",
     "possible_duplicate": false,
     "renamed_duplicate": false,
@@ -1854,8 +1878,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "7e07d6e2b6b24273eb5f5b9e900a558b47c622f6c8256a6325df3616b7ef2ae2",
-    "size_bytes": 1558,
+    "sha256": "599cb2411a510734c547e0eaafad61fb345cd41599e71b1e4c48b3fce3af5c58",
+    "size_bytes": 1612,
     "verification_tier": "unverified",
     "verified": false
   },
@@ -1878,8 +1902,8 @@
     "possible_duplicate": false,
     "renamed_duplicate": false,
     "repo": "Serenity-UAV",
-    "sha256": "a1c165220ef2ac16dc212674150b65a8278df910d5e09535affe62fb0d9b2873",
-    "size_bytes": 1299,
+    "sha256": "bf32274d27fcd9218d4bd881957cf53922e6cc074f317491e61955cf34c602fa",
+    "size_bytes": 1353,
     "verification_tier": "unverified",
     "verified": false
   },

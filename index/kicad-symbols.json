@@ -310,6 +310,20 @@
   {
     "canonical_path": null,
     "duplicate_hash_match": false,
+    "library": "kicads",
+    "path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-Pilot-PB2.kicad_sym",
+    "possible_duplicate": false,
+    "renamed_duplicate": false,
+    "repo": "SecureControllers",
+    "sha256": "7588a521cf31b98a534ca57f30ab8407cef728b13cc0656912b0477a6c8d3f47",
+    "size_bytes": 396642,
+    "symbol_or_footprint_name": "NoNFO-Pilot-PB2",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "canonical_path": null,
+    "duplicate_hash_match": false,
     "library": "libraries",
     "path": "kicad/libraries/SecureControllers.kicad_sym",
     "possible_duplicate": false,

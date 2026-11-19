@@ -1,0 +1,8374 @@
+{
+ "_source": "Serenity-UAV 1f5a087; see port_blocks.py",
+ "parts": [
+  {
+   "ref": "CAN-TR",
+   "value": "ISOW1044BDFMR",
+   "fp": "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm",
+   "mpn": "ISOW1044BDFMR",
+   "mfr": "",
+   "ds": "isow1044.pdf Fig 7-1 / Table 7-1 (20-pin DFM) [REF-SENSOR-009]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "VIO",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "IN",
+     null,
+     "L"
+    ],
+    [
+     "3",
+     "TXD",
+     "MCAN0_TX",
+     "L"
+    ],
+    [
+     "4",
+     "STB",
+     "CAN_STB",
+     "L"
+    ],
+    [
+     "5",
+     "RXD",
+     "MCAN0_RX",
+     "L"
+    ],
+    [
+     "6",
+     "GNDIO",
+     "GND",
+     "L"
+    ],
+    [
+     "7",
+     "NC",
+     null,
+     "L"
+    ],
+    [
+     "8",
+     "EN/FLT",
+     null,
+     "L"
+    ],
+    [
+     "9",
+     "VDD",
+     "+5V",
+     "L"
+    ],
+    [
+     "10",
+     "GND1",
+     "GND",
+     "L"
+    ],
+    [
+     "20",
+     "VISOIN",
+     "VCC2_CAN",
+     "R"
+    ],
+    [
+     "19",
+     "CANH",
+     "CAN_H",
+     "R"
+    ],
+    [
+     "18",
+     "CANL",
+     "CAN_L",
+     "R"
+    ],
+    [
+     "17",
+     "GISOIN",
+     "GND2_CAN",
+     "R"
+    ],
+    [
+     "16",
+     "GISOIN",
+     "GND2_CAN",
+     "R"
+    ],
+    [
+     "15",
+     "GISOIN",
+     "GND2_CAN",
+     "R"
+    ],
+    [
+     "14",
+     "OUT",
+     null,
+     "R"
+    ],
+    [
+     "13",
+     "VSIN",
+     "VCC2_CAN_DCDC",
+     "R"
+    ],
+    [
+     "12",
+     "VISOOUT",
+     "VCC2_CAN_DCDC",
+     "R"
+    ],
+    [
+     "11",
+     "GND2",
+     "GND2_CAN_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "RS485",
+   "value": "ISOW1412DFMR",
+   "fp": "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm",
+   "mpn": "ISOW1412DFMR",
+   "mfr": "",
+   "ds": "isow1412.pdf Table 7-1 (20-pin DFM) [REF-SENSOR-010]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "VIO",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "D",
+     "RS485_TX",
+     "L"
+    ],
+    [
+     "3",
+     "DE",
+     "RS485_DE",
+     "L"
+    ],
+    [
+     "4",
+     "R",
+     "RS485_RX",
+     "L"
+    ],
+    [
+     "5",
+     "RE",
+     "RS485_DE",
+     "L"
+    ],
+    [
+     "6",
+     "GNDIO",
+     "GND",
+     "L"
+    ],
+    [
+     "7",
+     "OUT",
+     null,
+     "L"
+    ],
+    [
+     "8",
+     "EN/FLT",
+     "+3V3",
+     "L"
+    ],
+    [
+     "9",
+     "VDD",
+     "+5V",
+     "L"
+    ],
+    [
+     "10",
+     "GND1",
+     "GND",
+     "L"
+    ],
+    [
+     "20",
+     "A",
+     "RS485_A",
+     "R"
+    ],
+    [
+     "19",
+     "B",
+     "RS485_B",
+     "R"
+    ],
+    [
+     "18",
+     "Z",
+     "RS485_B",
+     "R"
+    ],
+    [
+     "17",
+     "Y",
+     "RS485_A",
+     "R"
+    ],
+    [
+     "16",
+     "VISOIN",
+     "VCC2_RS485",
+     "R"
+    ],
+    [
+     "15",
+     "GISOIN",
+     "GND2_RS485",
+     "R"
+    ],
+    [
+     "14",
+     "IN",
+     null,
+     "R"
+    ],
+    [
+     "13",
+     "MODE",
+     "GND2_RS485_DCDC",
+     "R"
+    ],
+    [
+     "12",
+     "VISOOUT",
+     "VCC2_RS485_DCDC",
+     "R"
+    ],
+    [
+     "11",
+     "GND2",
+     "GND2_RS485_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "TPM",
+   "value": "SLB9672XU20",
+   "fp": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm",
+   "mpn": "SLB9672XU20FW1611XUMA1",
+   "mfr": "",
+   "ds": "slb9672.pdf \u00a73.1.2 Tables 11-13 / Figure 6 (PG-UQFN-32) [REF-SENSOR-011]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "17",
+     "RST#",
+     "TPM_RSTN",
+     "L"
+    ],
+    [
+     "18",
+     "PIRQ#",
+     "TPM_IRQN",
+     "L"
+    ],
+    [
+     "19",
+     "SCLK",
+     "SPI0_CLK",
+     "L"
+    ],
+    [
+     "20",
+     "CS#",
+     "SPI0_CS_TPM",
+     "L"
+    ],
+    [
+     "21",
+     "MOSI",
+     "SPI0_MOSI",
+     "L"
+    ],
+    [
+     "24",
+     "MISO",
+     "SPI0_MISO",
+     "L"
+    ],
+    [
+     "3",
+     "GPIO_00",
+     null,
+     "L"
+    ],
+    [
+     "4",
+     "GPIO_01",
+     null,
+     "L"
+    ],
+    [
+     "7",
+     "GPIO_02",
+     null,
+     "L"
+    ],
+    [
+     "1",
+     "VDD",
+     "+3V3",
+     "R"
+    ],
+    [
+     "14",
+     "VDD",
+     "+3V3",
+     "R"
+    ],
+    [
+     "22",
+     "VDD",
+     "+3V3",
+     "R"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "9",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "23",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "32",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "16",
+     "NCI/GND",
+     "GND",
+     "R"
+    ],
+    [
+     "33",
+     "EP",
+     "GND",
+     "R"
+    ],
+    [
+     "10",
+     "NCI/VDD",
+     "TPM_P10_PU",
+     "R"
+    ],
+    [
+     "8",
+     "NCI/VDD",
+     null,
+     "R"
+    ],
+    [
+     "6",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "29",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "30",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "5",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "11",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "12",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "13",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "15",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "25",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "26",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "27",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "28",
+     "NCI",
+     null,
+     "R"
+    ],
+    [
+     "31",
+     "NCI",
+     null,
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "PHY-RMII2",
+   "value": "DP83825IRMQR",
+   "fp": "Package_DFN_QFN:Texas_RMQ0024A_WQFN-24-1EP_3x3mm_P0.4mm_EP1.9x1.9mm",
+   "mpn": "DP83825IRMQR",
+   "mfr": "",
+   "ds": "dp83825i.pdf Table 4-1 Pin Functions / Table 6-8..6-11 straps (WQFN-24 RMQ) [REF-SENSOR-029]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TX_EN",
+     "RMII2_TX_EN",
+     "L"
+    ],
+    [
+     "23",
+     "TX_D0",
+     "RMII2_TXD0",
+     "L"
+    ],
+    [
+     "24",
+     "TX_D1",
+     "RMII2_TXD1",
+     "L"
+    ],
+    [
+     "18",
+     "RX_D0/PhyAdd0",
+     "RMII2_RXD0",
+     "L"
+    ],
+    [
+     "17",
+     "RX_D1/Leader",
+     "RMII2_RXD1",
+     "L"
+    ],
+    [
+     "20",
+     "CRS_DV/PhyAdd1",
+     "RMII2_CRS_DV",
+     "L"
+    ],
+    [
+     "22",
+     "RX_ER/A-MDIX",
+     "RMII2_RX_ER",
+     "L"
+    ],
+    [
+     "2",
+     "50MHzOut",
+     "RMII2_REF_CLK",
+     "L"
+    ],
+    [
+     "16",
+     "MDC",
+     "MDC0",
+     "L"
+    ],
+    [
+     "15",
+     "MDIO",
+     "MDIO0",
+     "L"
+    ],
+    [
+     "5",
+     "RST_N",
+     "RMII2_PHY_RSTN",
+     "L"
+    ],
+    [
+     "3",
+     "INTR/PWRDN",
+     "RMII2_PHY_INTRN",
+     "L"
+    ],
+    [
+     "4",
+     "LED0/ANEG",
+     null,
+     "L"
+    ],
+    [
+     "13",
+     "XI",
+     "XI_25M",
+     "R"
+    ],
+    [
+     "12",
+     "XO",
+     null,
+     "R"
+    ],
+    [
+     "14",
+     "RBIAS",
+     "PHY-RMII2_RBIAS",
+     "R"
+    ],
+    [
+     "11",
+     "TD_P",
+     "ETH_RMII2_TXP",
+     "R"
+    ],
+    [
+     "10",
+     "TD_M",
+     "ETH_RMII2_TXN",
+     "R"
+    ],
+    [
+     "8",
+     "RD_P",
+     "ETH_RMII2_RXP",
+     "R"
+    ],
+    [
+     "7",
+     "RD_M",
+     "ETH_RMII2_RXN",
+     "R"
+    ],
+    [
+     "6",
+     "VDDA3V3",
+     "+3V3",
+     "R"
+    ],
+    [
+     "19",
+     "VDDIO",
+     "+3V3",
+     "R"
+    ],
+    [
+     "9",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "21",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "25",
+     "EP",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "NIC-USB1",
+   "value": "AX88772EQF",
+   "fp": "Package_DFN_QFN:QFN-32-1EP_4x4mm_P0.4mm_EP2.9x2.9mm",
+   "mpn": "AX88772EQF",
+   "mfr": "",
+   "ds": "AX88772E data sheet v1.03 Tables 1-1..1-5 (QFN-32 4x4) [REF-SENSOR-056]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "2",
+     "USB_DP",
+     "USB1_DP",
+     "L"
+    ],
+    [
+     "3",
+     "USB_DM",
+     "USB1_DM",
+     "L"
+    ],
+    [
+     "6",
+     "VBUS",
+     "NIC-USB1_VBUS",
+     "L"
+    ],
+    [
+     "7",
+     "PU",
+     "NIC-USB1_PU",
+     "L"
+    ],
+    [
+     "8",
+     "GPIO_8/PME",
+     "NIC-USB1_PME",
+     "L"
+    ],
+    [
+     "21",
+     "RST_N",
+     null,
+     "L"
+    ],
+    [
+     "23",
+     "XTAL_IN",
+     "NIC-USB1_XI",
+     "L"
+    ],
+    [
+     "24",
+     "XTAL_OUT",
+     "NIC-USB1_XO",
+     "L"
+    ],
+    [
+     "26",
+     "RSET",
+     "NIC-USB1_RSET",
+     "L"
+    ],
+    [
+     "15",
+     "LED_0",
+     null,
+     "L"
+    ],
+    [
+     "16",
+     "LED_1",
+     null,
+     "L"
+    ],
+    [
+     "17",
+     "GPIO_2",
+     null,
+     "L"
+    ],
+    [
+     "19",
+     "GPIO_3",
+     null,
+     "L"
+    ],
+    [
+     "20",
+     "GPIO_4",
+     null,
+     "L"
+    ],
+    [
+     "9",
+     "NC",
+     null,
+     "L"
+    ],
+    [
+     "27",
+     "MDIP0",
+     "ETH_USB1_TXP",
+     "R"
+    ],
+    [
+     "28",
+     "MDIN0",
+     "ETH_USB1_TXN",
+     "R"
+    ],
+    [
+     "30",
+     "MDIP1",
+     "ETH_USB1_RXP",
+     "R"
+    ],
+    [
+     "31",
+     "MDIN1",
+     "ETH_USB1_RXN",
+     "R"
+    ],
+    [
+     "12",
+     "LX",
+     "NIC-USB1_LX",
+     "R"
+    ],
+    [
+     "13",
+     "AVDD33_BUCK",
+     "+3V3",
+     "R"
+    ],
+    [
+     "14",
+     "AVSS33_BUCK",
+     "GND",
+     "R"
+    ],
+    [
+     "5",
+     "DVDD33",
+     "+3V3",
+     "R"
+    ],
+    [
+     "18",
+     "DVDD33",
+     "+3V3",
+     "R"
+    ],
+    [
+     "1",
+     "AVDD33_USB",
+     "NIC-USB1_AVDD33",
+     "R"
+    ],
+    [
+     "25",
+     "AVDD33_XTAL",
+     "NIC-USB1_AVDD33",
+     "R"
+    ],
+    [
+     "29",
+     "AVDD33_GBE",
+     "NIC-USB1_AVDD33",
+     "R"
+    ],
+    [
+     "4",
+     "DVDD11",
+     "NIC-USB1_DVDD11",
+     "R"
+    ],
+    [
+     "10",
+     "DVDD11",
+     "NIC-USB1_DVDD11",
+     "R"
+    ],
+    [
+     "11",
+     "DVDD11",
+     "NIC-USB1_DVDD11",
+     "R"
+    ],
+    [
+     "22",
+     "DVDD11",
+     "NIC-USB1_DVDD11",
+     "R"
+    ],
+    [
+     "32",
+     "AVDD11_GBE",
+     "NIC-USB1_AVDD11",
+     "R"
+    ],
+    [
+     "33",
+     "EP",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "T-RMII2-TX",
+   "value": "TC1G00",
+   "fp": "Serenity-Custom:Pulse_TC1G00_PulseChip_4.7x3.2mm",
+   "mpn": "TC1G00",
+   "mfr": "YAGEO (Pulse Electronics)",
+   "ds": "TC002.C PulseChip LAN Transformer Overview p.1-2, Fig. A / Circuit A [REF-SENSOR-061]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TXD+",
+     "ETH_RMII2_TXP",
+     "L"
+    ],
+    [
+     "7",
+     "CT_DEV",
+     "ETH_RMII2_CTD",
+     "L"
+    ],
+    [
+     "2",
+     "TXD-",
+     "ETH_RMII2_TXN",
+     "L"
+    ],
+    [
+     "6",
+     "TXL+",
+     "ETH_RMII2_LINE_TXP",
+     "R"
+    ],
+    [
+     "3",
+     "CT_LINE",
+     "ETH_RMII2_LINE_CTX",
+     "R"
+    ],
+    [
+     "5",
+     "TXL-",
+     "ETH_RMII2_LINE_TXN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "T-RMII2-RX",
+   "value": "TC1G00",
+   "fp": "Serenity-Custom:Pulse_TC1G00_PulseChip_4.7x3.2mm",
+   "mpn": "TC1G00",
+   "mfr": "YAGEO (Pulse Electronics)",
+   "ds": "TC002.C PulseChip LAN Transformer Overview p.1-2, Fig. A / Circuit A [REF-SENSOR-061]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "RXD+",
+     "ETH_RMII2_RXP",
+     "L"
+    ],
+    [
+     "7",
+     "CT_DEV",
+     "ETH_RMII2_CRD",
+     "L"
+    ],
+    [
+     "2",
+     "RXD-",
+     "ETH_RMII2_RXN",
+     "L"
+    ],
+    [
+     "6",
+     "RXL+",
+     "ETH_RMII2_LINE_RXP",
+     "R"
+    ],
+    [
+     "3",
+     "CT_LINE",
+     "ETH_RMII2_LINE_CRX",
+     "R"
+    ],
+    [
+     "5",
+     "RXL-",
+     "ETH_RMII2_LINE_RXN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "T-USB1-TX",
+   "value": "TC1G00",
+   "fp": "Serenity-Custom:Pulse_TC1G00_PulseChip_4.7x3.2mm",
+   "mpn": "TC1G00",
+   "mfr": "YAGEO (Pulse Electronics)",
+   "ds": "TC002.C PulseChip LAN Transformer Overview p.1-2, Fig. A / Circuit A [REF-SENSOR-061]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TXD+",
+     "ETH_USB1_TXP",
+     "L"
+    ],
+    [
+     "7",
+     "CT_DEV",
+     "ETH_USB1_CTD",
+     "L"
+    ],
+    [
+     "2",
+     "TXD-",
+     "ETH_USB1_TXN",
+     "L"
+    ],
+    [
+     "6",
+     "TXL+",
+     "ETH_USB1_LINE_TXP",
+     "R"
+    ],
+    [
+     "3",
+     "CT_LINE",
+     "ETH_USB1_LINE_CTX",
+     "R"
+    ],
+    [
+     "5",
+     "TXL-",
+     "ETH_USB1_LINE_TXN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "T-USB1-RX",
+   "value": "TC1G00",
+   "fp": "Serenity-Custom:Pulse_TC1G00_PulseChip_4.7x3.2mm",
+   "mpn": "TC1G00",
+   "mfr": "YAGEO (Pulse Electronics)",
+   "ds": "TC002.C PulseChip LAN Transformer Overview p.1-2, Fig. A / Circuit A [REF-SENSOR-061]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "RXD+",
+     "ETH_USB1_RXP",
+     "L"
+    ],
+    [
+     "7",
+     "CT_DEV",
+     "ETH_USB1_CRD",
+     "L"
+    ],
+    [
+     "2",
+     "RXD-",
+     "ETH_USB1_RXN",
+     "L"
+    ],
+    [
+     "6",
+     "RXL+",
+     "ETH_USB1_LINE_RXP",
+     "R"
+    ],
+    [
+     "3",
+     "CT_LINE",
+     "ETH_USB1_LINE_CRX",
+     "R"
+    ],
+    [
+     "5",
+     "RXL-",
+     "ETH_USB1_LINE_RXN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "IMU",
+   "value": "ICM-42688-P",
+   "fp": "Package_LGA:Bosch_LGA-14_3x2.5mm_P0.5mm",
+   "mpn": "ICM-42688-P",
+   "mfr": "",
+   "ds": "ds-000347-icm-42688-p-v1.6.pdf Table 10 (LGA-14), 4-wire SPI [REF-SENSOR-022]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "AP_SDO",
+     "SPI0_MISO",
+     "L"
+    ],
+    [
+     "14",
+     "AP_SDI",
+     "SPI0_MOSI",
+     "L"
+    ],
+    [
+     "13",
+     "AP_SCLK",
+     "SPI0_CLK",
+     "L"
+    ],
+    [
+     "12",
+     "AP_CS",
+     "SPI0_CS_IMU",
+     "L"
+    ],
+    [
+     "4",
+     "INT1",
+     "IMU_INT1",
+     "L"
+    ],
+    [
+     "9",
+     "INT2/FSYNC",
+     "IMU_INT2",
+     "L"
+    ],
+    [
+     "5",
+     "VDDIO",
+     "+3V3",
+     "R"
+    ],
+    [
+     "8",
+     "VDD",
+     "+3V3",
+     "R"
+    ],
+    [
+     "6",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "7",
+     "RESV(GND)",
+     "GND",
+     "R"
+    ],
+    [
+     "2",
+     "RESV",
+     "GND",
+     "R"
+    ],
+    [
+     "3",
+     "RESV",
+     "GND",
+     "R"
+    ],
+    [
+     "10",
+     "RESV",
+     "GND",
+     "R"
+    ],
+    [
+     "11",
+     "RESV",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "BARO",
+   "value": "BMP388",
+   "fp": "Serenity-Custom:Bosch_BMP388_LGA-10_2x2mm",
+   "mpn": "BMP388",
+   "mfr": "",
+   "ds": "bst-bmp388-ds001.pdf Table 50 (10-pin LGA 2x2), SPI 4-wire [REF-SENSOR-023]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "2",
+     "SCK",
+     "SPI0_CLK",
+     "L"
+    ],
+    [
+     "4",
+     "SDI",
+     "SPI0_MOSI",
+     "L"
+    ],
+    [
+     "5",
+     "SDO",
+     "SPI0_MISO",
+     "L"
+    ],
+    [
+     "6",
+     "CSB",
+     "SPI0_CS_BARO",
+     "L"
+    ],
+    [
+     "7",
+     "INT",
+     "BARO_INT",
+     "L"
+    ],
+    [
+     "1",
+     "VDDIO",
+     "+3V3",
+     "R"
+    ],
+    [
+     "10",
+     "VDD",
+     "+3V3",
+     "R"
+    ],
+    [
+     "3",
+     "VSS",
+     "GND",
+     "R"
+    ],
+    [
+     "8",
+     "VSS",
+     "GND",
+     "R"
+    ],
+    [
+     "9",
+     "VSS",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "1553-XCVR",
+   "value": "HI-6138PCIF",
+   "fp": "Serenity-Custom:Holt_HI-6138_QFN-48_6x6mm_P0.4mm_EP4.6mm",
+   "mpn": "HI-6138PCIF",
+   "mfr": "",
+   "ds": "hi-6138_v-rev-s.pdf p.1 Pin Configuration (48-pin 6x6 QFN) / Table 1 pp.16-18 / \u00a729 p.263",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "2",
+     "IRQ*",
+     "M1553_IRQN",
+     "L"
+    ],
+    [
+     "11",
+     "TXINHA",
+     "M1553_TX_INH",
+     "L"
+    ],
+    [
+     "15",
+     "CE*",
+     "SPI0_CS_1553",
+     "L"
+    ],
+    [
+     "17",
+     "SCK",
+     "SPI0_CLK",
+     "L"
+    ],
+    [
+     "18",
+     "SO",
+     "SPI0_MISO",
+     "L"
+    ],
+    [
+     "19",
+     "SI",
+     "SPI0_MOSI",
+     "L"
+    ],
+    [
+     "21",
+     "MCLK",
+     "M1553_MCLK",
+     "L"
+    ],
+    [
+     "23",
+     "MR*",
+     "M1553_MRN",
+     "L"
+    ],
+    [
+     "45",
+     "BUSA",
+     "M1553_P",
+     "R"
+    ],
+    [
+     "43",
+     "BUSA*",
+     "M1553_N",
+     "R"
+    ],
+    [
+     "40",
+     "BUSB",
+     null,
+     "R"
+    ],
+    [
+     "42",
+     "BUSB*",
+     null,
+     "R"
+    ],
+    [
+     "6",
+     "VCC",
+     "+3V3",
+     "R"
+    ],
+    [
+     "16",
+     "VCC",
+     "+3V3",
+     "R"
+    ],
+    [
+     "31",
+     "VCC",
+     "+3V3",
+     "R"
+    ],
+    [
+     "41",
+     "VCCP",
+     "+3V3",
+     "R"
+    ],
+    [
+     "44",
+     "VCCP",
+     "+3V3",
+     "R"
+    ],
+    [
+     "7",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "20",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "30",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "49",
+     "EP",
+     "GND",
+     "R"
+    ],
+    [
+     "1",
+     "MODE",
+     null,
+     "L"
+    ],
+    [
+     "3",
+     "ACKIRQ",
+     null,
+     "L"
+    ],
+    [
+     "4",
+     "MODE1760",
+     null,
+     "L"
+    ],
+    [
+     "5",
+     "READY",
+     null,
+     "L"
+    ],
+    [
+     "8",
+     "ACTIVE",
+     null,
+     "L"
+    ],
+    [
+     "9",
+     "RTSSF",
+     null,
+     "L"
+    ],
+    [
+     "10",
+     "AUTOEN",
+     null,
+     "L"
+    ],
+    [
+     "12",
+     "TXINHB",
+     null,
+     "L"
+    ],
+    [
+     "13",
+     "RTAP",
+     null,
+     "L"
+    ],
+    [
+     "14",
+     "RTA0",
+     null,
+     "L"
+    ],
+    [
+     "22",
+     "RTA1",
+     null,
+     "L"
+    ],
+    [
+     "24",
+     "RTA2",
+     null,
+     "L"
+    ],
+    [
+     "25",
+     "RTA3",
+     null,
+     "L"
+    ],
+    [
+     "26",
+     "RTA4",
+     null,
+     "L"
+    ],
+    [
+     "27",
+     "LOCK",
+     null,
+     "L"
+    ],
+    [
+     "28",
+     "MTTCLK",
+     null,
+     "L"
+    ],
+    [
+     "29",
+     "EMISO",
+     null,
+     "L"
+    ],
+    [
+     "32",
+     "EMOSI",
+     null,
+     "L"
+    ],
+    [
+     "33",
+     "ECS*",
+     null,
+     "L"
+    ],
+    [
+     "34",
+     "EECOPY",
+     null,
+     "L"
+    ],
+    [
+     "35",
+     "ESCLK",
+     null,
+     "L"
+    ],
+    [
+     "36",
+     "TTCLK",
+     null,
+     "L"
+    ],
+    [
+     "37",
+     "RTMC8*",
+     null,
+     "L"
+    ],
+    [
+     "38",
+     "EE2K",
+     null,
+     "L"
+    ],
+    [
+     "39",
+     "MTSTOFF",
+     null,
+     "L"
+    ],
+    [
+     "46",
+     "TEST",
+     null,
+     "L"
+    ],
+    [
+     "47",
+     "BENDI",
+     null,
+     "L"
+    ],
+    [
+     "48",
+     "BCTRIG",
+     null,
+     "L"
+    ]
+   ]
+  },
+  {
+   "ref": "1553-XFM",
+   "value": "PM-DB2791S",
+   "fp": "Serenity-Custom:Xfmr_1553_SMD_0.40in_8pin",
+   "mpn": "PM-DB2791S",
+   "mfr": "",
+   "ds": "PremierMagnetics_DB2791S.pdf Fig 1 schematic (1-3 : 4-8 = 1:2.5) / Fig 2 dims [REF-SENSOR-025]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "PRI_P",
+     "M1553_P",
+     "L"
+    ],
+    [
+     "2",
+     "PRI_CT",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "PRI_N",
+     "M1553_N",
+     "L"
+    ],
+    [
+     "4",
+     "SEC_P",
+     "M1553_SEC_P",
+     "R"
+    ],
+    [
+     "5",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "6",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "7",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "8",
+     "SEC_N",
+     "M1553_SEC_N",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "U-3V3",
+   "value": "TPSM828224SILR",
+   "fp": "Serenity-Custom:TI_SIL0010D_uSiP-10_2.0x2.5mm_P0.5mm",
+   "mpn": "TPSM828224SILR",
+   "mfr": "",
+   "ds": "tpsm82822.pdf SLVSEP0F Table 6-1 Pin Functions (uSiL SIL0010D) [REF-PWR-008]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "VIN",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "VIN",
+     "+5V",
+     "L"
+    ],
+    [
+     "3",
+     "EN",
+     "+5V",
+     "L"
+    ],
+    [
+     "4",
+     "PG",
+     null,
+     "L"
+    ],
+    [
+     "5",
+     "VOUT",
+     "+3V3",
+     "R"
+    ],
+    [
+     "6",
+     "VOUT",
+     "+3V3",
+     "R"
+    ],
+    [
+     "7",
+     "VOUT",
+     "+3V3",
+     "R"
+    ],
+    [
+     "8",
+     "FB",
+     "+3V3",
+     "R"
+    ],
+    [
+     "9",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "10",
+     "GND",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "PWR-IN",
+   "value": "Nano-Fit 4P",
+   "fp": "Serenity-Custom:Molex_NanoFit_1x04_Horizontal",
+   "mpn": "105313-1204",
+   "mfr": "",
+   "ds": "Pilot.md \u00a714 power entry (Molex Nano-Fit 2.5 mm, 4 ckt)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "+5V_IN",
+     "+5V_IN",
+     "L"
+    ],
+    [
+     "2",
+     "+5V_IN",
+     "+5V_IN",
+     "L"
+    ],
+    [
+     "3",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "4",
+     "GND",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB1",
+   "value": "742792512",
+   "fp": "Inductor_SMD:L_0805_2012Metric",
+   "mpn": "742792512",
+   "mfr": "",
+   "ds": "Pilot.md \u00a76 pi filter bead 600R@100MHz 2A",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IN",
+     "+5V_IN",
+     "L"
+    ],
+    [
+     "2",
+     "OUT",
+     "+5V",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-IN1",
+   "value": "47uF 10V X5R",
+   "fp": "Capacitor_SMD:C_1210_3225Metric",
+   "mpn": "LMK325BJ476KMHP",
+   "mfr": "Taiyo Yuden",
+   "ds": "Pilot.md \u00a76 C11 input bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V_IN",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-IN2",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "Pilot.md \u00a76 C12 filtered bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-IN3",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "Pilot.md \u00a76 C12 HF bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-PGND",
+   "value": "0R",
+   "fp": "Resistor_SMD:R_0805_2012Metric",
+   "mpn": "RC0805JR-070RL",
+   "mfr": "YAGEO",
+   "ds": "Pilot.md \u00a77 single-point GND<->PGND link",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GND",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-3V3-IN",
+   "value": "22uF 6.3V X6S",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "MSASJ168BC6226MTNA01",
+   "mfr": "",
+   "ds": "TPSM828224 CIN at VIN/GND [REF-PWR-008] [REF-PWR-011]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-3V3-HF",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "TPSM828224 CIN HF",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-3V3-O1",
+   "value": "22uF 6.3V X6S",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "MSASJ168BC6226MTNA01",
+   "mfr": "",
+   "ds": "TPSM828224 COUT (TI Table 9-1 JMK107BC6226MA-T, renumbered) [REF-PWR-008] [REF-PWR-011]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-3V3-O2",
+   "value": "22uF 6.3V X6S",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "MSASJ168BC6226MTNA01",
+   "mfr": "",
+   "ds": "TPSM828224 COUT, load-step margin [REF-PWR-008] [REF-PWR-011]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN1",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VDD HF bypass, 0402 <1 mm (SLLSFF7A 13.1 #1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN2",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VDD bulk \u00a713.1",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN3",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VIO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN4",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VISOOUT HF bypass, 0402 <1 mm (SLLSFF7A 13.1 #1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_CAN_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_CAN_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN5",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VISOOUT bulk, 2-4 mm (SLLSFF7A 13.1 item 2)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_CAN_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_CAN_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-CAN-V",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "ISOW1044 VISOOUT->VISOIN bead (SLLSFF7A 13.1 item 4) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "VCC2_CAN_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "VCC2_CAN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-CAN-G",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "ISOW1044 GND2(11)->GISOIN(15) bead (SLLSFF7A 13.1 item 4) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GND2_CAN_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND2_CAN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-CAN6",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "ISOW1044 VISOIN bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_CAN",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_CAN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "CHK-CAN",
+   "value": "SRF2012-100Y",
+   "fp": "Serenity-Custom:Bourns_SRF2012_4T",
+   "mpn": "SRF2012-121YA",
+   "mfr": "",
+   "ds": "SRF2012A.pdf windings 1-2 / 4-3 [REF-SENSOR-026]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "W1_IN",
+     "CAN_H",
+     "L"
+    ],
+    [
+     "2",
+     "W1_OUT",
+     "CAN_H_F",
+     "L"
+    ],
+    [
+     "4",
+     "W2_IN",
+     "CAN_L",
+     "R"
+    ],
+    [
+     "3",
+     "W2_OUT",
+     "CAN_L_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "TVS-CAN",
+   "value": "ESD2CAN24-Q1",
+   "fp": "Package_TO_SOT_SMD:SOT-323_SC-70",
+   "mpn": "ESD2CAN24DCKRQ1",
+   "mfr": "Texas Instruments",
+   "ds": "Dual-line CAN TVS at the field connector, +/-24 V, 3 pF (TI SLVSFW5D) [REF-SENSOR-053]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IO1",
+     "CAN_H_F",
+     "L"
+    ],
+    [
+     "2",
+     "IO2",
+     "CAN_L_F",
+     "L"
+    ],
+    [
+     "3",
+     "GND",
+     "GND2_CAN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-CANT",
+   "value": "120R",
+   "fp": "Resistor_SMD:R_0603_1608Metric",
+   "mpn": "RC0603FR-07120RL",
+   "mfr": "YAGEO",
+   "ds": "CAN bus termination \u2014 populate ONLY at a bus end node (DNP default)",
+   "dnp": true,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "CAN_H_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "CAN_L_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "CAN-FD",
+   "value": "SM04B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal",
+   "mpn": "SM04B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "Pilot.md \u00a714 J_CAN",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "GND",
+     "GND2_CAN",
+     "L"
+    ],
+    [
+     "2",
+     "CAN_H",
+     "CAN_H_F",
+     "L"
+    ],
+    [
+     "3",
+     "CAN_L",
+     "CAN_L_F",
+     "L"
+    ],
+    [
+     "4",
+     "VCC",
+     "VCC2_CAN",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "X2Y-CAN",
+   "value": "4.7nF X2Y",
+   "fp": "Serenity-Custom:X2Y_0805_4T",
+   "mpn": "CX0805MRX7R0BB472",
+   "mfr": "",
+   "ds": "Pilot.md \u00a72 GND1<->GND2 RF bridge (Yageo X2Y 0805)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GND",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "G1",
+     "GND2_CAN",
+     "R"
+    ],
+    [
+     "4",
+     "G2",
+     "GND2_CAN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-1",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VDD HF bypass, 0402 <1 mm (SLLSF86C 13.1 #1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-2",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VDD bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-3",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VIO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-4",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VISOOUT HF bypass, 0402 <1 mm (SLLSF86C 13.1 #1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_RS485_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_RS485_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-5",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VISOOUT bulk (SLLSF86C 13.1 item 2)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_RS485_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_RS485_DCDC",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-485-V",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "ISOW1412 VISOOUT->VISOIN bead (SLLSF86C 13.1 item 4) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "VCC2_RS485_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "VCC2_RS485",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-485-G",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "ISOW1412 GND2(11)->GISOIN(15) bead (SLLSF86C 13.1 item 4) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GND2_RS485_DCDC",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND2_RS485",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-485-6",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "ISOW1412 VISOIN bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "VCC2_RS485",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND2_RS485",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "CHK-RS485",
+   "value": "SRF2012-100Y",
+   "fp": "Serenity-Custom:Bourns_SRF2012_4T",
+   "mpn": "SRF2012-121YA",
+   "mfr": "",
+   "ds": "SRF2012A.pdf windings 1-2 / 4-3 [REF-SENSOR-026]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "W1_IN",
+     "RS485_A",
+     "L"
+    ],
+    [
+     "2",
+     "W1_OUT",
+     "RS485_A_F",
+     "L"
+    ],
+    [
+     "4",
+     "W2_IN",
+     "RS485_B",
+     "R"
+    ],
+    [
+     "3",
+     "W2_OUT",
+     "RS485_B_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "TVS-RS485",
+   "value": "CDSOT23-SM712",
+   "fp": "Package_TO_SOT_SMD:SOT-23",
+   "mpn": "CDSOT23-SM712",
+   "mfr": "Bourns",
+   "ds": "Asymmetric -7/+12 V RS-485 TVS at the field connector (Bourns) [REF-SENSOR-054]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IO1",
+     "RS485_A_F",
+     "L"
+    ],
+    [
+     "2",
+     "IO2",
+     "RS485_B_F",
+     "L"
+    ],
+    [
+     "3",
+     "COM",
+     "GND2_RS485",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-485T",
+   "value": "120R",
+   "fp": "Resistor_SMD:R_0603_1608Metric",
+   "mpn": "RC0603FR-07120RL",
+   "mfr": "YAGEO",
+   "ds": "RS-485 termination \u2014 populate ONLY at a bus end node (DNP default)",
+   "dnp": true,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RS485_A_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "RS485_B_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "RS-485",
+   "value": "SM04B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal",
+   "mpn": "SM04B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "Pilot.md \u00a714 J_485",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "GND",
+     "GND2_RS485",
+     "L"
+    ],
+    [
+     "2",
+     "A",
+     "RS485_A_F",
+     "L"
+    ],
+    [
+     "3",
+     "B",
+     "RS485_B_F",
+     "L"
+    ],
+    [
+     "4",
+     "VCC",
+     "VCC2_RS485",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "X2Y-RS485",
+   "value": "4.7nF X2Y",
+   "fp": "Serenity-Custom:X2Y_0805_4T",
+   "mpn": "CX0805MRX7R0BB472",
+   "mfr": "",
+   "ds": "Pilot.md \u00a73 GND1<->GND2 RF bridge (Yageo X2Y 0805)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GND",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "G1",
+     "GND2_RS485",
+     "R"
+    ],
+    [
+     "4",
+     "G2",
+     "GND2_RS485",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-ETH-RMII2",
+   "value": "SM04B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal",
+   "mpn": "SM04B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "J-ETH-RMII2 line pairs to the T-RMII2-TX / -RX line windings",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TXP",
+     "ETH_RMII2_LINE_TXP",
+     "L"
+    ],
+    [
+     "2",
+     "TXN",
+     "ETH_RMII2_LINE_TXN",
+     "L"
+    ],
+    [
+     "3",
+     "RXP",
+     "ETH_RMII2_LINE_RXP",
+     "L"
+    ],
+    [
+     "4",
+     "RXN",
+     "ETH_RMII2_LINE_RXN",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-ETH-USB1",
+   "value": "SM04B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal",
+   "mpn": "SM04B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "J-ETH-USB1 line pairs to the T-USB1-TX / -RX line windings",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TXP",
+     "ETH_USB1_LINE_TXP",
+     "L"
+    ],
+    [
+     "2",
+     "TXN",
+     "ETH_USB1_LINE_TXN",
+     "L"
+    ],
+    [
+     "3",
+     "RXP",
+     "ETH_USB1_LINE_RXP",
+     "L"
+    ],
+    [
+     "4",
+     "RXN",
+     "ETH_USB1_LINE_RXN",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-RMII2-BST",
+   "value": "75R",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0775RL",
+   "mfr": "YAGEO",
+   "ds": "J-ETH-RMII2 line TX centre tap Bob-Smith (Fig 8-3 R135)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "ETH_RMII2_LINE_CTX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "ETH_RMII2_BS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-RMII2-BSR",
+   "value": "75R",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0775RL",
+   "mfr": "YAGEO",
+   "ds": "J-ETH-RMII2 line RX centre tap Bob-Smith (Fig 8-3 R143)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "ETH_RMII2_LINE_CRX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "ETH_RMII2_BS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-BS",
+   "value": "10nF 2kV",
+   "fp": "Capacitor_SMD:C_1808_4520Metric",
+   "mpn": "C1808X103K202T",
+   "mfr": "Holy Stone",
+   "ds": "J-ETH-RMII2 Bob-Smith HV cap to chassis (Fig 8-3 C38)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_RMII2_BS",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-BST",
+   "value": "75R",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0775RL",
+   "mfr": "YAGEO",
+   "ds": "J-ETH-USB1 line TX centre tap Bob-Smith",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "ETH_USB1_LINE_CTX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "ETH_USB1_BS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-BSR",
+   "value": "75R",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0775RL",
+   "mfr": "YAGEO",
+   "ds": "J-ETH-USB1 line RX centre tap Bob-Smith",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "ETH_USB1_LINE_CRX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "ETH_USB1_BS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-BS",
+   "value": "10nF 2kV",
+   "fp": "Capacitor_SMD:C_1808_4520Metric",
+   "mpn": "C1808X103K202T",
+   "mfr": "Holy Stone",
+   "ds": "J-ETH-USB1 Bob-Smith HV cap to chassis",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_USB1_BS",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "X-25M",
+   "value": "25MHz 3.3V",
+   "fp": "Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm",
+   "mpn": "ECS-2520MV-250-BN-TR",
+   "mfr": "",
+   "ds": "25 MHz reference for the DP83825I XI (RMII Leader, +/-50 ppm, SNLS638C); ECS-2520MV.pdf [REF-PWR-004]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TRI",
+     null,
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "OUT",
+     "XI_25M",
+     "R"
+    ],
+    [
+     "4",
+     "VDD",
+     "+3V3",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-25M",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "oscillator VDD bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-1553P",
+   "value": "55R 2%",
+   "fp": "Resistor_SMD:R_0603_1608Metric",
+   "mpn": "RC0603FR-0754R9L",
+   "mfr": "YAGEO",
+   "ds": "MIL-STD-1553B \u00a74.5.1.5.2 direct-coupled stub isolation resistor (hi-1573.pdf Fig 2)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "M1553_SEC_P",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "BUS_1553_P",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-1553N",
+   "value": "55R 2%",
+   "fp": "Resistor_SMD:R_0603_1608Metric",
+   "mpn": "RC0603FR-0754R9L",
+   "mfr": "YAGEO",
+   "ds": "MIL-STD-1553B \u00a74.5.1.5.2 direct-coupled stub isolation resistor",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "M1553_SEC_N",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "BUS_1553_N",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "TVS-1553P",
+   "value": "SMAJ33CA",
+   "fp": "Diode_SMD:D_SMA",
+   "mpn": "SMAJ33CA",
+   "mfr": "Bourns",
+   "ds": "Pilot.md \u00a75 bidirectional TVS, BUS_P to PGND [REF-SENSOR-055]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "BUS_1553_P",
+     "L"
+    ],
+    [
+     "2",
+     "K",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "TVS-1553N",
+   "value": "SMAJ33CA",
+   "fp": "Diode_SMD:D_SMA",
+   "mpn": "SMAJ33CA",
+   "mfr": "Bourns",
+   "ds": "Pilot.md \u00a75 bidirectional TVS, BUS_N to PGND [REF-SENSOR-055]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "BUS_1553_N",
+     "L"
+    ],
+    [
+     "2",
+     "K",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "MIL-1553",
+   "value": "SM04B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal",
+   "mpn": "SM04B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "Pilot.md \u00a714 J_1553",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "BUS_P",
+     "BUS_1553_P",
+     "L"
+    ],
+    [
+     "2",
+     "BUS_N",
+     "BUS_1553_N",
+     "L"
+    ],
+    [
+     "3",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "4",
+     "SHIELD",
+     "PGND",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1553A",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "HI-6138 VCC (pins 6/16/31) bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1553B",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "HI-6138 VCCP (pins 41/44) bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1553C",
+   "value": "10uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "CC0805KKX5R6BB106",
+   "mfr": "YAGEO",
+   "ds": "HI-6138 transceiver (VCCP) bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1553D",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "HI-6138 VCCP second pin bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-1553IRQ",
+   "value": "10k",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0710KL",
+   "mfr": "YAGEO",
+   "ds": "HI-6138 IRQ open-drain pull-up (DS6138 Table 1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "M1553_IRQN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "X-50M",
+   "value": "50MHz 3.3V",
+   "fp": "Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm",
+   "mpn": "ECS-2520MV-500-BN-TR",
+   "mfr": "",
+   "ds": "HI-6138 MCLK 50.0 MHz +/-100 ppm required (DS6138 Table 1); +/-50 ppm part (ECS-2520MV.pdf)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "TRI",
+     null,
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "OUT",
+     "M1553_MCLK",
+     "R"
+    ],
+    [
+     "4",
+     "VDD",
+     "+3V3",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-50M",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "50 MHz oscillator VDD bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-IMU1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "ICM-42688-P VDD bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-IMU2",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "ICM-42688-P VDDIO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-BARO1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "BMP388 VDD bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-BARO2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "BMP388 VDDIO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-TPM1",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 \u00a73.1.3 typical schematic bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-TPM2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 VDD bypass (pin 1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-TPM3",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 VDD bypass (pin 14)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-TPM4",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 VDD bypass (pin 22)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-TPMCS",
+   "value": "10k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-0710KL",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 CS# pull-up (\u00a73.1.3)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "SPI0_CS_TPM",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-TPM10",
+   "value": "10k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-0710KL",
+   "mfr": "YAGEO",
+   "ds": "SLB9672 pin 10 NCI/VDD pull-up (Table 13, preferred)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "TPM_P10_PU",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-PWM",
+   "value": "TSM-108-01-L-DV",
+   "fp": "Serenity-Custom:Samtec_TSM-108-01-x-DV",
+   "mpn": "TSM-108-01-L-DV",
+   "mfr": "",
+   "ds": "Servo / ESC signal block, 2x8 SMT 0.1 in (Samtec TSM -DV); 4 ch x (SIG, +5V, GND, PGND shield) along a row; SIG = SoC PRU balls DSHOT0-3 (3.3 V logic; PWM / DSHOT / BDSHOT capable) [REF-CONN-001]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "SIG0",
+     "DSHOT0",
+     "L"
+    ],
+    [
+     "3",
+     "+5V_0",
+     "+5V",
+     "L"
+    ],
+    [
+     "5",
+     "GND0",
+     "GND",
+     "L"
+    ],
+    [
+     "7",
+     "SHLD0",
+     "PGND",
+     "L"
+    ],
+    [
+     "9",
+     "SIG1",
+     "DSHOT1",
+     "L"
+    ],
+    [
+     "11",
+     "+5V_1",
+     "+5V",
+     "L"
+    ],
+    [
+     "13",
+     "GND1",
+     "GND",
+     "L"
+    ],
+    [
+     "15",
+     "SHLD1",
+     "PGND",
+     "L"
+    ],
+    [
+     "2",
+     "SIG2",
+     "DSHOT2",
+     "R"
+    ],
+    [
+     "4",
+     "+5V_2",
+     "+5V",
+     "R"
+    ],
+    [
+     "6",
+     "GND2",
+     "GND",
+     "R"
+    ],
+    [
+     "8",
+     "SHLD2",
+     "PGND",
+     "R"
+    ],
+    [
+     "10",
+     "SIG3",
+     "DSHOT3",
+     "R"
+    ],
+    [
+     "12",
+     "+5V_3",
+     "+5V",
+     "R"
+    ],
+    [
+     "14",
+     "GND3",
+     "GND",
+     "R"
+    ],
+    [
+     "16",
+     "SHLD3",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-RMII2-RBIAS",
+   "value": "6.49k 1%",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-076K49L",
+   "mfr": "YAGEO",
+   "ds": "DP83825I RBIAS to GND (pin 14)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "PHY-RMII2_RBIAS",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-RMII2-AD0",
+   "value": "2.49k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-072K49P",
+   "mfr": "YAGEO",
+   "ds": "PhyAdd[0] strap mode 1 -> PHY address 1 (Table 6-8/6-9)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "RMII2_RXD0",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-A1",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "VDDA3V3 HF bypass (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-A2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "VDDA3V3 bypass (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-A3",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "VDDA3V3 bulk (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-IO1",
+   "value": "10nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX7R7BB103",
+   "mfr": "YAGEO",
+   "ds": "VDDIO HF bypass (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-IO2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "VDDIO bypass (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-IO3",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "VDDIO bulk (Fig 8-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-CTD1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "device-side TX centre tap to GND (Fig 8-3 C41)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_RMII2_CTD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-CTD2",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "device-side TX centre tap to GND (Fig 8-3 C44)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_RMII2_CTD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-CRD1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "device-side RX centre tap to GND (Fig 8-3 C75)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_RMII2_CRD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RMII2-CRD2",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "device-side RX centre tap to GND (Fig 8-3 C74)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_RMII2_CRD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-USB1",
+   "value": "2.2uH",
+   "fp": "Inductor_SMD:L_Murata_DFE201610P",
+   "mpn": "DFE201610P-2R2M=P2",
+   "mfr": "Murata",
+   "ds": "AX88772E 1.1 V buck inductor, LX pin 12 (demo L1 2.2 uH 2016, Darfon IP20162R2MP59); MPN to be confirmed against a downloaded data sheet (avionics/WBS.md)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "NIC-USB1_LX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_DVDD11",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-LXB",
+   "value": "10uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "CC0603KRX5R5BB106",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 buck output bulk at pin 12 (demo C2)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-LXH",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 buck output HF at pin 12 (demo C3)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-D04",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 pin 4 (demo C20)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-D10",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 pin 10 (demo C18)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-D11",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 pin 11 (demo C24)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-D22",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD11 pin 22 (demo C19)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-USB1-A11",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "DVDD11 -> AVDD11_GBE bead (demo L4) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "NIC-USB1_DVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_AVDD11",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A11B",
+   "value": "10uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "CC0603KRX5R5BB106",
+   "mfr": "YAGEO",
+   "ds": "AVDD11_GBE pin 32 bulk (demo C15)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A11H1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD11_GBE pin 32 (demo C14)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A11H2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD11_GBE pin 32 (demo C17)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD11",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-BKB",
+   "value": "4.7uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "CC0603MRX5R6BB475",
+   "mfr": "YAGEO",
+   "ds": "AVDD33_BUCK pin 13 bulk (demo C5, note 2-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-BKH",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD33_BUCK pin 13 HF (demo C6, note 2-4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-IO5",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD33 pin 5 (demo C23)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-IO18",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "DVDD33 pin 18 (demo C16)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-USB1-A33",
+   "value": "330R@100MHz",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "BLM15EX331SN1D",
+   "mfr": "",
+   "ds": "+3V3 -> AVDD33 analog bead (demo L5) [REF-SENSOR-043]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_AVDD33",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A33B",
+   "value": "4.7uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "CC0603MRX5R6BB475",
+   "mfr": "YAGEO",
+   "ds": "AVDD33 analog bulk (demo C27)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD33",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A33H1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD33_USB pin 1 (demo C21)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD33",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A33H2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD33_XTAL pin 25 (demo C22)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD33",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A33H3",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD33_GBE pin 29 (demo C25)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD33",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-A33H4",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "CC0201KRX5R6BB104",
+   "mfr": "YAGEO",
+   "ds": "AVDD33 bead output (demo C26)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_AVDD33",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "Y-USB1",
+   "value": "20MHz CL20pF",
+   "fp": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+   "mpn": "ECS-200-20-33-AGM-TR",
+   "mfr": "ECS Inc.",
+   "ds": "AX88772E 20 MHz crystal, ECX-32: CL 20 pF, +/-25 ppm, +/-30 ppm, ESR 60 R max (app note \u00a75) [REF-SENSOR-059]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "X1",
+     "NIC-USB1_XI",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "X2",
+     "NIC-USB1_XO_R",
+     "R"
+    ],
+    [
+     "4",
+     "GND",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-XI",
+   "value": "15pF C0G",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402JRNPO9BN150",
+   "mfr": "YAGEO",
+   "ds": "XTAL_IN load cap (demo C11; trim per app note \u00a75 note 1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_XI",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-XO",
+   "value": "15pF C0G",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402JRNPO9BN150",
+   "mfr": "YAGEO",
+   "ds": "XTAL_OUT load cap, crystal side of R-USB1-XO (demo C12)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "NIC-USB1_XO_R",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-XO",
+   "value": "200R",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-07200RP",
+   "mfr": "YAGEO",
+   "ds": "XTAL_OUT drive-level resistor (demo R7)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "NIC-USB1_XO",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_XO_R",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-RSET",
+   "value": "24k 1%",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "RC0402FR-0724KL",
+   "mfr": "YAGEO",
+   "ds": "RSET pin 26 to analog GND, 24 kOhm 1 % (data sheet Table 1-4; demo note 2-8)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "NIC-USB1_RSET",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-VBUS",
+   "value": "4.7k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-074K7L",
+   "mfr": "YAGEO",
+   "ds": "VBUS pin 6 pull-up to 3.3 V (demo R4); PB2-I P1-31 GPIO0_59 can pull it low (owner 2026-10-18)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_VBUS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-PU",
+   "value": "4.7k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-074K7L",
+   "mfr": "YAGEO",
+   "ds": "PU pin 7 pull-up to 3.3 V (data sheet Table 1-4; demo R3)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_PU",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-USB1-PME",
+   "value": "4.7k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "RC0201FR-074K7L",
+   "mfr": "YAGEO",
+   "ds": "GPIO_8/PME pin 8 must be pulled high (demo note 2-7, R2)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "NIC-USB1_PME",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-CTD",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "T-USB1-TX device-side centre tap to GND (demo C7)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_USB1_CTD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-USB1-CRD",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX7R7BB104",
+   "mfr": "YAGEO",
+   "ds": "T-USB1-RX device-side centre tap to GND (demo C4)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "ETH_USB1_CRD",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-SPI",
+   "value": "SM06B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal",
+   "mpn": "SM06B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "Expansion port, DS-009 SPI order less SS2: 5V, SCK, MISO, MOSI, !SS1, GND (eGH.pdf)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "VCC",
+     "EXT_SPI_5V",
+     "L"
+    ],
+    [
+     "2",
+     "SCK",
+     "EXT_SPI_SCK",
+     "L"
+    ],
+    [
+     "3",
+     "MISO",
+     "EXT_SPI_MISO",
+     "L"
+    ],
+    [
+     "4",
+     "MOSI",
+     "EXT_SPI_MOSI",
+     "L"
+    ],
+    [
+     "5",
+     "SS1",
+     "EXT_SPI_SS1",
+     "R"
+    ],
+    [
+     "6",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "MP",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "F-SPI",
+   "value": "MF-PSMF035X",
+   "fp": "Fuse:Fuse_0805_2012Metric",
+   "mpn": "MF-PSMF035X-2",
+   "mfr": "",
+   "ds": "SPI port VCC PTC, 0.35 A hold / 0.75 A trip (Bourns MF-PSMF) [REF-PWR-013]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "EXT_SPI_5V",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-SPI5",
+   "value": "1uF 10V",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "CC0402KRX5R6BB105",
+   "mfr": "YAGEO",
+   "ds": "SPI port VCC bypass at the connector",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "EXT_SPI_5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "ESD-SPI",
+   "value": "TPD4E05U06DQAR",
+   "fp": "Serenity-Custom:TI_DQA0010A_USON-10_2.5x1.0mm_P0.5mm",
+   "mpn": "TPD4E05U06DQAR",
+   "mfr": "",
+   "ds": "SPI port ESD, 4 ch (SLVSBO7O Table 4-2) [REF-SENSOR-044]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@1f5a087",
+   "pins": [
+    [
+     "1",
+     "D1+",
+     "EXT_SPI_SCK",
+     "L"
+    ],
+    [
+     "2",
+     "D1-",
+     "EXT_SPI_MISO",
+     "L"
+    ],
+    [
+     "3",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "4",
+     "D2+",
+     "EXT_SPI_MOSI",
+     "L"
+    ],
+    [
+     "5",
+     "D2-",
+     "EXT_SPI_SS1",
+     "L"
+    ],
+    [
+     "6",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "7",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "8",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "9",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "10",
+     "NC",
+     null,
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "U-3V3RF",
+   "value": "TPS63031DSKR",
+   "fp": "Serenity-Custom:TPS6303x_VSON-10_2p5",
+   "mpn": "TPS63031DSKR",
+   "mfr": "",
+   "ds": "tps63031.pdf Pin Functions (VSON-10 DSK) \u2014 dedicated buck-boost RF rail so WIFI-BT-ZB (AVDD33)/WIOE5 mLRS RF supply stays regulated even if +5V sags (TACCO.md \u00a712 power budget +3V3_RF 1.5A cont / 2.0A peak)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "5",
+     "VIN",
+     "+5V",
+     "L"
+    ],
+    [
+     "8",
+     "VINA",
+     "+5V",
+     "L"
+    ],
+    [
+     "6",
+     "EN",
+     "+3V3",
+     "L"
+    ],
+    [
+     "7",
+     "PS/SYNC",
+     "GND",
+     "L"
+    ],
+    [
+     "9",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "4",
+     "L1",
+     "RF_SW1",
+     "R"
+    ],
+    [
+     "2",
+     "L2",
+     "RF_SW2",
+     "R"
+    ],
+    [
+     "3",
+     "PGND",
+     "GND",
+     "R"
+    ],
+    [
+     "10",
+     "FB",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "1",
+     "VOUT",
+     "+3V3_RF",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "U-1V8RF",
+   "value": "TLV75718PDBVR",
+   "fp": "Package_TO_SOT_SMD:SOT-23-5",
+   "mpn": "TLV75718PDBVR",
+   "mfr": "",
+   "ds": "tlv757p.pdf Table 4-1 Pin Functions (DBV: 1 IN, 2 GND, 3 EN, 4 NC, 5 OUT), Table 8-1 nomenclature (18 = 1.8 V fixed, P = active discharge), 1 A, CIN/COUT >= 1 uF. Owner 2026-10-05: replaces the TPS62933 1.8 V buck (and its 3015 inductor, bootstrap, soft-start, EN and FB parts) to free board area. Load: WIFI-BT-ZB AVDD18 + SD_VIO, TYPE2EL.pdf typical 148-180 mA Tx / 101-130 mA Rx at 1.8 V (rated max 1009 mA); dissipation (3.3-1.8) x 0.18 A = 0.27 W, ~62 C rise at the DBV 231 C/W JEDEC figure \u2014 copper pour on IN/OUT/GND required. Fed from +3V3_RF per the owner's choice.",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IN",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "3",
+     "EN",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "4",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "5",
+     "OUT",
+     "+1V8_RF",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "MLRS-MCU",
+   "value": "STM32WLE5JCU6",
+   "fp": "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm",
+   "mpn": "STM32WLE5JCU6",
+   "mfr": "",
+   "ds": "stm32wle5jc.pdf DS13105 Rev 9 Fig.9 / Table 19 (UFQFPN48), Table 95 (package), Table 58 (TCXO), \u00a73.8-3.9 (RF/PA, supplies); mLRS target = Wio-E5 HAL with BUTTON remapped PB13->PA0; RF values VERIFY AN5457",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "PB3",
+     null,
+     "L"
+    ],
+    [
+     "2",
+     "PB4",
+     null,
+     "L"
+    ],
+    [
+     "3",
+     "PB5",
+     "MLRS_LED_R",
+     "L"
+    ],
+    [
+     "4",
+     "PB6",
+     null,
+     "L"
+    ],
+    [
+     "5",
+     "PB7",
+     null,
+     "L"
+    ],
+    [
+     "6",
+     "PB8",
+     null,
+     "L"
+    ],
+    [
+     "7",
+     "PA0",
+     "MLRS_BTN",
+     "L"
+    ],
+    [
+     "8",
+     "PA1",
+     null,
+     "L"
+    ],
+    [
+     "9",
+     "PA2",
+     "UART_WIOE5_TX_F",
+     "L"
+    ],
+    [
+     "10",
+     "PA3",
+     "UART_WIOE5_RX_F",
+     "L"
+    ],
+    [
+     "11",
+     "VDD",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "12",
+     "PA4",
+     "MLRS_RF_RX_EN",
+     "L"
+    ],
+    [
+     "13",
+     "PA5",
+     "MLRS_RF_TX_EN",
+     "L"
+    ],
+    [
+     "14",
+     "PA6",
+     null,
+     "L"
+    ],
+    [
+     "15",
+     "PA7",
+     null,
+     "L"
+    ],
+    [
+     "16",
+     "PA8",
+     null,
+     "L"
+    ],
+    [
+     "17",
+     "PA9",
+     null,
+     "L"
+    ],
+    [
+     "18",
+     "NRST",
+     "MLRS_RST",
+     "L"
+    ],
+    [
+     "19",
+     "PH3-BOOT0",
+     "MLRS_BOOT0",
+     "L"
+    ],
+    [
+     "20",
+     "RFI_P",
+     "MLRS_RFI_P",
+     "L"
+    ],
+    [
+     "21",
+     "RFI_N",
+     "MLRS_RFI_N",
+     "L"
+    ],
+    [
+     "22",
+     "RFO_LP",
+     null,
+     "L"
+    ],
+    [
+     "23",
+     "RFO_HP",
+     "MLRS_RFO_HP",
+     "L"
+    ],
+    [
+     "24",
+     "VR_PA",
+     "MLRS_VR_PA",
+     "L"
+    ],
+    [
+     "25",
+     "VDDPA",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "26",
+     "OSC_IN",
+     "MLRS_HSE_IN",
+     "R"
+    ],
+    [
+     "27",
+     "OSC_OUT",
+     null,
+     "R"
+    ],
+    [
+     "28",
+     "VDDRF",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "29",
+     "VDDRF1V55",
+     "MLRS_VFB",
+     "R"
+    ],
+    [
+     "30",
+     "PB0-VDD_TCXO",
+     "MLRS_VDDTCXO",
+     "R"
+    ],
+    [
+     "31",
+     "PB2",
+     null,
+     "R"
+    ],
+    [
+     "32",
+     "PB12",
+     null,
+     "R"
+    ],
+    [
+     "33",
+     "PA10",
+     null,
+     "R"
+    ],
+    [
+     "34",
+     "PA11",
+     null,
+     "R"
+    ],
+    [
+     "35",
+     "PA12",
+     null,
+     "R"
+    ],
+    [
+     "36",
+     "PA13",
+     "MLRS_SWDIO",
+     "R"
+    ],
+    [
+     "37",
+     "VBAT",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "38",
+     "PC13",
+     null,
+     "R"
+    ],
+    [
+     "39",
+     "PC14-OSC32_IN",
+     null,
+     "R"
+    ],
+    [
+     "40",
+     "PC15-OSC32_OUT",
+     null,
+     "R"
+    ],
+    [
+     "41",
+     "VDDA",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "42",
+     "PA14",
+     "MLRS_SWCLK",
+     "R"
+    ],
+    [
+     "43",
+     "PA15",
+     "MLRS_LED_G",
+     "R"
+    ],
+    [
+     "44",
+     "VDD",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "45",
+     "VFBSMPS",
+     "MLRS_VFB",
+     "R"
+    ],
+    [
+     "46",
+     "VDDSMPS",
+     "+3V3_RF",
+     "R"
+    ],
+    [
+     "47",
+     "VLXSMPS",
+     "MLRS_VLX",
+     "R"
+    ],
+    [
+     "48",
+     "VSSSMPS",
+     "GND",
+     "R"
+    ],
+    [
+     "49",
+     "EP",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "WIFI-BT-ZB",
+   "value": "LBES5PL2EL-923",
+   "fp": "Serenity-Custom:Murata_Type2EL_LGA107",
+   "mpn": "LBES5PL2EL-923",
+   "mfr": "",
+   "ds": "type2el.pdf Rev.18 Table 6/7 (Terminal Configurations/Pin Descriptions), Table 8 (CONFIG_HOST straps), Fig.1 (shared-antenna block diagram); Unified Design Guide Rev.2.0 Fig.10 (SANT-mode ANT1<->BT_15.4_IN 10pF requirement). Murata NXP IW612 tri-radio SMD LGA, 8.8x7.7x1.3mm. AVDD18 needs up to 1009 mA peak / ~392-550 mA typ Tx (type2el.pdf \u00a79.1/\u00a712.18 DC characteristics) \u2014 this is FAR beyond the pre-existing 150 mA LDO's (U-1V8, sized only for WL1837MOD's SDIO signaling level, a few mA) rating; a new dedicated high-current 1.8V buck (U-1V8RF below) supplies AVDD18. U-1V8 itself was REMOVED (not kept) \u2014 SD_VIO shares U-1V8RF's +1V8_RF output directly rather than running two separate 1.8V regulators, since SD_VIO is just low-current logic-level signaling at the same nominal voltage. Scope calibration, disclosed (same pattern as WL1837MOD's own disclosed ball-population choice): PCM audio (pins 57-61), Bluetooth/WLAN/802.15.4 independent-reset and wake pins (37,38,63,64,73-76), JTAG-reserved pins (33-36), WCI-2 coexistence (69,70), and RF_CNTL1/0 (26,27, outputs, reserved) are left NC \u2014 none are needed for basic SDIO WiFi + UART Bluetooth + SPI 802.15.4 host operation, and the datasheet's own I/O state table (Table 9) shows each has a defined internal pull, so floating is a documented-safe default, not an unverified guess.",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "4",
+     "SPI_FRM",
+     "SPI0_B_CS_ZB",
+     "L"
+    ],
+    [
+     "5",
+     "SPI_INT",
+     "ZB_SPI_INT",
+     "L"
+    ],
+    [
+     "6",
+     "SPI_RXD",
+     "SPI0_B_MISO",
+     "L"
+    ],
+    [
+     "7",
+     "SPI_TXD",
+     "SPI0_B_MOSI",
+     "L"
+    ],
+    [
+     "8",
+     "SPI_CLK",
+     "SPI0_B_CLK",
+     "L"
+    ],
+    [
+     "9",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "10",
+     "PDn",
+     "WIFI_EN",
+     "L"
+    ],
+    [
+     "11",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "12",
+     "AVDD33_1",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "13",
+     "AVDD33_2",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "14",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "15",
+     "ANT0",
+     "RADIO_ANT_RF",
+     "L"
+    ],
+    [
+     "16",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "17",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "18",
+     "BT_15.4_IN",
+     "RADIO_ANT1_IN",
+     "L"
+    ],
+    [
+     "19",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "20",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "21",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "22",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "23",
+     "ANT1",
+     "RADIO_ANT1_OUT",
+     "L"
+    ],
+    [
+     "24",
+     "RF_CNTL4",
+     "+3V3",
+     "L"
+    ],
+    [
+     "25",
+     "RF_CNTL3/CONFIG_XOSC_SEL",
+     "+3V3",
+     "L"
+    ],
+    [
+     "26",
+     "RF_CNTL1",
+     null,
+     "L"
+    ],
+    [
+     "27",
+     "RF_CNTL0",
+     null,
+     "L"
+    ],
+    [
+     "28",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "29",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "30",
+     "AVDD18_2",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "31",
+     "AVDD18_1",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "32",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "33",
+     "Reserved/JTAG_TDO",
+     null,
+     "R"
+    ],
+    [
+     "34",
+     "Reserved/JTAG_TMS",
+     null,
+     "R"
+    ],
+    [
+     "35",
+     "Reserved/JTAG_TCK",
+     null,
+     "R"
+    ],
+    [
+     "36",
+     "Reserved/JTAG_TDI",
+     null,
+     "R"
+    ],
+    [
+     "37",
+     "RST_IND",
+     null,
+     "R"
+    ],
+    [
+     "38",
+     "IND_RST_15.4",
+     null,
+     "R"
+    ],
+    [
+     "39",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "40",
+     "SD_VIO",
+     "+1V8_RF",
+     "R"
+    ],
+    [
+     "41",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "42",
+     "SD_CMD",
+     null,
+     "R"
+    ],
+    [
+     "43",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "44",
+     "SD_CLK",
+     null,
+     "R"
+    ],
+    [
+     "45",
+     "SD_DAT1",
+     null,
+     "R"
+    ],
+    [
+     "46",
+     "SD_DAT3",
+     null,
+     "R"
+    ],
+    [
+     "47",
+     "SD_DAT2",
+     null,
+     "R"
+    ],
+    [
+     "48",
+     "SD_DAT0",
+     null,
+     "R"
+    ],
+    [
+     "49",
+     "UART_TX",
+     "BT_UART_TX",
+     "R"
+    ],
+    [
+     "50",
+     "UART_CTS",
+     "BT_UART_CTS",
+     "R"
+    ],
+    [
+     "51",
+     "UART_RX",
+     "BT_UART_RX",
+     "R"
+    ],
+    [
+     "52",
+     "UART_RTS",
+     "BT_UART_RTS",
+     "R"
+    ],
+    [
+     "53",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "54",
+     "VIO",
+     "+3V3",
+     "R"
+    ],
+    [
+     "55",
+     "CONFIG_HOST[0]",
+     "+3V3",
+     "R"
+    ],
+    [
+     "56",
+     "CONFIG_HOST[1]",
+     "+3V3",
+     "R"
+    ],
+    [
+     "57",
+     "PCM_CLK",
+     null,
+     "R"
+    ],
+    [
+     "58",
+     "PCM_MCLK",
+     null,
+     "R"
+    ],
+    [
+     "59",
+     "PCM_DOUT",
+     null,
+     "R"
+    ],
+    [
+     "60",
+     "PCM_DIN",
+     null,
+     "R"
+    ],
+    [
+     "61",
+     "PCM_SYNC",
+     null,
+     "R"
+    ],
+    [
+     "62",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "63",
+     "IND_RST_WL",
+     null,
+     "R"
+    ],
+    [
+     "64",
+     "IND_RST_BT",
+     null,
+     "R"
+    ],
+    [
+     "65",
+     "Reserved",
+     null,
+     "R"
+    ],
+    [
+     "66",
+     "Reserved",
+     null,
+     "R"
+    ],
+    [
+     "67",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "68",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "69",
+     "WCI-2_SIN",
+     null,
+     "R"
+    ],
+    [
+     "70",
+     "WCI-2_SOUT",
+     null,
+     "R"
+    ],
+    [
+     "71",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "72",
+     "SD_INT",
+     "WIFI_IRQ",
+     "R"
+    ],
+    [
+     "73",
+     "WL_WAKE_OUT",
+     null,
+     "R"
+    ],
+    [
+     "74",
+     "WL_WAKE_IN",
+     null,
+     "R"
+    ],
+    [
+     "75",
+     "BT15.4_WAKE_IN",
+     null,
+     "R"
+    ],
+    [
+     "76",
+     "BT15.4_WAKE_OUT",
+     null,
+     "R"
+    ],
+    [
+     "77",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "78",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "79",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "80",
+     "NC",
+     null,
+     "R"
+    ],
+    [
+     "81",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "82",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "83",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "84",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "85",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "86",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "87",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "88",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "89",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "90",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "91",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "92",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "93",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "94",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "95",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "96",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "97",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "98",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "99",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "100",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "101",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "102",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "103",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "104",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "105",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "106",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "107",
+     "GND",
+     "GND",
+     "L"
+    ]
+   ]
+  },
+  {
+   "ref": "NOR-FLASH",
+   "value": "W25Q128JVSIQ",
+   "fp": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+   "mpn": "W25Q128JVSIQ",
+   "mfr": "",
+   "ds": "w25q128jv.pdf \u00a73.3 Pin Description SOIC 208-mil [REF-SENSOR-033]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "/CS",
+     "SPI0_B_CS_FLASH",
+     "L"
+    ],
+    [
+     "2",
+     "DO(IO1)",
+     "SPI0_B_MISO",
+     "L"
+    ],
+    [
+     "3",
+     "/WP(IO2)",
+     "FLASH_WP_N",
+     "L"
+    ],
+    [
+     "4",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "5",
+     "DI(IO0)",
+     "SPI0_B_MOSI",
+     "R"
+    ],
+    [
+     "6",
+     "CLK",
+     "SPI0_B_CLK",
+     "R"
+    ],
+    [
+     "7",
+     "/HOLD_or_/RESET(IO3)",
+     "+3V3",
+     "R"
+    ],
+    [
+     "8",
+     "VCC",
+     "+3V3",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "SD-WB",
+   "value": "ATF16V8BQL-15XI",
+   "fp": "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm",
+   "mpn": "ATF16V8BQL-15XI",
+   "mfr": "",
+   "ds": "atf16v8bql.pdf Ordering Information (20X = TSSOP, 4.4mm wide) [REF-SENSOR-037] \u2014 TSSOP-20 chosen over the SOIC-20W package for a smaller board footprint, per the user's XO board-area-reduction directive (same pin numbering, standard PAL16V8 pinout). Used as a logging write-block interlock: gates the NOR flash /WP line. The JEDEC fuse map (logic equations) is a firmware/programming deliverable, out of scope for this schematic pass \u2014 every pin is wired to a real net so ERC is complete; unused I/O macrocells (12-18) are left as no-connects, standard practice for a partially-used PAL/GAL.",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "I/CLK",
+     "PLD_CLK",
+     "L"
+    ],
+    [
+     "2",
+     "I1",
+     "PLD_I1",
+     "L"
+    ],
+    [
+     "3",
+     "I2",
+     "PLD_I2",
+     "L"
+    ],
+    [
+     "4",
+     "I3",
+     "PLD_I3",
+     "L"
+    ],
+    [
+     "5",
+     "I4",
+     "PLD_I4",
+     "L"
+    ],
+    [
+     "6",
+     "I5",
+     "PLD_I5",
+     "L"
+    ],
+    [
+     "7",
+     "I6",
+     "PLD_I6",
+     "L"
+    ],
+    [
+     "8",
+     "I7",
+     "PLD_I7",
+     "L"
+    ],
+    [
+     "9",
+     "I8",
+     "PLD_I8",
+     "L"
+    ],
+    [
+     "10",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "11",
+     "I9/OE",
+     "GND",
+     "R"
+    ],
+    [
+     "12",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "13",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "14",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "15",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "16",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "17",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "18",
+     "I/O",
+     null,
+     "R"
+    ],
+    [
+     "19",
+     "I/O",
+     "FLASH_WP_N",
+     "R"
+    ],
+    [
+     "20",
+     "VCC",
+     "+3V3",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1V8RF-IN",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "U-1V8RF CIN at IN/GND (tlv757p.pdf: >= 1 uF)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1V8RF-HF",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "U-1V8RF CIN HF",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1V8RF-O1",
+   "value": "22uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "U-1V8RF COUT",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-1V8RF-O2",
+   "value": "22uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "U-1V8RF COUT",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-RF1",
+   "value": "1.5uH",
+   "fp": "Inductor_SMD:L_Wuerth_MAPI-3015",
+   "mpn": "LPS3015-152MRC",
+   "mfr": "",
+   "ds": "TPS63031 power inductor between L1 (pin 4) and L2 (pin 2): tps63031.pdf Fig. 1/Table 2 (1.5 uH LPS3015-1R5) and Table 3 (LPS3015/LQH3NP/NR3015 series). Corrected 2026-10-05: the 2026-09-20 rebuild had split this into two inductors (L1->+5V, L2->+3V3_RF), which shorts the switch nodes to the rails through the windings; a buck-boost uses one inductor across L1-L2. Coilcraft ordering code for the 1.5 uH value to be confirmed against the Coilcraft LPS3015 datasheet (vendor site unreachable from the build environment)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RF_SW1",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "RF_SW2",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RF-IN1",
+   "value": "10uF 10V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TPS63031 VIN bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RF-IN2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TPS63031 VIN HF",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+5V",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RF-O1",
+   "value": "22uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TPS63031 COUT",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-RF-O2",
+   "value": "22uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TPS63031 COUT",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDD1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDD pin 11 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDD2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDD pin 44 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDDA1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDA bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDDA2",
+   "value": "1uF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDA bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDDRF",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDRF bypass (DS13105 \u00a73.9.1: same supply as VDD)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VBAT",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VBAT bypass (tied to VDD, no backup battery)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-SMPS",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDSMPS bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-BULK",
+   "value": "4.7uF",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 supply bulk (was C-WIOE5-IN)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDDPA1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDPA HF bypass (+22 dBm PA supply, DS13105 Fig.3)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VDDPA2",
+   "value": "4.7uF",
+   "fp": "Capacitor_SMD:C_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VDDPA bulk (PA transmit bursts)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VFB",
+   "value": "470nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VFBSMPS Cout 470 nF (DS13105 SMPS characteristics), shared LDO/SMPS",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "MLRS_VFB",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-SMPS",
+   "value": "15uH",
+   "fp": "Inductor_SMD:L_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 SMPS inductor Lout 15 uH (DS13105 SMPS characteristics) VLXSMPS->VFBSMPS",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_VLX",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_VFB",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-VRPA",
+   "value": "100nF VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "STM32WLE5 VR_PA regulator output decoupling (value per AN5457)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "MLRS_VR_PA",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "X-MLRS",
+   "value": "TG2520SMN 32MHz 1.8V clipped-sine",
+   "fp": "Oscillator:Oscillator_SMD_SeikoEpson_TG2520SMN-xxx-xxxxxx-4Pin_2.5x2.0mm",
+   "mpn": "",
+   "mfr": "",
+   "ds": "Epson TG2520SMN 32.000 MHz TCXO (TG2520SMN_en-2584158.pdf: pin 1 NC, 2 GND, 3 OUT, 4 VCC; clipped sine >=0.8 Vpp, VCC 1.8 V option) fed from PB0-VDD_TCXO (DS13105 Table 58, VTCXO 1.6-3.3 V, <=4 mA); ordering code (frequency/voltage/Vc option) to be confirmed by owner",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "NC",
+     null,
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "OUT",
+     "MLRS_TCXO_OUT",
+     "R"
+    ],
+    [
+     "4",
+     "VCC",
+     "MLRS_VDDTCXO",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-TCXO",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TCXO VCC bypass, as close as possible (Epson note)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "MLRS_VDDTCXO",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-HSE",
+   "value": "10pF C0G",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TCXO OUT -> OSC_IN series cap (DS13105 Table 58 note 1: 10 pF for 0.8 Vpp TCXO)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_TCXO_OUT",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_HSE_IN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-RST",
+   "value": "22k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "NRST pull-up (carried over from the Wio-E5 reference R1)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_RST",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-RST",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "NRST filter capacitor",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "MLRS_RST",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-BOOT0",
+   "value": "10k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "PH3-BOOT0 pull-down: boot from main flash; programming via SWD",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_BOOT0",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-MLRS-1",
+   "value": "600R@100MHz 0402",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS host UART RX line filter \u2014 600 Ohm/100 MHz signal bead (TACCO.md \u00a76 intent; MPN owner-select, WBS \u00a71.2a)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IN",
+     "UART_WIOE5_RX",
+     "L"
+    ],
+    [
+     "2",
+     "OUT",
+     "UART_WIOE5_RX_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "FB-MLRS-2",
+   "value": "600R@100MHz 0402",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS host UART TX line filter \u2014 600 Ohm/100 MHz signal bead (MPN owner-select)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IN",
+     "UART_WIOE5_TX",
+     "L"
+    ],
+    [
+     "2",
+     "OUT",
+     "UART_WIOE5_TX_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-SWDIO",
+   "value": "22R",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "SWDIO series",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_SWDIO",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_SWDIO_HDR",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-SWCLK",
+   "value": "22R",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "SWCLK series",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_SWCLK",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_SWCLK_HDR",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-MLRS-SWD",
+   "value": "TC2030-IDC-NL pads",
+   "fp": "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical",
+   "mpn": "",
+   "mfr": "",
+   "ds": "Tag-Connect TC2030-IDC-NL SWD pad set (no BOM part; ARM Cortex 6-pin: 1 VTREF, 2 SWDIO, 3 nRESET, 4 SWCLK, 5 GND, 6 SWO) \u2014 replaces the JST-GH header (owner 2026-09-29)",
+   "dnp": true,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "VTREF",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "SWDIO",
+     "MLRS_SWDIO_HDR",
+     "L"
+    ],
+    [
+     "3",
+     "nRESET",
+     "MLRS_RST",
+     "L"
+    ],
+    [
+     "4",
+     "SWCLK",
+     "MLRS_SWCLK_HDR",
+     "R"
+    ],
+    [
+     "5",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "6",
+     "SWO",
+     null,
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "SW-MLRS",
+   "value": "KMR2 tact",
+   "fp": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS bind/boot button on PA0 (mLRS BUTTON, active-low, MCU internal pull-up; PB13 is not bonded on UFQFPN48 so the HAL remaps PB13->PA0); C&K KMR2 series, variant owner-select",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_BTN",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-LEDG",
+   "value": "1k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "LED_GREEN (PA15) current limit, active-high per HAL",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_LED_G",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_LEDG_A",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "LED-MLRS-G",
+   "value": "Green",
+   "fp": "LED_SMD:LED_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS status LED (green)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_LEDG_A",
+     "L"
+    ],
+    [
+     "2",
+     "K",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-MLRS-LEDR",
+   "value": "1k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "LED_RED (PB5) current limit, active-low (sinks) per HAL",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_LEDR_A",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "LED-MLRS-R",
+   "value": "Red",
+   "fp": "LED_SMD:LED_0603_1608Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS status LED (red)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_LEDR_A",
+     "L"
+    ],
+    [
+     "2",
+     "K",
+     "MLRS_LED_R",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-PA",
+   "value": "VERIFY AN5457",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RFO_HP DC feed choke from VR_PA (DS13105 Fig.3 HP PA; value per AN5457 915 MHz)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_VR_PA",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_RFO_HP",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-TX0",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RFO_HP DC block",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RFO_HP",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_TX1",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-TX1",
+   "value": "VERIFY AN5457",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TX harmonic low-pass, series 1",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_TX1",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_TX2",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-TX1",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TX harmonic low-pass, shunt 1",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_TX2",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-TX2",
+   "value": "VERIFY AN5457",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TX harmonic low-pass, series 2",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_TX2",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_TX_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-TX2",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "TX harmonic low-pass, shunt 2",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_TX_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-RXP",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RFI_P series DC block / balun element",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RFI_P",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_RX1",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-RXN",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RFI_N series DC block / balun element",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RFI_N",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_RX2",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-RX1",
+   "value": "VERIFY AN5457",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RX balun series element (P leg to switch)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RX1",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_RX_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-RX2",
+   "value": "VERIFY AN5457",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RX balun shunt element (N leg to GND)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RX2",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-RX1",
+   "value": "VERIFY AN5457",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "RX balun shunt element at the switch port",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_RX_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "RFSW-MLRS",
+   "value": "PE4259",
+   "fp": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+   "mpn": "PE4259-63",
+   "mfr": "",
+   "ds": "pSemi PE4259 SPDT antenna switch (pe4259.pdf Table 7: 1 RF1, 2 GND, 3 RF2, 4 CTRL, 5 RFC, 6 CTRLB/VDD), complementary-pin control (Table 6): CTRL=PA4 RX_EN high & CTRLB low -> RFC-RF1 (RX); CTRL low & CTRLB=PA5 TX_EN high -> RFC-RF2 (TX). US vendor.",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "RF1",
+     "MLRS_RX_F",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "3",
+     "RF2",
+     "MLRS_TX_F",
+     "L"
+    ],
+    [
+     "4",
+     "CTRL",
+     "MLRS_RF_RX_EN",
+     "R"
+    ],
+    [
+     "5",
+     "RFC",
+     "MLRS_ANT_RF",
+     "R"
+    ],
+    [
+     "6",
+     "CTRLB",
+     "MLRS_RF_TX_EN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-33-1",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB AVDD33_1 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-33-2",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB AVDD33_2 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-18-1",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB AVDD18_1 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-18-2",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB AVDD18_2 bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-VIO",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB VIO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ZB-SDVIO",
+   "value": "100nF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "WIFI-BT-ZB SD_VIO bypass (shares U-1V8RF's +1V8_RF, no separate LDO)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+1V8_RF",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-FLASH1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "W25Q128JV VCC bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-FLASH-WP",
+   "value": "10k",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "FLASH_WP_N pull-up (write-enabled default; PLD asserts low to block)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "FLASH_WP_N",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-PLD1",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "ATF16V8BQL VCC bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-FAN",
+   "value": "SM03B-GHS-TB",
+   "fp": "Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal",
+   "mpn": "SM03B-GHS-TB(LF)(SN)",
+   "mfr": "",
+   "ds": "XO.md \u00a714 J_FAN (bay ventilation)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "GND",
+     "GND",
+     "L"
+    ],
+    [
+     "2",
+     "+5V",
+     "+5V",
+     "L"
+    ],
+    [
+     "3",
+     "FAN_PWM",
+     "FAN_PWM_B",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-SD",
+   "value": "microSD header 1.45H",
+   "fp": "Serenity-Custom:microSD_Molex_105162-0001",
+   "mpn": "105162-0001",
+   "mfr": "",
+   "ds": "Molex 105162-0001 1.45 mm microSD header with detect pin (owner 2026-10-05; replaces the 104031-0811 push-pull socket to free ~80 mm2). SD-105162-001 sheet 2 pin table: P1 DAT2, P2 CD/DAT3, P3 CMD, P4 VDD, P5 CLK, P6 VSS, P7 DAT0, P8 DAT1, P9 DET, G1-G4 GND. Single detect pin: DET closes to the shell when a card is seated (firmware polarity to confirm)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "DAT2",
+     null,
+     "L"
+    ],
+    [
+     "2",
+     "CD/DAT3",
+     null,
+     "L"
+    ],
+    [
+     "3",
+     "CMD",
+     null,
+     "L"
+    ],
+    [
+     "4",
+     "VDD",
+     "+3V3",
+     "L"
+    ],
+    [
+     "5",
+     "CLK",
+     null,
+     "L"
+    ],
+    [
+     "6",
+     "VSS",
+     "GND",
+     "R"
+    ],
+    [
+     "7",
+     "DAT0",
+     null,
+     "R"
+    ],
+    [
+     "8",
+     "DAT1",
+     null,
+     "R"
+    ],
+    [
+     "9",
+     "DET",
+     "SD_CD",
+     "R"
+    ],
+    [
+     "G",
+     "SHELL",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-SH1",
+   "value": "DNP",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS antenna match shunt 1 (DNP until bench VSWR tuning)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_ANT_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-MLRS-SER",
+   "value": "0R link",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS antenna match series position \u2014 0R placeholder for continuity before tuning",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_ANT_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "MLRS_ANT_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-MLRS-SH2",
+   "value": "DNP",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "mLRS antenna match shunt 2 (DNP until bench VSWR tuning)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "MLRS_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "D-ANT-MLRS",
+   "value": "ESD101-B1-02ELS",
+   "fp": "SecureControllers:Infineon_TSSLP-2-4_0.62x0.32mm",
+   "mpn": "ESD101-B1-02ELS",
+   "mfr": "",
+   "ds": "RF ESD shunt, Infineon ESD101-B1-02ELS 0.1 pF (owner 2026-09-26, WBS U7.1j; esd101-b1.pdf) \u2014 replaces the deprecated RCLAMP0502B",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IO",
+     "MLRS_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-ANT-MLRS",
+   "value": "U.FL",
+   "fp": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+   "mpn": "U.FL-R-SMT-1(10)",
+   "mfr": "",
+   "ds": "mLRS antenna jack \u2014 Hirose U.FL SMT (owner 2026-10-05: replaces the through-hole MMCX, whose pins blocked both faces; KiCad library land, Hirose drawing to be archived; cable needs a tie-down/adhesive strain relief)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "RF",
+     "MLRS_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ANT-SH1",
+   "value": "DNP",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "Antenna match shunt 1 (DNP until bench VSWR tuning against the real antenna)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RADIO_ANT_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-ANT-SER",
+   "value": "0R link",
+   "fp": "Resistor_SMD:R_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "Antenna match series position \u2014 0R placeholder for continuity before tuning",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RADIO_ANT_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "RADIO_ANT_F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ANT-SH2",
+   "value": "DNP",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "Antenna match shunt 2 (DNP until bench VSWR tuning)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RADIO_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "D-ANT-RADIO",
+   "value": "ESD101-B1-02ELS",
+   "fp": "SecureControllers:Infineon_TSSLP-2-4_0.62x0.32mm",
+   "mpn": "ESD101-B1-02ELS",
+   "mfr": "",
+   "ds": "RF ESD shunt, Infineon ESD101-B1-02ELS 0.1 pF (owner 2026-09-26, WBS U7.1j) \u2014 now the single shared WiFi/BT/802.15.4 antenna feed (was WiFi-only)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "IO",
+     "RADIO_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "GND",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-ANT-RADIO",
+   "value": "U.FL",
+   "fp": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+   "mpn": "U.FL-R-SMT-1(10)",
+   "mfr": "",
+   "ds": "Hirose U.FL SMT (owner 2026-10-05, replaces through-hole MMCX 73415-1471). Shared WiFi/BT/802.15.4 antenna jack (SANT mode) \u2014 was WiFi-only J-SMA-WIFI; Type2EL's single ANT0 feed now serves all three radios, so XO drops from needing (at minimum) two antenna jacks/chains down to one",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "RF",
+     "RADIO_ANT_F",
+     "L"
+    ],
+    [
+     "2",
+     "SHIELD",
+     "PGND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ANT-SANT",
+   "value": "10pF",
+   "fp": "Capacitor_SMD:C_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "SANT-mode loopback per type2el.pdf Table 6/7 + Unified Design Guide Fig.10: shared-antenna mode requires ANT1 (pin 23) looped back to BT_15.4_IN (pin 18) through this cap, NOT a direct short",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "TACCO@1f5a087",
+   "pins": [
+    [
+     "1",
+     "A",
+     "RADIO_ANT1_OUT",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "RADIO_ANT1_IN",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "GPS",
+   "value": "MAX-M10S-00B",
+   "fp": "RF_GPS:ublox_MAX",
+   "mpn": "MAX-M10S-00B",
+   "mfr": "",
+   "ds": "MAX-M10S_DataSheet_UBX-20035208.pdf \u00a73.1 Fig 2 / Table 10 (18-pin LCC) [REF-SENSOR-027]",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "8",
+     "VCC",
+     "+3V3",
+     "L"
+    ],
+    [
+     "7",
+     "V_IO",
+     "+3V3",
+     "L"
+    ],
+    [
+     "6",
+     "V_BCKP",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "TXD",
+     "UART_GPS_TX",
+     "L"
+    ],
+    [
+     "3",
+     "RXD",
+     "UART_GPS_RX",
+     "L"
+    ],
+    [
+     "4",
+     "TIMEPULSE",
+     "GPS_TIMEPULSE",
+     "L"
+    ],
+    [
+     "9",
+     "RESET_N",
+     "GPS_RESETN",
+     "L"
+    ],
+    [
+     "5",
+     "EXTINT",
+     null,
+     "L"
+    ],
+    [
+     "18",
+     "SAFEBOOT_N",
+     null,
+     "L"
+    ],
+    [
+     "11",
+     "RF_IN",
+     "GPS_RF",
+     "R"
+    ],
+    [
+     "14",
+     "VCC_RF",
+     "GPS_VCC_RF",
+     "R"
+    ],
+    [
+     "13",
+     "LNA_EN",
+     null,
+     "R"
+    ],
+    [
+     "15",
+     "VIO_SEL",
+     null,
+     "R"
+    ],
+    [
+     "16",
+     "SDA",
+     null,
+     "R"
+    ],
+    [
+     "17",
+     "SCL",
+     null,
+     "R"
+    ],
+    [
+     "1",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "10",
+     "GND",
+     "GND",
+     "R"
+    ],
+    [
+     "12",
+     "GND",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-GPS1",
+   "value": "10uF 6.3V X5R",
+   "fp": "Capacitor_SMD:C_0805_2012Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "MAX-M10S VCC bulk",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-GPS2",
+   "value": "100nF",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "MAX-M10S VCC/V_IO bypass",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "P",
+     "+3V3",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "R-ANT",
+   "value": "10R",
+   "fp": "Resistor_SMD:R_0201_0603Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "MAX-M10S antenna supply current limiter R8 (integration manual Table 53)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GPS_VCC_RF",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GPS_ANT_BIAS",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "C-ANT",
+   "value": "10nF X7R",
+   "fp": "Capacitor_SMD:C_0402_1005Metric",
+   "mpn": "",
+   "mfr": "",
+   "ds": "MAX-M10S RF bias-T filter C14 (Table 52)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "P",
+     "GPS_ANT_BIAS",
+     "L"
+    ],
+    [
+     "2",
+     "N",
+     "GND",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "L-ANT",
+   "value": "27nH",
+   "fp": "Inductor_SMD:L_0402_1005Metric",
+   "mpn": "LQG15HN27NJ02D",
+   "mfr": "",
+   "ds": "MAX-M10S RF bias-T inductor L3 (Table 54, Murata LQG15H)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "A",
+     "GPS_ANT_BIAS",
+     "L"
+    ],
+    [
+     "2",
+     "B",
+     "GPS_RF",
+     "R"
+    ]
+   ]
+  },
+  {
+   "ref": "J-ANT",
+   "value": "U.FL-R-SMT-1",
+   "fp": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+   "mpn": "U.FL-R-SMT-1(10)",
+   "mfr": "",
+   "ds": "GNSS active-antenna feed to the dorsal-cup SMA bulkhead (AVIONICS_PB2_REDESIGN.md GPS-ANT)",
+   "dnp": false,
+   "in_bom": true,
+   "origin": "Pilot@3f55d58^",
+   "pins": [
+    [
+     "1",
+     "RF",
+     "GPS_RF",
+     "L"
+    ],
+    [
+     "2",
+     "SHIELD",
+     "GND",
+     "R"
+    ]
+   ]
+  }
+ ]
+}

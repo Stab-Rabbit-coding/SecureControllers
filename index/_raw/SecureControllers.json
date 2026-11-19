@@ -94,6 +94,17 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1794937188,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf",
+    "repo": "SecureControllers",
+    "sha256": "bf652d3f66e5b39a6b5d5692b13e46bb62257f7572f2ebf85753b3c94c93781b",
+    "size_bytes": 534340
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1794493379,
     "possible_duplicate": true,
     "rel_path": "datasheets/MBRD1045CT.pdf",
@@ -300,6 +311,28 @@
     "repo": "SecureControllers",
     "sha256": "853a59efc2a5d18974accf0e8daa414a43b5d3e9b88245bbf29935392fac44ec",
     "size_bytes": 413634
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794918758,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/USB2422-DS00001726B.pdf",
+    "repo": "SecureControllers",
+    "sha256": "4a9ad71cd6535368f9535d08924dbff9c21c0554d5fbf01cf06ae0d92a44fc0d",
+    "size_bytes": 449402
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794936840,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/USB2640i-USB2641i-DS00001948C.pdf",
+    "repo": "SecureControllers",
+    "sha256": "ace4483f155222b0abcd67e505cadf1a297166cd10f272d38c1ac6da28e263dc",
+    "size_bytes": 582118
   },
   {
     "asset_type": "datasheet",
@@ -618,6 +651,28 @@
     "asset_type": "datasheet",
     "duplicate_hash_match": true,
     "ext": ".pdf",
+    "mtime": 1795025305,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/molex/1053131204.pdf",
+    "repo": "SecureControllers",
+    "sha256": "a1a1c6f8219030a6162260576387f0e1442c5bda648698a25a6879d6d4b8b42c",
+    "size_bytes": 65646
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1795025305,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/molex/1053131204_sd.pdf",
+    "repo": "SecureControllers",
+    "sha256": "514f2cdbeb5684063282eb36fc00316d3e0da758b8b71e9f12961755e7afed01",
+    "size_bytes": 377980
+  },
+  {
+    "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
     "mtime": 1794493380,
     "possible_duplicate": true,
     "rel_path": "datasheets/mspm0g3507.pdf",
@@ -784,6 +839,17 @@
   },
   {
     "asset_type": "datasheet",
+    "duplicate_hash_match": true,
+    "ext": ".pdf",
+    "mtime": 1794918758,
+    "possible_duplicate": true,
+    "rel_path": "datasheets/tusb4020bi-SLLSEI0E.pdf",
+    "repo": "SecureControllers",
+    "sha256": "7c3ca7fb9af56bb093b2349be8e4566bbee61f56c6d7693b77aa1570edba99a9",
+    "size_bytes": 1854673
+  },
+  {
+    "asset_type": "datasheet",
     "ext": ".pdf",
     "mtime": 1794493380,
     "rel_path": "docs/cnaf-3710.7.pdf",
@@ -876,6 +942,60 @@
     "repo": "SecureControllers",
     "sha256": "77c44b4d5a4e16a0fbd8d7d0f32ede325299b493959458a8517657d2c7e07b68",
     "size_bytes": 3367
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1795026549,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Ezurio_LWB5plus_LGA-68_17x12mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "202bca651bece9825ae163103b4671b86c3a094bd748cf65ce49ffeb0e8d970d",
+    "size_bytes": 12759
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1795026549,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Microchip_VQFN-48-1EP_7x7mm_P0.5mm_EP4.2x4.2mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "57a76dff615098e5e44aeb4ff1786940aaf0f0154b11dddc4bf45160022795f0",
+    "size_bytes": 9486
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1795026549,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Molex_NanoFit_105313-1204_1x04_P2.50mm_Horizontal_Pegs.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "5bfeda2fdcdf8b3aa2b77de55676c55be3c2c54ffb6fb3133f3d4bbfca29aca5",
+    "size_bytes": 2057
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1795026549,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/TI_DSK0010A_WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "fd735c0fcfa4c5f4728fbf568b631d6582f3fe338471627b47e2ed76a027ae6d",
+    "size_bytes": 2966
+  },
+  {
+    "asset_type": "kicad_footprint",
+    "ext": ".kicad_mod",
+    "mtime": 1795026549,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-PB2.pretty/Wurth_742792510_1812_HighCurrent.kicad_mod",
+    "repo": "SecureControllers",
+    "sha256": "9da26bcc6b2b7b4fa11301a2ab33dfea679c47919067e073dac007291a1c06f8",
+    "size_bytes": 1550
+  },
+  {
+    "asset_type": "kicad_symbol",
+    "ext": ".kicad_sym",
+    "mtime": 1795026555,
+    "rel_path": "kicad/NoNFO-Pilot/PB2/kicads/NoNFO-Pilot-PB2.kicad_sym",
+    "repo": "SecureControllers",
+    "sha256": "7588a521cf31b98a534ca57f30ab8407cef728b13cc0656912b0477a6c8d3f47",
+    "size_bytes": 396642
   },
   {
     "asset_type": "kicad_footprint",

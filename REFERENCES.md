@@ -84,6 +84,66 @@ These entries catalog the external resources cited by the NoNFO-Pilot board fami
 
 **Used in:** `docs/ideation/2026-10-12-nonfo-pilot-pb2-ideation.html`.
 
+### REF-NFP-012: Microchip USB2422 2-port USB 2.0 hub controller, data sheet DS00001726B
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Microchip Technology Inc., DS00001726B (2013-2015) |
+| **Official URL** | <https://ww1.microchip.com/downloads/en/DeviceDoc/00001726B.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/USB2422-DS00001726B.pdf` (MD5 a98a88516e71d96bd846e0b8afd5d52c) |
+| **Applied sections** | Features (24 MHz crystal, -40 to +85 C industrial grade -I/MJ); Figure 2-1 pinout; §7.0 Figure 7-1 24-SQFN package and PCB land pattern |
+| **Openness / sourcing** | Public, no NDA. Microchip is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`; `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`.
+
+### REF-NFP-013: TI TUSB4020BI two-port USB 2.0 hub, data sheet SLLSEI0E (rejected candidate)
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Texas Instruments, SLLSEI0E, July 2015, revised July 2024 |
+| **Official URL** | <https://www.ti.com/lit/ds/symlink/tusb4020bi.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/tusb4020bi-SLLSEI0E.pdf` (MD5 b50cf563fcef53e51397946646911ce9) |
+| **Applied sections** | Package HTQFP-48 (PHP); -40 to +85 C. Recorded as the rejected alternative on area. |
+| **Openness / sourcing** | Public, no NDA. TI is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`; `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`.
+
+### REF-NFP-014: Microchip USB2640i/USB2641i industrial USB 2.0 hub and flash media controller, data sheet DS00001948C
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Microchip Technology Inc., DS00001948C (2015-2021) |
+| **Official URL** | <https://ww1.microchip.com/downloads/aemDocuments/documents/UNG/ProductDocuments/DataSheets/USB2640i-USB2641i-Data-Sheet-DS00001948C.pdf> (HTTP 200, 2026-11-17) |
+| **Local copy** | `datasheets/USB2640i-USB2641i-DS00001948C.pdf` (MD5 132e0d33cbe65b2074dc651efb96bc5d) |
+| **Applied sections** | General Description (three downstream ports, one wired to the internal flash media reader; -40 to +85 C); pin diagram (pin 13 SD_WP, pin 14 SD_nCD); Figure 11-1 sheet 2 recommended land pattern, variant C; product identification (USB2641i-HZH-02) |
+| **Openness / sourcing** | Public, no NDA. Microchip is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/scripts/gen_nonfo_pb2_footprints.py`; `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`.
+
+### REF-NFP-015: C&K (Littelfuse) KMR2 Series tactile switch data sheet
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Littelfuse, Inc. (C&K Switches), KMR2 Series data sheet, revised 01/28/26 |
+| **Official URL** | Supplied by the owner 2026-11-17 (Littelfuse/C&K product documentation) |
+| **Local copy** | `datasheets/Littelfuse-CK-KMR2-Series-Datasheet.pdf` (MD5 5d8b01a9b0bbd012a3dcad50e27d6585) |
+| **Applied sections** | p.1 NG terminations recommended layout; Environmental Characteristics (silver: -40 to +85 C); ordering table (KMR211NG LFS) |
+| **Openness / sourcing** | Public, no NDA. Littelfuse is US-domiciled. |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`; `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`.
+
+### REF-NFP-016: Molex Nano-Fit 105313 right-angle header sales drawing and product sheet
+
+| Field | Value |
+| --- | --- |
+| **Publisher** | Molex Electronic Technologies, LLC, sales drawing SD-105313-100 rev P1 (released 2025/06/26, EC 826596), and product sheet for 1053131204 (generated 2026-11-18) |
+| **Official URL** | Supplied by the owner 2026-11-18 from the molex.com part page for 1053131204 |
+| **Local copy** | `datasheets/molex/1053131204_sd.pdf` (MD5 276602c0cdc35cfd3e95e8173daabd34); `datasheets/molex/1053131204.pdf` (MD5 8d9eb01aec0167edafec7f23d97d5d48) |
+| **Applied sections** | Drawing sheet 1 "RECOMMENDED PCB (CONNECTOR SIDE VIEW)"; sheet 4 table row 105313-1204 (A 10.94, B 7.50, C 8.14); product sheet: 8.0 A per contact, 0.510 g, PCB locator and retention |
+| **Openness / sourcing** | Public, no NDA. Molex is US-domiciled (Lisle, Illinois). |
+
+**Used in:** `kicad/NoNFO-Pilot/PB2/docs/BOM.csv`; `kicad/NoNFO-Pilot/PB2/NONFO_PB2_FOOTPRINT_VERIFICATION.md`.
+
 ### EMC and bus standards inherited from Serenity-UAV
 
 The NoNFO-Pilot plan carries the Serenity Pilot and TACCO EMC targets and MIL-STD-1553C. Their Serenity IDs collide with this repository's `REF-MIL-001`, so they are catalogued here under non-colliding IDs. Each entry below is copied from Serenity-UAV `REFERENCES.md` (2026-11-14), where it was validated; the Serenity ID is kept in each heading for traceability.
