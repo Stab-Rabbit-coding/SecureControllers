@@ -635,15 +635,15 @@
         (pin passive line (at 10.16 0.00 180) (length 2.54) (name "N" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
       )
     )
-    (symbol "S_CMC-CAN" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes)
+    (symbol "S_CHK-CAN" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 6.35 0) (effects (font (size 1.27 1.27))))
       (property "Value" "SRF2012-100Y" (at 0 -6.35 0) (effects (font (size 1.27 1.27))))
       (property "Footprint" "Serenity-Custom:Bourns_SRF2012_4T" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
       (property "Datasheet" "SRF2012A.pdf windings 1-2 / 4-3 [REF-SENSOR-026]" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-      (symbol "S_CMC-CAN_0_1"
+      (symbol "S_CHK-CAN_0_1"
         (rectangle (start -16.51 5.08) (end 16.51 -5.08) (stroke (width 0.2540) (type default)) (fill (type background)))
       )
-      (symbol "S_CMC-CAN_1_1"
+      (symbol "S_CHK-CAN_1_1"
         (pin passive line (at -19.05 2.54 0) (length 2.54) (name "W1_IN" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
         (pin passive line (at -19.05 0.00 0) (length 2.54) (name "W1_OUT" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
         (pin passive line (at 19.05 2.54 180) (length 2.54) (name "W2_IN" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
@@ -812,15 +812,15 @@
         (pin passive line (at 10.16 0.00 180) (length 2.54) (name "N" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
       )
     )
-    (symbol "S_CMC-RS485" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes)
+    (symbol "S_CHK-RS485" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 6.35 0) (effects (font (size 1.27 1.27))))
       (property "Value" "SRF2012-100Y" (at 0 -6.35 0) (effects (font (size 1.27 1.27))))
       (property "Footprint" "Serenity-Custom:Bourns_SRF2012_4T" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
       (property "Datasheet" "SRF2012A.pdf windings 1-2 / 4-3 [REF-SENSOR-026]" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-      (symbol "S_CMC-RS485_0_1"
+      (symbol "S_CHK-RS485_0_1"
         (rectangle (start -16.51 5.08) (end 16.51 -5.08) (stroke (width 0.2540) (type default)) (fill (type background)))
       )
-      (symbol "S_CMC-RS485_1_1"
+      (symbol "S_CHK-RS485_1_1"
         (pin passive line (at -19.05 2.54 0) (length 2.54) (name "W1_IN" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
         (pin passive line (at -19.05 0.00 0) (length 2.54) (name "W1_OUT" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
         (pin passive line (at 19.05 2.54 180) (length 2.54) (name "W2_IN" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))

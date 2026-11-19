@@ -40,6 +40,17 @@ TACCO_PREFIX = (
     "SD-WB", "C-PLD1", "J-FAN", "J-SD", "U-3V3RF", "U-1V8RF", "C-1V8RF", "L-RF1", "C-RF-",
     "D-ANT-", "J-ANT-", "C-ANT-", "L-ANT-SER",
 )
+# The Bourns SRF2012 common-mode chokes are renamed CHK-<bus> on the way in (owner,
+# 2026-11-19): DevSkim rule DS187371 read their Pilot reference prefix as a cipher mode.
+# Same parts, same nets; Pilot keeps its names.
+
+
+def port_ref(ic: dict) -> str:
+    if ic["value"].startswith("SRF2012"):
+        return "CHK-" + ic["ref"].split("-", 1)[1]
+    return ic["ref"]
+
+
 GPS_REFS = {"GPS", "C-GPS1", "C-GPS2", "R-ANT", "C-ANT", "L-ANT", "J-ANT"}
 
 
@@ -52,7 +63,7 @@ def load(name: str, path: Path):
 
 def part(ic: dict, origin: str) -> dict:
     return {
-        "ref": ic["ref"], "value": ic["value"], "fp": ic["fp"], "mpn": ic.get("mpn", ""),
+        "ref": port_ref(ic), "value": ic["value"], "fp": ic["fp"], "mpn": ic.get("mpn", ""),
         "mfr": ic.get("mfr", ""), "ds": ic.get("ds", ""), "dnp": bool(ic.get("dnp")),
         "in_bom": ic.get("in_bom", True), "origin": origin,
         "pins": [list(p) for p in ic["pins"]],

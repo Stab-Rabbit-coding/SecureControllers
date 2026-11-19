@@ -2122,7 +2122,7 @@
    ]
   },
   {
-   "ref": "CMC-CAN",
+   "ref": "CHK-CAN",
    "value": "SRF2012-100Y",
    "fp": "Serenity-Custom:Bourns_SRF2012_4T",
    "mpn": "SRF2012-121YA",
@@ -2495,7 +2495,7 @@
    ]
   },
   {
-   "ref": "CMC-RS485",
+   "ref": "CHK-RS485",
    "value": "SRF2012-100Y",
    "fp": "Serenity-Custom:Bourns_SRF2012_4T",
    "mpn": "SRF2012-121YA",
