@@ -1,0 +1,30 @@
+# TI TPS54540 4.5-42V, 5A synchronous buck, SO PowerPAD-8 (DDA).
+# Verified 2026-09-27 (Claude Sonnet 5) against tps54540.pdf Pin
+# Functions table (DDA/HSOP-8 PowerPAD).
+footprint_check = "stock TI_SO-PowerPAD-8 -- EP tied to GND (pin 9)"
+recommendation = "Only exposed-pad HSOP-8 PowerPAD package offered for this MPN."
+
+[symbol]
+name = "TPS54540DDA"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TPS54540DDAR"
+description = "4.5-42 V, 5 A synchronous step-down converter, SO PowerPAD-8"
+keywords = "buck regulator DC-DC step-down"
+footprint = "Package_SO:TI_SO-PowerPAD-8"
+fp_filters = "*PowerPAD-8*"
+
+[datasheet]
+doc = "TI TPS54540 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tps54540.pdf"
+section = "Pin Functions (DDA, HSOP-8 PowerPAD)"
+
+[[packages]]
+code = "DDA (HSOP-8 PowerPAD)"
+pins = 8
+body = "SO PowerPAD-8"
+
+[pins]
+left = ["2 VIN W", "3 EN I", "4 RT/CLK I", "5 FB I"]
+right = ["1 BOOT P", "8 SW w", "6 COMP O"]
+bottom = ["7 GND W", "9 EP W"]

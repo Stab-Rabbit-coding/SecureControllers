@@ -1,0 +1,30 @@
+# Bosch Sensortec BMP388 barometric pressure sensor, LGA-10.
+# Verified 2026-09-27 (Claude Sonnet 5) against BST-BMP388-DS001 Table 1
+# Pin-out (p. of "Pinout" section): VDDIO1, SCK2, VSS3, SDI4, SDO5, CSB6,
+# INT7, VSS8, VSS9, VDD10.
+footprint_check = "custom Bosch_BMP388_LGA-10_2x2mm footprint (Pilot uses this already, imported from Serenity-Custom.pretty)"
+recommendation = "Only package offered (LGA-10, 2x2x0.75 mm)."
+
+[symbol]
+name = "BMP388"
+reference = "U"
+manufacturer = "Bosch Sensortec"
+description = "Barometric pressure sensor, +/-0.03 kPa I2C/SPI, LGA-10 2x2mm"
+keywords = "barometer pressure sensor altimeter"
+footprint = "SecureControllers:Bosch_BMP388_LGA-10_2x2mm"
+fp_filters = "*BMP388*"
+
+[datasheet]
+doc = "Bosch Sensortec BMP388 data sheet BST-BMP388-DS001"
+url = "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp388-ds001.pdf"
+section = "Pinout table (VDDIO1...VDD10)"
+
+[[packages]]
+code = "LGA-10"
+pins = 10
+body = "2.0 x 2.0 x 0.75 mm"
+
+[pins]
+left = ["1 VDDIO W", "2 SCK I", "3 VSS W ~", "4 SDI B"]
+right = ["10 VDD W", "9 VSS W ~", "8 VSS W ~", "7 INT O"]
+bottom = ["5 SDO B", "6 ~{CSB} I"]

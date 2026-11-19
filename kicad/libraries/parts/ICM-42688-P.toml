@@ -1,0 +1,28 @@
+# TDK InvenSense ICM-42688-P 6-axis IMU, LGA-14.
+# Verified 2026-09-27 (Claude Sonnet 5) against DS-000347 v1.6 Table 10
+# Signal Descriptions (pins 1-14, primary "AP" SPI/I2C interface).
+footprint_check = "custom Bosch_LGA-14_3x2.5mm_P0.5mm footprint (already used on Pilot, imported from Serenity-Custom.pretty) -- NOTE: footprint name says 'Bosch' but part is TDK InvenSense; body size 2.5x3.0x0.91mm per datasheet Fig. 5 matches the LGA-14 land pattern, name mismatch is cosmetic (pre-existing, not fixed here)"
+recommendation = "Only package offered (2.5 x 3.0 x 0.91 mm LGA-14)."
+
+[symbol]
+name = "ICM-42688-P"
+reference = "U"
+manufacturer = "TDK InvenSense"
+description = "6-axis IMU (3-axis gyro + 3-axis accel), SPI/I2C/I3C, LGA-14"
+keywords = "IMU gyroscope accelerometer 6-axis"
+footprint = "Package_LGA:Bosch_LGA-14_3x2.5mm_P0.5mm"
+fp_filters = "*LGA-14*"
+
+[datasheet]
+doc = "TDK InvenSense ICM-42688-P data sheet DS-000347 v1.6"
+url = "https://invensense.tdk.com/wp-content/uploads/2020/04/ds-000347-icm-42688-p-v1.6.pdf"
+section = "Table 10 Signal Descriptions (p.20 pin-out figure)"
+
+[[packages]]
+code = "LGA-14"
+pins = 14
+body = "2.5 x 3.0 x 0.91 mm"
+
+[pins]
+left = ["1 AP_SDO/AP_AD0 B", "2 RESV N", "3 RESV N", "4 INT1/INT O", "5 VDDIO W", "6 GND W", "7 RESV N"]
+right = ["8 VDD W", "9 INT2/FSYNC/CLKIN B", "10 RESV N", "11 RESV N", "12 AP_CS I", "13 AP_SCL/AP_SCLK I", "14 AP_SDA/AP_SDIO/AP_SDI B"]

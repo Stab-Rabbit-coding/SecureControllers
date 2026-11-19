@@ -1428,13 +1428,13 @@
     "verified": false
   },
   {
-    "basename": "HX711_loadcell_ADC_breakout",
+    "basename": "LC_ADC_ADS1231_board",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/placeholders/cargo/HX711_loadcell_ADC_breakout.stl",
-        "sha256": "141706f0ac53c29829f451ee649c1d948ab698b9909989e6f50434622f32433f",
+        "path": "airframe/placeholders/cargo/LC_ADC_ADS1231_board.stl",
+        "sha256": "d8fc2acd980c4c7b7e3d8f60ea3ba389ebc057adb2c484ffbf911f87c3934c16",
         "size_bytes": 684
       }
     },
@@ -2737,6 +2737,23 @@
     "verified": false
   },
   {
+    "basename": "battery_cradle",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/battery_cradle.stl",
+        "sha256": "44604119e19da8a1edd90617a63e5dc98e3afa34e210d3b48ea17b34f14727b9",
+        "size_bytes": 131284
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
     "basename": "cargo_cradle_autolatch",
     "canonical_path": null,
     "duplicate_hash_match": false,
@@ -2760,8 +2777,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/cargo/cargo_door_port.stl",
-        "sha256": "83fea8f6ab340545bc5223f47e2f112d4a18db0915506a79b8037fb89ced3aa4",
-        "size_bytes": 135684
+        "sha256": "57573a3e946ef8b26b3d8810e9203b7cd9634796304d36855da96f715b58608a",
+        "size_bytes": 149284
       }
     },
     "pair_incomplete": false,
@@ -2794,8 +2811,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/cargo/cargo_door_stbd.stl",
-        "sha256": "7059b52b4813c1f1760f5ebc048d7bd2400d8b62fc66f7a95dcbf9428f30e5fb",
-        "size_bytes": 141084
+        "sha256": "bad073111637a04963fb1b6558fe22634d046506cef8a5e9ab99e0ac79234cbe",
+        "size_bytes": 134884
       }
     },
     "pair_incomplete": false,
@@ -2862,7 +2879,7 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/cargo/cargo_hinge_retention.stl",
-        "sha256": "73133d23e17c4da368cd6788b8797225207f84c4720c9e8e279b196d40d16d40",
+        "sha256": "8b3d948917e18aed279590e48c6bb8c267096dfd9c54f05ec38bf5004810b064",
         "size_bytes": 71284
       }
     },
@@ -2896,8 +2913,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/cargo/cargo_sect_shell24_2mm_repaired.stl",
-        "sha256": "15390597779e95dd631b819b44a194d240baa03c537bc3050eab0ab212b960ac",
-        "size_bytes": 42866184
+        "sha256": "2f4385a8c6c0afe543d9690441d8ca20821278ed2f987d619d4fbd8503ddeb88",
+        "size_bytes": 55697784
       }
     },
     "pair_incomplete": false,
@@ -2975,14 +2992,320 @@
     "verified": false
   },
   {
+    "basename": "chin_node_shelf",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/chin_node_shelf.stl",
+        "sha256": "9555475a6371c35e4c21facb6f1c22b3e319e9641f54d737d4d686ac58f91ce5",
+        "size_bytes": 41884
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "door_horn",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/door_horn.stl",
+        "sha256": "b79bafdda5a39f0609d77ab4afcb59c6852d4118229aa8312d9766bbf0b7c18e",
+        "size_bytes": 31557
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "door_latch_bracket_port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/door_latch_bracket_port.stl",
+        "sha256": "0281ecf024de6c7b6cdcad70ac3c72f156f036cc43a6ba20601a7223127af547",
+        "size_bytes": 13384
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "door_latch_bracket_stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/door_latch_bracket_stbd.stl",
+        "sha256": "7a6676529391d438a554c2795904a52b02cf2d6f34909154a27880805fe7324d",
+        "size_bytes": 10284
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "door_latch_crank_port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/door_latch_crank_port.stl",
+        "sha256": "efa41d8c55e92e0435150cf4c5c224b408e7c93c6ee9531680e6333d70348d4b",
+        "size_bytes": 22584
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "door_latch_crank_stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/door_latch_crank_stbd.stl",
+        "sha256": "71467c6834ded21afcb6535a9a9298756b9eecc16334406121650733c8d2e433",
+        "size_bytes": 20484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "gateway_door_tray",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/gateway_door_tray.stl",
+        "sha256": "718c0265f5813628f0d28cd86d8b45ff86dd69343d35cb56ed81ce551f6da0af",
+        "size_bytes": 70684
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_actuator_bracket_port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_actuator_bracket_port.stl",
+        "sha256": "1375aeb9e8b521630e462ae2a93f93e01044bd2d63470f7f1699e0dc48f9a82a",
+        "size_bytes": 152384
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_actuator_bracket_stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_actuator_bracket_stbd.stl",
+        "sha256": "05a2a58b147c1cb9231f295535e1be9dce537f817d0d20c05e9109d24e47cbf4",
+        "size_bytes": 152384
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_actuator_wheel",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_actuator_wheel.stl",
+        "sha256": "15ceb2dce9ad78b794a114281e325dacf2ae3ea861f776bbb7b11ed1f5f73423",
+        "size_bytes": 73884
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_actuator_worm",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_actuator_worm.stl",
+        "sha256": "1d3c93a6de5d2817cb86485226676b3c99a2e1d56d1f0ef2eaa62c2d592c3a0d",
+        "size_bytes": 685184
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_brake_guide",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_brake_guide.stl",
+        "sha256": "0b689e4dcb1cae6a6d64748c2fce93b4c26060181ce0d0342cd068d95640a52e",
+        "size_bytes": 173876
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "tilt_brake_guide_stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/tilt_brake_guide_stbd.stl",
+        "sha256": "cfc194819637faddd722af529f03e33177eda41e459fc6f77ee27cb294156e40",
+        "size_bytes": 176984
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "void_former_cargo_batt_chimney",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/void_former_cargo_batt_chimney.stl",
+        "sha256": "678d4ddbf39d84a8bb0e785e93d48e280299212e0b6a5e8d89fe5bfa5e940060",
+        "size_bytes": 21484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "void_former_cargo_collar_rim",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/void_former_cargo_collar_rim.stl",
+        "sha256": "54f87cb20a915e6ff370717e9a30a48da4462091f355ba84158e653b1cce73ee",
+        "size_bytes": 858484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "void_former_cargo_harness_trunk_port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/void_former_cargo_harness_trunk_port.stl",
+        "sha256": "703ebe58c058f178b750c6441255c9cb74d453c4c3226f841c271c3c81e908ee",
+        "size_bytes": 1022884
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "void_former_cargo_harness_trunk_stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/void_former_cargo_harness_trunk_stbd.stl",
+        "sha256": "dc01d034c764514c1b68f875008e32af97be110fe6c0e593fb23552c4315dac6",
+        "size_bytes": 1014584
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "void_former_cargo_node_bay",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/cargo/void_former_cargo_node_bay.stl",
+        "sha256": "f636e7e6ba7d040c9345b42e0278a00964787ea0aed320788b317cc8eeaff340",
+        "size_bytes": 1970884
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
     "basename": "cargo_middle_splice_collar",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/cargo_middle_splice_collar.stl",
-        "sha256": "4abb32857a994da92b7e59d654adf852669b4456649459be50b045160e1c947b",
-        "size_bytes": 651084
+        "sha256": "4fbf9a160d2449c11fdff57a07116473d0e8d91076bde6b55fec19a913bc363b",
+        "size_bytes": 685884
       }
     },
     "pair_incomplete": false,
@@ -3009,14 +3332,235 @@
     "verified": false
   },
   {
+    "basename": "bay_a_cn1_drawer",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bay_a_cn1_drawer.stl",
+        "sha256": "9393aa5ffd41d2d173aa7593e3b2477288b55e3167ec76bfd3d384ca86af9466",
+        "size_bytes": 285584
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "bay_a_cn1_gate",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bay_a_cn1_gate.stl",
+        "sha256": "2ed442ec37c49a60a058d6df77576476133b80d57aeb77ab2ffb80ba62ebe1fe",
+        "size_bytes": 684
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "bay_a_fc1_shelf",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bay_a_fc1_shelf.stl",
+        "sha256": "98d87e1be439c7cab70aeebe54bee105df5fb23f300dc0e34a5fa6f5612d8be9",
+        "size_bytes": 59284
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "bay_a_hatch_cover",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bay_a_hatch_cover.stl",
+        "sha256": "c0f4e64afc2e10df9e980decc8338cd6b0ce699d9ddbb698caeedb5a87299dab",
+        "size_bytes": 3414184
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "bay_a_hatch_flange",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bay_a_hatch_flange.stl",
+        "sha256": "09f4592b8e25b8e9de08e9fe5f1a8e4ac7cc4ee9b31aab976e653fc01011a373",
+        "size_bytes": 2444184
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "bow_sensor_bay_insert",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/bow_sensor_bay_insert.stl",
+        "sha256": "5cb1714b74db75409c807d75269a4ced9da12fdd7dcaee0fd83754dd4f393d6b",
+        "size_bytes": 52284
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "head_cell_catch",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/head_cell_catch.stl",
+        "sha256": "a1ce9ed8b0551bb96070c86b8e8897ffbf39e2acd302c0198c49060f67b08e53",
+        "size_bytes": 2084
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "head_cell_rail",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/head_cell_rail.stl",
+        "sha256": "4824201827b1f2813542d45bfe8fa5b37e22d1801155992c476292824449c06e",
+        "size_bytes": 495884
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "head_cell_sled",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/head_cell_sled.stl",
+        "sha256": "c63340e5626efbd5f8a3b779306b3d0630e0e4d0eb979689adaadebbf314bbce",
+        "size_bytes": 3984
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "twin_pack_gate",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/twin_pack_gate.stl",
+        "sha256": "6f33537e0c4ca1330eb88696c8ff83574132e6a0466d42a6ba34cadede4a756a",
+        "size_bytes": 6163
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "twin_pack_sled",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/twin_pack_sled.stl",
+        "sha256": "95f89f1f00940098a544fa314128d59366aae1d7d8331ba84a45b07f874ebef2",
+        "size_bytes": 5777
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "twin_pack_tray",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head/twin_pack_tray.stl",
+        "sha256": "019306d370d76035f217ae9e592b5a3167ce79e283f16adda3302c68456c67e7",
+        "size_bytes": 6698
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "head_cargo_shell24_2mm_merged_hatch",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/head_cargo_shell24_2mm_merged_hatch.stl",
+        "sha256": "36fe1aeda0d23bf105256c95fc9c614403d8ec1d25ddec761570335c78441026",
+        "size_bytes": 89280284
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
     "basename": "head_cargo_splice_collar",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/head_cargo_splice_collar.stl",
-        "sha256": "b69df5f0c11a6b660851e1dbbada51ab7000dd50da5151af0042a4a383b2f80e",
-        "size_bytes": 851484
+        "sha256": "1bc7919a63215baea716d177f5597726441c5bb432262b6eb79b0dac6a6545ac",
+        "size_bytes": 920884
       }
     },
     "pair_incomplete": false,
@@ -3049,8 +3593,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/head_shell24_2mm_repaired.stl",
-        "sha256": "89a595f04c9b03d4349d30430159bf2f24d8a208b9c1d3a252dace6586821502",
-        "size_bytes": 36964484
+        "sha256": "50a843149e8a0d2c3a49f6d24e1b315dd21aec9291db954c8ae3717da25201b5",
+        "size_bytes": 36659784
       }
     },
     "pair_incomplete": false,
@@ -3077,14 +3621,48 @@
     "verified": false
   },
   {
+    "basename": "lg_a1b_housing_fore-port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_a1b_housing_fore-port.stl",
+        "sha256": "e7fe7584eed35e32bc26533c6dec4aea2f2870308e50506161d133459ca3df48",
+        "size_bytes": 15084
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_a1b_housing_fore-stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_a1b_housing_fore-stbd.stl",
+        "sha256": "b8081dce05779d316c4158af323029dfbc40b03bc43a9bf5245fe6093c06a9c7",
+        "size_bytes": 15084
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
     "basename": "lg_r6_1_5in_hull_legs",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_1_5in_hull_legs.stl",
-        "sha256": "361b0a071d03cdbac62ac42ce383d2aafaf630a563981b6fd8d7f7c5d89ff203",
-        "size_bytes": 16919209
+        "sha256": "7892d00e1a9db9df438cb032572307a1a17936c53fc3c6c4758da0d245cc61e5",
+        "size_bytes": 4312484
       }
     },
     "pair_incomplete": false,
@@ -3100,8 +3678,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_1_5in_hull_stance.stl",
-        "sha256": "75b36b3161cf728eaa656696f8693e4ac696375ef72a366f4bc754c397d52942",
-        "size_bytes": 17065953
+        "sha256": "3bac872ade075fe2c89f9404eff0a44bbb326cfd385955bb9861d2b07cde1799",
+        "size_bytes": 4358284
       }
     },
     "pair_incomplete": false,
@@ -3162,14 +3740,150 @@
     "verified": false
   },
   {
+    "basename": "lg_r6_3_0in_bay_aft-port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_aft-port.stl",
+        "sha256": "c70702745c8b6e62b1de681159fd20ac58961e74976b7dfa0ccb15897752a16f",
+        "size_bytes": 2195484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_aft-port_print",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_aft-port_print.stl",
+        "sha256": "327a7c558476f1f463c68cafc982bac648920260f3e74121aa98c7d878e9e48c",
+        "size_bytes": 2195484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_aft-stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_aft-stbd.stl",
+        "sha256": "24ae1c0bf149a5e3c9adaddb7de85e0d6f6bd36c4496d3854dce7fa83b40773f",
+        "size_bytes": 2195484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_aft-stbd_print",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_aft-stbd_print.stl",
+        "sha256": "f8715c5ae02f6a4e1d288246fe01bfe96be4a96afac691310c52a51a08115739",
+        "size_bytes": 2195484
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_fore-port",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_fore-port.stl",
+        "sha256": "a18d850578de369938070bd8f00d13f1f6a09e4959492b3e532491e9b2b2087c",
+        "size_bytes": 2070184
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_fore-port_print",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_fore-port_print.stl",
+        "sha256": "938068c615749a62d1f2634d5153eed87167400c16e97a360c7a27c9d4342c0c",
+        "size_bytes": 2070184
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_fore-stbd",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_fore-stbd.stl",
+        "sha256": "d3d520f60b78b8b9efa94792774689cf6fa90e7dcbc617947b286003664a8f80",
+        "size_bytes": 2075684
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_bay_fore-stbd_print",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_bay_fore-stbd_print.stl",
+        "sha256": "7da7601de1c0b2e4139bab6895ce477a91ee9e81938dcd1f0339a389e85a3ebe",
+        "size_bytes": 2075684
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
     "basename": "lg_r6_3_0in_hull_legs",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_hull_legs.stl",
-        "sha256": "32e7921c01788ab4c6a3225f1b97420642981729538376a74199e1d994ab5322",
-        "size_bytes": 16927932
+        "sha256": "0c6909bee6dbfce8412f265b891071ed10386849eb1eaf6245962299f8b35dcd",
+        "size_bytes": 15261370
       }
     },
     "pair_incomplete": false,
@@ -3185,8 +3899,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_hull_stance.stl",
-        "sha256": "b974293898038bb61f5c3f806e8d5462124d9a86257955586146f7851d479c93",
-        "size_bytes": 17270698
+        "sha256": "8d897bff2b3c4e9ad08ddffc26a666681590eca76ab07736b84864ac7f444d77",
+        "size_bytes": 15877743
       }
     },
     "pair_incomplete": false,
@@ -3202,8 +3916,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_leg_assembled.stl",
-        "sha256": "bc2d48fc371c184a79b1b7a9032b75027450844d03e0dc185563c30199acb779",
-        "size_bytes": 3973148
+        "sha256": "afeaaed1c9871616f1538dc8ad87487e9894606d55c3a3b0c9a8c86a956ae318",
+        "size_bytes": 3542846
       }
     },
     "pair_incomplete": false,
@@ -3219,8 +3933,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_leg_deformed.stl",
-        "sha256": "2ec1d798befb15d8e31b137f70f5d00b7c1ebf7fc5c8637ee882ac8060423421",
-        "size_bytes": 4051826
+        "sha256": "4ac8ee4435bbe6a9c136cf5fc01b41f3ac1a6bfca112bb2b16ed8b897d419f15",
+        "size_bytes": 3581368
       }
     },
     "pair_incomplete": false,
@@ -3236,8 +3950,25 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_leg_frame.stl",
-        "sha256": "6dcdf4869ca2c4ae4b336e04356c60a58bd0379ee54a8615c19d4c6640e05f6c",
-        "size_bytes": 2075452
+        "sha256": "0193b51fac190fd289aa4995d46a83e357331a748743b9fb044505a889c12a3a",
+        "size_bytes": 2153497
+      }
+    },
+    "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "lg_r6_3_0in_leg_frame_fore",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "stl": {
+        "path": "airframe/stls/fuselage/landing-gear/lg_r6_3_0in_leg_frame_fore.stl",
+        "sha256": "15bd296488ad2c737397d97aacc9311d4c562ad70a16881671c5e1e47af7a4b0",
+        "size_bytes": 2166321
       }
     },
     "pair_incomplete": false,
@@ -3389,8 +4120,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/middle_rear_splice_collar.stl",
-        "sha256": "e2bc9024035b56542c60d53f3aef78f124f24be7ba318f1f7775b2fd4ada0bc4",
-        "size_bytes": 988484
+        "sha256": "b47556307df89986b4f23c1fc34b428b7a8a66d9c0cbd13eea7e815a68a6a53c",
+        "size_bytes": 1275284
       }
     },
     "pair_incomplete": false,
@@ -3406,8 +4137,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/middle_shell24_2mm_repaired.stl",
-        "sha256": "65a7be4cc298122dccbe60354544cbd8c56b7fec5cc046ac9d9814a669950e9a",
-        "size_bytes": 34170284
+        "sha256": "fcd98578baf048640e3a0cf84bbc76da7c9c7268ed4a7d6a0dc9939d93bec1b5",
+        "size_bytes": 34169384
       }
     },
     "pair_incomplete": false,
@@ -3423,8 +4154,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/rear_shell24_2mm_repaired.stl",
-        "sha256": "5f40a0aea5f56dbe64f71059c1f51b2eb2fffae5d1e934daebc6add50c655d99",
-        "size_bytes": 50391684
+        "sha256": "d9e10af12b6c6d037efd5e97c1d7d1704638d92ea8d9a0a6221f303c517e7b1f",
+        "size_bytes": 50399084
       }
     },
     "pair_incomplete": false,
@@ -3457,8 +4188,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/wing_root_flange_port.stl",
-        "sha256": "a3a9073bdc480d1f418b0c386e0047dda22520a7815e7406ec0a56fb4a90c80c",
-        "size_bytes": 3403884
+        "sha256": "ff45cf51b80869339277e5d25dc106d9bc24625730f5027ab018f81fe32c9ae3",
+        "size_bytes": 3192584
       }
     },
     "pair_incomplete": false,
@@ -3474,8 +4205,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/fuselage/wing_root_flange_stbd.stl",
-        "sha256": "6cbf117e77709802e82e04b2f67bb47d5f3e56acfdb66c33ab49d1d311e4d62e",
-        "size_bytes": 3637184
+        "sha256": "165f315a78fb4a67ab8b912d61bb877de53b25792a75db579ec4c7537d4cb593",
+        "size_bytes": 3192684
       }
     },
     "pair_incomplete": false,
@@ -3485,14 +4216,14 @@
     "verified": false
   },
   {
-    "basename": "edf_aft_spider_sleeve",
+    "basename": "edf_motor_mount_64mm_stage2_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/edf_aft_spider_sleeve.stl",
-        "sha256": "c1642d75be3af719fc9302568636fcc2feddd3599d1e0f223d3d66dddbe612d4",
-        "size_bytes": 513432
+        "path": "airframe/stls/nacelles/edf_motor_mount_64mm_stage2_port.stl",
+        "sha256": "b2ec612e2bae3d47de49de1bf6a2c65768d433faa49854c7f95dbcc42638e708",
+        "size_bytes": 1472195
       }
     },
     "pair_incomplete": false,
@@ -3502,14 +4233,14 @@
     "verified": false
   },
   {
-    "basename": "edf_stator_sleeve",
+    "basename": "edf_motor_mount_64mm_stage2_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/edf_stator_sleeve.stl",
-        "sha256": "cd18ae76ac81a024f5bef0067e3fd376ce2a901ab0c8ae3ccae1755fbfd08ccd",
-        "size_bytes": 971061
+        "path": "airframe/stls/nacelles/edf_motor_mount_64mm_stage2_stbd.stl",
+        "sha256": "5c435a6203ed849c96e12f6073e8cdf622f6b6bbe7815c67cac9510ce39a8e2d",
+        "size_bytes": 1473686
       }
     },
     "pair_incomplete": false,
@@ -3553,14 +4284,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_esc_cover_port_a",
+    "basename": "nacelle_port_64mm",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/esc/nacelle_esc_cover_port_a.stl",
-        "sha256": "3aaaad4648846b06ec0aa07b82b13d5f4513f26a46ccddfa42af57464a166862",
-        "size_bytes": 1334125
+        "path": "airframe/stls/nacelles/nacelle_port_64mm.stl",
+        "sha256": "5a0991f85e8871c7f3a64450e8b9375fca329161c5033c3e5a3fc1716916a24d",
+        "size_bytes": 4108684
       }
     },
     "pair_incomplete": false,
@@ -3570,14 +4301,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_esc_cover_port_b",
+    "basename": "nacelle_stbd_64mm",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/esc/nacelle_esc_cover_port_b.stl",
-        "sha256": "427e47531ae564aecdb25b692c775345af8869766aab73e74df8fa4a257e721e",
-        "size_bytes": 1357074
+        "path": "airframe/stls/nacelles/nacelle_stbd_64mm.stl",
+        "sha256": "7b026075410d60d74cc80332d4dbb7dcbf82e7ffa562fd1b5a9040cb763d0ff9",
+        "size_bytes": 4123984
       }
     },
     "pair_incomplete": false,
@@ -3587,14 +4318,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_esc_cover_stbd_a",
+    "basename": "nacelle_trunnion_64mm_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/esc/nacelle_esc_cover_stbd_a.stl",
-        "sha256": "b619605db53eb5f1f8b75bccb802bc74a9bc25dae7ce035dc2f42a3c326afac6",
-        "size_bytes": 1331068
+        "path": "airframe/stls/nacelles/nacelle_trunnion_64mm_port.stl",
+        "sha256": "240fa7b6b96a46bfb22a909bdf1b5f1f50a369596b327388385c2c80c617ca7a",
+        "size_bytes": 462084
       }
     },
     "pair_incomplete": false,
@@ -3604,14 +4335,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_esc_cover_stbd_b",
+    "basename": "nacelle_trunnion_64mm_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/esc/nacelle_esc_cover_stbd_b.stl",
-        "sha256": "68c41c30af118627d71cd721aad6d18fafef4d878d05863133d2bd19fe9e19c2",
-        "size_bytes": 1353501
+        "path": "airframe/stls/nacelles/nacelle_trunnion_64mm_stbd.stl",
+        "sha256": "5f1a6f7e64e7d51f65c33dd159d868b88bb0afe7054d41655f2f537886c74129",
+        "size_bytes": 462084
       }
     },
     "pair_incomplete": false,
@@ -3621,14 +4352,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_port_revs",
+    "basename": "nacelle_nozzle_flap_64mm",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nacelle_port_revs.stl",
-        "sha256": "d554330beaf7abc96b9a71338ec59c143138875a6d74b30e083f4fe9fd97bc0c",
-        "size_bytes": 3502984
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_flap_64mm.stl",
+        "sha256": "46957755198de0ed902b7aaa98fbc9051009d0f965f1beef3e1be7a791258774",
+        "size_bytes": 301526
       }
     },
     "pair_incomplete": false,
@@ -3638,14 +4369,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_servo_bracket",
+    "basename": "nacelle_nozzle_flap_seal_64mm",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nacelle_servo_bracket.stl",
-        "sha256": "3611d76a56d143d02745b04fc92a1129248aac2b7da507bf1849ee5a5ca3e788",
-        "size_bytes": 247401
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_flap_seal_64mm.stl",
+        "sha256": "04118d7fdd4246b5b6383a8e713e1aafc13664d86d68f91b4c1dfc1c114c37d6",
+        "size_bytes": 308071
       }
     },
     "pair_incomplete": false,
@@ -3655,14 +4386,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_stbd_revs",
+    "basename": "nacelle_nozzle_ring_64mm_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nacelle_stbd_revs.stl",
-        "sha256": "14e15a70c89aea5f4d515110a4b1334a67001a203a5f4b9e26c38139e2ee9460",
-        "size_bytes": 3437384
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_ring_64mm_port.stl",
+        "sha256": "b51d7cf755d8988073e9dd8d6ca64b49ff084e195cd88ec22cb43fc994e05a21",
+        "size_bytes": 725818
       }
     },
     "pair_incomplete": false,
@@ -3672,14 +4403,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_trunnion",
+    "basename": "nacelle_nozzle_ring_64mm_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nacelle_trunnion.stl",
-        "sha256": "dbd6d023f8172e09f062f7dd65e2f8782d9d62f6feb6e5731a0e74efadaf9aec",
-        "size_bytes": 1402090
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_ring_64mm_stbd.stl",
+        "sha256": "3a83157973bcd7847ad0d8b0a34590287b652bd537a13603b1d2d767349393bf",
+        "size_bytes": 720965
       }
     },
     "pair_incomplete": false,
@@ -3689,14 +4420,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_nozzle_flap",
+    "basename": "nacelle_nozzle_throat_64mm_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_flap.stl",
-        "sha256": "43063ea6102b34c069aba0d4870d8a7debd0c05a215dd0f3f15e9e50984f377c",
-        "size_bytes": 296525
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_throat_64mm_port.stl",
+        "sha256": "4abd4f272f8cf3bc83ea2a24e1c25f561c652f0b69c7c09dcecf7a388f530e99",
+        "size_bytes": 1170817
       }
     },
     "pair_incomplete": false,
@@ -3706,82 +4437,14 @@
     "verified": false
   },
   {
-    "basename": "nacelle_nozzle_flap_seal",
+    "basename": "nacelle_nozzle_throat_64mm_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_flap_seal.stl",
-        "sha256": "58ddd300c7bb7991c6053fdf1c7bd6a13c034514004eb98e0e484588965b9ddf",
-        "size_bytes": 298972
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_iris-closed",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_iris-closed.stl",
-        "sha256": "5061c266b298feec926b6be69f8f53d900adc5fa7089ede3286286ebb4b18e01",
-        "size_bytes": 4585465
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_iris-open",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_iris-open.stl",
-        "sha256": "4d6ec45bc36af2308834ebbc017ca81ac571a0de3c2d53792306ba9ca6418484",
-        "size_bytes": 4948250
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_ring",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_ring.stl",
-        "sha256": "f9537e861a49d7e0c8cf187605e3a1775afb1c4bf2dff6652d1090d81987d8cd",
-        "size_bytes": 1187516
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_throat",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_throat.stl",
-        "sha256": "4ce9707afc87fb1e066aea1db626d6d4eb4d9389f5c7cf8a92c6da1db7733310",
-        "size_bytes": 838731
+        "path": "airframe/stls/nacelles/nozzles/nacelle_nozzle_throat_64mm_stbd.stl",
+        "sha256": "6abe59d61e858fcf7b9b31fb605aa15208e2b4dd12732c20c27d68d4a847ca63",
+        "size_bytes": 1169947
       }
     },
     "pair_incomplete": false,
@@ -3797,8 +4460,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/wings/wing_port_s1223_revo.stl",
-        "sha256": "81efcc7f9e42c359c3ea86c445876e4c8dccf7b4817c9f2a5e4cad3790b243d3",
-        "size_bytes": 169684
+        "sha256": "7536c4b7800e66e2195611845cf41b543a22bed157156935ac71fe9aa45f07ca",
+        "size_bytes": 166084
       }
     },
     "pair_incomplete": false,
@@ -3814,8 +4477,8 @@
     "files": {
       "stl": {
         "path": "airframe/stls/wings/wing_stbd_s1223_revo.stl",
-        "sha256": "503f9ae5c975b99999cc54388916bca17f93678714722f7b9c26397ac1c10139",
-        "size_bytes": 169684
+        "sha256": "cc2e00a7b879efc6b6f82f99568eadcd2042f1329747ce170a46a44ee1ad2e62",
+        "size_bytes": 166084
       }
     },
     "pair_incomplete": false,
@@ -3825,14 +4488,14 @@
     "verified": false
   },
   {
-    "basename": "s_cargo_door_scaled18",
+    "basename": "wing_tilt_pinion_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/18in-scale-scad/s_cargo_door_scaled18.stl",
-        "sha256": "658568bf5434336019c309d4a5293b648b22afdd4d7f476211c6d8f7b9172d05",
-        "size_bytes": 6884
+        "path": "airframe/stls/wings/wing_tilt_pinion_port.stl",
+        "sha256": "11ca1393645bdb26fef670aeafc7aad8cd080afa545f23c08601541bbc16a16a",
+        "size_bytes": 86084
       }
     },
     "pair_incomplete": false,
@@ -3842,14 +4505,14 @@
     "verified": false
   },
   {
-    "basename": "s_cargo_door_strutts_scaled18",
+    "basename": "wing_tilt_pinion_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/18in-scale-scad/s_cargo_door_strutts_scaled18.stl",
-        "sha256": "13a5ecd7db2db9123606705b427e17b08f35a758ab908aeb0faeb27b67715d51",
-        "size_bytes": 49284
+        "path": "airframe/stls/wings/wing_tilt_pinion_stbd.stl",
+        "sha256": "d714d19224c5da914fee65250a45216e87ba527f59633e7e9ac8618c497d8043",
+        "size_bytes": 86084
       }
     },
     "pair_incomplete": false,
@@ -3859,14 +4522,14 @@
     "verified": false
   },
   {
-    "basename": "s_cargo_sect_shell18",
+    "basename": "wing_tip_fairing_port",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/18in-scale-scad/s_cargo_sect_shell18.stl",
-        "sha256": "e1996352f5cc2628c5f7ef12eda26ffe72804730096b1066e70d55bbd9e25293",
-        "size_bytes": 3788984
+        "path": "airframe/stls/wings/wing_tip_fairing_port.stl",
+        "sha256": "012fbecb76c23d9bfcd8707729e5ae7c31cf4d04312f7453aaae4fe6f736354c",
+        "size_bytes": 657184
       }
     },
     "pair_incomplete": false,
@@ -3876,14 +4539,14 @@
     "verified": false
   },
   {
-    "basename": "s_eng_left_shell18",
+    "basename": "wing_tip_fairing_stbd",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/18in-scale-scad/s_eng_left_shell18.stl",
-        "sha256": "1b75efbdce2b77bdc425c6a5ca3a2bd47a27e69e3864f9b43b15ba467e2f3eea",
-        "size_bytes": 1482284
+        "path": "airframe/stls/wings/wing_tip_fairing_stbd.stl",
+        "sha256": "f8732cde782df58106ba9adba7ec4ad0f33268c4ef0695bcd052cb122ccdd412",
+        "size_bytes": 657184
       }
     },
     "pair_incomplete": false,
@@ -3893,2635 +4556,248 @@
     "verified": false
   },
   {
-    "basename": "s_eng_pistons_scaled18",
+    "basename": "1040310811",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/18in-scale-scad/s_eng_pistons_scaled18.stl",
-        "sha256": "4381405480a941a41bd221576ed22e5c39185edd9b3dee915120045c3cbe740e",
-        "size_bytes": 92334
+        "path": "avionics/datasheets/molex/ul_1040310811/1040310811.stl",
+        "sha256": "e6df701f893bac78a4489dd4691e8605f01d9f0535027a8afebfae15b1293ea8",
+        "size_bytes": 296484
+      },
+      "stp": {
+        "path": "avionics/datasheets/molex/ul_1040310811/1040310811.stp",
+        "sha256": "1c7d98004a40dd2a13273773959a46755e246b3bbbc2739e21018cd8ddbf0cb3",
+        "size_bytes": 637042
       }
     },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_piv_outer_scaled18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_eng_piv_outer_scaled18.stl",
-        "sha256": "9c0c490fe86089ad40b17ba0abaa8adfce9ec97c8383031794fc4f1fa6fba8b1",
-        "size_bytes": 847684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_piv_pins_scaled18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_eng_piv_pins_scaled18.stl",
-        "sha256": "ace3bc49d484b15a429d1570ccd6d342b7cd336fcceb382983b03ec04ce6c0d4",
-        "size_bytes": 102484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_shell18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_eng_right_shell18.stl",
-        "sha256": "fc8d66b0193efa8a6b453935d5d3e29f0af396d8a04f4d7598371cb0febb61c2",
-        "size_bytes": 1482284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_feet_x_4_scaled18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_feet_x_4_scaled18.stl",
-        "sha256": "65fd1336d68f6f9048e8eb36e38c8aa893d53a1ca433d983d4c27dbd635b1dee",
-        "size_bytes": 535134
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_head_shell18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_head_shell18.stl",
-        "sha256": "ba7042309a758bc1952348429efe406dc3079f1245d08b3b110b2979a8216961",
-        "size_bytes": 1686584
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_legs_scaled18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_legs_scaled18.stl",
-        "sha256": "1e0fcb0c558687d8105f619e2773b283f007427271a866b846437e5bd321f650",
-        "size_bytes": 521184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_middle_shell18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_middle_shell18.stl",
-        "sha256": "5c1e531927c050046d298f9c71efae5ef2ff2fc48aabfb9ebd5a29e4c001b5f3",
-        "size_bytes": 703684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_pivot_arm_a_scaled18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_pivot_arm_a_scaled18.stl",
-        "sha256": "91bfd43f0c0f3b636940f133c9e33e8b3f5b1ab13b019e81f5ea3de255ecfc11",
-        "size_bytes": 252834
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_rear_shell18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_rear_shell18.stl",
-        "sha256": "982b9b56712c1b241097a916b935d82f3217e9b6a0fae17d0f337190af9e7634",
-        "size_bytes": 3387484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_wings_both_shell18",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/18in-scale-scad/s_wings_both_shell18.stl",
-        "sha256": "a4907550c715bb74ed24cd10de42f449923a6b76a33bc7325490ab1ff52976fb",
-        "size_bytes": 1614484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_engine_bell",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/hull_engine_bell.stl",
-        "sha256": "36841be1d94fb8549980b88c4fff14585c56e5118dbb275966ec0042f70f0cc8",
-        "size_bytes": 49169
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "ductile_wire_deformed",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/ductile_wire_deformed.stl",
-        "sha256": "68dc2d83467ed2cf4af502f1185c8abff8110fa0e417525d95ac02323189c00b",
-        "size_bytes": 49699
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "ductile_wire_nominal",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/ductile_wire_nominal.stl",
-        "sha256": "d426797467961973e22e6c342fd44978f0b986559956fbbb86794d91ee860972",
-        "size_bytes": 49913
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "feet_x_4_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/feet_x_4_scaled24.stl",
-        "sha256": "f170882fc930d21db64c2ab5c9e4efbfb3186d0b574710a0d0c2320aa8c12f4f",
-        "size_bytes": 535134
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "foot_1_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/foot_1_scaled24.stl",
-        "sha256": "7c3126505f8f844266830bd1e7de4bebd07b47816edeb1e2f8524d3f0588f75d",
-        "size_bytes": 134284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "foot_2_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/foot_2_scaled24.stl",
-        "sha256": "391f92609e869e19952d4ec55bf5da4d5fda7c4985415cde6455b0e096d42c1e",
-        "size_bytes": 135084
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "foot_3_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/foot_3_scaled24.stl",
-        "sha256": "9f5558a33d3e0644e1a05093cc8f424d7fcef1324917f5c2294bc643c2cff3e9",
-        "size_bytes": 131284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "foot_4_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/foot_4_scaled24.stl",
-        "sha256": "ec46536843bb25d0fa2468be059aeb880c1dfc46a28256b1553e6e1d9305d19a",
-        "size_bytes": 133784
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_gear_assembled",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/landing_gear_assembled.stl",
-        "sha256": "3c25a5e91312cc9d38fda5c110c11633d1e83d225c7ffb14dde18a8bfa32b380",
-        "size_bytes": 283084
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_gear_deformed",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/landing_gear_deformed.stl",
-        "sha256": "c22fe570c457f5d3c0870309cd1b2ceb538fcb49d10f4660273294baf1ffb2f7",
-        "size_bytes": 283084
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_gear_exploded",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/landing_gear_exploded.stl",
-        "sha256": "a7096cfe5b239cb793dfacf27c50c1d0117e454e5caedec137fcc32cb1cf5662",
-        "size_bytes": 283084
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_legs_hull_r1",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/landing_legs_hull_r1.stl",
-        "sha256": "c2653785cecfb1602ba8b28c58d38fc70573b08325c645ef20a6944f82bd6009",
-        "size_bytes": 555436
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "leg_1_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/leg_1_scaled24.stl",
-        "sha256": "6b32584e8a9652e0d369ca2e290ede12c540a8c13c96c3ef739c89acafc7d1b4",
-        "size_bytes": 130384
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "leg_2_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/leg_2_scaled24.stl",
-        "sha256": "052a48ced7649b6ae0963adc3238858eb1138d2a9490612388060ee8bd91443a",
-        "size_bytes": 130284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "leg_3_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/leg_3_scaled24.stl",
-        "sha256": "e18febe34b4ccccc89d5cc1eb1ca71842e18d1ebcf0baf000207db5058d9f951",
-        "size_bytes": 130384
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "leg_4_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/leg_4_scaled24.stl",
-        "sha256": "c475c671d1953269980c55a0ee4d27c34cf6b51eb1cdd2ad36b1f429fdef4a36",
-        "size_bytes": 130384
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "legs_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/legs_scaled24.stl",
-        "sha256": "0f877aaa3a81ffbe6bd547df07ebba43ac0ab11f493bdf7831639578086f233a",
-        "size_bytes": 521184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "post",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/post.stl",
-        "sha256": "99172bebbafc445ed56ceac4413f0f833bb6c5acb91e6609f0784d731f5178af",
-        "size_bytes": 56884
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "spring_wire_deformed",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/spring_wire_deformed.stl",
-        "sha256": "6af4910a8fc8dda38f73d1ced033ef5bd934c36d787d2fbed6426a3d9e96f329",
-        "size_bytes": 49897
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "spring_wire_nominal",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/spring_wire_nominal.stl",
-        "sha256": "a222dd65ad02319897a8070a6e8302fbdaa8bcfd18ff2e7f286eb03eebad1c3c",
-        "size_bytes": 50145
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "strong-leg",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/landing-gear/strong-leg.stl",
-        "sha256": "9f97f1bb8402ede66ba2d10c773d4c62652016c91c97ae4a7d44c1f178c01ffb",
-        "size_bytes": 329984
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_door_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_door_scaled24.stl",
-        "sha256": "fb5a3f59efd32e2e9fffc1d4c49b69f63022ddb9c78b188ae98ce1eb732a2949",
-        "size_bytes": 6884
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_door_strutts_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_door_strutts_scaled24.stl",
-        "sha256": "41e44d4d21cd3465701cebf634a89f25b2932aee2480dfc318f5c89045210055",
-        "size_bytes": 49284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_sect_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_sect_shell24.stl",
-        "sha256": "5505260a3bb64f08f3ff9494cc2004babbc74fd659fdd06dffba0d450eaa8018",
-        "size_bytes": 3788984
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_sect_shell24_2mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_sect_shell24_2mm.stl",
-        "sha256": "3ec4b169cef59cf528f7a63d109382a373183f5b55eebd359d7ebd7299822acf",
-        "size_bytes": 3788984
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_sect_shell24_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_sect_shell24_repaired.stl",
-        "sha256": "fb52d652e5c0ff5781aa21e01215b7bc3e792e361fa120a6628820c333fff8f0",
-        "size_bytes": 9805284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_cargo_sect_shell24_revs",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_cargo_sect_shell24_revs.stl",
-        "sha256": "8ea848eec67ca4bd6d263998e0cd0453afd6b4c2f66de0ff5916ab8fda9583fe",
-        "size_bytes": 1527551
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_feet_x_4_scaled24_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_feet_x_4_scaled24_repaired.stl",
-        "sha256": "6b097accccf6258c010ca481c443450cae2ea396cef20ebac7d360fb6a75cdf7",
-        "size_bytes": 3997684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_head_shell24_2mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_head_shell24_2mm.stl",
-        "sha256": "34fbc0859bd1223012bbae33b32ba98242f0bb3bc7036fa5064576b0268bb96b",
-        "size_bytes": 1686584
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_head_shell24_2mm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_head_shell24_2mm_repaired.stl",
-        "sha256": "a9980736636494956816ab17a8f497430596a6f4ecc7045e31864a1b5be7abeb",
-        "size_bytes": 11371484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_head_shell24_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_head_shell24_repaired.stl",
-        "sha256": "cca569f8e61b5ad5df8cf923efb441aa56b3ce7b54128e709e92b559d411f239",
-        "size_bytes": 5764884
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_middle_intake_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_middle_intake_shell24.stl",
-        "sha256": "fd1ac26f277f88120af0295818051a8d92dff90d5c736e475c381d65d3e9c93b",
-        "size_bytes": 684784
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_middle_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_middle_shell24.stl",
-        "sha256": "fb01502fa07d1b8d766bc68999293e8bd36396d08989c2e84454f72b7d0d1437",
-        "size_bytes": 703684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_middle_shell24_2mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_middle_shell24_2mm.stl",
-        "sha256": "755952412d62727d2ed0ab288c870b7d88ceb90dcd28e6e919066da92f89ee9d",
-        "size_bytes": 703684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_middle_shell24_2mm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_middle_shell24_2mm_repaired.stl",
-        "sha256": "d3aa6879b42e4aabbb56fb955563702d09e513bf1e1d65b363f8896bffebb33c",
-        "size_bytes": 11407384
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_rear_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_rear_shell24.stl",
-        "sha256": "5caafc99cfc4f6a374f7f8f493d75f4c52480624cefdeede34065db7772fd8c7",
-        "size_bytes": 3387484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_rear_shell24_2mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_rear_shell24_2mm.stl",
-        "sha256": "d0f426a866e25c8740ed6cfd7e8b3a10964f1a49b130b7ba9e1a9f3e114e4571",
-        "size_bytes": 3387484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_rear_shell24_2mm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_rear_shell24_2mm_repaired.stl",
-        "sha256": "2a6611a28100fcc228b260355e366886b52addfa0922c806171df1cfedaebaf1",
-        "size_bytes": 14319184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_rear_shell24_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/fuselage/s_rear_shell24_repaired.stl",
-        "sha256": "e22e2cba1e670ffbf32a5a89197ec76b8a2e2ca0b14a30d70afb7e421fb8a656",
-        "size_bytes": 7633684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "edf_bore_sleeve",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/edf_bore_sleeve.stl",
-        "sha256": "0045037536375ea0d5a6c8615c4227fe5896bee076df3b019a18166b1d18f87a",
-        "size_bytes": 1643778
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_bevel_housing",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_bevel_housing.stl",
-        "sha256": "dddd91ad1fe895c13de114466eca5b68e94c06f9c8185aca707c798f0c6446ae",
-        "size_bytes": 477521
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_bevel_pair",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_bevel_pair.stl",
-        "sha256": "0283188bd7234db66866f06ac7ec5c37fd971e3c4f9780e09b55a8c11c0a0caf",
-        "size_bytes": 413143
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_drive_pinion",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_drive_pinion.stl",
-        "sha256": "380c9e80f387cf95c5664f1038474fb822fbb4def65aa9cc10d8fbc58e918dc2",
-        "size_bytes": 146284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pinion",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_pinion.stl",
-        "sha256": "9ab9fec9c2381ed1524b6310ed5c8f1ded27e7b1e318667e603da5a2a5b8abb9",
-        "size_bytes": 198387
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pinion_a",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_pinion_a.stl",
-        "sha256": "4a6cb0b7d83367a50db4d663d3c61094eba9e6a0eff71be0be14bfaab6ee3cf4",
-        "size_bytes": 205366
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_port_revt",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_port_revt.stl",
-        "sha256": "a64c73814665d6b56513ee97402bd44b407cfa0ce27a82eeae632c7581c018e1",
-        "size_bytes": 12024472
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pushrod_crank",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_pushrod_crank.stl",
-        "sha256": "1d34de292bf8b845b5b361c27b0d3f1f42fcfa4156234d3171fc061de2063171",
-        "size_bytes": 163934
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_sector_gear",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_sector_gear.stl",
-        "sha256": "b9b6eed401dce5e6113b5da2ef198e7c59f44db7f4443b0d996a72355fbc4f58",
-        "size_bytes": 111786
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_stbd_revt",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_stbd_revt.stl",
-        "sha256": "6686197438c166ec0b757e10a3c15a2e9607b1d4f1a05f98a67c8282b00b3e3e",
-        "size_bytes": 11895002
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_tip_cap_port",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_tip_cap_port.stl",
-        "sha256": "9816ed96ae2d98452abed78b5c4c3515f8d8a7ca24f5588ead5833c955ac8ae1",
-        "size_bytes": 36701
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_tip_cap_stbd",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nacelle_tip_cap_stbd.stl",
-        "sha256": "692f2519babab58b66a3fa0ebb0eb5c95a447827cc11719a99a6d89907958190",
-        "size_bytes": 36701
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_bevel_housing",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_bevel_housing.stl",
-        "sha256": "7f31a158db9cea948b5f7d6cb7000ea18d63d1f9bab0d8693d822c2e4bfccbae",
-        "size_bytes": 477521
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_bevel_pair",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_bevel_pair.stl",
-        "sha256": "0283188bd7234db66866f06ac7ec5c37fd971e3c4f9780e09b55a8c11c0a0caf",
-        "size_bytes": 413143
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_closed_asm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_closed_asm.stl",
-        "sha256": "2591177cce0c34d9f608efe33b0ea420f01ed54ae33b1565ff53954c0c657cb2",
-        "size_bytes": 82484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_closed_asm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_closed_asm_repaired.stl",
-        "sha256": "b388cf8bf2e3e91acfe01caff2dcd443f6205bbc855b453470ebfee3b7939447",
-        "size_bytes": 1690284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_idler",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_idler.stl",
-        "sha256": "c9d0f11587f5a70613eec2dff54898f8660476f4c3f9a3c53517607cda236765",
-        "size_bytes": 599478
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_idler_bracket",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_idler_bracket.stl",
-        "sha256": "b0c562a94d3422206d5ded0d285cfc4cd9f1a9d3cf010c1d7f71084fed3e7761",
-        "size_bytes": 93318
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_iris",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_iris.stl",
-        "sha256": "4a937abcc404a43ddfac00cb4c832062319dca5da0de8dc60d5febe61d8174d7",
-        "size_bytes": 838731
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_petal",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_petal.stl",
-        "sha256": "99a144b5e67212262f79a58d3ec49766a588b9af1e2f1af1d5f40ef521a6e644",
-        "size_bytes": 10384
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_nozzle_petal_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/nacelle_nozzle_petal_repaired.stl",
-        "sha256": "812a57e067587538e5cf0459a1f5d629ca9797c5f0eaebef37a015d1820ccf71",
-        "size_bytes": 249884
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "rear_nozzle_petal_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/nozzles/rear_nozzle_petal_repaired.stl",
-        "sha256": "bdc4fe5992a7439b5f73f312b38c0c0e040c64f2b43285428943301474a4f0e7",
-        "size_bytes": 633084
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "sector_gear_22mm_fixed",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/sector_gear_22mm_fixed.stl",
-        "sha256": "7e12efd7e0b2705fecd0edd77ba40e69afff583dd9f5067d66abc60a30ca09c8",
-        "size_bytes": 57484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "stator_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/nacelles/stator_50mm.stl",
-        "sha256": "f92d37c34af4a0c7f9389d1aa8b929372eed056491020b5cef1d0edc5c69db57",
-        "size_bytes": 43284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "wing_nacelle_pylon_revo",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/airframe-archives/archive/stls/wings/wing_nacelle_pylon_revo.stl",
-        "sha256": "45ca5bc08145e4e505e0fe1892abd85e06d84b5f895ffa6a26eaf579d4aec3a1",
-        "size_bytes": 409024
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "sensorhat_mounting_tray",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/sensorhat_mounting_tray.stl",
-        "sha256": "374a603bf1fec940ab96066d204a2bc14bfe66c8b02ec9563dd553ac1c1abdfb",
-        "size_bytes": 2289
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "cockpit_dome_clear",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/cockpit_dome_clear.stl",
-        "sha256": "64a62c50328b9dc5969c89628cb131d4b090f82be01fed61ecc8035ee934b067",
-        "size_bytes": 393274
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "cockpit_dome_clear",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/cockpit_dome_clear.stl",
-        "sha256": "64a62c50328b9dc5969c89628cb131d4b090f82be01fed61ecc8035ee934b067",
-        "size_bytes": 393274
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_cockpit_section",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/hull_cockpit_section.stl",
-        "sha256": "f6256e9d5874b24034555d7cf6b4c5d0187d3d82b9a0ff7c865d319d22852445",
-        "size_bytes": 99269
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pod_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/nacelle_pod_70mm.stl",
-        "sha256": "b858becd8fdf6d17c0392875bba125a7199e11459d36303b0c82ad0db3b41f2a",
-        "size_bytes": 49649
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "sector_gear_22mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/sector_gear_22mm.stl",
-        "sha256": "4d3530b9b2f05994012543b71d439ee4c39db014a2807de2f41516b67560acc2",
-        "size_bytes": 116110
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "bevel_gear_housing",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/bevel_gear_housing.stl",
-        "sha256": "8f4959d4cdabceaee3e150564b2d0f54e420ffc9ecd7cce54a67762ed39d958a",
-        "size_bytes": 11334
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "cockpit_dome_clear",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/cockpit_dome_clear.stl",
-        "sha256": "64a62c50328b9dc5969c89628cb131d4b090f82be01fed61ecc8035ee934b067",
-        "size_bytes": 393274
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "dorsal_antenna_fin",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/dorsal_antenna_fin.stl",
-        "sha256": "7081b92fa5a09ec26bf90bbd37a49e9c03b9cc26af53e0cb63f701bd0a4fa64d",
-        "size_bytes": 10589
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_aft_neck",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_aft_neck.stl",
-        "sha256": "3688095bd682e005fefc413e0ec701f255204fe86f216ff02f7aa9fa28050997",
-        "size_bytes": 50083
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_cockpit_cap",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_cockpit_cap.stl",
-        "sha256": "e9095f85ae995d64c3bf7a0522888743a4f2040a29ac801c0204572ec05bccf9",
-        "size_bytes": 72413
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_cockpit_section",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_cockpit_section.stl",
-        "sha256": "f6256e9d5874b24034555d7cf6b4c5d0187d3d82b9a0ff7c865d319d22852445",
-        "size_bytes": 99269
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_engine_bell",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_engine_bell.stl",
-        "sha256": "36841be1d94fb8549980b88c4fff14585c56e5118dbb275966ec0042f70f0cc8",
-        "size_bytes": 49169
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_mid_body_left",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_mid_body_left.stl",
-        "sha256": "a11c3c4f2b2bbdd0e95ce7cb2a286e1c2d6866dc2e8f2c13c5a73e1164eacc49",
-        "size_bytes": 126131
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_mid_body_right",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/hull_mid_body_right.stl",
-        "sha256": "90817b9d26a7e043fe7388929d6dfca0157ba5ab4b63afa4e5b3d2547334a19c",
-        "size_bytes": 126133
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_skid_foot",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/landing_skid_foot.stl",
-        "sha256": "fea9fdaf6fd4381accd39436c0e2631154f3bc7572bf821253b06ee01a704f96",
-        "size_bytes": 4539
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pod_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nacelle_pod_70mm.stl",
-        "sha256": "b858becd8fdf6d17c0392875bba125a7199e11459d36303b0c82ad0db3b41f2a",
-        "size_bytes": 49649
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_tip_cap_port",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nacelle_tip_cap_port.stl",
-        "sha256": "692f2519babab58b66a3fa0ebb0eb5c95a447827cc11719a99a6d89907958190",
-        "size_bytes": 36701
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_tip_cap_stbd",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nacelle_tip_cap_stbd.stl",
-        "sha256": "9816ed96ae2d98452abed78b5c4c3515f8d8a7ca24f5588ead5833c955ac8ae1",
-        "size_bytes": 36701
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_flap_x8",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nozzle_flap_x8.stl",
-        "sha256": "2854e8e18b7f45def32e5624e5831ba9a915c6aa23662571877f433492f8bd5e",
-        "size_bytes": 2253
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_inner_ring_40mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nozzle_inner_ring_40mm.stl",
-        "sha256": "355d0313708ca8c64f48b7b894280d11e94524d57db6313d2cdcbd8feb3b60d0",
-        "size_bytes": 49085
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_inner_ring_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nozzle_inner_ring_70mm.stl",
-        "sha256": "e2d1c132d97c4cd7a0b689077039e15270f6e1efc0e663dc414d717b526c2f4d",
-        "size_bytes": 55467
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_outer_housing_40mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nozzle_outer_housing_40mm.stl",
-        "sha256": "5bc3cdca41a998136e8343fa23eb72fcf8cb881a118c7aecf071cec52d349a93",
-        "size_bytes": 49091
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_outer_housing_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/nozzle_outer_housing_70mm.stl",
-        "sha256": "c5721b2e04a34eb550be862b9fce2a7ae72975c7f6005fde454072b4dd3d27bb",
-        "size_bytes": 49283
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "payload_bay_door",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/payload_bay_door.stl",
-        "sha256": "ac8d361ee81d6e8899e76e25fa68f302a022d64de368bda41ce6e62cd612c499",
-        "size_bytes": 8339
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "pinion_a_bracket",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/pinion_a_bracket.stl",
-        "sha256": "98b25035f431114ab6d4a5fab108c8b2d611ee6baff1d63ee4f36b206f94ed21",
-        "size_bytes": 11294
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "sector_gear_22mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/sector_gear_22mm.stl",
-        "sha256": "4d3530b9b2f05994012543b71d439ee4c39db014a2807de2f41516b67560acc2",
-        "size_bytes": 116110
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "tilt_bracket_cf_petg",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stale-20260601/files-revF/serenity-drone-revF/stl/tilt_bracket_cf_petg.stl",
-        "sha256": "41316249134fa7e7b3bd333af506e1fee4afc66adb6a747c64052e97a8e5ab53",
-        "size_bytes": 16533
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "bevel_gear_housing",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/bevel_gear_housing.stl",
-        "sha256": "8f4959d4cdabceaee3e150564b2d0f54e420ffc9ecd7cce54a67762ed39d958a",
-        "size_bytes": 11334
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "cm4_node_mounting_tray",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/cm4_node_mounting_tray.stl",
-        "sha256": "6afffb73fdc4e7a7df420a99962a8301ce52133b542532be74233a88e31a527d",
-        "size_bytes": 2287
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_aft_neck",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_aft_neck.stl",
-        "sha256": "3688095bd682e005fefc413e0ec701f255204fe86f216ff02f7aa9fa28050997",
-        "size_bytes": 50083
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_cockpit_cap",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_cockpit_cap.stl",
-        "sha256": "e9095f85ae995d64c3bf7a0522888743a4f2040a29ac801c0204572ec05bccf9",
-        "size_bytes": 72413
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_cockpit_section",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_cockpit_section.stl",
-        "sha256": "f6256e9d5874b24034555d7cf6b4c5d0187d3d82b9a0ff7c865d319d22852445",
-        "size_bytes": 99269
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_engine_bell",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_engine_bell.stl",
-        "sha256": "36841be1d94fb8549980b88c4fff14585c56e5118dbb275966ec0042f70f0cc8",
-        "size_bytes": 49169
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_mid_body_left",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_mid_body_left.stl",
-        "sha256": "a11c3c4f2b2bbdd0e95ce7cb2a286e1c2d6866dc2e8f2c13c5a73e1164eacc49",
-        "size_bytes": 126131
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "hull_mid_body_right",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/hull_mid_body_right.stl",
-        "sha256": "90817b9d26a7e043fe7388929d6dfca0157ba5ab4b63afa4e5b3d2547334a19c",
-        "size_bytes": 126133
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "landing_skid_foot",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/landing_skid_foot.stl",
-        "sha256": "fea9fdaf6fd4381accd39436c0e2631154f3bc7572bf821253b06ee01a704f96",
-        "size_bytes": 4539
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pod_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nacelle_pod_70mm.stl",
-        "sha256": "b858becd8fdf6d17c0392875bba125a7199e11459d36303b0c82ad0db3b41f2a",
-        "size_bytes": 49649
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_pod_80mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nacelle_pod_80mm.stl",
-        "sha256": "7adcdd6a10f0b9f7f2713361ba35a9e3303f87edd57401eb3908094b6608eb70",
-        "size_bytes": 62206
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nacelle_tip_cap_80mm_port",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nacelle_tip_cap_80mm_port.stl",
-        "sha256": "4408647bb2d3d79cc8475b6306290e9e563ddbca6829166b00284d64e98e69b2",
-        "size_bytes": 46402
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_flap_x8",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_flap_x8.stl",
-        "sha256": "2854e8e18b7f45def32e5624e5831ba9a915c6aa23662571877f433492f8bd5e",
-        "size_bytes": 2253
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_inner_ring_40mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_inner_ring_40mm.stl",
-        "sha256": "355d0313708ca8c64f48b7b894280d11e94524d57db6313d2cdcbd8feb3b60d0",
-        "size_bytes": 49085
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_inner_ring_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_inner_ring_70mm.stl",
-        "sha256": "e2d1c132d97c4cd7a0b689077039e15270f6e1efc0e663dc414d717b526c2f4d",
-        "size_bytes": 55467
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_inner_ring_80mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_inner_ring_80mm.stl",
-        "sha256": "711cb670874ba05264d4f318610270fd29dfdce278597332a62deeca11317d74",
-        "size_bytes": 61646
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_outer_housing_40mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_outer_housing_40mm.stl",
-        "sha256": "5bc3cdca41a998136e8343fa23eb72fcf8cb881a118c7aecf071cec52d349a93",
-        "size_bytes": 49091
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_outer_housing_70mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_outer_housing_70mm.stl",
-        "sha256": "c5721b2e04a34eb550be862b9fce2a7ae72975c7f6005fde454072b4dd3d27bb",
-        "size_bytes": 49283
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "nozzle_outer_housing_80mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/nozzle_outer_housing_80mm.stl",
-        "sha256": "212f4f9f7619dcaaecf729d97ace87ed832d99b02be4d6d80e317f2beea5d77e",
-        "size_bytes": 61646
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "payload_bay_door",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/payload_bay_door.stl",
-        "sha256": "ac8d361ee81d6e8899e76e25fa68f302a022d64de368bda41ce6e62cd612c499",
-        "size_bytes": 8339
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "pinion_a_bracket",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/pinion_a_bracket.stl",
-        "sha256": "98b25035f431114ab6d4a5fab108c8b2d611ee6baff1d63ee4f36b206f94ed21",
-        "size_bytes": 11294
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_shell24.stl",
-        "sha256": "5bf2232dd6b0bfaac289a993ed308ce9f12141ab39e9f3ffd9b16656e68e9080",
-        "size_bytes": 1482284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_shell24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_shell24_50mm.stl",
-        "sha256": "9af3f9d5c8b357fce47e3789bc6b2c2068ae843c170acb59d3397f3581581cd1",
-        "size_bytes": 1482284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_stator_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_stator_shell24.stl",
-        "sha256": "16c5b6f8944cec7187585562bdc94cd00ac5e8de60e8eb0592e3c23ebff6adc2",
-        "size_bytes": 638184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_stator_shell24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_stator_shell24_50mm.stl",
-        "sha256": "223196b09e7d99d80d328bd338ed1cc3071edbb066fdfafa5b0e0b5767d78b0b",
-        "size_bytes": 1463234
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_stator_shell24_50mm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_stator_shell24_50mm_repaired.stl",
-        "sha256": "47604feadf1f09ed7e959d78099fd384a29f2ac7366a4eab868ec99a4fdf6bb1",
-        "size_bytes": 16981484
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_left_stator_shell24_revo",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_left_stator_shell24_revo.stl",
-        "sha256": "31ce3a470c40a3dc70088f3e9edc48378667cff5b53df606c8b53d6d7e7e3062",
-        "size_bytes": 879184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_pistons_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_pistons_scaled24.stl",
-        "sha256": "98ab1f7f0b6fa460be8afe2a5e05b8412a84a4b8273911fda7ab0394381465f5",
-        "size_bytes": 92334
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_piv_outer_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_piv_outer_scaled24.stl",
-        "sha256": "78cf504fd656fcd7ef7d799bfb150273a13bea6389a433d4b21d36a9b5621203",
-        "size_bytes": 847684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_piv_outer_scaled24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_piv_outer_scaled24_50mm.stl",
-        "sha256": "dda1c79b059f1de311b935863e189db35ca83cbb03102adad0cff410d5c26213",
-        "size_bytes": 847684
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_piv_pins_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_piv_pins_scaled24.stl",
-        "sha256": "b61117e77e61387a41899a73c1a3f4b95f91e727b82e9a6ac254e460c3f432fd",
-        "size_bytes": 102484
-      }
-    },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_eng_piv_pins_scaled24_50mm",
+    "basename": "SIL0010D",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
       "stl": {
-        "path": "archives/stl/s_eng_piv_pins_scaled24_50mm.stl",
-        "sha256": "1df2c97fba90a311fed57973beb176e115b7cf2757fe3e8683f1c29282272481",
-        "size_bytes": 102484
+        "path": "avionics/datasheets/ti/SIL0010D.stl",
+        "sha256": "91f36e43424d37260ebbf2db3f5a606bae43316e7775ffc42b9d5fddadb988fb",
+        "size_bytes": 226684
+      },
+      "stp": {
+        "path": "avionics/datasheets/ti/SIL0010D.stp",
+        "sha256": "834d2fb3431bc8b4aa36dae2685df6d127790d11bcde875f11d26eaad2081308",
+        "size_bytes": 494799
       }
     },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_shell24.stl",
-        "sha256": "3b6f95b76cc94186f0be84b4e91f63252b2a762d6b862adb1501b089c7465bbf",
-        "size_bytes": 1482284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_shell24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_shell24_50mm.stl",
-        "sha256": "7c41a679036cdf673eacb11bd8e6034a2861a236238ede3f822b2bf01710bae1",
-        "size_bytes": 1482284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_stator_shell24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_stator_shell24.stl",
-        "sha256": "b1e48446140d2ddfa16cc15479839d210f1332781f51d02678cd23d98c0f7421",
-        "size_bytes": 638734
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_stator_shell24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_stator_shell24_50mm.stl",
-        "sha256": "03e1acf02e41fd980e90dc81fa92857023c0c5a4980bb5a8f37962aa6af8aa18",
-        "size_bytes": 1465334
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_stator_shell24_50mm_repaired",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_stator_shell24_50mm_repaired.stl",
-        "sha256": "f6f23f39b62235f28355e9531532990f7cc249aaa7b1257e532d48189a159d73",
-        "size_bytes": 17119284
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_eng_right_stator_shell24_revo",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_eng_right_stator_shell24_revo.stl",
-        "sha256": "9aa20f7eaf5fc8a970d76bf434f873c9f615be4875fe9612bc92c7ba80072b17",
-        "size_bytes": 879184
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_pivot_arm_a_scaled24",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_pivot_arm_a_scaled24.stl",
-        "sha256": "a703b2ffbd02ba01ccd6969c6e51e9fc4ae32bb1827a4ebfb759ff45ff243200",
-        "size_bytes": 252834
-      }
-    },
-    "pair_incomplete": false,
-    "possible_duplicate": false,
-    "repo": "Serenity-UAV",
-    "verification_tier": "unverified",
-    "verified": false
-  },
-  {
-    "basename": "s_pivot_arm_a_scaled24_50mm",
-    "canonical_path": null,
-    "duplicate_hash_match": false,
-    "files": {
-      "stl": {
-        "path": "archives/stl/s_pivot_arm_a_scaled24_50mm.stl",
-        "sha256": "3e441e71c16a808e4e346aabab8b3673d04ae51ddd5f48bab112650168c88a79",
-        "size_bytes": 252834
-      }
-    },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_pivot_arm_a_scaled24_50mm_repaired",
+    "basename": "CAN-PERIPH-GW-1",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_pivot_arm_a_scaled24_50mm_repaired.stl",
-        "sha256": "337ade6b72ff17cbd98958b10cfb0b916aad1c523f23c24b693f38a44204c144",
-        "size_bytes": 1046884
+      "step": {
+        "path": "avionics/kicad/Bus-Gateway/step/CAN-PERIPH-GW-1.step",
+        "sha256": "f475ae0fbe5a719ea26b06186cadca244cfaa07f14fbcb03b710af3ad824f4df",
+        "size_bytes": 2751954
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wing_port_s1223_revo",
+    "basename": "Commo",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wing_port_s1223_revo.stl",
-        "sha256": "b7c4a8d9be36f2e8260576a138c56b5379b22eb9bef77504a6ab94cc2fc68bb2",
-        "size_bytes": 89699
+      "step": {
+        "path": "avionics/kicad/Commo/step/Commo.step",
+        "sha256": "4f09a28bc9da5f010ecce6a08a22eab7ce6fea53fd3cb06398d30ba716bf5145",
+        "size_bytes": 2420589
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wing_stbd_s1223_revo",
+    "basename": "FlightEngineer",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wing_stbd_s1223_revo.stl",
-        "sha256": "edbdc93f4b21f6143287bf03b77adb8fa0edeca899e32b3657c4735a830e77e2",
-        "size_bytes": 90369
+      "step": {
+        "path": "avionics/kicad/FlightEngineer/step/FlightEngineer.step",
+        "sha256": "ec0279422a9979a5817e2eb9a2c1a60a35375599755e83a82d4ba2bb20b9da38",
+        "size_bytes": 5086568
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_both_shell24",
+    "basename": "Observer",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_both_shell24.stl",
-        "sha256": "b5cf4a4db04e80cc6363de8be03ed0b4b979a6f29b00078d186d6a7bccfff163",
-        "size_bytes": 1614484
+      "step": {
+        "path": "avionics/kicad/Observer/step/Observer.step",
+        "sha256": "21759ee00496786800437ee513893369e5a89f36d8a67839d4a93443066498cd",
+        "size_bytes": 7078401
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_both_shell24_2mm",
+    "basename": "Pilot",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_both_shell24_2mm.stl",
-        "sha256": "b0c20085d4e171caf9f3ecfd7f802121af9addf92baddc430b199c883149dd94",
-        "size_bytes": 1614484
+      "step": {
+        "path": "avionics/kicad/Pilot/step/Pilot.step",
+        "sha256": "d06b4c8e10a7a9c4892d946ba6f4806daba3b40869aa5a5eac1e4c634cdd28af",
+        "size_bytes": 2929924
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_both_shell24_2mm_repaired",
+    "basename": "ISOW1044BDFMR",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_both_shell24_2mm_repaired.stl",
-        "sha256": "66f10bd604900c6b32a5927164da74d4b6930035e9892a2a3ac792edf38564fc",
-        "size_bytes": 9014184
+      "step": {
+        "path": "avionics/kicad/Serenity-Custom.3dshapes/ISOW1044BDFMR.step",
+        "sha256": "46fccfd6f0de7fc3c44d8146937f4f71e81ee6939192633e7f221458d870c466",
+        "size_bytes": 86809
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_both_shell24_50mm",
+    "basename": "KSZ9477STXI",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_both_shell24_50mm.stl",
-        "sha256": "3db36a80a9f60e0a46ce79fe27c83f321dc0029d6ca33e22e156327cfb6b87a2",
-        "size_bytes": 1614484
+      "step": {
+        "path": "avionics/kicad/Serenity-Custom.3dshapes/KSZ9477STXI.step",
+        "sha256": "0a5e121fead004899400ba28f69e6605baf062fae291da48a5f0166ed340213e",
+        "size_bytes": 4297966
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_both_shell24_repaired",
+    "basename": "MSASJ168BC6226MTNA01",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_both_shell24_repaired.stl",
-        "sha256": "06096f090cd33d19295df14413316e1c8e7bf04a7c3111bd53607ea1ce42ad31",
-        "size_bytes": 5235084
+      "step": {
+        "path": "avionics/kicad/Serenity-Custom.3dshapes/MSASJ168BC6226MTNA01.step",
+        "sha256": "9dd85073fba06d5a00043956d579b3625e6e525b3885e6f922b35bc4bde4b6e0",
+        "size_bytes": 21185
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "s_wings_s1223_revo",
+    "basename": "MSPM0G3507SRGZR",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/s_wings_s1223_revo.stl",
-        "sha256": "9581feb6cf8873d4d022f96cfede46c925dc0ad54aef271120b8f8c2743d0415",
-        "size_bytes": 190292
+      "step": {
+        "path": "avionics/kicad/Serenity-Custom.3dshapes/MSPM0G3507SRGZR.step",
+        "sha256": "994d1af11e0bb520146da6ac0718d6cbb63ce17e96c065a8ee51161faf38ea93",
+        "size_bytes": 1428960
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "sector_gear_22mm",
+    "basename": "TI_SIL0010D_uSiP-10",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/sector_gear_22mm.stl",
-        "sha256": "4d3530b9b2f05994012543b71d439ee4c39db014a2807de2f41516b67560acc2",
-        "size_bytes": 116110
+      "step": {
+        "path": "avionics/kicad/Serenity-Custom.3dshapes/TI_SIL0010D_uSiP-10.step",
+        "sha256": "834d2fb3431bc8b4aa36dae2685df6d127790d11bcde875f11d26eaad2081308",
+        "size_bytes": 494799
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "sensorhat_mounting_tray",
+    "basename": "TACCO",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/sensorhat_mounting_tray.stl",
-        "sha256": "374a603bf1fec940ab96066d204a2bc14bfe66c8b02ec9563dd553ac1c1abdfb",
-        "size_bytes": 2289
+      "step": {
+        "path": "avionics/kicad/TACCO/step/TACCO.step",
+        "sha256": "e41cb0ac4c277f351ab2d97c8ce4701a8438955193beead4ebb87c8b9a2fd8c7",
+        "size_bytes": 3643508
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
     "verified": false
   },
   {
-    "basename": "tilt_bracket_cf_petg",
+    "basename": "alt4532m-201",
     "canonical_path": null,
     "duplicate_hash_match": false,
     "files": {
-      "stl": {
-        "path": "archives/stl/tilt_bracket_cf_petg.stl",
-        "sha256": "41316249134fa7e7b3bd333af506e1fee4afc66adb6a747c64052e97a8e5ab53",
-        "size_bytes": 16533
+      "step": {
+        "path": "avionics/kicad/symbols/footprints/alt4532m-201.step",
+        "sha256": "68a8ab92148b655a7cd0396034dc1f6588be7c88ac7150bb5aa7e968ab8f7547",
+        "size_bytes": 104455
       }
     },
-    "pair_incomplete": false,
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",
@@ -6794,6 +5070,23 @@
       }
     },
     "pair_incomplete": false,
+    "possible_duplicate": false,
+    "repo": "Serenity-UAV",
+    "verification_tier": "unverified",
+    "verified": false
+  },
+  {
+    "basename": "PocketBeagle",
+    "canonical_path": null,
+    "duplicate_hash_match": false,
+    "files": {
+      "step": {
+        "path": "docs/references/PocketBeagle.step",
+        "sha256": "ef4e6f9f7f39dd53cc4f5ed19ebbb4e90bfd456a1bab63789d2a473f84dca6bc",
+        "size_bytes": 732012
+      }
+    },
+    "pair_incomplete": true,
     "possible_duplicate": false,
     "repo": "Serenity-UAV",
     "verification_tier": "unverified",

@@ -1,0 +1,41 @@
+# Winbond W25Q128JV 128 Mbit serial NOR flash, SOIC-8 208-mil.
+# Verified 2026-09-27 (Claude Sonnet 5) against w25q128jv.pdf Sec. 3.3
+# Pin Description SOIC 208-mil / WSON.
+footprint_check = "stock SOIC-8_3.9x4.9mm_P1.27mm"
+recommendation = "8-pin SOIC 208-mil chosen; WSON 6x5mm and 8x6mm offered smaller if the /RESET or full Quad-SPI (IO2/IO3) function is not needed on separate pins."
+
+[symbol]
+name = "W25Q128JV"
+reference = "U"
+manufacturer = "Winbond"
+mpn = "W25Q128JVSIQ"
+description = "128 Mbit serial NOR flash, Standard/Dual/Quad SPI, SOIC-8 208-mil"
+keywords = "flash memory SPI NOR serial"
+footprint = "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+fp_filters = "SOIC*3.9x4.9*"
+
+[datasheet]
+doc = "Winbond W25Q128JV data sheet"
+url = "https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf"
+section = "Sec. 3.3 Pin Description SOIC 208-mil"
+
+[[packages]]
+code = "SOIC-8 208-mil"
+pins = 8
+body = "5.23 x 5.23 mm"
+
+[[packages]]
+code = "WSON 6x5mm / 8x6mm"
+pins = 8
+body = "6x5mm / 8x6mm"
+
+[[packages]]
+code = "SOIC-16 300-mil (adds /RESET)"
+pins = 16
+body = "300-mil"
+
+[pins]
+left = ["1 ~{CS} I", "6 CLK I"]
+right = ["8 VCC W", "4 GND W"]
+top = ["2 DO/IO1 B", "3 ~{WP}/IO2 B"]
+bottom = ["5 DI/IO0 B", "7 ~{HOLD}/~{RESET}/IO3 B"]

@@ -1,0 +1,30 @@
+# TI TPS54620 4.5-17V, 6A synchronous buck, VQFN-14 (RGY).
+# Verified 2026-09-27 (Claude Sonnet 5) against tps54620.pdf Pin
+# Configuration and Functions (14-Pin VQFN, Top View).
+footprint_check = "stock Texas_RGY0014A_VQFN-14-1EP_3.5x3.5mm"
+recommendation = "Only VQFN-14 3.5x3.5mm package offered for this MPN."
+
+[symbol]
+name = "TPS54620RGY"
+reference = "U"
+manufacturer = "Texas Instruments"
+mpn = "TPS54620RGYT"
+description = "4.5-17 V, 6 A synchronous step-down converter, VQFN-14"
+keywords = "buck regulator DC-DC step-down"
+footprint = "SecureControllers:Texas_RGY0014A_VQFN-14-1EP_3.5x3.5mm"
+fp_filters = "*RGY0014A*"
+
+[datasheet]
+doc = "TI TPS54620 data sheet"
+url = "https://www.ti.com/lit/ds/symlink/tps54620.pdf"
+section = "Pin Configuration and Functions (14-Pin VQFN Top View)"
+
+[[packages]]
+code = "RGY (VQFN-14)"
+pins = 14
+body = "3.5 x 3.5 mm"
+
+[pins]
+left = ["1 RT/CLK I", "2 GND W ~", "3 GND W ~", "4 PVIN W ~", "5 PVIN W ~", "6 VIN W"]
+right = ["14 PWRGD O", "13 BOOT P", "12 PH w ~", "11 PH w ~", "10 EN I", "9 SS/TR I"]
+bottom = ["7 VSENSE I", "8 COMP O", "15 EP W"]

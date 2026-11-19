@@ -55,13 +55,21 @@ SYM_OUT = LIB_DIR / "SecureControllers.kicad_sym"
 LEDGER_OUT = LIB_DIR / "VERIFICATION.md"
 NICK = "SecureControllers"
 
-GRID = 2.54          # pin pitch and pin length, 100 mil
+GRID = 2.54  # pin pitch and pin length, 100 mil
 CHAR_W = 1.27 * 0.6  # approximate width of one 1.27 mm glyph, mm
 TYPES = {
-    "W": "power_in", "w": "power_out", "I": "input", "O": "output",
-    "B": "bidirectional", "P": "passive", "N": "no_connect",
-    "T": "tri_state", "C": "open_collector", "E": "open_emitter",
-    "F": "free", "U": "unspecified",
+    "W": "power_in",
+    "w": "power_out",
+    "I": "input",
+    "O": "output",
+    "B": "bidirectional",
+    "P": "passive",
+    "N": "no_connect",
+    "T": "tri_state",
+    "C": "open_collector",
+    "E": "open_emitter",
+    "F": "free",
+    "U": "unspecified",
 }
 
 
@@ -83,7 +91,7 @@ def parse_pin(line):
     hidden = line.rstrip().endswith("~")
     parts = line.replace("~", "").split()
     if len(parts) != 3 or parts[2] not in TYPES:
-        raise ValueError("bad pin line %r" % line)
+        raise ValueError(f"bad pin line {line!r}")
     return parts[0], parts[1], TYPES[parts[2]], hidden
 
 
@@ -98,7 +106,7 @@ def load_specs():
     names = [s["symbol"]["name"] for s in specs]
     dup = {n for n in names if names.count(n) > 1}
     if dup:
-        raise SystemExit("duplicate symbol names: %s" % sorted(dup))
+        raise SystemExit(f"duplicate symbol names: {sorted(dup)}")
     return specs
 
 
@@ -106,14 +114,16 @@ def render_symbol(spec):
     """Return the S-expression text for one symbol."""
     sym = spec["symbol"]
     name = sym["name"]
-    sides = {k: [parse_pin(p) for p in spec["pins"].get(k, [])]
-             for k in ("left", "right", "top", "bottom")}
+    sides = {
+        k: [parse_pin(p) for p in spec["pins"].get(k, [])]
+        for k in ("left", "right", "top", "bottom")
+    }
 
     # Every pin number must be unique across the symbol.
     nums = [p[0] for side in sides.values() for p in side if p]
     dup = {n for n in nums if nums.count(n) > 1}
     if dup:
-        raise SystemExit("%s: duplicate pin numbers %s" % (name, sorted(dup)))
+        raise SystemExit(f"{name}: duplicate pin numbers {sorted(dup)}")
 
     def longest(side):
         return max([len(p[1]) for p in sides[side] if p] or [0])
@@ -126,12 +136,13 @@ def render_symbol(spec):
     width = (longest("left") + longest("right")) * CHAR_W + 4 * GRID
     half_w = snap(max(width, (cols + 1) * GRID, 4 * GRID) / 2)
     if sides["top"] or sides["bottom"]:
-        half_h = max(half_h, snap((longest("top") + longest("bottom"))
-                                  * CHAR_W / 2 + 2 * GRID))
+        half_h = max(
+            half_h, snap((longest("top") + longest("bottom")) * CHAR_W / 2 + 2 * GRID)
+        )
 
     out = []
     w = out.append
-    w("\t(symbol %s" % q(name))
+    w(f"\t(symbol {q(name)}")
     w("\t\t(pin_names (offset 1.016))")
     w("\t\t(exclude_from_sim no)")
     w("\t\t(in_bom %s)" % ("yes" if sym.get("in_bom", True) else "no"))
@@ -150,16 +161,20 @@ def render_symbol(spec):
         props.append(("ki_fp_filters", sym["fp_filters"], (0, 0), True))
     for key, val, (x, y), hide in props:
         just = " (justify left)" if key in ("Reference", "Value") else ""
-        w("\t\t(property %s %s" % (q(key), q(val)))
-        w("\t\t\t(at %.2f %.2f 0)" % (x, y))
-        w("\t\t\t(effects (font (size 1.27 1.27))%s%s)"
-          % (just, " (hide yes)" if hide else ""))
+        w(f"\t\t(property {q(key)} {q(val)}")
+        w(f"\t\t\t(at {x:.2f} {y:.2f} 0)")
+        w(
+            "\t\t\t(effects (font (size 1.27 1.27)){}{})".format(
+                just, " (hide yes)" if hide else ""
+            )
+        )
         w("\t\t)")
 
     # Unit 0 style 1: body rectangle.
-    w("\t\t(symbol %s" % q(name + "_0_1"))
-    w("\t\t\t(rectangle (start %.2f %.2f) (end %.2f %.2f)"
-      % (-half_w, half_h, half_w, -half_h))
+    w("\t\t(symbol {}".format(q(name + "_0_1")))
+    w(
+        f"\t\t\t(rectangle (start {-half_w:.2f} {half_h:.2f}) (end {half_w:.2f} {-half_h:.2f})"
+    )
     w("\t\t\t\t(stroke (width 0.254) (type default))")
     w("\t\t\t\t(fill (type background))")
     w("\t\t\t)")
@@ -167,15 +182,15 @@ def render_symbol(spec):
 
     # Unit 1 style 1: pins.  Pin (at) is the connection point; the angle
     # points from the connection point toward the body.
-    w("\t\t(symbol %s" % q(name + "_1_1"))
+    w("\t\t(symbol {}".format(q(name + "_1_1")))
 
     def emit(pin, x, y, angle):
         num, pname, etype, hidden = pin
-        w("\t\t\t(pin %s line" % etype)
-        w("\t\t\t\t(at %.2f %.2f %d)" % (x, y, angle))
-        w("\t\t\t\t(length %.2f)%s" % (GRID, " (hide yes)" if hidden else ""))
-        w("\t\t\t\t(name %s (effects (font (size 1.27 1.27))))" % q(pname))
-        w("\t\t\t\t(number %s (effects (font (size 1.27 1.27))))" % q(num))
+        w(f"\t\t\t(pin {etype} line")
+        w(f"\t\t\t\t(at {x:.2f} {y:.2f} {int(angle)})")
+        w("\t\t\t\t(length {:.2f}){}".format(GRID, " (hide yes)" if hidden else ""))
+        w(f"\t\t\t\t(name {q(pname)} (effects (font (size 1.27 1.27))))")
+        w(f"\t\t\t\t(number {q(num)} (effects (font (size 1.27 1.27))))")
         w("\t\t\t)")
 
     top_y = half_h - GRID
@@ -189,8 +204,7 @@ def render_symbol(spec):
     for i, p in enumerate(sides["top"]):
         if p:
             emit(p, left_x + i * GRID, half_h + GRID, 270)
-    left_x = (-snap((len(sides["bottom"]) - 1) * GRID / 2)
-              if sides["bottom"] else 0)
+    left_x = -snap((len(sides["bottom"]) - 1) * GRID / 2) if sides["bottom"] else 0
     for i, p in enumerate(sides["bottom"]):
         if p:
             emit(p, left_x + i * GRID, -half_h - GRID, 90)
@@ -202,8 +216,10 @@ def render_symbol(spec):
 
 def render_library(specs):
     """Return the complete .kicad_sym text."""
-    head = ("(kicad_symbol_lib\n\t(version 20241209)\n"
-            "\t(generator \"sclib\")\n\t(generator_version \"9.0\")\n")
+    head = (
+        "(kicad_symbol_lib\n\t(version 20241209)\n"
+        '\t(generator "sclib")\n\t(generator_version "9.0")\n'
+    )
     return head + "\n".join(render_symbol(s) for s in specs) + "\n)\n"
 
 
@@ -224,8 +240,7 @@ def footprint_pads(fp_id):
     path = base / (name + ".kicad_mod")
     if not path.exists():
         return None
-    return set(re.findall(r'\(pad "([^"]*)"',
-                          path.read_text(encoding="utf-8")))
+    return set(re.findall(r'\(pad "([^"]*)"', path.read_text(encoding="utf-8")))
 
 
 def check_footprints(specs):
@@ -240,14 +255,16 @@ def check_footprints(specs):
         fp = s["symbol"].get("footprint", "")
         pads = footprint_pads(fp)
         if pads is None:
-            errs.append("%s: footprint %r not found" % (s["symbol"]["name"], fp))
+            errs.append("{}: footprint {!r} not found".format(s["symbol"]["name"], fp))
             continue
-        pins = {parse_pin(p)[0] for side in s["pins"].values()
-                for p in side if parse_pin(p)}
+        pins = {
+            parse_pin(p)[0] for side in s["pins"].values() for p in side if parse_pin(p)
+        }
         missing = sorted(pins - pads, key=lambda x: (len(x), x))
         if missing:
-            errs.append("%s: pins %s have no pad in %s"
-                        % (s["symbol"]["name"], missing, fp))
+            errs.append(
+                "{}: pins {} have no pad in {}".format(s["symbol"]["name"], missing, fp)
+            )
     return errs
 
 
@@ -261,29 +278,42 @@ def render_ledger(specs):
         "checked against and every package option the datasheet offers, so",
         "smaller or easier-to-route alternatives stay visible.",
         "",
-        "| Symbol | Status | Verified against | Footprint (check) | "
-        "Packages offered (body) | Recommendation |",
+        (
+            "| Symbol | Status | Verified against | Footprint (check) | "
+            "Packages offered (body) | Recommendation |"
+        ),
         "| --- | --- | --- | --- | --- | --- |",
     ]
     for s in specs:
         d = s["datasheet"]
-        pk = "; ".join("%s %s (%s)" % (p["code"], p["pins"], p["body"])
-                       for p in s.get("packages", []))
-        fp = "`%s` %s" % (s["symbol"].get("footprint", ""),
-                          s.get("footprint_check", "(pad-set only)"))
-        lines.append("| %s | %s | [%s](%s) %s | %s | %s | %s |" % (
-            s["symbol"]["name"], d.get("status", "verified"), d["doc"],
-            d["url"], d["section"], fp, pk or "--",
-            s.get("recommendation", "--").replace("\n", " ")))
+        pk = "; ".join(
+            "{} {} ({})".format(p["code"], p["pins"], p["body"])
+            for p in s.get("packages", [])
+        )
+        fp = "`{}` {}".format(
+            s["symbol"].get("footprint", ""), s.get("footprint_check", "(pad-set only)")
+        )
+        lines.append(
+            "| {} | {} | [{}]({}) {} | {} | {} | {} |".format(
+                s["symbol"]["name"],
+                d.get("status", "verified"),
+                d["doc"],
+                d["url"],
+                d["section"],
+                fp,
+                pk or "--",
+                s.get("recommendation", "--").replace("\n", " "),
+            )
+        )
     lines.append("")
     notes = [s for s in specs if s.get("findings")]
     if notes:
         lines += ["## Findings against existing board copies", ""]
         for s in notes:
-            lines.append("### %s" % s["symbol"]["name"])
+            lines.append("### {}".format(s["symbol"]["name"]))
             lines.append("")
             for f in s["findings"]:
-                lines.append("- %s" % f)
+                lines.append(f"- {f}")
             lines.append("")
     return "\n".join(lines)
 
@@ -301,17 +331,19 @@ def main():
     if fp_errs:
         return 1
     if args.mode == "check":
-        stale = [p.name for p, txt in ((SYM_OUT, lib), (LEDGER_OUT, ledger))
-                 if not p.exists() or p.read_text(encoding="utf-8") != txt]
+        stale = [
+            p.name
+            for p, txt in ((SYM_OUT, lib), (LEDGER_OUT, ledger))
+            if not p.exists() or p.read_text(encoding="utf-8") != txt
+        ]
         if stale:
-            print("stale: %s -- run tools/sclib.py build" % ", ".join(stale))
+            print("stale: {} -- run tools/sclib.py build".format(", ".join(stale)))
             return 1
-        print("ok: %d symbols" % len(specs))
+        print(f"ok: {len(specs)} symbols")
         return 0
     SYM_OUT.write_text(lib, encoding="utf-8")
     LEDGER_OUT.write_text(ledger, encoding="utf-8")
-    print("wrote %s (%d symbols) and %s" % (SYM_OUT.name, len(specs),
-                                            LEDGER_OUT.name))
+    print(f"wrote {SYM_OUT.name} ({len(specs)} symbols) and {LEDGER_OUT.name}")
     return 0
 
 

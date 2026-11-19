@@ -1,0 +1,34 @@
+# Microchip MCP4921 12-bit SPI DAC, single channel, 8-pin PDIP/SOIC/MSOP.
+# Verified 2026-09-27 (Claude Sonnet 5) against Microchip DS22248A Package
+# Types figure (p.1): VDD1/CS2/SCK3/SDI4/LDAC5/VREF6/VSS7/VOUT8.
+footprint_check = "stock SOIC-8 3.9x4.9mm P1.27mm"
+recommendation = "DFN-8 2x3 mm offered for smallest footprint (same pinout, add EP=VSS)."
+
+[symbol]
+name = "MCP4921"
+reference = "U"
+manufacturer = "Microchip"
+mpn = "MCP4921-E/SN"
+description = "12-bit single-channel SPI voltage-output DAC, SOIC-8"
+keywords = "DAC 12-bit SPI single-channel"
+footprint = "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+fp_filters = "SOIC*3.9x4.9*"
+
+[datasheet]
+doc = "Microchip MCP4901/4911/4921 data sheet DS22248A"
+url = "https://ww1.microchip.com/downloads/en/DeviceDoc/22248a.pdf"
+section = "Package Types (p.1, 8-Pin PDIP/SOIC/MSOP)"
+
+[[packages]]
+code = "SOIC-8 / PDIP-8 / MSOP-8"
+pins = 8
+body = "SOIC 3.9x4.9mm"
+
+[[packages]]
+code = "DFN-8 (2x3)"
+pins = 8
+body = "2.0 x 3.0 mm"
+
+[pins]
+left = ["1 VDD W", "2 ~{CS} I", "3 SCK I", "4 SDI I"]
+right = ["8 VOUT w", "7 VSS W", "6 VREF I", "5 ~{LDAC} I"]

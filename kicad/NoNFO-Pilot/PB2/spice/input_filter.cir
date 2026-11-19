@@ -1,0 +1,26 @@
+* NoNFO-Pilot-PB2 S36: 5 V entry pi filter under the merged worst-case load step.
+* SPDX-License-Identifier: CERN-OHL-W-2.0
+* Harness: 5.00 V source, 3 ft (0.9 m) pair modelled as 0.6 uH and 30 mOhm (assumption).
+* FB1 Wurth 742792510: RDC 30 mOhm max, 70 Ohm at 100 MHz -> about 0.11 uH (data sheet).
+* C-IN1 47 uF 1210 (ESR 5 mOhm), C-IN2 10 uF 0805 and C-IN3 100 nF on +5V.
+* Load: 0.5 A base, stepping to the 3.5 A merged peak at 1 A/us (S36 budget).
+VS src 0 DC 5.0
+LH src n1 0.6u
+RH n1 vin 0.03
+C1 vin c1 47u
+RC1 c1 0 0.005
+LFB vin f1 0.11u
+RFB f1 v5 0.03
+C2 v5 c2 10u
+RC2 c2 0 0.005
+C3 v5 0 100n
+IL v5 0 PWL(0 0.5 100u 0.5 103u 3.5 400u 3.5 403u 0.5 700u 0.5)
+.tran 0.05u 700u
+.control
+run
+meas tran vmin MIN v(v5) from=95u to=400u
+meas tran vmax MAX v(v5) from=395u to=700u
+meas tran vend FIND v(v5) AT=390u
+echo "RESULT vmin=$&vmin vmax=$&vmax vsettled=$&vend"
+.endc
+.end

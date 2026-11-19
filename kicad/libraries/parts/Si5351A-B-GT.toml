@@ -1,0 +1,36 @@
+# Skyworks (Silicon Labs) Si5351A-B-GT I2C clock generator, 10-pin MSOP.
+# Verified 2026-09-27 (Claude Sonnet 5) against si5351.pdf Sec. 10.7
+# "Si5351A 10-Pin MSOP" (Fig. 23 + Table 20 Pin Descriptions) -- this is
+# the 3-output "-GT" MSOP-10 variant, NOT the 8-output 20-QFN pinout
+# shown elsewhere in the same datasheet (verify the section number
+# before reuse; the two packages do not share a pin table).
+footprint_check = "stock MSOP-10_3x3mm_P0.5mm"
+recommendation = "Only MSOP-10 package offered for the -GT suffix (3-output variant); the 20-QFN package (Si5351A/B/C, 8 outputs) is a different, larger part in the same datasheet."
+
+[symbol]
+name = "Si5351A-B-GT"
+reference = "U"
+manufacturer = "Skyworks (Silicon Labs)"
+description = "I2C programmable clock generator, 3 outputs, XTAL only, MSOP-10"
+keywords = "clock generator DDS I2C programmable oscillator"
+footprint = "Package_SO:MSOP-10_3x3mm_P0.5mm"
+fp_filters = "MSOP*10*"
+
+[datasheet]
+doc = "Skyworks Si5351A/B/C-B data sheet Rev 1.3"
+url = "https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/data-sheets/Si5351-B.pdf"
+section = "Sec. 10.7 Si5351A 10-Pin MSOP (Fig. 23, Table 20)"
+
+[[packages]]
+code = "GT (MSOP-10, 3-output)"
+pins = 10
+body = "3.0 x 3.0 mm"
+
+[[packages]]
+code = "GM (QFN-20, 8-output, different part)"
+pins = 20
+body = "4.0 x 4.0 mm"
+
+[pins]
+left = ["1 VDD W", "2 XA I", "3 XB I", "4 SCL I", "5 SDA B"]
+right = ["10 CLK0 O", "9 CLK1 O", "8 GND W", "7 VDDO W", "6 CLK2 O"]

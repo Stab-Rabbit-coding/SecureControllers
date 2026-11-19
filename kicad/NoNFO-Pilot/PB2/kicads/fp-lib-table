@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "NoNFO")(type "KiCad")(uri "${KIPRJMOD}/NoNFO-PB2.pretty")(options "")(descr "NoNFO-Pilot-PB2 generated footprints (S35)"))
+  (lib (name "Serenity-Custom")(type "KiCad")(uri "${SERENITY_UAV}/avionics/kicad/Serenity-Custom.pretty")(options "")(descr "Serenity-UAV project footprints; set SERENITY_UAV to its checkout"))
+  (lib (name "SecureControllers")(type "KiCad")(uri "${KIPRJMOD}/../../../libraries/SecureControllers.pretty")(options "")(descr "Shared datasheet-verified footprints"))
+)

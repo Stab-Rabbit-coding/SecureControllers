@@ -1,0 +1,38 @@
+{
+  "_doc": "NoNFO-Pilot-PB2 option B+ (owner decision OD-18, 2026-11-14): lines the MSPM0G3519-Q1 RGZ-48 trust-module MCU owns. need = fixed:<SIGNAL> | <group>:<ROLE> (one peripheral instance per group) | timer | gpio_out | gpio_in. SPDX-License-Identifier: CERN-OHL-W-2.0.",
+  "groups": {
+    "can": {"inst": "CAN0", "roles": ["TX", "RX"]},
+    "rs485": {"inst": "UART*", "roles": ["TX", "RX", "RTS"]},
+    "m1553": {"inst": "SPI*", "roles": ["SCK", "PICO", "POCI"]},
+    "host": {"inst": "SPI*", "roles": ["SCK", "PICO", "POCI", "CS0"]}
+  },
+  "reserved": {"PA19": "SWDIO", "PA20": "SWCLK", "PA18": "BSL invoke (kept free for recovery)"},
+  "open_drain_only": ["PA0", "PA1"],
+  "nets": [
+    {"net": "MCAN_TX", "need": "can:TX"},
+    {"net": "MCAN_RX", "need": "can:RX"},
+    {"net": "CAN_STB", "need": "gpio_out"},
+    {"net": "RS485_TX", "need": "rs485:TX"},
+    {"net": "RS485_RX", "need": "rs485:RX"},
+    {"net": "RS485_DE", "need": "rs485:RTS"},
+    {"net": "M1553_SCK", "need": "m1553:SCK"},
+    {"net": "M1553_MOSI", "need": "m1553:PICO"},
+    {"net": "M1553_MISO", "need": "m1553:POCI"},
+    {"net": "M1553_CSN", "need": "gpio_out"},
+    {"net": "M1553_MRN", "need": "gpio_out"},
+    {"net": "M1553_TX_INH", "need": "gpio_out"},
+    {"net": "M1553_IRQN", "need": "gpio_in"},
+    {"net": "HOST_SCK", "need": "host:SCK"},
+    {"net": "HOST_MOSI", "need": "host:PICO"},
+    {"net": "HOST_MISO", "need": "host:POCI"},
+    {"net": "HOST_CSN", "need": "host:CS0"},
+    {"net": "MCU_IRQN", "need": "gpio_out"},
+    {"net": "PLD_CLK", "need": "gpio_out"},
+    {"net": "PLD_I1", "need": "gpio_out"}, {"net": "PLD_I2", "need": "gpio_out"},
+    {"net": "PLD_I3", "need": "gpio_out"}, {"net": "PLD_I4", "need": "gpio_out"},
+    {"net": "PLD_I5", "need": "gpio_out"}, {"net": "PLD_I6", "need": "gpio_out"},
+    {"net": "PLD_I7", "need": "gpio_out"}, {"net": "PLD_I8", "need": "gpio_out"},
+    {"net": "FAN_PWM", "need": "timer"},
+    {"net": "WIFI_EN", "need": "gpio_out"}
+  ]
+}

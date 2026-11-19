@@ -1,0 +1,29 @@
+# Premier Magnetics DB2791S MIL-STD-1553 SMD data-bus coupling transformer.
+# Verified 2026-09-26 (Claude Opus 5.5) against PremierMagnetics_DB2791S.pdf
+# Fig. 1 schematic (8-pin, 1:1.41 turns ratio, center-tapped primary).
+footprint_check = "custom Xfmr_1553_SMD_0.40in_8pin footprint (Serenity-Custom); pad count matches 8 pins"
+recommendation = "Only package offered for this exact MPN (0.40in 8-pin SMD)."
+
+[symbol]
+name = "PM-DB2791S"
+reference = "T"
+manufacturer = "Premier Magnetics"
+description = "MIL-STD-1553 data bus coupling transformer, 1:1.41(ish) turns ratio, 8-pin SMD 0.40in"
+keywords = "MIL-STD-1553 transformer data bus coupling"
+footprint = "SecureControllers:Xfmr_1553_SMD_0.40in_8pin"
+fp_filters = "*1553*"
+
+[datasheet]
+doc = "Premier Magnetics DB2791S data sheet"
+url = "https://www.premiermag.com/pdf/dwg/db2791s.pdf"
+section = "Fig. 1 schematic (winding pins)"
+
+[[packages]]
+code = "8-pin SMD"
+pins = 8
+body = "0.40 in"
+
+[pins]
+left = ["1 PRI_P P", "2 PRI_CT P", "3 PRI_N P"]
+right = ["4 SEC_P P", "8 SEC_N P"]
+bottom = ["5 NC N", "6 NC N", "7 NC N"]

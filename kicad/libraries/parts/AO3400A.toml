@@ -1,0 +1,31 @@
+# Alpha & Omega AO3400A 30 V N-channel MOSFET, SOT-23.
+# Verified 2026-09-27 (Claude Sonnet 5) against AOSMD Rev 3.1 (July 2023)
+# package figure (p.1): Top/Bottom View, single-pin side = Drain (pin 3),
+# 2-pin side = Gate (pin 1) / Source (pin 2) -- the universal AOS SOT-23
+# single-MOSFET convention.
+footprint_check = "stock SOT-23"
+recommendation = "Only package offered for this MPN."
+
+[symbol]
+name = "AO3400A"
+reference = "Q"
+manufacturer = "Alpha & Omega Semiconductor"
+description = "30 V N-channel MOSFET, RDS(on) < 26.5 mOhm @ VGS=10V, SOT-23"
+keywords = "MOSFET N-channel load switch"
+footprint = "Package_TO_SOT_SMD:SOT-23"
+fp_filters = "SOT?23"
+
+[datasheet]
+doc = "AOSMD AO3400A data sheet Rev 3.1 (July 2023)"
+url = "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+section = "p.1 package figure (Top/Bottom View)"
+
+[[packages]]
+code = "SOT-23"
+pins = 3
+body = "2.9 x 1.3 mm"
+
+[pins]
+left = ["1 G I"]
+right = ["2 S P"]
+top = ["3 D P"]
