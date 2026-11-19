@@ -4,7 +4,7 @@
 **Drafted by:** Claude (Anthropic), sprint S34, 2026-11-14
 **License:** CC BY-SA 4.0 (documentation)
 **Plan:** Serenity-UAV `docs/plans/2026-11-14-001-feat-nonfo-pilot-pb2-stern-stack-plan.md` (sprints S34 to S41)
-**Stage:** S36 done (2026-11-18): generated schematic, ERC 0 errors and 0 warnings, ledger match, KiCad CI job. S35 closed 2026-11-18. No PCB yet (S37 and S38).
+**Stage:** S37 done (2026-11-19). The five isolation cells are each DRC 0 and unconnected 0 on their own boards, and the moat negative control is caught on each. S36 was done 2026-11-18. The full board comes next, in S38.
 
 ## What this board is
 
@@ -66,6 +66,11 @@ S36 may reassign ports inside these instances for routing; the ledger re-checks 
 | `kicads/NoNFO-Pilot-PB2.kicad_{sch,sym,pro}`, `.net`, `sym-lib-table`, `fp-lib-table` | Generated KiCad project (do not hand-edit) |
 | `tests/test_sch_matches_ledger.py` | Schematic-to-ledger, isolation, decoupling and pull-resistor tests, with negative controls |
 | `spice/input_filter.cir` | 5 V entry filter under the merged load step (ngspice) |
+| `scripts/gen_iso_cells.py`, `scripts/route_iso_cells.sh` | S37 isolation-cell boards: placement, hand copper, FreeRouting 2.1.0, pour |
+| `cells/{can,rs485,eth_rmii2,eth_usb1,m1553}/` | The five generated cell boards, each with its project and rule file |
+| `kicads/NoNFO-Pilot-PB2.kicad_dru` | Custom DRC rules: cross-domain 0.5 mm, ISOW sec 13.1 bubbles, fine-pitch exceptions |
+| `scripts/check_iso_cells.py` | S37 gate: DRC 0, unconnected 0, and the moat negative control on each cell (CI `cell-drc` job) |
+| `tests/test_iso_cells.py` | Clearance policy and rule-text tests (no KiCad needed) |
 
 ## S35 results (2026-11-17)
 
@@ -124,6 +129,48 @@ The J-PWM +5V pins are treated as an ESC signal reference, not a servo power bus
 - The PLD JEDEC fuse map, which now also drives the microSD SD_WP.
 - The MSPM0 SYSOSC frequency-correction resistor (100 kΩ, 0.1 %) is not fitted, because PA2 carries HOST_CSN.
 - The FB-MLRS-1/2 signal-bead part number is still open from TACCO.
+
+## S37 results (2026-11-19)
+
+Each cell is a 4-layer board that holds one isolation barrier and every part the S36 schematic hangs on it, with the same footprints and nets. Logic-side nets leave through a row of port pads on the -X edge. Gate: `scripts/check_iso_cells.py` (KiCad 9.0.2).
+
+| Cell | Board, in (mm) | DRC errors | Unconnected | Moat crossing (negative control) |
+|---|---|---|---|---|
+| CAN-FD (ISOW1044) | 1.57 x 1.02 (40 x 26) | 0 | 0 | caught |
+| RS-485 (ISOW1412) | 1.57 x 1.02 (40 x 26) | 0 | 0 | caught |
+| Ethernet ring port 1 (DP83825I side, 2 x TC1G00) | 1.34 x 0.79 (34 x 20) | 0 | 0 | caught |
+| Ethernet ring port 2 (AX88772E side, 2 x TC1G00) | 1.34 x 0.79 (34 x 20) | 0 | 0 | caught |
+| MIL-STD-1553 (HI-6138 + PM-DB2791S) | 1.81 x 1.10 (46 x 28) | 0 | 0 | caught |
+
+**Accepted DRC warnings, by type.** The warnings are of three types. `silk_edge_clearance` and `silk_over_copper` both come from the footprint library's silkscreen outlines; cells carry no reference text. `track_dangling` is a short router stub end. None of them is an electrical fault. S38 checks them again on the full board.
+
+**How the isolation is enforced.**
+- `ISOLATION_MOAT` is a keep-out on every copper layer that forbids tracks, vias and pour. A track drawn across it is reported as a keep-out violation; that is the negative control.
+- `iso_cross_domain_clearance` holds field-side copper 0.5 mm from logic-side copper.
+- Each layer carries its own ground plane on each side, cut by the moat.
+- Clearance is 0.3 mm everywhere except two documented fine-pitch footprints:
+  - the HI-6138 QFN-48 at 0.4 mm pitch, 0.15 mm inside the `FANOUT_1553` box;
+  - the TC1G00, whose pads 1 and 2 are 0.23 mm apart, 0.2 mm pad to pad.
+
+**Design points the cells settled.**
+- **ISOW sec 13.1 bubble, interpretation for owner review.**
+  - Item 5 says no metal within 4 mm of pins 11 and 12.
+  - Item 4 of the same list puts the GND2 bead between pin 11 and pin 15, which are 5 mm apart, and pin 15's own lead sits inside a 4 mm circle.
+  - The keep-out is therefore applied outward of the pin row. Only the converter-side `*_DCDC` nets may have copper there.
+  - On the ISOW1412, pin 15 is the only GND2 pin, so it takes its via under the package body.
+- **TC1G00 Z-moat.**
+  - The Pulse drawing [TC002.C p.2] puts primary pins 1 and 2 with the secondary centre tap (3/4) in one pad column.
+  - It puts secondary pins 5 and 6 with the primary centre tap (7/8) in the other column.
+  - So the moat steps under each transformer body in a Z, 0.5 mm wide between pad 6 and pad 2, which are 1.41 mm apart.
+- **X2Y bridge capacitors.** An X2Y has its two isolated-ground terminals between its two logic-ground terminals, so no straight moat separates them. Their GND2 terminals reach the field side through one documented opening on In2.Cu.
+
+**Findings.**
+- **F11, 1553 connector (owner review).** Pilot's MIL-1553 connector pin 3 carried logic GND onto the field side of the 1553 transformer, which defeats its isolation. A transformer-coupled stub needs only the bus pair and the shield (pin 4, PGND). Pin 3 is now open in the S36 generator. Pilot carries the same wiring.
+- **F12, Pilot isolation rules inert on tracks.** Pilot's `Pilot.kicad_dru` exempts the X2Y and the isolators with `A.Reference != ...`. Reference is undefined on tracks and vias, which makes the whole condition false there. So the cross-domain and bubble rules never checked a single track on Pilot. Shown here: with the Pilot form, a GND2 via inside the bubble passed DRC. The NoNFO rules use `memberOfFootprint()`, and a test forbids the Pilot form.
+
+**Not done in S37 (carried):**
+- 5.2.8a, the LPO part, needs the owner's pick.
+- 5.2.8c, the LWB5+ decoupling, needs an Ezurio reference schematic.
 
 ## Open items
 

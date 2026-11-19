@@ -147,7 +147,7 @@ M1553 = {
     "name": "m1553", "size": (46.0, 28.0), "moat_x": 27.0, "pgnd_field": True,
     "place": {
         "1553-XCVR": (11.0, 14.0, 0), "X-50M": (11.0, 24.0, 0), "C-50M": (14.4, 24.0, 90),
-        "C-1553A": (3.9, 10.0, 90), "C-1553B": (3.9, 18.0, 90), "C-1553C": (17.0, 19.6, 90),
+        "C-1553A": (3.9, 9.0, 90), "C-1553B": (3.9, 19.0, 90), "C-1553C": (17.0, 19.6, 90),
         "C-1553D": (17.0, 8.4, 90), "R-1553IRQ": (3.9, 14.0, 90),
         "1553-XFM": (27.0, 14.0, 0),
         "R-1553P": (36.0, 10.0, 0), "R-1553N": (36.0, 18.0, 0),
@@ -442,6 +442,11 @@ def fanout_qfn(board, ref, planes=("GND",)):
         n = len(pads)
         centre = sum(along(t) for t in pads) / n
         for i, (pad, dx, dy) in enumerate(pads):
+            if pad.GetNetname() == "GND":
+                # ground pins tie straight inward to the grounded exposed pad (pad 49)
+                ix, iy = (math.copysign(2.0, dx), dy) if side in "LR" else (dx, math.copysign(2.0, dy))
+                track(board, pad.GetPosition(), pcbnew.VECTOR2I(c.x + MM(ix), c.y + MM(iy)), "GND", w=FINE_TRACK)
+                continue
             spread = centre + (i - (n - 1) / 2) * 1.0
             spread = max(-4.2, min(4.2, spread))
             out1, out2 = 3.55, 5.6
@@ -531,6 +536,12 @@ def build(cell, router: bool):
         y1 = max(p.GetBoundingBox().GetBottom() for p in ps) / 1e6 + 4.0
         x1 = x0 - 0.2 + 4.0
         rule_area(board, name, [(x0, y0), (x1, y0), (x1, y1), (x0, y1)], CU, keepout=router)
+    if router:
+        # router-only edge band: the DSN boundary does not carry KiCad's 0.5 mm edge clearance
+        e = 0.7
+        for r in ([(0, 0), (W, 0), (W, e), (0, e)], [(0, H - e), (W, H - e), (W, H), (0, H)],
+                  [(0, 0), (e, 0), (e, H), (0, H)], [(W - e, 0), (W, 0), (W, H), (W - e, H)]):
+            rule_area(board, "EDGE_BAND", r, CU)
     if cell.get("fanout") and not router:
         # DRC-only area: the DSN export turns every rule area into a router keep-out
         fp = board.FindFootprintByReference(cell["fanout"])
