@@ -1,0 +1,44 @@
+(version 1)
+# NoNFO-Pilot-PB2 custom DRC rules (S37). SPDX-License-Identifier: CERN-OHL-W-2.0
+# Drafted by Claude (Anthropic) for S. Griffing; isolation rules ported from Serenity-UAV
+# avionics/kicad/Pilot/kicads/Pilot.kicad_dru (CC BY 4.0).  Copied next to every cell
+# board by scripts/gen_iso_cells.py, and used by the full board from S38.
+#
+# The moat itself is the keep-out rule area ISOLATION_MOAT (every copper layer, tracks,
+# vias and pour forbidden); KiCad reports a crossing as "Track/Via not allowed in
+# keepout ISOLATION_MOAT".
+
+# Field-side (ISOLATION netclass) copper keeps 0.5 mm from logic-side copper.  The X2Y
+# bridge capacitors are the deliberate high-frequency bridge across the barrier, so their
+# own pads are exempt (Pilot rule).  memberOfFootprint() replaces Pilot's A.Reference test:
+# Reference is undefined on tracks and vias, which makes the whole condition false there,
+# so the Pilot form never checked a single track (found in S37; Pilot carries the defect).
+(rule iso_cross_domain_clearance
+    (condition "A.NetClass == 'ISOLATION' && B.NetClass != 'ISOLATION' && B.NetName != '' && !A.memberOfFootprint('X2Y-*') && !B.memberOfFootprint('X2Y-*')")
+    (constraint clearance (min 0.5mm)))
+
+# ISOW sec 13.1 item 5: no foreign metal outward of pins 11 / 12 within 4 mm, on any
+# layer.  The isolator's own pins and the converter-side *_DCDC nets are the exceptions.
+(rule bubble_can
+    (condition "A.intersectsArea('BUBBLE_CAN') && !A.memberOfFootprint('CAN-TR') && A.NetName != 'GND2_CAN_DCDC' && A.NetName != 'VCC2_CAN_DCDC'")
+    (constraint disallow track via pad zone))
+(rule bubble_485
+    (condition "A.intersectsArea('BUBBLE_485') && !A.memberOfFootprint('RS485') && A.NetName != 'GND2_RS485_DCDC' && A.NetName != 'VCC2_RS485_DCDC'")
+    (constraint disallow track via pad zone))
+
+# Sec 13.1 item 1 puts the 10 nF capacitors within 1 mm of their pins, inside the SOIC-20W
+# courtyard margin.  Only these named pairs are exempt from courtyard clearance.
+(rule iso_section_13_1_courtyard
+    (condition "(A.Reference == 'CAN-TR' && (B.Reference == 'C-CAN1' || B.Reference == 'C-CAN3' || B.Reference == 'C-CAN4')) || (A.Reference == 'RS485' && (B.Reference == 'C-485-1' || B.Reference == 'C-485-3' || B.Reference == 'C-485-4'))")
+    (constraint courtyard_clearance (min 0mm))
+    (severity ignore))
+
+# Documented fine-pitch exceptions to the 0.3 mm clearance (S37 test reads this list):
+#   1553-XCVR  HI-6138 QFN-48, 0.4 mm pitch, 0.2 mm pads: 0.15 mm inside its fan-out box.
+#   T-*        Pulse TC1G00, pads 1 and 2 are 0.23 mm apart by the maker's land.
+(rule fine_pitch_hi6138
+    (condition "A.intersectsArea('FANOUT_1553') && B.intersectsArea('FANOUT_1553')")
+    (constraint clearance (min 0.15mm)))
+(rule fine_pitch_tc1g00
+    (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('T-*') && B.memberOfFootprint('T-*')")
+    (constraint clearance (min 0.2mm)))
