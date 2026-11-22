@@ -55,10 +55,8 @@ and go on. Never skip a step to save tokens. Use its narrowest scope.
      §4.1), with frontmatter `applies_when`.
    - If the sprint taught nothing new, record "none" in the handoff and
      write no file.
-5. **`/ce-handoff create <U-ID>`**. Write it to
-   `docs/handoffs/<date>-<U-ID>-<slug>.md` in the repo, not the managed
-   `/tmp` store: the cloud container is reclaimed after the session, so a
-   `/tmp` handoff does not reach the next sprint. The handoff states:
+5. **`/ce-handoff create <U-ID>`**, saved per the Handoff rule below. The
+   handoff states:
    - what changed and the exit-gate result;
    - every open finding from steps 1–3;
    - every `UNVERIFIED` item added, with its `TODO.md` line;
@@ -70,6 +68,26 @@ and go on. Never skip a step to save tokens. Use its narrowest scope.
    - Push, and update the open PR for the branch (or open a draft PR if none
      is open).
    - Never push to `main`.
+
+## Handoff rule
+
+Every sprint handoff shall be saved in the repo that owns the plan, at
+`docs/handoffs/<YYYY-MM-DD>-<U-ID>-<slug>.md`. For example:
+`docs/handoffs/2026-11-22-U1-setup-and-baseline.md`.
+
+- Do not save it to the `ce-handoff` managed store under `/tmp`. Cloud
+  containers are reclaimed after the session, so a `/tmp` handoff never
+  reaches the next sprint.
+- Create `docs/handoffs/` if it does not exist.
+- Keep the `ce-handoff/v1` frontmatter. The frontmatter `title:` counts as
+  the top-level heading for `markdownlint` MD025, so start the body at `##`,
+  not `#`.
+- Commit the handoff in step 6 with the sprint's other changes. An
+  uncommitted handoff is lost with the container.
+- If a handoff with the same name exists, add `-2`, `-3` and so on. Never
+  overwrite a handoff.
+- The next sprint resumes with
+  `/ce-handoff resume docs/handoffs/<file>.md`.
 
 ## Gates before step 6
 
