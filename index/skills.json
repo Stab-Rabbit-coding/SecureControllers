@@ -877,7 +877,7 @@
     "description": "Full-cycle project management across a whole repository: capture requirements, decompose into a Work Breakdown Structure, estimate effort and feasibility, execute task-by-task with file-based context isolation, propagate cross-task impacts, and render a progress dashboard. Adapts to the repo it finds itself in \u2014 drives an existing AGENTS.md + WBS.md/TODO.md governance federation when one is present, otherwise creates its own plan files. Use this skill whenever the user wants to plan, scope, break down, track, or run a multi-task project; says 'project overseer', 'overseer', 'plan this project', 'break this into tasks', 'build a WBS', 'what's left to do', 'show project status', 'add a requirement', or 'archive this project'; or is juggling enough interdependent work that a single conversation is losing track of it. Also use it when a requirement changes mid-project and you need to know which finished work has to be reopened.",
     "path": ".claude/skills/project-overseer",
     "category": "Project & Workflow Governance",
-    "file_count": 32
+    "file_count": 27
   },
   {
     "dir": "readme-conventions",
@@ -966,6 +966,14 @@
     "path": ".claude/skills/spice",
     "category": "PCB / KiCad / Electronics",
     "file_count": 13
+  },
+  {
+    "dir": "sprint-close",
+    "name": "sprint-close",
+    "description": "Close a sprint of a sprint-based plan (for example the Open-Secure-ESC 70 A nacelle-64 ESC plan). Runs ce-doc-review, ce-compound-refresh, ce-code-review, ce-compound, ce-handoff and ce-commit-push-pr in order, scoped to what the sprint touched. Use at the end of every sprint, or when a sprint hits its usage stop line.",
+    "path": ".claude/skills/sprint-close",
+    "category": "Misc",
+    "file_count": 1
   },
   {
     "dir": "statics-and-dynamics",
