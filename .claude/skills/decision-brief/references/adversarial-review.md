@@ -23,15 +23,15 @@ Give the reviewer the artifact and the contract, not the journey:
 - the brief text and its figures (paths), and the claim above;
 - the rules it must meet (template, unit and callout rules, wall rules, decisions in force);
 - the raw inputs the key numbers came from (meshes, tool commands, JSON outputs), so numbers can be
-  re-derived rather than trusted.
+  re-derived rather than trusted, and the one command that regenerates them.
 
 Leave out your reasoning and your doubts -- the point is an independent view.
 
 ## 3. DOUBT -- spawn the reviewer
 
 Spawn a fresh subagent (Agent tool, general-purpose) with the prompt below. If you are already inside
-a subagent and cannot spawn, say so to the user and let the main session run it; only as a last resort
-do a self-review with a hard separator, and label it **degraded** in the brief.
+a subagent and cannot spawn, return the draft, the CLAIM and the EXTRACT list to the main session and
+say step 7 is pending there; a self-review is allowed only if the user says so, labelled **degraded**.
 
 ```text
 You are an adversarial reviewer for an engineering Owner Decision Brief. Your job is to find what is
@@ -43,6 +43,8 @@ Attack along these lines, and for each finding give: what is wrong, the evidence
 re-derivation), how much it matters (would it change the recommendation? yes / maybe / no), and what
 would settle it.
 
+0. The measuring tool: list every exclusion, mask, threshold and "designed opening" it applies; check
+   each against the source geometry; re-measure inside each excluded region.
 1. Load-bearing numbers: which 2-3 numbers does the recommendation rest on? Re-derive them, or show
    why they cannot be trusted (wrong frame, wrong part revision, artifact of the method, unit slip,
    fallback used where a study or allowable applies, remembered rather than sourced).
@@ -79,7 +81,8 @@ it.
 ## 5. STOP
 
 Stop when a cycle returns only presentation-level findings, after three cycles, or when the user says
-so. Record the cycle count and the final verdict in the brief.
+so. A cycle whose findings change the recommendation is never the last one: re-issue, then review the
+re-issue. Record the cycle count and the final verdict in the brief.
 
 ## In the brief
 
