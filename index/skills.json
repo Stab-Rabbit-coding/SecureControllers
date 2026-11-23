@@ -528,6 +528,14 @@
     "file_count": 1
   },
   {
+    "dir": "decision-brief",
+    "name": "decision-brief",
+    "description": "Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation and what is still unverified. Use this skill whenever the user asks for a \"decision brief\", \"brief\", \"options for the owner\", \"OD-x\", \"trade study\", \"should we do A or B\", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say \"brief\". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).",
+    "path": ".claude/skills/decision-brief",
+    "category": "Misc",
+    "file_count": 6
+  },
+  {
     "dir": "deprecation-and-migration",
     "name": "deprecation-and-migration",
     "description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset existing code.",
@@ -877,7 +885,7 @@
     "description": "Full-cycle project management across a whole repository: capture requirements, decompose into a Work Breakdown Structure, estimate effort and feasibility, execute task-by-task with file-based context isolation, propagate cross-task impacts, and render a progress dashboard. Adapts to the repo it finds itself in \u2014 drives an existing AGENTS.md + WBS.md/TODO.md governance federation when one is present, otherwise creates its own plan files. Use this skill whenever the user wants to plan, scope, break down, track, or run a multi-task project; says 'project overseer', 'overseer', 'plan this project', 'break this into tasks', 'build a WBS', 'what's left to do', 'show project status', 'add a requirement', or 'archive this project'; or is juggling enough interdependent work that a single conversation is losing track of it. Also use it when a requirement changes mid-project and you need to know which finished work has to be reopened.",
     "path": ".claude/skills/project-overseer",
     "category": "Project & Workflow Governance",
-    "file_count": 32
+    "file_count": 27
   },
   {
     "dir": "readme-conventions",

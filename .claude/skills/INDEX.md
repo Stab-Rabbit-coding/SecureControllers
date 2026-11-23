@@ -1,6 +1,6 @@
 # Skills Index
 
-128 agent skills available under `.claude/skills/` in this repo (local Claude Code, and any cloud/web session running against this repo or branch). Token-optimized for lookup: scan the table for your task, then invoke the skill by directory name — do not read every `SKILL.md` to find the right one.
+129 agent skills available under `.claude/skills/` in this repo (local Claude Code, and any cloud/web session running against this repo or branch). Token-optimized for lookup: scan the table for your task, then invoke the skill by directory name — do not read every `SKILL.md` to find the right one.
 
 Regenerate with `python3 tools/build_skills_index.py` after adding, removing, or editing any skill. Machine-readable form: `index/skills.json`.
 
@@ -180,6 +180,7 @@ For other reusable assets in this repo (datasheets, KiCad symbols/footprints, me
 | Skill | Description |
 | --- | --- |
 | `copywriting` | Multi-domain writing: journalism, technical writing, narrative non-fiction, conversion copywriting. AI-trope blacklist with a verificatio... |
+| `decision-brief` | Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a... |
 | `research` | Use before dispatching any research subagent or doing external lookups directly. The house layer over generic deep research: source order... |
 | `songwriting` | Use when writing, structuring, or polishing a song or its lyrics, including turning a rough idea or lyric sheet into a sectioned song wit... |
 | `svg-illustrator` | Hand-author stylised SVG illustrations - covers, figures, icons, diagrams - that read clearly at a glance and survive print-PDF rendering... |

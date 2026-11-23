@@ -1,0 +1,17 @@
+{
+  "skill_name": "decision-brief",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In /home/user/Serenity-UAV, WBS item NAC-64-OD17-BREACH (airframe/wings-nacelles/WBS.md) says the four OD-17 10 AWG wire channels break through the inboard skin of the 64 mm nacelle pod around Z 79-86 mm. Give me an owner decision brief on how to close it, with options and a recommendation.",
+      "expected_output": "A brief in the repo's Owner Decision Brief format: airframe six checks for each of 3-4 concrete options, figures with vectors, measured numbers with sources, re-evaluation at the already-decided H1 pivot (109.27 mm), recommendation, unverified list.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Serenity-UAV WBS NAC-64-FUSE-COORD (airframe/wings-nacelles/WBS.md): the BOM's 40 A ESC fuse is below the 44 A design current and the 57 A peak. Write me a decision brief on the fuse / ESC current-limit / wire coordination options so I can pick one.",
+      "expected_output": "A brief using the avionics and power-electrical check set (Electrical engineering, Function, Structural integrity, Mechanism, Weight and balance, Wire harness/fastener/mounting fit, Thermal load) with options, coordination picture, cited ratings or explicit REQUIRES VERIFICATION, recommendation, unverified list.",
+      "files": []
+    }
+  ]
+}
