@@ -180,6 +180,7 @@ For other reusable assets in this repo (datasheets, KiCad symbols/footprints, me
 | Skill | Description |
 | --- | --- |
 | `copywriting` | Multi-domain writing: journalism, technical writing, narrative non-fiction, conversion copywriting. AI-trope blacklist with a verificatio... |
+| `decision-brief` | Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a... |
 | `research` | Use before dispatching any research subagent or doing external lookups directly. The house layer over generic deep research: source order... |
 | `songwriting` | Use when writing, structuring, or polishing a song or its lyrics, including turning a rough idea or lyric sheet into a sectioned song wit... |
 | `sprint-close` | Close a sprint of a sprint-based plan (for example the Open-Secure-ESC 70 A nacelle-64 ESC plan). Runs ce-doc-review, ce-compound-refresh... |
