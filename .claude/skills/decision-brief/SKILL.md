@@ -59,6 +59,15 @@ the wrong wall rule, a fallback value used where a study applies).
 - Label each number: measured (tool + inputs), computed (equation + inputs), cited (REF-ID +
   section), or ESTIMATE / ASSUMED / REQUIRES VERIFICATION. Never present a remembered value as a
   result; if a source is needed and cannot be reached, say so and leave the value open.
+- **Audit every exclusion and mask in the measuring tool before trusting its minimum.** A region the
+  tool skips ("designed opening", "inside the bay", "below r 40") must take its bounds from the source
+  geometry (the SCAD parameter, not memory), be shaded on the figure, and be inspected on its own.
+  The worst defect is often exactly where the tool was told not to look.
+- **Pin the target to its source in code.** A sizing target (wall, margin, clearance) comes from the
+  governing study or rule imported as a constant, not typed in; a fallback is used only where no study
+  covers the case, and the brief says so.
+- **Inherited geometry can carry defects.** When a defect will not trace to any of your features,
+  render the imported/canonical source alone in the same box before concluding.
 
 ### 3. Build the options
 
@@ -113,14 +122,25 @@ Use the skeleton in `references/brief-template.md`. In particular:
 
 Read `references/adversarial-review.md` and run it. In short: state the recommendation as a claim that
 could be false; give a **fresh-context** reviewer (a spawned subagent, not you re-reading your own
-work) the brief, the rules and the raw inputs, with orders to disprove rather than approve -- re-derive
+work) the brief, the rules, the raw inputs and the exact command that regenerates the numbers, with
+orders to audit the measuring tool's exclusions and masks and to disprove rather than approve -- re-derive
 the load-bearing numbers, test their sensitivity, steelman the losing options, look for a missing or
 already-decided option, run a pre-mortem, and hunt checks that pass by construction. Then answer every
 finding in the brief as **fixed**, **rebutted** (with evidence) or **open** (moved to "still
 unverified"), and add the "Adversarial review" section with the strongest case against the
 recommendation. If a finding that would flip the choice cannot be fixed or rebutted, the recommendation
 changes or the brief says plainly that the choice hinges on it. This follows the library's
-`doubt-driven-development` cycle; up to three rounds.
+`doubt-driven-development` cycle; up to three rounds, and a cycle that changes the recommendation is
+always followed by another cycle on the re-issued brief.
+
+**Order of operations.** The review runs *before* the brief is presented as finished, before the WBS
+says "owner decision pending", and before any chat message asks for the decision. Commit the draft if
+the session needs it pushed, but mark its bottom line DRAFT -- UNDER REVIEW until the review closes.
+
+**If you are a subagent** (you cannot spawn the reviewer): stop at the end of step 6, return the
+draft, the claim, and the review inputs (paths, regenerate command) to the main session, and say that
+step 7 is pending there. Do not substitute a self-review unless the user says so; if they do, label it
+**degraded** in the brief.
 
 Why: the author of a brief has been inside the problem for hours and is the person least able to see
 its blind spots. Most of the errors in `references/grounding-checklist.md` were found only when
@@ -144,5 +164,6 @@ someone tried to break a number instead of confirming it.
 - The facts were measured in the right frame, on current geometry, with the right rule.
 - Callouts graded by hazard; units imperial-first; the review notice at the top.
 - The recommendation follows from the checks, and the unverified list is honest.
-- The adversarial review ran with fresh context; every finding is fixed, rebutted with evidence, or
+- Every exclusion/mask in the measuring tool is sourced, shaded on its figure, and inspected.
+- The adversarial review ran with fresh context, before the brief was handed over; every finding is fixed, rebutted with evidence, or
   open in the unverified list; the strongest case against the recommendation is in the brief.

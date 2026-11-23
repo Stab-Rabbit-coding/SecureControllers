@@ -24,6 +24,14 @@ check that would have caught it. Run through the list before trusting a number.
 - **Attribution.** A defect was blamed on the cavity when another cut (wire channels) had opened the
   skin. *Check:* render with and without the suspected feature and compare.
 
+- **Outermost hit instead of first crossing.** A ray's farthest hit counted a fairing beyond an air gap
+  as "skin". *Check:* take the first outward crossing, and test containment of the point first -- a
+  point in air has no skin, whatever lies beyond it.
+- **Exclusion zone hid the defect.** A tool skipped "r < 40 mm, the bay's designed mouth (Z 65-77)";
+  the SCAD bay ended at Z 68.1 and the skipped band held a 7.4 mm open run through a socket in the
+  canonical shell. *Check:* every mask comes from the source parameter, is shaded on the figure, and is
+  inspected on its own. (Serenity-UAV Brief I, 2026-11-23.)
+
 ## Models that look right
 
 - **Re-tilted panels.** A fit model narrowed a rigid PCB ring by ring by re-tilting each ring; the real
@@ -34,10 +42,18 @@ check that would have caught it. Run through the list before trusting a number.
 - **Tolerance ties.** A part built to exactly envelope + clearance read as failing by float round-off.
   *Check:* compare with a stated tolerance.
 
+- **Patched numbers instead of patched geometry.** An option's fill was modelled as a per-sample
+  override keyed on Z only; it credited a wire outside the fill in Y and shrank its pad to two strips.
+  *Check:* model each option as geometry (boolean the candidate solid) and measure that solid with the
+  same tool. (Brief I, review cycle 2.)
+- **Inherited defect.** An open socket traced to none of the project's cuts; it was in the imported
+  canonical shell. *Check:* render the imported source alone in the same box.
+
 ## Rules and values
 
 - **Wrong wall rule.** A 2.0 mm "fallback for unstated load category" was used where the material
-  study gave 1.5 mm for the actual category. *Check:* find the study or allowable that covers the part
+  study gave 1.5 mm for the actual category -- and it recurred in a later brief as a hand-typed "pad
+  target 2.0". *Check:* import the target from the study's code/constant; find the study or allowable that covers the part
   and its load category; use the fallback only when none does, and say so.
 - **Remembered constants.** If a property needs a source and the source cannot be reached, leave it
   open and say what would close it -- do not fill it from memory.
