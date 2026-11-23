@@ -18,7 +18,8 @@ inline to the same standard and say which method you used.
 | Firmware/real-time, buses, timing | `computer-engineering`, `control-systems-engineering` | Timing budgets, loop stability margins. |
 | Parts, datasheets, sourcing | `datasheets`, `bom` (+ distributor skills) | Verified datasheet values with REF-IDs; BOM rows. |
 | Figures and charts | `dataviz` | Clear, consistent plots; one message per panel. |
-| Review of the brief before it goes out | `ce-doc-review` | Role-based critique of the document. |
+| Adversarial review of the recommendation (step 7) | `doubt-driven-development` (+ a spawned fresh-context reviewer, `references/adversarial-review.md`) | Findings that try to disprove the recommendation; each fixed, rebutted or left open. |
+| Editorial review of the brief before it goes out | `ce-doc-review` | Role-based critique of the document (clarity, structure), after the adversarial pass. |
 
 ## Picture per check (what usually works)
 

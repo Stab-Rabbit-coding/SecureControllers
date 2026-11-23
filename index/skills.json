@@ -530,10 +530,10 @@
   {
     "dir": "decision-brief",
     "name": "decision-brief",
-    "description": "Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation and what is still unverified. Use this skill whenever the user asks for a \"decision brief\", \"brief\", \"options for the owner\", \"OD-x\", \"trade study\", \"should we do A or B\", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say \"brief\". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).",
+    "description": "Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation, a fresh-context adversarial review of that recommendation, and what is still unverified. Use this skill whenever the user asks for a \"decision brief\", \"brief\", \"options for the owner\", \"OD-x\", \"trade study\", \"should we do A or B\", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say \"brief\". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).",
     "path": ".claude/skills/decision-brief",
     "category": "Misc",
-    "file_count": 6
+    "file_count": 7
   },
   {
     "dir": "deprecation-and-migration",

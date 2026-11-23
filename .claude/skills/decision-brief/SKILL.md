@@ -1,6 +1,6 @@
 ---
 name: decision-brief
-description: Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation and what is still unverified. Use this skill whenever the user asks for a "decision brief", "brief", "options for the owner", "OD-x", "trade study", "should we do A or B", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say "brief". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).
+description: Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation, a fresh-context adversarial review of that recommendation, and what is still unverified. Use this skill whenever the user asks for a "decision brief", "brief", "options for the owner", "OD-x", "trade study", "should we do A or B", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say "brief". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).
 ---
 
 # Decision Brief
@@ -102,20 +102,39 @@ Use the skeleton in `references/brief-template.md`. In particular:
   beside or below. Explain the mechanism in plain words where a reader would otherwise have to
   infer it -- a brief that the owner cannot follow is not finished.
 - Options side by side, the recommendation and its reason, then **what is still unverified** and
-  **what each option commits us to** (the work items it creates).
+  **what each option commits us to** (the work items it creates). The adversarial review (step 7) adds
+  its own section after the recommendation.
 - Units imperial first, metric in parentheses (knots for airspeed). Requirement words per the repo
   (shall / should / may / will). Callouts strictly by hazard: WARNING only for injury or death to
   people, CAUTION for equipment or aircraft loss, Note for everything else -- state the mechanism.
 - No fabricated or unverified citation. Copyrighted material is referenced, not reproduced.
 
-### 7. Record and hand over
+### 7. Adversarial review -- try to break it before the owner sees it
+
+Read `references/adversarial-review.md` and run it. In short: state the recommendation as a claim that
+could be false; give a **fresh-context** reviewer (a spawned subagent, not you re-reading your own
+work) the brief, the rules and the raw inputs, with orders to disprove rather than approve -- re-derive
+the load-bearing numbers, test their sensitivity, steelman the losing options, look for a missing or
+already-decided option, run a pre-mortem, and hunt checks that pass by construction. Then answer every
+finding in the brief as **fixed**, **rebutted** (with evidence) or **open** (moved to "still
+unverified"), and add the "Adversarial review" section with the strongest case against the
+recommendation. If a finding that would flip the choice cannot be fixed or rebutted, the recommendation
+changes or the brief says plainly that the choice hinges on it. This follows the library's
+`doubt-driven-development` cycle; up to three rounds.
+
+Why: the author of a brief has been inside the problem for hours and is the person least able to see
+its blind spots. Most of the errors in `references/grounding-checklist.md` were found only when
+someone tried to break a number instead of confirming it.
+
+### 8. Record and hand over
 
 - Put the brief where the repo keeps them (Serenity-UAV: the theme's `docs/THEME_*_DECISION_BRIEFS.md`
   or the subject document), figures in `docs/figures/`, and a pointer plus "owner decision pending"
   in the owning WBS item. Add a changelog line.
 - Run the repo's lint / doc checks on what you changed, commit, and push if the session works that way.
-- In chat, give the owner the question, the options in one line each, the recommendation, and what is
-  unverified -- and ask for the decision. Record the answer, with its date, when it comes.
+- In chat, give the owner the question, the options in one line each, the recommendation, the
+  strongest case against it, and what is unverified -- and ask for the decision. Record the answer,
+  with its date, when it comes.
 
 ## Self-check before handing over
 
@@ -125,3 +144,5 @@ Use the skeleton in `references/brief-template.md`. In particular:
 - The facts were measured in the right frame, on current geometry, with the right rule.
 - Callouts graded by hazard; units imperial-first; the review notice at the top.
 - The recommendation follows from the checks, and the unverified list is honest.
+- The adversarial review ran with fresh context; every finding is fixed, rebutted with evidence, or
+  open in the unverified list; the strongest case against the recommendation is in the brief.

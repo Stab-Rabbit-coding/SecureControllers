@@ -70,6 +70,14 @@ An outer-mould-line change caused by an avionics item still gets the Canonical s
 ### Recommendation
 **<option>.** <reason, tied to the checks>.
 
+### Adversarial review
+Fresh-context reviewer, <n> cycle(s), verdict: <recommendation stands / stands with changes / does not
+stand>. **Strongest case against <option>:** <the reviewer's best argument, one paragraph>.
+
+| # | Challenge | Class | Response |
+|---|---|---|---|
+| 1 | <what is wrong, with evidence> | fixed / rebutted / open | <change made, evidence, or what would settle it> |
+
 ### Still unverified
 - <item> -- what would verify it (test, analysis, datasheet), and who.
 
