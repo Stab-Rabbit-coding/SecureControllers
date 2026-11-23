@@ -1,6 +1,6 @@
 ---
 name: decision-brief
-description: Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation, a fresh-context adversarial review of that recommendation, and what is still unverified. Use this skill whenever the user asks for a "decision brief", "brief", "options for the owner", "OD-x", "trade study", "should we do A or B", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say "brief". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).
+description: Write an Owner Decision Brief -- options for a design, part, spec or OD-x decision presented against the six required checks, each with a picture (vectors wherever a load or motion is involved), measured or computed numbers with sources, options side by side, a recommendation, a fresh-context adversarial review of that recommendation, and what is still unverified. Use this skill whenever the user asks for a "decision brief", "brief", "options for the owner", "OD-x", "trade study", "should we do A or B", or wants a finding turned into choices to decide on, and whenever an engineering finding needs an owner decision before work can continue -- even if they don't say "brief". It routes each check to the right engineering skill (statics-and-dynamics, aeronautical-engineering, control-systems/mechanical/electrical/electronics/thermodynamics, 3d-print-design, openscad, openfoam-cfd, dataviz).
 ---
 
 # Decision Brief
@@ -81,7 +81,7 @@ Use `references/skill-routing.md` to pick the skill for each check and invoke it
 engineering skills carry the method, the validity limits and the citation discipline. Typical:
 statics-and-dynamics for the free-body diagram, aeronautical-engineering for loads / drag / W&B,
 3d-print-design for walls and print orientation, openscad for geometry and renders, openfoam-cfd for
-flow questions, electrical/electronics/thermodynamics for the avionics set, dataviz for the figures.
+flow questions, electrical/electronics/thermodynamics for the avionics set, control-systems for control logic or dynamic control limits, dataviz for the figures.
 
 For each check give: the governing case, the number(s) with units and source, the margin against a
 stated limit, and a one-line verdict per option. If a check cannot be closed in the time available,
