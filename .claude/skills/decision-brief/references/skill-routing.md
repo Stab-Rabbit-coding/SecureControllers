@@ -16,6 +16,7 @@ inline to the same standard and say which method you used.
 | Rails, wire/connector/fuse ratings, fault current, protection coordination | `electrical-engineering` | Current against every rating in the path, margins, coordination curves. |
 | Board-level: EMC, signal integrity, regulators, isolation | `electronics-engineering`, `emc`, `pcb-engineer` | Victim/aggressor list, filtering, isolation distances. |
 | Firmware/real-time, buses, timing | `computer-engineering`, `control-systems-engineering` | Timing budgets, loop stability margins. |
+| Sensors/valves/motors/actuator interaction, system wide stability | `control-system-engineering` | Control loops, sensor placement, control-ability. |
 | Parts, datasheets, sourcing | `datasheets`, `bom` (+ distributor skills) | Verified datasheet values with REF-IDs; BOM rows. |
 | Figures and charts | `dataviz` | Clear, consistent plots; one message per panel. |
 | Adversarial review of the recommendation (step 7) | `doubt-driven-development` (+ a spawned fresh-context reviewer, `references/adversarial-review.md`) | Findings that try to disprove the recommendation; each fixed, rebutted or left open. |
