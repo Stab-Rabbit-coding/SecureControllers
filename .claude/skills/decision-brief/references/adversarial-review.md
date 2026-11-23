@@ -69,7 +69,7 @@ Return a numbered list of findings, most decision-relevant first, then a one-lin
 Classify each finding against the brief, in the brief:
 
 | Finding | Class | Response |
-|---|---|---|
+| --- | --- | --- |
 | ... | **fixed** (brief changed) / **rebutted** (evidence that it does not hold) / **open** (moved to "still unverified", with what would settle it) | ... |
 
 Rebuttals need evidence, not confidence. A finding that would flip the recommendation and cannot be
@@ -87,11 +87,12 @@ Add a section after the recommendation:
 
 ```markdown
 ### Adversarial review
+
 Fresh-context reviewer, <n> cycle(s), verdict: <recommendation stands / stands with changes / ...>.
 **Strongest case against <recommended option>:** <one paragraph, the reviewer's best argument>.
 
 | # | Challenge | Class | Response |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | ... | fixed / rebutted / open | ... |
 ```
 

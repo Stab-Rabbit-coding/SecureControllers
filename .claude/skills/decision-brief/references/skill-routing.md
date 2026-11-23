@@ -5,7 +5,7 @@ citation rules. Several checks often need two skills. If a listed skill is not i
 inline to the same standard and say which method you used.
 
 | Check / question | Skill(s) | What to get from it |
-|---|---|---|
+| --- | --- | --- |
 | Free-body diagram, reactions, moments, mechanism forces, virtual work | `statics-and-dynamics` | FBD with every load as a vector and magnitude; determinacy; an independent check equation. |
 | Flight loads, drag, lift, gust, V-n, weight and balance, CG, pivot, T/W, hover clearance | `aeronautical-engineering` | Governing load case, drag increments, W&B roll-up and margins; the mandatory notice. |
 | Stress, fatigue, fasteners, inserts, bearings, shafts, gears, springs | `mechanical-engineering` | Allowables with sources, margins, fatigue basis; "requires verification" where no allowable exists. |

@@ -4,6 +4,7 @@ Each item is a real failure from this project's briefs (Serenity-UAV Theme N, No
 check that would have caught it. Run through the list before trusting a number.
 
 ## Frames and handedness
+
 - **Mirrored keep-outs.** An optimiser ran on the left-shell (port) frame with keep-outs measured on
   the starboard pod; inboard and outboard were swapped (az -> 180 - az). A board landed in the
   trunnion gear cavity. *Check:* confirm every input is in the same frame -- ray-test the render
@@ -12,6 +13,7 @@ check that would have caught it. Run through the list before trusting a number.
   the other side's name. *Check:* never infer the frame from a file name; measure it.
 
 ## Ray-cast artifacts
+
 - **Far-side hits.** Rays cast through an axis kept the farthest hit, so each azimuth read the larger
   of its own and the opposite radius. *Check:* keep near-side hits only (positive projection on the
   ray's outward direction) and test on an asymmetric case.
@@ -23,6 +25,7 @@ check that would have caught it. Run through the list before trusting a number.
   skin. *Check:* render with and without the suspected feature and compare.
 
 ## Models that look right
+
 - **Re-tilted panels.** A fit model narrowed a rigid PCB ring by ring by re-tilting each ring; the real
   board keeps its tilt. Results were optimistic by up to 15 %. *Check:* ask whether the model's degrees
   of freedom exist in the part.
@@ -32,6 +35,7 @@ check that would have caught it. Run through the list before trusting a number.
   *Check:* compare with a stated tolerance.
 
 ## Rules and values
+
 - **Wrong wall rule.** A 2.0 mm "fallback for unstated load category" was used where the material
   study gave 1.5 mm for the actual category. *Check:* find the study or allowable that covers the part
   and its load category; use the fallback only when none does, and say so.
@@ -41,6 +45,7 @@ check that would have caught it. Run through the list before trusting a number.
   injury path to people; CAUTION for equipment/aircraft loss; Note otherwise.
 
 ## Process
+
 - **Something already decided changes the answer.** Re-evaluate at the decided state (e.g. the new
   pivot), not only the current one.
 - **Stale published parts.** Published meshes may lag the source; say which one you measured.
