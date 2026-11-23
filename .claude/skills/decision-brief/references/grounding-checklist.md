@@ -42,6 +42,10 @@ check that would have caught it. Run through the list before trusting a number.
 - **Tolerance ties.** A part built to exactly envelope + clearance read as failing by float round-off.
   *Check:* compare with a stated tolerance.
 
+- **Patched numbers instead of patched geometry.** An option's fill was modelled as a per-sample
+  override keyed on Z only; it credited a wire outside the fill in Y and shrank its pad to two strips.
+  *Check:* model each option as geometry (boolean the candidate solid) and measure that solid with the
+  same tool. (Brief I, review cycle 2.)
 - **Inherited defect.** An open socket traced to none of the project's cuts; it was in the imported
   canonical shell. *Check:* render the imported source alone in the same box.
 
